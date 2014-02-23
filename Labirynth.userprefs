@@ -1,9 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Instantiation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MazeGenerator\Instantiation.cs">
     <Files>
-      <File FileName="Assets\Instantiation.cs" Line="31" Column="43" />
-      <File FileName="Assets\PlayerController.cs" Line="39" Column="4" />
+      <File FileName="Assets\MazeGenerator\Instantiation.cs" Line="83" Column="44" />
+      <File FileName="Assets\MazeGenerator\Instantiation.cs" Line="91" Column="1" />
+      <File FileName="Assets\MazeGenerator\Labirynth.cs" Line="93" Column="52" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
