@@ -7,15 +7,21 @@ namespace AssemblyCSharp
 				bool[,] maze;
 				Vector2 start;
 				Vector2 end;
-				int size;
+				int sizeX;
+				int sizeY;
 
-				public Labirynth (int size)
+				public Labirynth (int sizeX, int sizeY)
 				{
-					this.size = size;
-					this.maze = new bool[size * 2 + 1, size * 2 + 1];
-					this.start = new Vector2(1, 1);
-					this.end = new Vector2(size * 2 - 1, size * 2 - 1);
-					makeVisited(this.start);
+					this.sizeX = sizeX;
+					this.sizeY = sizeY;
+					this.maze = new bool[sizeX * 2 + 1, sizeY * 2 + 1];
+					this.start = new Vector2(1, 2*sizeY - 1);
+					this.end = new Vector2(sizeX * 2 - 1, sizeY * 2 - 1);
+					for (int x=0; x<=sizeX*2; x++)
+					{
+						makeVisited (new Vector2(x, 2*sizeY - 1));
+						makeVisited (new Vector2(x, 2*sizeY));
+					}
 				}
 
 				public void makeVisited(Vector2 pos)
@@ -49,8 +55,8 @@ namespace AssemblyCSharp
 					for (int i = 0; i < 4; i++)
 					{
 						Move move = convertToMove(i);
-						if  ((pos.x + move.getNewPos().x > 0) && (pos.x + move.getNewPos().x < size * 2) &&
-						     (pos.y + move.getNewPos().y > 0) && (pos.y + move.getNewPos().y < size * 2) &&
+						if  ((pos.x + move.getNewPos().x > 0) && (pos.x + move.getNewPos().x < sizeX * 2) &&
+						     (pos.y + move.getNewPos().y > 0) && (pos.y + move.getNewPos().y < sizeY * 2) &&
 						     (!maze[(int) (pos.x + move.getNewPos().x), (int) (pos.y + move.getNewPos().y)]))
 						{
 							options.Add(move);
@@ -62,14 +68,17 @@ namespace AssemblyCSharp
 
 				public Vector2 findCellWithOptions()
 				{
-					for (int x = 1; x < size * 2 + 1; x += 2)
+					for (int x = 1; x < sizeX * 2 + 1; x += 2)
 					{
-						for (int y = 1; y < size * 2 + 1; y += 2)
+						for (int y = 1; y < sizeY * 2 + 1; y += 2)
 						{
-							Vector2 temp = new Vector2(x, y);
-							if (findOptions(temp).Count != 0)
+							if (maze[x, y])
 							{
-								return temp;
+								Vector2 temp = new Vector2(x, y);
+								if (findOptions(temp).Count != 0)
+								{
+									return temp;
+								}
 							}
 						}
 					}

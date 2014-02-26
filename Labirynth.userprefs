@@ -1,11 +1,33 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MazeGenerator\Instantiation.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MazeGenerator\Labirynth.cs">
     <Files>
-      <File FileName="Assets\MazeGenerator\Instantiation.cs" Line="83" Column="44" />
-      <File FileName="Assets\MazeGenerator\Instantiation.cs" Line="91" Column="1" />
-      <File FileName="Assets\MazeGenerator\Labirynth.cs" Line="93" Column="52" />
+      <File FileName="Assets\MazeGenerator\Instantiation.cs" Line="15" Column="24" />
+      <File FileName="Assets\MazeGenerator\Labirynth.cs" Line="82" Column="9" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="Assembly-CSharp" expanded="True">
+            <Node name="MazeGenerator" expanded="True">
+              <Node name="Labirynth.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>smallWallPrefab</Value>
+          <Value>sizeZ</Value>
+          <Value>spaceZ</Value>
+          <Value>planeSizeZ/(sizeZ * 2 + 1)</Value>
+          <Value>planeSizeX/(spaceX+1f) - 1f</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
