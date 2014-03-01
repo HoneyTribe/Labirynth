@@ -80,11 +80,11 @@ namespace AssemblyCSharp
 		
 		// Update is called once per frame
 		void Update () {
-			if (topLight.transform.rotation.y > 0.5) 
+			if (topLight.transform.rotation.y > 0.35) 
 			{
 				dir=-1;
 			}
-			if (topLight.transform.rotation.y < -0.5) 
+			if (topLight.transform.rotation.y < -0.35) 
 			{
 				dir=1;
 			}
