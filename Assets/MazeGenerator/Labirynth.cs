@@ -15,13 +15,24 @@ namespace AssemblyCSharp
 					this.sizeX = sizeX;
 					this.sizeY = sizeY;
 					this.maze = new bool[sizeX * 2 + 1, sizeY * 2 + 1];
-					this.start = new Vector2(1, 2*sizeY - 1);
-					this.end = new Vector2(sizeX * 2 - 1, sizeY * 2 - 1);
+
+					int entrance =  Random.Range(1, sizeX-1);
+					this.start = new Vector2(1 + 2 * entrance, 2*sizeY - 1);
+					this.end = new Vector2(1 + 2 * (sizeX - entrance), 1);
 					for (int x=0; x<=sizeX*2; x++)
 					{
 						makeVisited (new Vector2(x, 2*sizeY - 1));
 						makeVisited (new Vector2(x, 2*sizeY));
 					}
+					//make the entrance wider
+					makeVisited (new Vector2(start.x-1, start.y-1));
+					makeVisited (new Vector2(start.x-1, start.y-2));
+					makeVisited (new Vector2(start.x-2, start.y-1));
+					makeVisited (new Vector2(start.x-2, start.y-2));
+					makeVisited (new Vector2(start.x+1, start.y-1));
+					makeVisited (new Vector2(start.x+1, start.y-2));
+					makeVisited (new Vector2(start.x+2, start.y-1));
+					makeVisited (new Vector2(start.x+2, start.y-2));
 				}
 
 				public void makeVisited(Vector2 pos)
@@ -68,9 +79,9 @@ namespace AssemblyCSharp
 
 				public Vector2 findCellWithOptions()
 				{
-					for (int x = 1; x < sizeX * 2 + 1; x += 2)
+					for (int y = sizeY * 2 - 3; y >= 1; y -= 2)
 					{
-						for (int y = 1; y < sizeY * 2 + 1; y += 2)
+						for (int x = 1; x < sizeX * 2 + 1; x += 2)
 						{
 							if (maze[x, y])
 							{
@@ -104,12 +115,35 @@ namespace AssemblyCSharp
 						makeVisited(curr + move.getWall());
 						makeVisited(curr + move.getNewPos());
 						curr = curr + move.getNewPos();
+						print ();
 					}	
 				}
 
 				public bool getWalls(int x, int y)
 				{
 					return maze[x, y];
+				}
+
+				public void print()
+				{
+					string line = "";
+					for (int y = 0; y < sizeY * 2 + 1; y++)					{
+						
+						for (int x = 0; x < sizeX * 2 + 1; x++)
+						{
+							if (this.maze[x,y])
+							{
+								line = line + "o";
+							}
+							else
+							{
+								line = line + "d";
+							}
+						}
+						//Debug.Log(line);
+						line = line + System.Environment.NewLine;
+					}
+					line = line + " ";
 				}
 	}
 }
