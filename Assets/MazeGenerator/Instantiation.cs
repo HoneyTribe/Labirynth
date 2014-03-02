@@ -12,7 +12,7 @@ namespace AssemblyCSharp
 		private int dir = 1;
 		private float rotationSpeed = 0.5f;
 		private int sizeX = 9;
-		private int sizeZ = 9;
+		private int sizeZ = 2;
 		private int planeSizeX = 40;
 		private int planeSizeZ = 40;
 
