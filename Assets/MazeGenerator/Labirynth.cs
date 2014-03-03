@@ -19,20 +19,18 @@ namespace AssemblyCSharp
 					int entrance =  Random.Range(1, sizeX-1);
 					this.start = new Vector2(1 + 2 * entrance, 2*sizeY - 1);
 					this.end = new Vector2(1 + 2 * (sizeX - entrance), 1);
-					for (int x=0; x<=sizeX*2; x++)
-					{
-						makeVisited (new Vector2(x, 2*sizeY - 1));
-						makeVisited (new Vector2(x, 2*sizeY));
-					}
+						
 					//make the entrance wider
-					makeVisited (new Vector2(start.x-1, start.y-1));
-					makeVisited (new Vector2(start.x-1, start.y-2));
-					makeVisited (new Vector2(start.x-2, start.y-1));
-					makeVisited (new Vector2(start.x-2, start.y-2));
-					makeVisited (new Vector2(start.x+1, start.y-1));
-					makeVisited (new Vector2(start.x+1, start.y-2));
-					makeVisited (new Vector2(start.x+2, start.y-1));
-					makeVisited (new Vector2(start.x+2, start.y-2));
+					makeVisited (new Vector2 (start.x, start.y));;
+					makeVisited (new Vector2 (start.x, start.y + 1));
+					makeVisited (new Vector2 (start.x - 1, start.y));
+					makeVisited (new Vector2 (start.x - 1, start.y + 1));
+					makeVisited (new Vector2 (start.x - 2, start.y));
+					makeVisited (new Vector2 (start.x - 2, start.y + 1));
+					makeVisited (new Vector2 (start.x + 1, start.y));
+					makeVisited (new Vector2 (start.x + 1, start.y + 1));
+					makeVisited (new Vector2 (start.x + 2, start.y));
+					makeVisited (new Vector2 (start.x + 2, start.y + 1));
 				}
 
 				public void makeVisited(Vector2 pos)
@@ -79,7 +77,7 @@ namespace AssemblyCSharp
 
 				public Vector2 findCellWithOptions()
 				{
-					for (int y = sizeY * 2 - 3; y >= 1; y -= 2)
+					for (int y = sizeY * 2 - 1; y >= 1; y -= 2)
 					{
 						for (int x = 1; x < sizeX * 2 + 1; x += 2)
 						{
@@ -101,7 +99,7 @@ namespace AssemblyCSharp
 				{
 					Vector2 curr = start;
 					List<Move> options;
-					
+			print ();
 					while(!findCellWithOptions().Equals (Vector2.zero))
 					{	
 						options = findOptions(curr);
