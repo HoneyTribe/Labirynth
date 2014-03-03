@@ -1,40 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MazeGenerator\Instantiation.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerController.cs">
     <Files>
-      <File FileName="Assets\MazeGenerator\Instantiation.cs" Line="14" Column="25" />
-      <File FileName="Assets\MazeGenerator\Labirynth.cs" Line="82" Column="32" />
+      <File FileName="Assets\MazeGenerator\Instantiation.cs" Line="9" Column="28" />
+      <File FileName="Assets\PlayerController.cs" Line="21" Column="43" />
+      <File FileName="Assets\LightController.cs" Line="18" Column="34" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="MazeGenerator" expanded="True">
-              <Node name="Instantiation.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="ClassPad">
-        <State expanded="True" selected="True" />
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State>
-          <Value>start</Value>
-          <Value>move</Value>
-          <Value>line</Value>
-          <Value>end</Value>
-          <Value>maze</Value>
-          <Value>curr</Value>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="D:\Dev\Unity Projects\Labirynth\Assets\MazeGenerator\Labirynth.cs" line="146" />
-      <Breakpoint file="D:\Dev\Unity Projects\Labirynth\Assets\MazeGenerator\Labirynth.cs" line="107" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

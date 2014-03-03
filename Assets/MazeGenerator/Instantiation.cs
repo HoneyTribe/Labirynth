@@ -7,12 +7,9 @@ namespace AssemblyCSharp
 		public GameObject horisontalWallPrefab;
 		public GameObject verticalWallPrefab;
 		public GameObject smallWallPrefab;
-		public Light topLight;
 
-		private int dir = 1;
-		private float rotationSpeed = 0.5f;
 		private int sizeX = 9;
-		private int sizeZ = 2;
+		private int sizeZ = 9;
 		private int planeSizeX = 40;
 		private int planeSizeZ = 40;
 
@@ -76,19 +73,6 @@ namespace AssemblyCSharp
 				}
 				
 			}
-		}
-		
-		// Update is called once per frame
-		void Update () {
-			if (topLight.transform.rotation.y > 0.35) 
-			{
-				dir=-1;
-			}
-			if (topLight.transform.rotation.y < -0.35) 
-			{
-				dir=1;
-			}
-			topLight.transform.Rotate(0, rotationSpeed*dir, 0);
-		}
+		}		
 	}
 }

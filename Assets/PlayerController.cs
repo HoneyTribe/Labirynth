@@ -7,14 +7,18 @@ public class PlayerController : MonoBehaviour {
 	public KeyCode moveDown;
 	public KeyCode moveLeft;
 	public KeyCode moveRight;
-	
+
 	public float speed = 10;	
 
 	private CharacterController controller;
 	private Vector3 moveDirection = Vector3.zero;
 
+	private bool lighthouseEntered = false;
+	private GameObject torch;
+
 	void Start()
 	{
+		torch = GameObject.Find ("LightContainer");
 		//controller = GetComponent<CharacterController>();
 	}
 
@@ -24,6 +28,7 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKey (moveUp))
 		{
 			rigidbody.velocity = new Vector3(0, 0, speed);
+			lighthouseEntered = false;
 		} 
 		else if (Input.GetKey (moveDown))
 		{
@@ -31,11 +36,25 @@ public class PlayerController : MonoBehaviour {
 		}
 		else if (Input.GetKey (moveLeft))
 		{
-			rigidbody.velocity = new Vector3(-speed, 0, 0);
+			if (lighthouseEntered)
+			{
+				torch.gameObject.SendMessage("MoveLeft");
+			}
+			else
+			{
+				rigidbody.velocity = new Vector3(-speed, 0, 0);
+			}
 		}
 		else if (Input.GetKey (moveRight))
 		{
-			rigidbody.velocity = new Vector3(speed, 0, 0);
+			if (lighthouseEntered)
+			{
+				torch.gameObject.SendMessage("MoveRight");
+			}
+			else
+			{
+				rigidbody.velocity = new Vector3(speed, 0, 0);
+			}
 		}
 		else 
 		{
@@ -67,5 +86,13 @@ public class PlayerController : MonoBehaviour {
 		//moveDirection = transform.TransformDirection(moveDirection);
 		moveDirection *= speed;
 		controller.Move(moveDirection * Time.deltaTime);*/
+	}
+
+	void OnCollisionEnter (Collision collision)
+	{
+		if(collision.collider.name == "Lighthouse")
+		{
+			lighthouseEntered = true;
+		}
 	}
 }
