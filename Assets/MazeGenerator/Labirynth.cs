@@ -10,6 +10,8 @@ namespace AssemblyCSharp
 				int sizeX;
 				int sizeY;
 
+				List<KeyPosition> keys = new List<KeyPosition> ();
+
 				public Labirynth (int sizeX, int sizeY)
 				{
 					this.sizeX = sizeX;
@@ -75,6 +77,37 @@ namespace AssemblyCSharp
 					return options;
 				}
 
+				public List<Move> findOptionsToMove(bool[,] m, Vector2 pos)
+				{
+					List<Move> options = new List<Move>();
+					
+					for (int i = 0; i < 4; i++)
+					{
+						Move move = convertToMove(i);
+						if  (m[(int) (pos.x + move.getWall().x), (int) (pos.y + move.getWall().y)])
+						{
+							options.Add(move);
+						}
+					}
+					
+					return options;
+				}
+
+				private bool[,] copyMaze()
+				{
+					bool[,] mazeCopy = new bool[sizeX * 2 + 1, sizeY * 2 + 1];
+
+					for (int y = 0; y < sizeY * 2 + 1; y++)
+					{
+						for (int x = 0; x < sizeX * 2 + 1; x++)
+						{
+							mazeCopy[x,y] = this.maze[x, y];
+						}
+					}
+					
+					return mazeCopy;
+				}
+
 				public Vector2 findCellWithOptions()
 				{
 					for (int y = sizeY * 2 - 1; y >= 1; y -= 2)
@@ -95,16 +128,56 @@ namespace AssemblyCSharp
 					return Vector2.zero;
 				}
 
+				public LinkedList<Vector2> findPathBetweenCells(Vector2 startPos, Vector2 endPos)
+				{
+					bool[,] copy = copyMaze ();					
+					LinkedList<Vector2> path = new LinkedList<Vector2>();
+					LinkedList<Vector2> crossroads = new LinkedList<Vector2>();
+
+					Vector2 curr = startPos;
+					while (!curr.Equals(endPos)) 
+					{
+						List<Move> options = findOptionsToMove(copy, curr);
+						if (options.Count == 0)
+						{
+							print (copy);
+							curr = crossroads.Last.Value;
+							crossroads.RemoveLast();
+							while (!path.Last.Value.Equals(curr))
+					        {
+								path.RemoveLast();
+					        }
+						}
+						else if (options.Count > 0)
+						{
+							Vector2 tempCurr = curr;	
+							copy[(int) (curr.x + options[0].getWall().x), (int) (curr.y + options[0].getWall().y)] = false;
+							curr = curr + options[0].getNewPos();
+							path.AddLast(curr);
+
+							if (options.Count > 1)
+							{
+								options.RemoveAt(0);
+								crossroads.AddLast(tempCurr);
+							}
+						}
+					}
+					
+					return path;
+				}
+
 				public void generate()
 				{
 					Vector2 curr = start;
 					List<Move> options;
-			print ();
+
 					while(!findCellWithOptions().Equals (Vector2.zero))
 					{	
 						options = findOptions(curr);
 						if ((options.Count == 0) || (curr.Equals(end)))
 						{
+							print (maze);
+							keys.Add(new KeyPosition(curr, findPathBetweenCells(curr, start).Count));
 							curr = findCellWithOptions();
 							continue;
 						}
@@ -113,7 +186,6 @@ namespace AssemblyCSharp
 						makeVisited(curr + move.getWall());
 						makeVisited(curr + move.getNewPos());
 						curr = curr + move.getNewPos();
-						print ();
 					}	
 				}
 
@@ -122,14 +194,19 @@ namespace AssemblyCSharp
 					return maze[x, y];
 				}
 
-				public void print()
+				public List<KeyPosition> getKeys()
+				{
+					return keys;
+				}
+
+				public void print(bool[,] m)
 				{
 					string line = "";
 					for (int y = 0; y < sizeY * 2 + 1; y++)					{
 						
 						for (int x = 0; x < sizeX * 2 + 1; x++)
 						{
-							if (this.maze[x,y])
+							if (m[x,y])
 							{
 								line = line + "o";
 							}

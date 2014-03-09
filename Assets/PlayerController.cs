@@ -14,12 +14,14 @@ public class PlayerController : MonoBehaviour {
 	private Vector3 moveDirection = Vector3.zero;
 
 	private bool lighthouseEntered = false;
+
 	private GameObject torch;
+	private GameObject exit;
 
 	void Start()
 	{
 		torch = GameObject.Find ("LightContainer");
-		//controller = GetComponent<CharacterController>();
+		exit = GameObject.Find ("Exit");
 	}
 
 	// Update is called once per frame
@@ -93,6 +95,11 @@ public class PlayerController : MonoBehaviour {
 		if(collision.collider.name == "Lighthouse")
 		{
 			lighthouseEntered = true;
+		}
+		if(collision.collider.name == "ExitTrigger")
+		{
+			Destroy(gameObject);
+			exit.gameObject.SendMessage("PlayerFinished");
 		}
 	}
 }

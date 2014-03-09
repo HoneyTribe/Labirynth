@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections.Generic;
 namespace AssemblyCSharp
 {
 	public class Instantiation : MonoBehaviour {
@@ -7,22 +7,48 @@ namespace AssemblyCSharp
 		public GameObject horisontalWallPrefab;
 		public GameObject verticalWallPrefab;
 		public GameObject smallWallPrefab;
+		public GameObject keyPrefab;
 
-		private int sizeX = 9;
-		private int sizeZ = 9;
-		private int planeSizeX = 40;
-		private int planeSizeZ = 34;
-		private int offsetZ = 6;
+		private static int sizeX = 9;
+		private static int sizeZ = 9;
+		private static int planeSizeX = 40;
+		private static int planeSizeZ = 34;
+		private static int offsetZ = 6;
+
+		private float spaceX = planeSizeX / (sizeX * 2f);
+		private float spaceZ = planeSizeZ / (sizeZ * 2f);
 
 		// Use this for initialization
 		void Start () {
-
+			
 			Labirynth labirynth = new Labirynth (sizeX, sizeZ);
 			labirynth.generate ();
-			float spaceX = planeSizeX / (sizeX * 2f);
-			float spaceZ = planeSizeZ / (sizeZ * 2f);
+			drawKeys (labirynth.getKeys ());
+			drawSmallWalls (labirynth);
+			drawHorisontalWalls (labirynth);
+			drawVerticalWalls (labirynth);
+		}	
 
-			// Render All Small Walls
+		void drawKeys(List<KeyPosition> keys)
+		{
+			keys.Sort(
+				delegate(KeyPosition obj1, KeyPosition obj2)
+				{
+					return obj2.getDistance().CompareTo(obj1.getDistance());
+				}
+			);
+			for (int i=0; i<ScoreController.numberOfKeys; i++) 
+			{
+				Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * keys[i].getPosition().x,
+				                           keyPrefab.transform.position.y,
+				                           offsetZ + planeSizeZ/2f - spaceZ * keys[i].getPosition().y);
+				Quaternion rot = Quaternion.Euler(0, 0, 0);
+				Instantiate (keyPrefab, pos, rot); 
+			}
+		}
+
+		void drawSmallWalls(Labirynth labirynth)
+		{
 			for (int z=0; z<=sizeZ * 2; z+=2) 
 			{
 				for (int x=0; x<=sizeX * 2; x+=2)
@@ -38,8 +64,10 @@ namespace AssemblyCSharp
 				}
 				
 			}
+		}
 
-			// Horisontal Walls
+		void drawHorisontalWalls(Labirynth labirynth)
+		{
 			float scaleFactorX = 2*spaceX - 1f;
 			for (int z=0; z<=sizeZ * 2; z+=2) 
 			{
@@ -54,10 +82,12 @@ namespace AssemblyCSharp
 						Instantiate (horisontalWallPrefab, pos, Quaternion.Euler(0, 0, 0)); 
 					}
 				}
-
+				
 			}
+		}
 
-			// Vertical Walls
+		void drawVerticalWalls(Labirynth labirynth)
+		{
 			float scaleFactorZ = 2*spaceZ - 1f;
 			for (int z=1; z<=sizeZ * 2 - 1; z+=2) 
 			{
@@ -74,6 +104,6 @@ namespace AssemblyCSharp
 				}
 				
 			}
-		}		
+		}	
 	}
 }
