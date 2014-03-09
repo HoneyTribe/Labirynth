@@ -10,7 +10,7 @@ public class ExitController : MonoBehaviour {
 	{
 		if (timeLeft > 0)
 		{
-			transform.Translate (0, 0.1f, 0);
+			transform.Translate (0, 0.21f, 0);
 			timeLeft -= Time.deltaTime;
 		}
 	}

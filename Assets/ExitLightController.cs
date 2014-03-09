@@ -10,8 +10,8 @@ public class ExitLightController : MonoBehaviour {
 	{
 		if (timeLeft > 0)
 		{
-			light.spotAngle += 0.5f;
-			light.intensity += 0.05f;
+			light.spotAngle += 1.15f;
+			light.intensity += 0.075f;
 			timeLeft -= Time.deltaTime;
 		}
 	}

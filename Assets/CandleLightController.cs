@@ -10,7 +10,7 @@ public class CandleLightController : MonoBehaviour {
 	{
 		if (timeLeft > 0)
 		{
-			light.intensity -= 0.04f;
+			light.intensity -= 0.1f;
 			timeLeft -= Time.deltaTime;
 		}
 	}
