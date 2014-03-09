@@ -3,8 +3,23 @@ using System.Collections;
 
 public class ScoreController : MonoBehaviour {
 
-	public static int numberOfKeys = 4;
+	public static int numberOfKeys = 2;
 	private int score = 0;
+
+	private GameObject leftDoor;
+	private GameObject rightDoor;
+	private GameObject leftExitLight;
+	private GameObject rightExitLight;
+	private GameObject[] candleLights;
+	
+	void Start()
+	{ 
+		leftDoor = GameObject.Find ("LeftDoor");
+		rightDoor = GameObject.Find ("RightDoor");
+		leftExitLight = GameObject.Find ("winLightLeft");
+		rightExitLight = GameObject.Find ("winLightRight");
+		candleLights = GameObject.FindGameObjectsWithTag ("CandleLightTag");
+	}
 
 	void OnGUI()
 	{
@@ -16,15 +31,14 @@ public class ScoreController : MonoBehaviour {
 		score++;
 		if (score == numberOfKeys)
 		{
-			RenderSettings.ambientLight =  new Color(0.2F, 0.2F, 0.2F, 1.0F);
-		}
-	}
-
-	public void foundAllKeys(ReturnValue returnValue)
-	{
-		if (score == numberOfKeys)
-		{
-			returnValue.value = true;
+			leftDoor.gameObject.SendMessage("OpenDoor");
+			rightDoor.gameObject.SendMessage("OpenDoor");
+			leftExitLight.gameObject.SendMessage("TurnLightOn");
+			rightExitLight.gameObject.SendMessage("TurnLightOn");
+			foreach (GameObject light in candleLights)
+			{
+				light.gameObject.SendMessage("TurnLightOn");
+			}
 		}
 	}
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ExitController : MonoBehaviour {
+public class CandleLightController : MonoBehaviour {
 
 	public float interval = 1.0f;
 	private float timeLeft = 0.0f;
@@ -10,12 +10,12 @@ public class ExitController : MonoBehaviour {
 	{
 		if (timeLeft > 0)
 		{
-			transform.Translate (0, 0.1f, 0);
+			light.intensity -= 0.04f;
 			timeLeft -= Time.deltaTime;
 		}
 	}
-
-	void OpenDoor ()
+	
+	void TurnLightOn ()
 	{
 		timeLeft = interval;
 	}
