@@ -49,9 +49,9 @@ namespace AssemblyCSharp
 
 		void drawSmallWalls(Labirynth labirynth)
 		{
-			for (int z=0; z<=sizeZ * 2; z+=2) 
+			for (int z=2; z<=sizeZ * 2; z+=2) // don't draw edges
 			{
-				for (int x=0; x<=sizeX * 2; x+=2)
+				for (int x=2; x<=sizeX * 2 - 2; x+=2)  // don't draw edges
 				{
 					if (!labirynth.getWalls(x, z))
 					{
@@ -69,7 +69,7 @@ namespace AssemblyCSharp
 		void drawHorisontalWalls(Labirynth labirynth)
 		{
 			float scaleFactorX = 2*spaceX - 1f;
-			for (int z=0; z<=sizeZ * 2; z+=2) 
+			for (int z=2; z<=sizeZ * 2; z+=2) // don't draw edges
 			{
 				for (int x=1; x<=sizeX * 2 - 1; x+=2)
 				{
@@ -91,7 +91,7 @@ namespace AssemblyCSharp
 			float scaleFactorZ = 2*spaceZ - 1f;
 			for (int z=1; z<=sizeZ * 2 - 1; z+=2) 
 			{
-				for (int x=0; x<=sizeX * 2; x+=2)
+				for (int x=2; x<=sizeX * 2 -2 ; x+=2)  // don't draw edges
 				{
 					if (!labirynth.getWalls(x, z))		
 					{

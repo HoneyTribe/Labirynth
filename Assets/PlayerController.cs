@@ -16,11 +16,13 @@ public class PlayerController : MonoBehaviour {
 	private bool lighthouseEntered = false;
 
 	private GameObject torch;
+	private GameObject light;
 	private GameObject exit;
 
 	void Start()
 	{
 		torch = GameObject.Find ("LightContainer");
+		light = GameObject.Find ("TopLight");
 		exit = GameObject.Find ("Exit");
 	}
 
@@ -30,7 +32,11 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKey (moveUp))
 		{
 			rigidbody.velocity = new Vector3(0, 0, speed);
-			lighthouseEntered = false;
+			if (lighthouseEntered)
+			{
+				lighthouseEntered = false;
+				light.gameObject.SendMessage("TurnOff");
+			}
 		} 
 		else if (Input.GetKey (moveDown))
 		{
@@ -95,6 +101,7 @@ public class PlayerController : MonoBehaviour {
 		if(collision.collider.name == "Lighthouse")
 		{
 			lighthouseEntered = true;
+			light.gameObject.SendMessage("TurnOn");
 		}
 		if(collision.collider.name == "ExitTrigger")
 		{
