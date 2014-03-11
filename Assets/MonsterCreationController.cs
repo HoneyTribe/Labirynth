@@ -5,7 +5,7 @@ public class MonsterCreationController : MonoBehaviour {
 
 	private GameObject monsterDoorLeft;
 	private GameObject monsterDoorRight;
-	private int delay = 30;
+	private int delay = 10;
 
 	public GameObject monsterPrefab;
 	

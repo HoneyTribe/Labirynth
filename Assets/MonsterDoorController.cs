@@ -40,12 +40,12 @@ public class MonsterDoorController : MonoBehaviour {
 	
 	IEnumerator OpenDoor ()
 	{
-		doorStep = 0.15f;
-		lightStep = 0.1f;
+		doorStep = 0.3f;
+		lightStep = 0.15f;
 		timeLeft = interval;
 		yield return new WaitForSeconds(delay);
-		doorStep = -0.15f;
-		lightStep = -0.1f;
+		doorStep = -0.3f;
+		lightStep = -0.15f;
 		timeLeft = interval;
 	}
 }
