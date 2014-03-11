@@ -11,8 +11,8 @@ namespace AssemblyCSharp
 
 		private static int sizeX = 9;
 		private static int sizeZ = 9;
-		private static int planeSizeX = 40;
-		private static int planeSizeZ = 34;
+		public static int planeSizeX = 40;
+		public static int planeSizeZ = 34;
 		private static int offsetZ = 6;
 
 		private float spaceX = planeSizeX / (sizeX * 2f);

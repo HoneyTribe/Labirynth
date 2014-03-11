@@ -16,13 +16,13 @@ public class PlayerController : MonoBehaviour {
 	private bool lighthouseEntered = false;
 
 	private GameObject torch;
-	private GameObject light;
+	private GameObject topLight;
 	private GameObject exit;
 
 	void Start()
 	{
 		torch = GameObject.Find ("LightContainer");
-		light = GameObject.Find ("TopLight");
+		topLight = GameObject.Find ("TopLight");
 		exit = GameObject.Find ("Exit");
 	}
 
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour {
 			if (lighthouseEntered)
 			{
 				lighthouseEntered = false;
-				light.gameObject.SendMessage("TurnOff");
+				topLight.gameObject.SendMessage("TurnOff");
 			}
 		} 
 		else if (Input.GetKey (moveDown))
@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour {
 		if(collision.collider.name == "Lighthouse")
 		{
 			lighthouseEntered = true;
-			light.gameObject.SendMessage("TurnOn");
+			topLight.gameObject.SendMessage("TurnOn");
 		}
 		if(collision.collider.name == "ExitTrigger")
 		{

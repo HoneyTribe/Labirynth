@@ -56,6 +56,9 @@
      <Compile Include="Assets\MazeGenerator\KeyPosition.cs" />
      <Compile Include="Assets\MazeGenerator\Labirynth.cs" />
      <Compile Include="Assets\MazeGenerator\Move.cs" />
+     <Compile Include="Assets\MonsterController.cs" />
+     <Compile Include="Assets\MonsterCreationController.cs" />
+     <Compile Include="Assets\MonsterDoorController.cs" />
      <Compile Include="Assets\PlayerController.cs" />
      <Compile Include="Assets\ScoreController.cs" />
      <Compile Include="Assets\TopLightController.cs" />
