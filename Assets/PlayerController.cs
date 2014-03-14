@@ -108,5 +108,9 @@ public class PlayerController : MonoBehaviour {
 			Destroy(gameObject);
 			exit.gameObject.SendMessage("PlayerFinished");
 		}
+		if(collision.collider.name == "Monster(Clone)")
+		{
+			exit.gameObject.SendMessage("PlayerLost");
+		}
 	}
 }

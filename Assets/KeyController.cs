@@ -12,7 +12,10 @@ public class KeyController : MonoBehaviour {
 	
 	void OnCollisionEnter (Collision collision)
 	{
-		Destroy(gameObject);
-		gameController.gameObject.SendMessage("Score");
+		if (collision.collider.name != "Monster")
+		{
+			Destroy(gameObject);
+			gameController.gameObject.SendMessage("Score");
+		}
 	}
 }

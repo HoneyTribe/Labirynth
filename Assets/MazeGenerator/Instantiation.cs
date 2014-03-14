@@ -15,13 +15,15 @@ namespace AssemblyCSharp
 		public static int planeSizeZ = 34;
 		private static int offsetZ = 6;
 
-		private float spaceX = planeSizeX / (sizeX * 2f);
-		private float spaceZ = planeSizeZ / (sizeZ * 2f);
+		private static float spaceX = planeSizeX / (sizeX * 2f);
+		private static float spaceZ = planeSizeZ / (sizeZ * 2f);
+
+		private Labirynth labirynth;
 
 		// Use this for initialization
 		void Start () {
 			
-			Labirynth labirynth = new Labirynth (sizeX, sizeZ);
+			labirynth = new Labirynth (sizeX, sizeZ);
 			labirynth.generate ();
 			drawKeys (labirynth.getKeys ());
 			drawSmallWalls (labirynth);
@@ -104,6 +106,62 @@ namespace AssemblyCSharp
 				}
 				
 			}
-		}	
+		}
+
+		public Vector3 giveMeNextPosition(Vector3 currentPosition, Vector3 playerPosition)
+		{
+			Vector2 currentMazePos = transformToMazeCoordinates (currentPosition);
+			Vector2 playerMazePos = transformToMazeCoordinates (playerPosition);
+			if (isInside(currentPosition))
+			{
+				if (!isInside(playerPosition) && currentMazePos.Equals(labirynth.getStart()))
+				{
+					return new Vector3 (currentPosition.x, currentPosition.y, currentPosition.z - spaceZ * 2);
+				}
+
+				LinkedList<Vector2> path = labirynth.findPathBetweenCells(currentMazePos, playerMazePos);
+				return transformToWorldCoordinates(path.First.Value, currentPosition.y);
+			}
+			else
+			{
+				if (isInside(playerPosition))
+				{
+					return transformToWorldCoordinates(labirynth.getStart(), currentPosition.y);
+				}
+				else
+				{
+					Vector3 localMove = new Vector3(playerPosition.x - currentPosition.x, 0, playerPosition.z - currentPosition.z).normalized;
+					return currentPosition + localMove;
+				}
+			}
+		}
+
+		private Vector2 transformToMazeCoordinates(Vector3 localPosition)
+		{
+			int x = (int)((localPosition.x + planeSizeX/2f) / (2f * spaceX));
+			int y = (int)((localPosition.z - offsetZ - planeSizeZ/2f) / (-2f * spaceZ));
+
+			if (isInside(localPosition))
+			{
+				return new Vector2(x*2+1, y*2+1);
+			}
+			else
+			{
+				return labirynth.getStart();
+			}
+		}
+
+		private Vector3 transformToWorldCoordinates(Vector2 mazePosition, float yPos)
+		{
+			float xPos = -planeSizeX / 2f + spaceX * mazePosition.x;
+			float zPos = offsetZ + planeSizeZ/2f - spaceZ * mazePosition.y;
+			return new Vector3 (xPos, yPos, zPos);
+		}
+
+		private bool isInside(Vector3 pos)
+		{
+			return ((pos.x < planeSizeX / 2) && (pos.x > -planeSizeX / 2) &&
+			        (pos.z < offsetZ + planeSizeZ / 2) && (pos.z > offsetZ - planeSizeZ / 2));
+		}
 	}
 }

@@ -84,7 +84,9 @@ namespace AssemblyCSharp
 					for (int i = 0; i < 4; i++)
 					{
 						Move move = convertToMove(i);
-						if  (m[(int) (pos.x + move.getWall().x), (int) (pos.y + move.getWall().y)])
+						if  ((pos.x + move.getNewPos().x > 0) && (pos.x + move.getNewPos().x < sizeX * 2) &&
+						     (pos.y + move.getNewPos().y > 0) && (pos.y + move.getNewPos().y < sizeY * 2) &&
+				    		 (m[(int) (pos.x + move.getWall().x), (int) (pos.y + move.getWall().y)]))
 						{
 							options.Add(move);
 						}
@@ -130,11 +132,13 @@ namespace AssemblyCSharp
 
 				public LinkedList<Vector2> findPathBetweenCells(Vector2 startPos, Vector2 endPos)
 				{
-					bool[,] copy = copyMaze ();					
+					bool[,] copy = copyMaze ();	
+			print (copy);
 					LinkedList<Vector2> path = new LinkedList<Vector2>();
 					LinkedList<Vector2> crossroads = new LinkedList<Vector2>();
 
 					Vector2 curr = startPos;
+					path.AddLast(curr);
 					while (!curr.Equals(endPos)) 
 					{
 						List<Move> options = findOptionsToMove(copy, curr);
@@ -163,6 +167,7 @@ namespace AssemblyCSharp
 						}
 					}
 					
+					path.RemoveFirst ();
 					return path;
 				}
 
@@ -197,6 +202,11 @@ namespace AssemblyCSharp
 				public List<KeyPosition> getKeys()
 				{
 					return keys;
+				}
+
+				public Vector2 getStart()
+				{
+					return start;
 				}
 
 				public void print(bool[,] m)
