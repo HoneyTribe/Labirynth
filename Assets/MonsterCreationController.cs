@@ -8,7 +8,7 @@ public class MonsterCreationController : MonoBehaviour {
 	private int delay = 30;
 
 	public GameObject monsterPrefab;
-	
+
 	void Start()
 	{
 		monsterDoorLeft = GameObject.Find ("monsterDoorLeft");
@@ -39,6 +39,7 @@ public class MonsterCreationController : MonoBehaviour {
 		Vector3 pos = new Vector3 (sign * 23,
 		                           monsterPrefab.transform.position.y,
 		                           monsterPrefab.transform.position.z);
-		Instantiate (monsterPrefab, pos, Quaternion.Euler(0, 0, 0)); 
+		GameObject monster = (GameObject) Instantiate (monsterPrefab, pos, Quaternion.Euler(0, 0, 0)); 
+		monster.tag = "Monster";
 	}
 }

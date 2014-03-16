@@ -136,6 +136,18 @@ namespace AssemblyCSharp
 			}
 		}
 
+		public int getDistance(Vector3 currentPosition, Vector3 playerPosition)
+		{
+			Vector2 currentMazePos = transformToMazeCoordinates (currentPosition);
+			Vector2 playerMazePos = transformToMazeCoordinates (playerPosition);
+			return labirynth.findPathBetweenCells(currentMazePos, playerMazePos).Count;
+		}
+
+		public Vector3 getStart()
+		{
+			return transformToWorldCoordinates(labirynth.getStart(), 0);
+		}
+
 		private Vector2 transformToMazeCoordinates(Vector3 localPosition)
 		{
 			int x = (int)((localPosition.x + planeSizeX/2f) / (2f * spaceX));
@@ -158,7 +170,7 @@ namespace AssemblyCSharp
 			return new Vector3 (xPos, yPos, zPos);
 		}
 
-		private bool isInside(Vector3 pos)
+		public bool isInside(Vector3 pos)
 		{
 			return ((pos.x < planeSizeX / 2) && (pos.x > -planeSizeX / 2) &&
 			        (pos.z < offsetZ + planeSizeZ / 2) && (pos.z > offsetZ - planeSizeZ / 2));

@@ -40,7 +40,14 @@ public class PlayerController : MonoBehaviour {
 		} 
 		else if (Input.GetKey (moveDown))
 		{
-			rigidbody.velocity = new Vector3(0, 0, -speed);
+			if (lighthouseEntered)
+			{
+				topLight.gameObject.SendMessage("AttractMonster");
+			}
+			else
+			{
+				rigidbody.velocity = new Vector3(0, 0, -speed);
+			}
 		}
 		else if (Input.GetKey (moveLeft))
 		{

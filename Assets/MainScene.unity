@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39dbb3da1f726094fba05018a7a16564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterPrefab: {fileID: 100000, guid: 99635faaeba974746be4d4bee1bf6c46, type: 2}
+  monsterPrefab: {fileID: 100002, guid: df62ddf0b65953642807cdfc5c458759, type: 2}
 --- !u!1 &192747895
 GameObject:
   m_ObjectHideFlags: 0
