@@ -5,7 +5,7 @@ public class MonsterCreationController : MonoBehaviour {
 
 	private GameObject monsterDoorLeft;
 	private GameObject monsterDoorRight;
-	private int delay = 30;
+	private int delay = 10;
 
 	public GameObject monsterPrefab;
 
@@ -16,7 +16,8 @@ public class MonsterCreationController : MonoBehaviour {
 		StartCoroutine(WakeUpMonster());
 	}
 
-	IEnumerator WakeUpMonster() {
+	IEnumerator WakeUpMonster() 
+	{
 		while (true) 
 		{
 			yield return new WaitForSeconds(delay);
@@ -24,19 +25,21 @@ public class MonsterCreationController : MonoBehaviour {
 			if (entrance == 0)
 			{
 				monsterDoorLeft.gameObject.SendMessage("OpenDoor");
-				CreateMonster(-1);
+				yield return new WaitForSeconds(3f);
+				CreateMonster(monsterDoorLeft);
 			}
 			else
 			{
 				monsterDoorRight.gameObject.SendMessage("OpenDoor");
-				CreateMonster(1);
+				yield return new WaitForSeconds(3f);
+				CreateMonster(monsterDoorRight);
 			}
 		}
 	}
 
-	void CreateMonster(int sign)
+	void CreateMonster(GameObject door)
 	{
-		Vector3 pos = new Vector3 (sign * 23,
+		Vector3 pos = new Vector3 (door.transform.localPosition.x - 3* door.transform.forward.x,
 		                           monsterPrefab.transform.position.y,
 		                           monsterPrefab.transform.position.z);
 		GameObject monster = (GameObject) Instantiate (monsterPrefab, pos, Quaternion.Euler(0, 0, 0)); 

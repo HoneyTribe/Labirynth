@@ -3,13 +3,15 @@ using System.Collections;
 
 public class MonsterDoorController : MonoBehaviour {
 
-	public float interval = 1.0f;
-	private float timeLeft = 0.0f;
-	private int delay = 5;
-	private float doorStep;
-	private float lightStep;
-	private Vector3 doorInitialPosition;
+	private static float interval = 4.0f;
+	private static int delay = 5;
+	private static float maxY = 10.0f;
+	private static float maxIntensity = 5.0f;
 
+	private float sign;
+	private float timeLeft = 0.0f;
+
+	private Vector3 doorInitialPosition;
 	public GameObject doorLight;
 
 	void Start()
@@ -21,18 +23,19 @@ public class MonsterDoorController : MonoBehaviour {
 	{
 		if (timeLeft > 0)
 		{
+			float doorStep = sign * Time.deltaTime * maxY / interval;
+			float lightStep = sign * Time.deltaTime * maxIntensity / interval;
+
 			transform.Translate (0, doorStep, 0);
 			doorLight.light.intensity += lightStep;
 			timeLeft -= Time.deltaTime;
 		}
 		else
 		{
-			if (doorStep < 0 || lightStep < 0)
+			if (sign < 0)
 			{
 				transform.localPosition = doorInitialPosition;
 				doorLight.light.intensity = 0;
-				doorStep = 0;   // reset
-				lightStep = 0;  // reset
 			}
 		}
 
@@ -40,12 +43,10 @@ public class MonsterDoorController : MonoBehaviour {
 	
 	IEnumerator OpenDoor ()
 	{
-		doorStep = 0.3f;
-		lightStep = 0.15f;
+		sign = 1;
 		timeLeft = interval;
 		yield return new WaitForSeconds(delay);
-		doorStep = -0.3f;
-		lightStep = -0.15f;
+		sign = -1;
 		timeLeft = interval;
 	}
 }
