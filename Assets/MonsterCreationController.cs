@@ -3,8 +3,8 @@ using System.Collections;
 
 public class MonsterCreationController : MonoBehaviour {
 
-	private static int delay = 30;
-	private static int maxMonsters = 4;
+	private static int delay = 20;
+	private static int maxMonsters = 2;
 
 	private GameObject monsterDoorLeft;
 	private GameObject monsterDoorRight;

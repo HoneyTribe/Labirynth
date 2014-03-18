@@ -3,9 +3,9 @@ using System.Collections;
 
 public class MonsterController : MonoBehaviour {
 
-	private float epsilon = 0.1f;
+	private float epsilon = 0.2f;
 
-	private float step = 0.05f;
+	private float step = 0.10f;
 	private bool enter;
 	private AssemblyCSharp.Instantiation maze;
 	
