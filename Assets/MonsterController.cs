@@ -13,12 +13,14 @@ public class MonsterController : MonoBehaviour {
 	private GameObject player2;
 	private GameObject topLight;
 	private LightController lightController;
+	private PlayerController player1Controller;
+	private PlayerController player2Controller;
 
 	private TextMesh textMesh;
 
 	private static float interval = 5f;
 	private float timeLeft;
-
+	private bool attractionTrigger;
 
 	private Vector3 newPosition = Vector3.zero;
 
@@ -31,9 +33,13 @@ public class MonsterController : MonoBehaviour {
 		maze = gameController.GetComponent<AssemblyCSharp.Instantiation>();
 		player1 = GameObject.Find ("Player1");
 		player2 = GameObject.Find ("Player2");
+		player1Controller = player1.GetComponent<PlayerController>();
+		player2Controller = player2.GetComponent<PlayerController>();
+
 		topLight = GameObject.Find ("TopLight");
 		lightController = topLight.transform.parent.GetComponent<LightController>();
 		enter = true;
+		attractionTrigger = false;
 	}
 	
 	void Update () {
@@ -41,8 +47,16 @@ public class MonsterController : MonoBehaviour {
 		textMesh.text = "";
 		if (timeLeft > 0)
 		{
-			textMesh.text = ((int) timeLeft).ToString();
+			if (timeLeft == interval)
+			{
+				attractionTrigger  = true;
+			}
 			timeLeft -= Time.deltaTime;
+			textMesh.text = ((int) (timeLeft + 1)).ToString();
+			if (timeLeft <= 0)
+			{
+				attractionTrigger = true;
+			}
 		}
 
 		if (enter)
@@ -62,7 +76,7 @@ public class MonsterController : MonoBehaviour {
 		}	
 		else
 		{
-			if ((newPosition.Equals(Vector3.zero)) || 
+			if ((attractionTrigger) || (newPosition.Equals(Vector3.zero)) || 
 			    ((Mathf.Abs(transform.localPosition.x - newPosition.x) < epsilon) && 
 			 	 (Mathf.Abs(transform.localPosition.z - newPosition.z) < epsilon)))
 			{
@@ -72,6 +86,7 @@ public class MonsterController : MonoBehaviour {
 			Vector3 movement = new Vector3(newPosition.x - transform.localPosition.x, 0, newPosition.z - transform.localPosition.z);
 			transform.Translate(movement.normalized * step);
 		}
+		attractionTrigger = false;
 	}
 
 	public void setAttracted()
@@ -113,6 +128,16 @@ public class MonsterController : MonoBehaviour {
 			}
 			else
 			{
+				// skip lighthouse guy
+				if (player1Controller.hasEnteredLighthouse())
+				{
+					return player2Pos;
+				}
+
+				if (player2Controller.hasEnteredLighthouse())
+				{
+					return player1Pos;
+				}
 				// shortest distance from moster
 				if (Vector3.Distance(monsterPos, player1Pos) > Vector3.Distance(monsterPos, player2Pos))
 				{

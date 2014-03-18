@@ -103,6 +103,11 @@ public class PlayerController : MonoBehaviour {
 		controller.Move(moveDirection * Time.deltaTime);*/
 	}
 
+	public bool hasEnteredLighthouse()
+	{
+		return lighthouseEntered;
+	}
+
 	void OnCollisionEnter (Collision collision)
 	{
 		if(collision.collider.name == "Lighthouse")

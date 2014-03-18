@@ -3,9 +3,11 @@ using System.Collections;
 
 public class MonsterCreationController : MonoBehaviour {
 
+	private static int delay = 30;
+	private static int maxMonsters = 4;
+
 	private GameObject monsterDoorLeft;
 	private GameObject monsterDoorRight;
-	private int delay = 10;
 
 	public GameObject monsterPrefab;
 
@@ -18,7 +20,7 @@ public class MonsterCreationController : MonoBehaviour {
 
 	IEnumerator WakeUpMonster() 
 	{
-		while (true) 
+		for (int i=0; i < maxMonsters; i++) 
 		{
 			yield return new WaitForSeconds(delay);
 			int entrance = Random.Range(0, 2);
@@ -39,7 +41,7 @@ public class MonsterCreationController : MonoBehaviour {
 
 	void CreateMonster(GameObject door)
 	{
-		Vector3 pos = new Vector3 (door.transform.localPosition.x - 3* door.transform.forward.x,
+		Vector3 pos = new Vector3 (door.transform.localPosition.x - 3 * door.transform.forward.x,
 		                           monsterPrefab.transform.position.y,
 		                           monsterPrefab.transform.position.z);
 		GameObject monster = (GameObject) Instantiate (monsterPrefab, pos, Quaternion.Euler(0, 0, 0)); 
