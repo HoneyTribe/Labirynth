@@ -21,6 +21,7 @@ public class MonsterController : MonoBehaviour {
 	private static float interval = 5f;
 	private float timeLeft;
 	private bool attractionTrigger;
+	private bool gameFinished; 
 
 	private Vector3 newPosition = Vector3.zero;
 
@@ -43,6 +44,11 @@ public class MonsterController : MonoBehaviour {
 	}
 	
 	void Update () {
+
+		if (gameFinished)
+		{
+			return;
+		}
 
 		textMesh.text = "";
 		if (timeLeft > 0)
@@ -165,5 +171,10 @@ public class MonsterController : MonoBehaviour {
 				return player2Pos;
 			}
 		}
+	}
+
+	public void GameFinished()
+	{
+		gameFinished = true;
 	}
 }

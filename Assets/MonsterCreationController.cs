@@ -4,23 +4,25 @@ using System.Collections;
 public class MonsterCreationController : MonoBehaviour {
 
 	private static int delay = 20;
-	private static int maxMonsters = 2;
 
 	private GameObject monsterDoorLeft;
 	private GameObject monsterDoorRight;
 
 	public GameObject monsterPrefab;
 
+	private LevelFinishedController levelFinishedController;
+
 	void Start()
 	{
 		monsterDoorLeft = GameObject.Find ("monsterDoorLeft");
 		monsterDoorRight = GameObject.Find ("monsterDoorRight");
+		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
 		StartCoroutine(WakeUpMonster());
 	}
 
 	IEnumerator WakeUpMonster() 
 	{
-		for (int i=0; i < maxMonsters; i++) 
+		for (int i=0; i < levelFinishedController.getNumberOfMonsters(); i++) 
 		{
 			yield return new WaitForSeconds(delay);
 			int entrance = Random.Range(0, 2);

@@ -19,10 +19,12 @@ namespace AssemblyCSharp
 		private static float spaceZ = planeSizeZ / (sizeZ * 2f);
 
 		private Labirynth labirynth;
+		private LevelFinishedController levelFinishedController;
 
 		// Use this for initialization
 		void Start () {
-			
+
+			levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController> ();
 			labirynth = new Labirynth (sizeX, sizeZ);
 			labirynth.generate ();
 			drawKeys (labirynth.getKeys ());
@@ -39,7 +41,7 @@ namespace AssemblyCSharp
 					return obj2.getDistance().CompareTo(obj1.getDistance());
 				}
 			);
-			for (int i=0; i<ScoreController.numberOfKeys; i++) 
+			for (int i=0; i<levelFinishedController.getNumberOfKeys(); i++) 
 			{
 				Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * keys[i].getPosition().x,
 				                           keyPrefab.transform.position.y,

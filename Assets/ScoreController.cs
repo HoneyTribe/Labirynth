@@ -3,14 +3,14 @@ using System.Collections;
 
 public class ScoreController : MonoBehaviour {
 
-	public static int numberOfKeys = 2;
-	private int score = 0;
+	private int score;
 
 	private GameObject leftDoor;
 	private GameObject rightDoor;
 	private GameObject leftExitLight;
 	private GameObject rightExitLight;
 	private GameObject[] candleLights;
+	private LevelFinishedController levelFinishedController;
 	
 	void Start()
 	{ 
@@ -19,17 +19,19 @@ public class ScoreController : MonoBehaviour {
 		leftExitLight = GameObject.Find ("winLightLeft");
 		rightExitLight = GameObject.Find ("winLightRight");
 		candleLights = GameObject.FindGameObjectsWithTag ("CandleLightTag");
+		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
+		score = levelFinishedController.getNumberOfKeys ();
 	}
 
 	void OnGUI()
 	{
-		GUI.Label (new Rect (Screen.width / 2 - 200, 20, 300, 100), "Keys: " + score); 
+		GUI.Label (new Rect (Screen.width / 2 - 200, 40, 300, 100), "Keys to collect: " + score); 
 	}
 
 	public void Score()
 	{
-		score++;
-		if (score == numberOfKeys)
+		score--;
+		if (score == 0)
 		{
 			leftDoor.gameObject.SendMessage("OpenDoor");
 			rightDoor.gameObject.SendMessage("OpenDoor");

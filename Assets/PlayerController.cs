@@ -16,13 +16,13 @@ public class PlayerController : MonoBehaviour {
 
 	private GameObject torch;
 	private GameObject topLight;
-	private GameObject exit;
+	private GameObject levelController;
 
 	void Start()
 	{
 		torch = GameObject.Find ("LightContainer");
 		topLight = GameObject.Find ("TopLight");
-		exit = GameObject.Find ("Exit");
+		levelController = GameObject.Find ("LevelController");
 	}
 
 	// Update is called once per frame
@@ -118,11 +118,12 @@ public class PlayerController : MonoBehaviour {
 		{
 			//Destroy(gameObject);
 			gameObject.transform.Translate(gameObject.transform.localPosition.x * 10, 0, 0);
-			exit.gameObject.SendMessage("PlayerFinished");
+			levelController.gameObject.SendMessage("PlayerFinished");
 		}
 		if(collision.collider.name == "Monster(Clone)")
 		{
-			exit.gameObject.SendMessage("PlayerLost");
+			collision.gameObject.SendMessage("GameFinished");
+			levelController.gameObject.SendMessage("PlayerLost");
 		}
 	}
 }
