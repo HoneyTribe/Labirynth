@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
 	private CharacterController controller;
 
 	private bool lighthouseEntered = false;
+	private bool readyToAttract = false;
 
 	private GameObject torch;
 	private GameObject topLight;
@@ -34,12 +35,13 @@ public class PlayerController : MonoBehaviour {
 			if (lighthouseEntered)
 			{
 				lighthouseEntered = false;
+				readyToAttract = false;
 				topLight.gameObject.SendMessage("TurnOff");
 			}
 		} 
 		else if (Input.GetKey (moveDown))
-		{
-			if (lighthouseEntered)
+		{	
+			if (readyToAttract)
 			{
 				topLight.gameObject.SendMessage("AttractMonster");
 			}
@@ -47,6 +49,10 @@ public class PlayerController : MonoBehaviour {
 			{
 				rigidbody.velocity = new Vector3(0, 0, -speed);
 			}
+		}
+		else if (Input.GetKeyUp (moveDown) && (lighthouseEntered))
+		{
+			readyToAttract = true;
 		}
 		else if (Input.GetKey (moveLeft))
 		{
