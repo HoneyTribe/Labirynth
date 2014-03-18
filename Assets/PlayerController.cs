@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour {
 	public float speed = 10;	
 
 	private CharacterController controller;
-	private Vector3 moveDirection = Vector3.zero;
 
 	private bool lighthouseEntered = false;
 
@@ -117,7 +116,8 @@ public class PlayerController : MonoBehaviour {
 		}
 		if(collision.collider.name == "ExitTrigger")
 		{
-			Destroy(gameObject);
+			//Destroy(gameObject);
+			gameObject.transform.Translate(gameObject.transform.localPosition.x * 10, 0, 0);
 			exit.gameObject.SendMessage("PlayerFinished");
 		}
 		if(collision.collider.name == "Monster(Clone)")

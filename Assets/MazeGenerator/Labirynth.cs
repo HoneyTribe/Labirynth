@@ -133,7 +133,7 @@ namespace AssemblyCSharp
 				public LinkedList<Vector2> findPathBetweenCells(Vector2 startPos, Vector2 endPos)
 				{
 					bool[,] copy = copyMaze ();	
-			print (copy);
+
 					LinkedList<Vector2> path = new LinkedList<Vector2>();
 					LinkedList<Vector2> crossroads = new LinkedList<Vector2>();
 
@@ -144,7 +144,6 @@ namespace AssemblyCSharp
 						List<Move> options = findOptionsToMove(copy, curr);
 						if (options.Count == 0)
 						{
-							print (copy);
 							curr = crossroads.Last.Value;
 							crossroads.RemoveLast();
 							while (!path.Last.Value.Equals(curr))
