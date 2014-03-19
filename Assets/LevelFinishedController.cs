@@ -8,7 +8,7 @@ public class LevelFinishedController : MonoBehaviour {
 	private int level = 0;
 	private AssemblyCSharp.LevelDefinition levelDefinition;
 
-	private int numberOfPlayers = 0;
+	private int numberOfPlayers;
 	private bool finished;
 	private bool gameOver;
 	private bool congratulation;
@@ -36,17 +36,21 @@ public class LevelFinishedController : MonoBehaviour {
 		{
 			GameFinished();
 		}
-		finished = false;
-		gameOver = false;
-		congratulation = false;
+		Reset ();
 	}
 
 	private void StartAgain()
 	{
 		level = 0;
+		Reset ();
+	}
+
+	private void Reset()
+	{
 		finished = false;
 		gameOver = false;
 		congratulation = false;
+		numberOfPlayers = 0;
 	}
 	
 	void OnGUI()
