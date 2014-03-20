@@ -18,13 +18,13 @@ public class TopLightController : MonoBehaviour {
 	
 	void TurnOn ()
 	{
-		step = 0.023f;
+		step = 0.028f;
 		timeLeft = interval;
 	}
 
 	void TurnOff ()
 	{
-		step = -0.023f;
+		step = -0.100f;
 		timeLeft = interval;
 	}
 
