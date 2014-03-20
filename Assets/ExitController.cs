@@ -3,6 +3,8 @@ using System.Collections;
 
 public class ExitController : MonoBehaviour {
 
+	private static float maxY = 15.0f;
+
 	public float interval = 2.0f;
 	private float timeLeft = 0.0f;
 	
@@ -10,7 +12,8 @@ public class ExitController : MonoBehaviour {
 	{
 		if (timeLeft > 0)
 		{
-			transform.Translate (0, 0.31f, 0);
+			float doorStep = Time.deltaTime * maxY / interval;
+			transform.Translate (0, doorStep, 0);
 			timeLeft -= Time.deltaTime;
 		}
 	}

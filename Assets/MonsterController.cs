@@ -16,12 +16,13 @@ public class MonsterController : MonoBehaviour {
 	private PlayerController player1Controller;
 	private PlayerController player2Controller;
 
+	private LevelFinishedController levelFinishedController;
+
 	private TextMesh textMesh;
 
 	private static float interval = 5f;
 	private float timeLeft;
 	private bool attractionTrigger;
-	private bool gameFinished; 
 
 	private Vector3 newPosition = Vector3.zero;
 
@@ -37,6 +38,8 @@ public class MonsterController : MonoBehaviour {
 		player1Controller = player1.GetComponent<PlayerController>();
 		player2Controller = player2.GetComponent<PlayerController>();
 
+		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
+
 		topLight = GameObject.Find ("TopLight");
 		lightController = topLight.transform.parent.GetComponent<LightController>();
 		enter = true;
@@ -45,7 +48,7 @@ public class MonsterController : MonoBehaviour {
 	
 	void Update () {
 
-		if (gameFinished)
+		if (levelFinishedController.isStopped())
 		{
 			return;
 		}
@@ -171,10 +174,5 @@ public class MonsterController : MonoBehaviour {
 				return player2Pos;
 			}
 		}
-	}
-
-	public void GameFinished()
-	{
-		gameFinished = true;
 	}
 }

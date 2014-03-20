@@ -3,29 +3,42 @@ using System.Collections;
 
 public class TopLightController : MonoBehaviour {
 
-	public float interval = 1.0f;
+	private static float maxIntensity = 1.0f;
+
+	public float openningInterval = 1.0f;
+	public float closingInterval = 0.5f;
 	private float timeLeft = 0.0f;
-	private float step;
-	
+
+	private float param;
+
 	void Update()
 	{
 		if (timeLeft > 0)
 		{
-			light.intensity += step;
+			float lightStep = param * Time.deltaTime;
+
+			light.intensity += lightStep;
 			timeLeft -= Time.deltaTime;
+		}
+		else
+		{
+			if (param < 0)
+			{
+				light.intensity = 0;
+			}
 		}
 	}
 	
 	void TurnOn ()
 	{
-		step = 0.028f;
-		timeLeft = interval;
+		param = maxIntensity / openningInterval;
+		timeLeft = openningInterval;
 	}
 
 	void TurnOff ()
 	{
-		step = -0.100f;
-		timeLeft = interval;
+		param = - maxIntensity / closingInterval;
+		timeLeft = closingInterval;
 	}
 
 	void AttractMonster()

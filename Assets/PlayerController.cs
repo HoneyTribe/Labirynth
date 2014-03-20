@@ -10,8 +10,6 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed = 10;	
 
-	private CharacterController controller;
-
 	private bool lighthouseEntered = false;
 	private bool readyToAttract = false;
 
@@ -128,7 +126,6 @@ public class PlayerController : MonoBehaviour {
 		}
 		if(collision.collider.name == "Monster(Clone)")
 		{
-			collision.gameObject.SendMessage("GameFinished");
 			levelController.gameObject.SendMessage("PlayerLost");
 		}
 	}

@@ -12,6 +12,7 @@ public class LevelFinishedController : MonoBehaviour {
 	private bool finished;
 	private bool gameOver;
 	private bool congratulation;
+	private bool stopped;
 
 	void Awake() {
 		if (!created) {
@@ -50,6 +51,7 @@ public class LevelFinishedController : MonoBehaviour {
 		finished = false;
 		gameOver = false;
 		congratulation = false;
+		stopped = false;
 		numberOfPlayers = 0;
 	}
 	
@@ -77,6 +79,7 @@ public class LevelFinishedController : MonoBehaviour {
 		if (numberOfPlayers == 2) 
 		{
 			finished = true; 
+			stopped = true;
 			yield return new WaitForSeconds(1);
 			LoadNewLevel();
 			Application.LoadLevel (0); 
@@ -86,6 +89,7 @@ public class LevelFinishedController : MonoBehaviour {
 	IEnumerator PlayerLost () 
 	{
 		gameOver = true; 
+		stopped = true;
 		yield return new WaitForSeconds(1);
 		StartAgain();
 		Application.LoadLevel (0); 
@@ -94,6 +98,7 @@ public class LevelFinishedController : MonoBehaviour {
 	IEnumerator GameFinished () 
 	{
 		congratulation = true; 
+		stopped = true;
 		yield return new WaitForSeconds(1);
 		StartAgain();
 		Application.LoadLevel (0); 
@@ -107,5 +112,10 @@ public class LevelFinishedController : MonoBehaviour {
 	public int getNumberOfMonsters()
 	{
 		return levelDefinition.getLevels()[level].getNumberOfMonsters ();
+	}
+
+	public bool isStopped()
+	{
+		return stopped;
 	}
 }

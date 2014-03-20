@@ -3,6 +3,9 @@ using System.Collections;
 
 public class ExitLightController : MonoBehaviour {
 
+	private static float maxInstensity = 3.0f;
+	private static float maxSpot = 28.0f;
+
 	public float interval = 1.0f;
 	private float timeLeft = 0.0f;
 	
@@ -10,8 +13,10 @@ public class ExitLightController : MonoBehaviour {
 	{
 		if (timeLeft > 0)
 		{
-			light.spotAngle += 1.15f;
-			light.intensity += 0.075f;
+			float intensityStep = Time.deltaTime * maxInstensity / interval;
+			float spotStep = Time.deltaTime * maxSpot / interval;
+			light.spotAngle += spotStep;
+			light.intensity += intensityStep;
 			timeLeft -= Time.deltaTime;
 		}
 	}
