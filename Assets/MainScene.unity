@@ -929,7 +929,7 @@ GameObject:
   - 4: {fileID: 480611347}
   - 33: {fileID: 480611350}
   - 23: {fileID: 480611348}
-  - 136: {fileID: 480611349}
+  - 64: {fileID: 480611349}
   m_Layer: 0
   m_Name: wallRight
   m_TagString: Untagged
@@ -969,8 +969,8 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
---- !u!136 &480611349
-CapsuleCollider:
+--- !u!64 &480611349
+MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -978,10 +978,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.96823621
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 1.01327896e-06, y: 0, z: -5.66244125e-07}
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &480611350
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1388,7 +1388,7 @@ GameObject:
   - 4: {fileID: 684556377}
   - 33: {fileID: 684556376}
   - 23: {fileID: 684556374}
-  - 136: {fileID: 684556375}
+  - 64: {fileID: 684556375}
   m_Layer: 0
   m_Name: wallLeft
   m_TagString: Untagged
@@ -1417,8 +1417,8 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
---- !u!136 &684556375
-CapsuleCollider:
+--- !u!64 &684556375
+MeshCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -1426,10 +1426,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.96823621
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: -8.94069672e-07, y: 0, z: -5.66244125e-07}
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &684556376
 MeshFilter:
   m_ObjectHideFlags: 0
