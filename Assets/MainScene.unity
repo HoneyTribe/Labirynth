@@ -847,10 +847,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4e0c56a920bea42a79e13922e95ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveUp: 119
-  moveDown: 115
-  moveLeft: 97
-  moveRight: 100
+  moveUp: 273
+  moveDown: 274
+  moveLeft: 276
+  moveRight: 275
   speed: 10
 --- !u!23 &468870938
 Renderer:
@@ -1047,10 +1047,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4e0c56a920bea42a79e13922e95ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveUp: 273
-  moveDown: 274
-  moveLeft: 276
-  moveRight: 275
+  moveUp: 119
+  moveDown: 115
+  moveLeft: 97
+  moveRight: 100
   speed: 10
 --- !u!23 &504520875
 Renderer:
