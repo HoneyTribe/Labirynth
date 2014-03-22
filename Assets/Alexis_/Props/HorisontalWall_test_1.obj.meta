@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 1e6175f94afac9a4cbdbcd154be2980a
+guid: e954d5040ed85b54f9adf24abda2133f
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
-    100000: Cylinder001
+    100000: Horisontalwall
     100002: //RootNode
-    400000: Cylinder001
+    400000: Horisontalwall
     400002: //RootNode
-    2300000: Cylinder001
-    3300000: Cylinder001
-    4300000: Cylinder001
+    2300000: Horisontalwall
+    3300000: Horisontalwall
+    4300000: Horisontalwall
     9500000: //RootNode
   materials:
     importMaterials: 1

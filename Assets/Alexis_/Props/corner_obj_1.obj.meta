@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 1e6175f94afac9a4cbdbcd154be2980a
+guid: 5e674df55f87d1440b9712032ed120e7
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
-    100000: Cylinder001
-    100002: //RootNode
-    400000: Cylinder001
-    400002: //RootNode
+    100000: //RootNode
+    100002: Cylinder001
+    400000: //RootNode
+    400002: Cylinder001
     2300000: Cylinder001
     3300000: Cylinder001
     4300000: Cylinder001
