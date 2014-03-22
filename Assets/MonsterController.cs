@@ -12,6 +12,7 @@ public class MonsterController : MonoBehaviour {
 	private GameObject player1;
 	private GameObject player2;
 	private GameObject topLight;
+	private GameObject device;
 	private LightController lightController;
 	private PlayerController player1Controller;
 	private PlayerController player2Controller;
@@ -35,6 +36,7 @@ public class MonsterController : MonoBehaviour {
 		maze = gameController.GetComponent<AssemblyCSharp.Instantiation>();
 		player1 = GameObject.Find ("Player1");
 		player2 = GameObject.Find ("Player2");
+		device = GameObject.Find ("Device");
 		player1Controller = player1.GetComponent<PlayerController>();
 		player2Controller = player2.GetComponent<PlayerController>();
 
@@ -165,7 +167,21 @@ public class MonsterController : MonoBehaviour {
 			// 0   1    0    p1
 			// 1   0    1    p1
 			// 1   1    0    p2
-			if ((timeLeft > 0) ^ maze.isInside(player1Pos))
+			//if ((timeLeft > 0) ^ maze.isInside(player1Pos))
+			//{
+			//	return player1Pos;
+			//}
+			//else
+			//{
+			//	return player2Pos;
+			//}
+
+			if (timeLeft > 0)
+			{
+				return device.transform.localPosition;
+			}
+
+			if (maze.isInside(player1Pos))
 			{
 				return player1Pos;
 			}

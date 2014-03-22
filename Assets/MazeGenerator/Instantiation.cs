@@ -122,7 +122,16 @@ namespace AssemblyCSharp
 				}
 
 				LinkedList<Vector2> path = labirynth.findPathBetweenCells(currentMazePos, playerMazePos);
-				return transformToWorldCoordinates(path.First.Value, currentPosition.y);
+
+				// stop the monster when reaches the device
+				if (path.Count == 0)
+				{
+					return currentPosition;
+				}
+				else
+				{
+					return transformToWorldCoordinates(path.First.Value, currentPosition.y);
+				}
 			}
 			else
 			{
