@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
 	private bool lighthouseEntered = false;
 	private bool readyToAttract = false;
 
-	private static float intervalToAction = 0.5f;
+	private static float intervalToAction = 0.3f;
 	private float interval = 0f;
 
 	private GameObject torch;
