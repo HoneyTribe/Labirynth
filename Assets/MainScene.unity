@@ -919,7 +919,7 @@ MonoBehaviour:
   moveDown: 274
   moveLeft: 276
   moveRight: 275
-  action: 32
+  action: 303
   speed: 10
 --- !u!23 &468870938
 Renderer:
