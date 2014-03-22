@@ -7,25 +7,40 @@ public class PlayerController : MonoBehaviour {
 	public KeyCode moveDown;
 	public KeyCode moveLeft;
 	public KeyCode moveRight;
+	public KeyCode action;
 
 	public float speed = 10;	
 
 	private bool lighthouseEntered = false;
 	private bool readyToAttract = false;
 
+	private static float intervalToAction = 0.5f;
+	private float interval = 0f;
+
 	private GameObject torch;
 	private GameObject topLight;
 	private GameObject levelController;
+	private GameObject device;
 
 	void Start()
 	{
 		torch = GameObject.Find ("LightContainer");
 		topLight = GameObject.Find ("TopLight");
 		levelController = GameObject.Find ("LevelController");
+		device = GameObject.Find ("Device");
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+		if (interval > 0)
+		{
+			interval -= Time.deltaTime;
+			if (interval < 0)
+			{
+				device.gameObject.SendMessage("Move", transform.localPosition);
+			}
+		}
 
 		if (Input.GetKey (moveUp))
 		{
@@ -73,6 +88,14 @@ public class PlayerController : MonoBehaviour {
 			{
 				rigidbody.velocity = new Vector3(speed, 0, 0);
 			}
+		}
+		else if ((!lighthouseEntered) && (Input.GetKeyDown (action)) && (interval == 0.0f))
+		{
+			interval = intervalToAction;
+		}
+		else if (Input.GetKeyUp (action))
+		{
+			interval = 0.0f;
 		}
 		else 
 		{
