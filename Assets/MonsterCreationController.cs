@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MonsterCreationController : MonoBehaviour {
 
-	private static int delay = 20;
+	private static int delay = 15;
 
 	private GameObject monsterDoorLeft;
 	private GameObject monsterDoorRight;
