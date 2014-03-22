@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TopLightController : MonoBehaviour {
 
-	private static float maxIntensity = 1.0f;
+	private static float maxIntensity = 0.8f;
 
 	public float openningInterval = 1.0f;
 	public float closingInterval = 0.5f;
