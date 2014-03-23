@@ -62,8 +62,8 @@ namespace AssemblyCSharp
 						Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 						                           smallWallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
-						Quaternion rot = Quaternion.Euler(0, 0, 0);
-						Instantiate (smallWallPrefab, pos, rot); 
+						int angle =  Random.Range(0, 4) * 90;
+						Instantiate (smallWallPrefab, pos, Quaternion.Euler(0, angle, 0)); 
 					}
 				}
 				
@@ -85,7 +85,8 @@ namespace AssemblyCSharp
 						Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 						                           horisontalWallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
-						Instantiate (horisontalWallPrefab, pos, Quaternion.Euler(0, 90, 0)); 
+						int angle =  Random.Range(0, 2) * 180;
+						Instantiate (horisontalWallPrefab, pos, Quaternion.Euler(0, 90 + angle, 0)); 
 					}
 				}
 				
@@ -106,7 +107,8 @@ namespace AssemblyCSharp
 						Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 						                           verticalWallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
-						Instantiate (verticalWallPrefab, pos, Quaternion.Euler(0, 0, 0)); 
+						int angle =  Random.Range(0, 2) * 180;
+						Instantiate (verticalWallPrefab, pos, Quaternion.Euler(0, 0 + angle, 0)); 
 					}
 				}
 				
