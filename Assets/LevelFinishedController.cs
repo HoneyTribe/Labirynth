@@ -6,7 +6,10 @@ public class LevelFinishedController : MonoBehaviour {
 	private static bool created = false;
 
 	private int level = 0;
+	private int maxLevel = 0;
 	private AssemblyCSharp.LevelDefinition levelDefinition;
+
+	public GameObject menuPrefab;
 
 	private int numberOfPlayers;
 	private bool finished;
@@ -33,16 +36,14 @@ public class LevelFinishedController : MonoBehaviour {
 	private void LoadNewLevel()
 	{
 		level++;
+		if (level > maxLevel)
+		{
+			maxLevel = level;
+		}
 		if (level == levelDefinition.getLevels().Count)
 		{
 			GameFinished();
 		}
-		Reset ();
-	}
-
-	private void StartAgain()
-	{
-		level = 0;
 		Reset ();
 	}
 
@@ -91,8 +92,7 @@ public class LevelFinishedController : MonoBehaviour {
 		gameOver = true; 
 		stopped = true;
 		yield return new WaitForSeconds(1);
-		StartAgain();
-		Application.LoadLevel (0); 
+		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 
 	IEnumerator GameFinished () 
@@ -100,8 +100,7 @@ public class LevelFinishedController : MonoBehaviour {
 		congratulation = true; 
 		stopped = true;
 		yield return new WaitForSeconds(1);
-		StartAgain();
-		Application.LoadLevel (0); 
+		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 	
 	public int getNumberOfKeys()
@@ -117,5 +116,16 @@ public class LevelFinishedController : MonoBehaviour {
 	public bool isStopped()
 	{
 		return stopped;
+	}
+
+	public int getMaxLevel()
+	{
+		return maxLevel;
+	}
+
+	public void setLevel(int newLevel)
+	{
+		level = newLevel;
+		Reset ();
 	}
 }

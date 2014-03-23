@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour {
 	private GameObject topLight;
 	private GameObject levelController;
 	private GameObject device;
+	private LevelFinishedController levelFinishedController;
 
 	void Start()
 	{
@@ -25,10 +26,16 @@ public class PlayerController : MonoBehaviour {
 		topLight = GameObject.Find ("TopLight");
 		levelController = GameObject.Find ("LevelController");
 		device = GameObject.Find ("Device");
+		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+		if (levelFinishedController.isStopped())
+		{
+			return;
+		}
 
 		if (Input.GetKey (moveUp))
 		{
