@@ -80,6 +80,8 @@ namespace AssemblyCSharp
 					if (!labirynth.getWalls(x, z))
 					{
 						//horisontalWallPrefab.transform.localScale = new Vector3(scaleFactorX, 2, 1);
+						// other way round because we are rotating
+						((BoxCollider) horisontalWallPrefab.collider).size = new Vector3(1, 2, scaleFactorX);
 						Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 						                           horisontalWallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
@@ -100,6 +102,7 @@ namespace AssemblyCSharp
 					if (!labirynth.getWalls(x, z))		
 					{
 						//verticalWallPrefab.transform.localScale = new Vector3(1, 2, scaleFactorZ);
+						((BoxCollider) verticalWallPrefab.collider).size = new Vector3(1, 2, scaleFactorZ);
 						Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 						                           verticalWallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
