@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 647f73107ec77fc45ba5d5b7ca091c71
+guid: 796f9ad35032c404d8311589164268ef
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: VerticalWall_1_2_2_7
-    400000: //RootNode
-    400002: VerticalWall_1_2_2_7
-    2300000: VerticalWall_1_2_2_7
-    3300000: VerticalWall_1_2_2_7
-    4300000: VerticalWall_1_2_2_7
+    100000: Egypt_VerticalWall
+    100002: //RootNode
+    400000: Egypt_VerticalWall
+    400002: //RootNode
+    2300000: Egypt_VerticalWall
+    3300000: Egypt_VerticalWall
+    4300000: Egypt_VerticalWall
     9500000: //RootNode
   materials:
     importMaterials: 1
