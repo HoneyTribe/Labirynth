@@ -49,16 +49,13 @@ public class PlayerController : MonoBehaviour {
 		} 
 		else if (Input.GetKey (moveDown))
 		{	
-			if (readyToAttract)
-			{
-				topLight.gameObject.SendMessage("AttractMonster");
-			}
-			else
-			{
-				rigidbody.velocity = new Vector3(0, 0, -speed);
-			}
+			rigidbody.velocity = new Vector3(0, 0, -speed);
 		}
-		else if (Input.GetKeyUp (moveDown) && (lighthouseEntered))
+		else if (Input.GetKeyUp (moveDown) && (readyToAttract)) // attract only once per key pressed
+		{
+			topLight.gameObject.SendMessage("AttractMonster");
+		}
+		else if (Input.GetKeyUp (moveDown) && (lighthouseEntered)) // don't attract after entering lighthouse
 		{
 			readyToAttract = true;
 		}

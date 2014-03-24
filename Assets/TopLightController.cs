@@ -5,14 +5,68 @@ public class TopLightController : MonoBehaviour {
 
 	private static float maxIntensity = 0.8f;
 
+	private static int progressBarSize = 100;
+	private static float attractionCost = 0.3f;
+	private static float restoreVelocity = 0.02f; // It needs 1/restoreVelocity seconds to regenerate (50 seconds).
+
 	public float openningInterval = 1.0f;
 	public float closingInterval = 0.5f;
 	private float timeLeft = 0.0f;
 
 	private float param;
+	private GUIStyle borderStyle;
+	private GUIStyle outerStyle;
+	private GUIStyle energyStyle;
+	private GUIStyle lowEnergyStyle;
+	private float energy = 1.0f;
+
+	void Start()
+	{
+		borderStyle = new GUIStyle ();
+		Texture2D borderTexture = new Texture2D (1, 1);
+		borderTexture.SetPixel (0, 0, Color.white);
+		borderTexture.Apply ();
+		borderStyle.normal.background = borderTexture;
+
+		outerStyle = new GUIStyle ();
+		Texture2D outerTexture = new Texture2D (1, 1);
+		outerTexture.SetPixel (0, 0, Color.black);
+		outerTexture.Apply ();
+		outerStyle.normal.background = outerTexture;
+
+		energyStyle = new GUIStyle ();
+		Texture2D energyTexture = new Texture2D (1, 1);
+		energyTexture.SetPixel (0, 0, Color.blue);
+		energyTexture.Apply ();
+		energyStyle.normal.background = energyTexture;
+
+		lowEnergyStyle = new GUIStyle ();
+		Texture2D lowEnergyTexture = new Texture2D (1, 1);
+		lowEnergyTexture.SetPixel (0, 0, Color.red);
+		lowEnergyTexture.Apply ();
+		lowEnergyStyle.normal.background = lowEnergyTexture;
+	}
+
+	void OnGUI()
+	{
+		GUI.BeginGroup(new Rect (Screen.width / 2 - progressBarSize / 2, Screen.height / 2 + 150, progressBarSize, 10));
+			GUI.Box (new Rect (0, 0, progressBarSize, 10), "", borderStyle);
+			GUI.Box (new Rect (1, 1, progressBarSize - 2, 8), "", outerStyle);
+			if (energy >= attractionCost)
+			{
+				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", energyStyle);
+			}
+			else
+			{
+				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", lowEnergyStyle);
+			}
+		GUI.EndGroup();
+	}
 
 	void Update()
 	{
+		changeEnergy (Time.deltaTime * restoreVelocity);
+
 		if (timeLeft > 0)
 		{
 			float lightStep = param * Time.deltaTime;
@@ -41,17 +95,39 @@ public class TopLightController : MonoBehaviour {
 		timeLeft = closingInterval;
 	}
 
+	private void changeEnergy(float value)
+	{
+		energy += value;
+		if (energy > 1.0f)
+		{
+			energy = 1.0f;
+		}
+		if (energy < 0.0f)
+		{
+			energy = 0.0f;
+		}
+	}
+
 	void AttractMonster()
 	{
-		GameObject[] monsters = GameObject.FindGameObjectsWithTag ("Monster");
-		foreach (GameObject monster in monsters)
+		if (energy>=attractionCost)
 		{
-			if (isIlluminated(monster))
+			bool monsterAttracted = false;
+			GameObject[] monsters = GameObject.FindGameObjectsWithTag ("Monster");
+			foreach (GameObject monster in monsters)
 			{
-				monster.GetComponent<MonsterController>().setAttracted();
+				if (isIlluminated(monster))
+				{
+					monster.GetComponent<MonsterController>().setAttracted();
+					monsterAttracted = true;
+				}
+			}
+
+			if (monsterAttracted)
+			{
+				changeEnergy(-attractionCost);
 			}
 		}
-		
 	}
 	
 	private bool isIlluminated(GameObject monster)
