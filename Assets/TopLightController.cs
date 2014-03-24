@@ -7,7 +7,7 @@ public class TopLightController : MonoBehaviour {
 
 	private static int progressBarSize = 100;
 	private static float attractionCost = 0.3f;
-	private static float restoreVelocity = 0.02f; // It needs 1/restoreVelocity seconds to regenerate (50 seconds).
+	private static float restoreVelocity = 0.025f; // It needs 1/restoreVelocity seconds to regenerate (40 seconds).
 
 	public float openningInterval = 1.0f;
 	public float closingInterval = 0.5f;
@@ -49,7 +49,7 @@ public class TopLightController : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUI.BeginGroup(new Rect (Screen.width / 2 - progressBarSize / 2, Screen.height / 2 + 150, progressBarSize, 10));
+		GUI.BeginGroup(new Rect (Screen.width / 2 - progressBarSize / 2, Screen.height / 2 + 250, progressBarSize, 10));
 			GUI.Box (new Rect (0, 0, progressBarSize, 10), "", borderStyle);
 			GUI.Box (new Rect (1, 1, progressBarSize - 2, 8), "", outerStyle);
 			if (energy >= attractionCost)
