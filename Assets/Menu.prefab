@@ -39,6 +39,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skin: {fileID: 11400000, guid: dde63bf31dd6b9047a2e02ddf7d4edd8, type: 2}
+  selectedSkin: {fileID: 11400000, guid: 8ada2debd686951468768f588d558127, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

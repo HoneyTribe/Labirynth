@@ -144,4 +144,19 @@ public class PlayerController : MonoBehaviour {
 			levelController.gameObject.SendMessage("PlayerLost");
 		}
 	}
+
+	public KeyCode getLeft()
+	{
+		return moveLeft;
+	}
+
+	public KeyCode getRight()
+	{
+		return moveRight;
+	}
+
+	public KeyCode getAction()
+	{
+		return action;
+	}
 }

@@ -6,24 +6,23 @@ public class MenuController : MonoBehaviour {
 
 	private static int levelsPerRow = 5;
 	public GUISkin skin;
+	public GUISkin selectedSkin;
 	private LevelFinishedController levelFinishedController;
+	private PlayerController player1Controller;
+	private PlayerController player2Controller;
 
 	private int selGridInt = 0;
-	
-	private List<string> selStrings = new List<string>();
 
 	void Start()
 	{
 		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController> ();
-		for (int i=0; i<=levelFinishedController.getMaxLevel(); i++)
-		{
-			selStrings.Add((i + 1).ToString());
-		}
+		player1Controller = GameObject.Find ("Player1").GetComponent<PlayerController>();
+		player2Controller = GameObject.Find ("Player2").GetComponent<PlayerController>();
 	}
 
 	void Update()
 	{
-		if(Input.GetKeyUp(KeyCode.RightArrow))
+		if ((Input.GetKeyUp(player1Controller.getRight())) || (Input.GetKeyUp(player2Controller.getRight())))
 		{
 			if(selGridInt < levelFinishedController.getMaxLevel())
 			{
@@ -35,7 +34,7 @@ public class MenuController : MonoBehaviour {
 			}
 		}
 		
-		if(Input.GetKeyUp(KeyCode.LeftArrow))
+		if ((Input.GetKeyUp(player1Controller.getLeft())) || (Input.GetKeyUp(player2Controller.getLeft())))
 		{
 			if(selGridInt > 0)
 			{
@@ -47,7 +46,7 @@ public class MenuController : MonoBehaviour {
 			}
 		}
 
-		if(Input.GetKeyUp(KeyCode.RightShift))
+		if ((Input.GetKeyUp(player1Controller.getAction())) || (Input.GetKeyUp(player2Controller.getAction())))
 		{
 			levelFinishedController.setLevel(selGridInt);
 			Application.LoadLevel (0); 
@@ -60,18 +59,30 @@ public class MenuController : MonoBehaviour {
 			GUI.Box (new Rect(0, 0, 400, 300), "", skin.box);
 			GUI.Label (new Rect (0, 30, 400, 50), "Levels", skin.label);
 
-			int numOfLines = (selStrings.Count - 1) / levelsPerRow + 1;
-			selGridInt = GUI.SelectionGrid (new Rect (30, 100, 340, numOfLines * 50), selGridInt, selStrings.ToArray(), levelsPerRow, skin.button);
-//			for (int i=0; i<=levelFinishedController.getMaxLevel(); i++)
-//			{
-//				int x = i % levelsPerRow;
-//				int y = i / levelsPerRow;
-//				if (GUI.Button (new Rect (50 + x * 65, 100 + y * 65, 40, 40), (i + 1).ToString(), skin.button))
-//				{
-//					levelFinishedController.setLevel(i);
-//					Application.LoadLevel (0); 
-//				}
-//			}	
+			for (int i=0; i<levelFinishedController.getNumberOfLevels(); i++)
+			{
+				int x = i % levelsPerRow;
+				int y = i / levelsPerRow;
+				
+				if (i>levelFinishedController.getMaxLevel())
+				{
+					GUI.enabled = false; 
+				}
+
+				if (selGridInt == i)
+				{
+					GUI.Button (new Rect (50 + x * 65, 100 + y * 65, 40, 40), (i + 1).ToString(), selectedSkin.button);
+				}
+				else
+				{
+					GUI.Button (new Rect (50 + x * 65, 100 + y * 65, 40, 40), (i + 1).ToString(), skin.button);
+				}
+
+				if (i>levelFinishedController.getMaxLevel())
+				{
+					GUI.enabled = true; 
+				}
+			}	
 		GUI.EndGroup();
 
 	}
