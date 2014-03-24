@@ -9,16 +9,16 @@ namespace AssemblyCSharp
 
 				public LevelDefinition ()
 				{
+					levels.Add(new Level(1,0));
 					levels.Add(new Level(1,1));
 					levels.Add(new Level(2,1));
 					levels.Add(new Level(2,2));
-					levels.Add(new Level(3,2));
 					levels.Add(new Level(2,3));
 					levels.Add(new Level(3,3));
 					levels.Add(new Level(4,3));
-					levels.Add(new Level(2,4));
-					levels.Add(new Level(3,4));
 					levels.Add(new Level(4,4));
+					levels.Add(new Level(5,4));
+					levels.Add(new Level(5,5));
 				}
 
 				public List<Level> getLevels()

@@ -4,7 +4,7 @@ using System.Collections;
 public class ExitLightController : MonoBehaviour {
 
 	private static float maxInstensity = 3.0f;
-	private static float maxSpot = 28.0f;
+	private static float maxSpot = 60.0f;
 
 	public float interval = 1.0f;
 	private float timeLeft = 0.0f;
