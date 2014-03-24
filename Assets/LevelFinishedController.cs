@@ -43,11 +43,15 @@ public class LevelFinishedController : MonoBehaviour {
 		{
 			maxLevel = level;
 		}
-		if (level == getNumberOfLevels ())
+		if (level > getNumberOfLevels ())
 		{
-			GameFinished();
+			StartCoroutine(GameFinished());
 		}
-		Reset ();
+		else
+		{
+			Reset ();
+			Application.LoadLevel (0); 
+		}
 	}
 
 	private void Reset()
@@ -84,9 +88,9 @@ public class LevelFinishedController : MonoBehaviour {
 		{
 			finished = true; 
 			stopped = true;
-			yield return new WaitForSeconds(1);
+			yield return new WaitForSeconds(2);
+			finished = false; 
 			LoadNewLevel();
-			Application.LoadLevel (0); 
 		}
 	}
 
@@ -94,7 +98,8 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		gameOver = true; 
 		stopped = true;
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(2);
+		gameOver = false;
 		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 
@@ -102,7 +107,8 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		congratulation = true; 
 		stopped = true;
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(2);
+		congratulation = false;
 		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 	
