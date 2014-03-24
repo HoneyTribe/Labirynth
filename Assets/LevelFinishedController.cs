@@ -33,6 +33,7 @@ public class LevelFinishedController : MonoBehaviour {
 		levelDefinition = new AssemblyCSharp.LevelDefinition ();
 		stopped = true;
 		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		maxLevel = getNumberOfLevels ();
 	}
 
 	private void LoadNewLevel()
@@ -42,7 +43,7 @@ public class LevelFinishedController : MonoBehaviour {
 		{
 			maxLevel = level;
 		}
-		if (level == levelDefinition.getLevels().Count)
+		if (level == getNumberOfLevels ())
 		{
 			GameFinished();
 		}
@@ -127,7 +128,7 @@ public class LevelFinishedController : MonoBehaviour {
 
 	public int getNumberOfLevels()
 	{
-		return  levelDefinition.getLevels ().Count;
+		return  levelDefinition.getLevels ().Count - 1;
 	}
 
 	public void setLevel(int newLevel)

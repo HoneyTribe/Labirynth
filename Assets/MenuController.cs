@@ -59,7 +59,7 @@ public class MenuController : MonoBehaviour {
 			GUI.Box (new Rect(0, 0, 400, 300), "", skin.box);
 			GUI.Label (new Rect (0, 30, 400, 50), "Levels", skin.label);
 
-			for (int i=0; i<levelFinishedController.getNumberOfLevels(); i++)
+			for (int i=0; i<=levelFinishedController.getNumberOfLevels(); i++)
 			{
 				int x = i % levelsPerRow;
 				int y = i / levelsPerRow;
