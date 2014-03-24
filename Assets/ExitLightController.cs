@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ExitLightController : MonoBehaviour {
 
-	private static float maxInstensity = 3.0f;
+	private static float maxInstensity = 1.5f;
 	private static float maxSpot = 60.0f;
 
 	public float interval = 1.0f;
