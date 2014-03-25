@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour {
 	public float speed = 10;	
 
 	private bool lighthouseEntered = false;
-	private bool readyToAttract = false;
 
 	private GameObject torch;
 	private GameObject topLight;
@@ -43,7 +42,6 @@ public class PlayerController : MonoBehaviour {
 			if (lighthouseEntered)
 			{
 				lighthouseEntered = false;
-				readyToAttract = false;
 				topLight.gameObject.SendMessage("TurnOff");
 			}
 		} 
@@ -51,13 +49,9 @@ public class PlayerController : MonoBehaviour {
 		{	
 			rigidbody.velocity = new Vector3(0, 0, -speed);
 		}
-		else if (Input.GetKeyUp (moveDown) && (readyToAttract)) // attract only once per key pressed
+		else if (Input.GetKeyUp (action) && (lighthouseEntered)) 
 		{
 			topLight.gameObject.SendMessage("AttractMonster");
-		}
-		else if (Input.GetKeyUp (moveDown) && (lighthouseEntered)) // don't attract after entering lighthouse
-		{
-			readyToAttract = true;
 		}
 		else if (Input.GetKey (moveLeft))
 		{
