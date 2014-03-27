@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 
@@ -19,6 +20,8 @@ public class PlayerController : MonoBehaviour {
 	private GameObject device;
 	private LevelFinishedController levelFinishedController;
 
+	private List<KeyCode> keys;
+
 	void Start()
 	{
 		torch = GameObject.Find ("LightContainer");
@@ -26,6 +29,9 @@ public class PlayerController : MonoBehaviour {
 		levelController = GameObject.Find ("LevelController");
 		device = GameObject.Find ("Device");
 		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
+		keys = new List<KeyCode> ();
+		//keys.Add (moveRight);
+		//keys.Add (moveLeft);
 	}
 
 	// Update is called once per frame
@@ -36,24 +42,83 @@ public class PlayerController : MonoBehaviour {
 			return;
 		}
 
-		if (Input.GetKey (moveUp))
+		handleKeys ();
+
+		int x = 0;
+		int z = 0;
+		for (int i=0; i < keys.Count; i++)
 		{
-			rigidbody.velocity = new Vector3(0, 0, speed);
+			handleKeysLogic(i, ref x, ref z);
+		}
+		Vector3 aa = new Vector3(x, 0, z).normalized * speed;
+		rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
+
+		if (Input.GetKeyUp (action) && (lighthouseEntered)) 
+		{
+			topLight.gameObject.SendMessage("AttractMonster");
+		}
+
+		if ((!lighthouseEntered) && (Input.GetKeyUp (action)))
+		{
+			device.gameObject.SendMessage("Move", transform.localPosition);
+		}
+	}
+
+	private void handleKeys()
+	{
+		if (Input.GetKeyDown (moveUp))
+		{
+			keys.Add(moveUp);
+		}
+		else if (Input.GetKeyUp (moveUp))
+		{
+			keys.Remove(moveUp);
+		}
+
+		if (Input.GetKeyDown (moveDown))
+		{
+			keys.Add(moveDown);
+		}
+		else if (Input.GetKeyUp (moveDown))
+		{
+			keys.Remove(moveDown);
+		}
+
+		if (Input.GetKeyDown (moveLeft))
+		{
+			keys.Add(moveLeft);
+		}
+		else if (Input.GetKeyUp (moveLeft))
+		{
+			keys.Remove(moveLeft);
+		}
+
+		if (Input.GetKeyDown (moveRight))
+		{
+			keys.Add(moveRight);
+		}
+		else if (Input.GetKeyUp (moveRight))
+		{
+			keys.Remove(moveRight);
+		}
+	}
+
+	private void handleKeysLogic(int i, ref int x, ref int z)
+	{
+		if (keys[i] == moveUp)
+		{
+			z = 1;
 			if (lighthouseEntered)
 			{
 				lighthouseEntered = false;
 				topLight.gameObject.SendMessage("TurnOff");
 			}
-		} 
-		else if (Input.GetKey (moveDown))
-		{	
-			rigidbody.velocity = new Vector3(0, 0, -speed);
 		}
-		else if (Input.GetKeyUp (action) && (lighthouseEntered)) 
+		else if (keys[i] == moveDown)
 		{
-			topLight.gameObject.SendMessage("AttractMonster");
+			z = -1;
 		}
-		else if (Input.GetKey (moveLeft))
+		else if(keys[i] == moveLeft)
 		{
 			if (lighthouseEntered)
 			{
@@ -61,10 +126,10 @@ public class PlayerController : MonoBehaviour {
 			}
 			else
 			{
-				rigidbody.velocity = new Vector3(-speed, 0, 0);
+				x = -1; 
 			}
 		}
-		else if (Input.GetKey (moveRight))
+		else if(keys[i] == moveRight)
 		{
 			if (lighthouseEntered)
 			{
@@ -72,44 +137,9 @@ public class PlayerController : MonoBehaviour {
 			}
 			else
 			{
-				rigidbody.velocity = new Vector3(speed, 0, 0);
+				x = 1;
 			}
 		}
-		else 
-		{
-			rigidbody.velocity = new Vector3(0, 0, 0);
-		}
-
-		if ((!lighthouseEntered) && (Input.GetKeyUp (action)))
-		{
-			device.gameObject.SendMessage("Move", transform.localPosition);
-		}
-
-		/*if (Input.GetKey (moveUp))
-		{
-			moveDirection = new Vector3(0, 0, 1);
-		} 
-		else if (Input.GetKey (moveDown))
-		{
-			moveDirection = new Vector3(0, 0, -1);
-		}
-		else if (Input.GetKey (moveLeft))
-		{
-			moveDirection = new Vector3(-1, 0, 0);
-		}
-		else if (Input.GetKey (moveRight))
-		{
-			moveDirection = new Vector3(1, 0, 0);
-		}
-		else 
-		{
-			moveDirection = new Vector3(0, 0, 0);
-		}
-
-
-		//moveDirection = transform.TransformDirection(moveDirection);
-		moveDirection *= speed;
-		controller.Move(moveDirection * Time.deltaTime);*/
 	}
 
 	public bool hasEnteredLighthouse()

@@ -3,9 +3,7 @@ using System.Collections;
 
 public class MonsterController : MonoBehaviour {
 
-	private float epsilon = 0.16f;
-
-	private float step = 0.08f;
+	private float speed = 5.0f;
 	private bool enter;
 	private AssemblyCSharp.Instantiation maze;
 	
@@ -25,7 +23,7 @@ public class MonsterController : MonoBehaviour {
 	private float timeLeft;
 	private bool attractionTrigger;
 
-	private Vector3 newPosition = Vector3.zero;
+	private Vector3 newPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -74,28 +72,32 @@ public class MonsterController : MonoBehaviour {
 		{
 			if (transform.localPosition.x < -AssemblyCSharp.Instantiation.planeSizeX/2f + 2f)
 			{
-				transform.Translate(step, 0, 0.02f);
+				transform.Translate(0.08f, 0, 0.02f);
 			}
 			else if (transform.localPosition.x > AssemblyCSharp.Instantiation.planeSizeX/2f - 2f)
 			{
-				transform.Translate(-step, 0, -0.02f);
+				transform.Translate(-0.08f, 0, -0.02f);
 			}
 			else
 			{
+				newPosition = transform.localPosition;
 				enter = false;
 			}
 		}	
 		else
 		{
-			if ((attractionTrigger) || (newPosition.Equals(Vector3.zero)) || 
-			    ((Mathf.Abs(transform.localPosition.x - newPosition.x) < epsilon) && 
-			 	 (Mathf.Abs(transform.localPosition.z - newPosition.z) < epsilon)))
+			float distance = Vector3.Distance(transform.localPosition, newPosition);
+
+			if ((attractionTrigger) || (distance == 0))
 			{
 				Vector3 playerPosition = getTarget();
 				newPosition = maze.giveMeNextPosition(transform.localPosition, playerPosition);
 			}
-			Vector3 movement = new Vector3(newPosition.x - transform.localPosition.x, 0, newPosition.z - transform.localPosition.z);
-			transform.Translate(movement.normalized * step);
+			else
+			{
+				transform.position = Vector3.Lerp (
+					transform.localPosition, newPosition, Time.deltaTime * speed / distance);
+			}
 		}
 		attractionTrigger = false;
 	}
@@ -110,6 +112,11 @@ public class MonsterController : MonoBehaviour {
 		Vector3 player1Pos = player1.transform.localPosition;
 		Vector3 player2Pos = player2.transform.localPosition;
 		Vector3 monsterPos = transform.localPosition;
+
+		if (timeLeft > 0)
+		{
+			return device.transform.localPosition;
+		}
 
 		if ((maze.isInside(player1Pos)) && (maze.isInside(player2Pos)))
 		{
@@ -162,25 +169,6 @@ public class MonsterController : MonoBehaviour {
 		}
 		else
 		{
-			// Ill p1In p2In Out
-			// 0   0    1    p2 
-			// 0   1    0    p1
-			// 1   0    1    p1
-			// 1   1    0    p2
-			//if ((timeLeft > 0) ^ maze.isInside(player1Pos))
-			//{
-			//	return player1Pos;
-			//}
-			//else
-			//{
-			//	return player2Pos;
-			//}
-
-			if (timeLeft > 0)
-			{
-				return device.transform.localPosition;
-			}
-
 			if (maze.isInside(player1Pos))
 			{
 				return player1Pos;

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MonsterCreationController : MonoBehaviour {
 
+	private static int firstDelay = 15;
 	private static int delay = 15;
 
 	private GameObject monsterDoorLeft;
@@ -22,9 +23,9 @@ public class MonsterCreationController : MonoBehaviour {
 
 	IEnumerator WakeUpMonster() 
 	{
+		yield return new WaitForSeconds(firstDelay);
 		for (int i=0; i < levelFinishedController.getNumberOfMonsters(); i++) 
 		{
-			yield return new WaitForSeconds(delay);
 			int entrance = Random.Range(0, 2);
 			if (entrance == 0)
 			{
@@ -38,6 +39,7 @@ public class MonsterCreationController : MonoBehaviour {
 				yield return new WaitForSeconds(3f);
 				CreateMonster(monsterDoorRight);
 			}
+			yield return new WaitForSeconds(delay);
 		}
 	}
 

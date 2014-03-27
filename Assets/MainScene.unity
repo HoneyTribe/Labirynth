@@ -1123,7 +1123,7 @@ MonoBehaviour:
   moveLeft: 97
   moveRight: 100
   action: 32
-  speed: 10
+  speed: 0
 --- !u!23 &504520875
 Renderer:
   m_ObjectHideFlags: 0
