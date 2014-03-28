@@ -5,11 +5,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Egypt_Static_Wall_deco
     100002: //RootNode
+    100004: Egypt_Static_Wall_Deco
     400000: Egypt_Static_Wall_deco
     400002: //RootNode
+    400004: Egypt_Static_Wall_Deco
     2300000: Egypt_Static_Wall_deco
+    2300002: Egypt_Static_Wall_Deco
     3300000: Egypt_Static_Wall_deco
+    3300002: Egypt_Static_Wall_Deco
     4300000: Egypt_Static_Wall_deco
+    4300002: Egypt_Static_Wall_Deco
     9500000: //RootNode
   materials:
     importMaterials: 1
