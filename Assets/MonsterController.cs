@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MonsterController : MonoBehaviour {
 
-	private float speed = 5.0f;
+	private float speed = 2.4f;
 	private bool enter;
 	private AssemblyCSharp.Instantiation maze;
 	
