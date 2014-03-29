@@ -14,18 +14,18 @@ TagManager:
   Builtin Layer 5: 
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: insideMaze
-  User Layer 9: 
-  User Layer 10: 
-  User Layer 11: 
-  User Layer 12: 
-  User Layer 13: 
-  User Layer 14: 
-  User Layer 15: 
-  User Layer 16: 
-  User Layer 17: 
-  User Layer 18: 
-  User Layer 19: 
+  User Layer 8: allLights
+  User Layer 9: mazeWalls
+  User Layer 10: 1stRowMazeWalls
+  User Layer 11: outsideWalls
+  User Layer 12: ground
+  User Layer 13: exitDoors
+  User Layer 14: monsterDoors
+  User Layer 15: players
+  User Layer 16: keys
+  User Layer 17: monsters
+  User Layer 18: lighthouse
+  User Layer 19: device
   User Layer 20: 
   User Layer 21: 
   User Layer 22: 

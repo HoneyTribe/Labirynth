@@ -84,7 +84,7 @@ GameObject:
   - 4: {fileID: 16898242}
   - 33: {fileID: 16898244}
   - 23: {fileID: 16898243}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,6 +175,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 558302657}
@@ -223,6 +231,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 988178616}
@@ -237,7 +253,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 29791382}
   - 95: {fileID: 29791383}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +296,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 31725039}
   - 95: {fileID: 31725038}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -357,6 +373,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1343350718}
@@ -372,7 +396,7 @@ GameObject:
   - 4: {fileID: 50352603}
   - 33: {fileID: 50352605}
   - 23: {fileID: 50352604}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,6 +487,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1712407733}
@@ -507,6 +539,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 496289247}
@@ -522,7 +562,7 @@ GameObject:
   - 4: {fileID: 62479257}
   - 33: {fileID: 62479259}
   - 23: {fileID: 62479258}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +619,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 69828620}
   - 95: {fileID: 69828621}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,7 +662,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 70519824}
   - 95: {fileID: 70519825}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,6 +739,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 858239917}
@@ -714,7 +762,7 @@ GameObject:
   - 4: {fileID: 110133874}
   - 33: {fileID: 110133876}
   - 23: {fileID: 110133875}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +820,7 @@ GameObject:
   - 4: {fileID: 116379617}
   - 33: {fileID: 116379619}
   - 23: {fileID: 116379618}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -830,7 +878,7 @@ GameObject:
   - 4: {fileID: 118923259}
   - 95: {fileID: 118923260}
   - 65: {fileID: 118923261}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -926,7 +974,7 @@ GameObject:
   - 108: {fileID: 122742487}
   - 114: {fileID: 122742488}
   m_Layer: 0
-  m_Name: pointLightLeft
+  m_Name: candleLeft
   m_TagString: CandleLightTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -938,11 +986,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 122742485}
-  m_LocalRotation: {x: -.500000119, y: 0, z: 0, w: .866025388}
-  m_LocalPosition: {x: -6.50102139, y: -2.07204556, z: 8.72333431}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10, y: 6.40934658, z: -21.3040142}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 460064141}
+  m_Father: {fileID: 0}
 --- !u!108 &122742487
 Light:
   m_ObjectHideFlags: 0
@@ -953,8 +1001,8 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 8
+  m_Intensity: 3
+  m_Range: 14
   m_SpotAngle: 76
   m_CookieSize: 10
   m_Shadows:
@@ -971,7 +1019,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 178688
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -1000,7 +1048,7 @@ GameObject:
   - 4: {fileID: 126668396}
   - 95: {fileID: 126668397}
   - 65: {fileID: 126668398}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1085,6 +1133,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 1817025244}
@@ -1102,7 +1158,7 @@ GameObject:
   - 65: {fileID: 134933131}
   - 23: {fileID: 134933130}
   - 114: {fileID: 134933134}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: monsterDoorRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1181,7 +1237,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 138804280}
   - 95: {fileID: 138804282}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1292,7 +1348,7 @@ GameObject:
   - 4: {fileID: 144692307}
   - 95: {fileID: 144692308}
   - 65: {fileID: 144692309}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1381,6 +1437,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 31725037}
@@ -1396,7 +1460,7 @@ GameObject:
   - 4: {fileID: 147351484}
   - 33: {fileID: 147351486}
   - 23: {fileID: 147351485}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1455,7 +1519,7 @@ GameObject:
   - 33: {fileID: 192747899}
   - 136: {fileID: 192747898}
   - 23: {fileID: 192747897}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Dome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1557,6 +1621,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1563348138}
@@ -1573,7 +1645,7 @@ GameObject:
   - 33: {fileID: 197888372}
   - 23: {fileID: 197888370}
   - 114: {fileID: 197888374}
-  m_Layer: 8
+  m_Layer: 19
   m_Name: Device
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1640,7 +1712,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 198084863}
   - 95: {fileID: 198084864}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1717,6 +1789,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 273281753}
@@ -1731,7 +1811,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 210655536}
   - 95: {fileID: 210655537}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1775,7 +1855,7 @@ GameObject:
   - 4: {fileID: 229691338}
   - 95: {fileID: 229691339}
   - 65: {fileID: 229691340}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1864,6 +1944,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 632557091}
@@ -1912,6 +2000,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1638476071}
@@ -1960,6 +2056,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1004540660}
@@ -1974,7 +2078,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 273281754}
   - 95: {fileID: 273281755}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2018,7 +2122,7 @@ GameObject:
   - 4: {fileID: 281582466}
   - 33: {fileID: 281582468}
   - 23: {fileID: 281582467}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2076,7 +2180,7 @@ GameObject:
   - 4: {fileID: 288266801}
   - 33: {fileID: 288266803}
   - 23: {fileID: 288266802}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2135,7 +2239,7 @@ GameObject:
   - 33: {fileID: 296668992}
   - 65: {fileID: 296668991}
   - 23: {fileID: 296668990}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2203,7 +2307,7 @@ GameObject:
   - 4: {fileID: 300012887}
   - 33: {fileID: 300012889}
   - 23: {fileID: 300012888}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2260,7 +2364,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 300184702}
   - 95: {fileID: 300184703}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2337,6 +2441,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 210655535}
@@ -2381,6 +2493,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 126668395}
@@ -2396,7 +2516,7 @@ GameObject:
   - 4: {fileID: 327786674}
   - 33: {fileID: 327786676}
   - 23: {fileID: 327786675}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2456,7 +2576,7 @@ GameObject:
   - 65: {fileID: 346569693}
   - 23: {fileID: 346569692}
   - 114: {fileID: 346569696}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: monsterDoorLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2536,7 +2656,7 @@ GameObject:
   - 4: {fileID: 366714198}
   - 33: {fileID: 366714200}
   - 23: {fileID: 366714199}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2623,6 +2743,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 138804279}
@@ -2638,7 +2766,7 @@ GameObject:
   - 4: {fileID: 389203636}
   - 33: {fileID: 389203638}
   - 23: {fileID: 389203637}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2696,7 +2824,7 @@ GameObject:
   - 4: {fileID: 398272261}
   - 33: {fileID: 398272263}
   - 23: {fileID: 398272262}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2753,7 +2881,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 403294305}
   - 95: {fileID: 403294307}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2797,7 +2925,7 @@ GameObject:
   - 4: {fileID: 404600620}
   - 33: {fileID: 404600622}
   - 23: {fileID: 404600621}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2889,7 +3017,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 164352
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -2950,6 +3078,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 968894065}
@@ -2965,7 +3101,7 @@ GameObject:
   - 4: {fileID: 454657972}
   - 33: {fileID: 454657974}
   - 23: {fileID: 454657973}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3022,7 +3158,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 460011381}
   - 108: {fileID: 460011380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: monsterLightRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3085,7 +3221,7 @@ GameObject:
   - 4: {fileID: 460064141}
   - 108: {fileID: 460064140}
   m_Layer: 0
-  m_Name: candleLights
+  m_Name: candleCentre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3101,8 +3237,8 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: .884194911, b: .759028971, a: 1}
-  m_Intensity: 1.70000005
-  m_Range: 15
+  m_Intensity: 1
+  m_Range: 20
   m_SpotAngle: 179
   m_CookieSize: 10
   m_Shadows:
@@ -3119,7 +3255,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 264192
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -3133,13 +3269,9 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 460064139}
   m_LocalRotation: {x: .500000119, y: 0, z: 0, w: .866025388}
-  m_LocalPosition: {x: 0, y: 15, z: -17}
+  m_LocalPosition: {x: 0, y: 11, z: -15.1962662}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 512664759}
-  - {fileID: 695748604}
-  - {fileID: 122742486}
-  - {fileID: 893220771}
+  m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &468870936
 GameObject:
@@ -3154,7 +3286,7 @@ GameObject:
   - 114: {fileID: 468870937}
   - 54: {fileID: 468870942}
   - 65: {fileID: 468870939}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: Player2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3256,7 +3388,7 @@ GameObject:
   - 33: {fileID: 480611350}
   - 23: {fileID: 480611348}
   - 64: {fileID: 480611349}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: wallRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3324,7 +3456,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 483655116}
   - 95: {fileID: 483655117}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3367,7 +3499,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 487701190}
   - 95: {fileID: 487701191}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3411,7 +3543,7 @@ GameObject:
   - 4: {fileID: 492117766}
   - 33: {fileID: 492117768}
   - 23: {fileID: 492117767}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3468,7 +3600,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 496289248}
   - 95: {fileID: 496289250}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3515,7 +3647,7 @@ GameObject:
   - 114: {fileID: 504520874}
   - 54: {fileID: 504520873}
   - 65: {fileID: 504520872}
-  m_Layer: 8
+  m_Layer: 15
   m_Name: Player1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3615,7 +3747,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 505727310}
   - 95: {fileID: 505727311}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3659,7 +3791,7 @@ GameObject:
   - 4: {fileID: 511645693}
   - 33: {fileID: 511645695}
   - 23: {fileID: 511645694}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3707,81 +3839,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 2013287135}
   m_GameObject: {fileID: 511645692}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
---- !u!1 &512664758
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 512664759}
-  - 108: {fileID: 512664760}
-  - 114: {fileID: 512664761}
-  m_Layer: 0
-  m_Name: pointLighRight
-  m_TagString: CandleLightTag
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &512664759
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 512664758}
-  m_LocalRotation: {x: -.500000119, y: 0, z: 0, w: .866025388}
-  m_LocalPosition: {x: 16.9469681, y: -2.07204652, z: 8.72333622}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 460064141}
---- !u!108 &512664760
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 512664758}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 8
-  m_SpotAngle: 76
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_Strength: 1
-    m_Bias: .0500000007
-    m_Softness: 4
-    m_SoftnessFade: 1
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 1
-  m_ActuallyLightmapped: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 1
-  m_ShadowSamples: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_IndirectIntensity: 1
-  m_AreaSize: {x: 10, y: 10}
---- !u!114 &512664761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 512664758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013a889837ebff84d820498421101c54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interval: 1
 --- !u!1 &514737427
 GameObject:
   m_ObjectHideFlags: 0
@@ -3792,7 +3849,7 @@ GameObject:
   - 4: {fileID: 514737428}
   - 33: {fileID: 514737430}
   - 23: {fileID: 514737429}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3850,7 +3907,7 @@ GameObject:
   - 4: {fileID: 514809571}
   - 33: {fileID: 514809573}
   - 23: {fileID: 514809572}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3987,7 +4044,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 531713717}
   - 95: {fileID: 531713719}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4031,7 +4088,7 @@ GameObject:
   - 4: {fileID: 532516787}
   - 95: {fileID: 532516788}
   - 65: {fileID: 532516789}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4086,7 +4143,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 532608760}
   - 95: {fileID: 532608761}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4129,7 +4186,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 538415893}
   - 95: {fileID: 538415894}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4173,7 +4230,7 @@ GameObject:
   - 4: {fileID: 554214511}
   - 33: {fileID: 554214513}
   - 23: {fileID: 554214512}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4230,7 +4287,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 558302658}
   - 95: {fileID: 558302659}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4272,7 +4329,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 579626206}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_border_deco_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4289,16 +4346,16 @@ Transform:
   m_LocalPosition: {x: -7.00998497, y: -6.57000017, z: -8.96605587}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 126668396}
+  - {fileID: 1320841500}
   - {fileID: 741867159}
+  - {fileID: 1134596091}
   - {fileID: 229691338}
   - {fileID: 532516787}
+  - {fileID: 118923259}
+  - {fileID: 2097895128}
   - {fileID: 144692307}
   - {fileID: 2061581833}
-  - {fileID: 1134596091}
-  - {fileID: 2097895128}
-  - {fileID: 1320841500}
-  - {fileID: 118923259}
-  - {fileID: 126668396}
   m_Father: {fileID: 2068684557}
 --- !u!1 &590123085
 GameObject:
@@ -4309,7 +4366,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 590123086}
   - 95: {fileID: 590123087}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4353,7 +4410,7 @@ GameObject:
   - 4: {fileID: 593383829}
   - 33: {fileID: 593383831}
   - 23: {fileID: 593383830}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4409,7 +4466,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 618291790}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Outside_Deco_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4443,7 +4500,7 @@ GameObject:
   - 4: {fileID: 627753340}
   - 33: {fileID: 627753342}
   - 23: {fileID: 627753341}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4500,7 +4557,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 632557092}
   - 95: {fileID: 632557093}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4543,7 +4600,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 641270032}
   - 95: {fileID: 641270033}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4587,7 +4644,7 @@ GameObject:
   - 4: {fileID: 646545990}
   - 33: {fileID: 646545992}
   - 23: {fileID: 646545991}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4644,7 +4701,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 646615709}
   - 95: {fileID: 646615710}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4717,6 +4774,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 1320841499}
@@ -4765,6 +4830,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 850149548}
@@ -4825,7 +4898,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 164352
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -4841,7 +4914,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 675942149}
   - 95: {fileID: 675942150}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4918,6 +4991,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 968702319}
@@ -4934,7 +5015,7 @@ GameObject:
   - 33: {fileID: 684556376}
   - 23: {fileID: 684556374}
   - 64: {fileID: 684556375}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: wallLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5002,7 +5083,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 690478651}
   - 95: {fileID: 690478652}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5036,81 +5117,6 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
---- !u!1 &695748603
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 695748604}
-  - 108: {fileID: 695748605}
-  - 114: {fileID: 695748606}
-  m_Layer: 0
-  m_Name: pointLighRight
-  m_TagString: CandleLightTag
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &695748604
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 695748603}
-  m_LocalRotation: {x: -.500000119, y: 0, z: 0, w: .866025388}
-  m_LocalPosition: {x: 7.02466726, y: -2.07204556, z: 8.72333431}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 460064141}
---- !u!108 &695748605
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 695748603}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 8
-  m_SpotAngle: 76
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_Strength: 1
-    m_Bias: .0500000007
-    m_Softness: 4
-    m_SoftnessFade: 1
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 1
-  m_ActuallyLightmapped: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 1
-  m_ShadowSamples: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_IndirectIntensity: 1
-  m_AreaSize: {x: 10, y: 10}
---- !u!114 &695748606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 695748603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013a889837ebff84d820498421101c54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interval: 1
 --- !u!1001 &741595400
 Prefab:
   m_ObjectHideFlags: 0
@@ -5154,6 +5160,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1729695069}
@@ -5169,7 +5183,7 @@ GameObject:
   - 4: {fileID: 741867159}
   - 95: {fileID: 741867160}
   - 65: {fileID: 741867161}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5227,7 +5241,7 @@ GameObject:
   - 65: {fileID: 742753826}
   - 23: {fileID: 742753825}
   - 114: {fileID: 742753829}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: RightDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5307,7 +5321,7 @@ GameObject:
   - 4: {fileID: 761167142}
   - 33: {fileID: 761167144}
   - 23: {fileID: 761167143}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5365,7 +5379,7 @@ GameObject:
   - 4: {fileID: 771104972}
   - 33: {fileID: 771104974}
   - 23: {fileID: 771104973}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_door_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5452,6 +5466,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 1130539422}
@@ -5467,7 +5489,7 @@ GameObject:
   - 4: {fileID: 781086644}
   - 33: {fileID: 781086646}
   - 23: {fileID: 781086645}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5525,7 +5547,7 @@ GameObject:
   - 4: {fileID: 784329439}
   - 33: {fileID: 784329441}
   - 23: {fileID: 784329440}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5612,6 +5634,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 741867158}
@@ -5626,7 +5656,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 804073956}
   - 95: {fileID: 804073957}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5699,6 +5729,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 1134596090}
@@ -5713,7 +5751,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 850149549}
   - 95: {fileID: 850149550}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5757,7 +5795,7 @@ GameObject:
   - 4: {fileID: 853603121}
   - 33: {fileID: 853603123}
   - 23: {fileID: 853603122}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5814,7 +5852,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 858239918}
   - 95: {fileID: 858239919}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5891,6 +5929,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 538415892}
@@ -5939,6 +5985,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1094458783}
@@ -5987,6 +6041,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 2081214280}
@@ -6002,7 +6064,7 @@ GameObject:
   - 4: {fileID: 885326441}
   - 33: {fileID: 885326443}
   - 23: {fileID: 885326442}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6050,81 +6112,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 24621893}
   m_GameObject: {fileID: 885326440}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
---- !u!1 &893220769
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 893220771}
-  - 108: {fileID: 893220770}
-  - 114: {fileID: 893220772}
-  m_Layer: 0
-  m_Name: pointLightLeft
-  m_TagString: CandleLightTag
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &893220770
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 893220769}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
-  m_Range: 8
-  m_SpotAngle: 76
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_Strength: 1
-    m_Bias: .0500000007
-    m_Softness: 4
-    m_SoftnessFade: 1
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 1
-  m_ActuallyLightmapped: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 1
-  m_ShadowSamples: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_IndirectIntensity: 1
-  m_AreaSize: {x: 10, y: 10}
---- !u!4 &893220771
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 893220769}
-  m_LocalRotation: {x: -.500000119, y: 0, z: 0, w: .866025388}
-  m_LocalPosition: {x: -16.8603973, y: -2.07204556, z: 8.72333431}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 460064141}
---- !u!114 &893220772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 893220769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013a889837ebff84d820498421101c54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interval: 1
 --- !u!1 &895181601
 GameObject:
   m_ObjectHideFlags: 0
@@ -6134,7 +6121,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 895181602}
   - 95: {fileID: 895181603}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6177,7 +6164,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 901171727}
   - 95: {fileID: 901171728}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6221,7 +6208,7 @@ GameObject:
   - 4: {fileID: 901746187}
   - 108: {fileID: 901746186}
   - 114: {fileID: 901746188}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: winLightLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6256,7 +6243,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 450048
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -6329,6 +6316,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1839049046}
@@ -6373,6 +6368,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 229691337}
@@ -6388,7 +6391,7 @@ GameObject:
   - 4: {fileID: 917497490}
   - 33: {fileID: 917497492}
   - 23: {fileID: 917497491}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6446,7 +6449,7 @@ GameObject:
   - 4: {fileID: 938444452}
   - 33: {fileID: 938444451}
   - 23: {fileID: 938444450}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_door_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6503,7 +6506,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 968702320}
   - 95: {fileID: 968702321}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6546,7 +6549,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 968894066}
   - 95: {fileID: 968894067}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6623,6 +6626,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1857227675}
@@ -6637,7 +6648,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 983544387}
   - 95: {fileID: 983544388}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6680,7 +6691,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 988178617}
   - 95: {fileID: 988178618}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6757,6 +6768,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 487701189}
@@ -6771,7 +6790,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1004540661}
   - 95: {fileID: 1004540662}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6918,7 +6937,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 524288
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -6975,6 +6994,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 532516786}
@@ -6990,7 +7017,7 @@ GameObject:
   - 4: {fileID: 1020581374}
   - 33: {fileID: 1020581376}
   - 23: {fileID: 1020581375}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7048,7 +7075,7 @@ GameObject:
   - 4: {fileID: 1023609537}
   - 33: {fileID: 1023609539}
   - 23: {fileID: 1023609538}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7135,6 +7162,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 69d503d115a2c6143a73acc5afd73520, type: 2}
+    - target: {fileID: 100000, guid: eeae032f16ca0f24eac242d52aeecef8, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: eeae032f16ca0f24eac242d52aeecef8, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eeae032f16ca0f24eac242d52aeecef8, type: 3}
   m_RootGameObject: {fileID: 1380260125}
@@ -7150,7 +7185,7 @@ GameObject:
   - 4: {fileID: 1034753273}
   - 33: {fileID: 1034753275}
   - 23: {fileID: 1034753274}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7208,7 +7243,7 @@ GameObject:
   - 4: {fileID: 1037846502}
   - 33: {fileID: 1037846504}
   - 23: {fileID: 1037846503}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7267,7 +7302,7 @@ GameObject:
   - 33: {fileID: 1043791456}
   - 65: {fileID: 1043791455}
   - 23: {fileID: 1043791454}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Lighthouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7367,6 +7402,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 118923258}
@@ -7415,6 +7458,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 483655115}
@@ -7430,7 +7481,7 @@ GameObject:
   - 4: {fileID: 1064001169}
   - 33: {fileID: 1064001171}
   - 23: {fileID: 1064001170}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7487,7 +7538,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1064428237}
   - 95: {fileID: 1064428238}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7530,7 +7581,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1066824080}
   - 95: {fileID: 1066824081}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7607,6 +7658,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1064428236}
@@ -7622,7 +7681,7 @@ GameObject:
   - 4: {fileID: 1085127537}
   - 33: {fileID: 1085127539}
   - 23: {fileID: 1085127538}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7709,6 +7768,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 1322454071}
@@ -7723,7 +7790,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1094458784}
   - 95: {fileID: 1094458785}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7800,6 +7867,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 690478650}
@@ -7848,6 +7923,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 69828619}
@@ -7896,6 +7979,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 29791381}
@@ -7940,6 +8031,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 2097895126}
@@ -7988,6 +8087,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1790323035}
@@ -8036,6 +8143,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1345165720}
@@ -8050,7 +8165,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1130539423}
   - 95: {fileID: 1130539425}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8095,7 +8210,7 @@ GameObject:
   - 33: {fileID: 1131651213}
   - 135: {fileID: 1131651212}
   - 23: {fileID: 1131651211}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8163,7 +8278,7 @@ GameObject:
   - 4: {fileID: 1134596091}
   - 95: {fileID: 1134596092}
   - 65: {fileID: 1134596093}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8313,7 +8428,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1146513502}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8385,6 +8500,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 70519823}
@@ -8475,6 +8598,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 804073955}
@@ -8523,6 +8654,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1413684545}
@@ -8566,7 +8705,7 @@ GameObject:
   - 4: {fileID: 1180096148}
   - 33: {fileID: 1180096150}
   - 23: {fileID: 1180096149}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8624,7 +8763,7 @@ GameObject:
   - 4: {fileID: 1196619889}
   - 33: {fileID: 1196619891}
   - 23: {fileID: 1196619890}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8715,6 +8854,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 532608759}
@@ -8763,6 +8910,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1312961577}
@@ -8778,7 +8933,7 @@ GameObject:
   - 4: {fileID: 1258835479}
   - 33: {fileID: 1258835481}
   - 23: {fileID: 1258835480}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8836,7 +8991,7 @@ GameObject:
   - 4: {fileID: 1263433511}
   - 33: {fileID: 1263433513}
   - 23: {fileID: 1263433512}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8894,7 +9049,7 @@ GameObject:
   - 4: {fileID: 1265809224}
   - 33: {fileID: 1265809226}
   - 23: {fileID: 1265809225}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8985,6 +9140,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 641270031}
@@ -9033,6 +9196,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 646615708}
@@ -9081,6 +9252,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 983544386}
@@ -9096,7 +9275,7 @@ GameObject:
   - 4: {fileID: 1287008072}
   - 33: {fileID: 1287008074}
   - 23: {fileID: 1287008073}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9256,6 +9435,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 2077494055}
@@ -9271,7 +9458,7 @@ GameObject:
   - 4: {fileID: 1308838991}
   - 33: {fileID: 1308838993}
   - 23: {fileID: 1308838992}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9328,7 +9515,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1312961578}
   - 95: {fileID: 1312961579}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9372,7 +9559,7 @@ GameObject:
   - 4: {fileID: 1313399884}
   - 33: {fileID: 1313399886}
   - 23: {fileID: 1313399885}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9430,7 +9617,7 @@ GameObject:
   - 4: {fileID: 1315711813}
   - 108: {fileID: 1315711812}
   - 114: {fileID: 1315711814}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TopLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9465,7 +9652,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 253440
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -9535,6 +9722,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 1477818783}
@@ -9550,7 +9745,7 @@ GameObject:
   - 4: {fileID: 1320841500}
   - 95: {fileID: 1320841501}
   - 65: {fileID: 1320841502}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9605,7 +9800,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1322454072}
   - 95: {fileID: 1322454074}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9649,7 +9844,7 @@ GameObject:
   - 4: {fileID: 1334271240}
   - 33: {fileID: 1334271242}
   - 23: {fileID: 1334271241}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9706,7 +9901,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1343350719}
   - 95: {fileID: 1343350720}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9749,7 +9944,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1345165721}
   - 95: {fileID: 1345165722}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9826,6 +10021,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1910851405}
@@ -9841,7 +10044,7 @@ GameObject:
   - 4: {fileID: 1364476433}
   - 33: {fileID: 1364476435}
   - 23: {fileID: 1364476434}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9889,6 +10092,81 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1640799433}
   m_GameObject: {fileID: 1364476432}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!1 &1372181620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1372181623}
+  - 108: {fileID: 1372181622}
+  - 114: {fileID: 1372181621}
+  m_Layer: 0
+  m_Name: candleRight
+  m_TagString: CandleLightTag
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1372181621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372181620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 013a889837ebff84d820498421101c54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interval: 1
+--- !u!108 &1372181622
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372181620}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 3
+  m_Range: 14
+  m_SpotAngle: 76
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 1
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 178688
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 10, y: 10}
+--- !u!4 &1372181623
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372181620}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10, y: 6.40934753, z: -21.3040142}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1380260125
 GameObject:
   m_ObjectHideFlags: 0
@@ -9899,7 +10177,7 @@ GameObject:
   - 4: {fileID: 1380260128}
   - 95: {fileID: 1380260127}
   - 64: {fileID: 1380260126}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_door_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9954,7 +10232,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1390476258}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10023,6 +10301,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 144692306}
@@ -10071,6 +10357,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1915210858}
@@ -10086,7 +10380,7 @@ GameObject:
   - 4: {fileID: 1410150093}
   - 33: {fileID: 1410150095}
   - 23: {fileID: 1410150094}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10143,7 +10437,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1413684546}
   - 95: {fileID: 1413684547}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10220,6 +10514,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1733655182}
@@ -10235,7 +10537,7 @@ GameObject:
   - 4: {fileID: 1423654413}
   - 33: {fileID: 1423654415}
   - 23: {fileID: 1423654414}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10362,7 +10664,7 @@ GameObject:
   - 4: {fileID: 1450479705}
   - 33: {fileID: 1450479707}
   - 23: {fileID: 1450479706}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10420,7 +10722,7 @@ GameObject:
   - 4: {fileID: 1451333909}
   - 33: {fileID: 1451333911}
   - 23: {fileID: 1451333910}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10511,6 +10813,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 198084862}
@@ -10526,7 +10836,7 @@ GameObject:
   - 4: {fileID: 1472993224}
   - 33: {fileID: 1472993226}
   - 23: {fileID: 1472993225}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10583,7 +10893,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1474456550}
   - 95: {fileID: 1474456551}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10626,7 +10936,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1477818784}
   - 95: {fileID: 1477818786}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10703,6 +11013,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1066824079}
@@ -10718,7 +11036,7 @@ GameObject:
   - 4: {fileID: 1485233834}
   - 33: {fileID: 1485233836}
   - 23: {fileID: 1485233835}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10809,6 +11127,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1522396964}
@@ -10823,7 +11149,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1522396965}
   - 95: {fileID: 1522396966}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10867,7 +11193,7 @@ GameObject:
   - 4: {fileID: 1549261654}
   - 33: {fileID: 1549261656}
   - 23: {fileID: 1549261655}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10924,7 +11250,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1556109552}
   - 95: {fileID: 1556109553}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10968,7 +11294,7 @@ GameObject:
   - 4: {fileID: 1560451834}
   - 33: {fileID: 1560451836}
   - 23: {fileID: 1560451835}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11025,7 +11351,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1563348139}
   - 95: {fileID: 1563348140}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11069,7 +11395,7 @@ GameObject:
   - 4: {fileID: 1566509141}
   - 108: {fileID: 1566509140}
   - 114: {fileID: 1566509142}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: winLightRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11104,7 +11430,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 450048
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -11144,7 +11470,7 @@ GameObject:
   - 4: {fileID: 1581073516}
   - 33: {fileID: 1581073518}
   - 23: {fileID: 1581073517}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11235,6 +11561,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1865045666}
@@ -11250,7 +11584,7 @@ GameObject:
   - 4: {fileID: 1586151075}
   - 33: {fileID: 1586151077}
   - 23: {fileID: 1586151076}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11308,7 +11642,7 @@ GameObject:
   - 4: {fileID: 1589484281}
   - 33: {fileID: 1589484283}
   - 23: {fileID: 1589484282}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11366,7 +11700,7 @@ GameObject:
   - 4: {fileID: 1591746987}
   - 33: {fileID: 1591746989}
   - 23: {fileID: 1591746988}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11424,7 +11758,7 @@ GameObject:
   - 4: {fileID: 1592426980}
   - 33: {fileID: 1592426982}
   - 23: {fileID: 1592426981}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11482,7 +11816,7 @@ GameObject:
   - 4: {fileID: 1600488806}
   - 33: {fileID: 1600488808}
   - 23: {fileID: 1600488807}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11540,7 +11874,7 @@ GameObject:
   - 4: {fileID: 1612214997}
   - 33: {fileID: 1612214999}
   - 23: {fileID: 1612214998}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11597,7 +11931,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1638476072}
   - 95: {fileID: 1638476073}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11674,6 +12008,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1556109551}
@@ -11689,7 +12031,7 @@ GameObject:
   - 4: {fileID: 1655365185}
   - 33: {fileID: 1655365187}
   - 23: {fileID: 1655365186}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11780,6 +12122,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1474456549}
@@ -11795,7 +12145,7 @@ GameObject:
   - 4: {fileID: 1671423351}
   - 33: {fileID: 1671423353}
   - 23: {fileID: 1671423352}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11852,7 +12202,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1676699184}
   - 108: {fileID: 1676699183}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: monsterLightLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11948,6 +12298,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 590123085}
@@ -11963,7 +12321,7 @@ GameObject:
   - 4: {fileID: 1683264652}
   - 33: {fileID: 1683264654}
   - 23: {fileID: 1683264653}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12020,7 +12378,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1686602219}
   - 95: {fileID: 1686602220}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12133,7 +12491,7 @@ GameObject:
   - 4: {fileID: 1695115151}
   - 33: {fileID: 1695115153}
   - 23: {fileID: 1695115152}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12224,6 +12582,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 2029289408}
@@ -12238,7 +12604,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1712407734}
   - 95: {fileID: 1712407735}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12282,7 +12648,7 @@ GameObject:
   - 4: {fileID: 1716377082}
   - 33: {fileID: 1716377084}
   - 23: {fileID: 1716377083}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12409,7 +12775,7 @@ GameObject:
   - 4: {fileID: 1722973183}
   - 33: {fileID: 1722973185}
   - 23: {fileID: 1722973184}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12466,7 +12832,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1729695070}
   - 95: {fileID: 1729695071}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12509,7 +12875,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1733655183}
   - 95: {fileID: 1733655184}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12582,6 +12948,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 531713716}
@@ -12596,7 +12970,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1749418549}
   - 95: {fileID: 1749418550}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12640,7 +13014,7 @@ GameObject:
   - 4: {fileID: 1773551635}
   - 33: {fileID: 1773551637}
   - 23: {fileID: 1773551636}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12731,6 +13105,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 505727309}
@@ -12745,7 +13127,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1778758658}
   - 95: {fileID: 1778758659}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12788,7 +13170,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1790323036}
   - 95: {fileID: 1790323037}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12831,7 +13213,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1808340431}
   - 95: {fileID: 1808340433}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12874,7 +13256,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1817025245}
   - 95: {fileID: 1817025247}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12916,7 +13298,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1827175908}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12954,7 +13336,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1828763228}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Outside_Deco_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13021,6 +13403,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1749418548}
@@ -13035,7 +13425,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1839049047}
   - 95: {fileID: 1839049048}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13078,7 +13468,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1845747560}
   - 95: {fileID: 1845747561}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13122,7 +13512,7 @@ GameObject:
   - 4: {fileID: 1852371201}
   - 33: {fileID: 1852371203}
   - 23: {fileID: 1852371202}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13179,7 +13569,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1857227676}
   - 95: {fileID: 1857227677}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13256,6 +13646,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 901171726}
@@ -13270,7 +13668,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1865045667}
   - 95: {fileID: 1865045668}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13375,6 +13773,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1845747559}
@@ -13419,6 +13825,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 2077340750}
@@ -13432,7 +13846,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1898036547}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13470,7 +13884,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1910851406}
   - 95: {fileID: 1910851407}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13513,7 +13927,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1915210859}
   - 95: {fileID: 1915210860}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13556,8 +13970,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1933560209}
   - 108: {fileID: 1933560208}
-  m_Layer: 0
-  m_Name: Point light
+  m_Layer: 8
+  m_Name: lightHousePointLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13619,7 +14033,7 @@ GameObject:
   - 4: {fileID: 1953820163}
   - 33: {fileID: 1953820165}
   - 23: {fileID: 1953820164}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13706,6 +14120,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 403294304}
@@ -13721,7 +14143,7 @@ GameObject:
   - 4: {fileID: 1957766724}
   - 95: {fileID: 1957766726}
   - 64: {fileID: 1957766725}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_door_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13807,6 +14229,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 1808340430}
@@ -13851,6 +14281,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c1e20c21f05075e4290c6e87200f6999, type: 2}
+    - target: {fileID: 100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 04c18c064a040e3449f97dba84c7835a, type: 3}
   m_RootGameObject: {fileID: 2061581832}
@@ -13866,7 +14304,7 @@ GameObject:
   - 4: {fileID: 1980194276}
   - 33: {fileID: 1980194278}
   - 23: {fileID: 1980194277}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13985,6 +14423,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1686602218}
@@ -14033,6 +14479,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 300184701}
@@ -14081,6 +14535,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 69d503d115a2c6143a73acc5afd73520, type: 2}
+    - target: {fileID: 100000, guid: eeae032f16ca0f24eac242d52aeecef8, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: eeae032f16ca0f24eac242d52aeecef8, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eeae032f16ca0f24eac242d52aeecef8, type: 3}
   m_RootGameObject: {fileID: 1957766723}
@@ -14095,7 +14557,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2029289409}
   - 95: {fileID: 2029289410}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14172,6 +14634,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 675942148}
@@ -14185,7 +14655,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2039897838}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_border_deco_Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14223,7 +14693,7 @@ GameObject:
   - 4: {fileID: 2044258677}
   - 33: {fileID: 2044258679}
   - 23: {fileID: 2044258678}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14281,7 +14751,7 @@ GameObject:
   - 4: {fileID: 2052604652}
   - 33: {fileID: 2052604654}
   - 23: {fileID: 2052604653}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14339,7 +14809,7 @@ GameObject:
   - 4: {fileID: 2061581833}
   - 95: {fileID: 2061581834}
   - 65: {fileID: 2061581835}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14397,7 +14867,7 @@ GameObject:
   - 65: {fileID: 2063546429}
   - 23: {fileID: 2063546428}
   - 114: {fileID: 2063546432}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: LeftDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14477,7 +14947,7 @@ GameObject:
   - 4: {fileID: 2064710620}
   - 33: {fileID: 2064710622}
   - 23: {fileID: 2064710621}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14533,7 +15003,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2068684557}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14552,8 +15022,8 @@ Transform:
   m_Children:
   - {fileID: 579626206}
   - {fileID: 2039897838}
-  - {fileID: 1957766724}
   - {fileID: 1380260128}
+  - {fileID: 1957766724}
   - {fileID: 1827175908}
   - {fileID: 1898036547}
   - {fileID: 1146513502}
@@ -14571,7 +15041,7 @@ GameObject:
   - 4: {fileID: 2069759086}
   - 33: {fileID: 2069759088}
   - 23: {fileID: 2069759087}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14629,7 +15099,7 @@ GameObject:
   - 4: {fileID: 2071653050}
   - 33: {fileID: 2071653052}
   - 23: {fileID: 2071653051}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14686,7 +15156,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2077340751}
   - 95: {fileID: 2077340753}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14729,7 +15199,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2077494056}
   - 95: {fileID: 2077494057}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14772,7 +15242,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2081214281}
   - 95: {fileID: 2081214282}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14849,6 +15319,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 1778758657}
@@ -14864,7 +15342,7 @@ GameObject:
   - 4: {fileID: 2097895128}
   - 95: {fileID: 2097895127}
   - 65: {fileID: 2097895129}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14920,7 +15398,7 @@ GameObject:
   - 4: {fileID: 2105186087}
   - 33: {fileID: 2105186089}
   - 23: {fileID: 2105186088}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14978,7 +15456,7 @@ GameObject:
   - 4: {fileID: 2110943844}
   - 33: {fileID: 2110943846}
   - 23: {fileID: 2110943845}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15036,7 +15514,7 @@ GameObject:
   - 4: {fileID: 2122518453}
   - 33: {fileID: 2122518455}
   - 23: {fileID: 2122518454}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Egypt_Border_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15127,6 +15605,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
+    - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_RootGameObject: {fileID: 895181601}
@@ -15143,7 +15629,7 @@ GameObject:
   - 33: {fileID: 2146215652}
   - 136: {fileID: 2146215651}
   - 23: {fileID: 2146215650}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
