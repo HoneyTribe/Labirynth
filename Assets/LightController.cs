@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LightController : MonoBehaviour {
 
-	private float rotationSpeed = 0.5f;
+	private float rotationSpeed = 0.7f;
 
 	void MoveLeft()
 	{

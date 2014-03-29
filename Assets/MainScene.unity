@@ -1000,7 +1000,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: .936394215, b: .867647052, a: 1}
   m_Intensity: 3
   m_Range: 14
   m_SpotAngle: 76
@@ -3188,7 +3188,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: .936394215, b: .867647052, a: 1}
   m_Intensity: 0
   m_Range: 14
   m_SpotAngle: 28
@@ -3250,7 +3250,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 2
-  m_Color: {r: 1, g: .884194911, b: .759028971, a: 1}
+  m_Color: {r: 1, g: .936394215, b: .867647052, a: 1}
   m_Intensity: 1
   m_Range: 20
   m_SpotAngle: 179
@@ -3982,7 +3982,7 @@ GameObject:
   - 124: {fileID: 525393513}
   - 81: {fileID: 525393512}
   m_Layer: 0
-  m_Name: Main Camera_Front
+  m_Name: MainCamera_Front
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6252,7 +6252,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: .884194911, b: .759028971, a: 1}
   m_Intensity: 0
   m_Range: 80
   m_SpotAngle: 1
@@ -8380,7 +8380,7 @@ GameObject:
   - 81: {fileID: 1136220964}
   - 114: {fileID: 1136220963}
   m_Layer: 0
-  m_Name: Main Camera Angled
+  m_Name: MainCamera_Angled
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9675,7 +9675,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 0
-  m_Color: {r: 1, g: .976760685, b: .879271209, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0
   m_Range: 400
   m_SpotAngle: 30
@@ -10172,7 +10172,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: .936394215, b: .867647052, a: 1}
   m_Intensity: 3
   m_Range: 14
   m_SpotAngle: 76
@@ -11481,7 +11481,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: .884194911, b: .759028971, a: 1}
   m_Intensity: 0
   m_Range: 80
   m_SpotAngle: 1
@@ -12288,7 +12288,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: .936394215, b: .867647052, a: 1}
   m_Intensity: 0
   m_Range: 14
   m_SpotAngle: 28
