@@ -66,6 +66,11 @@ public class PlayerController : MonoBehaviour {
 
 	private void handleKeys()
 	{
+		if (!Input.anyKey)
+		{
+			keys.Clear();
+		}
+
 		if (Input.GetKeyDown (moveUp))
 		{
 			keys.Add(moveUp);
