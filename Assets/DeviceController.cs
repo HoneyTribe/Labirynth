@@ -7,7 +7,7 @@ public class DeviceController : MonoBehaviour {
 
 	private Vector3 movement;
 	private bool isInLighhouse = true;
-	private float speed = 50.0f;
+	private float speed = 65.0f;
 
 	void Start () 
 	{
