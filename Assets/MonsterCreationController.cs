@@ -3,28 +3,22 @@ using System.Collections;
 
 public class MonsterCreationController : MonoBehaviour {
 
-	private static int firstDelay = 15;
-	private static int delay = 15;
-
 	private GameObject monsterDoorLeft;
 	private GameObject monsterDoorRight;
 
 	public GameObject monsterPrefab;
 
-	private LevelFinishedController levelFinishedController;
-
 	void Start()
 	{
 		monsterDoorLeft = GameObject.Find ("monsterDoorLeft");
 		monsterDoorRight = GameObject.Find ("monsterDoorRight");
-		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
 		StartCoroutine(WakeUpMonster());
 	}
 
 	IEnumerator WakeUpMonster() 
 	{
-		yield return new WaitForSeconds(firstDelay);
-		for (int i=0; i < levelFinishedController.getNumberOfMonsters(); i++) 
+		yield return new WaitForSeconds(LevelFinishedController.instance.getTimeToFirstMonster());
+		for (int i=0; i < LevelFinishedController.instance.getNumberOfMonsters(); i++) 
 		{
 			int entrance = Random.Range(0, 2);
 			if (entrance == 0)
@@ -39,7 +33,7 @@ public class MonsterCreationController : MonoBehaviour {
 				yield return new WaitForSeconds(3f);
 				CreateMonster(monsterDoorRight);
 			}
-			yield return new WaitForSeconds(delay);
+			yield return new WaitForSeconds(LevelFinishedController.instance.getTimeBetweenMonsters());
 		}
 	}
 

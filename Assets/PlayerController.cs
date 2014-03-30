@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour {
 
 	private void handleLogic(float x, float z, float action)
 	{
-		if (z > 0)
+		if ((z > 0) && (x == 0))
 		{
 			if (lighthouseEntered)
 			{

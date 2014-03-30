@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LevelFinishedController : MonoBehaviour {
 
-	private static bool created = false;
+	public static LevelFinishedController instance;
 
 	private int level = 0;
 	private int maxLevel = 0;
@@ -18,10 +18,10 @@ public class LevelFinishedController : MonoBehaviour {
 	private bool stopped;
 
 	void Awake() {
-		if (!created) {
+		if (instance == null) {
 			// this is the first instance - make it persist
 			DontDestroyOnLoad(gameObject);
-			created = true;
+			instance = this;
 		} else {
 			// this must be a duplicate from a scene reload - DESTROY!
 			Destroy(this.gameObject);
@@ -120,6 +120,21 @@ public class LevelFinishedController : MonoBehaviour {
 	public int getNumberOfMonsters()
 	{
 		return levelDefinition.getLevels()[level].getNumberOfMonsters ();
+	}
+
+	public int getTimeToFirstMonster()
+	{
+		return levelDefinition.getLevels()[level].getTimeToFirstMonster ();
+	}
+
+	public int getTimeBetweenMonsters()
+	{
+		return levelDefinition.getLevels()[level].getTimeBetweenMonsters ();
+	}
+
+	public float getMonsterSpeed()
+	{
+		return levelDefinition.getLevels()[level].getMonsterSpeed ();
 	}
 
 	public bool isStopped()

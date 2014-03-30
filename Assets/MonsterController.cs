@@ -3,7 +3,6 @@ using System.Collections;
 
 public class MonsterController : MonoBehaviour {
 
-	private float speed = 2.4f;
 	private bool enter;
 	private AssemblyCSharp.Instantiation maze;
 	
@@ -96,7 +95,7 @@ public class MonsterController : MonoBehaviour {
 			else
 			{
 				transform.position = Vector3.Lerp (
-					transform.localPosition, newPosition, Time.deltaTime * speed / distance);
+					transform.localPosition, newPosition, Time.deltaTime * LevelFinishedController.instance.getMonsterSpeed() / distance);
 			}
 		}
 		attractionTrigger = false;
