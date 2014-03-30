@@ -8,7 +8,11 @@ public class PlayerController : MonoBehaviour {
 	public KeyCode moveDown;
 	public KeyCode moveLeft;
 	public KeyCode moveRight;
-	public KeyCode action;
+	public KeyCode actionTrigger;
+
+	public string horizontalAxis;
+	public string verticalAxis;
+	public string triggerAxis;
 
 	public float speed = 10;	
 
@@ -42,29 +46,20 @@ public class PlayerController : MonoBehaviour {
 			return;
 		}
 
-		handleKeys ();
+		float x = 0;
+		float z = 0;
+		float action = 0;
+		handleAxis (ref x, ref z, ref action);
+		handleKeys (ref x, ref z, ref action);
+		handleLogic(x, z, action);
 
-		int x = 0;
-		int z = 0;
-		for (int i=0; i < keys.Count; i++)
+		if (!lighthouseEntered)
 		{
-			handleKeysLogic(i, ref x, ref z);
-		}
-		Vector3 aa = new Vector3(x, 0, z).normalized * speed;
-		rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
-
-		if (Input.GetKeyUp (action) && (lighthouseEntered)) 
-		{
-			topLight.gameObject.SendMessage("AttractMonster");
-		}
-
-		if ((!lighthouseEntered) && (Input.GetKeyUp (action)))
-		{
-			device.gameObject.SendMessage("Move", transform.localPosition);
+			rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
 		}
 	}
 
-	private void handleKeys()
+	private void handleKeys(ref float x, ref float z, ref float action)
 	{
 		if (!Input.anyKey)
 		{
@@ -106,43 +101,89 @@ public class PlayerController : MonoBehaviour {
 		{
 			keys.Remove(moveRight);
 		}
+
+		if (Input.GetKeyDown (actionTrigger))
+		{
+			keys.Add(actionTrigger);
+		}
+		else if (Input.GetKeyUp (actionTrigger))
+		{
+			keys.Remove(actionTrigger);
+		}
+
+		handleKeysActions (ref x, ref z, ref action);
 	}
 
-	private void handleKeysLogic(int i, ref int x, ref int z)
+	private void handleKeysActions(ref float x, ref float z, ref float action)
 	{
-		if (keys[i] == moveUp)
+		for (int i=0; i < keys.Count; i++)
 		{
-			z = 1;
+			if (keys[i] == moveUp)
+			{
+				z = 1;
+			}
+			else if (keys[i] == moveDown)
+			{
+				z = -1;
+			}
+			else if(keys[i] == moveLeft)
+			{
+				x = -1; 
+			}
+			else if(keys[i] == moveRight)
+			{
+				x = 1;
+			}
+			else if(keys[i] == actionTrigger)
+			{
+				action = 1;
+			}
+		}
+	}
+
+	private void handleAxis(ref float x, ref float z, ref float action)
+	{
+		x = Input.GetAxis (horizontalAxis) * Time.deltaTime;
+		z = Input.GetAxis (verticalAxis) * Time.deltaTime;
+		action = Input.GetAxis (triggerAxis) * Time.deltaTime;
+	}
+
+	private void handleLogic(float x, float z, float action)
+	{
+		if (z > 0)
+		{
 			if (lighthouseEntered)
 			{
 				lighthouseEntered = false;
 				topLight.gameObject.SendMessage("TurnOff");
 			}
 		}
-		else if (keys[i] == moveDown)
-		{
-			z = -1;
-		}
-		else if(keys[i] == moveLeft)
+
+		if(x < 0)
 		{
 			if (lighthouseEntered)
 			{
 				torch.gameObject.SendMessage("MoveLeft");
 			}
-			else
-			{
-				x = -1; 
-			}
 		}
-		else if(keys[i] == moveRight)
+
+		if(x > 0)
 		{
 			if (lighthouseEntered)
 			{
 				torch.gameObject.SendMessage("MoveRight");
 			}
+		}
+
+		if (action > 0)
+		{
+			if (lighthouseEntered)
+			{
+				topLight.gameObject.SendMessage("AttractMonster");
+			}
 			else
 			{
-				x = 1;
+				device.gameObject.SendMessage("Move", transform.localPosition);
 			}
 		}
 	}
@@ -183,6 +224,6 @@ public class PlayerController : MonoBehaviour {
 
 	public KeyCode getAction()
 	{
-		return action;
+		return actionTrigger;
 	}
 }

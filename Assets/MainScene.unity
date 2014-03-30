@@ -3682,7 +3682,10 @@ MonoBehaviour:
   moveDown: 274
   moveLeft: 276
   moveRight: 275
-  action: 303
+  actionTrigger: 303
+  horizontalAxis: J1RightHorizontal
+  verticalAxis: J1RightVertical
+  triggerAxis: J1RightTrigger
   speed: 10
 --- !u!23 &468870938
 Renderer:
@@ -4084,7 +4087,10 @@ MonoBehaviour:
   moveDown: 115
   moveLeft: 97
   moveRight: 100
-  action: 32
+  actionTrigger: 32
+  horizontalAxis: J1LeftHorizontal
+  verticalAxis: J1LeftVertical
+  triggerAxis: J1LeftTrigger
   speed: 10
 --- !u!23 &504520875
 Renderer:
