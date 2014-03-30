@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 	private LevelFinishedController levelFinishedController;
 
 	private List<KeyCode> keys;
+	private bool actionAxisInUse;
 
 	void Start()
 	{
@@ -145,7 +146,18 @@ public class PlayerController : MonoBehaviour {
 	{
 		x = Input.GetAxis (horizontalAxis) * Time.deltaTime;
 		z = Input.GetAxis (verticalAxis) * Time.deltaTime;
-		action = Input.GetAxis (triggerAxis) * Time.deltaTime;
+		float actionAxis = Input.GetAxis (triggerAxis);
+
+		if ((!actionAxisInUse) && (actionAxis != 0))
+		{
+			action = actionAxis * Time.deltaTime;
+			actionAxisInUse = true;
+		}
+
+		if (actionAxis == 0)
+		{
+			actionAxisInUse = false;
+		}
 	}
 
 	private void handleLogic(float x, float z, float action)
