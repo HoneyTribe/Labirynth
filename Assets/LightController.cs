@@ -3,13 +3,20 @@ using System.Collections;
 
 public class LightController : MonoBehaviour {
 
-	private float rotationSpeed = 0.7f;
+	public static LightController instance;
+
+	private float rotationSpeed = 30f;
+
+	void Start()
+	{
+		instance = this;
+	}
 
 	void MoveLeft()
 	{
 		if (transform.rotation.y > -0.40) 
 		{
-			transform.Rotate (0, -rotationSpeed, 0);
+			transform.Rotate (0, -rotationSpeed * Time.deltaTime, 0);
 		}
 	}
 
@@ -17,7 +24,7 @@ public class LightController : MonoBehaviour {
 	{
 		if (transform.rotation.y < 0.40) 
 		{
-			transform.Rotate (0, rotationSpeed, 0);
+			transform.Rotate (0, rotationSpeed * Time.deltaTime, 0);
 		}
 	}
 }

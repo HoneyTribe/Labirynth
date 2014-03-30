@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour {
 
 	private bool lighthouseEntered = false;
 
-	private GameObject torch;
 	private GameObject topLight;
 	private GameObject levelController;
 	private GameObject device;
@@ -29,7 +28,6 @@ public class PlayerController : MonoBehaviour {
 
 	void Start()
 	{
-		torch = GameObject.Find ("LightContainer");
 		topLight = GameObject.Find ("TopLight");
 		levelController = GameObject.Find ("LevelController");
 		device = GameObject.Find ("Device");
@@ -166,7 +164,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			if (lighthouseEntered)
 			{
-				torch.gameObject.SendMessage("MoveLeft");
+				LightController.instance.gameObject.SendMessage("MoveLeft");
 			}
 		}
 
@@ -174,7 +172,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			if (lighthouseEntered)
 			{
-				torch.gameObject.SendMessage("MoveRight");
+				LightController.instance.gameObject.SendMessage("MoveRight");
 			}
 		}
 
