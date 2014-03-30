@@ -189,7 +189,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_CullingMask.m_Bits
-      value: 2048
+      value: 3072
       objectReference: {fileID: 0}
     - target: {fileID: 1500000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_Emit
@@ -1713,7 +1713,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_CullingMask.m_Bits
-      value: 2048
+      value: 11264
       objectReference: {fileID: 0}
     - target: {fileID: 1500000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_Emit
@@ -3116,7 +3116,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 3072
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -3895,7 +3895,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1312768
+    m_Bits: 1313792
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -6716,7 +6716,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 10240
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -6980,7 +6980,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 11264
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -16700,7 +16700,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_CullingMask.m_Bits
-      value: 2048
+      value: 10240
       objectReference: {fileID: 0}
     - target: {fileID: 1500000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_Emit
@@ -16936,12 +16936,12 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1933560207}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Type: 2
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 4
-  m_Range: 4
+  m_Color: {r: 1, g: .936394215, b: .867647052, a: 1}
+  m_Intensity: 7
+  m_Range: 4.5
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
