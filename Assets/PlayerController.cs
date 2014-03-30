@@ -150,13 +150,13 @@ public class PlayerController : MonoBehaviour {
 
 		Debug.Log (actionAxis);
 
-		if ((!actionAxisInUse) && (actionAxis != 0.0f))
+		if ((!actionAxisInUse) && (actionAxis == 1.0f))
 		{
 			action = actionAxis * Time.deltaTime;
 			actionAxisInUse = true;
 		}
 
-		if (actionAxis == 0.0f)
+		if (actionAxis == -1.0f)
 		{
 			actionAxisInUse = false;
 		}
