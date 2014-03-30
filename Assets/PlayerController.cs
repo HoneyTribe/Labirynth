@@ -103,13 +103,9 @@ public class PlayerController : MonoBehaviour {
 			keys.Remove(moveRight);
 		}
 
-		if (Input.GetKeyDown (actionTrigger))
+		if (Input.GetKeyUp (actionTrigger))
 		{
-			keys.Add(actionTrigger);
-		}
-		else if (Input.GetKeyUp (actionTrigger))
-		{
-			keys.Remove(actionTrigger);
+			action = 1;
 		}
 
 		handleKeysActions (ref x, ref z, ref action);
@@ -135,10 +131,6 @@ public class PlayerController : MonoBehaviour {
 			{
 				x = 1;
 			}
-			else if(keys[i] == actionTrigger)
-			{
-				action = 1;
-			}
 		}
 	}
 
@@ -147,8 +139,6 @@ public class PlayerController : MonoBehaviour {
 		x = Input.GetAxis (horizontalAxis) * Time.deltaTime;
 		z = Input.GetAxis (verticalAxis) * Time.deltaTime;
 		float actionAxis = Input.GetAxis (triggerAxis);
-
-		Debug.Log (actionAxis);
 
 		if ((!actionAxisInUse) && (actionAxis == 1.0f))
 		{
@@ -212,6 +202,7 @@ public class PlayerController : MonoBehaviour {
 		if(collision.collider.name == "Lighthouse")
 		{
 			lighthouseEntered = true;
+			rigidbody.velocity = new Vector3(0, 0, 0);
 			topLight.gameObject.SendMessage("TurnOn");
 		}
 		if(collision.collider.name == "ExitTrigger")
