@@ -189,7 +189,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_CullingMask.m_Bits
-      value: 3072
+      value: 2097152
       objectReference: {fileID: 0}
     - target: {fileID: 1500000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_Emit
@@ -325,11 +325,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
     - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
@@ -910,7 +910,7 @@ GameObject:
   - 4: {fileID: 110133874}
   - 33: {fileID: 110133876}
   - 23: {fileID: 110133875}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1167,7 +1167,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 179200
+    m_Bits: 2274304
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -1631,7 +1631,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_CullingMask.m_Bits
-      value: 11264
+      value: 2105344
       objectReference: {fileID: 0}
     - target: {fileID: 1500000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_Emit
@@ -1837,11 +1837,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
     - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
@@ -2952,7 +2952,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 2097152
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -3493,7 +3493,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 186880
+    m_Bits: 2292224
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -3731,7 +3731,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1313792
+    m_Bits: 3408896
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -4377,7 +4377,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 505727310}
   - 95: {fileID: 505727311}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4479,7 +4479,7 @@ GameObject:
   - 4: {fileID: 514737428}
   - 33: {fileID: 514737430}
   - 23: {fileID: 514737429}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4537,7 +4537,7 @@ GameObject:
   - 4: {fileID: 514809571}
   - 33: {fileID: 514809573}
   - 23: {fileID: 514809572}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4917,7 +4917,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 558302658}
   - 95: {fileID: 558302659}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5383,7 +5383,7 @@ GameObject:
   - 4: {fileID: 627753340}
   - 33: {fileID: 627753342}
   - 23: {fileID: 627753341}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5781,7 +5781,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 186880
+    m_Bits: 2292224
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -6322,7 +6322,7 @@ GameObject:
   - 4: {fileID: 761167142}
   - 33: {fileID: 761167144}
   - 23: {fileID: 761167143}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6552,7 +6552,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 10240
+    m_Bits: 2105344
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -6816,7 +6816,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 11264
+    m_Bits: 2105344
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -7322,11 +7322,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
     - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
@@ -7474,7 +7474,7 @@ GameObject:
   - 4: {fileID: 901171727}
   - 95: {fileID: 901171728}
   - 64: {fileID: 901171729}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9806,11 +9806,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
     - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
@@ -10373,11 +10373,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
     - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
@@ -10562,7 +10562,7 @@ GameObject:
   - 4: {fileID: 1196619889}
   - 33: {fileID: 1196619891}
   - 23: {fileID: 1196619890}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11583,7 +11583,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_CullingMask.m_Bits
-      value: 2048
+      value: 2097152
       objectReference: {fileID: 0}
     - target: {fileID: 1500000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_Emit
@@ -12336,7 +12336,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 179200
+    m_Bits: 2274304
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -12625,7 +12625,7 @@ GameObject:
   - 4: {fileID: 1413684546}
   - 95: {fileID: 1413684547}
   - 64: {fileID: 1413684548}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12865,7 +12865,7 @@ GameObject:
   - 4: {fileID: 1450479705}
   - 33: {fileID: 1450479707}
   - 23: {fileID: 1450479706}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13553,7 +13553,7 @@ GameObject:
   - 4: {fileID: 1563348139}
   - 95: {fileID: 1563348140}
   - 64: {fileID: 1563348141}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13778,11 +13778,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
     - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
@@ -13958,7 +13958,7 @@ GameObject:
   - 4: {fileID: 1591746987}
   - 33: {fileID: 1591746989}
   - 23: {fileID: 1591746988}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15769,11 +15769,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
     - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
@@ -15833,7 +15833,7 @@ GameObject:
   - 4: {fileID: 1790323036}
   - 95: {fileID: 1790323037}
   - 64: {fileID: 1790323038}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16410,11 +16410,11 @@ Prefab:
       objectReference: {fileID: 2100000, guid: aba359ad51c0f9b42b4df384629f9079, type: 2}
     - target: {fileID: 100004, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
@@ -16430,7 +16430,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1865045667}
   - 95: {fileID: 1865045668}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16700,7 +16700,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 10800000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_CullingMask.m_Bits
-      value: 10240
+      value: 2105344
       objectReference: {fileID: 0}
     - target: {fileID: 1500000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
       propertyPath: m_Emit
@@ -17377,7 +17377,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 2097152
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -18282,7 +18282,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2081214281}
   - 95: {fileID: 2081214282}
-  m_Layer: 11
+  m_Layer: 21
   m_Name: egypt_Static_Wall_deco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18956,7 +18956,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2146215648}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: .5
   m_Height: 2
   m_Direction: 1
