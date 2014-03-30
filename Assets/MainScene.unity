@@ -3894,8 +3894,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 480611346}
-  m_LocalRotation: {x: 0, y: .0402287133, z: 0, w: .999190509}
-  m_LocalPosition: {x: .763178289, y: 0, z: .175933838}
+  m_LocalRotation: {x: 0, y: .0174524076, z: 0, w: .99984771}
+  m_LocalPosition: {x: .531011701, y: 0, z: .175933838}
   m_LocalScale: {x: .487655342, y: .5, z: 5.4156599}
   m_Children: []
   m_Father: {fileID: 1043791453}
@@ -6012,8 +6012,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 684556373}
-  m_LocalRotation: {x: 0, y: -.0402287878, z: 0, w: .999190569}
-  m_LocalPosition: {x: -.763178349, y: 0, z: .175933838}
+  m_LocalRotation: {x: 0, y: .0174519811, z: 0, w: -.99984771}
+  m_LocalPosition: {x: -.531011701, y: 0, z: .175933838}
   m_LocalScale: {x: .487655342, y: .5, z: 5.4156599}
   m_Children: []
   m_Father: {fileID: 1043791453}
@@ -11719,7 +11719,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1302016
+    m_Bits: 253440
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
