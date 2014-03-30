@@ -148,13 +148,15 @@ public class PlayerController : MonoBehaviour {
 		z = Input.GetAxis (verticalAxis) * Time.deltaTime;
 		float actionAxis = Input.GetAxis (triggerAxis);
 
-		if ((!actionAxisInUse) && (actionAxis != 0))
+		Debug.Log (actionAxis);
+
+		if ((!actionAxisInUse) && (actionAxis != 0.0f))
 		{
 			action = actionAxis * Time.deltaTime;
 			actionAxisInUse = true;
 		}
 
-		if (actionAxis == 0)
+		if (actionAxis == 0.0f)
 		{
 			actionAxisInUse = false;
 		}
