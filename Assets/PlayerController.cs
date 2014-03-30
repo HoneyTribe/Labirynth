@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
 	public string verticalAxis;
 	public string triggerAxis;
 
-	public float speed = 10;	
+	public float speed = 8;	
 
 	private bool lighthouseEntered = false;
 
