@@ -63,7 +63,12 @@ namespace AssemblyCSharp
 						                           smallWallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
 						int angle =  Random.Range(0, 4) * 90;
-						Instantiate (smallWallPrefab, pos, Quaternion.Euler(0, angle, 0)); 
+						GameObject obj = (GameObject)Instantiate (smallWallPrefab, pos, Quaternion.Euler(0, angle, 0)); 
+
+						if (z == sizeZ * 2) // last row
+						{
+							obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
+						}
 					}
 				}
 				
@@ -86,7 +91,12 @@ namespace AssemblyCSharp
 						                           horisontalWallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
 						int angle =  Random.Range(0, 2) * 180;
-						Instantiate (horisontalWallPrefab, pos, Quaternion.Euler(0, 90 + angle, 0)); 
+						GameObject obj = (GameObject) Instantiate (horisontalWallPrefab, pos, Quaternion.Euler(0, 90 + angle, 0)); 
+
+						if (z == sizeZ * 2) // last row
+						{
+							obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
+						}
 					}
 				}
 				
@@ -108,7 +118,12 @@ namespace AssemblyCSharp
 						                           verticalWallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
 						int angle =  Random.Range(0, 2) * 180;
-						Instantiate (verticalWallPrefab, pos, Quaternion.Euler(0, 0 + angle, 0)); 
+						GameObject obj = (GameObject) Instantiate (verticalWallPrefab, pos, Quaternion.Euler(0, 0 + angle, 0));
+
+						if (z == sizeZ * 2 - 1) // last row
+						{
+							obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
+						}
 					}
 				}
 				
