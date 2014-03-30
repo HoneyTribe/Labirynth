@@ -58,6 +58,14 @@ public class PlayerController : MonoBehaviour {
 		{
 			rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
 		}
+		else
+		{
+			if (!rigidbody.velocity.Equals(Vector3.zero))
+			{
+				lighthouseEntered = false;
+				topLight.gameObject.SendMessage("TurnOff");
+			}
+		}
 	}
 
 	private void handleKeys(ref float x, ref float z, ref float action)
@@ -154,15 +162,6 @@ public class PlayerController : MonoBehaviour {
 
 	private void handleLogic(float x, float z, float action)
 	{
-		if (z > 0)
-		{
-			if (lighthouseEntered)
-			{
-				lighthouseEntered = false;
-				topLight.gameObject.SendMessage("TurnOff");
-			}
-		}
-
 		if(x < 0)
 		{
 			if (lighthouseEntered)
