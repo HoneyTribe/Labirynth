@@ -137,6 +137,16 @@ public class LevelFinishedController : MonoBehaviour {
 		return levelDefinition.getLevels()[level].getMonsterSpeed ();
 	}
 
+	public int getMazeSizeX()
+	{
+		return levelDefinition.getLevels()[level].getMazeSizeX ();
+	}
+
+	public int getMazeSizeZ()
+	{
+		return levelDefinition.getLevels()[level].getMazeSizeZ ();
+	}
+
 	public bool isStopped()
 	{
 		return stopped;

@@ -9,22 +9,25 @@ namespace AssemblyCSharp
 		public GameObject smallWallPrefab;
 		public GameObject keyPrefab;
 
-		private static int sizeX = 9;
-		private static int sizeZ = 9;
 		public static int planeSizeX = 40;
 		public static int planeSizeZ = 34;
 		private static int offsetZ = 6;
 
-		private static float spaceX = planeSizeX / (sizeX * 2f);
-		private static float spaceZ = planeSizeZ / (sizeZ * 2f);
+		private int sizeX;
+		private int sizeZ;
+		private float spaceX;
+		private float spaceZ;
 
 		private Labirynth labirynth;
-		private LevelFinishedController levelFinishedController;
 
 		// Use this for initialization
 		void Start () {
 
-			levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController> ();
+			sizeX = LevelFinishedController.instance.getMazeSizeX();
+			sizeZ = LevelFinishedController.instance.getMazeSizeZ();
+			spaceX = planeSizeX / (sizeX * 2f);
+			spaceZ = planeSizeZ / (sizeZ * 2f);
+
 			labirynth = new Labirynth (sizeX, sizeZ);
 			labirynth.generate ();
 			drawKeys (labirynth.getKeys ());
@@ -41,7 +44,7 @@ namespace AssemblyCSharp
 					return obj2.getDistance().CompareTo(obj1.getDistance());
 				}
 			);
-			for (int i=0; i<levelFinishedController.getNumberOfKeys(); i++) 
+			for (int i=0; i<LevelFinishedController.instance.getNumberOfKeys(); i++) 
 			{
 				Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * keys[i].getPosition().x,
 				                           keyPrefab.transform.position.y,
