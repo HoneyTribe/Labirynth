@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
 	public string verticalAxis;
 	public string triggerAxis;
 
-	public float speed = 10;	
+	public float speed = 8;	
 
 	private bool lighthouseEntered = false;
 
@@ -148,13 +148,15 @@ public class PlayerController : MonoBehaviour {
 		z = Input.GetAxis (verticalAxis) * Time.deltaTime;
 		float actionAxis = Input.GetAxis (triggerAxis);
 
-		if ((!actionAxisInUse) && (actionAxis != 0))
+		Debug.Log (actionAxis);
+
+		if ((!actionAxisInUse) && (actionAxis == 1.0f))
 		{
 			action = actionAxis * Time.deltaTime;
 			actionAxisInUse = true;
 		}
 
-		if (actionAxis == 0)
+		if (actionAxis == -1.0f)
 		{
 			actionAxisInUse = false;
 		}
