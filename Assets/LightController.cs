@@ -5,7 +5,7 @@ public class LightController : MonoBehaviour {
 
 	public static LightController instance;
 
-	private float rotationSpeed = 30f;
+	private float rotationSpeed = 18f;
 
 	void Start()
 	{
