@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MonsterController : MonoBehaviour {
+public abstract class AbstractMonsterController : MonoBehaviour {
 
 	private bool enter;
-	private AssemblyCSharp.Instantiation maze;
+	protected AssemblyCSharp.Instantiation maze;
 	
 	private GameObject player1;
 	private GameObject player2;
 	private GameObject topLight;
 	private GameObject device;
-	private LightController lightController;
 	private PlayerController player1Controller;
 	private PlayerController player2Controller;
 
@@ -24,7 +23,8 @@ public class MonsterController : MonoBehaviour {
 
 	private Vector3 newPosition;
 
-	// Use this for initialization
+	public abstract void go (ref Vector3 newPosition, bool attractionTrigger);
+
 	void Start () {
 	
 		textMesh = gameObject.GetComponentInChildren<TextMesh> ();
@@ -39,8 +39,6 @@ public class MonsterController : MonoBehaviour {
 
 		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
 
-		topLight = GameObject.Find ("TopLight");
-		lightController = topLight.transform.parent.GetComponent<LightController>();
 		enter = true;
 		attractionTrigger = false;
 	}
@@ -85,18 +83,7 @@ public class MonsterController : MonoBehaviour {
 		}	
 		else
 		{
-			float distance = Vector3.Distance(transform.localPosition, newPosition);
-
-			if ((attractionTrigger) || (distance == 0))
-			{
-				Vector3 playerPosition = getTarget();
-				newPosition = maze.giveMeNextPosition(transform.localPosition, playerPosition);
-			}
-			else
-			{
-				transform.position = Vector3.Lerp (
-					transform.localPosition, newPosition, Time.deltaTime * LevelFinishedController.instance.getMonsterSpeed() / distance);
-			}
+			go (ref newPosition, attractionTrigger);
 		}
 		attractionTrigger = false;
 	}
@@ -106,7 +93,7 @@ public class MonsterController : MonoBehaviour {
 		timeLeft = interval;
 	}
 
-	private Vector3 getTarget()
+	protected Vector3 getTarget()
 	{
 		Vector3 player1Pos = player1.transform.localPosition;
 		Vector3 player2Pos = player2.transform.localPosition;

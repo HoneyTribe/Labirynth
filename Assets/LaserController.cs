@@ -9,6 +9,7 @@ public class LaserController : MonoBehaviour {
 	private Vector3 currentPos;
 
 	private bool shooting;
+	private bool drawing;
 
 	// Update is called once per frame
 	void Update () 
@@ -26,6 +27,12 @@ public class LaserController : MonoBehaviour {
 				shooting = false;
 			}
 		}
+
+		if (drawing)
+		{
+			((LineRenderer) renderer).SetPosition(1, 2 * (endPos - startPos));
+			drawing = false;
+		}
 	}
 
 	public void shoot (Vector3 startPosition, Vector3 endPosition)
@@ -33,6 +40,7 @@ public class LaserController : MonoBehaviour {
 		startPos = startPosition;
 		endPos = endPosition;
 		currentPos = startPos;
-		shooting = true;
+		shooting = false;
+		drawing = true;
 	}
 }

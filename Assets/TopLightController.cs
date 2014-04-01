@@ -124,7 +124,7 @@ public class TopLightController : MonoBehaviour {
 			{
 				if (isIlluminated(monster))
 				{
-					monster.GetComponent<MonsterController>().setAttracted();
+					monster.GetComponent<AbstractMonsterController>().setAttracted();
 					StartCoroutine(showLaser(monster.transform.localPosition));
 					monsterAttracted = true;
 				}
