@@ -7,6 +7,7 @@ public class MonsterCreationController : MonoBehaviour {
 	private GameObject monsterDoorRight;
 
 	public GameObject monsterPrefab;
+	public GameObject flyingMonsterPrefab;
 
 	void Start()
 	{

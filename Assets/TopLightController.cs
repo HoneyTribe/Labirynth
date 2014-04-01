@@ -162,12 +162,12 @@ public class TopLightController : MonoBehaviour {
 		GameObject laser = (GameObject) Instantiate (laserPrefab, ball.transform.position, Quaternion.Euler(0, 0, 0)); 
 		LaserController laserController = laser.GetComponent<LaserController>();
 		laserController.shoot (ball.transform.position, monsterPosition);
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(0.2f);
 
 		GameObject laser2 = (GameObject) Instantiate (laserPrefab, monsterPosition, Quaternion.Euler(0, 0, 0)); 
 		LaserController laserController2 = laser2.GetComponent<LaserController>();
 		laserController2.shoot (monsterPosition, DeviceController.instance.transform.localPosition);
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(0.2f);
 
 		Destroy (laser);
 		Destroy (laser2);

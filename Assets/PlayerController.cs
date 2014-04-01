@@ -212,7 +212,8 @@ public class PlayerController : MonoBehaviour {
 			gameObject.transform.Translate(gameObject.transform.localPosition.x * 10, 0, 0);
 			levelController.gameObject.SendMessage("PlayerFinished");
 		}
-		if(collision.collider.name == "Monster(Clone)")
+		if((collision.collider.name == "Monster(Clone)") ||
+ 		   (collision.collider.name == "FlyingMonster(Clone)"))
 		{
 			levelController.gameObject.SendMessage("PlayerLost");
 		}

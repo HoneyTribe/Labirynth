@@ -1400,10 +1400,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 141250781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39dbb3da1f726094fba05018a7a16564, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c52d40dbb6668645b632017c137d30e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   monsterPrefab: {fileID: 100002, guid: df62ddf0b65953642807cdfc5c458759, type: 2}
+  flyingMonsterPrefab: {fileID: 100002, guid: e3193114cdc9e5f4d80d0ffb6feab5df, type: 2}
 --- !u!1 &144692306
 GameObject:
   m_ObjectHideFlags: 0
