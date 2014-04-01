@@ -11,8 +11,6 @@ public class DeviceController : MonoBehaviour {
 	private bool isInLighhouse = true;
 	private float speed = 65.0f;
 
-	public GameObject laserPrefab;
-
 	void Awake () 
 	{
 		instance = this;
@@ -47,12 +45,5 @@ public class DeviceController : MonoBehaviour {
 			isInLighhouse = true;
 			movement = initialPosition;
 		}
-	}
-
-	public void showLaser(Vector3 monsterPosition)
-	{
-		GameObject laser = (GameObject) Instantiate (laserPrefab, transform.localPosition, Quaternion.Euler(0, 0, 0)); 
-		LaserController laserController = laser.GetComponent<LaserController>();
-		laserController.shoot (transform.localPosition, monsterPosition);
 	}
 }

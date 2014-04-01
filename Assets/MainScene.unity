@@ -1917,7 +1917,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3383c9047e72c1c40aa9f5b7114c3701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserPrefab: {fileID: 100000, guid: ae600a4ab3eed27449e949abb4ce518e, type: 2}
 --- !u!1 &198084862
 GameObject:
   m_ObjectHideFlags: 0
@@ -11752,6 +11751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openningInterval: 1
   closingInterval: .5
+  laserPrefab: {fileID: 100000, guid: ae600a4ab3eed27449e949abb4ce518e, type: 2}
 --- !u!1001 &1318208423
 Prefab:
   m_ObjectHideFlags: 0

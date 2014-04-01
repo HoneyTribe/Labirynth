@@ -20,8 +20,14 @@ public class TopLightController : MonoBehaviour {
 	private GUIStyle lowEnergyStyle;
 	private float energy = 1.0f;
 
+	public GameObject laserPrefab;
+
+	private GameObject ball;
+
 	void Start()
 	{
+		ball = GameObject.Find ("ball");
+
 		borderStyle = new GUIStyle ();
 		Texture2D borderTexture = new Texture2D (1, 1);
 		borderTexture.SetPixel (0, 0, Color.white);
@@ -119,7 +125,7 @@ public class TopLightController : MonoBehaviour {
 				if (isIlluminated(monster))
 				{
 					monster.GetComponent<MonsterController>().setAttracted();
-					DeviceController.instance.showLaser(monster.transform.localPosition);
+					StartCoroutine(showLaser(monster.transform.localPosition));
 					monsterAttracted = true;
 				}
 			}
@@ -149,5 +155,21 @@ public class TopLightController : MonoBehaviour {
 		{
 			return false;
 		}
+	}
+
+	IEnumerator showLaser(Vector3 monsterPosition)
+	{
+		GameObject laser = (GameObject) Instantiate (laserPrefab, ball.transform.position, Quaternion.Euler(0, 0, 0)); 
+		LaserController laserController = laser.GetComponent<LaserController>();
+		laserController.shoot (ball.transform.position, monsterPosition);
+		yield return new WaitForSeconds(0.5f);
+
+		GameObject laser2 = (GameObject) Instantiate (laserPrefab, monsterPosition, Quaternion.Euler(0, 0, 0)); 
+		LaserController laserController2 = laser2.GetComponent<LaserController>();
+		laserController2.shoot (monsterPosition, DeviceController.instance.transform.localPosition);
+		yield return new WaitForSeconds(0.5f);
+
+		Destroy (laser);
+		Destroy (laser2);
 	}
 }
