@@ -19,31 +19,47 @@ public class MonsterCreationController : MonoBehaviour {
 	IEnumerator WakeUpMonster() 
 	{
 		yield return new WaitForSeconds(LevelFinishedController.instance.getTimeToFirstMonster());
-		for (int i=0; i < LevelFinishedController.instance.getNumberOfMonsters(); i++) 
+		foreach (AssemblyCSharp.MonsterTemplate monster in LevelFinishedController.instance.getMonsters())
 		{
 			int entrance = Random.Range(0, 2);
 			if (entrance == 0)
 			{
 				monsterDoorLeft.gameObject.SendMessage("OpenDoor");
 				yield return new WaitForSeconds(3f);
-				CreateMonster(monsterDoorLeft);
+				CreateMonster(monsterDoorLeft, monster);
 			}
 			else
 			{
 				monsterDoorRight.gameObject.SendMessage("OpenDoor");
 				yield return new WaitForSeconds(3f);
-				CreateMonster(monsterDoorRight);
+				CreateMonster(monsterDoorRight, monster);
 			}
 			yield return new WaitForSeconds(LevelFinishedController.instance.getTimeBetweenMonsters());
 		}
 	}
 
-	void CreateMonster(GameObject door)
+	private void CreateMonster(GameObject door, AssemblyCSharp.MonsterTemplate monsterTemplate)
 	{
+		GameObject prefab = getPrefab (monsterTemplate.getType());
+
 		Vector3 pos = new Vector3 (door.transform.localPosition.x - 3 * door.transform.forward.x,
-		                           monsterPrefab.transform.position.y,
-		                           monsterPrefab.transform.position.z);
-		GameObject monster = (GameObject) Instantiate (monsterPrefab, pos, Quaternion.Euler(0, 0, 0)); 
+		                           prefab.transform.position.y,
+		                           prefab.transform.position.z);
+		GameObject monster = (GameObject) Instantiate (prefab, pos, Quaternion.Euler(0, 0, 0)); 
+		monster.GetComponent<AbstractMonsterController> ().setSpeed (monsterTemplate.getSpeed());
 		monster.tag = "Monster";
+	}
+
+	private GameObject getPrefab(string type)
+	{
+		switch (type)
+		{
+		case "Standard":
+			return monsterPrefab;
+		case "Flying":
+			return flyingMonsterPrefab;
+		default:
+			throw new System.ArgumentException("Invalid monster identifier");
+		}
 	}
 }

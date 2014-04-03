@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class LevelFinishedController : MonoBehaviour {
 
@@ -117,9 +118,9 @@ public class LevelFinishedController : MonoBehaviour {
 		return levelDefinition.getLevels()[level].getNumberOfKeys();
 	}
 
-	public int getNumberOfMonsters()
+	public List<AssemblyCSharp.MonsterTemplate> getMonsters()
 	{
-		return levelDefinition.getLevels()[level].getNumberOfMonsters ();
+		return levelDefinition.getLevels()[level].getMonsters ();
 	}
 
 	public int getTimeToFirstMonster()
@@ -130,11 +131,6 @@ public class LevelFinishedController : MonoBehaviour {
 	public int getTimeBetweenMonsters()
 	{
 		return levelDefinition.getLevels()[level].getTimeBetweenMonsters ();
-	}
-
-	public float getMonsterSpeed()
-	{
-		return levelDefinition.getLevels()[level].getMonsterSpeed ();
 	}
 
 	public int getMazeSizeX()

@@ -3,6 +3,8 @@ using System.Collections;
 
 public abstract class AbstractMonsterController : MonoBehaviour {
 
+	protected float speed;
+
 	private bool enter;
 	protected AssemblyCSharp.Instantiation maze;
 	
@@ -91,6 +93,11 @@ public abstract class AbstractMonsterController : MonoBehaviour {
 	public void setAttracted()
 	{
 		timeLeft = interval;
+	}
+
+	public void setSpeed(float speed)
+	{
+		this.speed = speed;
 	}
 
 	protected Vector3 getTarget()

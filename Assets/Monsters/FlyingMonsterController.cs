@@ -33,7 +33,7 @@ public class FlyingMonsterController : AbstractMonsterController {
 		else
 		{
 			transform.position = Vector3.Lerp (
-				transform.localPosition, newPosition, Time.deltaTime * LevelFinishedController.instance.getMonsterSpeed() / distance);
+				transform.localPosition, newPosition, Time.deltaTime * speed / distance);
 		}
 	}
 

@@ -1,24 +1,23 @@
 using System;
+using System.Collections.Generic;
 namespace AssemblyCSharp
 {
 		public class Level
 		{
 				private int numberOfKeys;
-				private int numberOfMonsters;
+				private List<MonsterTemplate> monsters;
 				private int timeToFirstMonster;
 				private int timeBetweenMonsters;
-				private float monsterSpeed;
 				private int mazeSizeX;
 				private int mazeSizeZ;
 
-				public Level (int numberOfKeys, int numberOfMonsters, int timeToFirstMonster,
-		              int timeBetweenMonsters, float monsterSpeed, int mazeSizeX, int mazeSizeZ)
+				public Level (int numberOfKeys, List<MonsterTemplate> monsters, int timeToFirstMonster,
+		              int timeBetweenMonsters, int mazeSizeX, int mazeSizeZ)
 				{
 					this.numberOfKeys = numberOfKeys;
-					this.numberOfMonsters = numberOfMonsters;
+					this.monsters = monsters;
 					this.timeToFirstMonster = timeToFirstMonster;
 					this.timeBetweenMonsters = timeBetweenMonsters;
-					this.monsterSpeed = monsterSpeed;
 					this.mazeSizeX = mazeSizeX;
 					this.mazeSizeZ = mazeSizeZ;
 				}
@@ -28,9 +27,9 @@ namespace AssemblyCSharp
 					return numberOfKeys;
 				}
 				
-				public int getNumberOfMonsters()
+				public List<MonsterTemplate> getMonsters()
 				{
-					return numberOfMonsters;
+					return monsters;
 				}
 
 				public int getTimeToFirstMonster()
@@ -41,11 +40,6 @@ namespace AssemblyCSharp
 				public int getTimeBetweenMonsters()
 				{
 					return timeBetweenMonsters;
-				}
-
-				public float getMonsterSpeed()
-				{
-					return monsterSpeed;
 				}
 
 				public int getMazeSizeX()
