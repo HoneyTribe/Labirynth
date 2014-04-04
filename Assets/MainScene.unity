@@ -3670,7 +3670,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 250368
+    m_Bits: 233984
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -7911,7 +7911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d2b35be45595e45a1edf5ab30ac9a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texture: {fileID: 2800000, guid: b6d55b7d7b015c14d9c59e9d06e0a7b7, type: 3}
+  texture: {fileID: 2800000, guid: 03709f448cb8c524292bef6b2cd48ffd, type: 3}
 --- !u!23 &965359670
 Renderer:
   m_ObjectHideFlags: 0
@@ -14700,7 +14700,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 250368
+    m_Bits: 233984
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
