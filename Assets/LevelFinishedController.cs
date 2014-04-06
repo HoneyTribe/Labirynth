@@ -147,6 +147,11 @@ public class LevelFinishedController : MonoBehaviour {
 		return maxLevel;
 	}
 
+	public int getLevel()
+	{
+		return level;
+	}
+
 	public int getNumberOfLevels()
 	{
 		return  levelDefinition.getLevels ().Count - 1;

@@ -11,13 +11,14 @@ public class MenuController : MonoBehaviour {
 	private PlayerController player1Controller;
 	private PlayerController player2Controller;
 
-	private int selGridInt = 0;
+	private int selGridInt;
 
 	void Start()
 	{
 		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController> ();
 		player1Controller = GameObject.Find ("Player1").GetComponent<PlayerController>();
 		player2Controller = GameObject.Find ("Player2").GetComponent<PlayerController>();
+		selGridInt = levelFinishedController.getLevel ();
 	}
 
 	void Update()
