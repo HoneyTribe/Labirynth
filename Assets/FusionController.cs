@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FusionController : MonoBehaviour {
 
-	private static int closeDistance = 5;
+	private static int closeDistance = 3;
 
 	private GameObject levelController;
 	private GameObject player1;
