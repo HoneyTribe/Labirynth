@@ -12,7 +12,6 @@ public class LevelFinishedController : MonoBehaviour {
 
 	public GameObject menuPrefab;
 
-	private int numberOfPlayers;
 	private bool finished;
 	private bool gameOver;
 	private bool congratulation;
@@ -61,7 +60,6 @@ public class LevelFinishedController : MonoBehaviour {
 		gameOver = false;
 		congratulation = false;
 		stopped = false;
-		numberOfPlayers = 0;
 	}
 	
 	void OnGUI()
@@ -84,15 +82,11 @@ public class LevelFinishedController : MonoBehaviour {
 
 	IEnumerator PlayerFinished () 
 	{
-		numberOfPlayers++;
-		if (numberOfPlayers == 2) 
-		{
-			finished = true; 
-			stopped = true;
-			yield return new WaitForSeconds(2);
-			finished = false; 
-			LoadNewLevel();
-		}
+		finished = true; 
+		stopped = true;
+		yield return new WaitForSeconds(2);
+		finished = false; 
+		LoadNewLevel();
 	}
 
 	IEnumerator PlayerLost () 

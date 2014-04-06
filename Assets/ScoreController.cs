@@ -33,14 +33,15 @@ public class ScoreController : MonoBehaviour {
 		score--;
 		if (score == 0)
 		{
-			leftDoor.gameObject.SendMessage("OpenDoor");
-			rightDoor.gameObject.SendMessage("OpenDoor");
-			leftExitLight.gameObject.SendMessage("TurnLightOn");
-			rightExitLight.gameObject.SendMessage("TurnLightOn");
-			foreach (GameObject light in candleLights)
-			{
-				light.gameObject.SendMessage("TurnLightOn");
-			}
+			//leftDoor.gameObject.SendMessage("OpenDoor");
+			//rightDoor.gameObject.SendMessage("OpenDoor");
+			//leftExitLight.gameObject.SendMessage("TurnLightOn");
+			//rightExitLight.gameObject.SendMessage("TurnLightOn");
+			//foreach (GameObject light in candleLights)
+			//{
+			//	light.gameObject.SendMessage("TurnLightOn");
+			//}
+			GameObject.Find ("GameController").SendMessage("ActivateFusion");
 		}
 	}
 }
