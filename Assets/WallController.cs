@@ -4,10 +4,12 @@ using System.Collections;
 public class WallController : MonoBehaviour {
 
 	private static AssemblyCSharp.TextureAppender textureAppender;
+	private static int TOP_ID;
+	private static int LEFT_ID;
+	private static int RIGHT_ID;
 
-	public Texture2D front;
+	public Texture2D[] frontAndBack;
 	public Texture2D top;
-	public Texture2D back;
 	public Texture2D left;
 	public Texture2D right;
 
@@ -20,7 +22,20 @@ public class WallController : MonoBehaviour {
 	{
 		if (textureAppender == null)
 		{
-			Texture2D[] textures = new Texture2D[]{front, top, back, left, right};
+			int size = frontAndBack.Length + 3;
+			TOP_ID = size - 3;
+			LEFT_ID = size - 2;
+			RIGHT_ID = size - 1;
+
+			Texture2D[] textures = new Texture2D[size];
+			for (int i=0; i<frontAndBack.Length; i++)
+			{
+				textures[i] = frontAndBack[i];
+			}
+
+			textures[TOP_ID] = top;
+			textures[LEFT_ID] = left;
+			textures[RIGHT_ID] = right;
 			textureAppender = new AssemblyCSharp.TextureAppender (textures);
 		}
 		textureAtlas = textureAppender.getTextureAtlas ();
@@ -86,30 +101,32 @@ public class WallController : MonoBehaviour {
 		float ratioZY = gameObject.transform.localScale.z /  gameObject.transform.localScale.y;
 		Rect[] uv = textureAppender.getUV ();
 		//front
-		Vector2 uv0 = new Vector2(uv[0].xMin, uv[0].yMin);
-		Vector2 uv1 = new Vector2(uv[0].xMin, uv[0].yMax);
-		Vector2 uv2 = new Vector2(uv[0].xMax * ratioXY, uv[0].yMax);
-		Vector2 uv3 = new Vector2(uv[0].xMax * ratioXY, uv[0].yMin);
+		int frontId = Random.Range (0, frontAndBack.Length);
+		Vector2 uv0 = new Vector2(uv[frontId].xMin, uv[frontId].yMin);
+		Vector2 uv1 = new Vector2(uv[frontId].xMin, uv[frontId].yMax);
+		Vector2 uv2 = new Vector2(uv[frontId].xMax * ratioXY, uv[frontId].yMax);
+		Vector2 uv3 = new Vector2(uv[frontId].xMax * ratioXY, uv[frontId].yMin);
 		//top
-		Vector2 uv4 = new Vector2(uv[1].xMin, uv[1].yMin);
-		Vector2 uv5 = new Vector2(uv[1].xMin, uv[1].yMax);
-		Vector2 uv6 = new Vector2(uv[1].xMax * ratioXZ, uv[1].yMax);
-		Vector2 uv7 = new Vector2(uv[1].xMax * ratioXZ, uv[1].yMin);
+		Vector2 uv4 = new Vector2(uv[TOP_ID].xMin, uv[TOP_ID].yMin);
+		Vector2 uv5 = new Vector2(uv[TOP_ID].xMin, uv[TOP_ID].yMax);
+		Vector2 uv6 = new Vector2(uv[TOP_ID].xMax * ratioXZ, uv[TOP_ID].yMax);
+		Vector2 uv7 = new Vector2(uv[TOP_ID].xMax * ratioXZ, uv[TOP_ID].yMin);
 		//back
-		Vector2 uv8 = new Vector2(uv[2].xMin, uv[2].yMin);
-		Vector2 uv9 = new Vector2(uv[2].xMin, uv[2].yMax);
-		Vector2 uv10 = new Vector2(uv[2].xMax * ratioXY, uv[2].yMax);
-		Vector2 uv11 = new Vector2(uv[2].xMax * ratioXY, uv[2].yMin);
+		int backId = Random.Range (0, frontAndBack.Length);
+		Vector2 uv8 = new Vector2(uv[backId].xMin, uv[backId].yMin);
+		Vector2 uv9 = new Vector2(uv[backId].xMin, uv[backId].yMax);
+		Vector2 uv10 = new Vector2(uv[backId].xMax * ratioXY, uv[backId].yMax);
+		Vector2 uv11 = new Vector2(uv[backId].xMax * ratioXY, uv[backId].yMin);
 		//left
-		Vector2 uv12 = new Vector2(uv[3].xMin, uv[3].yMin);
-		Vector2 uv13 = new Vector2(uv[3].xMin, uv[3].yMax);
-		Vector2 uv14 = new Vector2(uv[3].xMax * ratioZY, uv[3].yMax);
-		Vector2 uv15 = new Vector2(uv[3].xMax * ratioZY, uv[3].yMin);
+		Vector2 uv12 = new Vector2(uv[LEFT_ID].xMin, uv[LEFT_ID].yMin);
+		Vector2 uv13 = new Vector2(uv[LEFT_ID].xMin, uv[LEFT_ID].yMax);
+		Vector2 uv14 = new Vector2(uv[LEFT_ID].xMax * ratioZY, uv[LEFT_ID].yMax);
+		Vector2 uv15 = new Vector2(uv[LEFT_ID].xMax * ratioZY, uv[LEFT_ID].yMin);
 		//right
-		Vector2 uv16 = new Vector2(uv[4].xMin, uv[4].yMin);
-		Vector2 uv17 = new Vector2(uv[4].xMin, uv[4].yMax);
-		Vector2 uv18 = new Vector2(uv[4].xMax * ratioZY, uv[4].yMax);
-		Vector2 uv19 = new Vector2(uv[4].xMax * ratioZY, uv[4].yMin);
+		Vector2 uv16 = new Vector2(uv[RIGHT_ID].xMin, uv[RIGHT_ID].yMin);
+		Vector2 uv17 = new Vector2(uv[RIGHT_ID].xMin, uv[RIGHT_ID].yMax);
+		Vector2 uv18 = new Vector2(uv[RIGHT_ID].xMax * ratioZY, uv[RIGHT_ID].yMax);
+		Vector2 uv19 = new Vector2(uv[RIGHT_ID].xMax * ratioZY, uv[RIGHT_ID].yMin);
 		
 		mesh.uv = new Vector2[]{
 			uv0,uv1,uv2,
