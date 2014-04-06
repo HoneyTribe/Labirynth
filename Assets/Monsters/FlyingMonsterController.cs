@@ -5,8 +5,6 @@ public class FlyingMonsterController : AbstractMonsterController {
 
 	private static float updateDistance = 5.0f;
 
-	private bool direction;
-
 	public override void go (ref Vector3 newPosition, bool attractionTrigger) 
 	{
 
@@ -15,19 +13,21 @@ public class FlyingMonsterController : AbstractMonsterController {
 		if ((attractionTrigger) || (distance == 0))
 		{
 			Vector3 playerPosition = getTarget();
-			if (direction) // horisontal
+			if (Vector3.Distance(transform.localPosition, playerPosition) > updateDistance)
 			{
-				newPosition = new Vector3(calculateStep(transform.localPosition.x, playerPosition.x),
-				                          transform.localPosition.y,
-				                          transform.localPosition.z);
-				direction = false;
+				Vector3 aaa = new Vector3(playerPosition.x - transform.localPosition.x,
+				                          0,
+				                          playerPosition.z - transform.localPosition.z);
+				Vector3 bbb = aaa.normalized;
+				Vector3 ccc = bbb * updateDistance;
+				newPosition = transform.localPosition +
+							  new Vector3(playerPosition.x - transform.localPosition.x,
+				                          0,
+				                          playerPosition.z - transform.localPosition.z).normalized * updateDistance;
 			}
 			else
 			{
-				newPosition = new Vector3(transform.localPosition.x, 
-				                          transform.localPosition.y, 
-				                          calculateStep(transform.localPosition.z, playerPosition.z));
-				direction = true;
+				newPosition = playerPosition;
 			}
 		}
 		else
@@ -35,17 +35,5 @@ public class FlyingMonsterController : AbstractMonsterController {
 			transform.position = Vector3.Lerp (
 				transform.localPosition, newPosition, Time.deltaTime * speed / distance);
 		}
-	}
-
-	private float calculateStep(float currentPos, float playerPos)
-	{
-		if(Mathf.Abs(playerPos - currentPos) > updateDistance)
-		{
-			return currentPos + Mathf.Sign(playerPos - currentPos) * updateDistance;
-		}
-		else
-		{
-			return playerPos;
-		}		
 	}
 }
