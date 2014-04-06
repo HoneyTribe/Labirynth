@@ -50,7 +50,7 @@ public class FusionLightController : MonoBehaviour {
 							(1 << LayerMask.NameToLayer ("monsterDoors")) |
 							(1 << LayerMask.NameToLayer ("players")) |
 							(1 << LayerMask.NameToLayer ("monsters")) |
-							(1 << LayerMask.NameToLayer ("lightHouse")) |
+							(1 << LayerMask.NameToLayer ("lighthouse")) |
 							(1 << LayerMask.NameToLayer ("Details")) |
 							(1 << LayerMask.NameToLayer ("FrontWalls")) |
 							(1 << LayerMask.NameToLayer ("1stOutsideWalls"));
