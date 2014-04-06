@@ -11,6 +11,7 @@ public class ScoreController : MonoBehaviour {
 	private GameObject rightExitLight;
 	private GameObject[] candleLights;
 	private LevelFinishedController levelFinishedController;
+	private GameObject fusionLight;
 	
 	void Start()
 	{ 
@@ -21,6 +22,7 @@ public class ScoreController : MonoBehaviour {
 		candleLights = GameObject.FindGameObjectsWithTag ("CandleLightTag");
 		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
 		score = levelFinishedController.getNumberOfKeys ();
+		fusionLight = GameObject.Find ("lightHousePointLight");
 	}
 
 	void OnGUI()
@@ -33,6 +35,7 @@ public class ScoreController : MonoBehaviour {
 		score--;
 		if (score == 0)
 		{
+			fusionLight.gameObject.SendMessage("TurnLightOn");
 			//leftDoor.gameObject.SendMessage("OpenDoor");
 			//rightDoor.gameObject.SendMessage("OpenDoor");
 			//leftExitLight.gameObject.SendMessage("TurnLightOn");

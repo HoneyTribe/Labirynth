@@ -70,7 +70,7 @@ namespace AssemblyCSharp
 
 						if (z == sizeZ * 2) // last row
 						{
-							obj.layer = LayerMask.NameToLayer("1stRowMazeWalls") | LayerMask.NameToLayer("players");
+							obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
 						}
 					}
 				}
@@ -98,7 +98,7 @@ namespace AssemblyCSharp
 
 						if (z == sizeZ * 2) // last row
 						{
-							obj.layer = LayerMask.NameToLayer("1stRowMazeWalls") | LayerMask.NameToLayer("players");
+							obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
 						}
 					}
 				}
@@ -125,7 +125,7 @@ namespace AssemblyCSharp
 
 						if (z == sizeZ * 2 - 1) // last row
 						{
-							obj.layer = LayerMask.NameToLayer("1stRowMazeWalls") | LayerMask.NameToLayer("players");
+							obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
 						}
 					}
 				}

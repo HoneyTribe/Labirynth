@@ -3506,7 +3506,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 6486528
+    m_Bits: 6487568
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -5794,7 +5794,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 6486528
+    m_Bits: 6487552
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -17012,6 +17012,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1933560209}
   - 108: {fileID: 1933560208}
+  - 114: {fileID: 1933560210}
   m_Layer: 8
   m_Name: lightHousePointLight
   m_TagString: Untagged
@@ -17065,6 +17066,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1152225370}
+--- !u!114 &1933560210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1933560207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7df47e4b20ea0d49b6bc5a27a9cd76a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1953820162
 GameObject:
   m_ObjectHideFlags: 0
