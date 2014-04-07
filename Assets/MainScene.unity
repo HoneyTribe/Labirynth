@@ -1349,6 +1349,8 @@ GameObject:
   - 114: {fileID: 141250782}
   - 114: {fileID: 141250785}
   - 114: {fileID: 141250786}
+  - 114: {fileID: 141250787}
+  - 114: {fileID: 141250788}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1417,6 +1419,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db7cc72658bfd94f97341715497e57f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &141250787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141250781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d45fbb279b8a846828cd51aa143fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 504520871}
+  playerController: {fileID: 0}
+  moveUp: 119
+  moveDown: 115
+  moveLeft: 97
+  moveRight: 100
+  actionTrigger: 32
+  horizontalAxis: J1LeftHorizontal
+  verticalAxis: J1LeftVertical
+  triggerAxis: J1LeftTrigger
+--- !u!114 &141250788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141250781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d45fbb279b8a846828cd51aa143fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 468870936}
+  playerController: {fileID: 0}
+  moveUp: 273
+  moveDown: 274
+  moveLeft: 276
+  moveRight: 275
+  actionTrigger: 303
+  horizontalAxis: J1RightHorizontal
+  verticalAxis: J1RightVertical
+  triggerAxis: J1RightTrigger
 --- !u!1 &144692306
 GameObject:
   m_ObjectHideFlags: 0
@@ -3794,14 +3838,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4e0c56a920bea42a79e13922e95ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveUp: 273
-  moveDown: 274
-  moveLeft: 276
-  moveRight: 275
-  actionTrigger: 303
-  horizontalAxis: J1RightHorizontal
-  verticalAxis: J1RightVertical
-  triggerAxis: J1RightTrigger
   speed: 10
 --- !u!23 &468870938
 Renderer:
@@ -4319,14 +4355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f4e0c56a920bea42a79e13922e95ca6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveUp: 119
-  moveDown: 115
-  moveLeft: 97
-  moveRight: 100
-  actionTrigger: 32
-  horizontalAxis: J1LeftHorizontal
-  verticalAxis: J1LeftVertical
-  triggerAxis: J1LeftTrigger
   speed: 10
 --- !u!23 &504520875
 Renderer:

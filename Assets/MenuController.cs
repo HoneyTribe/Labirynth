@@ -8,22 +8,20 @@ public class MenuController : MonoBehaviour {
 	public GUISkin skin;
 	public GUISkin selectedSkin;
 	private LevelFinishedController levelFinishedController;
-	private PlayerController player1Controller;
+	private GameObject gameController;
 	private PlayerController player2Controller;
-
 	private int selGridInt;
 
 	void Start()
 	{
 		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController> ();
-		player1Controller = GameObject.Find ("Player1").GetComponent<PlayerController>();
-		player2Controller = GameObject.Find ("Player2").GetComponent<PlayerController>();
 		selGridInt = levelFinishedController.getLevel ();
+		GameObject.Find ("GameController").SendMessage ("SetMenu", this);
 	}
 
-	void Update()
+	public void handleLogic(float x, float z, float action)
 	{
-		if ((Input.GetKeyUp(player1Controller.getRight())) || (Input.GetKeyUp(player2Controller.getRight())))
+		if (x > 0)
 		{
 			if(selGridInt < levelFinishedController.getMaxLevel())
 			{
@@ -35,7 +33,7 @@ public class MenuController : MonoBehaviour {
 			}
 		}
 		
-		if ((Input.GetKeyUp(player1Controller.getLeft())) || (Input.GetKeyUp(player2Controller.getLeft())))
+		if (x < 0)
 		{
 			if(selGridInt > 0)
 			{
@@ -47,7 +45,7 @@ public class MenuController : MonoBehaviour {
 			}
 		}
 
-		if ((Input.GetKeyUp(player1Controller.getAction())) || (Input.GetKeyUp(player2Controller.getAction())))
+		if (action > 0)
 		{
 			levelFinishedController.setLevel(selGridInt);
 			Application.LoadLevel (0); 

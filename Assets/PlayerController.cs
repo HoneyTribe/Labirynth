@@ -4,16 +4,6 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 
-	public KeyCode moveUp;
-	public KeyCode moveDown;
-	public KeyCode moveLeft;
-	public KeyCode moveRight;
-	public KeyCode actionTrigger;
-
-	public string horizontalAxis;
-	public string verticalAxis;
-	public string triggerAxis;
-
 	public float speed = 8;	
 
 	private bool lighthouseEntered = false;
@@ -23,134 +13,15 @@ public class PlayerController : MonoBehaviour {
 	private GameObject device;
 	private LevelFinishedController levelFinishedController;
 
-	private List<KeyCode> keys;
-	private bool actionAxisInUse;
-
 	void Start()
 	{
 		topLight = GameObject.Find ("TopLight");
 		levelController = GameObject.Find ("LevelController");
 		device = GameObject.Find ("Device");
 		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
-		keys = new List<KeyCode> ();
-		//keys.Add (moveRight);
-		//keys.Add (moveLeft);
 	}
 
-	// Update is called once per frame
-	void Update () {
-
-		if (levelFinishedController.isStopped())
-		{
-			return;
-		}
-
-		float x = 0;
-		float z = 0;
-		float action = 0;
-		handleAxis (ref x, ref z, ref action);
-		handleKeys (ref x, ref z, ref action);
-		handleLogic(x, z, action);
-
-		if (!lighthouseEntered)
-		{
-			rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
-		}
-	}
-
-	private void handleKeys(ref float x, ref float z, ref float action)
-	{
-		if (!Input.anyKey)
-		{
-			keys.Clear();
-		}
-
-		if (Input.GetKeyDown (moveUp))
-		{
-			keys.Add(moveUp);
-		}
-		else if (Input.GetKeyUp (moveUp))
-		{
-			keys.Remove(moveUp);
-		}
-
-		if (Input.GetKeyDown (moveDown))
-		{
-			keys.Add(moveDown);
-		}
-		else if (Input.GetKeyUp (moveDown))
-		{
-			keys.Remove(moveDown);
-		}
-
-		if (Input.GetKeyDown (moveLeft))
-		{
-			keys.Add(moveLeft);
-		}
-		else if (Input.GetKeyUp (moveLeft))
-		{
-			keys.Remove(moveLeft);
-		}
-
-		if (Input.GetKeyDown (moveRight))
-		{
-			keys.Add(moveRight);
-		}
-		else if (Input.GetKeyUp (moveRight))
-		{
-			keys.Remove(moveRight);
-		}
-
-		if (Input.GetKeyUp (actionTrigger))
-		{
-			action = 1;
-		}
-
-		handleKeysActions (ref x, ref z, ref action);
-	}
-
-	private void handleKeysActions(ref float x, ref float z, ref float action)
-	{
-		for (int i=0; i < keys.Count; i++)
-		{
-			if (keys[i] == moveUp)
-			{
-				z = 1;
-			}
-			else if (keys[i] == moveDown)
-			{
-				z = -1;
-			}
-			else if(keys[i] == moveLeft)
-			{
-				x = -1; 
-			}
-			else if(keys[i] == moveRight)
-			{
-				x = 1;
-			}
-		}
-	}
-
-	private void handleAxis(ref float x, ref float z, ref float action)
-	{
-		x = Input.GetAxis (horizontalAxis) * Time.deltaTime;
-		z = Input.GetAxis (verticalAxis) * Time.deltaTime;
-		float actionAxis = Input.GetAxis (triggerAxis);
-
-		if ((!actionAxisInUse) && (actionAxis == 1.0f))
-		{
-			action = actionAxis * Time.deltaTime;
-			actionAxisInUse = true;
-		}
-
-		if (actionAxis == -1.0f)
-		{
-			actionAxisInUse = false;
-		}
-	}
-
-	private void handleLogic(float x, float z, float action)
+	public void handleLogic(float x, float z, float action)
 	{
 		if ((z > 0) && (x == 0))
 		{
@@ -189,6 +60,11 @@ public class PlayerController : MonoBehaviour {
 				device.gameObject.SendMessage("Move", transform.localPosition);
 			}
 		}
+
+		if (!lighthouseEntered)
+		{
+			rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
+		}
 	}
 
 	public bool hasEnteredLighthouse()
@@ -217,20 +93,5 @@ public class PlayerController : MonoBehaviour {
 		{
 			levelController.gameObject.SendMessage("PlayerLost");
 		}
-	}
-
-	public KeyCode getLeft()
-	{
-		return moveLeft;
-	}
-
-	public KeyCode getRight()
-	{
-		return moveRight;
-	}
-
-	public KeyCode getAction()
-	{
-		return actionTrigger;
 	}
 }
