@@ -203,6 +203,23 @@ namespace AssemblyCSharp
 					return keys;
 				}
 
+				public Vector2 getJumps()
+				{
+					Vector2 position = Vector2.zero;
+					while (position.Equals(Vector2.zero))
+					{
+						position = new Vector2 (Random.Range (0, sizeX) * 2 + 1, Random.Range (0, 4) * 2 + 1);
+						foreach (KeyPosition keyPosition in getKeys())
+						{
+							if (keyPosition.Equals(position))
+							{
+								position = Vector2.zero;
+							}
+						}
+					}
+					return position;
+				}
+
 				public Vector2 getStart()
 				{
 					return start;

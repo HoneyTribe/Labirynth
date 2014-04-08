@@ -1384,6 +1384,7 @@ MonoBehaviour:
   verticalWallPrefab: {fileID: 100000, guid: b0529e116b9c11440bbfeb0f08552978, type: 2}
   smallWallPrefab: {fileID: 100000, guid: 5680e8d2cea395041bd115ebfa201b18, type: 2}
   keyPrefab: {fileID: 100002, guid: 9b7af4f6d2c9fcb4abb1675fab4b963e, type: 2}
+  jumpPrefab: {fileID: 100002, guid: f13951a9378aaf548b8e5bd074b33f54, type: 2}
 --- !u!4 &141250784
 Transform:
   m_ObjectHideFlags: 0
@@ -10133,6 +10134,7 @@ MonoBehaviour:
   verticalWallPrefab: {fileID: 100000, guid: b0529e116b9c11440bbfeb0f08552978, type: 2}
   smallWallPrefab: {fileID: 100000, guid: 5680e8d2cea395041bd115ebfa201b18, type: 2}
   keyPrefab: {fileID: 0}
+  jumpPrefab: {fileID: 0}
 --- !u!81 &1136220964
 AudioListener:
   m_ObjectHideFlags: 0
@@ -14153,8 +14155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frontAndBack:
-  - {fileID: 2800000, guid: b6d55b7d7b015c14d9c59e9d06e0a7b7, type: 3}
-  - {fileID: 2800000, guid: b6d55b7d7b015c14d9c59e9d06e0a7b7, type: 3}
+  - {fileID: 2800000, guid: f01cb85a1c6366243947c4b87f5d30f3, type: 3}
+  - {fileID: 2800000, guid: 5c88caa9f7bd2dd479d3e33a82d0bf3a, type: 3}
   top: {fileID: 2800000, guid: b6d55b7d7b015c14d9c59e9d06e0a7b7, type: 3}
   left: {fileID: 2800000, guid: 4c436821a0d58eb469fe125ef0a028ee, type: 3}
   right: {fileID: 2800000, guid: 4c436821a0d58eb469fe125ef0a028ee, type: 3}
