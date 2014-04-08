@@ -9,6 +9,7 @@ public class LightController : MonoBehaviour {
 
 	void Start()
 	{
+		rotationSpeed *= LevelFinishedController.instance.gameSpeed;
 		instance = this;
 	}
 

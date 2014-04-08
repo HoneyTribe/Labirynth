@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 
-	public float speed = 8;	
+	private float speed = 8;	
 
 	private bool lighthouseEntered = false;
 
@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 
 	void Start()
 	{
+		speed *= LevelFinishedController.instance.gameSpeed;
 		topLight = GameObject.Find ("TopLight");
 		levelController = GameObject.Find ("LevelController");
 		device = GameObject.Find ("Device");

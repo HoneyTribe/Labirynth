@@ -97,7 +97,7 @@ public abstract class AbstractMonsterController : MonoBehaviour {
 
 	public void setSpeed(float speed)
 	{
-		this.speed = speed;
+		this.speed = speed * LevelFinishedController.instance.gameSpeed;
 	}
 
 	protected Vector3 getTarget()

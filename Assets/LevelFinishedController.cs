@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class LevelFinishedController : MonoBehaviour {
 
 	public static LevelFinishedController instance;
+	public float gameSpeed = 1.0f;
 
 	private int level = 0;
 	private int maxLevel = 0;
