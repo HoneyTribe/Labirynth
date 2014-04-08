@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
 
 	private bool lighthouseEntered = false;
 
+	private bool gameFinished = false;
+
 	private GameObject topLight;
 	private GameObject levelController;
 	private GameObject device;
@@ -84,14 +86,21 @@ public class PlayerController : MonoBehaviour {
 		}
 		if(collision.collider.name == "ExitTrigger")
 		{
-			//Destroy(gameObject);
-			gameObject.transform.Translate(gameObject.transform.localPosition.x * 10, 0, 0);
-			levelController.gameObject.SendMessage("PlayerFinished");
+			if (!gameFinished)
+			{
+				gameFinished = true;
+				gameObject.transform.Translate(gameObject.transform.localPosition.x * 10, 0, 0);
+				levelController.gameObject.SendMessage("PlayerFinished");
+			}
 		}
 		if((collision.collider.name == "Monster(Clone)") ||
  		   (collision.collider.name == "FlyingMonster(Clone)"))
 		{
-			levelController.gameObject.SendMessage("PlayerLost");
+			if (!gameFinished)
+			{
+				gameFinished = true;
+				levelController.gameObject.SendMessage("PlayerLost");
+			}
 		}
 	}
 }
