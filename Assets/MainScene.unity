@@ -4657,6 +4657,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724748a1dca5b87428df2680b2b3bc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingShakeDistance: .800000012
+  decreasePercentage: .5
+  shakeSpeed: 50
+  numberOfShakes: 10
 --- !u!81 &525393512
 AudioListener:
   m_ObjectHideFlags: 0
