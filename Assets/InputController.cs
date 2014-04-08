@@ -41,11 +41,13 @@ public class InputController : MonoBehaviour {
 
 		if (menuController != null)
 		{
+			Debug.Log ("Menu - X: " + x + " Z: " + z + " Action: " + action);
 			menuController.handleLogic (x, z, action);
 			keys.Clear();
 		}
 		else
 		{
+			Debug.Log ("Player - X: " + x + " Z: " + z + " Action: " + action);
 			playerController.handleLogic (x, z, action);
 		}
 	}
