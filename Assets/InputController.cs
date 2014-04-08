@@ -20,6 +20,7 @@ public class InputController : MonoBehaviour {
 
 	private List<KeyCode> keys;
 	private bool actionAxisInUse;
+	private bool menuButtonPressed;
 
 
 	void Start()
@@ -41,8 +42,18 @@ public class InputController : MonoBehaviour {
 
 		if (menuController != null)
 		{
-			menuController.handleLogic (x, z, action);
-			keys.Clear();
+			if ((x == 0) && (z == 0) && (action == 0))
+			{
+				menuButtonPressed = false;
+			}
+			else
+			{
+				if (!menuButtonPressed)
+				{
+					menuButtonPressed = true;
+					menuController.handleLogic (x, z, action);
+				}
+			}
 		}
 		else
 		{
