@@ -23,6 +23,7 @@ public class MenuController : MonoBehaviour {
 	{
 		if (x > 0)
 		{
+			Debug.Log ("Current sel: " + selGridInt);
 			if(selGridInt < levelFinishedController.getMaxLevel())
 			{
 				selGridInt++;
@@ -31,10 +32,12 @@ public class MenuController : MonoBehaviour {
 			{
 				selGridInt = 0;
 			}
+			Debug.Log ("Current sel: " + selGridInt);
 		}
 		
 		if (x < 0)
 		{
+			Debug.Log ("Current sel: " + selGridInt);
 			if(selGridInt > 0)
 			{
 				selGridInt--;
@@ -43,6 +46,7 @@ public class MenuController : MonoBehaviour {
 			{
 				selGridInt = levelFinishedController.getMaxLevel();
 			}
+			Debug.Log ("Current sel: " + selGridInt);
 		}
 
 		if (action > 0)
