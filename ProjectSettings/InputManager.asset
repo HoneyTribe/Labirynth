@@ -244,3 +244,35 @@ InputManager:
     type: 2
     axis: 5
     joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1LeftShoulder
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 13
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: .00100000005
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 19
+    joyNum: 1
+  - serializedVersion: 3
+    m_Name: J1RightShoulder
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: joystick button 14
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 1000
+    dead: .00100000005
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 19
+    joyNum: 1
