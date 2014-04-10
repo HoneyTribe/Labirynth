@@ -67,6 +67,10 @@ public class PlayerController : MonoBehaviour {
 		if (!lighthouseEntered)
 		{
 			rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
+			if ((x != 0) || (z != 0))
+			{
+				transform.rotation = Quaternion.LookRotation(new Vector3(x, 0, z)); 
+			}
 		}
 	}
 
