@@ -10,8 +10,15 @@ public class StandardMonsterController : AbstractMonsterController {
 
 		if ((attractionTrigger) || (distance == 0))
 		{
-			Vector3 playerPosition = getTarget();
-			newPosition = maze.giveMeNextPosition(transform.localPosition, playerPosition);
+			Vector3 targetPosition = getTarget();
+			newPosition = maze.giveMeNextPosition(transform.localPosition, targetPosition);
+
+			if ((maze.isInside(targetPosition)) &&
+			    ((maze.transformToMazeCoordinates(targetPosition).Equals(maze.transformToMazeCoordinates(newPosition))) ||
+			     (maze.transformToMazeCoordinates(targetPosition).Equals(maze.transformToMazeCoordinates(transform.localPosition)))))
+			{
+				newPosition = targetPosition;
+			}
 		}
 		else
 		{

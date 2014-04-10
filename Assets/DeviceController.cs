@@ -8,7 +8,7 @@ public class DeviceController : MonoBehaviour {
 	private Vector3 initialPosition;
 
 	private Vector3 movement;
-	private bool isInLighhouse = true;
+	private bool inLighthouse = true;
 	private float speed = 65.0f;
 
 	void Awake () 
@@ -35,14 +35,14 @@ public class DeviceController : MonoBehaviour {
 
 	public void Move(Vector3 positionToMove)
 	{
-		if (isInLighhouse)
+		if (inLighthouse)
 		{
-			isInLighhouse = false;
+			inLighthouse = false;
 			movement = new Vector3(positionToMove.x, 1, positionToMove.z);
 		}
 		else
 		{
-			isInLighhouse = true;
+			inLighthouse = true;
 			movement = initialPosition;
 		}
 	}

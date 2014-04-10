@@ -11,7 +11,7 @@ public abstract class AbstractMonsterController : MonoBehaviour {
 	private GameObject player1;
 	private GameObject player2;
 	private GameObject topLight;
-	private GameObject device;
+	protected GameObject device;
 	private PlayerController player1Controller;
 	private PlayerController player2Controller;
 

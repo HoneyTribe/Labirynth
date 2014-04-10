@@ -4,8 +4,7 @@ namespace AssemblyCSharp
 {
 	public class Instantiation : MonoBehaviour {
 
-		public GameObject horisontalWallPrefab;
-		public GameObject verticalWallPrefab;
+		public GameObject wallPrefab;
 		public GameObject smallWallPrefab;
 		public GameObject keyPrefab;
 		public GameObject jumpPrefab;
@@ -98,14 +97,11 @@ namespace AssemblyCSharp
 				{
 					if (!labirynth.getWalls(x, z))
 					{
-						//horisontalWallPrefab.transform.localScale = new Vector3(scaleFactorX, 2, 1);
-						// other way round because we are rotating
-						((BoxCollider) horisontalWallPrefab.collider).size = new Vector3(1, 2, scaleFactorX);
+						wallPrefab.transform.localScale = new Vector3(scaleFactorX, 2.2f, 0.6f);
 						Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
-						                           horisontalWallPrefab.transform.position.y,
+						                           wallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
-						int angle =  Random.Range(0, 2) * 180;
-						GameObject obj = (GameObject) Instantiate (horisontalWallPrefab, pos, Quaternion.Euler(0, 90 + angle, 0)); 
+						GameObject obj = (GameObject) Instantiate (wallPrefab, pos, Quaternion.Euler(0, 0, 0)); 
 
 						if (z == sizeZ * 2) // last row
 						{
@@ -126,13 +122,11 @@ namespace AssemblyCSharp
 				{
 					if (!labirynth.getWalls(x, z))		
 					{
-						//verticalWallPrefab.transform.localScale = new Vector3(1, 2, scaleFactorZ);
-						((BoxCollider) verticalWallPrefab.collider).size = new Vector3(1, 2, scaleFactorZ);
+						wallPrefab.transform.localScale = new Vector3(scaleFactorZ, 2.2f, 0.6f);
 						Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
-						                           verticalWallPrefab.transform.position.y,
+						                           wallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
-						int angle =  Random.Range(0, 2) * 180;
-						GameObject obj = (GameObject) Instantiate (verticalWallPrefab, pos, Quaternion.Euler(0, 0 + angle, 0));
+						GameObject obj = (GameObject) Instantiate (wallPrefab, pos, Quaternion.Euler(0, 90, 0));
 
 						if (z == sizeZ * 2 - 1) // last row
 						{
@@ -144,18 +138,18 @@ namespace AssemblyCSharp
 			}
 		}
 
-		public Vector3 giveMeNextPosition(Vector3 currentPosition, Vector3 playerPosition)
+		public Vector3 giveMeNextPosition(Vector3 currentPosition, Vector3 targetPosition)
 		{
 			Vector2 currentMazePos = transformToMazeCoordinates (currentPosition);
-			Vector2 playerMazePos = transformToMazeCoordinates (playerPosition);
+			Vector2 targetMazePos = transformToMazeCoordinates (targetPosition);
 			if (isInside(currentPosition))
 			{
-				if (!isInside(playerPosition) && currentMazePos.Equals(labirynth.getStart()))
+				if (!isInside(targetPosition) && currentMazePos.Equals(labirynth.getStart()))
 				{
 					return new Vector3 (currentPosition.x, currentPosition.y, currentPosition.z - spaceZ * 2);
 				}
 
-				LinkedList<Vector2> path = labirynth.findPathBetweenCells(currentMazePos, playerMazePos);
+				LinkedList<Vector2> path = labirynth.findPathBetweenCells(currentMazePos, targetMazePos);
 
 				// stop the monster when reaches the device
 				if (path.Count == 0)
@@ -169,13 +163,13 @@ namespace AssemblyCSharp
 			}
 			else
 			{
-				if (isInside(playerPosition))
+				if (isInside(targetPosition))
 				{
 					return transformToWorldCoordinates(labirynth.getStart(), currentPosition.y);
 				}
 				else
 				{
-					Vector3 localMove = new Vector3(playerPosition.x - currentPosition.x, 0, playerPosition.z - currentPosition.z).normalized;
+					Vector3 localMove = new Vector3(targetPosition.x - currentPosition.x, 0, targetPosition.z - currentPosition.z).normalized;
 					return currentPosition + localMove;
 				}
 			}
@@ -193,7 +187,7 @@ namespace AssemblyCSharp
 			return transformToWorldCoordinates(labirynth.getStart(), 0);
 		}
 
-		private Vector2 transformToMazeCoordinates(Vector3 localPosition)
+		public Vector2 transformToMazeCoordinates(Vector3 localPosition)
 		{
 			int x = (int)((localPosition.x + planeSizeX/2f) / (2f * spaceX));
 			int y = (int)((localPosition.z - offsetZ - planeSizeZ/2f) / (-2f * spaceZ));

@@ -11,7 +11,7 @@ namespace AssemblyCSharp
 				{
 					// keys, monsters, time of 1st monster appear, time of subsequent mosnters,
 					// maze rows, maze columns
-					levels.Add(new Level(1,new List<MonsterTemplate>{},15,15,8,8));
+					levels.Add(new Level(1,new List<MonsterTemplate>{},15,15,4,4));
 					levels.Add(new Level(1,new List<MonsterTemplate>{
 							new MonsterTemplate("Standard", 2.4f)
 						},10,15,8,8));

@@ -1381,8 +1381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f24065a25d0df34c8daf748cd61242f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horisontalWallPrefab: {fileID: 100000, guid: 38e9bbefe27716041a7eee25ddbef812, type: 2}
-  verticalWallPrefab: {fileID: 100000, guid: b0529e116b9c11440bbfeb0f08552978, type: 2}
+  wallPrefab: {fileID: 100000, guid: 8f322a7a8c80a8f4391d8e448614897f, type: 2}
   smallWallPrefab: {fileID: 100000, guid: 5680e8d2cea395041bd115ebfa201b18, type: 2}
   keyPrefab: {fileID: 100002, guid: 9b7af4f6d2c9fcb4abb1675fab4b963e, type: 2}
   jumpPrefab: {fileID: 100002, guid: f13951a9378aaf548b8e5bd074b33f54, type: 2}
@@ -1433,7 +1432,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 504520871}
-  playerController: {fileID: 0}
   moveUp: 119
   moveDown: 115
   moveLeft: 97
@@ -1454,7 +1452,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 468870936}
-  playerController: {fileID: 0}
   moveUp: 273
   moveDown: 274
   moveLeft: 276
@@ -10129,8 +10126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f24065a25d0df34c8daf748cd61242f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horisontalWallPrefab: {fileID: 100000, guid: 38e9bbefe27716041a7eee25ddbef812, type: 2}
-  verticalWallPrefab: {fileID: 100000, guid: b0529e116b9c11440bbfeb0f08552978, type: 2}
+  wallPrefab: {fileID: 0}
   smallWallPrefab: {fileID: 100000, guid: 5680e8d2cea395041bd115ebfa201b18, type: 2}
   keyPrefab: {fileID: 0}
   jumpPrefab: {fileID: 0}
@@ -14124,80 +14120,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1832768329}
   m_GameObject: {fileID: 1592426979}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
---- !u!1 &1599178834
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1599178838}
-  - 33: {fileID: 1599178837}
-  - 23: {fileID: 1599178836}
-  - 114: {fileID: 1599178835}
-  m_Layer: 0
-  m_Name: Wall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1599178835
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1599178834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3ed194ee661f9d4282f947c0a01ac63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  frontAndBack:
-  - {fileID: 2800000, guid: f01cb85a1c6366243947c4b87f5d30f3, type: 3}
-  - {fileID: 2800000, guid: 5c88caa9f7bd2dd479d3e33a82d0bf3a, type: 3}
-  top: {fileID: 2800000, guid: b6d55b7d7b015c14d9c59e9d06e0a7b7, type: 3}
-  left: {fileID: 2800000, guid: 4c436821a0d58eb469fe125ef0a028ee, type: 3}
-  right: {fileID: 2800000, guid: 4c436821a0d58eb469fe125ef0a028ee, type: 3}
---- !u!23 &1599178836
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1599178834}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!33 &1599178837
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1599178834}
-  m_Mesh: {fileID: 0}
---- !u!4 &1599178838
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1599178834}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38, y: 5, z: -15}
-  m_LocalScale: {x: 4, y: 3, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
 --- !u!1 &1600488805
 GameObject:
   m_ObjectHideFlags: 0

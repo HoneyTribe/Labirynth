@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class InputController : MonoBehaviour {
 
 	public GameObject player;
-	public PlayerController playerController;
+	private PlayerController playerController;
 	private MenuController menuController;
 
 	public KeyCode moveUp;
