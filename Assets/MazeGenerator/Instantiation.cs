@@ -97,7 +97,7 @@ namespace AssemblyCSharp
 				{
 					if (!labirynth.getWalls(x, z))
 					{
-						wallPrefab.transform.localScale = new Vector3(scaleFactorX, 2.2f, 0.6f);
+						wallPrefab.transform.localScale = new Vector3(scaleFactorX, wallPrefab.transform.localScale.y, wallPrefab.transform.localScale.z);
 						Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 						                           wallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
@@ -122,7 +122,7 @@ namespace AssemblyCSharp
 				{
 					if (!labirynth.getWalls(x, z))		
 					{
-						wallPrefab.transform.localScale = new Vector3(scaleFactorZ, 2.2f, 0.6f);
+						wallPrefab.transform.localScale = new Vector3(scaleFactorZ, wallPrefab.transform.localScale.y, wallPrefab.transform.localScale.z);
 						Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 						                           wallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
