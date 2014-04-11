@@ -4,6 +4,8 @@ namespace AssemblyCSharp
 {
 	public class Instantiation : MonoBehaviour {
 
+		private static float compensatePillarInnerRadius = 0.2f;
+
 		public GameObject wallPrefab;
 		public GameObject smallWallPrefab;
 		public GameObject keyPrefab;
@@ -97,7 +99,9 @@ namespace AssemblyCSharp
 				{
 					if (!labirynth.getWalls(x, z))
 					{
-						wallPrefab.transform.localScale = new Vector3(scaleFactorX, wallPrefab.transform.localScale.y, wallPrefab.transform.localScale.z);
+						wallPrefab.transform.localScale = new Vector3(scaleFactorX + compensatePillarInnerRadius, 
+						                                              wallPrefab.transform.localScale.y,
+						                                              wallPrefab.transform.localScale.z);
 						Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 						                           wallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
@@ -122,7 +126,9 @@ namespace AssemblyCSharp
 				{
 					if (!labirynth.getWalls(x, z))		
 					{
-						wallPrefab.transform.localScale = new Vector3(scaleFactorZ, wallPrefab.transform.localScale.y, wallPrefab.transform.localScale.z);
+						wallPrefab.transform.localScale = new Vector3(scaleFactorZ + compensatePillarInnerRadius,
+						                                              wallPrefab.transform.localScale.y,
+						                                              wallPrefab.transform.localScale.z);
 						Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 						                           wallPrefab.transform.position.y,
 						                           offsetZ + planeSizeZ/2f - spaceZ * z);
