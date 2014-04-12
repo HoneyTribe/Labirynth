@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: .430000007}
+  m_LocalScale: {x: 2.97777772, y: 2, z: .430000007}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &2300000
@@ -41,12 +41,7 @@ Renderer:
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: fe6fbf69660cd3f4ea53fa01d156d592, type: 2}
-  - {fileID: 2100000, guid: 35c5f31d45a2a0746a93f56c1cc0e8b9, type: 2}
-  - {fileID: 2100000, guid: fe6fbf69660cd3f4ea53fa01d156d592, type: 2}
-  - {fileID: 2100000, guid: 35c5f31d45a2a0746a93f56c1cc0e8b9, type: 2}
-  - {fileID: 2100000, guid: fe6fbf69660cd3f4ea53fa01d156d592, type: 2}
+  m_Materials: []
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -85,6 +80,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1546f076a6d1b458922e3c033848c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frontAndBack:
+  - {fileID: 2100000, guid: fe6fbf69660cd3f4ea53fa01d156d592, type: 2}
+  - {fileID: 2100000, guid: 35c5f31d45a2a0746a93f56c1cc0e8b9, type: 2}
+  - {fileID: 2100000, guid: 60b66d8b18d8aa748b251a21f94f8901, type: 2}
+  - {fileID: 2100000, guid: 3cd15150856bacb4abbf867bd148db64, type: 2}
+  topLeftRight: {fileID: 2100000, guid: b2e2f02783205fc44b88c5b6124b668e, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
