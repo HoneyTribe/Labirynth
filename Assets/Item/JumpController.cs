@@ -3,11 +3,33 @@ using System.Collections;
 
 public class JumpController : MonoBehaviour {
 
-	void OnCollisionEnter (Collision collision)
+	private TextMesh textMesh;
+
+	void Start()
 	{
-		if (collision.collider.name != "Monster")
+		textMesh = gameObject.GetComponentInChildren<TextMesh> ();
+	}
+
+	public void ClearText()
+	{
+		textMesh.text = "";
+	}
+
+	public void OnTriggerEnter(Collider currentCollider)
+	{
+		if (currentCollider.name != "Monster")
 		{
-			gameObject.transform.parent = collision.gameObject.transform;
+			textMesh.text = "TAKE ME!";
+			currentCollider.gameObject.SendMessage("JumpItemAvailable", gameObject);
+		}
+	}
+
+	void OnTriggerExit (Collider currentCollider)
+	{
+		if (currentCollider.name != "Monster")
+		{
+			textMesh.text = "";
+			currentCollider.gameObject.SendMessage("JumpItemNotAvailable", gameObject);
 		}
 	}
 }

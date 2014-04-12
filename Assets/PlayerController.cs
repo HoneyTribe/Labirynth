@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour {
 	private GameObject levelController;
 	private GameObject device;
 	private LevelFinishedController levelFinishedController;
+
+	private AssemblyCSharp.Inventory inventory = new AssemblyCSharp.Inventory();
 
 	void Start()
 	{
@@ -65,6 +67,33 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 
+		if (action2 > 0)
+		{
+			if (inventory.getInventoryItem() == null)
+			{
+				GameObject jumpItem = inventory.getAvailablItem();
+				if (jumpItem != null)
+				{
+					jumpItem.transform.localPosition = new Vector3(transform.localPosition.x,
+					                                               transform.localPosition.y + 3,
+					                                               transform.localPosition.z);
+					jumpItem.transform.parent = gameObject.transform;
+					jumpItem.SendMessage("ClearText");
+					inventory.putItemIntoInventory();
+				}
+			}
+			else
+			{
+				inventory.getInventoryItem().transform.position = new Vector3(transform.localPosition.x,
+				                                            					   1.5f,
+				                                               					   transform.localPosition.z);
+				inventory.getInventoryItem().transform.rotation = Quaternion.Euler(0,0,0);
+				inventory.getInventoryItem().transform.parent = null;
+				inventory.getInventoryItem().SendMessage("OnTriggerEnter", collider);
+				inventory.clearInventory();
+			}
+		}
+
 		if (!lighthouseEntered)
 		{
 			rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
@@ -78,6 +107,16 @@ public class PlayerController : MonoBehaviour {
 	public bool hasEnteredLighthouse()
 	{
 		return lighthouseEntered;
+	}
+
+	public void JumpItemAvailable(GameObject item)
+	{
+		inventory.setAvailableItem (item);
+	}
+
+	public void JumpItemNotAvailable()
+	{
+		inventory.setAvailableItem (null);
 	}
 
 	void OnCollisionEnter (Collision collision)
