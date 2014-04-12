@@ -13,10 +13,12 @@ public class InputController : MonoBehaviour {
 	public KeyCode moveLeft;
 	public KeyCode moveRight;
 	public KeyCode actionTrigger;
+	public KeyCode actionTrigger2;
 
 	public string horizontalAxis;
 	public string verticalAxis;
 	public string triggerAxis;
+	public string triggerButton;
 
 	private List<KeyCode> keys;
 	private bool actionAxisInUse;
@@ -37,12 +39,13 @@ public class InputController : MonoBehaviour {
 		float x = 0;
 		float z = 0;
 		float action = 0;
-		handleAxis (ref x, ref z, ref action);
-		handleKeys (ref x, ref z, ref action);
+		float action2 = 0;
+		handleAxis (ref x, ref z, ref action, ref action2);
+		handleKeys (ref x, ref z, ref action, ref action2);
 
 		if (menuController != null)
 		{
-			if ((x == 0) && (z == 0) && (action == 0))
+			if ((x == 0) && (z == 0) && (action == 0) && (action2 == 0))
 			{
 				menuButtonPressed = false;
 			}
@@ -51,17 +54,17 @@ public class InputController : MonoBehaviour {
 				if (!menuButtonPressed)
 				{
 					menuButtonPressed = true;
-					menuController.handleLogic (x, z, action);
+					menuController.handleLogic (x, z, action, action2);
 				}
 			}
 		}
 		else
 		{
-			playerController.handleLogic (x, z, action);
+			playerController.handleLogic (x, z, action, action2);
 		}
 	}
 
-	private void handleKeys(ref float x, ref float z, ref float action)
+	private void handleKeys(ref float x, ref float z, ref float action, ref float action2)
 	{
 		if (!Input.anyKey)
 		{
@@ -109,10 +112,15 @@ public class InputController : MonoBehaviour {
 			action = 1;
 		}
 
-		handleKeysActions (ref x, ref z, ref action);
+		if (Input.GetKeyUp (actionTrigger2))
+		{
+			action2 = 1;
+		}
+
+		handleKeysActions (ref x, ref z);
 	}
 
-	private void handleKeysActions(ref float x, ref float z, ref float action)
+	private void handleKeysActions(ref float x, ref float z)
 	{
 		for (int i=0; i < keys.Count; i++)
 		{
@@ -135,7 +143,7 @@ public class InputController : MonoBehaviour {
 		}
 	}
 
-	private void handleAxis(ref float x, ref float z, ref float action)
+	private void handleAxis(ref float x, ref float z, ref float action, ref float action2)
 	{
 		x = Input.GetAxis (horizontalAxis) * Time.deltaTime;
 		z = Input.GetAxis (verticalAxis) * Time.deltaTime;
@@ -150,6 +158,11 @@ public class InputController : MonoBehaviour {
 		if (actionAxis == -1.0f)
 		{
 			actionAxisInUse = false;
+		}
+
+		if (Input.GetButtonUp(triggerButton))
+		{
+			action2 = 1;
 		}
 	}
 

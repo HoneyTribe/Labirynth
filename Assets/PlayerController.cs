@@ -24,15 +24,16 @@ public class PlayerController : MonoBehaviour {
 		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
 	}
 
-	public void handleLogic(float x, float z, float action)
+	public void handleLogic(float x, float z, float action, float action2)
 	{
-		if ((z > 0) && (x == 0))
+		if (action2 > 0)
 		{
 			if (lighthouseEntered)
 			{
 				lighthouseEntered = false;
 				topLight.gameObject.SendMessage("TurnOff");
 				rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
+				rigidbody.transform.Translate(new Vector3(0,0,-0.25f));
 			}
 		}
 

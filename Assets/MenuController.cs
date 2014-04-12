@@ -19,7 +19,7 @@ public class MenuController : MonoBehaviour {
 		GameObject.Find ("GameController").SendMessage ("SetMenu", this);
 	}
 
-	public void handleLogic(float x, float z, float action)
+	public void handleLogic(float x, float z, float action, float action2)
 	{
 		if (x > 0)
 		{

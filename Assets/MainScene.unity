@@ -1437,9 +1437,11 @@ MonoBehaviour:
   moveLeft: 97
   moveRight: 100
   actionTrigger: 32
+  actionTrigger2: 306
   horizontalAxis: J1LeftHorizontal
   verticalAxis: J1LeftVertical
   triggerAxis: J1LeftTrigger
+  triggerButton: J1LeftShoulder
 --- !u!114 &141250788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1457,9 +1459,11 @@ MonoBehaviour:
   moveLeft: 276
   moveRight: 275
   actionTrigger: 303
+  actionTrigger2: 305
   horizontalAxis: J1RightHorizontal
   verticalAxis: J1RightVertical
   triggerAxis: J1RightTrigger
+  triggerButton: J1RightShoulder
 --- !u!1 &144692306
 GameObject:
   m_ObjectHideFlags: 0
