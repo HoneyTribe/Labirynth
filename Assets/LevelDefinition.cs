@@ -11,14 +11,15 @@ namespace AssemblyCSharp
 				{
 					// keys, monsters, time of 1st monster appear, time of subsequent mosnters,
 					// maze rows, maze columns
-					levels.Add(new Level(1,new List<MonsterTemplate>{},15,15,4,4));
+					levels.Add(new Level(1,new List<MonsterTemplate>{},15,15,6,6));
 					levels.Add(new Level(1,new List<MonsterTemplate>{
 							new MonsterTemplate("Standard", 2.4f)
-						},10,15,8,8));
+						},10,15,7,7));
 					levels.Add(new Level(2,new List<MonsterTemplate>{
+							new MonsterTemplate("Standard", 2.6f),
 							new MonsterTemplate("Standard", 2.6f)
-						},10,15,9,9));
-					levels.Add(new Level(2,new List<MonsterTemplate>{
+						},10,15,8,8));
+					levels.Add(new Level(3,new List<MonsterTemplate>{
 							new MonsterTemplate("Standard", 2.8f),
 							new MonsterTemplate("Standard", 2.8f)
 						},10,15,9,9));
@@ -45,14 +46,14 @@ namespace AssemblyCSharp
 							new MonsterTemplate("Standard", 3.8f),
 							new MonsterTemplate("Standard", 3.8f),
 							new MonsterTemplate("Flying", 2.2f)
-						},5,10,9,9));
+						},5,10,10,10));
 					levels.Add(new Level(5,new List<MonsterTemplate>{
 							new MonsterTemplate("Standard", 4.0f),
 							new MonsterTemplate("Standard", 4.0f),
 							new MonsterTemplate("Standard", 4.0f),
 							new MonsterTemplate("Standard", 4.0f),
 							new MonsterTemplate("Flying", 2.4f)
-						},5,20,9,9));
+						},5,20,10,10));
 				}
 
 				public List<Level> getLevels()
