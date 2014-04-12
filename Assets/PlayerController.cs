@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 				lighthouseEntered = false;
 				topLight.gameObject.SendMessage("TurnOff");
 				rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
-				rigidbody.transform.Translate(new Vector3(0,0,-0.25f));
+				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
 			}
 		}
 
