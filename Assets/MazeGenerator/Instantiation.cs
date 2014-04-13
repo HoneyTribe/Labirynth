@@ -4,6 +4,8 @@ namespace AssemblyCSharp
 {
 	public class Instantiation : MonoBehaviour {
 
+		public static Instantiation instance;
+
 		private static float compensatePillarInnerRadius = 0.2f;
 
 		public GameObject wallPrefab;
@@ -24,6 +26,7 @@ namespace AssemblyCSharp
 
 		// Use this for initialization
 		void Start () {
+			instance = this;
 
 			sizeX = LevelFinishedController.instance.getMazeSizeX();
 			sizeZ = LevelFinishedController.instance.getMazeSizeZ();
@@ -219,6 +222,16 @@ namespace AssemblyCSharp
 		{
 			return ((pos.x < planeSizeX / 2) && (pos.x > -planeSizeX / 2) &&
 			        (pos.z < offsetZ + planeSizeZ / 2) && (pos.z > offsetZ - planeSizeZ / 2));
+		}
+
+		public float getSpaceX()
+		{
+			return spaceX;
+		}
+
+		public float getSpaceZ()
+		{
+			return spaceZ;
 		}
 	}
 }

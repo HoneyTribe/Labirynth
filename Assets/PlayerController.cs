@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour {
 
 	private AssemblyCSharp.Inventory inventory = new AssemblyCSharp.Inventory();
 
+	private bool playerActive;
+
 	void Start()
 	{
 		speed *= LevelFinishedController.instance.gameSpeed;
@@ -36,6 +38,32 @@ public class PlayerController : MonoBehaviour {
 				topLight.gameObject.SendMessage("TurnOff");
 				rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
 				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
+			}
+			else
+			{
+				if (inventory.getInventoryItem() == null)
+				{
+					GameObject jumpItem = inventory.getAvailablItem();
+					if (jumpItem != null)
+					{
+						jumpItem.transform.localPosition = new Vector3(transform.localPosition.x,
+						                                               transform.localPosition.y + 3,
+						                                               transform.localPosition.z);
+						jumpItem.transform.parent = gameObject.transform;
+						jumpItem.SendMessage("Take");
+						inventory.putItemIntoInventory();
+					}
+				}
+				else
+				{
+					inventory.getInventoryItem().transform.position = new Vector3(transform.localPosition.x,
+					                                            					   1.5f,
+					                                               					   transform.localPosition.z);
+					inventory.getInventoryItem().transform.rotation = Quaternion.Euler(0,0,0);
+					inventory.getInventoryItem().transform.parent = null;
+					inventory.getInventoryItem().SendMessage("OnTriggerEnter", collider);
+					inventory.clearInventory();
+				}
 			}
 		}
 
@@ -59,7 +87,14 @@ public class PlayerController : MonoBehaviour {
 		{
 			if (lighthouseEntered)
 			{
-				topLight.gameObject.SendMessage("AttractMonster");
+				if (action > 0.5f)
+				{
+					topLight.gameObject.SendMessage("ActivateItems");
+				}
+				else
+				{
+					topLight.gameObject.SendMessage("AttractMonster");
+				}
 			}
 			else
 			{
@@ -67,39 +102,21 @@ public class PlayerController : MonoBehaviour {
 			}
 		}
 
-		if (action2 > 0)
+		if (!lighthouseEntered)
 		{
-			if (inventory.getInventoryItem() == null)
+			if ((x != 0) || (z != 0))
 			{
-				GameObject jumpItem = inventory.getAvailablItem();
-				if (jumpItem != null)
-				{
-					jumpItem.transform.localPosition = new Vector3(transform.localPosition.x,
-					                                               transform.localPosition.y + 3,
-					                                               transform.localPosition.z);
-					jumpItem.transform.parent = gameObject.transform;
-					jumpItem.SendMessage("ClearText");
-					inventory.putItemIntoInventory();
-				}
+				playerActive = true;
+				rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
+				transform.rotation = Quaternion.LookRotation(new Vector3(x, 0, z)); 
 			}
 			else
 			{
-				inventory.getInventoryItem().transform.position = new Vector3(transform.localPosition.x,
-				                                            					   1.5f,
-				                                               					   transform.localPosition.z);
-				inventory.getInventoryItem().transform.rotation = Quaternion.Euler(0,0,0);
-				inventory.getInventoryItem().transform.parent = null;
-				inventory.getInventoryItem().SendMessage("OnTriggerEnter", collider);
-				inventory.clearInventory();
-			}
-		}
-
-		if (!lighthouseEntered)
-		{
-			rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
-			if ((x != 0) || (z != 0))
-			{
-				transform.rotation = Quaternion.LookRotation(new Vector3(x, 0, z)); 
+				if (playerActive)
+				{
+					playerActive = false;
+					rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
+				}
 			}
 		}
 	}

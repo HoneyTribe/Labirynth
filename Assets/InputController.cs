@@ -21,9 +21,13 @@ public class InputController : MonoBehaviour {
 	public string triggerButton;
 
 	private List<KeyCode> keys;
-	private bool actionAxisInUse;
 	private bool menuButtonPressed;
 
+	private float actionTime;
+	private float action2Time;
+
+	private float actionAxisTime;
+	private float actionAxis2Time;
 
 	void Start()
 	{
@@ -107,14 +111,28 @@ public class InputController : MonoBehaviour {
 			keys.Remove(moveRight);
 		}
 
+		/////////////////ACTIONS///////////////
+
+		if (Input.GetKeyDown (actionTrigger))
+		{
+			actionTime = Time.time;
+		}
+
 		if (Input.GetKeyUp (actionTrigger))
 		{
-			action = 1;
+			action = Time.time - actionTime;
+			actionTime = 0f;
+		}
+
+		if (Input.GetKeyDown (actionTrigger2))
+		{
+			action2Time = Time.time;
 		}
 
 		if (Input.GetKeyUp (actionTrigger2))
 		{
-			action2 = 1;
+			action2 = Time.time - action2Time;
+			action2Time = 0f;
 		}
 
 		handleKeysActions (ref x, ref z);
@@ -149,20 +167,26 @@ public class InputController : MonoBehaviour {
 		z = Input.GetAxis (verticalAxis) * Time.deltaTime;
 		float actionAxis = Input.GetAxis (triggerAxis);
 
-		if ((!actionAxisInUse) && (actionAxis == 1.0f))
+		if ((actionAxisTime != 0f) && (actionAxis == 1.0f))
 		{
-			action = actionAxis * Time.deltaTime;
-			actionAxisInUse = true;
+			actionAxisTime = Time.time;
 		}
 
 		if (actionAxis == -1.0f)
 		{
-			actionAxisInUse = false;
+			action = Time.time - actionAxisTime;
+			actionAxisTime = 0f;
+		}
+
+		if (Input.GetButtonDown(triggerButton))
+		{
+			actionAxis2Time = Time.time;
 		}
 
 		if (Input.GetButtonUp(triggerButton))
 		{
-			action2 = 1;
+			action2 = Time.time - actionAxis2Time;
+			actionAxis2Time = 0f;
 		}
 	}
 

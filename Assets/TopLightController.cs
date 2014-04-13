@@ -136,16 +136,33 @@ public class TopLightController : MonoBehaviour {
 			}
 		}
 	}
-	
-	private bool isIlluminated(GameObject monster)
+
+	void ActivateItems()
+	{
+		GameObject[] items = GameObject.FindGameObjectsWithTag ("Item");
+		foreach (GameObject item in items)
+		{
+			if (isIlluminated(item))
+			{
+				JumpController jumpController = item.GetComponent<JumpController>();
+				if (jumpController.hasAnyObjects())
+				{
+					jumpController.Activate();
+					StartCoroutine(showLaser(item.transform.localPosition));
+				}
+			}
+		}
+	}
+
+	private bool isIlluminated(GameObject obj)
 	{
 		Quaternion quat = Quaternion.AngleAxis(transform.rotation.eulerAngles.y, Vector3.up);
 		Vector3 lightDirection = new Vector3(0, 0, 1);		
 		lightDirection = quat * lightDirection;
 		
-		Vector3 monsterDirection = new Vector3(monster.transform.localPosition.x - transform.position.x,
+		Vector3 monsterDirection = new Vector3(obj.transform.localPosition.x - transform.position.x,
 		                                       0,
-		                                       monster.transform.localPosition.z - transform.position.z).normalized;
+		                                       obj.transform.localPosition.z - transform.position.z).normalized;
 		float angle = Vector3.Angle(lightDirection, monsterDirection);
 		if ((light.intensity > 0) && (angle < light.spotAngle/2f))
 		{
