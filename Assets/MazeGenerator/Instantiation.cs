@@ -35,12 +35,21 @@ namespace AssemblyCSharp
 
 			labirynth = new Labirynth (sizeX, sizeZ);
 			labirynth.generate ();
+			drawDevice ();
 			drawKeys (labirynth.getKeys ());
 			drawJumps (labirynth.getJumps ());
 			drawSmallWalls (labirynth);
 			drawHorisontalWalls (labirynth);
 			drawVerticalWalls (labirynth);
 		}	
+
+		void drawDevice()
+		{
+			if (LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithDevice())
+			{
+				GameObject.Find ("Device").GetComponent<MeshRenderer>().enabled = false;
+			}
+		}
 
 		void drawKeys(List<KeyPosition> keys)
 		{
@@ -62,11 +71,14 @@ namespace AssemblyCSharp
 
 		void drawJumps(Vector2 jump)
 		{
-			Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * jump.x,
-			                           jumpPrefab.transform.position.y,
-			                           offsetZ + planeSizeZ/2f - spaceZ * jump.y);
-			Quaternion rot = Quaternion.Euler(0, 0, 0);
-			Instantiate (jumpPrefab, pos, rot); 
+			if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithJumpItem())
+			{
+				Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * jump.x,
+				                           jumpPrefab.transform.position.y,
+				                           offsetZ + planeSizeZ/2f - spaceZ * jump.y);
+				Quaternion rot = Quaternion.Euler(0, 0, 0);
+				Instantiate (jumpPrefab, pos, rot); 
+			}
 		}
 
 		void drawSmallWalls(Labirynth labirynth)

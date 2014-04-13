@@ -5,6 +5,9 @@ namespace AssemblyCSharp
 {
 		public class LevelDefinition
 		{
+				private static int firstLevelWithDevice = 1;
+				private static int firstLevelWithJumpItem = 3;
+
 				List<Level> levels = new List<Level> ();
 
 				public LevelDefinition ()
@@ -59,6 +62,16 @@ namespace AssemblyCSharp
 				public List<Level> getLevels()
 				{
 					return levels;
+				}
+
+				public int getFirstLevelWithDevice()
+				{
+					return firstLevelWithDevice;
+				}
+
+				public int getFirstLevelWithJumpItem()
+				{
+					return firstLevelWithJumpItem;
 				}
 		}
 }

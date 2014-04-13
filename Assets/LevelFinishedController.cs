@@ -154,6 +154,16 @@ public class LevelFinishedController : MonoBehaviour {
 		return level;
 	}
 
+	public int getFirstLevelWithDevice()
+	{
+		return levelDefinition.getFirstLevelWithDevice();
+	}
+
+	public int getFirstLevelWithJumpItem()
+	{
+		return levelDefinition.getFirstLevelWithJumpItem();
+	}
+
 	public int getNumberOfLevels()
 	{
 		return  levelDefinition.getLevels ().Count - 1;
