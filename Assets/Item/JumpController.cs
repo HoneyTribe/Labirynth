@@ -26,22 +26,14 @@ public class JumpController : MonoBehaviour {
 		{
 			closeObjects.Add (currentCollider.gameObject);
 		}
-		if (currentCollider.name != "Monster")
-		{
-			taken = false;
-			textMesh.text = "TAKE ME!";
-			currentCollider.gameObject.SendMessage("JumpItemAvailable", gameObject);
-		}
+
+		taken = false;
+		textMesh.text = "TAKE ME!";
 	}
 
 	public void OnTriggerExit (Collider currentCollider)
 	{
 		closeObjects.Remove (currentCollider.gameObject);
-		if (currentCollider.name != "Monster")
-		{
-			textMesh.text = "";
-			currentCollider.gameObject.SendMessage("JumpItemNotAvailable", gameObject);
-		}
 	}
 
 	public void Activate()

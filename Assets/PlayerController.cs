@@ -126,16 +126,6 @@ public class PlayerController : MonoBehaviour {
 		return lighthouseEntered;
 	}
 
-	public void JumpItemAvailable(GameObject item)
-	{
-		inventory.setAvailableItem (item);
-	}
-
-	public void JumpItemNotAvailable()
-	{
-		inventory.setAvailableItem (null);
-	}
-
 	void OnCollisionEnter (Collision collision)
 	{
 		if(collision.collider.name == "Lighthouse")
@@ -163,6 +153,22 @@ public class PlayerController : MonoBehaviour {
 				gameFinished = true;
 				levelController.gameObject.SendMessage("PlayerLost");
 			}
+		}
+	}
+
+	public void OnTriggerEnter(Collider currentCollider)
+	{
+		if (currentCollider.tag == "Item")
+		{
+			inventory.setAvailableItem(currentCollider.gameObject);
+		}
+	}
+
+	public void OnTriggerExit(Collider currentCollider)
+	{
+		if (currentCollider.tag == "Item")
+		{
+			inventory.setAvailableItem(null);
 		}
 	}
 }

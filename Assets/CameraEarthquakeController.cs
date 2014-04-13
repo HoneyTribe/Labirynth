@@ -16,7 +16,14 @@ public class CameraEarthquakeController : MonoBehaviour {
 	void Start()
 	{
 		originalPosition = camera.transform.position;
-		StartCoroutine(StartEarthquakeTimer());
+		//StartCoroutine(StartEarthquakeTimer());
+	}
+
+	public void StartEarthquake()
+	{
+		shakeDistance = startingShakeDistance;
+		hitTime = Time.time;
+		shake = numberOfShakes;
 	}
 
 	IEnumerator StartEarthquakeTimer() 
@@ -25,9 +32,9 @@ public class CameraEarthquakeController : MonoBehaviour {
 		{
 			int delay = Random.Range (30, 40);
 			yield return new WaitForSeconds (delay);
-			shake = numberOfShakes;
 			shakeDistance = startingShakeDistance;
 			hitTime = Time.time;
+			shake = numberOfShakes;
 		}
 	}
 
