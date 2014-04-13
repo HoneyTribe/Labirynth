@@ -167,7 +167,7 @@ public class InputController : MonoBehaviour {
 		z = Input.GetAxis (verticalAxis) * Time.deltaTime;
 		float actionAxis = Input.GetAxis (triggerAxis);
 
-		if ((actionAxisTime != 0f) && (actionAxis == 1.0f))
+		if ((actionAxisTime == 0f) && (actionAxis == 1.0f))
 		{
 			actionAxisTime = Time.time;
 		}
