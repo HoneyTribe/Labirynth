@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour {
 	private AssemblyCSharp.Inventory inventory = new AssemblyCSharp.Inventory();
 
 	private bool playerActive;
+	private bool inputBlocked;
 
 	void Start()
 	{
@@ -30,13 +31,18 @@ public class PlayerController : MonoBehaviour {
 
 	public void handleLogic(float x, float z, float action, float action2)
 	{
+		if (inputBlocked)
+		{
+			return;
+		}
+
 		if (action2 > 0)
 		{
 			if (lighthouseEntered)
 			{
 				lighthouseEntered = false;
 				topLight.gameObject.SendMessage("TurnOff");
-				rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
+				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
 			}
 			else
@@ -124,6 +130,12 @@ public class PlayerController : MonoBehaviour {
 	public bool hasEnteredLighthouse()
 	{
 		return lighthouseEntered;
+	}
+
+
+	public void setInputBlocked(bool inputBlocked)
+	{
+		this.inputBlocked = inputBlocked;
 	}
 
 	void OnCollisionEnter (Collision collision)

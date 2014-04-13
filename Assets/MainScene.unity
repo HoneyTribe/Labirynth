@@ -3885,6 +3885,7 @@ GameObject:
   - 54: {fileID: 468870942}
   - 65: {fileID: 468870939}
   - 136: {fileID: 468870943}
+  - 114: {fileID: 468870944}
   m_Layer: 15
   m_Name: Player2
   m_TagString: Untagged
@@ -3983,6 +3984,17 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &468870944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 468870936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d7d03aaa59b954eb28270153d16505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &480611346
 GameObject:
   m_ObjectHideFlags: 0
@@ -4374,6 +4386,7 @@ GameObject:
   - 54: {fileID: 504520873}
   - 65: {fileID: 504520872}
   - 136: {fileID: 504520878}
+  - 114: {fileID: 504520879}
   m_Layer: 15
   m_Name: Player1
   m_TagString: Untagged
@@ -4472,6 +4485,17 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &504520879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 504520871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59d7d03aaa59b954eb28270153d16505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &505727309
 GameObject:
   m_ObjectHideFlags: 0

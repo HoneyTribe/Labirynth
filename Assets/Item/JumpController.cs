@@ -34,6 +34,10 @@ public class JumpController : MonoBehaviour {
 	public void OnTriggerExit (Collider currentCollider)
 	{
 		closeObjects.Remove (currentCollider.gameObject);
+		if (closeObjects.Count == 0)
+		{
+			textMesh.text = "";
+		}
 	}
 
 	public void Activate()
@@ -42,7 +46,7 @@ public class JumpController : MonoBehaviour {
 		{
 			foreach (GameObject obj in closeObjects)
 			{
-				obj.rigidbody.AddRelativeForce(Vector3.up * 500 + Vector3.forward * 120);
+				obj.SendMessage("Jump");
 			}
 		}
 	}
