@@ -172,7 +172,7 @@ public class InputController : MonoBehaviour {
 			actionAxisTime = Time.time;
 		}
 
-		if (actionAxis == -1.0f)
+		if ((actionAxisTime != 0f) && (actionAxis == -1.0f))
 		{
 			action = Time.time - actionAxisTime;
 			actionAxisTime = 0f;
