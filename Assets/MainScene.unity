@@ -2807,6 +2807,7 @@ GameObject:
   - 4: {fileID: 300012887}
   - 33: {fileID: 300012889}
   - 23: {fileID: 300012888}
+  - 65: {fileID: 300012890}
   m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
@@ -2855,6 +2856,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 2033287342}
   m_GameObject: {fileID: 300012886}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!65 &300012890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 300012886}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 10, z: 10}
+  m_Center: {x: -1.00179994, y: 5, z: 0}
 --- !u!1 &300184701
 GameObject:
   m_ObjectHideFlags: 0
@@ -3585,6 +3598,7 @@ GameObject:
   - 4: {fileID: 404600620}
   - 33: {fileID: 404600622}
   - 23: {fileID: 404600621}
+  - 65: {fileID: 404600623}
   m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
@@ -3633,6 +3647,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 676266029}
   m_GameObject: {fileID: 404600619}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!65 &404600623
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 404600619}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 10, z: 10.0000019}
+  m_Center: {x: -1.00179827, y: 5, z: -9.53674316e-07}
 --- !u!1 &405404081
 GameObject:
   m_ObjectHideFlags: 0
@@ -5794,6 +5820,7 @@ GameObject:
   - 4: {fileID: 646545990}
   - 33: {fileID: 646545992}
   - 23: {fileID: 646545991}
+  - 65: {fileID: 646545993}
   m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
@@ -5842,6 +5869,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1662680407}
   m_GameObject: {fileID: 646545989}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!65 &646545993
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 646545989}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 10, z: 10.0000019}
+  m_Center: {x: -1.00179636, y: 5, z: -6.67572021e-06}
 --- !u!1 &646615708
 GameObject:
   m_ObjectHideFlags: 0
@@ -6894,6 +6933,7 @@ GameObject:
   - 4: {fileID: 784329439}
   - 33: {fileID: 784329441}
   - 23: {fileID: 784329440}
+  - 65: {fileID: 784329442}
   m_Layer: 22
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
@@ -6942,6 +6982,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1479155887}
   m_GameObject: {fileID: 784329438}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!65 &784329442
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 784329438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 10, z: 10}
+  m_Center: {x: -1.00179994, y: 5, z: 0}
 --- !u!1001 &799344826
 Prefab:
   m_ObjectHideFlags: 0
@@ -8889,6 +8941,7 @@ GameObject:
   - 4: {fileID: 1023609537}
   - 33: {fileID: 1023609539}
   - 23: {fileID: 1023609538}
+  - 65: {fileID: 1023609540}
   m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
@@ -8937,6 +8990,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1513468392}
   m_GameObject: {fileID: 1023609536}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!65 &1023609540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1023609536}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 10, z: 10}
+  m_Center: {x: -1.00179994, y: 5, z: 0}
 --- !u!1001 &1030916034
 Prefab:
   m_ObjectHideFlags: 0
@@ -9365,6 +9430,7 @@ GameObject:
   - 4: {fileID: 1064001169}
   - 33: {fileID: 1064001171}
   - 23: {fileID: 1064001170}
+  - 65: {fileID: 1064001172}
   m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
@@ -9413,6 +9479,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 864307057}
   m_GameObject: {fileID: 1064001168}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!65 &1064001172
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064001168}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 10, z: 10.0000019}
+  m_Center: {x: -1.00179636, y: 5, z: -2.86102295e-06}
 --- !u!1 &1064428236
 GameObject:
   m_ObjectHideFlags: 0
@@ -11447,6 +11525,7 @@ GameObject:
   - 4: {fileID: 1265809224}
   - 33: {fileID: 1265809226}
   - 23: {fileID: 1265809225}
+  - 65: {fileID: 1265809227}
   m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
@@ -11495,6 +11574,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1707056701}
   m_GameObject: {fileID: 1265809223}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!65 &1265809227
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265809223}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 10, z: 10}
+  m_Center: {x: -1.00179994, y: 5, z: 0}
 --- !u!1 &1278853161
 GameObject:
   m_ObjectHideFlags: 0
@@ -11731,6 +11822,7 @@ GameObject:
   - 4: {fileID: 1287008072}
   - 33: {fileID: 1287008074}
   - 23: {fileID: 1287008073}
+  - 65: {fileID: 1287008075}
   m_Layer: 22
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
@@ -11779,6 +11871,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 260928723}
   m_GameObject: {fileID: 1287008071}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!65 &1287008075
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1287008071}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 10, z: 10}
+  m_Center: {x: -1.00179994, y: 5, z: 0}
 --- !u!1 &1294486001
 GameObject:
   m_ObjectHideFlags: 0
@@ -11914,6 +12018,7 @@ GameObject:
   - 4: {fileID: 1308838991}
   - 33: {fileID: 1308838993}
   - 23: {fileID: 1308838992}
+  - 65: {fileID: 1308838994}
   m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
@@ -11962,6 +12067,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 146668500}
   m_GameObject: {fileID: 1308838990}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!65 &1308838994
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1308838990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 10, z: 10}
+  m_Center: {x: -1.00179994, y: 5, z: 0}
 --- !u!1 &1312961577
 GameObject:
   m_ObjectHideFlags: 0
@@ -17115,6 +17232,7 @@ GameObject:
   - 4: {fileID: 1852371201}
   - 33: {fileID: 1852371203}
   - 23: {fileID: 1852371202}
+  - 65: {fileID: 1852371204}
   m_Layer: 11
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
@@ -17163,6 +17281,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 200554263}
   m_GameObject: {fileID: 1852371200}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!65 &1852371204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1852371200}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 10, z: 10.0000019}
+  m_Center: {x: -1.00179827, y: 5, z: 9.53674316e-07}
 --- !u!1 &1857227675
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,10 @@ using System.Collections.Generic;
 
 public class JumpBehaviour : MonoBehaviour {
 
-	private static float speed = 8f;
+	private static float speed = 24f;
+	private static float height = 8f;
+	private static float timeUp = height/speed;
+
 	private static float slideStep = 1f;
 	private PlayerController playerController;
 
@@ -12,6 +15,8 @@ public class JumpBehaviour : MonoBehaviour {
 
 	private int state = 0;
 	private Vector3 move;
+	private float time;
+	private float timeAir;
 
 	void Start()
 	{
@@ -20,60 +25,46 @@ public class JumpBehaviour : MonoBehaviour {
 
 	void Update()
 	{
-		/*if (newPosition != Vector3.zero)
+
+
+		if (state != 0)
 		{
-			float distance = Vector3.Distance(transform.localPosition, newPosition);
-			if (distance == 0)
+			time += Time.deltaTime;
+
+			if ((state == 1) && (time > timeUp))
 			{
 				state++;
-				if (state == 1)
-				{				
-					Vector3 move = new Vector3(2 * AssemblyCSharp.Instantiation.instance.getSpaceX() * transform.forward.x,
-					                           0,
-					                           2 * AssemblyCSharp.Instantiation.instance.getSpaceZ() * transform.forward.z);
-					newPosition = new Vector3(transform.localPosition.x, 
-					                          transform.localPosition.y,
-					                          transform.localPosition.z) + move;
-				}
-				else if (state == 2)
-				{
+				time = 0;
+				Vector3 forward = transform.forward.normalized;
+				rigidbody.velocity = new Vector3 (forward.x, 0, forward.z) * speed;
+				timeAir = new Vector3(2 * AssemblyCSharp.Instantiation.instance.getSpaceX() * forward.x,
+					                  0,
+					                  2 * AssemblyCSharp.Instantiation.instance.getSpaceZ() * forward.z).magnitude / speed;
+					
+			}
 
-					newPosition = new Vector3(transform.localPosition.x, 
-					                          transform.localPosition.y - 5,
-					                          transform.localPosition.z);
-				}
-				else
-				{
-					state = 0;
-					newPosition = Vector3.zero;
-					playerController.setInputBlocked(false);
-				}
-			}
-			else
+			if ((state == 2) && (time > timeAir))
 			{
-				transform.position = Vector3.Lerp (
-					transform.localPosition, newPosition, Time.deltaTime * speed / distance);
+				state++;
+				time = 0;
+				rigidbody.useGravity = true;
+				rigidbody.velocity = new Vector3 (0, -speed, 0);
 			}
-		}*/
+		}
 	}
 
 	public void Jump()
 	{
 		state = 1;
+		time = 0f;
 		playerController.setInputBlocked(true);
-		rigidbody.velocity = Vector3.zero;
-		Vector3 move = new Vector3(AssemblyCSharp.Instantiation.instance.getSpaceX() * Vector3.forward.x,
-		                           0,
-		                           AssemblyCSharp.Instantiation.instance.getSpaceZ() * Vector3.forward.z);
-		rigidbody.AddRelativeForce(Vector3.up * 500 + move * 60);
-//		newPosition = new Vector3(transform.localPosition.x, 
-//		                          transform.localPosition.y + 5,
-//		                          transform.localPosition.z);
+		rigidbody.useGravity = false;
+		rigidbody.velocity = new Vector3 (0, speed, 0);
 	}
 
 	void OnCollisionEnter (Collision collision)
 	{
-		if (state == 1)
+		if (state != 0)
 		{
 			if (collision.collider.name == "Ground")
 			{
