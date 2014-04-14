@@ -21,13 +21,13 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	private static float interval = 5f;
 	private float timeLeft;
-	private bool attractionTrigger;
+	protected bool recalculateTrigger;
 
 	private Vector3 newPosition;
 
 	private bool monsterStopped;
 
-	public abstract void go (ref Vector3 newPosition, bool attractionTrigger);
+	public abstract void go (ref Vector3 newPosition);
 
 	void Start () {
 	
@@ -44,9 +44,9 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
 
 		enter = true;
-		attractionTrigger = false;
+		recalculateTrigger = false;
 	}
-	
+
 	void Update () {
 
 		if (levelFinishedController.isStopped())
@@ -59,13 +59,13 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		{
 			if (timeLeft == interval)
 			{
-				attractionTrigger  = true;
+				recalculateTrigger  = true;
 			}
 			timeLeft -= Time.deltaTime;
 			textMesh.text = ((int) (timeLeft + 1)).ToString();
 			if (timeLeft <= 0)
 			{
-				attractionTrigger = true;
+				recalculateTrigger = true;
 			}
 		}
 
@@ -87,14 +87,21 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		}	
 		else
 		{
-			go (ref newPosition, attractionTrigger);
+			if (!monsterStopped)
+			{
+				go (ref newPosition);
+			}
 		}
-		attractionTrigger = false;
+		recalculateTrigger = false;
 	}
 
 	public void setStopped(bool monsterStopped)
 	{
 		this.monsterStopped = monsterStopped;
+		if (!monsterStopped)
+		{
+			recalculateTrigger = true;
+		}
 	}
 
 	public void setAttracted()

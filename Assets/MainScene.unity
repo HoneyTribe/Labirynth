@@ -11894,7 +11894,7 @@ GameObject:
   - 33: {fileID: 1294486004}
   - 65: {fileID: 1294486003}
   - 23: {fileID: 1294486002}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: wallBlockPlayerLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15660,7 +15660,7 @@ GameObject:
   - 33: {fileID: 1691130063}
   - 65: {fileID: 1691130062}
   - 23: {fileID: 1691130061}
-  m_Layer: 0
+  m_Layer: 24
   m_Name: wallBlockPlayerRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

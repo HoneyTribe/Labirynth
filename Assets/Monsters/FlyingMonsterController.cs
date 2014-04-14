@@ -5,12 +5,12 @@ public class FlyingMonsterController : AbstractMonsterController {
 
 	private static float updateDistance = 5.0f;
 
-	public override void go (ref Vector3 newPosition, bool attractionTrigger) 
+	public override void go (ref Vector3 newPosition) 
 	{
 
 		float distance = Vector3.Distance(transform.localPosition, newPosition);
 
-		if ((attractionTrigger) || (distance == 0))
+		if ((recalculateTrigger) || (distance == 0))
 		{
 			Vector3 playerPosition = getTarget();
 			if (Vector3.Distance(transform.localPosition, playerPosition) > updateDistance)
