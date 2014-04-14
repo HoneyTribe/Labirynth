@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 41a761b966cd2a5458b9efe1aab72903
+guid: f3b7d37c5450a6647a025f9f0dfc1924
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
-    100000: 1st_Alien
+    100000: 1st_Alien_v2
     100002: //RootNode
-    400000: 1st_Alien
+    400000: 1st_Alien_v2
     400002: //RootNode
-    2300000: 1st_Alien
-    3300000: 1st_Alien
-    4300000: 1st_Alien
+    2300000: 1st_Alien_v2
+    3300000: 1st_Alien_v2
+    4300000: 1st_Alien_v2
     9500000: //RootNode
   materials:
     importMaterials: 1
