@@ -22,21 +22,27 @@ public class JumpController : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider currentCollider)
 	{
-		if (!closeObjects.Contains(currentCollider.gameObject))
+		if ((currentCollider.name.Contains("Monster")) || (currentCollider.name.Contains("Player")))
 		{
-			closeObjects.Add (currentCollider.gameObject);
-		}
+			if (!closeObjects.Contains(currentCollider.gameObject))
+			{
+				closeObjects.Add (currentCollider.gameObject);
+			}
 
-		taken = false;
-		textMesh.text = "TAKE ME!";
+			taken = false;
+			textMesh.text = "TAKE ME!";
+		}
 	}
 
 	public void OnTriggerExit (Collider currentCollider)
 	{
-		closeObjects.Remove (currentCollider.gameObject);
-		if (closeObjects.Count == 0)
+		if ((currentCollider.name.Contains("Monster")) || (currentCollider.name.Contains("Player")))
 		{
-			textMesh.text = "";
+			closeObjects.Remove (currentCollider.gameObject);
+			if (closeObjects.Count == 0)
+			{
+				textMesh.text = "";
+			}
 		}
 	}
 

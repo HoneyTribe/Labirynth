@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class AbstractMonsterController : MonoBehaviour {
+public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject {
 
 	protected float speed;
 
@@ -24,6 +24,8 @@ public abstract class AbstractMonsterController : MonoBehaviour {
 	private bool attractionTrigger;
 
 	private Vector3 newPosition;
+
+	private bool monsterStopped;
 
 	public abstract void go (ref Vector3 newPosition, bool attractionTrigger);
 
@@ -88,6 +90,11 @@ public abstract class AbstractMonsterController : MonoBehaviour {
 			go (ref newPosition, attractionTrigger);
 		}
 		attractionTrigger = false;
+	}
+
+	public void setStopped(bool monsterStopped)
+	{
+		this.monsterStopped = monsterStopped;
 	}
 
 	public void setAttracted()

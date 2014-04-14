@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour, StoppableObject {
 
 	private float speed = 8;	
 
@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
 
-	public void setInputBlocked(bool inputBlocked)
+	public void setStopped(bool inputBlocked)
 	{
 		this.inputBlocked = inputBlocked;
 	}

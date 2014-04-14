@@ -10,9 +10,9 @@ public class KeyController : MonoBehaviour {
 		gameController = GameObject.Find ("GameController");
 	}
 	
-	void OnCollisionEnter (Collision collision)
+	void OnTriggerEnter (Collider currentCollider)
 	{
-		if (collision.collider.name != "Monster")
+		if (currentCollider.name != "Monster")
 		{
 			Destroy(gameObject);
 			gameController.gameObject.SendMessage("Score");

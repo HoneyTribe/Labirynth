@@ -9,7 +9,7 @@ public class JumpBehaviour : MonoBehaviour {
 	private static float timeUp = height/speed;
 
 	private static float slideStep = 1f;
-	private PlayerController playerController;
+	private StoppableObject stoppableObject;
 
 	private Vector3 newPosition = Vector3.zero;
 
@@ -18,15 +18,8 @@ public class JumpBehaviour : MonoBehaviour {
 	private float time;
 	private float timeAir;
 
-	void Start()
-	{
-		playerController = gameObject.GetComponent<PlayerController> ();
-	}
-
 	void Update()
 	{
-
-
 		if (state != 0)
 		{
 			time += Time.deltaTime;
@@ -57,7 +50,7 @@ public class JumpBehaviour : MonoBehaviour {
 	{
 		state = 1;
 		time = 0f;
-		playerController.setInputBlocked(true);
+		gameObject.SendMessage("setStopped", true);
 		rigidbody.useGravity = false;
 		rigidbody.velocity = new Vector3 (0, speed, 0);
 	}
@@ -68,7 +61,7 @@ public class JumpBehaviour : MonoBehaviour {
 		{
 			if (collision.collider.name == "Ground")
 			{
-				playerController.setInputBlocked(false);
+				gameObject.SendMessage("setStopped", false);
 				rigidbody.velocity = Vector3.zero;
 				state = 0;
 			}
