@@ -3,10 +3,13 @@ using System.Collections;
 
 public class StandardMonsterController : AbstractMonsterController {
 
+	private static Vector3 mask = new Vector3 (1, 0, 1);
+
 	public override void go (ref Vector3 newPosition) 
 	{
 
-		float distance = Vector3.Distance(transform.localPosition, newPosition);
+		float distance = Vector3.Distance(Vector3.Scale(transform.localPosition, mask),
+		                                  Vector3.Scale(newPosition, mask));
 
 		if ((recalculateTrigger) || (distance == 0))
 		{
