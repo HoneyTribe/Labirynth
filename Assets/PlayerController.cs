@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 	public void handleLogic(float x, float z, float action, float action2)
 	{
-		if (inputBlocked)
+		if ((inputBlocked) || (levelFinishedController.isStopped()))
 		{
 			return;
 		}
@@ -143,9 +143,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		if(collision.collider.name == "Lighthouse")
 		{
 			lighthouseEntered = true;
-			rigidbody.velocity = Vector3.zero;
-			rigidbody.angularVelocity = Vector3.zero;
-			rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+			freeze();
 			topLight.gameObject.SendMessage("TurnOn");
 		}
 		if(collision.collider.name == "ExitTrigger")
@@ -165,6 +163,19 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				gameFinished = true;
 				levelController.gameObject.SendMessage("PlayerLost");
 			}
+			freeze();
+		}
+		if(collision.collider.name.Contains("Player"))
+		{
+			rigidbody.velocity = Vector3.zero;
+		}
+	}
+
+	void OnCollisionExit (Collision collision)
+	{
+		if(collision.collider.name.Contains("Player"))
+		{
+			rigidbody.velocity = Vector3.zero;
 		}
 	}
 
@@ -182,5 +193,12 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		{
 			inventory.setAvailableItem(null);
 		}
+	}
+
+	private void freeze()
+	{
+		rigidbody.velocity = Vector3.zero;
+		rigidbody.angularVelocity = Vector3.zero;
+		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 	}
 }

@@ -54,6 +54,9 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 		if (levelFinishedController.isStopped())
 		{
+			rigidbody.velocity = Vector3.zero;
+			rigidbody.angularVelocity = Vector3.zero;
+			rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 			return;
 		}
 
