@@ -139,17 +139,27 @@ public class TopLightController : MonoBehaviour {
 
 	void ActivateItems()
 	{
-		GameObject[] items = GameObject.FindGameObjectsWithTag ("Item");
-		foreach (GameObject item in items)
+		if (energy>=attractionCost)
 		{
-			if (isIlluminated(item))
+			bool itemActivated = false;
+			GameObject[] items = GameObject.FindGameObjectsWithTag ("Item");
+			foreach (GameObject item in items)
 			{
-				JumpController jumpController = item.GetComponent<JumpController>();
-				if (jumpController.hasAnyObjects())
+				if (isIlluminated(item))
 				{
-					jumpController.Activate();
-					StartCoroutine(showLaser(item.transform.localPosition));
+					JumpController jumpController = item.GetComponent<JumpController>();
+					if (jumpController.hasAnyObjects())
+					{
+						jumpController.Activate();
+						StartCoroutine(showLaser(item.transform.localPosition));
+						itemActivated = true;
+					}
 				}
+			}
+		
+			if (itemActivated)
+			{
+				changeEnergy(-attractionCost);
 			}
 		}
 	}
