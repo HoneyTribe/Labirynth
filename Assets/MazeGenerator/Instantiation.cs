@@ -37,7 +37,7 @@ namespace AssemblyCSharp
 			labirynth.generate ();
 			drawDevice ();
 			drawKeys (labirynth.getKeys ());
-			drawJumps (labirynth.getJumps ());
+			drawJumps ();
 			drawSmallWalls (labirynth);
 			drawHorisontalWalls (labirynth);
 			drawVerticalWalls (labirynth);
@@ -69,13 +69,11 @@ namespace AssemblyCSharp
 			}
 		}
 
-		void drawJumps(Vector2 jump)
+		void drawJumps()
 		{
 			if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithJumpItem())
 			{
-				Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * jump.x,
-				                           jumpPrefab.transform.position.y,
-				                           offsetZ + planeSizeZ/2f - spaceZ * jump.y);
+				Vector3 pos = getStart();
 				Quaternion rot = Quaternion.Euler(0, 0, 0);
 				Instantiate (jumpPrefab, pos, rot); 
 			}
