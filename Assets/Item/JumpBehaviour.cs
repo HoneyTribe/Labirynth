@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class JumpBehaviour : MonoBehaviour {
 
-	private static float speed = 24f;
-	private static float height = 8f;
+	private static float speed = 10f;
+	private static float height = 6f;
 	private static float timeUp = height/speed;
 
 	private static float slideStep = 1f;
