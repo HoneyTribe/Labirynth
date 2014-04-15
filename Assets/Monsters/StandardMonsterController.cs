@@ -3,8 +3,6 @@ using System.Collections;
 
 public class StandardMonsterController : AbstractMonsterController {
 
-	private static Vector3 mask = new Vector3 (1, 0, 1);
-
 	public override void go (ref Vector3 newPosition) 
 	{
 

@@ -3,6 +3,8 @@ using System.Collections;
 
 public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject {
 
+	protected static Vector3 mask = new Vector3 (1, 0, 1);
+
 	protected float speed;
 
 	private bool enter;
