@@ -53,6 +53,7 @@ public class FusionLightController : MonoBehaviour {
 							(1 << LayerMask.NameToLayer ("lighthouse")) |
 							(1 << LayerMask.NameToLayer ("Details")) |
 							(1 << LayerMask.NameToLayer ("FrontWalls")) |
+							(1 << LayerMask.NameToLayer ("flyingMonsters")) |
 							(1 << LayerMask.NameToLayer ("1stOutsideWalls"));
 
 		newPosition = new Vector3(gameObject.transform.localPosition.x,
