@@ -20,6 +20,7 @@ public class DeviceController : MonoBehaviour {
 	{
 		initialPosition = transform.localPosition;
 		movement = initialPosition;
+		this.renderer.materials[0].color=Color.grey;
 	}
 	
 	// Update is called once per frame

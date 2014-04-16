@@ -68,10 +68,12 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 				recalculateTrigger  = true;
 			}
 			timeLeft -= Time.deltaTime;
+			device.renderer.materials[0].color=Color.white;
 			textMesh.text = ((int) (timeLeft + 1)).ToString();
 			if (timeLeft <= 0)
 			{
 				recalculateTrigger = true;
+				device.renderer.materials[0].color=Color.grey;
 			}
 		}
 
@@ -129,7 +131,9 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		if (timeLeft > 0)
 		{
 			return device.transform.localPosition;
+
 		}
+
 
 		if ((maze.isInside(player1Pos)) && (maze.isInside(player2Pos)))
 		{

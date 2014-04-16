@@ -19,6 +19,7 @@ public class StandardMonsterController : AbstractMonsterController {
 			{
 				newPosition = targetPosition;
 				newPosition.y = transform.localPosition.y;
+				//device.renderer.materials[0].color=Color.white;
 			}
 		}
 		else
