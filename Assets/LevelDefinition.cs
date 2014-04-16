@@ -22,14 +22,14 @@ namespace AssemblyCSharp
 							new MonsterTemplate("Standard", 2.6f),
 							new MonsterTemplate("Standard", 2.6f)
 						},10,15,8,8));
-					levels.Add(new Level(3,new List<MonsterTemplate>{},10,15,9,9));
+					levels.Add(new Level(2,new List<MonsterTemplate>{},10,15,6,6));
 					levels.Add(new Level(2,new List<MonsterTemplate>{
 							new MonsterTemplate("Flying", 2.0f)
-						},10,10,8,8));
+						},10,10,7,7));
 					levels.Add(new Level(3,new List<MonsterTemplate>{
 							new MonsterTemplate("Standard", 3.0f),
 							new MonsterTemplate("Flying", 2.4f)
-						},10,15,9,9));
+						},10,15,8,8));
 					levels.Add(new Level(4,new List<MonsterTemplate>{
 							new MonsterTemplate("Standard", 3.4f),
 							new MonsterTemplate("Standard", 3.4f),
