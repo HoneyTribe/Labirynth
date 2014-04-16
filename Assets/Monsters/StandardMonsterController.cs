@@ -20,6 +20,7 @@ public class StandardMonsterController : AbstractMonsterController {
 				newPosition = targetPosition;
 				newPosition.y = transform.localPosition.y;
 			}
+			transform.rotation = Quaternion.LookRotation(newPosition - transform.localPosition);
 		}
 		else
 		{
