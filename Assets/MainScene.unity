@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c80932d149ee1419515a753d94353e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 1.10000002
+  gameSpeed: 1.5
   menuPrefab: {fileID: 100000, guid: 741efa72e5aa54145b2dcc38e25659ac, type: 2}
 --- !u!4 &119015217
 Transform:
@@ -17236,6 +17236,7 @@ Transform:
   m_Children:
   - {fileID: 558302658}
   - {fileID: 1343350719}
+  - {fileID: 1563348139}
   - {fileID: 2081214281}
   - {fileID: 487701190}
   - {fileID: 1790323036}
@@ -17245,7 +17246,6 @@ Transform:
   - {fileID: 1865045667}
   - {fileID: 505727310}
   - {fileID: 901171727}
-  - {fileID: 1563348139}
   m_Father: {fileID: 2068684557}
 --- !u!1 &1828763227
 GameObject:
