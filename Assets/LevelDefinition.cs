@@ -17,43 +17,43 @@ namespace AssemblyCSharp
 					levels.Add(new Level(1,new List<MonsterTemplate>{},15,15,6,6));
 					levels.Add(new Level(1,new List<MonsterTemplate>{
 							new MonsterTemplate("Standard", 2.4f)
-						},10,15,7,7));
+						},5,15,7,7));
 					levels.Add(new Level(2,new List<MonsterTemplate>{
 							new MonsterTemplate("Standard", 2.6f),
 							new MonsterTemplate("Standard", 2.6f)
-						},10,15,8,8));
+						},5,6,8,8));
 					levels.Add(new Level(2,new List<MonsterTemplate>{},10,15,6,6));
 					levels.Add(new Level(2,new List<MonsterTemplate>{
 							new MonsterTemplate("Flying", 2.0f)
-						},10,10,7,7));
+						},5,6,7,7));
 					levels.Add(new Level(3,new List<MonsterTemplate>{
 							new MonsterTemplate("Standard", 3.0f),
 							new MonsterTemplate("Flying", 2.4f)
-						},10,15,8,8));
+						},5,6,8,8));
 					levels.Add(new Level(4,new List<MonsterTemplate>{
 							new MonsterTemplate("Standard", 3.4f),
 							new MonsterTemplate("Standard", 3.4f),
 							new MonsterTemplate("Flying", 2.0f)
-						},10,10,9,9));
+						},5,6,9,9));
 					levels.Add(new Level(4,new List<MonsterTemplate>{
 							new MonsterTemplate("Standard", 3.6f),
 							new MonsterTemplate("Standard", 3.6f),
 							new MonsterTemplate("Standard", 3.6f),
 							new MonsterTemplate("Standard", 3.6f)
-						},5,5,9,9));
+						},5,6,9,9));
 					levels.Add(new Level(5,new List<MonsterTemplate>{
 							new MonsterTemplate("Standard", 3.8f),
+							new MonsterTemplate("Flying", 2.2f),
 							new MonsterTemplate("Standard", 3.8f),
-							new MonsterTemplate("Standard", 3.8f),
-							new MonsterTemplate("Flying", 2.2f)
+							new MonsterTemplate("Flying", 3.8f)
 						},5,10,10,10));
 					levels.Add(new Level(5,new List<MonsterTemplate>{
 							new MonsterTemplate("Standard", 4.0f),
 							new MonsterTemplate("Standard", 4.0f),
-							new MonsterTemplate("Standard", 4.0f),
+							new MonsterTemplate("Flying", 2.4f),
 							new MonsterTemplate("Standard", 4.0f),
 							new MonsterTemplate("Flying", 2.4f)
-						},5,20,10,10));
+						},5,10,10,10));
 				}
 
 				public List<Level> getLevels()

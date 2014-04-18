@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour, StoppableObject {
 
-	private float speed = 8;	
+	private float speed = 10;	
 
 	private bool lighthouseEntered = false;
 

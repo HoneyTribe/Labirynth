@@ -5,7 +5,7 @@ public class LightController : MonoBehaviour {
 
 	public static LightController instance;
 
-	private float rotationSpeed = 18f;
+	private float rotationSpeed = 24f;
 
 	void Start()
 	{
@@ -15,7 +15,7 @@ public class LightController : MonoBehaviour {
 
 	void MoveLeft()
 	{
-		if (transform.rotation.y > -0.45) 
+		if (transform.rotation.y > -0.48) 
 		{
 			transform.Rotate (0, -rotationSpeed * Time.deltaTime, 0);
 		}
@@ -23,7 +23,7 @@ public class LightController : MonoBehaviour {
 
 	void MoveRight()
 	{
-		if (transform.rotation.y < 0.45) 
+		if (transform.rotation.y < 0.48) 
 		{
 			transform.Rotate (0, rotationSpeed * Time.deltaTime, 0);
 		}
