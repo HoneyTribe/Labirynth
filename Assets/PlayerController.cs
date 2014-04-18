@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	private float speed = 10;	
 
 	private bool lighthouseEntered = false;
+	private bool craneEntered = false;
 
 	private bool gameFinished = false;
 
@@ -42,6 +43,13 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				lighthouseEntered = false;
 				topLight.gameObject.SendMessage("TurnOff");
+				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
+			}
+			else if (craneEntered)
+			{
+				craneEntered = false;
+				CraneController.instance.TurnOff();
 				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
 			}
@@ -89,6 +97,15 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			}
 		}
 
+
+		if(craneEntered)
+		{
+			if ((x != 0) || (z != 0))
+			{
+				CraneController.instance.gameObject.SendMessage("Move", new Vector3(x,action,z));
+			}
+		}
+
 		if (action > 0)
 		{
 			if (lighthouseEntered)
@@ -102,13 +119,13 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 					topLight.gameObject.SendMessage("AttractMonster");
 				}
 			}
-			else
+			else if (craneEntered)
 			{
 				device.gameObject.SendMessage("Move", transform.localPosition);
 			}
 		}
 
-		if (!lighthouseEntered)
+		if ((!lighthouseEntered) && (!craneEntered))
 		{
 			if ((x != 0) || (z != 0))
 			{
@@ -145,6 +162,12 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			lighthouseEntered = true;
 			freeze();
 			topLight.gameObject.SendMessage("TurnOn");
+		}
+		if(collision.collider.name == "Crane")
+		{
+			craneEntered = true;
+			freeze();
+			CraneController.instance.TurnOn();
 		}
 		if(collision.collider.name == "ExitTrigger")
 		{
