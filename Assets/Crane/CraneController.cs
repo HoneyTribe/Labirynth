@@ -17,9 +17,6 @@ public class CraneController : MonoBehaviour {
 	private Vector3 neckScale;
 	private Vector3 grabberPosition;
 
-	private bool ff = false;
-	private int oo = 0;
-
 	void Start()
 	{
 		rotationSpeed *= LevelFinishedController.instance.gameSpeed;
@@ -61,7 +58,7 @@ public class CraneController : MonoBehaviour {
 			Vector3 distance = transform.position - rotationPoint;
 			Vector3 grabberDistance = grabber.transform.position - rotationPoint;
 
-			float step = input.z * extentionSpeed * Time.deltaTime;
+			float step = Mathf.Sign(input.z) * extentionSpeed * Time.deltaTime;
 			if (transform.localScale.z + step >= 2)
 			{
 				transform.localScale = new Vector3 (transform.localScale.x,
