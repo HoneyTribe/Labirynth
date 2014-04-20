@@ -6,7 +6,7 @@ public class CraneController : MonoBehaviour {
 	public static CraneController instance;
 
 	private float rotationSpeed = 25f;
-	private float extentionSpeed = 120f;
+	private float extentionSpeed = 10f;
 
 	private Vector3 rotationPoint;
 	private GameObject grabber;
