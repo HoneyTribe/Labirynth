@@ -22,7 +22,12 @@ public class JumpController : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider currentCollider)
 	{
-		if ((currentCollider.name.Contains("Monster")) || (currentCollider.name.Contains("Player")))
+		if (currentCollider.name == "Ground")
+		{
+			rigidbody.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
+		}
+
+		if ((currentCollider.tag == "Monster") || (currentCollider.tag  == "Player"))
 		{
 			if (!closeObjects.Contains(currentCollider.gameObject))
 			{

@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 						                                               transform.localPosition.y + 3,
 						                                               transform.localPosition.z);
 						jumpItem.transform.parent = gameObject.transform;
+						jumpItem.rigidbody.isKinematic = true;
 						jumpItem.SendMessage("Take");
 						inventory.putItemIntoInventory();
 					}
@@ -75,6 +76,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 					                                               					   transform.localPosition.z);
 					inventory.getInventoryItem().transform.rotation = Quaternion.Euler(0,0,0);
 					inventory.getInventoryItem().transform.parent = null;
+					inventory.getInventoryItem().rigidbody.isKinematic = false;
 					inventory.getInventoryItem().SendMessage("OnTriggerEnter", collider);
 					inventory.clearInventory();
 				}
@@ -97,12 +99,16 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			}
 		}
 
-
 		if(craneEntered)
 		{
 			if ((x != 0) || (z != 0))
 			{
-				CraneController.instance.gameObject.SendMessage("Move", new Vector3(x,action,z));
+				CraneController.instance.Move(new Vector3(x,action,z));
+			}
+			
+			if (action > 0)
+			{
+				CraneController.instance.PickUp();
 			}
 		}
 
@@ -118,10 +124,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				{
 					topLight.gameObject.SendMessage("AttractMonster");
 				}
-			}
-			else if (craneEntered)
-			{
-				device.gameObject.SendMessage("Move", transform.localPosition);
 			}
 		}
 

@@ -10,12 +10,8 @@ public class CraneController : MonoBehaviour {
 
 	private Vector3 rotationPoint;
 	private GameObject grabber;
+	private CraneGrabberController grabberController;
 	private GameObject craneLight;
-
-	private Vector3 neckPosition;
-	private Quaternion neckRotation;
-	private Vector3 neckScale;
-	private Vector3 grabberPosition;
 
 	void Start()
 	{
@@ -24,52 +20,61 @@ public class CraneController : MonoBehaviour {
 		           					 transform.position.y,
 		                             transform.position.z - transform.localScale.z / 2f);
 		grabber = GameObject.Find ("Grabber");
-		craneLight = grabber.transform.Find ("CraneLight").gameObject;
+		grabberController = grabber.GetComponent<CraneGrabberController> ();
+		craneLight = GameObject.Find ("CraneLight");
 		instance = this;
 	}
 
-	void Move(Vector3 input) // x,z,action
+	public void PickUp() 
 	{
-		this.neckPosition = transform.localPosition;
-		this.neckRotation = transform.localRotation;
-		this.neckScale = transform.localScale;
-		this.grabberPosition = grabber.transform.localPosition;
+		grabber.SendMessage ("PickUp");
+	}
 
-		if ((input.x > 0) && (transform.rotation.y < 0.6))
+	public void Move(Vector3 input)
+	{
+		if (!grabberController.pickingUp)
 		{
-			transform.RotateAround (rotationPoint, Vector3.up, rotationSpeed * Time.deltaTime);
-			grabber.transform.RotateAround (rotationPoint, Vector3.up, rotationSpeed * Time.deltaTime);
-		}
+			Vector3 neckPosition = transform.localPosition;
+			Quaternion neckRotation = transform.localRotation;
+			Vector3 neckScale = transform.localScale;
+			Vector3 grabberPos = grabber.transform.localPosition;
 
-		if ((input.x < 0) && (transform.rotation.y > -0.6))
-		{
-			transform.RotateAround (rotationPoint, Vector3.up, -rotationSpeed * Time.deltaTime);
-			grabber.transform.RotateAround (rotationPoint, Vector3.up, -rotationSpeed * Time.deltaTime);
-		}
-
-		RestorePosition ();
-		this.neckPosition = transform.localPosition;
-		this.neckRotation = transform.localRotation;
-		this.neckScale = transform.localScale;
-		this.grabberPosition = grabber.transform.localPosition;
-
-		if (input.z != 0)
-		{
-			Vector3 distance = transform.position - rotationPoint;
-			Vector3 grabberDistance = grabber.transform.position - rotationPoint;
-
-			float step = Mathf.Sign(input.z) * extentionSpeed * Time.deltaTime;
-			if (transform.localScale.z + step >= 2)
+			if ((input.x > 0) && (transform.rotation.y < 0.6))
 			{
-				transform.localScale = new Vector3 (transform.localScale.x,
-				                                    transform.localScale.y,
-				                                    transform.localScale.z + step);
-				transform.position = rotationPoint + distance + distance.normalized * step / 2;
-				grabber.transform.position = rotationPoint + grabberDistance + distance.normalized * step;
+				transform.RotateAround (rotationPoint, Vector3.up, rotationSpeed * Time.deltaTime);
+				grabber.transform.RotateAround (rotationPoint, Vector3.up, rotationSpeed * Time.deltaTime);
 			}
-		}
 
-		RestorePosition ();
+			if ((input.x < 0) && (transform.rotation.y > -0.6))
+			{
+				transform.RotateAround (rotationPoint, Vector3.up, -rotationSpeed * Time.deltaTime);
+				grabber.transform.RotateAround (rotationPoint, Vector3.up, -rotationSpeed * Time.deltaTime);
+			}
+
+			RestorePosition (neckPosition, neckRotation, neckScale, grabberPos);
+			neckPosition = transform.localPosition;
+			neckRotation = transform.localRotation;
+			neckScale = transform.localScale;
+			grabberPos = grabber.transform.localPosition;
+
+			if (input.z != 0)
+			{
+				Vector3 distance = transform.position - rotationPoint;
+				Vector3 grabberDistance = grabber.transform.position - rotationPoint;
+
+				float step = Mathf.Sign(input.z) * extentionSpeed * Time.deltaTime;
+				if (transform.localScale.z + step >= 2)
+				{
+					transform.localScale = new Vector3 (transform.localScale.x,
+					                                    transform.localScale.y,
+					                                    transform.localScale.z + step);
+					transform.position = rotationPoint + distance + distance.normalized * step / 2;
+					grabber.transform.position = rotationPoint + grabberDistance + distance.normalized * step;
+				}
+			}
+
+			RestorePosition (neckPosition, neckRotation, neckScale, grabberPos);
+		}
 	}
 
 	public void TurnOn ()
@@ -109,7 +114,7 @@ public class CraneController : MonoBehaviour {
 //		Debug.Log ("Exit");
 //	}
 
-	private void RestorePosition()
+	private void RestorePosition(Vector3 neckPosition, Quaternion neckRotation, Vector3 neckScale, Vector3 grabberPos)
 	{
 		Vector3[] boundingBox = new Vector3[4];
 		boundingBox[0] = renderer.bounds.max;
@@ -120,7 +125,7 @@ public class CraneController : MonoBehaviour {
 		bool collisionDetected = false;
 		foreach (Vector3 v in boundingBox)
 		{
-			if ((Mathf.Abs (v.x) > 20) || (Mathf.Abs (v.z) > 23))
+			if ((Mathf.Abs (v.x) > 19) || (Mathf.Abs (v.z) > 23))
 			{
 				collisionDetected = true;
 				break;
@@ -129,19 +134,10 @@ public class CraneController : MonoBehaviour {
 		
 		if (collisionDetected)
 		{
-			transform.localPosition = new Vector3 (this.neckPosition.x,
-			                                       this.neckPosition.y,
-			                                       this.neckPosition.z);		                                      
-			transform.localRotation = new Quaternion (this.neckRotation.x,
-			                                          this.neckRotation.y,
-			                                          this.neckRotation.z,
-			                                          this.neckRotation.w);
-			transform.localScale = new Vector3 (this.neckScale.x,
-			                                    this.neckScale.y,
-			                                    this.neckScale.z);
-			grabber.transform.localPosition = new Vector3 (this.grabberPosition.x,
-			                                               this.grabberPosition.y,
-			                                               this.grabberPosition.z);
+			transform.localPosition = neckPosition;		                                      
+			transform.localRotation = neckRotation;
+			transform.localScale = neckScale;
+			grabber.transform.localPosition = grabberPos;
 		}
 	}
 }

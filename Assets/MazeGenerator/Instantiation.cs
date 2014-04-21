@@ -74,6 +74,7 @@ namespace AssemblyCSharp
 			if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithJumpItem())
 			{
 				Vector3 pos = getStart();
+				pos.y = 1.5f;
 				Quaternion rot = Quaternion.Euler(0, 0, 0);
 				Instantiate (jumpPrefab, pos, rot); 
 			}

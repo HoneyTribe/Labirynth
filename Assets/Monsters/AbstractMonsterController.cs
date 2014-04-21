@@ -4,7 +4,7 @@ using System.Collections;
 public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject {
 
 	protected static Vector3 MASK = new Vector3 (1, 0, 1);
-	protected static float EPSILON = 0.2f;
+	protected static float EPSILON = 0.01f;
 
 	protected float speed;
 
@@ -124,9 +124,9 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	protected Vector3 getTarget()
 	{
-		Vector3 player1Pos = player1.transform.localPosition;
-		Vector3 player2Pos = player2.transform.localPosition;
-		Vector3 monsterPos = transform.localPosition;
+		Vector3 player1Pos = player1.transform.position;
+		Vector3 player2Pos = player2.transform.position;
+		Vector3 monsterPos = transform.position;
 
 		if (timeLeft > 0)
 		{

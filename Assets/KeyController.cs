@@ -12,7 +12,7 @@ public class KeyController : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider currentCollider)
 	{
-		if (!currentCollider.name.Contains("Monster"))
+		if ((!currentCollider.name.Contains("Monster")) && (currentCollider.name != "Grabber"))
 		{
 			Destroy(gameObject);
 			gameController.gameObject.SendMessage("Score");

@@ -4,12 +4,13 @@ using System.Collections;
 public class FlyingMonsterController : AbstractMonsterController {
 
 	private static float updateDistance = 5.0f;
+	private float prevDistance;
 
 	public override void go (ref Vector3 newPosition) 
 	{
-		float distance = Vector3.Distance(transform.localPosition, newPosition) - EPSILON;
+		float distance = Vector3.Distance(transform.localPosition, newPosition);
 
-		if ((recalculateTrigger) || (distance <= 0))
+		if ((recalculateTrigger) || (distance == 0) || (Mathf.Abs(distance - prevDistance) < EPSILON))
 		{
 			Vector3 targetPosition = getTarget();
 			if (Vector3.Distance(transform.localPosition, targetPosition) > updateDistance)
@@ -31,5 +32,6 @@ public class FlyingMonsterController : AbstractMonsterController {
 			transform.position = Vector3.Lerp (
 				transform.localPosition, newPosition, Time.deltaTime * speed / distance);
 		}
+		prevDistance = distance;
 	}
 }
