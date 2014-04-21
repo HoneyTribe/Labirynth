@@ -20,7 +20,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	private LevelFinishedController levelFinishedController;
 
-	private TextMesh textMesh;
+	protected TextMesh textMesh;
 
 	private static float interval = 5f;
 	private float timeLeft;

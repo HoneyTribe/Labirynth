@@ -22,13 +22,15 @@ public class StandardMonsterController : AbstractMonsterController {
 				newPosition.y = transform.localPosition.y;
 			}
 			transform.rotation = Quaternion.LookRotation(newPosition - transform.localPosition);
+			textMesh.transform.rotation = Quaternion.Euler(new Vector3(90,0,0));
+			prevDistance = 0f;
 		}
 		else
 		{
 			transform.position = Vector3.Lerp (
 				transform.localPosition, newPosition, Time.deltaTime * speed / distance);
+			prevDistance = distance;
 		}
-		prevDistance = distance;
 	}
 
 }
