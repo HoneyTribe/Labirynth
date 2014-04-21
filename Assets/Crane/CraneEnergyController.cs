@@ -6,9 +6,9 @@ public class CraneEnergyController : MonoBehaviour {
 	public static CraneEnergyController instance;
 
 	private static int progressBarSize = 100;
-	private static float holdingCost = 0.33f; // You can hold an object 1/holdingCost seconds (3 seconds).
-	private static float pickingUpCost = 0.2f; // constant cost of picking up - even if you failed
-	private static float restoreVelocity = 0.025f; // It needs 1/restoreVelocity seconds to regenerate (40 seconds).
+	private static float holdingCost = 0.2f; // You can hold an object 1/holdingCost seconds (5 seconds).
+	private static float pickingUpCost = 0.125f; // constant cost of picking up - even if you failed
+	private static float restoreVelocity = 0.033f; // It needs 1/restoreVelocity seconds to regenerate (30 seconds).
 
 	private GUIStyle borderStyle;
 	private GUIStyle outerStyle;
