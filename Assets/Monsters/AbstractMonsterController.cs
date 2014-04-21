@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject {
 
@@ -13,10 +14,12 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	
 	private GameObject player1;
 	private GameObject player2;
+	private GameObject player3;
 	private GameObject topLight;
 	protected GameObject device;
 	private PlayerController player1Controller;
 	private PlayerController player2Controller;
+	private PlayerController player3Controller;
 
 	private LevelFinishedController levelFinishedController;
 
@@ -40,9 +43,11 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		maze = gameController.GetComponent<AssemblyCSharp.Instantiation>();
 		player1 = GameObject.Find ("Player1");
 		player2 = GameObject.Find ("Player2");
+		player3 = GameObject.Find ("Player3");
 		device = GameObject.Find ("Device");
 		player1Controller = player1.GetComponent<PlayerController>();
 		player2Controller = player2.GetComponent<PlayerController>();
+		player3Controller = player3.GetComponent<PlayerController>();
 
 		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
 
@@ -124,76 +129,64 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	protected Vector3 getTarget()
 	{
-		Vector3 player1Pos = player1.transform.position;
-		Vector3 player2Pos = player2.transform.position;
+		List<Vector3> players = new List<Vector3> ();
+		if (!player1Controller.hasEnteredAnyMachine())
+		{
+			players.Add (player1.transform.position);
+		}
+		if (!player2Controller.hasEnteredAnyMachine())
+		{
+			players.Add (player2.transform.position);
+		}
+		if (!player3Controller.hasEnteredAnyMachine())
+		{
+			players.Add (player3.transform.position);
+		}
 		Vector3 monsterPos = transform.position;
 
 		if (timeLeft > 0)
 		{
 			return device.transform.localPosition;
-
 		}
 
+		List<Vector3> closestPlayers = new List<Vector3> ();
 
-		if ((maze.isInside(player1Pos)) && (maze.isInside(player2Pos)))
+		// get all inside
+		foreach (Vector3 player in players)
 		{
-			// shortest distance in labirinth
-			if (maze.getDistance(monsterPos, player1Pos) > maze.getDistance(monsterPos, player1Pos))
-			{
-				return player2Pos;
-			}
-			else
-			{
-				return player1Pos;
+			if (maze.isInside(player))
+		    {
+				closestPlayers.Add (player);
 			}
 		}
-		else if ((!maze.isInside(player1Pos)) && (!maze.isInside(player2Pos)))
-		{
-			if (maze.isInside(monsterPos))
-			{
-				// shortest distance from labirinth entrance
-				if (Vector3.Distance(maze.getStart(), player1Pos) > Vector3.Distance(maze.getStart(), player2Pos))
-				{
-					return player2Pos;
-				}
-				else
-				{
-					return player1Pos;
-				}
-			}
-			else
-			{
-				// skip lighthouse guy
-				if (player1Controller.hasEnteredLighthouse())
-				{
-					return player2Pos;
-				}
 
-				if (player2Controller.hasEnteredLighthouse())
+		if (closestPlayers.Count != 0)
+		{
+			float dist = 100000;
+			Vector3 closestPlayer = Vector3.zero;
+			foreach (Vector3 player in closestPlayers)
+			{
+				if (maze.getDistance(monsterPos, player) < dist)
 				{
-					return player1Pos;
-				}
-				// shortest distance from moster
-				if (Vector3.Distance(monsterPos, player1Pos) > Vector3.Distance(monsterPos, player2Pos))
-				{
-					return player2Pos;
-				}
-				else
-				{
-					return player1Pos;
+					dist = maze.getDistance(monsterPos, player);
+					closestPlayer = player;
 				}
 			}
+			return closestPlayer;
 		}
 		else
 		{
-			if (maze.isInside(player1Pos))
+			float dist = 100000;
+			Vector3 closestPlayer = Vector3.zero;
+			foreach (Vector3 player in players)
 			{
-				return player1Pos;
+				if (Vector3.Distance(maze.getStart(), player) < dist)
+				{
+					dist = Vector3.Distance(monsterPos, player);
+					closestPlayer = player;
+				}
 			}
-			else
-			{
-				return player2Pos;
-			}
+			return closestPlayer;
 		}
 	}
 }

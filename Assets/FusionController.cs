@@ -8,6 +8,7 @@ public class FusionController : MonoBehaviour {
 	private GameObject levelController;
 	private GameObject player1;
 	private GameObject player2;
+	private GameObject player3;
 
 	private bool fusionActivated;
 
@@ -16,17 +17,20 @@ public class FusionController : MonoBehaviour {
 		levelController = GameObject.Find ("LevelController");
 		player1 = GameObject.Find ("Player1");
 		player2 = GameObject.Find ("Player2");
+		player3 = GameObject.Find ("Player3");
 	}
 	
 	void Update () 
 	{
 		if (fusionActivated)
 		{
-			if (Vector3.Distance(player1.transform.localPosition, player2.transform.localPosition) < closeDistance)
+			if ((Vector3.Distance(player1.transform.localPosition, player2.transform.localPosition) < closeDistance) &&
+				(Vector3.Distance(player1.transform.localPosition, player3.transform.localPosition) < closeDistance))
 			{
 				fusionActivated = false;
 				player1.rigidbody.velocity = Vector3.zero;
 				player2.rigidbody.velocity = Vector3.zero;
+				player3.rigidbody.velocity = Vector3.zero;
 				levelController.gameObject.SendMessage("PlayerFinished");
 			}
 		}

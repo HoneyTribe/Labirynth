@@ -1344,6 +1344,7 @@ GameObject:
   - 114: {fileID: 141250786}
   - 114: {fileID: 141250787}
   - 114: {fileID: 141250788}
+  - 114: {fileID: 141250789}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1456,6 +1457,28 @@ MonoBehaviour:
   verticalAxis: J1RightVertical
   triggerAxis: J1RightTrigger
   triggerButton: J1RightShoulder
+--- !u!114 &141250789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141250781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3d45fbb279b8a846828cd51aa143fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 707660192}
+  moveUp: 0
+  moveDown: 0
+  moveLeft: 0
+  moveRight: 0
+  actionTrigger: 0
+  actionTrigger2: 0
+  horizontalAxis: J2LeftHorizontal
+  verticalAxis: J2LeftVertical
+  triggerAxis: J2LeftTrigger
+  triggerButton: J2LeftShoulder
 --- !u!1 &144692306
 GameObject:
   m_ObjectHideFlags: 0
@@ -6142,7 +6165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &707660193
 Transform:
   m_ObjectHideFlags: 0

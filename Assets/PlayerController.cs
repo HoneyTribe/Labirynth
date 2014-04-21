@@ -139,9 +139,9 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		}
 	}
 
-	public bool hasEnteredLighthouse()
+	public bool hasEnteredAnyMachine()
 	{
-		return lighthouseEntered;
+		return lighthouseEntered || craneEntered;
 	}
 
 
