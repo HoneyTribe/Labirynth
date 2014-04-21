@@ -47,14 +47,10 @@ public class CraneGrabberController : MonoBehaviour {
 		{
 			heldObject.rigidbody.useGravity = true;
 			heldObject.transform.parent = null;
+			heldObject.rigidbody.velocity = new Vector3(0, -10, 0);
 			if ((heldObject.tag == "Player") || (heldObject.tag == "Monster"))
 			{
-				heldObject.rigidbody.velocity = new Vector3(0, -10, 0);
 				heldObject.gameObject.SendMessage("setStopped", false);
-			}
-			else
-			{
-				heldObject.rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 			}
 			heldObject = null;
 		}
@@ -67,13 +63,18 @@ public class CraneGrabberController : MonoBehaviour {
 		{
 			if ((heldObject == null) && (pickingUp))
 			{
-				collider.rigidbody.useGravity = false;
-				collider.transform.parent = transform;
-				if ((collider.tag == "Player") || (collider.tag == "Monster"))
+				GameObject obj = collider.gameObject;
+				if (obj.transform.parent != null)
 				{
-					collider.gameObject.SendMessage("setStopped", true);
+					obj = obj.transform.parent.gameObject;
 				}
-				heldObject = collider.gameObject;
+				obj.rigidbody.useGravity = false;
+				obj.transform.parent = transform;
+				if ((obj.tag == "Player") || (obj.tag == "Monster"))
+				{
+					obj.gameObject.SendMessage("setStopped", true);
+				}
+				heldObject = obj;
 			}
 		}
 	}

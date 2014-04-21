@@ -62,7 +62,6 @@ public class JumpBehaviour : MonoBehaviour {
 			if (collision.collider.name == "Ground")
 			{
 				gameObject.SendMessage("setStopped", false);
-				rigidbody.velocity = Vector3.zero;
 				state = 0;
 			}
 
