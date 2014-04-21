@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 23: {fileID: 2300000}
   - 102: {fileID: 10200000}
-  m_Layer: 16
+  m_Layer: 26
   m_Name: FloatingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ GameObject:
   - 23: {fileID: 2300002}
   - 114: {fileID: 11400000}
   - 54: {fileID: 5400000}
-  m_Layer: 16
+  m_Layer: 26
   m_Name: JumpContainer
   m_TagString: Item
   m_Icon: {fileID: 0}

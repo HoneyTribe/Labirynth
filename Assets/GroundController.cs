@@ -19,6 +19,7 @@ public class GroundController : MonoBehaviour {
 
 		if (collider.tag == "Item")
 		{
+			// check cranegrabberController
 			collider.isTrigger = true;
 			Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), false);
 			Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), false);

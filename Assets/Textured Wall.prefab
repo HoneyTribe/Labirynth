@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 65: {fileID: 6500000}
   - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   m_Layer: 9
   m_Name: Textured Wall
   m_TagString: Wall
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
-  m_LocalScale: {x: 3.45000005, y: 2, z: .430000007}
+  m_LocalScale: {x: 4.86666632, y: 2, z: .430000007}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &2300000
@@ -86,6 +87,17 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 60b66d8b18d8aa748b251a21f94f8901, type: 2}
   - {fileID: 2100000, guid: 3cd15150856bacb4abbf867bd148db64, type: 2}
   topLeftRight: {fileID: 2100000, guid: b2e2f02783205fc44b88c5b6124b668e, type: 2}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf717f1ceb161e4b82b72fa574e11a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

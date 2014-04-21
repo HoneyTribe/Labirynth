@@ -42,6 +42,7 @@ public class CraneGrabberController : MonoBehaviour {
 			                                       transform.position.z);
 			this.grabberPosition = transform.position;
 			this.pickingUp = true;
+			CraneEnergyController.instance.pickingUp();
 		}
 		else
 		{
@@ -50,11 +51,13 @@ public class CraneGrabberController : MonoBehaviour {
 			heldObject.rigidbody.velocity = new Vector3(0, -10, 0);
 			if (heldObject.tag == "Item")
 			{
+				// check groundController
 				heldObject.collider.isTrigger = false;
 				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), true);
 				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), true);
 				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), true);
 			}
+			CraneEnergyController.instance.holding(false);
 			heldObject = null;
 		}
 	}
@@ -78,6 +81,7 @@ public class CraneGrabberController : MonoBehaviour {
 					obj.gameObject.SendMessage("setStopped", true);
 				}
 				heldObject = obj;
+				CraneEnergyController.instance.holding(true);
 			}
 		}
 	}
