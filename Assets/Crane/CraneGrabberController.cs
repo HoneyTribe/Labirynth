@@ -48,9 +48,12 @@ public class CraneGrabberController : MonoBehaviour {
 			heldObject.rigidbody.useGravity = true;
 			heldObject.transform.parent = null;
 			heldObject.rigidbody.velocity = new Vector3(0, -10, 0);
-			if ((heldObject.tag == "Player") || (heldObject.tag == "Monster"))
+			if (heldObject.tag == "Item")
 			{
-				heldObject.gameObject.SendMessage("setStopped", false);
+				heldObject.collider.isTrigger = false;
+				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), true);
+				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), true);
+				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), true);
 			}
 			heldObject = null;
 		}

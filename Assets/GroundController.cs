@@ -12,5 +12,18 @@ public class GroundController : MonoBehaviour {
 	{
 		collider.rigidbody.useGravity = false;
 		collider.rigidbody.velocity = Vector3.zero;
+		if ((collider.tag == "Player") || (collider.tag == "Monster"))
+		{
+			collider.gameObject.SendMessage("setStopped", false);
+		}
+
+		if (collider.tag == "Item")
+		{
+			collider.isTrigger = true;
+			Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), false);
+			Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), false);
+			Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), false);
+
+		}
 	}
 }
