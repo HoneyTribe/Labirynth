@@ -180,7 +180,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			Vector3 closestPlayer = Vector3.zero;
 			foreach (Vector3 player in players)
 			{
-				if (Vector3.Distance(maze.getStart(), player) < dist)
+				if (Vector3.Distance(monsterPos, player) < dist)
 				{
 					dist = Vector3.Distance(monsterPos, player);
 					closestPlayer = player;
