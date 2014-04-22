@@ -113,6 +113,11 @@ public class CraneController : MonoBehaviour {
 		retracting = true;
 	}
 
+	public void Activate ()
+	{
+		craneLight.SendMessage ("ActivateItems");
+	}
+
 //	void OnTriggerEnter (Collider currentCollider)
 //	{
 //		ff = true;

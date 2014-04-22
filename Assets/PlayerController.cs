@@ -81,6 +81,11 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				CraneController.instance.PickUp();
 			}
 
+			if ((action2 > 0) && (action2 <= 0.5f))
+			{
+				CraneController.instance.Activate();
+			}
+
 			if ((x != 0) || (z != 0))
 			{
 				CraneController.instance.Move(new Vector3(x,action,z));

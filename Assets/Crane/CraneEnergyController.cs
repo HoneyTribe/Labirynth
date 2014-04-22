@@ -5,10 +5,11 @@ public class CraneEnergyController : MonoBehaviour {
 
 	public static CraneEnergyController instance;
 
-	private static int progressBarSize = 100;
-	private static float holdingCost = 0.2f; // You can hold an object 1/holdingCost seconds (5 seconds).
-	private static float pickingUpCost = 0.05f; // constant cost of picking up - even if you failed
-	private static float restoreVelocity = 0.033f; // It needs 1/restoreVelocity seconds to regenerate (30 seconds).
+	private const int progressBarSize = 100;
+	private const float holdingCost = 0.2f; // You can hold an object 1/holdingCost seconds (5 seconds).
+	private const float pickingUpCost = 0.05f; // constant cost of picking up - even if you failed
+	private const float restoreVelocity = 0.033f; // It needs 1/restoreVelocity seconds to regenerate (30 seconds).
+	private const float activationCost = 0.3f; 
 
 	private GUIStyle borderStyle;
 	private GUIStyle outerStyle;
@@ -85,6 +86,11 @@ public class CraneEnergyController : MonoBehaviour {
 		changeEnergy (-pickingUpCost);
 	}
 
+	public void activating()
+	{
+		changeEnergy (-activationCost);
+	}
+	
 	public void holding(bool isHeld)
 	{
 		this.isHeld = isHeld;
@@ -101,5 +107,15 @@ public class CraneEnergyController : MonoBehaviour {
 		{
 			energy = 0.0f;
 		}
+	}
+
+	public bool canPickUp()
+	{
+		return energy > pickingUpCost;
+	}
+
+	public bool canActivate()
+	{
+		return energy > activationCost;
 	}
 }
