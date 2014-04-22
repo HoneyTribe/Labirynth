@@ -7,7 +7,7 @@ public class TopLightController : MonoBehaviour {
 
 	private static int progressBarSize = 100;
 	private static float attractionCost = 0.3f;
-	private static float restoreVelocity = 0.025f; // It needs 1/restoreVelocity seconds to regenerate (40 seconds).
+	private static float restoreVelocity = 0.03125f; // It needs 1/restoreVelocity seconds to regenerate (32 seconds).
 
 	public float openningInterval = 1.0f;
 	public float closingInterval = 0.5f;
