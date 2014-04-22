@@ -35,30 +35,33 @@ public class CraneGrabberController : MonoBehaviour {
 
 	public void PickUp() 
 	{
-		if (heldObject == null)
+		if (!pickingUp)
 		{
-			this.newGrabberPosition = new Vector3 (transform.position.x, 
-			                                       transform.position.y - 7,
-			                                       transform.position.z);
-			this.grabberPosition = transform.position;
-			this.pickingUp = true;
-			CraneEnergyController.instance.pickingUp();
-		}
-		else
-		{
-			heldObject.rigidbody.useGravity = true;
-			heldObject.transform.parent = null;
-			heldObject.rigidbody.velocity = new Vector3(0, -10, 0);
-			if (heldObject.tag == "Item")
+			if (heldObject == null)
 			{
-				// check groundController
-				heldObject.collider.isTrigger = false;
-				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), true);
-				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), true);
-				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), true);
+				this.newGrabberPosition = new Vector3 (transform.position.x, 
+				                                       transform.position.y - 7,
+				                                       transform.position.z);
+				this.grabberPosition = transform.position;
+				this.pickingUp = true;
+				CraneEnergyController.instance.pickingUp();
 			}
-			CraneEnergyController.instance.holding(false);
-			heldObject = null;
+			else
+			{
+				heldObject.rigidbody.useGravity = true;
+				heldObject.transform.parent = null;
+				heldObject.rigidbody.velocity = new Vector3(0, -10, 0);
+				if (heldObject.tag == "Item")
+				{
+					// check groundController
+					heldObject.collider.isTrigger = false;
+					Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), true);
+					Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), true);
+					Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), true);
+				}
+				CraneEnergyController.instance.holding(false);
+				heldObject = null;
+			}
 		}
 	}
 	
@@ -75,6 +78,7 @@ public class CraneGrabberController : MonoBehaviour {
 					obj = obj.transform.parent.gameObject;
 				}
 				obj.rigidbody.useGravity = false;
+				obj.rigidbody.velocity = Vector3.zero;
 				obj.transform.parent = transform;
 				if ((obj.tag == "Player") || (obj.tag == "Monster"))
 				{
