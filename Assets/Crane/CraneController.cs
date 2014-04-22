@@ -5,13 +5,16 @@ public class CraneController : MonoBehaviour {
 
 	public static CraneController instance;
 
-	private float rotationSpeed = 15f;
-	private float extentionSpeed = 5f;
+	private static float rotationSpeed = 15f;
+	private static float extentionSpeed = 5f;
+	private static float retractingSpeed = 30f;
 
 	private Vector3 rotationPoint;
 	private GameObject grabber;
 	private CraneGrabberController grabberController;
 	private GameObject craneLight;
+
+	private bool retracting;
 
 	void Start()
 	{
@@ -23,6 +26,14 @@ public class CraneController : MonoBehaviour {
 		grabberController = grabber.GetComponent<CraneGrabberController> ();
 		craneLight = GameObject.Find ("CraneLight");
 		instance = this;
+	}
+
+	void Update()
+	{
+		if (retracting)
+		{
+			Move (new Vector3(0,0,-1));
+		}
 	}
 
 	public void PickUp() 
@@ -62,7 +73,16 @@ public class CraneController : MonoBehaviour {
 				Vector3 distance = transform.position - rotationPoint;
 				Vector3 grabberDistance = grabber.transform.position - rotationPoint;
 
-				float step = Mathf.Sign(input.z) * extentionSpeed * Time.deltaTime;
+				float step = Mathf.Sign(input.z) * Time.deltaTime;
+				if (retracting)
+				{
+					step *= retractingSpeed;
+				}
+				else
+				{
+					step *= extentionSpeed;
+				}
+
 				if (transform.localScale.z + step >= 2)
 				{
 					transform.localScale = new Vector3 (transform.localScale.x,
@@ -70,6 +90,10 @@ public class CraneController : MonoBehaviour {
 					                                    transform.localScale.z + step);
 					transform.position = rotationPoint + distance + distance.normalized * step / 2;
 					grabber.transform.position = rotationPoint + grabberDistance + distance.normalized * step;
+				}
+				else
+				{
+					retracting = false;
 				}
 			}
 
@@ -80,11 +104,13 @@ public class CraneController : MonoBehaviour {
 	public void TurnOn ()
 	{
 		craneLight.SendMessage ("TurnOn");
+		retracting = false;
 	}
 	
 	public void TurnOff ()
 	{
 		craneLight.SendMessage ("TurnOff");
+		retracting = true;
 	}
 
 //	void OnTriggerEnter (Collider currentCollider)
