@@ -14,7 +14,7 @@ public class KeyController : MonoBehaviour {
 	{
 		if ((!currentCollider.name.Contains("Monster")) && (currentCollider.name != "Grabber") && (currentCollider.tag != "Item"))
 		{
-			Destroy(gameObject);
+			Destroy(gameObject.transform.parent.gameObject);
 			gameController.gameObject.SendMessage("Score");
 		}
 	}
