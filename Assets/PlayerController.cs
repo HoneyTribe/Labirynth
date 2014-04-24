@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 	private bool lighthouseEntered = false;
 	private bool craneEntered = false;
+	private bool portalGunEntered = false;
 
 	private bool gameFinished = false;
 
@@ -91,6 +92,25 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				CraneController.instance.Move(new Vector3(x,action,z));
 			}
 		}
+		else if (portalGunEntered)
+		{
+			if ((action > 0.5) || (action2 > 0.5))
+			{
+				portalGunEntered = false;
+				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
+			}
+			
+			if ((x != 0) || (z != 0))
+			{
+				PortalGunController.instance.Move(new Vector3(x,action,z));
+			}
+
+			if ((action > 0) && (action <= 0.5f))
+			{
+				PortalGunController.instance.Shoot();
+			}
+		}
 		else
 		{
 			if (action > 0)
@@ -123,6 +143,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 					inventory.getInventoryItem().transform.parent = null;
 					inventory.getInventoryItem().rigidbody.isKinematic = false;
 					inventory.getInventoryItem().SendMessage("OnTriggerEnter", collider);
+					inventory.setAvailableItem(inventory.getInventoryItem());
 					inventory.clearInventory();
 				}
 			}
@@ -146,7 +167,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 	public bool hasEnteredAnyMachine()
 	{
-		return lighthouseEntered || craneEntered;
+		return lighthouseEntered || craneEntered || portalGunEntered;
 	}
 
 
@@ -168,6 +189,11 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			craneEntered = true;
 			freeze();
 			CraneController.instance.TurnOn();
+		}
+		if(collision.collider.name == "PortalGun")
+		{
+			portalGunEntered = true;
+			freeze();
 		}
 		if(collision.collider.name == "ExitTrigger")
 		{
