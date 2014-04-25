@@ -6,15 +6,12 @@ public class PortalGunPowerController : MonoBehaviour {
 	public static PortalGunPowerController instance;
 
 	private const int progressBarSize = 100;
-	private const float holdingCost = 0.33f; // You can hold an button 1/holdingCost seconds (3 seconds).
 
 	private GUIStyle borderStyle;
 	private GUIStyle outerStyle;
 	private GUIStyle energyStyle;
 	private GUIStyle lowEnergyStyle;
 	private float energy = 0f;
-
-	private bool isHeld;
 
 	void Start()
 	{
@@ -54,38 +51,12 @@ public class PortalGunPowerController : MonoBehaviour {
 		GUI.EndGroup();
 	}
 
-	void Update()
-	{
-		if (isHeld)
-		{
-			changeEnergy (Time.deltaTime * holdingCost);
-			if (energy == 1f)
-			{
-				gameObject.SendMessage("Shoot");
-			}
-		}
-	}
-
-	public void holding(bool isHeld)
-	{
-		if (!isHeld)
-		{
-			energy = 0f;
-		}
-		this.isHeld = isHeld;
-	}
-
-	public bool isHolding()
-	{
-		return this.isHeld;
-	}
-
 	public float getEnergy()
 	{
 		return this.energy;
 	}
 
-	private void changeEnergy(float value)
+	public void changeEnergy(float value)
 	{
 		energy += value;
 		if (energy > 1.0f)

@@ -1323,6 +1323,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 138804280}
   - 95: {fileID: 138804282}
+  - 65: {fileID: 138804281}
   m_Layer: 22
   m_Name: egypt_border_deco
   m_TagString: Untagged
@@ -1342,6 +1343,18 @@ Transform:
   m_Children:
   - {fileID: 1263433511}
   m_Father: {fileID: 2039897838}
+--- !u!65 &138804281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 138804279}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &138804282
 Animator:
   serializedVersion: 2
@@ -3581,6 +3594,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 403294305}
   - 95: {fileID: 403294307}
+  - 65: {fileID: 403294306}
   m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
@@ -3600,6 +3614,18 @@ Transform:
   m_Children:
   - {fileID: 1655365185}
   m_Father: {fileID: 2039897838}
+--- !u!65 &403294306
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 403294304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &403294307
 Animator:
   serializedVersion: 2
@@ -3695,7 +3721,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 407767105}
   - 108: {fileID: 407767106}
-  m_Layer: 23
+  m_Layer: 26
   m_Name: PortalLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4459,6 +4485,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 496289248}
   - 95: {fileID: 496289250}
+  - 65: {fileID: 496289249}
   m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
@@ -4478,6 +4505,18 @@ Transform:
   m_Children:
   - {fileID: 781086644}
   m_Father: {fileID: 2039897838}
+--- !u!65 &496289249
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 496289247}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &496289250
 Animator:
   serializedVersion: 2
@@ -5013,6 +5052,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 531713717}
   - 95: {fileID: 531713719}
+  - 65: {fileID: 531713718}
   m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
@@ -5032,6 +5072,18 @@ Transform:
   m_Children:
   - {fileID: 1034753273}
   m_Father: {fileID: 2039897838}
+--- !u!65 &531713718
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 531713716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &531713719
 Animator:
   serializedVersion: 2
@@ -10238,6 +10290,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1130539423}
   - 95: {fileID: 1130539425}
+  - 65: {fileID: 1130539424}
   m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
@@ -10257,6 +10310,18 @@ Transform:
   m_Children:
   - {fileID: 1258835479}
   m_Father: {fileID: 2039897838}
+--- !u!65 &1130539424
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1130539422}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &1130539425
 Animator:
   serializedVersion: 2
@@ -12582,6 +12647,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1322454072}
   - 95: {fileID: 1322454074}
+  - 65: {fileID: 1322454073}
   m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
@@ -12601,6 +12667,18 @@ Transform:
   m_Children:
   - {fileID: 1716377082}
   m_Father: {fileID: 2039897838}
+--- !u!65 &1322454073
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1322454071}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &1322454074
 Animator:
   serializedVersion: 2
@@ -14112,6 +14190,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1477818784}
   - 95: {fileID: 1477818786}
+  - 65: {fileID: 1477818785}
   m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
@@ -14131,6 +14210,18 @@ Transform:
   m_Children:
   - {fileID: 1472993224}
   m_Father: {fileID: 2039897838}
+--- !u!65 &1477818785
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1477818783}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &1477818786
 Animator:
   serializedVersion: 2
@@ -14274,9 +14365,9 @@ GameObject:
   - 114: {fileID: 1498770345}
   - 54: {fileID: 1498770344}
   - 114: {fileID: 1498770343}
-  m_Layer: 23
+  m_Layer: 26
   m_Name: Portal
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14314,10 +14405,10 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
-  m_UseGravity: 1
-  m_IsKinematic: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1498770345
 MonoBehaviour:
@@ -17072,6 +17163,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1808340431}
   - 95: {fileID: 1808340433}
+  - 65: {fileID: 1808340432}
   m_Layer: 22
   m_Name: egypt_border_deco
   m_TagString: Untagged
@@ -17091,6 +17183,18 @@ Transform:
   m_Children:
   - {fileID: 1980194276}
   m_Father: {fileID: 2039897838}
+--- !u!65 &1808340432
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1808340430}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &1808340433
 Animator:
   serializedVersion: 2
@@ -17185,6 +17289,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1817025245}
   - 95: {fileID: 1817025247}
+  - 65: {fileID: 1817025246}
   m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
@@ -17204,6 +17309,18 @@ Transform:
   m_Children:
   - {fileID: 1313399884}
   m_Father: {fileID: 2039897838}
+--- !u!65 &1817025246
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1817025244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &1817025247
 Animator:
   serializedVersion: 2
@@ -19420,6 +19537,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2077340751}
   - 95: {fileID: 2077340753}
+  - 65: {fileID: 2077340752}
   m_Layer: 11
   m_Name: egypt_border_deco
   m_TagString: Untagged
@@ -19439,6 +19557,18 @@ Transform:
   m_Children:
   - {fileID: 1589484281}
   m_Father: {fileID: 2039897838}
+--- !u!65 &2077340752
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2077340750}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &2077340753
 Animator:
   serializedVersion: 2
