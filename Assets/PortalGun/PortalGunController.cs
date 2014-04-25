@@ -6,8 +6,9 @@ public class PortalGunController : MonoBehaviour {
 	public static PortalGunController instance;
 
 	private static float rotationSpeed = 15f;
+	private static float gravityMultiplier = 50f;
 	private static float energySpeed = 0.5f;
-	private const float power = 1000f;
+	private const float power = 3000f;
 
 	public GameObject portalPrefab;
 	private GameObject portal;
@@ -47,6 +48,7 @@ public class PortalGunController : MonoBehaviour {
 		                           transform.position.y - rotationPoint.y,
 		                           transform.position.z - rotationPoint.z);
 		portal.rigidbody.AddForce (neck.normalized * power * PortalGunPowerController.instance.getEnergy());
+		portal.rigidbody.AddForce (gravityMultiplier * Physics.gravity * portal.rigidbody.mass);
 
 		portal = (GameObject) Instantiate (portalPrefab, position, Quaternion.Euler(0, 0, 0)); 
 	}
