@@ -987,6 +987,7 @@ GameObject:
   - 4: {fileID: 116379617}
   - 33: {fileID: 116379619}
   - 23: {fileID: 116379618}
+  - 65: {fileID: 116379620}
   m_Layer: 22
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
@@ -1035,6 +1036,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1217700204}
   m_GameObject: {fileID: 116379616}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!65 &116379620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 116379616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 10, z: 10}
+  m_Center: {x: -1.00179994, y: 5, z: 0}
 --- !u!1 &118923258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1366,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 10}
+  m_Size: {x: 1, y: 2, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &138804282
 Animator:
@@ -6668,6 +6681,7 @@ GameObject:
   - 4: {fileID: 771104972}
   - 33: {fileID: 771104974}
   - 23: {fileID: 771104973}
+  - 64: {fileID: 771104975}
   m_Layer: 11
   m_Name: egypt_door_deco
   m_TagString: Untagged
@@ -6715,6 +6729,19 @@ MeshFilter:
     type: 3}
   m_PrefabInternal: {fileID: 1030916034}
   m_GameObject: {fileID: 771104971}
+  m_Mesh: {fileID: 4300000, guid: eeae032f16ca0f24eac242d52aeecef8, type: 3}
+--- !u!64 &771104975
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 771104971}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: eeae032f16ca0f24eac242d52aeecef8, type: 3}
 --- !u!1001 &774953204
 Prefab:
@@ -8028,6 +8055,7 @@ GameObject:
   - 4: {fileID: 938444452}
   - 33: {fileID: 938444451}
   - 23: {fileID: 938444450}
+  - 64: {fileID: 938444453}
   m_Layer: 11
   m_Name: egypt_door_deco
   m_TagString: Untagged
@@ -8076,6 +8104,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1957766724}
+--- !u!64 &938444453
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 938444449}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 4300000, guid: eeae032f16ca0f24eac242d52aeecef8, type: 3}
 --- !u!1 &968702319
 GameObject:
   m_ObjectHideFlags: 0
@@ -13094,7 +13135,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1380260128}
   - 95: {fileID: 1380260127}
-  - 64: {fileID: 1380260126}
   m_Layer: 11
   m_Name: egypt_door_deco
   m_TagString: Untagged
@@ -13102,19 +13142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1380260126
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1380260125}
-  m_Material: {fileID: 13400000, guid: 18ac6bab98d1a4ab9bf419363aefbe8e, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 558e8612db828b74e9367fca995a37a3, type: 3}
 --- !u!95 &1380260127
 Animator:
   serializedVersion: 2
@@ -14241,6 +14268,7 @@ GameObject:
   - 4: {fileID: 1485233834}
   - 33: {fileID: 1485233836}
   - 23: {fileID: 1485233835}
+  - 65: {fileID: 1485233837}
   m_Layer: 22
   m_Name: Egypt_Static_Wall_Deco
   m_TagString: Untagged
@@ -14289,6 +14317,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1098712033}
   m_GameObject: {fileID: 1485233833}
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!65 &1485233837
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1485233833}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 10, z: 10}
+  m_Center: {x: -1.00179994, y: 5, z: 0}
 --- !u!1001 &1505153323
 Prefab:
   m_ObjectHideFlags: 0
@@ -17020,7 +17060,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 10}
+  m_Size: {x: 1, y: 2, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &1808340433
 Animator:
@@ -18162,7 +18202,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1957766724}
   - 95: {fileID: 1957766726}
-  - 64: {fileID: 1957766725}
   m_Layer: 11
   m_Name: egypt_door_deco
   m_TagString: Untagged
@@ -18182,19 +18221,6 @@ Transform:
   m_Children:
   - {fileID: 938444452}
   m_Father: {fileID: 2068684557}
---- !u!64 &1957766725
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1957766723}
-  m_Material: {fileID: 13400000, guid: 18ac6bab98d1a4ab9bf419363aefbe8e, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 4300000, guid: 558e8612db828b74e9367fca995a37a3, type: 3}
 --- !u!95 &1957766726
 Animator:
   serializedVersion: 2
