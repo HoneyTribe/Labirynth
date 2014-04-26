@@ -1395,6 +1395,7 @@ GameObject:
   - 114: {fileID: 141250782}
   - 114: {fileID: 141250785}
   - 114: {fileID: 141250786}
+  - 114: {fileID: 141250790}
   - 114: {fileID: 141250787}
   - 114: {fileID: 141250788}
   - 114: {fileID: 141250789}
@@ -1484,10 +1485,8 @@ MonoBehaviour:
   moveRight: 100
   actionTrigger: 32
   actionTrigger2: 308
-  horizontalAxis: J1LeftHorizontal
-  verticalAxis: J1LeftVertical
-  triggerAxis: J1LeftTrigger
-  triggerButton: J1LeftShoulder
+  device: 0
+  left: 0
 --- !u!114 &141250788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1506,10 +1505,8 @@ MonoBehaviour:
   moveRight: 275
   actionTrigger: 303
   actionTrigger2: 307
-  horizontalAxis: J1RightHorizontal
-  verticalAxis: J1RightVertical
-  triggerAxis: J1RightTrigger
-  triggerButton: J1RightShoulder
+  device: 0
+  left: 1
 --- !u!114 &141250789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1528,10 +1525,19 @@ MonoBehaviour:
   moveRight: 104
   actionTrigger: 114
   actionTrigger2: 121
-  horizontalAxis: J2LeftHorizontal
-  verticalAxis: J2LeftVertical
-  triggerAxis: J2LeftTrigger
-  triggerButton: J2LeftShoulder
+  device: 0
+  left: 0
+--- !u!114 &141250790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141250781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef8d9a937ff4f864082bd7ed2dd4eea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &144692306
 GameObject:
   m_ObjectHideFlags: 0
@@ -17823,11 +17829,11 @@ Transform:
   - {fileID: 850149549}
   - {fileID: 483655116}
   - {fileID: 1345165721}
-  - {fileID: 532608760}
   - {fileID: 646615709}
   - {fileID: 983544387}
   - {fileID: 1522396965}
   - {fileID: 1845747560}
+  - {fileID: 532608760}
   m_Father: {fileID: 2068684557}
 --- !u!1 &1910851405
 GameObject:

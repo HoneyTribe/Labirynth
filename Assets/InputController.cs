@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using InControl;
 
 public class InputController : MonoBehaviour {
 
@@ -15,10 +16,8 @@ public class InputController : MonoBehaviour {
 	public KeyCode actionTrigger;
 	public KeyCode actionTrigger2;
 
-	public string horizontalAxis;
-	public string verticalAxis;
-	public string triggerAxis;
-	public string triggerButton;
+	public int device;
+	public bool left;
 
 	private List<KeyCode> keys;
 	private bool menuButtonPressed;
@@ -37,8 +36,7 @@ public class InputController : MonoBehaviour {
 		//keys.Add (moveLeft);
 	}
 
-	// Update is called once per frame
-	void Update ()
+	public void React ()
 	{
 		float x = 0;
 		float z = 0;
@@ -163,30 +161,49 @@ public class InputController : MonoBehaviour {
 
 	private void handleAxis(ref float x, ref float z, ref float action, ref float action2)
 	{
-		x = Input.GetAxis (horizontalAxis) * Time.deltaTime;
-		z = Input.GetAxis (verticalAxis) * Time.deltaTime;
-		float actionAxis = Input.GetAxis (triggerAxis);
-
-		if ((actionAxisTime == 0f) && (actionAxis == 1.0f))
+		if (InputManager.Devices.Count > device)
 		{
-			actionAxisTime = Time.time;
-		}
+			InputDevice inputDevice = InputManager.Devices [device];
 
-		if ((actionAxisTime != 0f) && (actionAxis == -1.0f))
-		{
-			action = Time.time - actionAxisTime;
-			actionAxisTime = 0f;
-		}
+			float actionAxis;
+			InputControl action2control;
+			if (left)
+			{
+				x = inputDevice.LeftStickVector.x * Time.deltaTime;
+				z = inputDevice.LeftStickVector.y * Time.deltaTime;
+				actionAxis = inputDevice.LeftTrigger.Value;
+				action2control = inputDevice.LeftBumper;
+			}
+			else
+			{
+				x = inputDevice.RightStickVector.x * Time.deltaTime;
+				z = inputDevice.RightStickVector.y * Time.deltaTime;
+				actionAxis = inputDevice.RightTrigger.Value;
+				action2control = inputDevice.RightBumper;
+			}
 
-		if (Input.GetButtonDown(triggerButton))
-		{
-			actionAxis2Time = Time.time;
-		}
 
-		if (Input.GetButtonUp(triggerButton))
-		{
-			action2 = Time.time - actionAxis2Time;
-			actionAxis2Time = 0f;
+			if ((actionAxisTime == 0f) && (actionAxis == 1.0f))
+			{
+				actionAxisTime = Time.time;
+			}
+
+			if ((actionAxisTime != 0f) && (actionAxis == -1.0f))
+			{
+				action = Time.time - actionAxisTime;
+				actionAxisTime = 0f;
+			}
+
+			if (action2control.WasPressed)
+			{
+				actionAxis2Time = Time.time;
+			}
+
+			if (action2control.WasReleased)
+			{
+				action2 = Time.time - actionAxis2Time;
+				actionAxis2Time = 0f;
+			}
 		}
 	}
 

@@ -2,21 +2,21 @@
 ## Unity
 #################
 
-[Ll]ibrary/
+/[Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
 
-Library/AssetImportState
-Library/AssetServerCacheV3
-Library/FailedAssetImports.txt
-Library/ScriptAssemblies
-Library/ScriptMapper
-Library/assetDatabase3
-Library/cache
-Library/expandedItems
-Library/metadata
-Library/previews
-Library/guidmapper
+/Library/AssetImportState
+/Library/AssetServerCacheV3
+/Library/FailedAssetImports.txt
+/Library/ScriptAssemblies
+/Library/ScriptMapper
+/Library/assetDatabase3
+/Library/cache
+/Library/expandedItems
+/Library/metadata
+/Library/previews
+/Library/guidmapper
 
 UnityGenerated/
 
