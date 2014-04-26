@@ -28,6 +28,8 @@ public class InputController : MonoBehaviour {
 	private float actionAxisTime;
 	private float actionAxis2Time;
 
+	private bool actionAxisBlocked;
+
 	void Start()
 	{
 		playerController = player.GetComponent<PlayerController> ();
@@ -116,7 +118,7 @@ public class InputController : MonoBehaviour {
 			actionTime = Time.time;
 		}
 
-		if (Input.GetKeyUp (actionTrigger))
+		if ((actionTime != 0) && ((Input.GetKeyUp (actionTrigger)) || (Time.time - actionTime > 0.5f)))
 		{
 			action = Time.time - actionTime;
 			actionTime = 0f;
@@ -127,7 +129,7 @@ public class InputController : MonoBehaviour {
 			action2Time = Time.time;
 		}
 
-		if (Input.GetKeyUp (actionTrigger2))
+		if ((action2Time != 0) && ((Input.GetKeyUp (actionTrigger2)) || (Time.time - action2Time > 0.5f)))
 		{
 			action2 = Time.time - action2Time;
 			action2Time = 0f;
@@ -183,15 +185,27 @@ public class InputController : MonoBehaviour {
 			}
 
 
-			if ((actionAxisTime == 0f) && (actionAxis == 1.0f))
+			if ((actionAxisTime == 0f) && (actionAxis > 0f))
 			{
 				actionAxisTime = Time.time;
 			}
 
-			if ((actionAxisTime != 0f) && (actionAxis == -1.0f))
+			if ((actionAxisTime != 0f) && ((actionAxis == 0f) || (Time.time - actionAxisTime >= 0.5f)))
 			{
-				action = Time.time - actionAxisTime;
-				actionAxisTime = 0f;
+				if (!actionAxisBlocked)
+				{
+					action = Time.time - actionAxisTime;
+					if (Time.time - actionAxisTime >= 0.5f)
+					{
+						actionAxisBlocked = true;
+					}
+				}
+
+				if (actionAxis == 0f)
+				{
+					actionAxisBlocked = false;
+					actionAxisTime = 0f;
+				}
 			}
 
 			if (action2control.WasPressed)
@@ -199,7 +213,7 @@ public class InputController : MonoBehaviour {
 				actionAxis2Time = Time.time;
 			}
 
-			if (action2control.WasReleased)
+			if ((actionAxis2Time != 0f) && ((action2control.WasReleased) || (Time.time - actionAxis2Time > 0.5f)))
 			{
 				action2 = Time.time - actionAxis2Time;
 				actionAxis2Time = 0f;

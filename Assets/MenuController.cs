@@ -45,7 +45,7 @@ public class MenuController : MonoBehaviour {
 			}
 		}
 
-		if (action > 0)
+		if ((action > 0) || (action2 > 0))
 		{
 			levelFinishedController.setLevel(selGridInt);
 			Application.LoadLevel (0); 
