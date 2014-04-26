@@ -16,7 +16,6 @@ public class WallController : MonoBehaviour {
 	private Texture2D textureAtlas;
 	
 	private Rect[] atlasUvs;
-	private Vector3 localScale = Vector3.zero;
 
 	void Start()
 	{

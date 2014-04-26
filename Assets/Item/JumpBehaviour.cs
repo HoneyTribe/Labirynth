@@ -8,10 +8,6 @@ public class JumpBehaviour : MonoBehaviour {
 	private static float height = 6f;
 	private static float timeUp = height/speed;
 
-	//private static float slideStep = 1f;
-
-	private Vector3 newPosition = Vector3.zero;
-
 	private int state = 0;
 	private Vector3 move;
 	private float time;
