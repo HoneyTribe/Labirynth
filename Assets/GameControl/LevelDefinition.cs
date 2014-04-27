@@ -8,7 +8,7 @@ namespace AssemblyCSharp
 				private static int firstLevelWithDevice = 1;
 				private static int firstLevelWithJumpItem = 3;
 
-				private static int firstLevelWithLightMachine = 1;
+				private static int firstLevelWithLightMachine = 0;
 				private static int firstLevelWithCrane = 4;
 
 				List<Level> levels1 = new List<Level> ();
