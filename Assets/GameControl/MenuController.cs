@@ -7,23 +7,23 @@ public class MenuController : MonoBehaviour {
 	private static int levelsPerRow = 5;
 	public GUISkin skin;
 	public GUISkin selectedSkin;
-	private LevelFinishedController levelFinishedController;
 	private GameObject gameController;
-	private PlayerController player2Controller;
 	private int selGridInt;
 
 	void Start()
 	{
-		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController> ();
-		selGridInt = levelFinishedController.getLevel ();
-		GameObject.Find ("GameController").SendMessage ("SetMenu", this);
+		selGridInt = LevelFinishedController.instance.getLevel ();
+		foreach (InputController input in LevelFinishedController.instance.getControllers())
+		{
+			input.SetMenu(this);
+		}
 	}
 
 	public void handleLogic(float x, float z, float action, float action2)
 	{
 		if (x > 0)
 		{
-			if(selGridInt < levelFinishedController.getMaxLevel())
+			if(selGridInt < LevelFinishedController.instance.getMaxLevel())
 			{
 				selGridInt++;
 			}
@@ -41,13 +41,13 @@ public class MenuController : MonoBehaviour {
 			}
 			else
 			{
-				selGridInt = levelFinishedController.getMaxLevel();
+				selGridInt = LevelFinishedController.instance.getMaxLevel();
 			}
 		}
 
 		if ((action > 0) || (action2 > 0))
 		{
-			levelFinishedController.setLevel(selGridInt);
+			LevelFinishedController.instance.setLevel(selGridInt);
 			Application.LoadLevel (0); 
 		}
 	}
@@ -58,12 +58,12 @@ public class MenuController : MonoBehaviour {
 			GUI.Box (new Rect(0, 0, 400, 300), "", skin.box);
 			GUI.Label (new Rect (0, 30, 400, 50), "Levels", skin.label);
 
-			for (int i=0; i<=levelFinishedController.getNumberOfLevels(); i++)
+			for (int i=0; i<=LevelFinishedController.instance.getNumberOfLevels(); i++)
 			{
 				int x = i % levelsPerRow;
 				int y = i / levelsPerRow;
 				
-				if (i>levelFinishedController.getMaxLevel())
+				if (i>LevelFinishedController.instance.getMaxLevel())
 				{
 					GUI.enabled = false; 
 				}
@@ -77,7 +77,7 @@ public class MenuController : MonoBehaviour {
 					GUI.Button (new Rect (50 + x * 65, 100 + y * 65, 40, 40), (i + 1).ToString(), skin.button);
 				}
 
-				if (i>levelFinishedController.getMaxLevel())
+				if (i>LevelFinishedController.instance.getMaxLevel())
 				{
 					GUI.enabled = true; 
 				}

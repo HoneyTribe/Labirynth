@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 	private GameObject topLight;
 	private GameObject levelController;
-	private LevelFinishedController levelFinishedController;
 
 	private AssemblyCSharp.Inventory inventory = new AssemblyCSharp.Inventory();
 
@@ -26,12 +25,11 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		speed *= LevelFinishedController.instance.gameSpeed;
 		topLight = GameObject.Find ("TopLight");
 		levelController = GameObject.Find ("LevelController");
-		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
 	}
 
 	public void handleLogic(float x, float z, float action, float action2)
 	{
-		if ((inputBlocked) || (levelFinishedController.isStopped()))
+		if ((inputBlocked) || (LevelFinishedController.instance.isStopped()))
 		{
 			return;
 		}

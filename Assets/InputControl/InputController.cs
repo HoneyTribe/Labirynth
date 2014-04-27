@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using InControl;
 
-public class InputController : MonoBehaviour {
+public class InputController {
 
-	public GameObject player;
+	public int playerId;
+
 	private PlayerController playerController;
 	private MenuController menuController;
+	private PlayerSelectionMenuController playerSelectionMenuController;
 
 	public KeyCode moveUp;
 	public KeyCode moveDown;
@@ -16,11 +18,12 @@ public class InputController : MonoBehaviour {
 	public KeyCode actionTrigger;
 	public KeyCode actionTrigger2;
 
-	public int device;
-	public bool left;
+	private int device;
+	private bool left;
 
 	private List<KeyCode> keys;
 	private bool menuButtonPressed;
+	private bool playerMenuButtonPressed;
 
 	private float actionTime;
 	private float action2Time;
@@ -30,9 +33,15 @@ public class InputController : MonoBehaviour {
 
 	private bool actionAxisBlocked;
 
-	void Start()
+	public InputController(int device, bool left, PlayerSelectionMenuController playerSelectionMenuController,
+	                       int playerId)
 	{
-		playerController = player.GetComponent<PlayerController> ();
+		this.device = device;
+		this.left = left;
+		this.playerSelectionMenuController = playerSelectionMenuController;
+
+		//this.playerController = GameObject.Find ("Player" + playerId).GetComponent<PlayerController> ();
+		this.playerId = playerId;
 		keys = new List<KeyCode> ();
 		//keys.Add (moveRight);
 		//keys.Add (moveLeft);
@@ -47,7 +56,22 @@ public class InputController : MonoBehaviour {
 		handleAxis (ref x, ref z, ref action, ref action2);
 		handleKeys (ref x, ref z, ref action, ref action2);
 
-		if (menuController != null)
+		if (playerSelectionMenuController)
+		{
+			if ((x == 0) && (z == 0) && (action == 0) && (action2 == 0))
+			{
+				playerMenuButtonPressed = false;
+			}
+			else
+			{
+				if (!playerMenuButtonPressed)
+				{
+					playerMenuButtonPressed = true;
+					playerSelectionMenuController.handleLogic (x, z, action, action2, this);
+				}
+			}
+		}
+		else if (menuController != null)
 		{
 			if ((x == 0) && (z == 0) && (action == 0) && (action2 == 0))
 			{
@@ -224,5 +248,26 @@ public class InputController : MonoBehaviour {
 	public void SetMenu(MenuController menuController)
 	{
 		this.menuController = menuController;
+	}
+
+	public int getDevice()
+	{
+		return device;
+	}
+
+	public bool isLeft()
+	{
+		return left;
+	}
+
+	public int getPlayerId()
+	{
+		return playerId;
+	}
+
+	public void updatePlayer()
+	{
+		GameObject player = GameObject.Find ("Player" + playerId);
+		playerController = player.GetComponent<PlayerController> ();
 	}
 }

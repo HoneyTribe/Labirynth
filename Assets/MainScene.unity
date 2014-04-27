@@ -1132,7 +1132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSpeed: 1.20000005
-  menuPrefab: {fileID: 100000, guid: 741efa72e5aa54145b2dcc38e25659ac, type: 2}
+  playerSelectionMenuPrefab: {fileID: 100000, guid: 2ba56796f5938214396ca4f41c34be06,
+    type: 2}
 --- !u!4 &119015217
 Transform:
   m_ObjectHideFlags: 0
@@ -1396,9 +1397,6 @@ GameObject:
   - 114: {fileID: 141250785}
   - 114: {fileID: 141250786}
   - 114: {fileID: 141250790}
-  - 114: {fileID: 141250787}
-  - 114: {fileID: 141250788}
-  - 114: {fileID: 141250789}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1467,66 +1465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55d57609136ac2c40a949c4ec9ea84d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &141250787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 141250781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2174b9e89bd4347996f5e1630c06a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 504520871}
-  moveUp: 119
-  moveDown: 115
-  moveLeft: 97
-  moveRight: 100
-  actionTrigger: 32
-  actionTrigger2: 308
-  device: 0
-  left: 0
---- !u!114 &141250788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 141250781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2174b9e89bd4347996f5e1630c06a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 468870936}
-  moveUp: 273
-  moveDown: 274
-  moveLeft: 276
-  moveRight: 275
-  actionTrigger: 303
-  actionTrigger2: 307
-  device: 0
-  left: 1
---- !u!114 &141250789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 141250781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e2174b9e89bd4347996f5e1630c06a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 707660192}
-  moveUp: 116
-  moveDown: 103
-  moveLeft: 102
-  moveRight: 104
-  actionTrigger: 114
-  actionTrigger2: 121
-  device: 1
-  left: 0
 --- !u!114 &141250790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11151,7 +11089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1232021370
 Transform:
   m_ObjectHideFlags: 0

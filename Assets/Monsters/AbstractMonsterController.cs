@@ -12,16 +12,9 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	private bool enter;
 	protected AssemblyCSharp.Instantiation maze;
 	
-	private GameObject player1;
-	private GameObject player2;
-	private GameObject player3;
 	private GameObject topLight;
 	protected GameObject device;
-	private PlayerController player1Controller;
-	private PlayerController player2Controller;
-	private PlayerController player3Controller;
-
-	private LevelFinishedController levelFinishedController;
+	private List<PlayerController> playerControllers = new List<PlayerController>();
 
 	protected TextMesh textMesh;
 
@@ -41,15 +34,11 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 		GameObject gameController = GameObject.Find ("GameController");
 		maze = gameController.GetComponent<AssemblyCSharp.Instantiation>();
-		player1 = GameObject.Find ("Player1");
-		player2 = GameObject.Find ("Player2");
-		player3 = GameObject.Find ("Player3");
 		device = GameObject.Find ("Device");
-		player1Controller = player1.GetComponent<PlayerController>();
-		player2Controller = player2.GetComponent<PlayerController>();
-		player3Controller = player3.GetComponent<PlayerController>();
-
-		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
+		for (int i = LevelFinishedController.instance.getControllers().Count + 1; i <= 4; i++)
+		{
+			playerControllers.Add (GameObject.Find ("Player" + i).GetComponent<PlayerController>());
+		}
 
 		enter = true;
 		recalculateTrigger = false;
@@ -57,7 +46,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	void Update () {
 
-		if (levelFinishedController.isStopped())
+		if (LevelFinishedController.instance.isStopped())
 		{
 			rigidbody.velocity = Vector3.zero;
 			rigidbody.angularVelocity = Vector3.zero;
@@ -130,17 +119,12 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	protected Vector3 getTarget()
 	{
 		List<Vector3> players = new List<Vector3> ();
-		if (!player1Controller.hasEnteredAnyMachine())
+		foreach (PlayerController playerController in playerControllers)
 		{
-			players.Add (player1.transform.position);
-		}
-		if (!player2Controller.hasEnteredAnyMachine())
-		{
-			players.Add (player2.transform.position);
-		}
-		if (!player3Controller.hasEnteredAnyMachine())
-		{
-			players.Add (player3.transform.position);
+			if (!playerController.hasEnteredAnyMachine())
+			{
+				players.Add (playerController.gameObject.transform.position);
+			}
 		}
 		Vector3 monsterPos = transform.position;
 

@@ -11,7 +11,9 @@ public class LevelFinishedController : MonoBehaviour {
 	private int maxLevel = 0;
 	private AssemblyCSharp.LevelDefinition levelDefinition;
 
-	public GameObject menuPrefab;
+	public GameObject playerSelectionMenuPrefab;
+
+	private List<InputController> controllers = new List<InputController> ();
 
 	private bool finished;
 	private bool gameOver;
@@ -33,7 +35,7 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		levelDefinition = new AssemblyCSharp.LevelDefinition ();
 		stopped = true;
-		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 		maxLevel = getNumberOfLevels ();
 	}
 
@@ -97,7 +99,7 @@ public class LevelFinishedController : MonoBehaviour {
 		GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
 		yield return new WaitForSeconds(2);
 		gameOver = false;
-		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 
 	IEnumerator GameFinished () 
@@ -106,7 +108,7 @@ public class LevelFinishedController : MonoBehaviour {
 		stopped = true;
 		yield return new WaitForSeconds(2);
 		congratulation = false;
-		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 	
 	public int getNumberOfKeys()
@@ -173,5 +175,10 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		level = newLevel;
 		Reset ();
+	}
+
+	public List<InputController> getControllers()
+	{
+		return controllers;
 	}
 }

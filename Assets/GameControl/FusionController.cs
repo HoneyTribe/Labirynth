@@ -1,36 +1,41 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class FusionController : MonoBehaviour {
 
 	private static int closeDistance = 3;
 
 	private GameObject levelController;
-	private GameObject player1;
-	private GameObject player2;
-	private GameObject player3;
-
+	private List<GameObject> players = new List<GameObject>();
 	private bool fusionActivated;
 
 	void Start () 
 	{
 		levelController = GameObject.Find ("LevelController");
-		player1 = GameObject.Find ("Player1");
-		player2 = GameObject.Find ("Player2");
-		player3 = GameObject.Find ("Player3");
+		for (int i=1;  i<=LevelFinishedController.instance.getControllers().Count; i++)
+		{
+			players.Add(GameObject.Find ("Player" + i));
+		}
 	}
 	
 	void Update () 
 	{
 		if (fusionActivated)
 		{
-			if ((Vector3.Distance(player1.transform.localPosition, player2.transform.localPosition) < closeDistance) &&
-				(Vector3.Distance(player1.transform.localPosition, player3.transform.localPosition) < closeDistance))
+			bool finished = true;
+
+			foreach (GameObject player in players)
+			{
+				finished &= (Vector3.Distance(players[0].transform.localPosition, player.transform.localPosition) < closeDistance);
+			}
+
+			if (finished)
 			{
 				fusionActivated = false;
-				player1.rigidbody.velocity = Vector3.zero;
-				player2.rigidbody.velocity = Vector3.zero;
-				player3.rigidbody.velocity = Vector3.zero;
+				foreach(GameObject player in players)
+				{
+					player.rigidbody.velocity = Vector3.zero;
+				}
 				levelController.gameObject.SendMessage("PlayerFinished");
 			}
 		}
