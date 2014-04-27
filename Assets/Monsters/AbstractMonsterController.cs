@@ -126,6 +126,16 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 				players.Add (playerController.gameObject.transform.position);
 			}
 		}
+
+		// if all players in machines
+		if (players.Count == 0)
+		{
+			foreach (PlayerController playerController in playerControllers)
+			{
+				players.Add (playerController.gameObject.transform.position);
+			}
+		}
+
 		Vector3 monsterPos = transform.position;
 
 		if (timeLeft > 0)
