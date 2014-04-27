@@ -35,7 +35,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		GameObject gameController = GameObject.Find ("GameController");
 		maze = gameController.GetComponent<AssemblyCSharp.Instantiation>();
 		device = GameObject.Find ("Device");
-		for (int i = LevelFinishedController.instance.getControllers().Count + 1; i <= 4; i++)
+		for (int i = 1; i<= LevelFinishedController.instance.getControllers().Count; i++)
 		{
 			playerControllers.Add (GameObject.Find ("Player" + i).GetComponent<PlayerController>());
 		}

@@ -36,7 +36,6 @@ public class LevelFinishedController : MonoBehaviour {
 		levelDefinition = new AssemblyCSharp.LevelDefinition ();
 		stopped = true;
 		Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
-		maxLevel = getNumberOfLevels ();
 	}
 
 	private void LoadNewLevel()
@@ -113,32 +112,32 @@ public class LevelFinishedController : MonoBehaviour {
 	
 	public int getNumberOfKeys()
 	{
-		return levelDefinition.getLevels()[level].getNumberOfKeys();
+		return levelDefinition.getLevels(controllers.Count)[level].getNumberOfKeys();
 	}
 
 	public List<AssemblyCSharp.MonsterTemplate> getMonsters()
 	{
-		return levelDefinition.getLevels()[level].getMonsters ();
+		return levelDefinition.getLevels(controllers.Count)[level].getMonsters ();
 	}
 
 	public int getTimeToFirstMonster()
 	{
-		return levelDefinition.getLevels()[level].getTimeToFirstMonster ();
+		return levelDefinition.getLevels(controllers.Count)[level].getTimeToFirstMonster ();
 	}
 
 	public int getTimeBetweenMonsters()
 	{
-		return levelDefinition.getLevels()[level].getTimeBetweenMonsters ();
+		return levelDefinition.getLevels(controllers.Count)[level].getTimeBetweenMonsters ();
 	}
 
 	public int getMazeSizeX()
 	{
-		return levelDefinition.getLevels()[level].getMazeSizeX ();
+		return levelDefinition.getLevels(controllers.Count)[level].getMazeSizeX ();
 	}
 
 	public int getMazeSizeZ()
 	{
-		return levelDefinition.getLevels()[level].getMazeSizeZ ();
+		return levelDefinition.getLevels(controllers.Count)[level].getMazeSizeZ ();
 	}
 
 	public bool isStopped()
@@ -149,6 +148,11 @@ public class LevelFinishedController : MonoBehaviour {
 	public int getMaxLevel()
 	{
 		return maxLevel;
+	}
+
+	public void updateMaxLevel()
+	{
+		maxLevel = getNumberOfLevels ();
 	}
 
 	public int getLevel()
@@ -166,9 +170,19 @@ public class LevelFinishedController : MonoBehaviour {
 		return levelDefinition.getFirstLevelWithJumpItem();
 	}
 
+	public int getFirstLevelWithLightMachine()
+	{
+		return levelDefinition.getFirstLevelWithLightMachine();
+	}
+	
+	public int getFirstLevelWithCrane()
+	{
+		return levelDefinition.getFirstLevelWithCrane();
+	}
+
 	public int getNumberOfLevels()
 	{
-		return  levelDefinition.getLevels ().Count - 1;
+		return  levelDefinition.getLevels (controllers.Count).Count - 1;
 	}
 
 	public void setLevel(int newLevel)

@@ -35,6 +35,7 @@ namespace AssemblyCSharp
 
 			labirynth = new Labirynth (sizeX, sizeZ);
 			labirynth.generate ();
+			drawMachines ();
 			drawDevice ();
 			drawKeys (labirynth.getKeys ());
 			drawJumps ();
@@ -42,6 +43,21 @@ namespace AssemblyCSharp
 			drawHorisontalWalls (labirynth);
 			drawVerticalWalls (labirynth);
 		}	
+
+		void drawMachines()
+		{
+			if (LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithLightMachine())
+			{
+				GameObject.Find ("Lighthouse").SetActive(false);
+				GameObject.Find ("LightContainer").SetActive(false);
+			}
+
+			if (LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithCrane())
+			{
+				GameObject.Find ("Crane").SetActive(false);
+				GameObject.Find ("CraneContainer").SetActive(false);
+			}
+		}
 
 		void drawDevice()
 		{
