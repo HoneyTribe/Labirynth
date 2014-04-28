@@ -11,7 +11,7 @@ namespace InControl
 		public KeyboardProfile2()
 		{
 			Name = "Keyboard";
-			Meta = "A keyboard profile for 1 player.";
+			Meta = "A keyboard profile for 2 player.";
 			
 			SupportedPlatforms = new[]
 			{
