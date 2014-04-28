@@ -54,7 +54,7 @@ public class InputController {
 		float action = 0;
 		float action2 = 0;
 		handleAxis (ref x, ref z, ref action, ref action2);
-		handleKeys (ref x, ref z, ref action, ref action2);
+		//handleKeys (ref x, ref z, ref action, ref action2);
 
 		if (playerSelectionMenuController)
 		{
@@ -159,7 +159,7 @@ public class InputController {
 			action2Time = 0f;
 		}
 
-		handleKeysActions (ref x, ref z);
+		//handleKeysActions (ref x, ref z);
 	}
 
 	private void handleKeysActions(ref float x, ref float z)

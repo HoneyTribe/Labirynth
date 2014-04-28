@@ -99,14 +99,14 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
 			}
 			
-			if ((x != 0) || (z != 0))
+			//if ((x != 0) || (z != 0))
 			{
-				PortalGunController.instance.Move(new Vector3(x,action,z));
+				DroneController.instance.Move(new Vector3(x,action,z));
 			}
 
 			if ((action > 0) && (action <= 0.5f))
 			{
-				PortalGunController.instance.Shoot();
+				DroneController.instance.Shoot();
 			}
 		}
 		else
