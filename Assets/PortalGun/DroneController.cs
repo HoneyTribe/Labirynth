@@ -4,32 +4,74 @@ using System.Collections;
 public class DroneController : MonoBehaviour {
 
 	public static DroneController instance;
+	private const float stability = 0.5f;
+	private const float speed = 2.0f;
+	private const float retractingSpeed = 20f;
 
 	public GameObject portalPrefab;
 
-	private float yPos;
-
-	private float stability = 0.5f;
-	private float speed = 2.0f;
+	private Vector3 originalPosition;
+	private bool retracting;
 
 	void Start()
 	{
-		yPos = transform.position.y;
+		originalPosition = transform.position;
 		instance = this;
+	}
+
+	void Update()
+	{
+		if (retracting)
+		{
+			float distance = Vector3.Distance(transform.position, originalPosition);
+
+			if (distance != 0)
+			{
+				transform.position = Vector3.Lerp (
+					transform.position, originalPosition, Time.deltaTime * retractingSpeed / distance);
+			}
+			else
+			{
+				retracting = false;
+			}
+		}
 	}
 
 	void FixedUpdate()
 	{
+		rigidbody.transform.eulerAngles = new Vector3 (rigidbody.transform.eulerAngles.x,
+		                                               0,
+		                                               rigidbody.transform.eulerAngles.z);
 		rigidbody.transform.position = new Vector3(transform.position.x,
-		                                           yPos + (Mathf.Sin(11 * Time.time) + Mathf.Cos(15 * Time.time)) * 0.07f,
+		                                           originalPosition.y + (Mathf.Sin(11 * Time.time) + Mathf.Cos(15 * Time.time)) * 0.07f,
 		                                           transform.position.z);
+
+		float s = speed;
+		if ((ClampAngle(transform.eulerAngles.x, -20, 20) != transform.eulerAngles.x) ||
+		    (ClampAngle(transform.eulerAngles.z, -20, 20) != transform.eulerAngles.z))
+		{
+			s = 10;
+			Debug.Log (transform.eulerAngles.x);
+			Debug.Log (transform.eulerAngles.z);
+		}
 		Vector3 predictedUp = Quaternion.AngleAxis(
-			rigidbody.angularVelocity.magnitude * Mathf.Rad2Deg * stability / speed,
-			rigidbody.angularVelocity
-			) * transform.up;
+								rigidbody.angularVelocity.magnitude * Mathf.Rad2Deg * stability / s,
+								rigidbody.angularVelocity
+								) * transform.up;
 		
 		Vector3 torqueVector = Vector3.Cross(predictedUp, Vector3.up);
-		rigidbody.AddTorque(torqueVector * speed * speed);
+		rigidbody.AddTorque(torqueVector * s * s);
+	}
+
+	public void TurnOn ()
+	{
+		retracting = false;
+	}
+
+	public void TurnOff()
+	{
+		rigidbody.drag = 0;
+		retracting = true;
 	}
 
 	public void Move (Vector3 move)
@@ -41,22 +83,15 @@ public class DroneController : MonoBehaviour {
 		else
 		{
 			rigidbody.drag = 0;
-			rigidbody.angularDrag = 0;
 			rigidbody.AddForce (move * 500);
 			if (move.x != 0)
 			{
-				if ((transform.localScale.z < 30) && (transform.localScale.z > -30))
-				{
-					transform.Rotate(0,0,-move.x * 30);
-				}
+				transform.Rotate(0,0,-move.x * Time.deltaTime * 1000);
 			}
 
 			if (move.z != 0)
 			{
-				if ((transform.localScale.x < 30) && (transform.localScale.x > -30))
-				{
-					transform.Rotate(move.z * 30,0,0);
-				}
+				transform.Rotate(move.z * Time.deltaTime * 1000,0,0);
 			}
 		}
 	}
@@ -74,4 +109,20 @@ public class DroneController : MonoBehaviour {
 
 	}
 
+	private float ClampAngle(float angle, float from, float to)
+	{
+		bool changed = false;
+		if (angle > 180)
+		{
+			angle = 360 - angle;
+			changed = true;
+		}
+		angle = Mathf.Clamp(angle, from, to);
+
+		if (changed)
+		{
+			angle = 360 - angle;
+		}
+		return angle;
+	}
 }

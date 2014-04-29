@@ -95,14 +95,12 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((action > 0.5) || (action2 > 0.5))
 			{
 				portalGunEntered = false;
+				DroneController.instance.TurnOff();
 				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
 			}
 			
-			//if ((x != 0) || (z != 0))
-			{
-				DroneController.instance.Move(new Vector3(x,action,z));
-			}
+			DroneController.instance.Move(new Vector3(x,action,z));
 
 			if ((action > 0) && (action <= 0.5f))
 			{
@@ -192,6 +190,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		{
 			portalGunEntered = true;
 			freeze();
+			DroneController.instance.TurnOn();
 		}
 		if(collision.collider.name == "ExitTrigger")
 		{
