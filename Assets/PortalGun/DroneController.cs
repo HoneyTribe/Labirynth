@@ -13,6 +13,9 @@ public class DroneController : MonoBehaviour {
 	private Vector3 originalPosition;
 	private bool retracting;
 
+	private GameObject firstPortal;
+	private GameObject secondPortal;
+
 	void Start()
 	{
 		originalPosition = transform.position;
@@ -32,6 +35,7 @@ public class DroneController : MonoBehaviour {
 			}
 			else
 			{
+				rigidbody.velocity = Vector3.zero;
 				retracting = false;
 			}
 		}
@@ -98,15 +102,39 @@ public class DroneController : MonoBehaviour {
 
 	public void Shoot ()
 	{
-		Vector3 pos = new Vector3 (transform.position.x, 
-		                           transform.position.y - 1,
-		                           transform.position.z);
-		GameObject portal = (GameObject) Instantiate (portalPrefab, pos, Quaternion.Euler(0, 0, 0)); 
-		portal.rigidbody.velocity = Vector3.down * 10;
-		Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), false);
-		Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), false);
-		Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), false);
+		if ((firstPortal == null) ||  (secondPortal == null))
+		{
+			if (DronePowerController.instance.canSetUp())
+			{
+				Vector3 pos = new Vector3 (transform.position.x, 
+				                           transform.position.y - 1,
+				                           transform.position.z);
+				GameObject portal = (GameObject) Instantiate (portalPrefab, pos, Quaternion.Euler(0, 0, 0)); 
+				portal.rigidbody.velocity = Vector3.down * 10;
+				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), false);
+				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), false);
+				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), false);
 
+				if (firstPortal == null)
+				{
+					firstPortal = portal;
+				}
+				else
+				{
+					secondPortal = portal;
+					firstPortal.SendMessage("setTheOtherPortal", secondPortal);
+					secondPortal.SendMessage("setTheOtherPortal", firstPortal);
+				}
+				DronePowerController.instance.settingUp();
+			}
+		}
+		else
+		{
+			Destroy(firstPortal);
+			Destroy (secondPortal);
+			firstPortal = null;
+			secondPortal = null;
+		}
 	}
 
 	private float ClampAngle(float angle, float from, float to)

@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PortalGunPowerController : MonoBehaviour {
+public class DronePowerController : MonoBehaviour {
 
-	public static PortalGunPowerController instance;
+	public static DronePowerController instance;
+
+	private const float settingUpCost = 0.3f; // constant cost of setting up a portal
+	private const float restoreVelocity = 0.033f; // It needs 1/restoreVelocity seconds to regenerate (30 seconds).
 
 	private const int progressBarSize = 100;
 
@@ -11,7 +14,7 @@ public class PortalGunPowerController : MonoBehaviour {
 	private GUIStyle outerStyle;
 	private GUIStyle energyStyle;
 	private GUIStyle lowEnergyStyle;
-	private float energy = 0f;
+	private float energy = 1f;
 
 	void Start()
 	{
@@ -42,18 +45,35 @@ public class PortalGunPowerController : MonoBehaviour {
 		lowEnergyStyle.normal.background = lowEnergyTexture;
 	}
 
+	void Update()
+	{
+		changeEnergy (Time.deltaTime * restoreVelocity);
+	}
+
 	void OnGUI()
 	{
 		GUI.BeginGroup(new Rect ((Screen.width / 4) - progressBarSize / 2, Screen.height - 20, progressBarSize, 10));
 			GUI.Box (new Rect (0, 0, progressBarSize, 10), "", borderStyle);
 			GUI.Box (new Rect (1, 1, progressBarSize - 2, 8), "", outerStyle);
-			GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", energyStyle);
+			if (energy >= settingUpCost)
+			{
+				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", energyStyle);
+			}
+			else
+			{
+				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", lowEnergyStyle);
+			}
 		GUI.EndGroup();
 	}
 
-	public float getEnergy()
+	public void settingUp()
 	{
-		return this.energy;
+		changeEnergy (-settingUpCost);
+	}
+
+	public bool canSetUp()
+	{
+		return energy >= settingUpCost;
 	}
 
 	public void changeEnergy(float value)

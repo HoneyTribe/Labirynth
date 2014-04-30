@@ -3018,6 +3018,7 @@ GameObject:
   - 23: {fileID: 348808868}
   - 54: {fileID: 348808872}
   - 114: {fileID: 348808873}
+  - 114: {fileID: 348808874}
   m_Layer: 27
   m_Name: Drone
   m_TagString: Untagged
@@ -3072,7 +3073,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 348808867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.56655121, y: 11, z: -15.908865}
+  m_LocalPosition: {x: -5.56655121, y: 11, z: -15.6214027}
   m_LocalScale: {x: 3, y: .5, z: 3}
   m_Children:
   - {fileID: 919532859}
@@ -3105,6 +3106,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalPrefab: {fileID: 100002, guid: 8cc7caa94668c794ba15e47f188c2167, type: 2}
+--- !u!114 &348808874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 348808867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d5808424020e404780cbbe1f5f66a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &364378882
 GameObject:
   m_ObjectHideFlags: 0
