@@ -183,4 +183,9 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			return closestPlayer;
 		}
 	}
+
+	void Recalculate()
+	{
+		recalculateTrigger = true;
+	}
 }

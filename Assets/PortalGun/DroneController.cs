@@ -13,8 +13,8 @@ public class DroneController : MonoBehaviour {
 	private Vector3 originalPosition;
 	private bool retracting;
 
-	private GameObject firstPortal;
-	private GameObject secondPortal;
+	private PortalController firstPortal;
+	private PortalController secondPortal;
 
 	void Start()
 	{
@@ -106,32 +106,39 @@ public class DroneController : MonoBehaviour {
 		{
 			if (DronePowerController.instance.canSetUp())
 			{
-				Vector3 pos = new Vector3 (transform.position.x, 
-				                           transform.position.y - 1,
-				                           transform.position.z);
-				GameObject portal = (GameObject) Instantiate (portalPrefab, pos, Quaternion.Euler(0, 0, 0)); 
-				portal.rigidbody.velocity = Vector3.down * 10;
-				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), false);
-				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), false);
-				Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), false);
+				if ((firstPortal == null) ||
+					((firstPortal != null) && (firstPortal.isSettled())))
+				{
+					Vector3 pos = new Vector3 (transform.position.x, 
+					                           transform.position.y - 1,
+					                           transform.position.z);
+					GameObject portal = (GameObject) Instantiate (portalPrefab, pos, Quaternion.Euler(0, 0, 0));
+					PortalController portalController = portal.GetComponent<PortalController>();
+					portal.rigidbody.velocity = -transform.up * 10; 
 
-				if (firstPortal == null)
-				{
-					firstPortal = portal;
+					// check groundController
+					Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), true);
+					Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), true);
+					Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), true);
+
+					if (firstPortal == null)
+					{
+						firstPortal = portalController;
+					}
+					else
+					{
+						secondPortal = portalController;
+						firstPortal.setTheOtherPortal(secondPortal);
+						secondPortal.setTheOtherPortal(firstPortal);
+					}
+					DronePowerController.instance.settingUp();
 				}
-				else
-				{
-					secondPortal = portal;
-					firstPortal.SendMessage("setTheOtherPortal", secondPortal);
-					secondPortal.SendMessage("setTheOtherPortal", firstPortal);
-				}
-				DronePowerController.instance.settingUp();
 			}
 		}
 		else
 		{
-			Destroy(firstPortal);
-			Destroy (secondPortal);
+			Destroy(firstPortal.gameObject);
+			Destroy (secondPortal.gameObject);
 			firstPortal = null;
 			secondPortal = null;
 		}

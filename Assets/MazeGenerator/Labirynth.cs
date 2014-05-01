@@ -191,6 +191,7 @@ namespace AssemblyCSharp
 						makeVisited(curr + move.getNewPos());
 						curr = curr + move.getNewPos();
 					}	
+					keys.Add(new KeyPosition(curr, findPathBetweenCells(curr, start).Count));
 				}
 
 				public bool getWalls(int x, int y)

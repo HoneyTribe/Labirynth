@@ -196,7 +196,7 @@ namespace AssemblyCSharp
 
 				public List<Level> getLevels(int numOfPlayers)
 				{
-					if (numOfPlayers == 1)
+					if (numOfPlayers < 2)
 					{
 						return levels1;
 					}

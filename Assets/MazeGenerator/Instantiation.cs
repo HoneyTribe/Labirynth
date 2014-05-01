@@ -260,5 +260,26 @@ namespace AssemblyCSharp
 		{
 			return spaceZ;
 		}
+
+		public Vector3 getCentralPosition(Vector3 position)
+		{
+			if (isInside(position))
+			{
+				Vector2 mazePosition = transformToMazeCoordinates(position);
+				Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * mazePosition.x,
+				                           0,
+				                           offsetZ + planeSizeZ/2f - spaceZ * mazePosition.y);
+				return pos;
+			}
+			else
+			{
+				float posZ = position.z - spaceZ;
+				if (posZ < -16) // max Z
+				{
+					posZ = -16;
+				}
+				return new Vector3(position.x, 0, -16);
+			}
+		}
 	}
 }
