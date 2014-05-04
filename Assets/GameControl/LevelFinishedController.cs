@@ -180,6 +180,11 @@ public class LevelFinishedController : MonoBehaviour {
 		return levelDefinition.getFirstLevelWithCrane();
 	}
 
+	public int getFirstLevelWithDrone()
+	{
+		return levelDefinition.getFirstLevelWithDrone();
+	}
+
 	public int getNumberOfLevels()
 	{
 		return  levelDefinition.getLevels (controllers.Count).Count - 1;

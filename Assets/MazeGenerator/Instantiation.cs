@@ -57,6 +57,12 @@ namespace AssemblyCSharp
 				GameObject.Find ("Crane").SetActive(false);
 				GameObject.Find ("CraneContainer").SetActive(false);
 			}
+
+			if (LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithDrone())
+			{
+				GameObject.Find ("PortalGun").SetActive(false);
+				GameObject.Find ("Drone").SetActive(false);
+			}
 		}
 
 		void drawDevice()
