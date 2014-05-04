@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TopLightController : MonoBehaviour {
 
+	public static TopLightController instance;
+
 	private static float maxIntensity = 0.8f;
 
 	private static int progressBarSize = 100;
@@ -24,8 +26,11 @@ public class TopLightController : MonoBehaviour {
 
 	private GameObject ball;
 
+	private bool entered;
+
 	void Start()
 	{
+		instance = this;
 		ball = GameObject.Find ("ball");
 
 		borderStyle = new GUIStyle ();
@@ -51,6 +56,11 @@ public class TopLightController : MonoBehaviour {
 		lowEnergyTexture.SetPixel (0, 0, Color.red);
 		lowEnergyTexture.Apply ();
 		lowEnergyStyle.normal.background = lowEnergyTexture;
+	}
+
+	public bool isEntered()
+	{
+		return entered;
 	}
 
 	void OnGUI()
@@ -89,14 +99,16 @@ public class TopLightController : MonoBehaviour {
 		}
 	}
 	
-	void TurnOn ()
+	public void TurnOn ()
 	{
+		entered = true;
 		param = maxIntensity / openningInterval;
 		timeLeft = openningInterval;
 	}
 
-	void TurnOff ()
+	public void TurnOff ()
 	{
+		entered = false;
 		param = - maxIntensity / closingInterval;
 		timeLeft = closingInterval;
 	}
@@ -114,7 +126,7 @@ public class TopLightController : MonoBehaviour {
 		}
 	}
 
-	void AttractMonster()
+	public void AttractMonster()
 	{
 		if (energy>=attractionCost)
 		{
@@ -137,7 +149,7 @@ public class TopLightController : MonoBehaviour {
 		}
 	}
 
-	void ActivateItems()
+	public void ActivateItems()
 	{
 		if (energy>=attractionCost)
 		{

@@ -16,6 +16,8 @@ public class DroneController : MonoBehaviour {
 	private PortalController firstPortal;
 	private PortalController secondPortal;
 
+	private bool entered;
+
 	void Start()
 	{
 		originalPosition = transform.position;
@@ -67,13 +69,20 @@ public class DroneController : MonoBehaviour {
 		rigidbody.AddTorque(torqueVector * s * s);
 	}
 
+	public bool isEntered()
+	{
+		return entered;
+	}
+
 	public void TurnOn ()
 	{
+		entered = true;
 		retracting = false;
 	}
 
 	public void TurnOff()
 	{
+		entered = false;
 		rigidbody.drag = 0;
 		retracting = true;
 	}

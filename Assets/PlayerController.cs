@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 	private bool gameFinished = false;
 
-	private GameObject topLight;
 	private GameObject levelController;
 
 	private AssemblyCSharp.Inventory inventory = new AssemblyCSharp.Inventory();
@@ -23,7 +22,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	void Start()
 	{
 		speed *= LevelFinishedController.instance.gameSpeed;
-		topLight = GameObject.Find ("TopLight");
 		levelController = GameObject.Find ("LevelController");
 	}
 
@@ -39,20 +37,20 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((action > 0.5) || (action2 > 0.5))
 			{
 				lighthouseEntered = false;
-				topLight.gameObject.SendMessage("TurnOff");
+				TopLightController.instance.TurnOff();
 				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
 			}
 
 			if ((action > 0) && (action <= 0.5f))
 			{
-				topLight.gameObject.SendMessage("AttractMonster");
+				TopLightController.instance.AttractMonster();
 			}
 
 			
 			if ((action2 > 0) && (action2 <= 0.5f))
 			{
-				topLight.gameObject.SendMessage("ActivateItems");
+				TopLightController.instance.ActivateItems();
 			}
 
 			if(x < 0)
@@ -176,21 +174,30 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	{
 		if(collision.collider.name == "Lighthouse")
 		{
-			lighthouseEntered = true;
-			freeze();
-			topLight.gameObject.SendMessage("TurnOn");
+			if (!TopLightController.instance.isEntered())
+			{
+				lighthouseEntered = true;
+				freeze();
+				TopLightController.instance.TurnOn();
+			}
 		}
 		if(collision.collider.name == "Crane")
 		{
-			craneEntered = true;
-			freeze();
-			CraneController.instance.TurnOn();
+			if (!CraneController.instance.isEntered())
+			{
+				craneEntered = true;
+				freeze();
+				CraneController.instance.TurnOn();
+			}
 		}
 		if(collision.collider.name == "PortalGun")
 		{
-			portalGunEntered = true;
-			freeze();
-			DroneController.instance.TurnOn();
+			if (!DroneController.instance.isEntered())
+			{
+				portalGunEntered = true;
+				freeze();
+				DroneController.instance.TurnOn();
+			}
 		}
 		if(collision.collider.name == "ExitTrigger")
 		{
