@@ -10,7 +10,7 @@ namespace AssemblyCSharp
 
 				private static int firstLevelWithLightMachine = 0;
 				private static int firstLevelWithCrane = 4;
-				private static int firstLevelWithDrone = 8;
+				private static int firstLevelWithDrone = 2;
 
 				List<Level> levels1 = new List<Level> ();
 				List<Level> levels2 = new List<Level> ();
