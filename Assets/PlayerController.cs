@@ -104,6 +104,11 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				DroneController.instance.Shoot();
 			}
+
+			if ((action2 > 0) && (action2 <= 0.5f))
+			{
+				DroneController.instance.UseStunGun();
+			}
 		}
 		else
 		{

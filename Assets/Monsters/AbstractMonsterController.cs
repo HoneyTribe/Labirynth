@@ -19,10 +19,13 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	protected TextMesh textMesh;
 
 	private static float interval = 5f;
+	private static float paralysingInterval = 2f;
 	private float timeLeft;
+	private float paralysingTime;
 	protected bool recalculateTrigger;
 
 	private Vector3 newPosition;
+	private Vector3 paralysedPosition;
 
 	private bool monsterStopped;
 
@@ -71,6 +74,15 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			}
 		}
 
+		if (paralysingTime > 0)
+		{
+			paralysingTime -= Time.deltaTime;
+			transform.position = new Vector3(paralysedPosition.x + Mathf.Sin(50 * paralysingTime) * 0.1f,
+			                                 paralysedPosition.y,
+			                                 paralysedPosition.z);
+			return;
+		}
+
 		if (enter)
 		{
 			if (transform.localPosition.x < -AssemblyCSharp.Instantiation.planeSizeX/2f + 2f)
@@ -109,6 +121,12 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	public void setAttracted()
 	{
 		timeLeft = interval;
+	}
+
+	public void Paralyse()
+	{
+		paralysedPosition = transform.position;
+		paralysingTime = paralysingInterval;
 	}
 
 	public void setSpeed(float speed)

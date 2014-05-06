@@ -3106,6 +3106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalPrefab: {fileID: 100002, guid: 8cc7caa94668c794ba15e47f188c2167, type: 2}
+  stunGunPrefab: {fileID: 100000, guid: 9a1e6bfb5c325e54ababf277176ee7aa, type: 2}
 --- !u!114 &348808874
 MonoBehaviour:
   m_ObjectHideFlags: 0

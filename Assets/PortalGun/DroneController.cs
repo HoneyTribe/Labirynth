@@ -9,6 +9,7 @@ public class DroneController : MonoBehaviour {
 	private const float retractingSpeed = 20f;
 
 	public GameObject portalPrefab;
+	public GameObject stunGunPrefab;
 
 	private Vector3 originalPosition;
 	private bool retracting;
@@ -113,7 +114,7 @@ public class DroneController : MonoBehaviour {
 	{
 		if ((firstPortal == null) ||  (secondPortal == null))
 		{
-			if (DronePowerController.instance.canSetUp())
+			if (DronePowerController.instance.canSetUp() && !isDroneTooClose())
 			{
 				if ((firstPortal == null) ||
 					((firstPortal != null) && (firstPortal.isSettled())))
@@ -168,5 +169,24 @@ public class DroneController : MonoBehaviour {
 			angle = 360 - angle;
 		}
 		return angle;
+	}
+
+	public void UseStunGun ()
+	{
+		if (DronePowerController.instance.canUseStunGun() && !isDroneTooClose())
+		{
+			Vector3 pos = new Vector3 (transform.position.x, 
+			                           transform.position.y - 1,
+			                           transform.position.z);
+			GameObject stunGun = (GameObject) Instantiate (stunGunPrefab, pos, Quaternion.Euler(0, 0, 0));
+			stunGun.rigidbody.velocity = -transform.up * 10; 
+
+			DronePowerController.instance.usingStunGun();
+		}
+	}
+
+	private bool isDroneTooClose()
+	{
+		return Vector3.Distance(transform.position, originalPosition) < 2;
 	}
 }

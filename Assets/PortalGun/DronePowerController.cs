@@ -6,6 +6,7 @@ public class DronePowerController : MonoBehaviour {
 	public static DronePowerController instance;
 
 	private const float settingUpCost = 0.3f; // constant cost of setting up a portal
+	private const float usingStunGunCost = 0.25f; // constant cost of using stun gun
 	private const float restoreVelocity = 0.033f; // It needs 1/restoreVelocity seconds to regenerate (30 seconds).
 
 	private const int progressBarSize = 100;
@@ -55,7 +56,7 @@ public class DronePowerController : MonoBehaviour {
 		GUI.BeginGroup(new Rect ((Screen.width / 4) - progressBarSize / 2, Screen.height - 20, progressBarSize, 10));
 			GUI.Box (new Rect (0, 0, progressBarSize, 10), "", borderStyle);
 			GUI.Box (new Rect (1, 1, progressBarSize - 2, 8), "", outerStyle);
-			if (energy >= settingUpCost)
+			if (energy >= Mathf.Min(usingStunGunCost, settingUpCost))
 			{
 				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", energyStyle);
 			}
@@ -74,6 +75,16 @@ public class DronePowerController : MonoBehaviour {
 	public bool canSetUp()
 	{
 		return energy >= settingUpCost;
+	}
+
+	public void usingStunGun()
+	{
+		changeEnergy (-usingStunGunCost);
+	}
+	
+	public bool canUseStunGun()
+	{
+		return energy >= usingStunGunCost;
 	}
 
 	public void changeEnergy(float value)
