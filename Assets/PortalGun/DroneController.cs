@@ -112,45 +112,48 @@ public class DroneController : MonoBehaviour {
 
 	public void Shoot ()
 	{
-		if ((firstPortal == null) ||  (secondPortal == null))
-		{
-			if (DronePowerController.instance.canSetUp() && !isDroneTooClose())
+		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithDrone())
+	    {
+			if ((firstPortal == null) ||  (secondPortal == null))
 			{
-				if ((firstPortal == null) ||
-					((firstPortal != null) && (firstPortal.isSettled())))
+				if (DronePowerController.instance.canSetUp() && !isDroneTooClose())
 				{
-					Vector3 pos = new Vector3 (transform.position.x, 
-					                           transform.position.y - 1,
-					                           transform.position.z);
-					GameObject portal = (GameObject) Instantiate (portalPrefab, pos, Quaternion.Euler(0, 0, 0));
-					PortalController portalController = portal.GetComponent<PortalController>();
-					portal.rigidbody.velocity = -transform.up * 10; 
-
-					// check groundController
-					Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), true);
-					Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), true);
-					Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), true);
-
-					if (firstPortal == null)
+					if ((firstPortal == null) ||
+						((firstPortal != null) && (firstPortal.isSettled())))
 					{
-						firstPortal = portalController;
+						Vector3 pos = new Vector3 (transform.position.x, 
+						                           transform.position.y - 1,
+						                           transform.position.z);
+						GameObject portal = (GameObject) Instantiate (portalPrefab, pos, Quaternion.Euler(0, 0, 0));
+						PortalController portalController = portal.GetComponent<PortalController>();
+						portal.rigidbody.velocity = -transform.up * 10; 
+
+						// check groundController
+						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), true);
+						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), true);
+						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), true);
+
+						if (firstPortal == null)
+						{
+							firstPortal = portalController;
+						}
+						else
+						{
+							secondPortal = portalController;
+							firstPortal.setTheOtherPortal(secondPortal);
+							secondPortal.setTheOtherPortal(firstPortal);
+						}
+						DronePowerController.instance.settingUp();
 					}
-					else
-					{
-						secondPortal = portalController;
-						firstPortal.setTheOtherPortal(secondPortal);
-						secondPortal.setTheOtherPortal(firstPortal);
-					}
-					DronePowerController.instance.settingUp();
 				}
 			}
-		}
-		else
-		{
-			Destroy(firstPortal.gameObject);
-			Destroy (secondPortal.gameObject);
-			firstPortal = null;
-			secondPortal = null;
+			else
+			{
+				Destroy(firstPortal.gameObject);
+				Destroy (secondPortal.gameObject);
+				firstPortal = null;
+				secondPortal = null;
+			}
 		}
 	}
 
@@ -173,15 +176,18 @@ public class DroneController : MonoBehaviour {
 
 	public void UseStunGun ()
 	{
-		if (DronePowerController.instance.canUseStunGun() && !isDroneTooClose())
+		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithStunGun())
 		{
-			Vector3 pos = new Vector3 (transform.position.x, 
-			                           transform.position.y - 1,
-			                           transform.position.z);
-			GameObject stunGun = (GameObject) Instantiate (stunGunPrefab, pos, Quaternion.Euler(0, 0, 0));
-			stunGun.rigidbody.velocity = -transform.up * 10; 
+			if (DronePowerController.instance.canUseStunGun() && !isDroneTooClose())
+			{
+				Vector3 pos = new Vector3 (transform.position.x, 
+				                           transform.position.y - 1,
+				                           transform.position.z);
+				GameObject stunGun = (GameObject) Instantiate (stunGunPrefab, pos, Quaternion.Euler(0, 0, 0));
+				stunGun.rigidbody.velocity = -transform.up * 10; 
 
-			DronePowerController.instance.usingStunGun();
+				DronePowerController.instance.usingStunGun();
+			}
 		}
 	}
 

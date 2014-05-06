@@ -11,6 +11,7 @@ namespace AssemblyCSharp
 				private static int firstLevelWithLightMachine = 0;
 				private static int firstLevelWithCrane = 4;
 				private static int firstLevelWithDrone = 2;
+				private static int firstLevelWithStunGun = 5;
 
 				List<Level> levels1 = new List<Level> ();
 				List<Level> levels2 = new List<Level> ();
@@ -238,6 +239,11 @@ namespace AssemblyCSharp
 				public int getFirstLevelWithDrone()
 				{
 					return firstLevelWithDrone;
+				}
+
+				public int getFirstLevelWithStunGun()
+				{
+					return firstLevelWithStunGun;
 				}
 		}
 }

@@ -56,7 +56,7 @@ public class DronePowerController : MonoBehaviour {
 		GUI.BeginGroup(new Rect ((Screen.width / 4) - progressBarSize / 2, Screen.height - 20, progressBarSize, 10));
 			GUI.Box (new Rect (0, 0, progressBarSize, 10), "", borderStyle);
 			GUI.Box (new Rect (1, 1, progressBarSize - 2, 8), "", outerStyle);
-			if (energy >= Mathf.Min(usingStunGunCost, settingUpCost))
+			if (energy >= getMinCost())
 			{
 				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", energyStyle);
 			}
@@ -85,6 +85,25 @@ public class DronePowerController : MonoBehaviour {
 	public bool canUseStunGun()
 	{
 		return energy >= usingStunGunCost;
+	}
+
+	private float getMinCost()
+	{
+		float minCost = 0f;
+		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithDrone())
+		{
+			minCost = settingUpCost;
+		}
+
+		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithStunGun())
+		{
+			if (minCost > usingStunGunCost)
+			{
+				minCost = usingStunGunCost;
+			}
+		}
+
+		return minCost;
 	}
 
 	public void changeEnergy(float value)
