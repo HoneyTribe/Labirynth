@@ -1680,7 +1680,7 @@ Light:
     m_Bias: .0500000007
     m_Softness: 4
     m_SoftnessFade: 1
-  m_Cookie: {fileID: 2800000, guid: c71838454206cca40b8009e2e326a1bc, type: 3}
+  m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
   m_Flare: {fileID: 0}
@@ -3836,7 +3836,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 422095956}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Red_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3951,6 +3951,14 @@ Prefab:
     - target: {fileID: 100002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_Name
       value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
@@ -7276,6 +7284,14 @@ Prefab:
     - target: {fileID: 100002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_Name
       value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
@@ -12985,6 +13001,14 @@ Prefab:
       propertyPath: m_Name
       value: Target
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_Layer
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
   m_RootGameObject: {fileID: 1897854970}
@@ -13641,7 +13665,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1401637147}
   - 119: {fileID: 1401637148}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18125,7 +18149,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1894139061}
   - 119: {fileID: 1894139062}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18223,7 +18247,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1897854971}
   - 119: {fileID: 1897854972}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
