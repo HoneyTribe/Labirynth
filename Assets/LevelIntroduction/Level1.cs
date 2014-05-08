@@ -7,8 +7,7 @@ public class Level1 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 
-		actions.Add(new WaitAction(2f));
-		actions.Add(new MoveCameraAction(mainCamera, player1.transform.position));
+		//actions.Add(new MoveCameraAction(mainCamera, player1.transform.position));
 
 		return actions;
 	}

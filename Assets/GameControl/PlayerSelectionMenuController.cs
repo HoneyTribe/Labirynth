@@ -53,34 +53,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		
 		
 		// Buttons
-
-		buttonStyles[0] = new GUIStyle ();
-		Color[] button1Colors = playersTexture.GetPixels (0, 424 - PLAYER_IMAGE_HEIGHT, 150, PLAYER_IMAGE_HEIGHT);
-		Texture2D button1Texture = new Texture2D(150, PLAYER_IMAGE_HEIGHT);
-		button1Texture.SetPixels(button1Colors);
-		button1Texture.Apply ();
-		buttonStyles[0].normal.background = button1Texture;
-
-		buttonStyles[1] = new GUIStyle ();
-		Color[] button2Colors = playersTexture.GetPixels (150, 424 - PLAYER_IMAGE_HEIGHT, 150, PLAYER_IMAGE_HEIGHT);
-		Texture2D button2Texture = new Texture2D(150, PLAYER_IMAGE_HEIGHT);
-		button2Texture.SetPixels(button2Colors);
-		button2Texture.Apply ();
-		buttonStyles[1].normal.background = button2Texture;
-
-		buttonStyles[2] = new GUIStyle ();
-		Color[] button3Colors = playersTexture.GetPixels (300, 424 - PLAYER_IMAGE_HEIGHT, 150, PLAYER_IMAGE_HEIGHT);
-		Texture2D button3Texture = new Texture2D(150, PLAYER_IMAGE_HEIGHT);
-		button3Texture.SetPixels(button3Colors);
-		button3Texture.Apply ();
-		buttonStyles[2].normal.background = button3Texture;
-
-		buttonStyles[3] = new GUIStyle ();
-		Color[] button4Colors = playersTexture.GetPixels (450, 424 - PLAYER_IMAGE_HEIGHT, 150, PLAYER_IMAGE_HEIGHT);
-		Texture2D button4Texture = new Texture2D(150, PLAYER_IMAGE_HEIGHT);
-		button4Texture.SetPixels(button4Colors);
-		button4Texture.Apply ();
-		buttonStyles[3].normal.background = button4Texture;
+		buttonStyles = SpritesLoader.getPlayerSprites (playersTexture);
 	}
 
 	public void handleLogic(float x, float z, float action, float action2, InputController input)

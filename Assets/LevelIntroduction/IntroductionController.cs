@@ -5,6 +5,9 @@ using System;
 
 public class IntroductionController : MonoBehaviour {
 
+	public Texture2D playersTexture;
+	public Texture2D teacherTexture;
+
 	private GameObject player1;
 	private GameObject player2;
 	private GameObject player3;
@@ -15,8 +18,15 @@ public class IntroductionController : MonoBehaviour {
 	
 	private bool introductionFinished;
 
+	private GUIStyle[] styles;
+
 	void Start()
 	{
+		GUIStyle[] playerStyles = SpritesLoader.getPlayerSprites (playersTexture);
+		List<GUIStyle> playerList = new List<GUIStyle> (playerStyles);
+		playerList.Add(SpritesLoader.getTexture(teacherTexture));
+		styles = playerList.ToArray ();
+
 		player1 = GameObject.Find ("Player1");
 		player2 = GameObject.Find ("Player2");
 		player3 = GameObject.Find ("Player3");
@@ -25,6 +35,11 @@ public class IntroductionController : MonoBehaviour {
 
 		Type type = Type.GetType ("Level1");
 		actions = ((LevelSetup) Activator.CreateInstance(type)).Setup (mainCamera, player1);
+
+		actions.Insert (0, new WaitAction (2f));
+		actions.Add (new WaitAction(2f));
+		actions.Add (new MoveCameraAction (mainCamera, mainCamera.transform.position, mainCamera.transform.rotation));
+
 		currentAction = actions [0];
 		actions.RemoveAt (0);
 	}
