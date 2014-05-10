@@ -18,6 +18,11 @@ public class MonsterCreationController : MonoBehaviour {
 
 	IEnumerator WakeUpMonster() 
 	{
+		while (LevelFinishedController.instance.isStopped())
+		{
+			yield return new WaitForSeconds(0.5f);
+		}
+
 		yield return new WaitForSeconds(LevelFinishedController.instance.getTimeToFirstMonster());
 		foreach (AssemblyCSharp.MonsterTemplate monster in LevelFinishedController.instance.getMonsters())
 		{
@@ -25,7 +30,7 @@ public class MonsterCreationController : MonoBehaviour {
 			if (entrance == 0)
 			{
 				monsterDoorLeft.gameObject.SendMessage("OpenDoor");
-				yield return new WaitForSeconds(3f);
+				yield return new WaitForSeconds(4f);
 				CreateMonster(monsterDoorLeft, monster);
 			}
 			else
@@ -38,7 +43,7 @@ public class MonsterCreationController : MonoBehaviour {
 		}
 	}
 
-	private void CreateMonster(GameObject door, AssemblyCSharp.MonsterTemplate monsterTemplate)
+	private GameObject CreateMonster(GameObject door, AssemblyCSharp.MonsterTemplate monsterTemplate)
 	{
 		GameObject prefab = getPrefab (monsterTemplate.getType());
 
@@ -48,6 +53,16 @@ public class MonsterCreationController : MonoBehaviour {
 		GameObject monster = (GameObject) Instantiate (prefab, pos, Quaternion.Euler(0, 0, 0)); 
 		monster.GetComponent<AbstractMonsterController> ().setSpeed (monsterTemplate.getSpeed());
 		monster.tag = "Monster";
+
+		return monster;
+	}
+
+	IEnumerator ShowMonster(string monsterType)
+	{
+		GameObject monster = CreateMonster(monsterDoorLeft, new AssemblyCSharp.MonsterTemplate(monsterType, 0));
+		monsterDoorLeft.gameObject.SendMessage("OpenDoor");
+		yield return new WaitForSeconds(10f);
+		Destroy (monster);
 	}
 
 	private GameObject getPrefab(string type)

@@ -27,7 +27,10 @@ public class ScoreController : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUI.Label (new Rect (Screen.width / 2 - 200, 40, 300, 100), "Keys to collect: " + score); 
+		if (!LevelFinishedController.instance.isStopped())
+		{
+			GUI.Label (new Rect (Screen.width / 2 - 200, 40, 300, 100), "Keys to collect: " + score); 
+		}
 	}
 
 	public void Score()

@@ -3,24 +3,48 @@ using System.Collections;
 
 public class TextAction : Action  {
 
+	IntroductionController introductionController;
 	GameObject camera;
+	float time = 0;
 	int textureId;
 	string text;
+	int position = 0;
 
-	public TextAction(GameObject camera, int textureId, string text)
+	public TextAction(int textureId, string text)
 	{
-		this.camera = camera;
+		this.introductionController = GameObject.Find ("GameController").GetComponent<IntroductionController> ();
+		this.camera = GameObject.Find ("MainCamera_Front");
 		this.textureId = textureId;
 		this.text = text;
 	}
 
 	public void act()
 	{
+		time += Time.deltaTime;
+		if (position != text.Length)
+		{
+			if (time > 0.05f)
+			{
+				position ++;
+				time = 0;
+			}
 
+			introductionController.setTextureId (textureId);
+			introductionController.setText (text.Substring(0, position));
+		}
 	}
 
 	public bool finished()
 	{
-		return false;
+		if ((position == text.Length) && (time > 1f))
+		{
+			introductionController.setTextureId (-1);
+			introductionController.setText (null);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 }

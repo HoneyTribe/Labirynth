@@ -35,6 +35,7 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		levelDefinition = new AssemblyCSharp.LevelDefinition ();
 		stopped = true;
+		GameObject.Find ("GameController").SendMessage ("stopIntroduction");
 		Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 
@@ -56,7 +57,7 @@ public class LevelFinishedController : MonoBehaviour {
 		}
 	}
 
-	private void Reset()
+	public void Reset()
 	{
 		finished = false;
 		gameOver = false;
@@ -66,7 +67,10 @@ public class LevelFinishedController : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		GUI.Label (new Rect (Screen.width / 2 - 200, 20, 300, 100), "Level: " + (level + 1)); 
+		if (!stopped)
+		{
+			GUI.Label (new Rect (Screen.width / 2 - 200, 20, 300, 100), "Level: " + (level + 1)); 
+		}
 
 		if (finished)
 		{
@@ -198,7 +202,6 @@ public class LevelFinishedController : MonoBehaviour {
 	public void setLevel(int newLevel)
 	{
 		level = newLevel;
-		Reset ();
 	}
 
 	public List<InputController> getControllers()
