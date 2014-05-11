@@ -23,7 +23,7 @@ public class TextAction : Action  {
 		time += Time.deltaTime;
 		if (position != text.Length)
 		{
-			if (time > 0.05f)
+			if (time > 0.03f)
 			{
 				position ++;
 				time = 0;
@@ -36,7 +36,7 @@ public class TextAction : Action  {
 
 	public bool finished()
 	{
-		if ((position == text.Length) && (time > 1f))
+		if ((position == text.Length) && (time > 2f))
 		{
 			introductionController.setTextureId (-1);
 			introductionController.setText (null);

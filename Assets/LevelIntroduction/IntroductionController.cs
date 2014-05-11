@@ -37,8 +37,8 @@ public class IntroductionController : MonoBehaviour {
 		{
 			actions = ((LevelSetup) Activator.CreateInstance (type)).Setup ();
 
-			actions.Insert (0, new WaitAction (2f));
-			actions.Add (new WaitAction(2f));
+			actions.Insert (0, new WaitAction (1f));
+			actions.Add (new WaitAction(1f));
 			actions.Add (new MoveCameraAction (mainCamera.transform.position, mainCamera.transform.rotation));
 
 			currentAction = actions [0];

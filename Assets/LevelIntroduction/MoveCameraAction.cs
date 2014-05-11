@@ -4,7 +4,7 @@ using System.Collections;
 public class MoveCameraAction : Action  {
 
 	private const float cameraSpeed = 30f;
-	private const float cameraRotationSpeed = 2f;
+	private const float cameraRotationSpeed = 3f;
 
 	GameObject camera;
 	string target;
