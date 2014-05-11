@@ -5,6 +5,7 @@ namespace AssemblyCSharp
 	public class Instantiation : MonoBehaviour {
 
 		private const float MARGIN = 0.1f;
+		private const float MONSTER_DOOR = 4.15f;
 
 		public static Instantiation instance;
 
@@ -174,21 +175,26 @@ namespace AssemblyCSharp
 				{
 					if (!labirynth.getWalls(x, z))
 					{
-						wallPrefab.transform.localScale = new Vector3(scaleFactorX + compensatePillarInnerRadius, 
-						                                              wallPrefab.transform.localScale.y,
-						                                              wallPrefab.transform.localScale.z);
-						Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
-						                           wallPrefab.transform.position.y,
-						                           offsetZ + planeSizeZ/2f - spaceZ * z);
-						GameObject obj = (GameObject) Instantiate (wallPrefab, pos, Quaternion.Euler(0, 0, 0)); 
-
-						if (z == sizeZ * 2) // last row
+						float zPosition = offsetZ + planeSizeZ/2f - spaceZ * z;
+						// remove walls blocking monster entrance
+						if (((x != 1) && (x != sizeX * 2 - 1)) ||
+						    (zPosition > MONSTER_DOOR + 4) || (zPosition < MONSTER_DOOR - 4))
 						{
-							obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
+							wallPrefab.transform.localScale = new Vector3(scaleFactorX + compensatePillarInnerRadius, 
+							                                              wallPrefab.transform.localScale.y,
+							                                              wallPrefab.transform.localScale.z);
+							Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
+							                           wallPrefab.transform.position.y,
+							                           zPosition);
+							GameObject obj = (GameObject) Instantiate (wallPrefab, pos, Quaternion.Euler(0, 0, 0)); 
+
+							if (z == sizeZ * 2) // last row
+							{
+								obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
+							}
 						}
 					}
-				}
-				
+				}				
 			}
 		}
 

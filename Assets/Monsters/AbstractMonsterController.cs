@@ -9,7 +9,6 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	protected float speed;
 
-	private bool enter;
 	protected AssemblyCSharp.Instantiation maze;
 
 	private GameObject topLight;
@@ -43,7 +42,6 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			playerControllers.Add (GameObject.Find ("Player" + i).GetComponent<PlayerController>());
 		}
 
-		enter = true;
 		recalculateTrigger = false;
 	}
 
@@ -83,29 +81,11 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			return;
 		}
 
-		if (enter)
+		if (!monsterStopped)
 		{
-			if (transform.localPosition.x < -AssemblyCSharp.Instantiation.planeSizeX/2f + 2f)
-			{
-				transform.Translate(0.08f, 0, 0.02f);
-			}
-			else if (transform.localPosition.x > AssemblyCSharp.Instantiation.planeSizeX/2f - 2f)
-			{
-				transform.Translate(-0.08f, 0, -0.02f);
-			}
-			else
-			{
-				newPosition = transform.localPosition;
-				enter = false;
-			}
-		}	
-		else
-		{
-			if (!monsterStopped)
-			{
-				go ();
-			}
+			go ();
 		}
+
 		recalculateTrigger = false;
 	}
 
