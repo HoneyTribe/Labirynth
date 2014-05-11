@@ -6,13 +6,13 @@ public class FlyingMonsterController : AbstractMonsterController {
 	private static float updateDistance = 5.0f;
 	private float prevDistance;
 
-	public override void go (ref Vector3 newPosition) 
+	public override void go () 
 	{
 		float distance = Vector3.Distance(transform.localPosition, newPosition);
 
 		if ((recalculateTrigger) || (distance == 0) || (Mathf.Abs(distance - prevDistance) < EPSILON))
 		{
-			Vector3 targetPosition = getTarget();
+			Vector3 targetPosition = getClosest(getTarget());
 			if (Vector3.Distance(transform.localPosition, targetPosition) > updateDistance)
 			{
 				newPosition = transform.localPosition +
@@ -35,5 +35,21 @@ public class FlyingMonsterController : AbstractMonsterController {
 				transform.localPosition, newPosition, Time.deltaTime * speed / distance);
 			prevDistance = distance;
 		}
+	}
+
+	Vector3 getClosest(Vector3[] targets)
+	{
+		float dist = 100000;
+		Vector3 closestTarget = Vector3.zero;
+		foreach (Vector3 target in targets)
+		{
+			if (Vector3.Distance(transform.position, target) < dist)
+			{
+				dist = Vector3.Distance(transform.position, target);;
+				closestTarget = target;
+			}
+		}
+
+		return closestTarget;
 	}
 }

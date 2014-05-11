@@ -4,10 +4,13 @@ namespace AssemblyCSharp
 {
 	public class Instantiation : MonoBehaviour {
 
+		private const float MARGIN = 0.1f;
+
 		public static Instantiation instance;
 
 		private static float compensatePillarInnerRadius = 0.2f;
 
+		public GameObject nodePrefab;
 		public GameObject wallPrefab;
 		public GameObject smallWallPrefab;
 		public GameObject keyPrefab;
@@ -42,7 +45,42 @@ namespace AssemblyCSharp
 			drawSmallWalls (labirynth);
 			drawHorisontalWalls (labirynth);
 			drawVerticalWalls (labirynth);
+			createNodes ();
 		}	
+
+		void createNodes()
+		{
+			((Pathfinding.PointGraph) AstarPath.active.graphs [0]).limits = new Vector3(2 * spaceX + MARGIN, 0, 3 * spaceZ + MARGIN);
+
+			GameObject nodes = GameObject.Find ("Nodes");
+			int stepX = 2;
+			int stepZ = 2;
+			for (int z=1; z<sizeZ * 2 + 3; z+=stepZ) 
+			{
+				if (z == sizeZ * 2 + 1)
+				{
+					stepX = 1;
+					stepZ = 1;
+				}
+
+				for (int x=1; x<sizeX * 2; x+=stepX) 
+				{
+					float zPosition = offsetZ + planeSizeZ/2f - spaceZ * z;
+					if (z == sizeZ * 2 + 2)
+					{
+						zPosition = -planeSizeZ/2f;
+					}
+
+					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
+					                           0,
+					                           zPosition);
+
+					GameObject node = (GameObject) Instantiate (nodePrefab, pos, Quaternion.Euler(0, 0, 0));
+					node.transform.parent = nodes.transform;
+				}
+			} 
+			AstarPath.active.Scan ();
+		}
 
 		void drawMachines()
 		{
@@ -179,50 +217,6 @@ namespace AssemblyCSharp
 				}
 				
 			}
-		}
-
-		public Vector3 giveMeNextPosition(Vector3 currentPosition, Vector3 targetPosition)
-		{
-			Vector2 currentMazePos = transformToMazeCoordinates (currentPosition);
-			Vector2 targetMazePos = transformToMazeCoordinates (targetPosition);
-			if (isInside(currentPosition))
-			{
-				if (!isInside(targetPosition) && currentMazePos.Equals(labirynth.getStart()))
-				{
-					return new Vector3 (currentPosition.x, currentPosition.y, currentPosition.z - spaceZ * 2);
-				}
-
-				LinkedList<Vector2> path = labirynth.findPathBetweenCells(currentMazePos, targetMazePos);
-
-				// stop the monster when reaches the device
-				if (path.Count == 0)
-				{
-					return currentPosition;
-				}
-				else
-				{
-					return transformToWorldCoordinates(path.First.Value, currentPosition.y);
-				}
-			}
-			else
-			{
-				if (isInside(targetPosition))
-				{
-					return transformToWorldCoordinates(labirynth.getStart(), currentPosition.y);
-				}
-				else
-				{
-					Vector3 localMove = new Vector3(targetPosition.x - currentPosition.x, 0, targetPosition.z - currentPosition.z).normalized;
-					return currentPosition + localMove;
-				}
-			}
-		}
-
-		public int getDistance(Vector3 currentPosition, Vector3 playerPosition)
-		{
-			Vector2 currentMazePos = transformToMazeCoordinates (currentPosition);
-			Vector2 playerMazePos = transformToMazeCoordinates (playerPosition);
-			return labirynth.findPathBetweenCells(currentMazePos, playerMazePos).Count;
 		}
 
 		public Vector3 getStart()

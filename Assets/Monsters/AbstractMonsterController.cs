@@ -11,7 +11,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	private bool enter;
 	protected AssemblyCSharp.Instantiation maze;
-	
+
 	private GameObject topLight;
 	protected GameObject device;
 	private List<PlayerController> playerControllers = new List<PlayerController>();
@@ -24,15 +24,15 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	private float paralysingTime;
 	protected bool recalculateTrigger;
 
-	private Vector3 newPosition;
+	protected Vector3 newPosition;
 	private Vector3 paralysedPosition;
 
 	private bool monsterStopped;
 
-	public abstract void go (ref Vector3 newPosition);
+	public abstract void go ();
 
 	void Start () {
-	
+
 		textMesh = gameObject.GetComponentInChildren<TextMesh> ();
 
 		GameObject gameController = GameObject.Find ("GameController");
@@ -103,7 +103,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		{
 			if (!monsterStopped)
 			{
-				go (ref newPosition);
+				go ();
 			}
 		}
 		recalculateTrigger = false;
@@ -134,7 +134,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		this.speed = speed * LevelFinishedController.instance.gameSpeed;
 	}
 
-	protected Vector3 getTarget()
+	protected Vector3[] getTarget()
 	{
 		List<Vector3> players = new List<Vector3> ();
 		foreach (PlayerController playerController in playerControllers)
@@ -158,7 +158,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 		if (timeLeft > 0)
 		{
-			return device.transform.localPosition;
+			return new Vector3[]{device.transform.localPosition};
 		}
 
 		List<Vector3> closestPlayers = new List<Vector3> ();
@@ -172,34 +172,41 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			}
 		}
 
-		if (closestPlayers.Count != 0)
+		if (closestPlayers.Count == 0)
 		{
-			float dist = 100000;
-			Vector3 closestPlayer = Vector3.zero;
-			foreach (Vector3 player in closestPlayers)
-			{
-				if (maze.getDistance(monsterPos, player) < dist)
-				{
-					dist = maze.getDistance(monsterPos, player);
-					closestPlayer = player;
-				}
-			}
-			return closestPlayer;
+			closestPlayers = players;
 		}
-		else
-		{
-			float dist = 100000;
-			Vector3 closestPlayer = Vector3.zero;
-			foreach (Vector3 player in players)
-			{
-				if (Vector3.Distance(monsterPos, player) < dist)
-				{
-					dist = Vector3.Distance(monsterPos, player);
-					closestPlayer = player;
-				}
-			}
-			return closestPlayer;
-		}
+
+		return closestPlayers.ToArray ();
+
+//		if (closestPlayers.Count != 0)
+//		{
+//			float dist = 100000;
+//			Vector3 closestPlayer = Vector3.zero;
+//			foreach (Vector3 player in closestPlayers)
+//			{
+//				if (maze.getDistance(monsterPos, player) < dist)
+//				{
+//					dist = maze.getDistance(monsterPos, player);
+//					closestPlayer = player;
+//				}
+//			}
+//			return closestPlayer;
+//		}
+//		else
+//		{
+//			float dist = 100000;
+//			Vector3 closestPlayer = Vector3.zero;
+//			foreach (Vector3 player in players)
+//			{
+//				if (Vector3.Distance(monsterPos, player) < dist)
+//				{
+//					dist = Vector3.Distance(monsterPos, player);
+//					closestPlayer = player;
+//				}
+//			}
+//			return closestPlayer;
+//		}
 	}
 
 	void Recalculate()
