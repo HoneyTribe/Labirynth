@@ -49,7 +49,7 @@ public class CraneController : MonoBehaviour {
 
 	public void Move(Vector3 input)
 	{
-		if (!grabberController.pickingUp)
+		if ((!grabberController.isPickingUp()) && (!grabberController.isSmashing()))
 		{
 			Vector3 neckPosition = transform.localPosition;
 			Quaternion neckRotation = transform.localRotation;
@@ -121,9 +121,9 @@ public class CraneController : MonoBehaviour {
 		retracting = true;
 	}
 
-	public void Activate ()
+	public void SmashWall ()
 	{
-		craneLight.SendMessage ("ActivateItems");
+		grabber.SendMessage ("Smash");
 	}
 
 //	void OnTriggerEnter (Collider currentCollider)

@@ -7,9 +7,13 @@ public class CraneGrabberController : MonoBehaviour {
 
 	private Vector3 grabberPosition;
 	private Vector3 newGrabberPosition;
-	public bool pickingUp;
+	private bool pickingUp;
+	private bool smashing;
 
 	private GameObject heldObject;
+	private GameObject smashedWall;
+
+	public GameObject flamePrefab;
 
 	void Update()
 	{
@@ -30,6 +34,13 @@ public class CraneGrabberController : MonoBehaviour {
 					pickingUp = false;
 				}
 			}
+		}
+
+		// hanlde in next frame
+		if ((smashing) && (smashedWall == null))
+		{
+			smashing = false;
+			AstarPath.active.Scan();
 		}
 	}
 
@@ -64,6 +75,33 @@ public class CraneGrabberController : MonoBehaviour {
 			}
 		}
 	}
+
+	public void Smash() 
+	{
+		if (!smashing)
+		{
+			if ((heldObject == null) && (CraneEnergyController.instance.canSmash()))
+			{
+				RaycastHit hit;
+				if (Physics.Raycast(transform.position, Vector3.down, out hit))
+				{
+					if ((hit.collider.tag == "Wall") || (hit.collider.tag == "Pillar"))
+					{
+						smashedWall = hit.collider.gameObject;
+						GameObject flame = (GameObject) Instantiate (flamePrefab, hit.point, Quaternion.Euler(0, 0, 0)); 
+						flame.transform.parent = smashedWall.transform;
+						this.smashing = true;
+						CraneEnergyController.instance.smashing();
+					}
+				}
+			}
+		}
+	}
+
+	void DestroyWall()
+	{
+		Destroy (smashedWall);
+	}
 	
 	void OnTriggerEnter (Collider collider)
 	{
@@ -88,5 +126,15 @@ public class CraneGrabberController : MonoBehaviour {
 				CraneEnergyController.instance.holding(true);
 			}
 		}
+	}
+
+	public bool isPickingUp()
+	{
+		return pickingUp;
+	}
+
+	public bool isSmashing()
+	{
+		return smashing;
 	}
 }

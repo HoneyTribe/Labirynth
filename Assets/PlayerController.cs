@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 			if ((action2 > 0) && (action2 <= InputController.BUTTON_DURATION))
 			{
-				CraneController.instance.Activate();
+				CraneController.instance.SmashWall();
 			}
 
 			if ((x != 0) || (z != 0))

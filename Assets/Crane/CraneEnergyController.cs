@@ -10,6 +10,7 @@ public class CraneEnergyController : MonoBehaviour {
 	private const float pickingUpCost = 0.05f; // constant cost of picking up - even if you failed
 	private const float restoreVelocity = 0.033f; // It needs 1/restoreVelocity seconds to regenerate (30 seconds).
 	private const float activationCost = 0.3f; 
+	private const float smashingCost = 0.1f; // Wall smashing takes object 1/smashingCost seconds (10 seconds).
 
 	private GUIStyle borderStyle;
 	private GUIStyle outerStyle;
@@ -18,6 +19,7 @@ public class CraneEnergyController : MonoBehaviour {
 	private float energy = 1.0f;
 
 	private bool isHeld;
+	private bool beingSmashed;
 
 	void Start()
 	{
@@ -75,6 +77,15 @@ public class CraneEnergyController : MonoBehaviour {
 				gameObject.SendMessage("PickUp");
 			}
 		}
+		else if (beingSmashed)
+		{
+			changeEnergy (-Time.deltaTime * smashingCost);
+			if (energy == 0f)
+			{
+				beingSmashed = false;
+				gameObject.SendMessage("DestroyWall");
+			}
+		}
 		else
 		{
 			changeEnergy (Time.deltaTime * restoreVelocity);
@@ -94,6 +105,11 @@ public class CraneEnergyController : MonoBehaviour {
 	public void holding(bool isHeld)
 	{
 		this.isHeld = isHeld;
+	}
+
+	public void smashing()
+	{
+		this.beingSmashed = true;
 	}
 
 	private void changeEnergy(float value)
@@ -117,5 +133,10 @@ public class CraneEnergyController : MonoBehaviour {
 	public bool canActivate()
 	{
 		return energy > activationCost;
+	}
+
+	public bool canSmash()
+	{
+		return energy == 1f;
 	}
 }

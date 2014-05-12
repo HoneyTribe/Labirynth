@@ -40,47 +40,4 @@ public class CraneLightController : MonoBehaviour {
 		param = - maxIntensity / closingInterval;
 		timeLeft = closingInterval;
 	}
-
-	void ActivateItems()
-	{
-		if (CraneEnergyController.instance.canActivate())
-		{
-			bool itemActivated = false;
-			GameObject[] items = GameObject.FindGameObjectsWithTag ("Item");
-			foreach (GameObject item in items)
-			{
-				if (isIlluminated(item))
-				{
-					JumpController jumpController = item.GetComponent<JumpController>();
-					if (jumpController.hasAnyObjects())
-					{
-						jumpController.Activate();
-						//StartCoroutine(showLaser(item.transform.localPosition));
-						itemActivated = true;
-					}
-				}
-			}
-			
-			if (itemActivated)
-			{
-				CraneEnergyController.instance.activating();
-			}
-		}
-	}
-	
-	private bool isIlluminated(GameObject obj)
-	{
-		Vector3 objectDirection = new Vector3(obj.transform.localPosition.x - transform.position.x,
-		                                      obj.transform.localPosition.y - transform.position.y,
-		                                      obj.transform.localPosition.z - transform.position.z).normalized;
-		float angle = Vector3.Angle(Vector3.down, objectDirection);
-		if ((light.intensity > 0) && (angle < light.spotAngle/2f))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
-	}
 }

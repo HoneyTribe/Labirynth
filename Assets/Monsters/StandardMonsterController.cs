@@ -64,14 +64,11 @@ public class StandardMonsterController : AbstractMonsterController {
 
 		if (p.vectorPath.Count > 1)
 		{
-			if (p.vectorPath[0].Equals(p.vectorPath[1]))
-			{
-				newPosition = ((ABPath) p).originalEndPoint;
-			}
-			else
-			{
-				newPosition = p.vectorPath[1];
-			}
+			newPosition = p.vectorPath[1];
+		}
+		else
+		{
+			newPosition = ((ABPath) p).originalEndPoint;
 		}
 
 		newPosition.y = transform.localPosition.y;
