@@ -73,7 +73,7 @@ namespace AssemblyCSharp
 					//10
 					levels2.Add(new Level(5,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Standard", 2.3f),
+						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f)
@@ -126,7 +126,7 @@ namespace AssemblyCSharp
 					//10
 					levels3.Add(new Level(6,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Standard", 2.3f),
+						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f)
@@ -179,7 +179,7 @@ namespace AssemblyCSharp
 					//10
 					levels4.Add(new Level(7,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Standard", 2.3f),
+						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f)
