@@ -5,6 +5,8 @@ using InControl;
 
 public class InputController {
 
+	public static float BUTTON_DURATION = 0.5f;
+
 	public int playerId;
 
 	private PlayerController playerController;
@@ -142,7 +144,7 @@ public class InputController {
 			actionTime = Time.time;
 		}
 
-		if ((actionTime != 0) && ((Input.GetKeyUp (actionTrigger)) || (Time.time - actionTime > 0.5f)))
+		if ((actionTime != 0) && ((Input.GetKeyUp (actionTrigger)) || (Time.time - actionTime > BUTTON_DURATION)))
 		{
 			action = Time.time - actionTime;
 			actionTime = 0f;
@@ -153,7 +155,7 @@ public class InputController {
 			action2Time = Time.time;
 		}
 
-		if ((action2Time != 0) && ((Input.GetKeyUp (actionTrigger2)) || (Time.time - action2Time > 0.5f)))
+		if ((action2Time != 0) && ((Input.GetKeyUp (actionTrigger2)) || (Time.time - action2Time > BUTTON_DURATION)))
 		{
 			action2 = Time.time - action2Time;
 			action2Time = 0f;
@@ -214,12 +216,12 @@ public class InputController {
 				actionAxisTime = Time.time;
 			}
 
-			if ((actionAxisTime != 0f) && ((actionAxis == 0f) || (Time.time - actionAxisTime >= 0.5f)))
+			if ((actionAxisTime != 0f) && ((actionAxis == 0f) || (Time.time - actionAxisTime >= BUTTON_DURATION)))
 			{
 				if (!actionAxisBlocked)
 				{
 					action = Time.time - actionAxisTime;
-					if (Time.time - actionAxisTime >= 0.5f)
+					if (Time.time - actionAxisTime >= BUTTON_DURATION)
 					{
 						actionAxisBlocked = true;
 					}
@@ -237,7 +239,7 @@ public class InputController {
 				actionAxis2Time = Time.time;
 			}
 
-			if ((actionAxis2Time != 0f) && ((action2control.WasReleased) || (Time.time - actionAxis2Time > 0.5f)))
+			if ((actionAxis2Time != 0f) && ((action2control.WasReleased) || (Time.time - actionAxis2Time > BUTTON_DURATION)))
 			{
 				action2 = Time.time - actionAxis2Time;
 				actionAxis2Time = 0f;
