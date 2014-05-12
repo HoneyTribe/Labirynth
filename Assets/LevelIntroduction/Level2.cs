@@ -7,6 +7,7 @@ public class Level2 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 		
+		actions.Add(new CreateMonsterAction("Standard"));
 		actions.Add(new MoveCameraAction("Monster"));
 		actions.Add(new TextAction(0, "Watch out for monsters!"));
 		actions.Add(new MoveCameraAction("Player2"));
