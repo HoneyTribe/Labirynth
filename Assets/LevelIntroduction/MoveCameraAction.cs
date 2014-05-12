@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoveCameraAction : Action  {
 
-	private const float cameraSpeed = 25f;
+	private const float cameraSpeed = 15f;
 	private const float cameraRotationSpeed = 4f;
 
 	GameObject camera;
@@ -41,7 +41,7 @@ public class MoveCameraAction : Action  {
 
 			this.targetPosition = targetObject.transform.position;
 			this.newCameraPosition = new Vector3(Random.Range (-15f, 15f),
-			                                     Random.Range (5f, 15f),
+			                                     Random.Range (10f, 20f),
 			                                     0);
 			Vector3 zoom = (newCameraPosition - targetPosition).normalized * 15;
 			this.newCameraPosition = this.targetPosition + zoom;
