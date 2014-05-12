@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	private bool lighthouseEntered = false;
 	private bool craneEntered = false;
 	private bool portalGunEntered = false;
+	private float buttonDuration = 0.5f;
 
 	private bool gameFinished = false;
 
@@ -34,7 +35,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 		if (lighthouseEntered)
 		{
-			if ((action > 0.5) || (action2 > 0.5))
+			if ((action > buttonDuration) || (action2 > buttonDuration))
 			{
 				lighthouseEntered = false;
 				TopLightController.instance.TurnOff();
@@ -42,13 +43,13 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
 			}
 
-			if ((action > 0) && (action <= 0.5f))
+			if ((action > 0) && (action <= buttonDuration))
 			{
 				TopLightController.instance.AttractMonster();
 			}
 
 			
-			if ((action2 > 0) && (action2 <= 0.5f))
+			if ((action2 > 0) && (action2 <= buttonDuration))
 			{
 				TopLightController.instance.ActivateItems();
 			}
@@ -65,7 +66,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		}
 		else if (craneEntered)
 		{
-			if ((action > 0.5) || (action2 > 0.5))
+			if ((action > buttonDuration) || (action2 > buttonDuration))
 			{
 				craneEntered = false;
 				CraneController.instance.TurnOff();
@@ -73,12 +74,12 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
 			}
 
-			if ((action > 0) && (action <= 0.5f))
+			if ((action > 0) && (action <= buttonDuration))
 			{
 				CraneController.instance.PickUp();
 			}
 
-			if ((action2 > 0) && (action2 <= 0.5f))
+			if ((action2 > 0) && (action2 <= buttonDuration))
 			{
 				CraneController.instance.Activate();
 			}
@@ -90,7 +91,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		}
 		else if (portalGunEntered)
 		{
-			if ((action > 0.5) || (action2 > 0.5))
+			if ((action > buttonDuration) || (action2 > buttonDuration))
 			{
 				portalGunEntered = false;
 				DroneController.instance.TurnOff();
@@ -100,12 +101,12 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			
 			DroneController.instance.Move(new Vector3(x,action,z));
 
-			if ((action > 0) && (action <= 0.5f))
+			if ((action > 0) && (action <= buttonDuration))
 			{
 				DroneController.instance.Shoot();
 			}
 
-			if ((action2 > 0) && (action2 <= 0.5f))
+			if ((action2 > 0) && (action2 <= buttonDuration))
 			{
 				DroneController.instance.UseStunGun();
 			}
