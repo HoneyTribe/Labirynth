@@ -5,7 +5,7 @@ using InControl;
 
 public class InputController {
 
-	public static float BUTTON_DURATION = 0.5f;
+	public static float BUTTON_DURATION = 0.8f;
 
 	public int playerId;
 
