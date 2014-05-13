@@ -88,7 +88,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 			if (selGridInt.Count == LevelFinishedController.instance.getControllers().Count)
 			{
 				GameObject.Find ("GameController").SendMessage ("RemovePlayerSelectionMenu", null);
-				Destroy(this);
+				Destroy(gameObject);
 				LevelFinishedController.instance.updateMaxLevel();
 				Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 			}

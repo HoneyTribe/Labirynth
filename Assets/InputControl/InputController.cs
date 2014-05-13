@@ -97,6 +97,7 @@ public class InputController {
 		}
 		else
 		{
+			handleMenu();
 			playerController.handleLogic (x, z, action, action2);
 		}
 	}
@@ -251,6 +252,14 @@ public class InputController {
 				action2 = Time.time - actionAxis2Time;
 				actionAxis2Time = 0f;
 			}
+		}
+	}
+
+	private void handleMenu()
+	{
+		if (InputManager.Devices [device].MenuWasPressed)
+		{
+			LevelFinishedController.instance.ShowPlayerSelectionMenu();
 		}
 	}
 

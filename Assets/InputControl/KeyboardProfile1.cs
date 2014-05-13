@@ -36,6 +36,12 @@ namespace InControl
 					Handle = "Action2",
 					Target = InputControlType.RightBumper,
 					Source = KeyCodeButton( KeyCode.RightAlt )
+				},
+				new InputControlMapping
+				{
+					Handle = "Menu",
+					Target = InputControlType.Menu,
+					Source = KeyCodeButton( KeyCode.Escape )
 				}
 			};
 			

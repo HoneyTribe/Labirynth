@@ -113,7 +113,16 @@ public class LevelFinishedController : MonoBehaviour {
 		congratulation = false;
 		Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
-	
+
+	public void ShowPlayerSelectionMenu () 
+	{
+		if (!stopped)
+		{
+			stopped = true;
+			Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		}
+	}
+
 	public int getNumberOfKeys()
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getNumberOfKeys();
