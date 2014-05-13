@@ -91,7 +91,8 @@ namespace AssemblyCSharp
 				GameObject.Find ("LightContainer").SetActive(false);
 			}
 
-			if (LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithCrane())
+			if ((LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithCrane()) &&
+				(LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithSmasher()))
 			{
 				GameObject.Find ("Crane").SetActive(false);
 				GameObject.Find ("CraneContainer").SetActive(false);

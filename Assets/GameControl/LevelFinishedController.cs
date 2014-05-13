@@ -184,6 +184,11 @@ public class LevelFinishedController : MonoBehaviour {
 		return levelDefinition.getFirstLevelWithCrane();
 	}
 
+	public int getFirstLevelWithSmasher()
+	{
+		return levelDefinition.getFirstLevelWithSmasher();
+	}
+
 	public int getFirstLevelWithDrone()
 	{
 		return levelDefinition.getFirstLevelWithDrone();

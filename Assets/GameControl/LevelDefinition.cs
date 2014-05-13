@@ -10,6 +10,7 @@ namespace AssemblyCSharp
 
 				private static int firstLevelWithLightMachine = 0;
 				private static int firstLevelWithCrane = 3;
+				private static int firstLevelWithSmasher = 8;
 				private static int firstLevelWithDrone = 5;
 				private static int firstLevelWithStunGun = 6;
 
@@ -224,6 +225,12 @@ namespace AssemblyCSharp
 				public int getFirstLevelWithCrane()
 				{
 					return firstLevelWithCrane;
+				}
+
+		
+				public int getFirstLevelWithSmasher()
+				{
+					return firstLevelWithSmasher;
 				}
 
 				public int getFirstLevelWithDrone()

@@ -55,7 +55,7 @@ public class CraneEnergyController : MonoBehaviour {
 		GUI.BeginGroup(new Rect ((Screen.width / 4) *3 - progressBarSize / 2, Screen.height - 20, progressBarSize, 10));
 			GUI.Box (new Rect (0, 0, progressBarSize, 10), "", borderStyle);
 			GUI.Box (new Rect (1, 1, progressBarSize - 2, 8), "", outerStyle);
-			if (energy >= pickingUpCost)
+			if (energy >= getMinCost())
 			{
 				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", energyStyle);
 			}
@@ -110,6 +110,25 @@ public class CraneEnergyController : MonoBehaviour {
 	public void smashing()
 	{
 		this.beingSmashed = true;
+	}
+
+	private float getMinCost()
+	{
+		float minCost = 1f;
+		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithCrane())
+		{
+			minCost = pickingUpCost;
+		}
+		
+		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithSmasher())
+		{
+			if (minCost > 1f)
+			{
+				minCost = 1f;
+			}
+		}
+		
+		return minCost;
 	}
 
 	private void changeEnergy(float value)

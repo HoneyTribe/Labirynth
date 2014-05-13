@@ -46,52 +46,58 @@ public class CraneGrabberController : MonoBehaviour {
 
 	public void PickUp() 
 	{
-		if (!pickingUp)
+		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithCrane())
 		{
-			if ((heldObject == null) && (CraneEnergyController.instance.canPickUp()))
+			if (!pickingUp)
 			{
-				this.newGrabberPosition = new Vector3 (transform.position.x, 
-				                                       transform.position.y - 7,
-				                                       transform.position.z);
-				this.grabberPosition = transform.position;
-				this.pickingUp = true;
-				CraneEnergyController.instance.pickingUp();
-			}
-			else
-			{
-				heldObject.rigidbody.useGravity = true;
-				heldObject.transform.parent = null;
-				heldObject.rigidbody.velocity = new Vector3(0, -10, 0);
-				if (heldObject.tag == "Item")
+				if ((heldObject == null) && (CraneEnergyController.instance.canPickUp()))
 				{
-					// check groundController
-					heldObject.collider.isTrigger = false;
-					Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), true);
-					Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), true);
-					Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), true);
+					this.newGrabberPosition = new Vector3 (transform.position.x, 
+					                                       transform.position.y - 7,
+					                                       transform.position.z);
+					this.grabberPosition = transform.position;
+					this.pickingUp = true;
+					CraneEnergyController.instance.pickingUp();
 				}
-				CraneEnergyController.instance.holding(false);
-				heldObject = null;
+				else
+				{
+					heldObject.rigidbody.useGravity = true;
+					heldObject.transform.parent = null;
+					heldObject.rigidbody.velocity = new Vector3(0, -10, 0);
+					if (heldObject.tag == "Item")
+					{
+						// check groundController
+						heldObject.collider.isTrigger = false;
+						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), true);
+						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), true);
+						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), true);
+					}
+					CraneEnergyController.instance.holding(false);
+					heldObject = null;
+				}
 			}
 		}
 	}
 
 	public void Smash() 
 	{
-		if (!smashing)
+		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithSmasher())
 		{
-			if ((heldObject == null) && (CraneEnergyController.instance.canSmash()))
+			if (!smashing)
 			{
-				RaycastHit hit;
-				if (Physics.Raycast(transform.position, Vector3.down, out hit))
+				if ((heldObject == null) && (CraneEnergyController.instance.canSmash()))
 				{
-					if ((hit.collider.tag == "Wall") || (hit.collider.tag == "Pillar"))
+					RaycastHit hit;
+					if (Physics.SphereCast(transform.position, 1f, Vector3.down, out hit))
 					{
-						smashedWall = hit.collider.gameObject;
-						GameObject flame = (GameObject) Instantiate (flamePrefab, hit.point, Quaternion.Euler(0, 0, 0)); 
-						flame.transform.parent = smashedWall.transform;
-						this.smashing = true;
-						CraneEnergyController.instance.smashing();
+						if ((hit.collider.tag == "Wall") || (hit.collider.tag == "Pillar"))
+						{
+							smashedWall = hit.collider.gameObject;
+							GameObject flame = (GameObject) Instantiate (flamePrefab, hit.point, Quaternion.Euler(0, 0, 0)); 
+							flame.transform.parent = smashedWall.transform;
+							this.smashing = true;
+							CraneEnergyController.instance.smashing();
+						}
 					}
 				}
 			}

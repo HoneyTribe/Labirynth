@@ -89,7 +89,7 @@ public class DronePowerController : MonoBehaviour {
 
 	private float getMinCost()
 	{
-		float minCost = 0f;
+		float minCost = 1f;
 		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithDrone())
 		{
 			minCost = settingUpCost;
