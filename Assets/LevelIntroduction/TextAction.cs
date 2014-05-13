@@ -34,9 +34,9 @@ public class TextAction : Action  {
 		}
 	}
 
-	public bool finished()
+	public bool isFinished()
 	{
-		if ((position == text.Length) && (time > 2f))
+		if (time > 2f) 
 		{
 			introductionController.setTextureId (-1);
 			introductionController.setText (null);

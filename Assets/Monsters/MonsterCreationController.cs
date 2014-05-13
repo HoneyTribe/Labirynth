@@ -62,19 +62,22 @@ public class MonsterCreationController : MonoBehaviour {
 		GameObject monster = CreateMonster(monsterDoorLeft, new AssemblyCSharp.MonsterTemplate(monsterType, 0));
 		monsterDoorLeft.gameObject.SendMessage("OpenDoor");
 		yield return new WaitForSeconds(10f);
-		Destroy (monster);
+		if (monster != null)
+		{
+			Destroy (monster);
+		}
 	}
 
 	private GameObject getPrefab(string type)
 	{
 		switch (type)
 		{
-		case "Standard":
-			return monsterPrefab;
-		case "Flying":
-			return flyingMonsterPrefab;
-		default:
-			throw new System.ArgumentException("Invalid monster identifier");
+			case "Standard":
+				return monsterPrefab;
+			case "Flying":
+				return flyingMonsterPrefab;
+			default:
+				throw new System.ArgumentException("Invalid monster identifier");
 		}
 	}
 }

@@ -4,5 +4,5 @@ using System.Collections;
 public interface Action  {
 
 	void act();
-	bool finished();
+	bool isFinished();
 }

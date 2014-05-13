@@ -18,7 +18,7 @@ public class WaitAction : Action  {
 		}
 	}
 
-	public bool finished()
+	public bool isFinished()
 	{
 		return time < 0;
 	}

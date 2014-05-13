@@ -5,7 +5,6 @@ public class CreateMonsterAction : Action  {
 
 	string monsterType;
 	GameObject gameController;
-	float time;
 
 	public CreateMonsterAction(string monsterType)
 	{
@@ -15,11 +14,13 @@ public class CreateMonsterAction : Action  {
 
 	public void act()
 	{
-		time += Time.deltaTime;
-		gameController.SendMessage ("ShowMonster", monsterType);
+		if (GameObject.FindGameObjectWithTag("Monster") == null)
+		{
+			gameController.SendMessage ("ShowMonster", monsterType);
+		}
 	}
 
-	public bool finished()
+	public bool isFinished()
 	{
 		return GameObject.FindGameObjectWithTag("Monster") != null;
 	}

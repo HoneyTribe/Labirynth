@@ -88,6 +88,13 @@ public class InputController {
 				}
 			}
 		}
+		else if (IntroductionController.instance.isPlayingIntroduction())
+		{
+			if ((action > 0) || (action2 > 0))
+			{
+				IntroductionController.instance.StopIntroduction(true);
+			}
+		}
 		else
 		{
 			playerController.handleLogic (x, z, action, action2);

@@ -35,7 +35,7 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		levelDefinition = new AssemblyCSharp.LevelDefinition ();
 		stopped = true;
-		GameObject.Find ("GameController").SendMessage ("stopIntroduction");
+		GameObject.Find ("GameController").SendMessage ("StopIntroduction", false);
 		Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 

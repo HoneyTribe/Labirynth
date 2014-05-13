@@ -5,6 +5,8 @@ using System;
 
 public class IntroductionController : MonoBehaviour {
 
+	public static IntroductionController instance;
+
 	public const int dialogSizeX = 600;
 	public const int dialogSizeY = 100;
 
@@ -13,8 +15,11 @@ public class IntroductionController : MonoBehaviour {
 
 	private List<Action> actions;
 	private Action currentAction;
+	private Action movingBackAction;
 	
-	private bool playIntroduction = true;
+	private bool playingIntroduction = true;
+	private bool stoppingIntroduction = false;
+	private bool stoppedIntroduction = false;
 
 	private GUIStyle[] styles;
 	private int textureId = -1;
@@ -25,6 +30,8 @@ public class IntroductionController : MonoBehaviour {
 
 	void Start()
 	{
+		instance = this;
+
 		GUIStyle[] playerStyles = SpritesLoader.getPlayerSprites (playersTexture);
 		List<GUIStyle> playerList = new List<GUIStyle> (playerStyles);
 		playerList.Add(SpritesLoader.getTexture(teacherTexture));
@@ -39,7 +46,8 @@ public class IntroductionController : MonoBehaviour {
 
 			actions.Insert (0, new WaitAction (1f));
 			actions.Add (new WaitAction(1f));
-			actions.Add (new MoveCameraAction (mainCamera.transform.position, mainCamera.transform.rotation));
+
+			movingBackAction = new MoveCameraAction (mainCamera.transform.position, mainCamera.transform.rotation);
 
 			currentAction = actions [0];
 			actions.RemoveAt (0);
@@ -60,34 +68,66 @@ public class IntroductionController : MonoBehaviour {
 		}
 		else
 		{
-			Skip ();
+			playingIntroduction = false;
+			LevelFinishedController.instance.Reset();
 		}
 	}
 
 	void Update()
 	{
-		if (playIntroduction)
+		if (playingIntroduction)
 		{
 			currentAction.act ();
-			if (currentAction.finished())
+			if (currentAction.isFinished())
 			{
-				if (actions.Count != 0)
+				if (actions.Count > 1)
 				{
 					currentAction = actions [0];
 					actions.RemoveAt (0); 
 				}
 				else
 				{
-					Skip ();
+					StopIntroduction(true);
 				}
+			}
+		}
+
+		if (stoppingIntroduction)
+		{
+			// Clean other actions
+			if (!stoppedIntroduction)
+			{
+				GameObject[] monters = GameObject.FindGameObjectsWithTag("Monster");
+				foreach (GameObject monster in monters)
+				{
+					Destroy(monster);
+				}
+				GameObject monsterDoorLeft = GameObject.Find ("monsterDoorLeft");
+				monsterDoorLeft.SendMessage("CloseDoor");
+
+				textureId = -1;
+				text = null;
+				stoppedIntroduction = true;
+			}
+
+			movingBackAction.act();
+			if (movingBackAction.isFinished())
+			{
+				stoppingIntroduction = false;
+				LevelFinishedController.instance.Reset();
 			}
 		}
 	}
 
-	private void Skip()
+	public void StopIntroduction(bool stopping)
 	{
-		playIntroduction = false;
-		LevelFinishedController.instance.Reset();
+		playingIntroduction = false;
+		stoppingIntroduction = stopping;
+	}
+
+	public bool isPlayingIntroduction()
+	{
+		return playingIntroduction;
 	}
 
 	void OnGUI () 
@@ -119,10 +159,5 @@ public class IntroductionController : MonoBehaviour {
 	public void setText(string text)
 	{
 		this.text = text;
-	}
-
-	void stopIntroduction()
-	{
-		this.playIntroduction = false;
 	}
 }

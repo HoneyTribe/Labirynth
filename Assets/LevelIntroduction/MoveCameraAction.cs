@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class MoveCameraAction : Action  {
@@ -56,7 +56,7 @@ public class MoveCameraAction : Action  {
 		camera.transform.rotation = Quaternion.Lerp(camera.transform.rotation, newCameraRotation, Time.deltaTime * cameraRotationSpeed);
 	}
 
-	public bool finished()
+	public bool isFinished()
 	{
 		return ((camera.transform.position == newCameraPosition) &&
 			    (Quaternion.Angle(camera.transform.rotation, newCameraRotation) < 0.01f));

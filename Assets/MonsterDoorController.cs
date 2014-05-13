@@ -8,7 +8,7 @@ public class MonsterDoorController : MonoBehaviour {
 	private static float maxY = 10.0f;
 	private static float maxIntensity = 5.0f;
 
-	private float sign;
+	private float sign = 0;
 	private float timeLeft = 0.0f;
 
 	private Vector3 doorInitialPosition;
@@ -18,35 +18,58 @@ public class MonsterDoorController : MonoBehaviour {
 	{
 		doorInitialPosition = transform.localPosition;
 	}
-	
+
+	// 0 -> 1 -> 2 -> -1 -> 0
+
 	void Update()
 	{
 		if (timeLeft > 0)
 		{
-			float doorStep = sign * Time.deltaTime * maxY / interval;
-			float lightStep = sign * Time.deltaTime * maxIntensity / interval;
+			if ((sign == 1) || (sign == -1))
+			{
+				float doorStep = sign * Time.deltaTime * maxY / interval;
+				float lightStep = sign * Time.deltaTime * maxIntensity / interval;
 
-			transform.Translate (0, doorStep, 0);
-			doorLight.light.intensity += lightStep;
+				transform.Translate (0, doorStep, 0);
+				doorLight.light.intensity += lightStep;
+			}
+
 			timeLeft -= Time.deltaTime;
 		}
 		else
 		{
-			if (sign < 0)
+			if (sign == 1)
+			{
+				sign = 2;
+				timeLeft = delay;
+				return;
+			}
+
+			if (sign == 2)
+			{
+				sign = -1;
+				timeLeft = interval;
+				return;
+			}
+
+			if (sign == -1)
 			{
 				transform.localPosition = doorInitialPosition;
 				doorLight.light.intensity = 0;
+				return;
 			}
 		}
-
 	}
 	
-	IEnumerator OpenDoor ()
+	void OpenDoor ()
 	{
 		sign = 1;
 		timeLeft = interval;
-		yield return new WaitForSeconds(delay);
+	}
+
+	void CloseDoor ()
+	{
+		timeLeft = 0;
 		sign = -1;
-		timeLeft = interval;
 	}
 }
