@@ -13,9 +13,9 @@ public class Level2 : LevelSetup {
 		actions.Add(new MoveCameraAction("Player2"));
 		actions.Add(new TextAction(4, "When in the maze: Tap your trigger button to drop the decoy."));
 		actions.Add(new MoveCameraAction("Player1"));
-		actions.Add(new TextAction(4, "When in the light-turret: Aim at monsters and tap your trigger button. Zap to distract!"));
+		actions.Add(new TextAction(4, "When in the light-machine: Aim at monsters and tap your trigger button. Zap to distract!"));
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "Each time you zap monsters the light-turret's power is depleted."));
+		actions.Add(new TextAction(4, "Each time you zap monsters the power is depleted."));
 
 		return actions;
 	}
