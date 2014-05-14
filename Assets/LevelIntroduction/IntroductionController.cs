@@ -28,6 +28,8 @@ public class IntroductionController : MonoBehaviour {
 	private GUIStyle borderStyle;
 	private GUIStyle outerStyle;
 
+	public GUISkin guiSkin;
+
 	void Start()
 	{
 		instance = this;
@@ -145,7 +147,7 @@ public class IntroductionController : MonoBehaviour {
 				GUI.Box (new Rect (dialogSizeY, 10, dialogSizeX - dialogSizeY - 10, dialogSizeY - 20), "", borderStyle);
 				GUI.Box (new Rect (dialogSizeY + 1, 11, dialogSizeX - dialogSizeY - 10 - 2, dialogSizeY - 20 - 2), "", outerStyle);
 				
-				GUI.Label (new Rect (dialogSizeY + 10, 20, dialogSizeX - dialogSizeY - 30, dialogSizeY - 40), text);
+			GUI.Label (new Rect (dialogSizeY + 10, 20, dialogSizeX - dialogSizeY - 30, dialogSizeY - 40), text, guiSkin.label);
 			GUI.EndGroup();
 		}
 		

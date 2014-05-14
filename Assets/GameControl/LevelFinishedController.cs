@@ -53,6 +53,7 @@ public class LevelFinishedController : MonoBehaviour {
 		else
 		{
 			Reset ();
+			stopped = true;
 			Application.LoadLevel (0); 
 		}
 	}
