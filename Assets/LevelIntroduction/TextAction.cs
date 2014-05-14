@@ -23,7 +23,7 @@ public class TextAction : Action  {
 		time += Time.deltaTime;
 		if (position != text.Length)
 		{
-			if (time > 0.025f)
+			if (time > 0.03f)
 			{
 				position ++;
 				time = 0;
