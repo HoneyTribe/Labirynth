@@ -12,6 +12,7 @@ public class LevelFinishedController : MonoBehaviour {
 	private AssemblyCSharp.LevelDefinition levelDefinition;
 
 	public GameObject playerSelectionMenuPrefab;
+	public GameObject menuPrefab;
 
 	private List<InputController> controllers = new List<InputController> ();
 
@@ -103,7 +104,7 @@ public class LevelFinishedController : MonoBehaviour {
 		GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
 		yield return new WaitForSeconds(2);
 		gameOver = false;
-		Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 
 	IEnumerator GameFinished () 
@@ -112,15 +113,20 @@ public class LevelFinishedController : MonoBehaviour {
 		stopped = true;
 		yield return new WaitForSeconds(2);
 		congratulation = false;
-		Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 
 	public void ShowPlayerSelectionMenu () 
 	{
-		if (!stopped)
+		if (GameObject.Find ("Player Selection Menu(Clone)") == null)
 		{
 			stopped = true;
 			Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+			GameObject menu = GameObject.Find ("Menu(Clone)");
+			if (menu != null)
+			{
+				Destroy(menu);
+			}
 		}
 	}
 

@@ -7,7 +7,7 @@ public class InControlManager : MonoBehaviour {
 	public static InControlManager instance;
 	private PlayerSelectionMenuController playerSelectionMenuController;
 
-	private int currentPlayer = 1;
+	private int currentPlayer;
 
 	void Start ()
 	{
@@ -99,6 +99,7 @@ public class InControlManager : MonoBehaviour {
 
 	public void SetPlayerSelectionMenu(PlayerSelectionMenuController playerSelectionMenuController)
 	{
+		currentPlayer = 1;
 		this.playerSelectionMenuController = playerSelectionMenuController;
 	}
 

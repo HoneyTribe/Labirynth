@@ -87,6 +87,7 @@ public class InputController {
 					menuController.handleLogic (x, z, action, action2);
 				}
 			}
+			handleMenu();
 		}
 		else if (IntroductionController.instance.isPlayingIntroduction())
 		{
