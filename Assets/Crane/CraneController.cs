@@ -5,7 +5,7 @@ public class CraneController : MonoBehaviour {
 
 	public static CraneController instance;
 
-	private static float rotationSpeed = 150f;
+	private static float rotationSpeed = 30f;
 	private static float extentionSpeed = 5f;
 	private static float retractingSpeed = 30f;
 
@@ -53,7 +53,7 @@ public class CraneController : MonoBehaviour {
 	{
 		if ((!grabberController.isPickingUp()) && (!grabberController.isSmashing()))
 		{
-			float newRotationSpeed = rotationSpeed * neckSize / transform.localScale.z; 
+			float newRotationSpeed = rotationSpeed * neckSize / Mathf.Sqrt(transform.localScale.z) ;
 
 			Vector3 neckPosition = transform.localPosition;
 			Quaternion neckRotation = transform.localRotation;

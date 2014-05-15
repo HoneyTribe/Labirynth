@@ -36,7 +36,9 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Standard", 2.4f)
 					},5,15,7,7));
 					//3
-					levels2.Add(new Level(2,new List<MonsterTemplate>{},5,6,6,6));
+					levels2.Add(new Level(2,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 2.4f)
+					},20,6,6,6));
 					//4
 					levels2.Add(new Level(2,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
@@ -89,7 +91,9 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Standard", 2.4f)
 					},5,15,7,7));
 					//3
-					levels3.Add(new Level(3,new List<MonsterTemplate>{},5,6,6,6));
+					levels3.Add(new Level(3,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 2.4f)
+					},20,6,6,6));
 					//4
 					levels3.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
@@ -142,7 +146,9 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Standard", 2.4f)
 					},5,15,7,7));
 					//3
-					levels4.Add(new Level(4,new List<MonsterTemplate>{},5,6,6,6));
+					levels4.Add(new Level(4,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 2.4f)
+					},20,6,6,6));
 					//4
 					levels4.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
