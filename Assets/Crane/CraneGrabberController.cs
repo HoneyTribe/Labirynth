@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CraneGrabberController : MonoBehaviour {
 
-	private float grabberSpeed = 10f;
+	private float grabberSpeed = 20f;
 
 	private Vector3 grabberPosition;
 	private Vector3 newGrabberPosition;
