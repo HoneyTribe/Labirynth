@@ -5,7 +5,7 @@ public class CraneController : MonoBehaviour {
 
 	public static CraneController instance;
 
-	private static float rotationSpeed = 15f;
+	private static float rotationSpeed = 150f;
 	private static float extentionSpeed = 5f;
 	private static float retractingSpeed = 30f;
 
@@ -13,6 +13,7 @@ public class CraneController : MonoBehaviour {
 	private GameObject grabber;
 	private CraneGrabberController grabberController;
 	private GameObject craneLight;
+	private float neckSize;
 
 	private bool retracting;
 	private bool entered;
@@ -23,6 +24,7 @@ public class CraneController : MonoBehaviour {
 		rotationPoint = new Vector3 (transform.position.x,
 		           					 transform.position.y,
 		                             transform.position.z - transform.localScale.z / 2f);
+		neckSize = transform.localScale.z;
 		grabber = GameObject.Find ("Grabber");
 		grabberController = grabber.GetComponent<CraneGrabberController> ();
 		craneLight = GameObject.Find ("CraneLight");
@@ -51,6 +53,8 @@ public class CraneController : MonoBehaviour {
 	{
 		if ((!grabberController.isPickingUp()) && (!grabberController.isSmashing()))
 		{
+			float newRotationSpeed = rotationSpeed * neckSize / transform.localScale.z; 
+
 			Vector3 neckPosition = transform.localPosition;
 			Quaternion neckRotation = transform.localRotation;
 			Vector3 neckScale = transform.localScale;
@@ -58,14 +62,14 @@ public class CraneController : MonoBehaviour {
 
 			if ((input.x > 0) && (transform.rotation.y < 0.6))
 			{
-				transform.RotateAround (rotationPoint, Vector3.up, rotationSpeed * Time.deltaTime);
-				grabber.transform.RotateAround (rotationPoint, Vector3.up, rotationSpeed * Time.deltaTime);
+				transform.RotateAround (rotationPoint, Vector3.up, newRotationSpeed * Time.deltaTime);
+				grabber.transform.RotateAround (rotationPoint, Vector3.up, newRotationSpeed * Time.deltaTime);
 			}
 
 			if ((input.x < 0) && (transform.rotation.y > -0.6))
 			{
-				transform.RotateAround (rotationPoint, Vector3.up, -rotationSpeed * Time.deltaTime);
-				grabber.transform.RotateAround (rotationPoint, Vector3.up, -rotationSpeed * Time.deltaTime);
+				transform.RotateAround (rotationPoint, Vector3.up, -newRotationSpeed * Time.deltaTime);
+				grabber.transform.RotateAround (rotationPoint, Vector3.up, -newRotationSpeed * Time.deltaTime);
 			}
 
 			RestorePosition (neckPosition, neckRotation, neckScale, grabberPos);
