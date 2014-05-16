@@ -1972,7 +1972,12 @@ public class AstarPathEditor : Editor {
 	}
 	
 	/** Make sure every graph has a graph editor */
-	public void CheckGraphEditors (bool forceRebuild = false) {
+	public void CheckGraphEditors ()
+	{
+		CheckGraphEditors (false);
+	}
+
+	public void CheckGraphEditors (bool forceRebuild) {
 		if (forceRebuild || graphEditors == null || script.graphs == null || script.graphs.Length != graphEditors.Length) {
 				
 			if (script.graphs == null) {
@@ -2127,7 +2132,13 @@ public class AstarPathEditor : Editor {
 		}
 		return h;
 	}
-	public void SaveGraphsAndUndo (EventType et = EventType.Used) {
+
+	public void SaveGraphsAndUndo()
+	{
+		SaveGraphsAndUndo (EventType.Used);
+	}
+
+	public void SaveGraphsAndUndo (EventType et) {
 		//Serialize the settings of the graphs
 
 		//Dont process undo events in editor, we don't want to reset graphs

@@ -178,9 +178,9 @@ namespace AssemblyCSharp
 					{
 						float zPosition = offsetZ + planeSizeZ/2f - spaceZ * z;
 						// remove walls blocking monster entrance
-						if (((x != 1) && (x != sizeX * 2 - 1)) ||
-						    (zPosition > MONSTER_DOOR + 4) || (zPosition < MONSTER_DOOR - 4))
-						{
+						//if (((x != 1) && (x != sizeX * 2 - 1)) ||
+						//    (zPosition > MONSTER_DOOR + 4) || (zPosition < MONSTER_DOOR - 4))
+						//{
 							wallPrefab.transform.localScale = new Vector3(scaleFactorX + compensatePillarInnerRadius, 
 							                                              wallPrefab.transform.localScale.y,
 							                                              wallPrefab.transform.localScale.z);
@@ -193,7 +193,7 @@ namespace AssemblyCSharp
 							{
 								obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
 							}
-						}
+						//}
 					}
 				}				
 			}
@@ -288,6 +288,23 @@ namespace AssemblyCSharp
 				}
 				return new Vector3(position.x, 0, -16);
 			}
+		}
+
+		public List<float> getMonsterWalkablePositions()
+		{
+			List<float> positions = new List<float>();
+			
+			for (int z=1; z<sizeZ * 2; z+=2) 
+			{
+				float zPosition = offsetZ + planeSizeZ/2f - spaceZ * z;
+				// total monster size = 2.6
+				if ((zPosition + 1.2 < MONSTER_DOOR + 4.5) && (zPosition - 1.2 > MONSTER_DOOR - 4.5))
+				{
+					positions.Add(zPosition);
+				}
+			}
+			
+			return positions;
 		}
 	}
 }

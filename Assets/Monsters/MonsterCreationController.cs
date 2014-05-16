@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MonsterCreationController : MonoBehaviour {
 
@@ -47,9 +48,12 @@ public class MonsterCreationController : MonoBehaviour {
 	{
 		GameObject prefab = getPrefab (monsterTemplate.getType());
 
-		Vector3 pos = new Vector3 (door.transform.localPosition.x - 3 * door.transform.forward.x,
+		List<float> position = AssemblyCSharp.Instantiation.instance.getMonsterWalkablePositions ();
+		int posIndex = Random.Range (0, position.Count);
+
+		Vector3 pos = new Vector3 (door.transform.localPosition.x + 3 * door.transform.right.x,
 		                           prefab.transform.position.y,
-		                           prefab.transform.position.z);
+		                           position[posIndex]);
 		GameObject monster = (GameObject) Instantiate (prefab, pos, Quaternion.Euler(0, 0, 0)); 
 		monster.GetComponent<AbstractMonsterController> ().setSpeed (monsterTemplate.getSpeed());
 		monster.tag = "Monster";

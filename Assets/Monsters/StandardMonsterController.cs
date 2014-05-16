@@ -62,9 +62,19 @@ public class StandardMonsterController : AbstractMonsterController {
 			}
 		}
 
+		ABPath abPath = ((ABPath) p);
 		if (p.vectorPath.Count > 1)
 		{
-			newPosition = p.vectorPath[1];
+			if ((p.vectorPath[0].x == abPath.originalStartPoint.x) &&
+				(p.vectorPath[0].z == abPath.originalStartPoint.z))
+			{
+				newPosition = p.vectorPath[1];
+			}
+			else
+			{
+				// monster behind the door
+				newPosition = p.vectorPath[0];
+			}
 		}
 		else
 		{
