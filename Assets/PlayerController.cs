@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour, StoppableObject {
 
+	private static int closeDistance = 3;
 	private float speed = 10;	
 
 	private bool lighthouseEntered = false;
@@ -19,11 +20,21 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	private bool paralysed;
 	private Color originalColor;
 
+	private List<GameObject> players = new List<GameObject>();
+
 	void Start()
 	{
 		speed *= LevelFinishedController.instance.gameSpeed;
 		gameController = GameObject.Find ("GameController");
 		originalColor = transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color;
+
+		for (int i=1; i<=LevelFinishedController.instance.getControllers().Count; i++)
+		{
+			if (!gameObject.name.Contains(i.ToString()))
+			{
+				players.Add(GameObject.Find ("Player" + i));
+			}
+		}
 	}
 
 	public void handleLogic(float x, float z, float action, float action2)
@@ -165,6 +176,24 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		}
 	}
 
+	void Update()
+	{
+		if (paralysed)
+		{
+			foreach (GameObject player in players)
+			{
+				if (Vector3.Distance(transform.localPosition, player.transform.localPosition) < closeDistance)
+				{
+					gameController.SendMessage("PlayerReviwed");
+					transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color = originalColor;
+					collider.isTrigger = false;
+					paralysed = false;
+					break;
+				}
+			}
+		}
+	}
+
 	public bool hasEnteredAnyMachine()
 	{
 		return lighthouseEntered || craneEntered || portalGunEntered;
@@ -212,7 +241,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		if((collision.collider.name == "Monster(Clone)") ||
  		   (collision.collider.name == "FlyingMonster(Clone)"))
 		{
-			if (!inputBlocked)
+			if (!paralysed)
 			{
 				paralysed = true;
 				gameController.SendMessage("PlayerParalysed");
@@ -222,7 +251,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				collision.collider.rigidbody.angularVelocity = Vector3.zero;
 				collision.gameObject.SendMessage("Recalculate");
 			}
-			freeze();
 		}
 	}
 
