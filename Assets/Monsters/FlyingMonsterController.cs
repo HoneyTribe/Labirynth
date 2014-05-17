@@ -12,14 +12,20 @@ public class FlyingMonsterController : AbstractMonsterController {
 
 		if ((recalculateTrigger) || (distance == 0) || (Mathf.Abs(distance - prevDistance) < EPSILON))
 		{
-			Vector3 targetPosition = getClosest(getTarget());
-			if (!maze.isInside(transform.position))
+			Vector3 targetPosition;
+			if ((transform.position.x > AssemblyCSharp.Instantiation.planeSizeX/2) ||
+				(transform.position.x < -AssemblyCSharp.Instantiation.planeSizeX/2))
 			{
 				targetPosition = new Vector3(transform.position.x - 3 * Mathf.Sign(transform.position.x),
 					                         transform.position.y,
 					                         transform.position.z);
 
 			}
+			else
+			{
+				targetPosition = getClosest(getTarget());
+			}
+
 			if (Vector3.Distance(transform.localPosition, targetPosition) > updateDistance)
 			{
 				newPosition = transform.localPosition +
