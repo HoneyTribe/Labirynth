@@ -4,13 +4,13 @@ using System.Collections;
 public class ScoreController : MonoBehaviour {
 
 	private int score;
+	private int numberOfPlayers;
 
 	private GameObject leftDoor;
 	private GameObject rightDoor;
 	private GameObject leftExitLight;
 	private GameObject rightExitLight;
 	private GameObject[] candleLights;
-	private LevelFinishedController levelFinishedController;
 	private GameObject fusionLight;
 	
 	void Start()
@@ -20,8 +20,8 @@ public class ScoreController : MonoBehaviour {
 		leftExitLight = GameObject.Find ("winLightLeft");
 		rightExitLight = GameObject.Find ("winLightRight");
 		candleLights = GameObject.FindGameObjectsWithTag ("CandleLightTag");
-		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController>();
-		score = levelFinishedController.getNumberOfKeys ();
+		score = LevelFinishedController.instance.getNumberOfKeys ();
+		numberOfPlayers = LevelFinishedController.instance.getControllers ().Count;
 		fusionLight = GameObject.Find ("lightHousePointLight");
 	}
 
@@ -49,5 +49,19 @@ public class ScoreController : MonoBehaviour {
 			//}
 			GameObject.Find ("GameController").SendMessage("ActivateFusion");
 		}
+	}
+
+	public void PlayerParalysed()
+	{
+		numberOfPlayers --; 
+		if (numberOfPlayers == 0)
+		{
+			StartCoroutine(LevelFinishedController.instance.PlayerLost());
+		}
+	}
+
+	public void PlayerReviwed()
+	{
+		numberOfPlayers ++;
 	}
 }

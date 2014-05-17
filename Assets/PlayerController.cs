@@ -10,24 +10,25 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	private bool craneEntered = false;
 	private bool portalGunEntered = false;
 
-	private bool gameFinished = false;
-
-	private GameObject levelController;
+	private GameObject gameController;
 
 	private AssemblyCSharp.Inventory inventory = new AssemblyCSharp.Inventory();
 
 	private bool playerActive;
 	private bool inputBlocked;
+	private bool paralysed;
+	private Color originalColor;
 
 	void Start()
 	{
 		speed *= LevelFinishedController.instance.gameSpeed;
-		levelController = GameObject.Find ("LevelController");
+		gameController = GameObject.Find ("GameController");
+		originalColor = transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color;
 	}
 
 	public void handleLogic(float x, float z, float action, float action2)
 	{
-		if ((inputBlocked) || (LevelFinishedController.instance.isStopped()))
+		if ((inputBlocked) || (paralysed) || (LevelFinishedController.instance.isStopped()))
 		{
 			return;
 		}
@@ -169,6 +170,10 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		return lighthouseEntered || craneEntered || portalGunEntered;
 	}
 
+	public bool isParalysed()
+	{
+		return this.paralysed;
+	}
 
 	public void setStopped(bool inputBlocked)
 	{
@@ -204,36 +209,20 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				DroneController.instance.TurnOn();
 			}
 		}
-		if(collision.collider.name == "ExitTrigger")
-		{
-			if (!gameFinished)
-			{
-				gameFinished = true;
-				gameObject.transform.Translate(gameObject.transform.localPosition.x * 10, 0, 0);
-				levelController.gameObject.SendMessage("PlayerFinished");
-			}
-		}
 		if((collision.collider.name == "Monster(Clone)") ||
  		   (collision.collider.name == "FlyingMonster(Clone)"))
 		{
-			if (!gameFinished)
+			if (!inputBlocked)
 			{
-				gameFinished = true;
-				levelController.gameObject.SendMessage("PlayerLost");
+				paralysed = true;
+				gameController.SendMessage("PlayerParalysed");
+				transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color=Color.grey;
+				collider.isTrigger = true;
+				collision.collider.rigidbody.velocity = Vector3.zero;
+				collision.collider.rigidbody.angularVelocity = Vector3.zero;
+				collision.gameObject.SendMessage("Recalculate");
 			}
 			freeze();
-		}
-		if(collision.collider.name.Contains("Player"))
-		{
-			rigidbody.velocity = Vector3.zero;
-		}
-	}
-
-	void OnCollisionExit (Collision collision)
-	{
-		if(collision.collider.name.Contains("Player"))
-		{
-			rigidbody.velocity = Vector3.zero;
 		}
 	}
 

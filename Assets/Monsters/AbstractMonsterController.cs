@@ -119,7 +119,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		List<Vector3> players = new List<Vector3> ();
 		foreach (PlayerController playerController in playerControllers)
 		{
-			if (!playerController.hasEnteredAnyMachine())
+			if ((!playerController.hasEnteredAnyMachine()) && (!playerController.isParalysed()))
 			{
 				players.Add (playerController.gameObject.transform.position);
 			}
@@ -130,7 +130,10 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		{
 			foreach (PlayerController playerController in playerControllers)
 			{
-				players.Add (playerController.gameObject.transform.position);
+				if (!playerController.isParalysed())
+				{
+					players.Add (playerController.gameObject.transform.position);
+				}
 			}
 		}
 

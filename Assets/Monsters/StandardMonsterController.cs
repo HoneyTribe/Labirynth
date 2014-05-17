@@ -65,8 +65,8 @@ public class StandardMonsterController : AbstractMonsterController {
 		ABPath abPath = ((ABPath) p);
 		if (p.vectorPath.Count > 1)
 		{
-			if ((p.vectorPath[0].x == abPath.originalStartPoint.x) &&
-				(p.vectorPath[0].z == abPath.originalStartPoint.z))
+			if ((Mathf.Abs(p.vectorPath[0].x - abPath.originalStartPoint.x) < EPSILON) &&
+			    (Mathf.Abs(p.vectorPath[0].z - abPath.originalStartPoint.z) < EPSILON))
 			{
 				newPosition = p.vectorPath[1];
 			}

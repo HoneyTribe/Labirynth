@@ -97,7 +97,7 @@ public class LevelFinishedController : MonoBehaviour {
 		LoadNewLevel();
 	}
 
-	IEnumerator PlayerLost () 
+	public IEnumerator PlayerLost () 
 	{
 		gameOver = true; 
 		stopped = true;
