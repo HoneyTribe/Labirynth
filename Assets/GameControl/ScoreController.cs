@@ -54,6 +54,7 @@ public class ScoreController : MonoBehaviour {
 	public void PlayerParalysed()
 	{
 		numberOfPlayers --; 
+		GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
 		if (numberOfPlayers == 0)
 		{
 			StartCoroutine(LevelFinishedController.instance.PlayerLost());

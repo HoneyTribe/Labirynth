@@ -101,7 +101,6 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		gameOver = true; 
 		stopped = true;
-		GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
 		yield return new WaitForSeconds(2);
 		gameOver = false;
 		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
