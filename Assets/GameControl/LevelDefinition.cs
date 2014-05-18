@@ -24,55 +24,55 @@ namespace AssemblyCSharp
 					// keys, monsters, time of 1st monster appear, time of subsequent mosnters,
 					// maze rows, maze columns
 
-				// 1 player levels
-					levels1.Add(new Level(1,new List<MonsterTemplate>{},15,15,6,6));
+					// 1 player levels
+					levels1.Add(new Level(1,new List<MonsterTemplate>{},15,15,6,6, null));
 
-		 	    // 2 player levels
+		 	  		  // 2 player levels
 
 					//1
-					levels2.Add(new Level(1,new List<MonsterTemplate>{},15,15,6,6));
+					levels2.Add(new Level(1,new List<MonsterTemplate>{},15,15,6,6, null));
 					//2
 					levels2.Add(new Level(1,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.4f)
-					},5,15,7,7));
+					},5,15,7,7, null));
 					//3
 					levels2.Add(new Level(2,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.4f)
-					},15,6,6,6));
+					},15,6,6,6, null));
 					//4
 					levels2.Add(new Level(2,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
 						new MonsterTemplate("Standard", 2.6f)
-					},10,15,7,7));
+					},10,15,7,7, null));
 					//5
 					levels2.Add(new Level(2,new List<MonsterTemplate>{
 						new MonsterTemplate("Flying", 2.0f)
-					},5,6,7,7));
+					},5,6,7,7, null));
 					//6
 					levels2.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Flying", 2.4f)
-					},5,6,8,8));
+					},5,6,8,8, null));
 					//7
 					levels2.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f)
-					},5,6,9,9));
+					},5,6,9,9, null));
 					//8
 					levels2.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f),
 						new MonsterTemplate("Standard", 3.2f)
-					},5,6,9,9));
+					},5,6,9,9, "EnableNoWallsEnding"));
 					//9
 					levels2.Add(new Level(5,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f)
-					},5,10,10,10));
+					},5,10,10,10, null));
 					//10
 					levels2.Add(new Level(5,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
@@ -80,54 +80,54 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Flying", 2.4f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f)
-					},5,10,10,10));	
+					},5,10,10,10, null));	
 
 					// 3 player levels	
 
 					//1
-					levels3.Add(new Level(2,new List<MonsterTemplate>{},15,15,6,6));
+					levels3.Add(new Level(2,new List<MonsterTemplate>{},15,15,6,6, null));
 					//2
 					levels3.Add(new Level(2,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.4f)
-					},5,15,7,7));
+					},5,15,7,7, null));
 					//3
 					levels3.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.4f)
-					},15,6,6,6));
+					},15,6,6,6, null));
 					//4
 					levels3.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
 						new MonsterTemplate("Standard", 2.6f)
-					},10,15,7,7));
+					},10,15,7,7, null));
 					//5
 					levels3.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Flying", 2.0f)
-					},5,6,7,7));
+					},5,6,7,7, null));
 					//6
 					levels3.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Flying", 2.4f)
-					},5,6,8,8));
+					},5,6,8,8, null));
 					//7
 					levels3.Add(new Level(5,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f)
-					},5,6,9,9));
+					},5,6,9,9, null));
 					//8
 					levels3.Add(new Level(5,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f),
 						new MonsterTemplate("Standard", 3.2f)
-					},5,6,9,9));
+					},5,6,9,9, "EnableNoWallsEnding"));
 					//9
 					levels3.Add(new Level(6,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f)
-					},5,10,10,10));
+					},5,10,10,10, null));
 					//10
 					levels3.Add(new Level(6,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
@@ -135,54 +135,54 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Flying", 2.4f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f)
-					},5,10,10,10));	
+					},5,10,10,10, null));	
 
 					// 4 player levels
 
 					//1
-					levels4.Add(new Level(3,new List<MonsterTemplate>{},15,15,6,6));
+					levels4.Add(new Level(3,new List<MonsterTemplate>{},15,15,6,6, null));
 					//2
 					levels4.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.4f)
-					},5,15,7,7));
+					},5,15,7,7, null));
 					//3
 					levels4.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.4f)
-					},15,6,6,6));
+					},15,6,6,6, null));
 					//4
 					levels4.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
 						new MonsterTemplate("Standard", 2.6f)
-					},10,15,7,7));
+					},10,15,7,7, null));
 					//5
 					levels4.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Flying", 2.0f)
-					},5,6,7,7));
+					},5,6,7,7, null));
 					//6
 					levels4.Add(new Level(5,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Flying", 2.4f)
-					},5,6,8,8));
+					},5,6,8,8, null));
 					//7
 					levels4.Add(new Level(6,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f)
-					},5,6,9,9));
+					},5,6,9,9, null));
 					//8
 					levels4.Add(new Level(6,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f),
 						new MonsterTemplate("Standard", 3.2f)
-					},5,6,9,9));
+					},5,6,9,9, "EnableNoWallsEnding"));
 					//9
 					levels4.Add(new Level(7,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f)
-					},5,10,10,10));
+					},5,10,10,10, null));
 					//10
 					levels4.Add(new Level(7,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
@@ -190,7 +190,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Flying", 2.4f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f)
-					},5,10,10,10));
+					},5,10,10,10, null));
 				}
 
 				public List<Level> getLevels(int numOfPlayers)

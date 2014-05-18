@@ -158,6 +158,11 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getMazeSizeZ ();
 	}
+	
+	public string getEnding()
+	{
+		return levelDefinition.getLevels(controllers.Count)[level].getEnding ();
+	}
 
 	public bool isStopped()
 	{

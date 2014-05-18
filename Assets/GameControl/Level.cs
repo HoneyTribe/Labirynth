@@ -10,9 +10,10 @@ namespace AssemblyCSharp
 				private int timeBetweenMonsters;
 				private int mazeSizeX;
 				private int mazeSizeZ;
+				private string ending;
 
 				public Level (int numberOfKeys, List<MonsterTemplate> monsters, int timeToFirstMonster,
-		              int timeBetweenMonsters, int mazeSizeX, int mazeSizeZ)
+		              int timeBetweenMonsters, int mazeSizeX, int mazeSizeZ, string ending)
 				{
 					this.numberOfKeys = numberOfKeys;
 					this.monsters = monsters;
@@ -20,6 +21,7 @@ namespace AssemblyCSharp
 					this.timeBetweenMonsters = timeBetweenMonsters;
 					this.mazeSizeX = mazeSizeX;
 					this.mazeSizeZ = mazeSizeZ;
+					this.ending = ending;
 				}
 
 				public int getNumberOfKeys()
@@ -50,6 +52,11 @@ namespace AssemblyCSharp
 		        public int getMazeSizeZ()
 				{
 					return mazeSizeZ;
+				}
+
+				public string getEnding()
+				{
+					return ending;
 				}
 		}
 }

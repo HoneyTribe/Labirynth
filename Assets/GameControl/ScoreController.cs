@@ -48,6 +48,13 @@ public class ScoreController : MonoBehaviour {
 			//	light.gameObject.SendMessage("TurnLightOn");
 			//}
 			GameObject.Find ("GameController").SendMessage("ActivateFusion");
+			
+			string endingName = LevelFinishedController.instance.getEnding();
+			if (endingName != null)
+			{
+				GameObject.Find ("EndingController").SendMessage(endingName);
+			}
+
 		}
 	}
 
