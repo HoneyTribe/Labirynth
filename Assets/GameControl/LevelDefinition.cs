@@ -25,9 +25,13 @@ namespace AssemblyCSharp
 					// maze rows, maze columns
 
 					// 1 player levels
-					levels1.Add(new Level(1,new List<MonsterTemplate>{},15,15,6,6, null));
 
-		 	  		  // 2 player levels
+					//1
+					levels1.Add(new Level(30,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 20.4f)
+					},1,15,7,7, null));
+
+		 	  		// 2 player levels
 
 					//1
 					levels2.Add(new Level(1,new List<MonsterTemplate>{},15,15,6,6, null));
@@ -43,7 +47,7 @@ namespace AssemblyCSharp
 					levels2.Add(new Level(2,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
 						new MonsterTemplate("Standard", 2.6f)
-					},10,15,7,7, null));
+					},10,15,7,7, "EnableNoWallsEnding"));
 					//5
 					levels2.Add(new Level(2,new List<MonsterTemplate>{
 						new MonsterTemplate("Flying", 2.0f)
@@ -52,7 +56,7 @@ namespace AssemblyCSharp
 					levels2.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Flying", 2.4f)
-					},5,6,8,8, null));
+					},5,6,8,8, "EnableNoWallsEnding"));
 					//7
 					levels2.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
@@ -98,7 +102,7 @@ namespace AssemblyCSharp
 					levels3.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
 						new MonsterTemplate("Standard", 2.6f)
-					},10,15,7,7, null));
+					},10,15,7,7, "EnableNoWallsEnding"));
 					//5
 					levels3.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Flying", 2.0f)
@@ -107,7 +111,7 @@ namespace AssemblyCSharp
 					levels3.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Flying", 2.4f)
-					},5,6,8,8, null));
+					},5,6,8,8, "EnableNoWallsEnding"));
 					//7
 					levels3.Add(new Level(5,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
@@ -153,7 +157,7 @@ namespace AssemblyCSharp
 					levels4.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
 						new MonsterTemplate("Standard", 2.6f)
-					},10,15,7,7, null));
+					},10,15,7,7, "EnableNoWallsEnding"));
 					//5
 					levels4.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Flying", 2.0f)
@@ -162,7 +166,7 @@ namespace AssemblyCSharp
 					levels4.Add(new Level(5,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Flying", 2.4f)
-					},5,6,8,8, null));
+					},5,6,8,8, "EnableNoWallsEnding"));
 					//7
 					levels4.Add(new Level(6,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
