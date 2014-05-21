@@ -19,7 +19,7 @@ namespace AssemblyCSharp
 
 		public static int planeSizeX = 40;
 		public static int planeSizeZ = 34;
-		private static int offsetZ = 6;
+		public static int offsetZ = 6;
 
 		private int sizeX;
 		private int sizeZ;
@@ -305,6 +305,46 @@ namespace AssemblyCSharp
 			}
 			
 			return positions;
+		}
+
+		public List<GameObject> createBlockingWalls()
+		{
+			List<GameObject> walls = new List<GameObject> ();
+
+			float scaleFactorX = 2*spaceX - 1f;
+			int z = sizeZ * 2;
+			for (int x=1; x<=sizeX * 2 - 1; x+=2)
+			{
+				if (labirynth.getWalls(x, z))
+				{
+					float zPosition = offsetZ + planeSizeZ/2f - spaceZ * z;
+					wallPrefab.transform.localScale = new Vector3(scaleFactorX + compensatePillarInnerRadius, 
+					                                              wallPrefab.transform.localScale.y,
+					                                              wallPrefab.transform.localScale.z);
+					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
+					                           wallPrefab.transform.position.y - 2.5f,
+					                           zPosition);
+					GameObject obj = (GameObject) Instantiate (wallPrefab, pos, Quaternion.Euler(0, 0, 0));
+					obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
+					walls.Add(obj); 
+				}
+			}
+
+			for (int x=2; x<=sizeX * 2 - 2; x+=2)  // don't draw edges
+			{
+				if (labirynth.getWalls(x, z))
+				{
+					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
+					                           smallWallPrefab.transform.position.y - 2.5f,
+					                           offsetZ + planeSizeZ/2f - spaceZ * z);
+					int angle =  Random.Range(0, 4) * 90;
+					GameObject obj = (GameObject)Instantiate (smallWallPrefab, pos, Quaternion.Euler(0, angle, 0)); 
+					obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
+					walls.Add(obj); 
+				}
+			}
+
+			return walls;
 		}
 	}
 }

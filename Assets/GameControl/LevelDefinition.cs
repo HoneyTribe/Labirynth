@@ -69,7 +69,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f),
 						new MonsterTemplate("Standard", 3.2f)
-					},5,6,9,9, "EnableNoWallsEnding"));
+					},5,6,9,9, "EnableTrapEnding"));
 					//9
 					levels2.Add(new Level(5,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
