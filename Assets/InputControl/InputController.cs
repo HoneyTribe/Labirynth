@@ -206,15 +206,15 @@ public class InputController {
 			InputControl action2control;
 			if (left)
 			{
-				x = inputDevice.LeftStickVector.x * Time.deltaTime;
-				z = inputDevice.LeftStickVector.y * Time.deltaTime;
+				x = inputDevice.LeftStickVector.x;
+				z = inputDevice.LeftStickVector.y;
 				actionAxis = inputDevice.LeftTrigger.Value;
 				action2control = inputDevice.LeftBumper;
 			}
 			else
 			{
-				x = inputDevice.RightStickVector.x * Time.deltaTime;
-				z = inputDevice.RightStickVector.y * Time.deltaTime;
+				x = inputDevice.RightStickVector.x;
+				z = inputDevice.RightStickVector.y;
 				actionAxis = inputDevice.RightTrigger.Value;
 				action2control = inputDevice.RightBumper;
 			}

@@ -62,14 +62,14 @@ public class CraneController : MonoBehaviour {
 
 			if ((input.x > 0) && (transform.rotation.y < 0.6))
 			{
-				transform.RotateAround (rotationPoint, Vector3.up, newRotationSpeed * Time.deltaTime);
-				grabber.transform.RotateAround (rotationPoint, Vector3.up, newRotationSpeed * Time.deltaTime);
+				transform.RotateAround (rotationPoint, Vector3.up, input.x * newRotationSpeed * Time.deltaTime);
+				grabber.transform.RotateAround (rotationPoint, Vector3.up, input.x * newRotationSpeed * Time.deltaTime);
 			}
 
 			if ((input.x < 0) && (transform.rotation.y > -0.6))
 			{
-				transform.RotateAround (rotationPoint, Vector3.up, -newRotationSpeed * Time.deltaTime);
-				grabber.transform.RotateAround (rotationPoint, Vector3.up, -newRotationSpeed * Time.deltaTime);
+				transform.RotateAround (rotationPoint, Vector3.up, input.x * newRotationSpeed * Time.deltaTime);
+				grabber.transform.RotateAround (rotationPoint, Vector3.up, input.x * newRotationSpeed * Time.deltaTime);
 			}
 
 			RestorePosition (neckPosition, neckRotation, neckScale, grabberPos);
@@ -83,7 +83,7 @@ public class CraneController : MonoBehaviour {
 				Vector3 distance = transform.position - rotationPoint;
 				Vector3 grabberDistance = grabber.transform.position - rotationPoint;
 
-				float step = Mathf.Sign(input.z) * Time.deltaTime;
+				float step = input.z * Time.deltaTime;
 				if (retracting)
 				{
 					step *= retractingSpeed;
