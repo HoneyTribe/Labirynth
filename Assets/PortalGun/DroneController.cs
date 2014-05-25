@@ -97,15 +97,15 @@ public class DroneController : MonoBehaviour {
 		else
 		{
 			rigidbody.drag = 0;
-			rigidbody.AddForce (move * 500);
+			rigidbody.AddForce (move * Time.deltaTime * 500);
 			if (move.x != 0)
 			{
-				transform.Rotate(0,0,-move.x * Time.deltaTime * 1000);
+				transform.Rotate(0,0,-move.x * Time.deltaTime * 20);
 			}
 
 			if (move.z != 0)
 			{
-				transform.Rotate(move.z * Time.deltaTime * 1000,0,0);
+				transform.Rotate(move.z * Time.deltaTime * 20,0,0);
 			}
 		}
 	}
