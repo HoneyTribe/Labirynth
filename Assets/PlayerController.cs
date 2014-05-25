@@ -256,6 +256,19 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		}
 	}
 
+	void OnCollisionExit (Collision collision)
+	{
+		if(collision.collider.name == "Block")
+		{
+			rigidbody.velocity = Vector3.zero;
+			rigidbody.angularVelocity = Vector3.zero;
+			collision.collider.rigidbody.velocity = Vector3.zero;
+			collision.collider.rigidbody.angularVelocity = Vector3.zero;
+			AstarPath.active.Scan ();
+			Debug.Log("Hello");
+		}
+	}
+
 	public void OnTriggerEnter(Collider currentCollider)
 	{
 		if (currentCollider.tag == "Item")

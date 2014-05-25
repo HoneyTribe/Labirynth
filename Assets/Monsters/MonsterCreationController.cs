@@ -48,7 +48,7 @@ public class MonsterCreationController : MonoBehaviour {
 	{
 		GameObject prefab = getPrefab (monsterTemplate.getType());
 
-		List<float> position = AssemblyCSharp.Instantiation.instance.getMonsterWalkablePositions ();
+		List<float> position = Instantiation.instance.getMonsterWalkablePositions ();
 		int posIndex = Random.Range (0, position.Count);
 
 		Vector3 pos = new Vector3 (door.transform.localPosition.x + 3 * door.transform.right.x,

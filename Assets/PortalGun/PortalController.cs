@@ -34,7 +34,7 @@ public class PortalController : MonoBehaviour {
 			{
 				if ((obj.tag == "Player") || (obj.tag == "Monster"))
 				{
-					Vector3 centralPosition = AssemblyCSharp.Instantiation.instance.getCentralPosition(theOtherPortal.transform.position);
+					Vector3 centralPosition = Instantiation.instance.getCentralPosition(theOtherPortal.transform.position);
 					Vector3 pointBetween = Vector3.Lerp(centralPosition, theOtherPortal.transform.position, 0.5f);
 					obj.transform.position = new Vector3(pointBetween.x, obj.transform.position.y, pointBetween.z);
 

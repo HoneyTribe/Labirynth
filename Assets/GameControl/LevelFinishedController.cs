@@ -164,6 +164,11 @@ public class LevelFinishedController : MonoBehaviour {
 		return levelDefinition.getLevels(controllers.Count)[level].getEnding ();
 	}
 
+	public string getPuzzleName()
+	{
+		return levelDefinition.getLevels(controllers.Count)[level].getPuzzleName ();
+	}
+
 	public bool isStopped()
 	{
 		return stopped;

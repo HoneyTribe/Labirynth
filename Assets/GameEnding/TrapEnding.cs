@@ -18,7 +18,7 @@ public class TrapEnding : MonoBehaviour {
 	{
 		foreach (GameObject pillar in GameObject.FindGameObjectsWithTag ("Pillar"))
 		{
-			if (Mathf.Abs(pillar.transform.position.z + AssemblyCSharp.Instantiation.planeSizeZ/2f - AssemblyCSharp.Instantiation.offsetZ) > 0.1)
+			if (Mathf.Abs(pillar.transform.position.z + Instantiation.planeSizeZ/2f - Instantiation.offsetZ) > 0.1)
 			{
 				pillars.Add(pillar);
 			}
@@ -26,7 +26,7 @@ public class TrapEnding : MonoBehaviour {
 		
 		foreach (GameObject wall in GameObject.FindGameObjectsWithTag ("Wall"))
 		{
-			if (Mathf.Abs(wall.transform.position.z + AssemblyCSharp.Instantiation.planeSizeZ/2f - AssemblyCSharp.Instantiation.offsetZ) > 0.1)
+			if (Mathf.Abs(wall.transform.position.z + Instantiation.planeSizeZ/2f - Instantiation.offsetZ) > 0.1)
 			{
 				walls.Add(wall);
 			}
@@ -86,7 +86,7 @@ public class TrapEnding : MonoBehaviour {
 	
 	void EnableTrapEnding()
 	{
-		risingWalls = AssemblyCSharp.Instantiation.instance.createBlockingWalls();
+		risingWalls = Instantiation.instance.createBlockingWalls();
 		this.endingEnabled = true;
 	}
 }

@@ -25,9 +25,9 @@ public class JumpBehaviour : MonoBehaviour {
 				time = 0;
 				Vector3 forward = transform.forward.normalized;
 				rigidbody.velocity = new Vector3 (forward.x, 0, forward.z) * speed;
-				timeAir = new Vector3(2 * AssemblyCSharp.Instantiation.instance.getSpaceX() * forward.x,
+				timeAir = new Vector3(2 * Instantiation.instance.getSpaceX() * forward.x,
 					                  0,
-					                  2 * AssemblyCSharp.Instantiation.instance.getSpaceZ() * forward.z).magnitude / speed;
+					                  2 * Instantiation.instance.getSpaceZ() * forward.z).magnitude / speed;
 					
 			}
 

@@ -12,6 +12,11 @@ public class WallCollisionController : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider collider)
 	{
+		if (collider.gameObject.rigidbody == null)
+		{
+			return;
+		}
+
 		if (collider.rigidbody.useGravity == true)
 		{
 			if (gameObject.tag == "Wall")

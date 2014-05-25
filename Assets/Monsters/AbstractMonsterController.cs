@@ -9,8 +9,6 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	protected float speed;
 
-	protected AssemblyCSharp.Instantiation maze;
-
 	private GameObject topLight;
 	protected GameObject device;
 	private List<PlayerController> playerControllers = new List<PlayerController>();
@@ -35,7 +33,6 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		textMesh = gameObject.GetComponentInChildren<TextMesh> ();
 
 		GameObject gameController = GameObject.Find ("GameController");
-		maze = gameController.GetComponent<AssemblyCSharp.Instantiation>();
 		device = GameObject.Find ("Device");
 		for (int i = 1; i<= LevelFinishedController.instance.getControllers().Count; i++)
 		{
@@ -149,7 +146,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		// get all inside
 		foreach (Vector3 player in players)
 		{
-			if (maze.isInside(player))
+			if (Instantiation.instance.isInside(player))
 		    {
 				closestPlayers.Add (player);
 			}

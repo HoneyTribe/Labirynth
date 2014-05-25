@@ -13,8 +13,8 @@ public class FlyingMonsterController : AbstractMonsterController {
 		if ((recalculateTrigger) || (distance == 0) || (Mathf.Abs(distance - prevDistance) < EPSILON))
 		{
 			Vector3 targetPosition;
-			if ((transform.position.x > AssemblyCSharp.Instantiation.planeSizeX/2) ||
-				(transform.position.x < -AssemblyCSharp.Instantiation.planeSizeX/2))
+			if ((transform.position.x > Instantiation.planeSizeX/2) ||
+				(transform.position.x < -Instantiation.planeSizeX/2))
 			{
 				targetPosition = new Vector3(transform.position.x - 3 * Mathf.Sign(transform.position.x),
 					                         transform.position.y,
