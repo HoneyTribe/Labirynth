@@ -3,19 +3,22 @@ using System.Collections.Generic;
 
 public class Labirynth
 {
-	bool[,] maze;
+	public const int WALL = 0;
+	public const int MAZE = 1;
+	public const int GRID = 2;
+
+	int[,] maze;
 	Vector2 start;
-	Vector2 end;
 	int sizeX;
 	int sizeY;
 
 	List<KeyPosition> keys = new List<KeyPosition> ();
 
-	public Labirynth (int sizeX, int sizeY, bool[,] grid)
+	public Labirynth (int sizeX, int sizeY, int[,] grid)
 	{
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;
-		this.maze = new bool[sizeX * 2 + 1, sizeY * 2 + 1];
+		this.maze = new int[sizeX * 2 + 1, sizeY * 2 + 1];
 		if (grid != null)
 		{
 			this.maze = grid;
@@ -23,7 +26,6 @@ public class Labirynth
 
 		int entrance =  Random.Range(1, sizeX-1);
 		this.start = new Vector2(1 + 2 * entrance, 2*sizeY - 1);
-		this.end = new Vector2(1 + 2 * (sizeX - entrance), 1);
 			
 		//make the entrance wider
 		makeVisited (new Vector2 (start.x, start.y));;
@@ -40,7 +42,7 @@ public class Labirynth
 
 	public void makeVisited(Vector2 pos)
 	{
-		this.maze[(int) pos.x, (int) pos.y] = true;
+		this.maze[(int) pos.x, (int) pos.y] = Labirynth.MAZE;
 	}
 
 	public Move convertToMove(int input)
@@ -71,8 +73,7 @@ public class Labirynth
 			Move move = convertToMove(i);
 			if  ((pos.x + move.getNewPos().x > 0) && (pos.x + move.getNewPos().x < sizeX * 2) &&
 			     (pos.y + move.getNewPos().y > 0) && (pos.y + move.getNewPos().y < sizeY * 2) &&
-			     (!maze[(int) (pos.x + move.getNewPos().x), (int) (pos.y + move.getNewPos().y)]) &&
-			     (!maze[(int) (pos.x + move.getWall().x), (int) (pos.y + move.getWall().y)]))
+			     (maze[(int) (pos.x + move.getNewPos().x), (int) (pos.y + move.getNewPos().y)] == Labirynth.WALL))
 			{
 				options.Add(move);
 			}
@@ -81,7 +82,7 @@ public class Labirynth
 		return options;
 	}
 
-	public List<Move> findOptionsToMove(bool[,] m, Vector2 pos)
+	public List<Move> findOptionsToMove(int[,] m, Vector2 pos)
 	{
 		List<Move> options = new List<Move>();
 		
@@ -90,7 +91,7 @@ public class Labirynth
 			Move move = convertToMove(i);
 			if  ((pos.x + move.getNewPos().x > 0) && (pos.x + move.getNewPos().x < sizeX * 2) &&
 			     (pos.y + move.getNewPos().y > 0) && (pos.y + move.getNewPos().y < sizeY * 2) &&
-	    		 (m[(int) (pos.x + move.getWall().x), (int) (pos.y + move.getWall().y)]))
+	    		 (m[(int) (pos.x + move.getWall().x), (int) (pos.y + move.getWall().y)] == Labirynth.MAZE))
 			{
 				options.Add(move);
 			}
@@ -105,7 +106,7 @@ public class Labirynth
 		{
 			for (int x = 1; x < sizeX * 2 + 1; x += 2)
 			{
-				if (maze[x, y])
+				if (maze[x, y] == Labirynth.MAZE)
 				{
 					Vector2 temp = new Vector2(x, y);
 					if (findOptions(temp).Count != 0)
@@ -127,7 +128,7 @@ public class Labirynth
 		while(!findCellWithOptions().Equals (Vector2.zero))
 		{	
 			options = findOptions(curr);
-			if ((options.Count == 0) || (curr.Equals(end)))
+			if (options.Count == 0)
 			{
 				print (maze);
 				keys.Add(new KeyPosition(curr, (int) Vector2.Distance(curr, start)));
@@ -143,7 +144,7 @@ public class Labirynth
 		keys.Add(new KeyPosition(curr, (int) Vector2.Distance(curr, start)));
 	}
 
-	public bool getWalls(int x, int y)
+	public int getWalls(int x, int y)
 	{
 		return maze[x, y];
 	}
@@ -175,21 +176,14 @@ public class Labirynth
 		return start;
 	}
 
-	public void print(bool[,] m)
+	public void print(int[,] m)
 	{
 		string line = "";
 		for (int y = 0; y < sizeY * 2 + 1; y++)					{
 			
 			for (int x = 0; x < sizeX * 2 + 1; x++)
 			{
-				if (m[x,y])
-				{
-					line = line + "o";
-				}
-				else
-				{
-					line = line + "d";
-				}
+				line = line + m[x,y];
 			}
 			//Debug.Log(line);
 			line = line + System.Environment.NewLine;

@@ -4,8 +4,8 @@ using System.Collections.Generic;
 
 public class First : Puzzle
 {
-	private const int sizeX = 3;
-	private const int sizeZ = 3;
+	private const int sizeX = 5;
+	private const int sizeZ = 5;
 
 	private Rect position;
 	private Entrance entrance;
@@ -57,19 +57,23 @@ public class First : Puzzle
 
 	}
 
-	public bool[,] getGrid()
+	public int[,] getGrid()
 	{
-		bool [,] grid = new bool[mazeSizeX * 2 + 1, mazeSizeZ * 2 + 1];
+		int [,] grid = new int[mazeSizeX * 2 + 1, mazeSizeZ * 2 + 1];
 		for (int i=(int)position.x; i < position.x + position.width; i++)
 		{
 			for (int j=(int)position.y; j < position.y + position.height; j++)
 			{
-				grid[i,j] = true;
+				grid[i,j] = Labirynth.GRID;
 			}
 		}
-		grid [(int) entrance.getWallEntrance().x, (int) entrance.getWallEntrance().y] = true;
-		grid [(int) entrance.getBlockingWall().x, (int) entrance.getBlockingWall().y] = false;
-		grid [(int) entrance.getBlockingPillar().x, (int) entrance.getBlockingPillar().y] = false;
+		grid [(int) entrance.getWallEntrance().x, (int) entrance.getWallEntrance().y] = Labirynth.MAZE; // OR GRID
+		grid [(int) entrance.getBlockingWall().x, (int) entrance.getBlockingWall().y] = Labirynth.WALL;
+		grid [(int) entrance.getBlockingPillar().x, (int) entrance.getBlockingPillar().y] = Labirynth.WALL;
+		Debug.Log (entrance.getEntrance ());
+		Debug.Log (entrance.getWallEntrance ());
+		Debug.Log (entrance.getBlockingWall ());
+		Debug.Log (entrance.getBlockingPillar ());
 
 		return grid;
 	}

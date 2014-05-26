@@ -37,7 +37,7 @@ public class Instantiation : MonoBehaviour {
 		spaceX = planeSizeX / (sizeX * 2f);
 		spaceZ = planeSizeZ / (sizeZ * 2f);
 
-		bool[,] grid = null;
+		int[,] grid = null;
 		if (LevelFinishedController.instance.getPuzzleName() != null)
 		{
 			System.Type type = System.Type.GetType (LevelFinishedController.instance.getPuzzleName());
@@ -171,7 +171,7 @@ public class Instantiation : MonoBehaviour {
 		{
 			for (int x=2; x<=sizeX * 2 - 2; x+=2)  // don't draw edges
 			{
-				if (!labirynth.getWalls(x, z))
+				if (labirynth.getWalls(x, z) == Labirynth.WALL)
 				{
 					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 					                           smallWallPrefab.transform.position.y,
@@ -196,7 +196,7 @@ public class Instantiation : MonoBehaviour {
 		{
 			for (int x=1; x<=sizeX * 2 - 1; x+=2)
 			{
-				if (!labirynth.getWalls(x, z))
+				if (labirynth.getWalls(x, z) == Labirynth.WALL)
 				{
 					float zPosition = offsetZ + planeSizeZ/2f - spaceZ * z;
 					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
@@ -222,7 +222,7 @@ public class Instantiation : MonoBehaviour {
 		{
 			for (int x=2; x<=sizeX * 2 -2 ; x+=2)  // don't draw edges
 			{
-				if (!labirynth.getWalls(x, z))		
+				if (labirynth.getWalls(x, z) == Labirynth.WALL)		
 				{
 					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 					                           wallPrefab.transform.position.y,
@@ -330,16 +330,16 @@ public class Instantiation : MonoBehaviour {
 		int z = sizeZ * 2;
 		for (int x=1; x<=sizeX * 2 - 1; x+=2)
 		{
-			if (labirynth.getWalls(x, z))
+			if (labirynth.getWalls(x, z) == Labirynth.MAZE)
 			{
 				float zPosition = offsetZ + planeSizeZ/2f - spaceZ * z;
-				wallPrefab.transform.localScale = new Vector3(scaleFactorX + compensatePillarInnerRadius, 
-				                                              wallPrefab.transform.localScale.y,
-				                                              wallPrefab.transform.localScale.z);
 				Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 				                           wallPrefab.transform.position.y - 2.5f,
 				                           zPosition);
 				GameObject obj = (GameObject) Instantiate (wallPrefab, pos, Quaternion.Euler(0, 0, 0));
+				obj.transform.localScale = new Vector3(scaleFactorX + compensatePillarInnerRadius, 
+		                                               wallPrefab.transform.localScale.y,
+		                                               wallPrefab.transform.localScale.z);
 				obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
 				walls.Add(obj); 
 			}
@@ -347,7 +347,7 @@ public class Instantiation : MonoBehaviour {
 
 		for (int x=2; x<=sizeX * 2 - 2; x+=2)  // don't draw edges
 		{
-			if (labirynth.getWalls(x, z))
+			if (labirynth.getWalls(x, z) == Labirynth.MAZE)
 			{
 				Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 				                           smallWallPrefab.transform.position.y - 2.5f,

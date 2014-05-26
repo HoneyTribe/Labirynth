@@ -3,7 +3,7 @@ using System;
 
 public interface Puzzle
 {
-	bool[,] getGrid();
+	int[,] getGrid();
 	Entrance getEntrance();
 }
 
