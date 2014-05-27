@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 400000}
   - 23: {fileID: 2300000}
   - 102: {fileID: 10200000}
-  m_Layer: 17
+  m_Layer: 25
   m_Name: FloatingText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,9 +31,9 @@ GameObject:
   - 114: {fileID: 11400000}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400002}
-  m_Layer: 17
-  m_Name: Monster
-  m_TagString: Untagged
+  m_Layer: 25
+  m_Name: FlyingMonster
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,7 +94,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: cab0f5a06092b3441843f3f8e4620d68, type: 2}
+  - {fileID: 2100000, guid: 2c0d717e306176c4e99741bdf401b3bb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a57737fb872566c4d94a235c33d20800, type: 3}
+  m_Script: {fileID: 11500000, guid: 2202ec192cbb2ed47a0ccad2a4cc947d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11400002

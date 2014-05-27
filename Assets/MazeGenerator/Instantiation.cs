@@ -8,7 +8,7 @@ public class Instantiation : MonoBehaviour {
 
 	public static Instantiation instance;
 
-	private static float compensatePillarInnerRadius = 0.2f;
+	public static float compensatePillarInnerRadius = 0.2f;
 
 	public GameObject nodePrefab;
 	public GameObject wallPrefab;
@@ -41,22 +41,9 @@ public class Instantiation : MonoBehaviour {
 		if (LevelFinishedController.instance.getPuzzleName() != null)
 		{
 			System.Type type = System.Type.GetType (LevelFinishedController.instance.getPuzzleName());
-			Puzzle puzzle = ((Puzzle) System.Activator.CreateInstance (type));
+			Puzzle puzzle = (Puzzle)ScriptableObject.CreateInstance(type);
 			grid = puzzle.getGrid();
-
-			float scaleFactorX = 2*spaceX - 1f;
-			float scaleFactorZ = 2*spaceZ - 1f;
-			Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * puzzle.getEntrance().getEntrance().x,
-			                           wallPrefab.transform.position.y,
-			                           offsetZ + planeSizeZ/2f - spaceZ * puzzle.getEntrance().getEntrance().y);			
-			GameObject block = (GameObject) Instantiate (wallPrefab, pos, Quaternion.Euler(0, 0, 0));
-			block.name = "Block";
-			block.transform.localScale = new Vector3(scaleFactorX - compensatePillarInnerRadius, 
-		                                             wallPrefab.transform.localScale.y,
-			                                         scaleFactorZ - compensatePillarInnerRadius);
-			block.AddComponent<Rigidbody>();
-			block.rigidbody.useGravity = true;
-			block.rigidbody.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
+			puzzle.create();
 		}
 
 		labirynth = new Labirynth (sizeX, sizeZ, grid);

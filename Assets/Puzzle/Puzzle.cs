@@ -4,7 +4,7 @@ using System;
 public interface Puzzle
 {
 	int[,] getGrid();
-	Entrance getEntrance();
+	void create();
 }
 
 

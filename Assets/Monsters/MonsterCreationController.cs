@@ -56,7 +56,6 @@ public class MonsterCreationController : MonoBehaviour {
 		                           position[posIndex]);
 		GameObject monster = (GameObject) Instantiate (prefab, pos, Quaternion.Euler(0, 0, 0)); 
 		monster.GetComponent<AbstractMonsterController> ().setSpeed (monsterTemplate.getSpeed());
-		monster.tag = "Monster";
 
 		return monster;
 	}
@@ -64,6 +63,7 @@ public class MonsterCreationController : MonoBehaviour {
 	IEnumerator ShowMonster(string monsterType)
 	{
 		GameObject monster = CreateMonster(monsterDoorLeft, new AssemblyCSharp.MonsterTemplate(monsterType, 0));
+		monster.tag = "TempObject";
 		monsterDoorLeft.gameObject.SendMessage("OpenDoor");
 		yield return new WaitForSeconds(10f);
 		if (monster != null)

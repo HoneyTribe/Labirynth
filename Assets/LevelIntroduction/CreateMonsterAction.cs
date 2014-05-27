@@ -14,7 +14,7 @@ public class CreateMonsterAction : Action  {
 
 	public void act()
 	{
-		if (GameObject.FindGameObjectWithTag("Monster") == null)
+		if (GameObject.FindGameObjectWithTag("TempObject") == null)
 		{
 			gameController.SendMessage ("ShowMonster", monsterType);
 		}
@@ -22,6 +22,6 @@ public class CreateMonsterAction : Action  {
 
 	public bool isFinished()
 	{
-		return GameObject.FindGameObjectWithTag("Monster") != null;
+		return GameObject.FindGameObjectWithTag("TempObject") != null;
 	}
 }

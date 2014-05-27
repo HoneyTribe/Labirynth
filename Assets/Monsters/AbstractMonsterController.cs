@@ -39,7 +39,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			playerControllers.Add (GameObject.Find ("Player" + i).GetComponent<PlayerController>());
 		}
 
-		recalculateTrigger = false;
+		recalculateTrigger = true;
 	}
 
 	void Update () {
@@ -48,7 +48,6 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		{
 			rigidbody.velocity = Vector3.zero;
 			rigidbody.angularVelocity = Vector3.zero;
-			rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 			return;
 		}
 
@@ -189,7 +188,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 //		}
 	}
 
-	void Recalculate()
+	public void Recalculate()
 	{
 		recalculateTrigger = true;
 	}

@@ -99,7 +99,7 @@ public class IntroductionController : MonoBehaviour {
 			// Clean other actions
 			if (!stoppedIntroduction)
 			{
-				GameObject[] monters = GameObject.FindGameObjectsWithTag("Monster");
+				GameObject[] monters = GameObject.FindGameObjectsWithTag("TempObject");
 				foreach (GameObject monster in monters)
 				{
 					Destroy(monster);

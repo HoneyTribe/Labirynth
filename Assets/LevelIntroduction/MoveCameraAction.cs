@@ -35,6 +35,10 @@ public class MoveCameraAction : Action  {
 				if (target.Contains("Player"))
 				{
 					target = "Player";
+				}	
+				if (target.Contains("Monster"))
+				{
+					target = "TempObject";
 				}
 				targetObject = GameObject.FindGameObjectsWithTag(target)[0]; 
 			}
