@@ -110,7 +110,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		this.speed = speed * LevelFinishedController.instance.gameSpeed;
 	}
 
-	protected Vector3[] getTarget()
+	protected List<Vector3> getTarget()
 	{
 		List<Vector3> players = new List<Vector3> ();
 		foreach (PlayerController playerController in playerControllers)
@@ -137,7 +137,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 		if (timeLeft > 0)
 		{
-			return new Vector3[]{device.transform.localPosition};
+			return new List<Vector3>(){device.transform.localPosition};
 		}
 
 		List<Vector3> closestPlayers = new List<Vector3> ();
@@ -156,7 +156,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			closestPlayers = players;
 		}
 
-		return closestPlayers.ToArray ();
+		return closestPlayers;
 
 //		if (closestPlayers.Count != 0)
 //		{

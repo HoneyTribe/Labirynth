@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using Pathfinding;
 
 public class StandardMonsterController : AbstractMonsterController {
@@ -7,6 +7,9 @@ public class StandardMonsterController : AbstractMonsterController {
 	private float prevDistance;
 
 	private Path[] lastPaths = new Path[0];
+
+	private List<Vector3> guardingPositions = new List<Vector3>();
+	private int currentGuardingPosition = 0;
 
 	public override void go () 
 	{
@@ -16,13 +19,21 @@ public class StandardMonsterController : AbstractMonsterController {
 		{
 			if (!isCalculating())
 			{
-				Vector3[] targets = getTarget();
-				lastPaths = new Path[targets.Length];
-				for (int i=0; i < targets.Length; i++)
+				List<Vector3> targets = checkIfAnyTargetAvailable(getTarget());
+				if (targets.Count != 0)
 				{
-					ABPath p = ABPath.Construct (transform.localPosition, targets[i], OnTestPathComplete);
-					lastPaths[i] = p;
-					AstarPath.StartPath(p);
+					lastPaths = new Path[targets.Count];
+					for (int i=0; i < targets.Count; i++)
+					{
+						ABPath p = ABPath.Construct (transform.localPosition, targets[i], OnTestPathComplete);
+						lastPaths[i] = p;
+						AstarPath.StartPath(p);
+					}
+				}
+				else
+				{
+					newPosition = guardingPositions[currentGuardingPosition % guardingPositions.Count];
+					currentGuardingPosition++;
 				}
 			}
 		}
@@ -32,6 +43,22 @@ public class StandardMonsterController : AbstractMonsterController {
 				transform.localPosition, newPosition, Time.deltaTime * speed / distance);
 			prevDistance = distance;
 		}
+	}
+
+	private List<Vector3> checkIfAnyTargetAvailable(List<Vector3> targets)
+	{
+		List<Vector3> available = new List<Vector3> ();
+		GraphNode currentNode = AstarPath.active.GetNearest (transform.position).node;
+		foreach (Vector3 target in targets)
+		{
+			GraphNode node = AstarPath.active.GetNearest (target).node;
+			if (currentNode.Area == node.Area)
+			{
+				available.Add(target);
+			}
+		}
+
+		return available;
 	}
 
 	private void OnTestPathComplete(Path p)
@@ -100,5 +127,10 @@ public class StandardMonsterController : AbstractMonsterController {
 		}
 
 		return calculating;
+	}
+
+	public void AddGuardingPosition(Vector3 position)
+	{
+		guardingPositions.Add (position);
 	}
 }

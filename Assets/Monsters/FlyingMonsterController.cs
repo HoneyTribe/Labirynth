@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class FlyingMonsterController : AbstractMonsterController {
 
@@ -50,7 +50,7 @@ public class FlyingMonsterController : AbstractMonsterController {
 		}
 	}
 
-	Vector3 getClosest(Vector3[] targets)
+	Vector3 getClosest(List<Vector3> targets)
 	{
 		float dist = 100000;
 		Vector3 closestTarget = Vector3.zero;

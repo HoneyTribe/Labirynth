@@ -111,7 +111,23 @@ public class First : ScriptableObject, Puzzle
 			                           monsterPrefab.transform.position.y,
 			                           Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (position.y + monsterNum%(sizeZ+1)));			
 			GameObject monster = (GameObject) Instantiate (monsterPrefab, monsterPos, Quaternion.Euler(0, 0, 0));
+
 			monster.GetComponent<AbstractMonsterController> ().setSpeed (5f);
+
+			StandardMonsterController standardMonsterController = monster.GetComponent<StandardMonsterController> ();
+			if (standardMonsterController != null)
+			{
+				Vector3 pos1 = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i),
+				                            monsterPrefab.transform.position.y,
+				                            Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * position.y);		
+				Vector3 pos2 = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i),
+				                            monsterPrefab.transform.position.y,
+				                            Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (position.y + sizeZ+1));		
+
+				standardMonsterController.AddGuardingPosition(pos1);
+				standardMonsterController.AddGuardingPosition(pos2);
+			}
+
 			monsterNum++;
 		}
 	}
