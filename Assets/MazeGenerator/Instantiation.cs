@@ -50,7 +50,10 @@ public class Instantiation : MonoBehaviour {
 		labirynth.generate ();
 		drawMachines ();
 		drawDevice ();
-		drawKeys (labirynth.getKeys ());
+		if (LevelFinishedController.instance.getPuzzleName() == null)
+		{
+			drawKeys (labirynth.getKeys ());
+		}
 		drawJumps ();
 		drawSmallWalls (labirynth);
 		drawHorisontalWalls (labirynth);

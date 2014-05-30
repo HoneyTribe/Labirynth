@@ -15,6 +15,7 @@ public class First : ScriptableObject, Puzzle
 
 	private GameObject monsterPrefab;
 	private GameObject blockPrefab;
+	private GameObject keyPrefab;
 
 	public First()
 	{
@@ -64,6 +65,7 @@ public class First : ScriptableObject, Puzzle
 
 		monsterPrefab = (GameObject) Resources.Load("Monster");
 		blockPrefab = (GameObject) Resources.Load("Textured Wall");
+		keyPrefab = (GameObject) Resources.Load("KeyContainer");
 	}
 
 	public int[,] getGrid()
@@ -100,14 +102,14 @@ public class First : ScriptableObject, Puzzle
 		block.rigidbody.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
 
 		int monsterNum = 0;
-		for(int i=0; i < sizeX * 2; i+=2)
+		int start = 0;
+		if (entrance.getEntrance().x == position.x)
 		{
-			if ((entrance.getEntrance().x == position.x + i) ||
-				(entrance.getBlockingSpace().x == position.x + i))
-			{
-				continue;
-			}
-			Vector3 monsterPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i),
+			start = 4;
+		}
+		for(int i=0; i < (sizeX - 2) * 2; i+=2)
+		{
+			Vector3 monsterPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i + start),
 			                           monsterPrefab.transform.position.y,
 			                           Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (position.y + monsterNum%(sizeZ+1)));			
 			GameObject monster = (GameObject) Instantiate (monsterPrefab, monsterPos, Quaternion.Euler(0, 0, 0));
@@ -117,10 +119,10 @@ public class First : ScriptableObject, Puzzle
 			StandardMonsterController standardMonsterController = monster.GetComponent<StandardMonsterController> ();
 			if (standardMonsterController != null)
 			{
-				Vector3 pos1 = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i),
+				Vector3 pos1 = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i + start),
 				                            monsterPrefab.transform.position.y,
 				                            Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * position.y);		
-				Vector3 pos2 = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i),
+				Vector3 pos2 = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i + start),
 				                            monsterPrefab.transform.position.y,
 				                            Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (position.y + sizeZ+1));		
 
@@ -129,6 +131,23 @@ public class First : ScriptableObject, Puzzle
 			}
 
 			monsterNum++;
+		}
+
+		int keyNum = LevelFinishedController.instance.getNumberOfKeys ();
+		for(int j=0; j < sizeZ * 2; j+=2)
+		{
+			for(int i=0; i < (sizeX - 2) * 2; i+=2)
+			{
+				if (keyNum == 0)
+				{
+					continue;
+				}
+				keyNum--;
+				Vector3 keyPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i + start),
+				                              keyPrefab.transform.position.y,
+				                              Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (position.y + j));			
+				Instantiate (keyPrefab, keyPos, Quaternion.Euler(0, 0, 0));
+			}
 		}
 	}
 }
