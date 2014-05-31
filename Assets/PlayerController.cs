@@ -254,18 +254,18 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				//collision.gameObject.SendMessage("Recalculate");
 			}
 		}
-	}
 
-	void OnCollisionExit (Collision collision)
-	{
 		if(collision.collider.name == "Block")
 		{
 			rigidbody.velocity = Vector3.zero;
 			rigidbody.angularVelocity = Vector3.zero;
+
+			Vector3 direction = new Vector3(collision.collider.rigidbody.velocity.x,
+			                                collision.collider.rigidbody.velocity.y,
+			                                collision.collider.rigidbody.velocity.z);
 			collision.collider.rigidbody.velocity = Vector3.zero;
 			collision.collider.rigidbody.angularVelocity = Vector3.zero;
-			AstarPath.active.Scan ();
-			Debug.Log("Hello");
+			collision.gameObject.SendMessage("Move", direction);
 		}
 	}
 

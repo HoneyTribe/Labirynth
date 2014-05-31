@@ -98,6 +98,7 @@ public class First : ScriptableObject, Puzzle
 		                                         blockPrefab.transform.localScale.y,
 		                                         scaleFactorZ - Instantiation.compensatePillarInnerRadius);
 		block.AddComponent<Rigidbody>();
+		block.AddComponent<BlockController> ();
 		block.rigidbody.useGravity = true;
 		block.rigidbody.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY;
 
