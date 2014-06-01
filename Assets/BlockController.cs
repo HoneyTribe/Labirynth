@@ -28,20 +28,31 @@ public class BlockController : MonoBehaviour {
 
 	public void Move(Vector3 direction)
 	{
+		Vector3 roundedDirection = new Vector3(Mathf.Round(direction.x),
+		                                       Mathf.Round(direction.y),
+		            						   Mathf.Round(direction.z));
 		if (!moving)
 		{
-			moving = true;
 			float x = 0, z = 0;
-			if (Mathf.Round(direction.x) != 0)
+			if (roundedDirection.x != 0)
 			{
-				x = Mathf.Sign(direction.x) * 2 * Instantiation.instance.getSpaceX();
+				x = Mathf.Sign(roundedDirection.x) * 2 * Instantiation.instance.getSpaceX();
 			}
-			if (Mathf.Round(direction.z) != 0)
+			if (roundedDirection.z != 0)
 			{
-				z = Mathf.Sign(direction.z) * 2 * Instantiation.instance.getSpaceZ();
+				z = Mathf.Sign(roundedDirection.z) * 2 * Instantiation.instance.getSpaceZ();
 			}
-				
-			target = new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z);
+
+			RaycastHit hit;
+			if (Physics.SphereCast(transform.position, 1.2f, roundedDirection, out hit))
+			{
+				if (((x>0) && (hit.distance > 2 * Instantiation.instance.getSpaceX())) ||
+				    ((z>0) && (hit.distance > 2 * Instantiation.instance.getSpaceZ())))
+				{					
+					moving = true;
+					target = new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z);
+				}
+			}
 		}
 	}
 }
