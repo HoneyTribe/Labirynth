@@ -89,7 +89,17 @@ public class Instantiation : MonoBehaviour {
 				                           zPosition);
 
 				GameObject node = (GameObject) Instantiate (nodePrefab, pos, Quaternion.Euler(0, 0, 0));
-				node.transform.parent = nodes.transform;
+
+				// make sure node is not too close to any object
+				RaycastHit hit;
+				if (Physics.SphereCast(node.transform.position, 1.2f, Vector3.up, out hit))
+				{
+					Destroy(node);
+				}
+				else
+				{
+					node.transform.parent = nodes.transform;
+				}
 			}
 		} 
 		AstarPath.active.Scan ();
