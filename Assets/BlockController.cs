@@ -32,11 +32,11 @@ public class BlockController : MonoBehaviour {
 		{
 			moving = true;
 			float x = 0, z = 0;
-			if (direction.x != 0)
+			if (Mathf.Round(direction.x) != 0)
 			{
 				x = Mathf.Sign(direction.x) * 2 * Instantiation.instance.getSpaceX();
 			}
-			if (direction.z != 0)
+			if (Mathf.Round(direction.z) != 0)
 			{
 				z = Mathf.Sign(direction.z) * 2 * Instantiation.instance.getSpaceZ();
 			}

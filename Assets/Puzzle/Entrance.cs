@@ -9,13 +9,12 @@ public class Entrance
 	private Vector2 blockingPillar;
 	private Vector2 blockingSpace;
 
-	public Entrance (Vector2 wallEntrance, Vector2 entrance, Vector2 blockingWall, Vector2 blockingPillar, Vector2 blockingSpace)
+	public Entrance (Vector2 wallEntrance, Vector2 entrance, Vector2 blockingWall, Vector2 blockingPillar)
 	{
 		this.wallEntrance = wallEntrance;
 		this.entrance = entrance;
 		this.blockingWall = blockingWall;
 		this.blockingPillar = blockingPillar;
-		this.blockingSpace = blockingSpace;
 	}
 
 	public Vector2 getWallEntrance()
@@ -36,11 +35,6 @@ public class Entrance
 	public Vector2 getBlockingPillar()
 	{
 		return this.blockingPillar;
-	}
-
-	public Vector2 getBlockingSpace()
-	{
-		return this.blockingSpace;
 	}
 }
 

@@ -32,32 +32,28 @@ public class First : ScriptableObject, Puzzle
 			options.Add (new Entrance(new Vector2(position.x - 1, position.y),
 			                          new Vector2(position.x, position.y),
 			                          new Vector2(position.x + 3, position.y),
-			                          new Vector2(position.x + 3, position.y + 1),
-			                          new Vector2(position.x + 2, position.y)));
+			                          new Vector2(position.x + 3, position.y + 1)));
 		}
 		if (position.x + position.width != mazeSizeX * 2) 
 		{
 			options.Add (new Entrance(new Vector2(position.x + position.width, position.y),
 			                          new Vector2(position.x + position.width - 1, position.y),
 			                          new Vector2(position.x + position.width - 4, position.y),
-			                          new Vector2(position.x + position.width - 4, position.y + 1),
-			                          new Vector2(position.x + position.width - 3, position.y)));
+			                          new Vector2(position.x + position.width - 4, position.y + 1)));
 		}
 		if (position.y - 1 != 0) 
 		{
 			options.Add (new Entrance(new Vector2(position.x, position.y - 1),
 			                          new Vector2(position.x, position.y),
 			                          new Vector2(position.x, position.y + 3),
-			                          new Vector2(position.x + 1, position.y + 3),
-			                          new Vector2(position.x, position.y + 2)));
+			                          new Vector2(position.x + 1, position.y + 3)));
 		}
 		if (position.y + position.height != mazeSizeZ * 2) 
 		{
 			options.Add (new Entrance(new Vector2(position.x, position.y + position.height),
 			                          new Vector2(position.x, position.y + position.height - 1),
 			                          new Vector2(position.x, position.y + position.height - 4),
-			                          new Vector2(position.x + 1, position.y + position.height - 4),
-			                          new Vector2(position.x, position.y + position.height - 3)));
+			                          new Vector2(position.x + 1, position.y + position.height - 4)));
 		}
 
 		int side = UnityEngine.Random.Range (0, options.Count);

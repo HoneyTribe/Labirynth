@@ -259,13 +259,9 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		{
 			rigidbody.velocity = Vector3.zero;
 			rigidbody.angularVelocity = Vector3.zero;
-
-			Vector3 direction = new Vector3(collision.collider.rigidbody.velocity.x,
-			                                collision.collider.rigidbody.velocity.y,
-			                                collision.collider.rigidbody.velocity.z);
 			collision.collider.rigidbody.velocity = Vector3.zero;
 			collision.collider.rigidbody.angularVelocity = Vector3.zero;
-			collision.gameObject.SendMessage("Move", direction);
+			collision.gameObject.SendMessage("Move", -collision.contacts[0].normal);
 		}
 	}
 
