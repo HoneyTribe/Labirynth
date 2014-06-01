@@ -46,8 +46,8 @@ public class BlockController : MonoBehaviour {
 			RaycastHit hit;
 			if (Physics.SphereCast(transform.position, 1.2f, roundedDirection, out hit))
 			{
-				if (((x>0) && (hit.distance > 2 * Instantiation.instance.getSpaceX())) ||
-				    ((z>0) && (hit.distance > 2 * Instantiation.instance.getSpaceZ())))
+				if (((x!=0) && (hit.distance > 2 * Instantiation.instance.getSpaceX())) ||
+				    ((z!=0) && (hit.distance > 2 * Instantiation.instance.getSpaceZ())))
 				{					
 					moving = true;
 					target = new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z);
