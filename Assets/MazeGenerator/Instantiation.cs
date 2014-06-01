@@ -92,7 +92,8 @@ public class Instantiation : MonoBehaviour {
 
 				// make sure node is not too close to any object
 				RaycastHit hit;
-				if (Physics.SphereCast(node.transform.position, 1.2f, Vector3.up, out hit))
+				if ((Physics.SphereCast(node.transform.position, 1.2f, Vector3.up, out hit)) &&
+					(hit.collider.name.Contains("Machine")))
 				{
 					Destroy(node);
 				}
