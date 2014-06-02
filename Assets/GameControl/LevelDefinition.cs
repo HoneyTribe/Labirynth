@@ -36,10 +36,11 @@ namespace AssemblyCSharp
 					//1
 					levels2.Add(new Level(1,new List<MonsterTemplate>{},15,15,6,6, null, null));
 					//2
-					levels2.Add(new Level(15,new List<MonsterTemplate>{},0,0,9,9, null, "First"));
+					levels2.Add(new Level(5,new List<MonsterTemplate>{},0,0,8,8, null, "First"));
 					//levels2.Add(new Level(1,new List<MonsterTemplate>{
 					//	new MonsterTemplate("Standard", 2.4f)
 					//},5,15,7,7, null, null));
+
 					//3
 					levels2.Add(new Level(2,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.4f)
