@@ -27,7 +27,7 @@ namespace AssemblyCSharp
 					// 1 player levels
 
 					//1
-					levels1.Add(new Level(5,new List<MonsterTemplate>{
+					levels1.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.4f)
 					},1,15,7,7, null, null));
 

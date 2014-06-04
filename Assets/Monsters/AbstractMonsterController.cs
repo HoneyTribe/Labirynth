@@ -157,35 +157,6 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		}
 
 		return closestPlayers;
-
-//		if (closestPlayers.Count != 0)
-//		{
-//			float dist = 100000;
-//			Vector3 closestPlayer = Vector3.zero;
-//			foreach (Vector3 player in closestPlayers)
-//			{
-//				if (maze.getDistance(monsterPos, player) < dist)
-//				{
-//					dist = maze.getDistance(monsterPos, player);
-//					closestPlayer = player;
-//				}
-//			}
-//			return closestPlayer;
-//		}
-//		else
-//		{
-//			float dist = 100000;
-//			Vector3 closestPlayer = Vector3.zero;
-//			foreach (Vector3 player in players)
-//			{
-//				if (Vector3.Distance(monsterPos, player) < dist)
-//				{
-//					dist = Vector3.Distance(monsterPos, player);
-//					closestPlayer = player;
-//				}
-//			}
-//			return closestPlayer;
-//		}
 	}
 
 	public void Recalculate()

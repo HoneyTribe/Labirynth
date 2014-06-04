@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections.Generic;
 using Pathfinding;
 
@@ -19,7 +19,13 @@ public class StandardMonsterController : AbstractMonsterController {
 		{
 			if (!isCalculating())
 			{
-				List<Vector3> targets = checkIfAnyTargetAvailable(getTarget());
+				List<Vector3> targets = getTarget();
+				// negation to understand
+				if ((targets.Count != 1) || (targets[0] != DeviceController.instance.gameObject.transform.position))
+				{
+					targets = checkIfAnyTargetAvailable(targets);
+				}
+
 				if (targets.Count != 0)
 				{
 					lastPaths = new Path[targets.Count];
@@ -33,6 +39,8 @@ public class StandardMonsterController : AbstractMonsterController {
 				else
 				{
 					newPosition = guardingPositions[currentGuardingPosition % guardingPositions.Count];
+					transform.rotation = Quaternion.LookRotation(newPosition - transform.localPosition);
+					textMesh.transform.rotation = Quaternion.Euler(new Vector3(90,0,0));
 					currentGuardingPosition++;
 				}
 			}
@@ -92,15 +100,14 @@ public class StandardMonsterController : AbstractMonsterController {
 		ABPath abPath = ((ABPath) p);
 		if (p.vectorPath.Count > 1)
 		{
-			if ((Mathf.Abs(p.vectorPath[0].x - abPath.originalStartPoint.x) < EPSILON) &&
-			    (Mathf.Abs(p.vectorPath[0].z - abPath.originalStartPoint.z) < EPSILON))
-			{
-				newPosition = p.vectorPath[1];
-			}
-			else
+			if (Mathf.Abs(abPath.originalStartPoint.x) > Instantiation.planeSizeX/2)
 			{
 				// monster behind the door
 				newPosition = p.vectorPath[0];
+			}
+			else
+			{
+				newPosition = p.vectorPath[1];
 			}
 		}
 		else

@@ -88,17 +88,12 @@ public class Instantiation : MonoBehaviour {
 				                           0,
 				                           zPosition);
 
-				GameObject node = (GameObject) Instantiate (nodePrefab, pos, Quaternion.Euler(0, 0, 0));
-
 				// make sure node is not too close to any object
 				RaycastHit hit;
-				if ((Physics.SphereCast(node.transform.position, 1.2f, Vector3.up, out hit)) &&
-					(hit.collider.name.Contains("Machine")))
+				if ((!Physics.SphereCast(pos, 1.2f, Vector3.up, out hit)) ||
+					(!hit.collider.name.Contains("Machine")))
 				{
-					Destroy(node);
-				}
-				else
-				{
+					GameObject node = (GameObject) Instantiate (nodePrefab, pos, Quaternion.Euler(0, 0, 0));
 					node.transform.parent = nodes.transform;
 				}
 			}
