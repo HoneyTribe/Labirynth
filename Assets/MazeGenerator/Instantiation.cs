@@ -171,7 +171,7 @@ public class Instantiation : MonoBehaviour {
 		{
 			for (int x=2; x<=sizeX * 2 - 2; x+=2)  // don't draw edges
 			{
-				if (labirynth.getWalls(x, z) == Labirynth.WALL)
+				if (labirynth.getWalls(x, z) == (int) TileType.WALL)
 				{
 					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 					                           smallWallPrefab.transform.position.y,
@@ -196,7 +196,7 @@ public class Instantiation : MonoBehaviour {
 		{
 			for (int x=1; x<=sizeX * 2 - 1; x+=2)
 			{
-				if (labirynth.getWalls(x, z) == Labirynth.WALL)
+				if (labirynth.getWalls(x, z) == (int) TileType.WALL)
 				{
 					float zPosition = offsetZ + planeSizeZ/2f - spaceZ * z;
 					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
@@ -222,7 +222,7 @@ public class Instantiation : MonoBehaviour {
 		{
 			for (int x=2; x<=sizeX * 2 -2 ; x+=2)  // don't draw edges
 			{
-				if (labirynth.getWalls(x, z) == Labirynth.WALL)		
+				if (labirynth.getWalls(x, z) == (int) TileType.WALL)		
 				{
 					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 					                           wallPrefab.transform.position.y,
@@ -330,7 +330,7 @@ public class Instantiation : MonoBehaviour {
 		int z = sizeZ * 2;
 		for (int x=1; x<=sizeX * 2 - 1; x+=2)
 		{
-			if (labirynth.getWalls(x, z) == Labirynth.MAZE)
+			if (labirynth.getWalls(x, z) == (int) TileType.MAZE)
 			{
 				float zPosition = offsetZ + planeSizeZ/2f - spaceZ * z;
 				Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
@@ -347,7 +347,7 @@ public class Instantiation : MonoBehaviour {
 
 		for (int x=2; x<=sizeX * 2 - 2; x+=2)  // don't draw edges
 		{
-			if (labirynth.getWalls(x, z) == Labirynth.MAZE)
+			if (labirynth.getWalls(x, z) == (int) TileType.MAZE)
 			{
 				Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 				                           smallWallPrefab.transform.position.y - 2.5f,

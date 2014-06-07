@@ -3,10 +3,6 @@ using System.Collections.Generic;
 
 public class Labirynth
 {
-	public const int WALL = 0;
-	public const int MAZE = 1;
-	public const int GRID = 2;
-
 	int[,] maze;
 	Vector2 start;
 	int sizeX;
@@ -42,7 +38,7 @@ public class Labirynth
 
 	public void makeVisited(Vector2 pos)
 	{
-		this.maze[(int) pos.x, (int) pos.y] = Labirynth.MAZE;
+		this.maze[(int) pos.x, (int) pos.y] = (int) TileType.MAZE;
 	}
 
 	public Move convertToMove(int input)
@@ -73,7 +69,7 @@ public class Labirynth
 			Move move = convertToMove(i);
 			if  ((pos.x + move.getNewPos().x > 0) && (pos.x + move.getNewPos().x < sizeX * 2) &&
 			     (pos.y + move.getNewPos().y > 0) && (pos.y + move.getNewPos().y < sizeY * 2) &&
-			     (maze[(int) (pos.x + move.getNewPos().x), (int) (pos.y + move.getNewPos().y)] == Labirynth.WALL))
+			     (maze[(int) (pos.x + move.getNewPos().x), (int) (pos.y + move.getNewPos().y)] == (int) TileType.WALL))
 			{
 				options.Add(move);
 			}
@@ -91,7 +87,7 @@ public class Labirynth
 			Move move = convertToMove(i);
 			if  ((pos.x + move.getNewPos().x > 0) && (pos.x + move.getNewPos().x < sizeX * 2) &&
 			     (pos.y + move.getNewPos().y > 0) && (pos.y + move.getNewPos().y < sizeY * 2) &&
-	    		 (m[(int) (pos.x + move.getWall().x), (int) (pos.y + move.getWall().y)] == Labirynth.MAZE))
+	    		 (m[(int) (pos.x + move.getWall().x), (int) (pos.y + move.getWall().y)] == (int) TileType.MAZE))
 			{
 				options.Add(move);
 			}
@@ -106,7 +102,7 @@ public class Labirynth
 		{
 			for (int x = 1; x < sizeX * 2 + 1; x += 2)
 			{
-				if (maze[x, y] == Labirynth.MAZE)
+				if (maze[x, y] == (int) TileType.MAZE)
 				{
 					Vector2 temp = new Vector2(x, y);
 					if (findOptions(temp).Count != 0)

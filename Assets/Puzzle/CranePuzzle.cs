@@ -2,10 +2,10 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 
-public class First : ScriptableObject, Puzzle
+public class CranePuzzle : ScriptableObject, Puzzle
 {
-	private const int sizeX = 7;
-	private const int sizeZ = 3;
+	private const int sizeX = 5;
+	private const int sizeZ = 6;
 
 	private Rect position;
 	private Entrance entrance;
@@ -17,7 +17,23 @@ public class First : ScriptableObject, Puzzle
 	private GameObject blockPrefab;
 	private GameObject keyPrefab;
 
-	public First()
+	private int extX = 2;
+	private int extZ = 2;
+
+	private int templateSizeX = 7;
+	private int templateSizeZ = 9;
+	private int[,] template = new int[9, 7] {{2,2,2,2,2,2,2},
+											 {2,0,0,0,0,0,2},
+											 {2,2,2,2,2,0,2},
+											 {2,2,2,2,2,0,2},
+											 {2,2,2,2,2,0,2},
+											 {2,2,2,2,2,0,2},
+											 {2,2,2,2,2,0,2},
+											 {0,0,0,0,2,0,2},
+										     {0,0,0,0,2,2,2}};
+	private int[,] extededTemplate = new int[sizeZ * 2 -1, sizeX * 2 -1]; 
+
+	public CranePuzzle()
 	{
 		mazeSizeX = LevelFinishedController.instance.getMazeSizeX ();
 		mazeSizeZ = LevelFinishedController.instance.getMazeSizeZ ();
@@ -25,39 +41,7 @@ public class First : ScriptableObject, Puzzle
 		                     2 * UnityEngine.Random.Range (0, mazeSizeZ - sizeZ) + 1,
 		                     sizeX * 2 - 1, sizeZ * 2 - 1);
 
-		List<Entrance> options = new List<Entrance> ();
-		List<List<int>> monsters = new List<List<int>> ();
-		if (position.x - 1 != 0) 
-		{
-			options.Add (new Entrance(new Vector2(position.x - 1, position.y),
-			                          new Vector2(position.x, position.y),
-			                          new Vector2(position.x + 3, position.y),
-			                          new Vector2(position.x + 3, position.y + 1)));
-		}
-		if (position.x + position.width != mazeSizeX * 2) 
-		{
-			options.Add (new Entrance(new Vector2(position.x + position.width, position.y),
-			                          new Vector2(position.x + position.width - 1, position.y),
-			                          new Vector2(position.x + position.width - 4, position.y),
-			                          new Vector2(position.x + position.width - 4, position.y + 1)));
-		}
-		if (position.y - 1 != 0) 
-		{
-			options.Add (new Entrance(new Vector2(position.x, position.y - 1),
-			                          new Vector2(position.x, position.y),
-			                          new Vector2(position.x, position.y + 3),
-			                          new Vector2(position.x + 1, position.y + 3)));
-		}
-		if (position.y + position.height != mazeSizeZ * 2) 
-		{
-			options.Add (new Entrance(new Vector2(position.x, position.y + position.height),
-			                          new Vector2(position.x, position.y + position.height - 1),
-			                          new Vector2(position.x, position.y + position.height - 4),
-			                          new Vector2(position.x + 1, position.y + position.height - 4)));
-		}
-
-		int side = UnityEngine.Random.Range (0, options.Count);
-		entrance = options[side];
+		createExtendedTemplate ();
 
 		monsterPrefab = (GameObject) Resources.Load("Monster");
 		blockPrefab = (GameObject) Resources.Load("Textured Wall");
@@ -71,19 +55,60 @@ public class First : ScriptableObject, Puzzle
 		{
 			for (int j=(int)position.y; j < position.y + position.height; j++)
 			{
-				grid[i,j] = (int) TileType.GRID;
+				grid[i,j] = extededTemplate[j-(int)position.y, i-(int)position.x];
 			}
 		}
-		grid [(int) entrance.getWallEntrance().x, (int) entrance.getWallEntrance().y] = (int) TileType.MAZE; // OR GRID
-		grid [(int) entrance.getBlockingWall().x, (int) entrance.getBlockingWall().y] = (int) TileType.WALL;
-		grid [(int) entrance.getBlockingPillar().x, (int) entrance.getBlockingPillar().y] = (int) TileType.WALL;
 
 		return grid;
 	}
 
+	private void createExtendedTemplate()
+	{
+		int extSizeX = sizeX * 2 - 1 - templateSizeX;
+		int extSizeZ = sizeZ * 2 - 1 - templateSizeZ;
+
+		int orgi = 0; // template index
+		for (int i=0; i < sizeZ * 2 - 1; i++)
+		{
+			// duplicate row ? copy from extended
+			if ((i >= extZ + 2) && (i < extZ + 2 + extSizeZ))
+			{
+				for (int j=0; j < sizeX * 2 - 1; j++)
+				{
+					extededTemplate[i,j] = extededTemplate[extZ, j];
+				}
+				i++;
+				for (int j=0; j < sizeX * 2 - 1; j++)
+				{
+					extededTemplate[i,j] = extededTemplate[extZ + 1, j];
+				}
+			}
+			else
+			{
+				int orgj = 0; // template index
+				for (int j=0; j < sizeX * 2 - 1; j++)
+				{
+					// duplicate column? insert from template
+					if ((j >= extX + 2) && (j < extX + 2 + extSizeX))
+					{
+						extededTemplate[i,j] = template[orgi,extX];
+						j++;
+						extededTemplate[i,j] = template[orgi,extX + 1];
+					}
+					else
+					{
+						extededTemplate[i,j] = template[orgi, orgj];
+						orgj++;
+					}
+				}
+				orgi++;
+			}
+		}
+	}
+
 	public void create()
 	{
-		float scaleFactorX = 2 * Instantiation.instance.getSpaceX() - 1f;
+		/*float scaleFactorX = 2 * Instantiation.instance.getSpaceX() - 1f;
 		float scaleFactorZ = 2 * Instantiation.instance.getSpaceZ() - 1f;
 		Vector3 pos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * entrance.getEntrance().x,
 		                           blockPrefab.transform.position.y,
@@ -142,6 +167,6 @@ public class First : ScriptableObject, Puzzle
 				                              Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (position.y + j));			
 				Instantiate (keyPrefab, keyPos, Quaternion.Euler(0, 0, 0));
 			}
-		}
+		}*/
 	}
 }
