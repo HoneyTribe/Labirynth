@@ -145,6 +145,7 @@ public class TopLightController : MonoBehaviour {
 			if (monsterAttracted)
 			{
 				changeEnergy(-attractionCost);
+				DeviceController.instance.ShowHologram();
 			}
 		}
 	}
@@ -205,7 +206,7 @@ public class TopLightController : MonoBehaviour {
 
 		GameObject laser2 = (GameObject) Instantiate (laserPrefab, monsterPosition, Quaternion.Euler(0, 0, 0)); 
 		LaserController laserController2 = laser2.GetComponent<LaserController>();
-		laserController2.shoot (monsterPosition, DeviceController.instance.transform.localPosition);
+		laserController2.shoot (monsterPosition, DeviceController.instance.transform.position);
 		yield return new WaitForSeconds(0.2f);
 
 		Destroy (laser);

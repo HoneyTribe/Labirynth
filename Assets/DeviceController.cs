@@ -4,23 +4,25 @@ using System.Collections;
 public class DeviceController : MonoBehaviour {
 
 	public static DeviceController instance;
+	public static float interval = 5f;
+	private static int activatedHash = Animator.StringToHash ("Activate");
+	private static int activatedStateHash = Animator.StringToHash ("Base Layer.Distract_device_light_Activated");
 
 	private Vector3 initialPosition;
 
 	private Vector3 movement;
+	private float time;
 	private bool inLighthouse = true;
 	private float speed = 65.0f;
 
-	void Awake () 
-	{
-		instance = this;
-	}
+	private Animator anim;
 
 	void Start () 
 	{
-		initialPosition = transform.localPosition;
+		instance = this;
+		anim = GameObject.Find ("Hologram").GetComponent<Animator> ();
+		initialPosition = transform.position;
 		movement = initialPosition;
-		this.renderer.materials[0].color=Color.grey;
 	}
 	
 	// Update is called once per frame
@@ -31,6 +33,29 @@ public class DeviceController : MonoBehaviour {
 		{
 			transform.position = Vector3.Lerp (
 				transform.position, movement, Time.deltaTime * speed / distance);
+		}
+
+		if (time > 0)
+		{
+			time -= Time.deltaTime;
+			if (time <= 0)
+			{
+				anim.SetTrigger(activatedHash);
+			}
+		}
+	}
+
+	public void ShowHologram()
+	{
+		time = interval;
+		AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+		if (stateInfo.nameHash != activatedStateHash)
+		{
+			anim.SetTrigger (activatedHash);
+		}
+		else
+		{
+			anim.Play(activatedStateHash, -1, 0);
 		}
 	}
 

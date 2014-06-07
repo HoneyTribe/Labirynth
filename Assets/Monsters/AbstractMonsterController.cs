@@ -15,7 +15,6 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	protected TextMesh textMesh;
 
-	private static float interval = 5f;
 	private static float paralysingInterval = 2f;
 	private float timeLeft;
 	private float paralysingTime;
@@ -33,7 +32,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		textMesh = gameObject.GetComponentInChildren<TextMesh> ();
 
 		GameObject gameController = GameObject.Find ("GameController");
-		device = GameObject.Find ("Device");
+		device = GameObject.Find ("DeviceContainer");
 		for (int i = 1; i<= LevelFinishedController.instance.getControllers().Count; i++)
 		{
 			playerControllers.Add (GameObject.Find ("Player" + i).GetComponent<PlayerController>());
@@ -54,17 +53,15 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		textMesh.text = "";
 		if (timeLeft > 0)
 		{
-			if (timeLeft == interval)
+			if (timeLeft == DeviceController.interval)
 			{
 				recalculateTrigger  = true;
 			}
 			timeLeft -= Time.deltaTime;
-			device.renderer.materials[0].color=Color.white;
 			textMesh.text = ((int) (timeLeft + 1)).ToString();
 			if (timeLeft <= 0)
 			{
 				recalculateTrigger = true;
-				device.renderer.materials[0].color=Color.grey;
 			}
 		}
 
@@ -96,7 +93,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	public void setAttracted()
 	{
-		timeLeft = interval;
+		timeLeft = DeviceController.interval;
 	}
 
 	public void Paralyse()
@@ -137,7 +134,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 		if (timeLeft > 0)
 		{
-			return new List<Vector3>(){device.transform.localPosition};
+			return new List<Vector3>(){device.transform.position};
 		}
 
 		List<Vector3> closestPlayers = new List<Vector3> ();

@@ -74,6 +74,34 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &3514929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 3514930}
+  m_Layer: 0
+  m_Name: DeviceContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3514930
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 3514929}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10.3299999, z: -18.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1970224937}
+  - {fileID: 197888373}
+  m_Father: {fileID: 0}
 --- !u!1 &15151073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,11 +2209,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 197888369}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10.3299074, z: -18.4894009}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: .25999999, z: 2}
-  m_Children:
-  - {fileID: 1970224937}
-  m_Father: {fileID: 0}
+  m_Children: []
+  m_Father: {fileID: 3514930}
 --- !u!114 &197888374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19996,7 +20023,7 @@ GameObject:
   - 23: {fileID: 1970224938}
   - 95: {fileID: 1970224940}
   m_Layer: 15
-  m_Name: 1st_Alien_v2
+  m_Name: Hologram
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20009,10 +20036,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1970224936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0121393204, y: -.0543227568, z: .0116701126}
-  m_LocalScale: {x: .5, y: 3.84615397, z: .5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 197888373}
+  m_Father: {fileID: 3514930}
 --- !u!23 &1970224938
 Renderer:
   m_ObjectHideFlags: 0

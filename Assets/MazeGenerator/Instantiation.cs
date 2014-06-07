@@ -128,7 +128,11 @@ public class Instantiation : MonoBehaviour {
 	{
 		if (LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithDevice())
 		{
-			GameObject.Find ("Device").GetComponent<MeshRenderer>().enabled = false;
+			Component[] components = GameObject.Find ("DeviceContainer").GetComponentsInChildren<MeshRenderer>();
+			foreach (Component component in components)
+			{
+				component.renderer.enabled = false;
+			}
 		}
 	}
 
