@@ -82,6 +82,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 3514930}
+  - 114: {fileID: 3514931}
   m_Layer: 0
   m_Name: DeviceContainer
   m_TagString: Untagged
@@ -102,6 +103,17 @@ Transform:
   - {fileID: 1970224937}
   - {fileID: 197888373}
   m_Father: {fileID: 0}
+--- !u!114 &3514931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 3514929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3383c9047e72c1c40aa9f5b7114c3701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &15151073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,7 +2178,6 @@ GameObject:
   - 4: {fileID: 197888373}
   - 33: {fileID: 197888372}
   - 23: {fileID: 197888370}
-  - 114: {fileID: 197888374}
   m_Layer: 19
   m_Name: Device
   m_TagString: Untagged
@@ -2213,17 +2224,6 @@ Transform:
   m_LocalScale: {x: 2, y: .25999999, z: 2}
   m_Children: []
   m_Father: {fileID: 3514930}
---- !u!114 &197888374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 197888369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3383c9047e72c1c40aa9f5b7114c3701, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &198084862
 GameObject:
   m_ObjectHideFlags: 0

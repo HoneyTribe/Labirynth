@@ -106,7 +106,7 @@ public class First : ScriptableObject, Puzzle
 			Vector3 monsterPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i + start),
 			                           monsterPrefab.transform.position.y,
 			                           Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (position.y + monsterNum%(sizeZ+1)));			
-			GameObject monster = (GameObject) Instantiate (monsterPrefab, monsterPos, Quaternion.Euler(0, 0, 0));
+			GameObject monster = MonsterCreationController.instance.InstantiateMonster (monsterPrefab, monsterPos);
 
 			monster.GetComponent<AbstractMonsterController> ().setSpeed (5f);
 

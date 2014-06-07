@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class MonsterCreationController : MonoBehaviour {
 
+	public static MonsterCreationController instance;
+
+	private int monsterNumber;
 	private GameObject monsterDoorLeft;
 	private GameObject monsterDoorRight;
 
@@ -12,6 +15,7 @@ public class MonsterCreationController : MonoBehaviour {
 
 	void Start()
 	{
+		instance = this;
 		monsterDoorLeft = GameObject.Find ("monsterDoorLeft");
 		monsterDoorRight = GameObject.Find ("monsterDoorRight");
 		StartCoroutine(WakeUpMonster());
@@ -54,7 +58,7 @@ public class MonsterCreationController : MonoBehaviour {
 		Vector3 pos = new Vector3 (door.transform.localPosition.x + 3 * door.transform.right.x,
 		                           prefab.transform.position.y,
 		                           position[posIndex]);
-		GameObject monster = (GameObject) Instantiate (prefab, pos, Quaternion.Euler(0, 0, 0)); 
+		GameObject monster = InstantiateMonster (prefab, pos); 
 		monster.GetComponent<AbstractMonsterController> ().setSpeed (monsterTemplate.getSpeed());
 
 		return monster;
@@ -70,6 +74,17 @@ public class MonsterCreationController : MonoBehaviour {
 		{
 			Destroy (monster);
 		}
+	}
+
+	public GameObject InstantiateMonster(GameObject prefab, Vector3 position)
+	{
+		GameObject monster = (GameObject) Instantiate (prefab, position, Quaternion.Euler(0, 0, 0));
+		// remove flickering caused by z-fighting problem
+		monster.transform.localScale = new Vector3(monster.transform.localScale.x, 
+		                                           monster.transform.localScale.y + monsterNumber * 0.001f,
+		                                           monster.transform.localScale.z);
+		monsterNumber++;
+		return monster;
 	}
 
 	private GameObject getPrefab(string type)
