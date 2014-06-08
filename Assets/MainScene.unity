@@ -4332,7 +4332,7 @@ Transform:
   m_GameObject: {fileID: 434459854}
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
   m_LocalPosition: {x: -.00227701664, y: -.0244216919, z: .00337600708}
-  m_LocalScale: {x: 19.5931664, y: 19.5931664, z: 19.5931664}
+  m_LocalScale: {x: 38.1325798, y: 38.1325798, z: 38.1325798}
   m_Children: []
   m_Father: {fileID: 3514930}
 --- !u!95 &434459856
@@ -7162,23 +7162,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eedd5f08831c2884582e220c65720e65, type: 3}
       propertyPath: m_LocalScale.x
-      value: 19.5931664
+      value: 38.1325798
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eedd5f08831c2884582e220c65720e65, type: 3}
       propertyPath: m_LocalScale.y
-      value: 19.5931664
+      value: 38.1325798
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: eedd5f08831c2884582e220c65720e65, type: 3}
       propertyPath: m_LocalScale.z
-      value: 19.5931664
+      value: 38.1325798
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: eedd5f08831c2884582e220c65720e65, type: 3}
       propertyPath: m_Layer
       value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: eedd5f08831c2884582e220c65720e65, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eedd5f08831c2884582e220c65720e65, type: 3}
