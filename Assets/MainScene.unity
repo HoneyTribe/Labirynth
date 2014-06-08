@@ -83,7 +83,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 3514930}
   - 114: {fileID: 3514931}
-  - 95: {fileID: 3514932}
   m_Layer: 0
   m_Name: DeviceContainer
   m_TagString: Untagged
@@ -116,20 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3383c9047e72c1c40aa9f5b7114c3701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &3514932
-Animator:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 3514929}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bf6858e4f978c2646afae416b31835ba, type: 2}
-  m_CullingMode: 0
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
-  m_HasTransformHierarchy: 1
 --- !u!1 &15151073
 GameObject:
   m_ObjectHideFlags: 0
@@ -20167,6 +20152,7 @@ GameObject:
   - 4: {fileID: 1970224937}
   - 33: {fileID: 1970224939}
   - 23: {fileID: 1970224938}
+  - 95: {fileID: 1970224940}
   m_Layer: 15
   m_Name: Hologram
   m_TagString: Untagged
@@ -20215,6 +20201,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1970224936}
   m_Mesh: {fileID: 4300000, guid: f3b7d37c5450a6647a025f9f0dfc1924, type: 3}
+--- !u!95 &1970224940
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1970224936}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf6858e4f978c2646afae416b31835ba, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!1001 &1971664574
 Prefab:
   m_ObjectHideFlags: 0

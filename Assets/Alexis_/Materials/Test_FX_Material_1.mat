@@ -104,12 +104,12 @@ Material:
         second: .899999976
       data:
         first:
-          name: _InvFade
-        second: .00999999978
-      data:
-        first:
           name: _Shininess
         second: .100000016
+      data:
+        first:
+          name: _InvFade
+        second: .00999999978
       data:
         first:
           name: _EmissionLM
@@ -118,19 +118,19 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1.11450219}
+        second: {r: 1, g: 1, b: 1, a: 1.86717999}
       data:
         first:
           name: _SpecColor
         second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
-          name: _TintColor
-        second: {r: .99999994, g: .99999994, b: .99999994, a: 1}
-      data:
-        first:
           name: _Emission
         second: {r: 1, g: 1, b: 1, a: 0}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .99999994, g: .99999994, b: .99999994, a: 1}
       data:
         first:
           name: _ReflectColor
