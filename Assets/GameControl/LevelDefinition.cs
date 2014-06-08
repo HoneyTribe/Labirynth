@@ -46,7 +46,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Standard", 2.4f)
 					},15,6,6,6, null, null));
 					//4
-					levels2.Add(new Level(9,new List<MonsterTemplate>{},0,0,8,8, null, "CranePuzzle"));
+					levels2.Add(new Level(8,new List<MonsterTemplate>{},0,0,8,8, null, "SimpleCranePuzzle"));
 					//5
 					levels2.Add(new Level(2,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
@@ -57,31 +57,33 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Flying", 2.0f)
 					},5,6,7,7, null, null));
 					//7
+					levels2.Add(new Level(9,new List<MonsterTemplate>{},0,0,8,8, null, "CranePuzzle"));
+					//8
 					levels2.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Flying", 2.4f)
 					},5,6,8,8, "EnableTrapEnding", null));
-					//8
+					//9
 					levels2.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f)
 					},5,6,9,9, "EnableNoWallsEnding", null));
-					//9
+					//10
 					levels2.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Flying", 2.4f),
 						new MonsterTemplate("Standard", 3.2f)
 					},5,6,9,9, "EnableTrapEnding", null));
-					//10
+					//11
 					levels2.Add(new Level(5,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f)
 					},5,10,10,10, null, null));
-					//11
+					//12
 					levels2.Add(new Level(5,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
 						new MonsterTemplate("Standard", 3.2f),
