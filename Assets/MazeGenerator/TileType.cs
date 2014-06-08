@@ -6,6 +6,7 @@ public enum TileType
 	MAZE = 1,
 	GRID = 2,
 	BLOCK = 3,
-	MONSTER = 4
+	MONSTER = 4,
+	KEY = 5
 }
 

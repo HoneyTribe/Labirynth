@@ -4,12 +4,14 @@ using System.Collections.Generic;
 
 public class CranePuzzle : ScriptableObject, Puzzle
 {
-	private const int sizeX = 5;
+	private const int sizeX = 6;
 	private const int sizeZ = 6;
 
 	private Rect position;
 	private Entrance entrance;
 
+	private float scaleFactorX;
+	private float scaleFactorZ;
 	private int mazeSizeX;
 	private int mazeSizeZ;
 
@@ -18,25 +20,30 @@ public class CranePuzzle : ScriptableObject, Puzzle
 	private GameObject keyPrefab;
 
 	private int extX = 2;
-	private int extZ = 2;
+	private int extZ = 4;
+	private int internalSize = sizeZ - 2; 
 
 	private int templateSizeX = 7;
 	private int templateSizeZ = 9;
 	private int[,] template = new int[9, 7] {{2,2,2,2,2,2,2},
 											 {2,0,0,0,0,0,2},
+											 {3,2,4,2,2,0,2},
 											 {2,2,2,2,2,0,2},
+											 {2,2,5,2,2,0,2},
 											 {2,2,2,2,2,0,2},
-											 {2,2,2,2,2,0,2},
-											 {2,2,2,2,2,0,2},
-											 {2,2,2,2,2,0,2},
+											 {2,2,5,2,3,0,2},
 											 {0,0,0,0,2,0,2},
 										     {0,0,0,0,2,2,2}};
+
 	private int[,] extededTemplate = new int[sizeZ * 2 -1, sizeX * 2 -1]; 
 
 	public CranePuzzle()
 	{
+		scaleFactorX = 2 * Instantiation.instance.getSpaceX() - 1f;
+		scaleFactorZ = 2 * Instantiation.instance.getSpaceZ() - 1f;
 		mazeSizeX = LevelFinishedController.instance.getMazeSizeX ();
 		mazeSizeZ = LevelFinishedController.instance.getMazeSizeZ ();
+
 		position = new Rect (2 * UnityEngine.Random.Range (0, mazeSizeX - sizeX + 1) + 1,
 		                     2 * UnityEngine.Random.Range (0, mazeSizeZ - sizeZ) + 1,
 		                     sizeX * 2 - 1, sizeZ * 2 - 1);
@@ -108,65 +115,78 @@ public class CranePuzzle : ScriptableObject, Puzzle
 
 	public void create()
 	{
-		/*float scaleFactorX = 2 * Instantiation.instance.getSpaceX() - 1f;
-		float scaleFactorZ = 2 * Instantiation.instance.getSpaceZ() - 1f;
-		Vector3 pos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * entrance.getEntrance().x,
+		int[,] grid = getGrid ();
+		int monsterNum = 0;
+		int keyNum = LevelFinishedController.instance.getNumberOfKeys ();
+
+		for (int j=0; j < mazeSizeX * 2; j++)
+		{
+			for (int i=0; i < mazeSizeZ * 2; i++)
+			{
+				if (grid[i,j] == (int) TileType.BLOCK)
+				{
+					createBlock (i, j);
+				}
+				if (grid[i,j] == (int) TileType.MONSTER)
+				{
+					createMonster (i, j, monsterNum);
+					monsterNum ++;
+				}
+
+				if ((grid[i,j] == (int) TileType.KEY) || (grid[i,j] == (int) TileType.MONSTER))
+				{
+					if (keyNum != 0)
+					{
+						createKey (i, j, keyNum);
+						keyNum --;
+					}
+				}
+			}
+		}
+	}
+
+	private void createBlock(int x, int z)
+	{
+		Vector3 pos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
 		                           blockPrefab.transform.position.y,
-		                           Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * entrance.getEntrance().y);			
+		                           Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
 		GameObject block = (GameObject) Instantiate (blockPrefab, pos, Quaternion.Euler(0, 0, 0));
 		block.name = "Block";
 		block.transform.localScale = new Vector3(scaleFactorX - Instantiation.compensatePillarInnerRadius, 
 		                                         blockPrefab.transform.localScale.y,
 		                                         scaleFactorZ - Instantiation.compensatePillarInnerRadius);
 		block.AddComponent<BlockController> ();
+	}
 
-		int monsterNum = 0;
-		int start = 0;
-		if (entrance.getEntrance().x == position.x)
+	private void createMonster(int x, int z, int monsterNum)
+	{
+		Vector3 monsterPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+		                                  monsterPrefab.transform.position.y,
+		                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (z + 2 * (monsterNum%internalSize)));			
+		GameObject monster = MonsterCreationController.instance.InstantiateMonster (monsterPrefab, monsterPos);
+		
+		monster.GetComponent<AbstractMonsterController> ().setSpeed (5f);
+			
+		StandardMonsterController standardMonsterController = monster.GetComponent<StandardMonsterController> ();
+		if (standardMonsterController != null)
 		{
-			start = 4;
+			Vector3 pos1 = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+			                            monsterPrefab.transform.position.y,
+			                            Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);		
+			Vector3 pos2 = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+			                            monsterPrefab.transform.position.y,
+			                            Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (z + 2 * (internalSize - 1)));		
+			
+			standardMonsterController.AddGuardingPosition(pos1);
+			standardMonsterController.AddGuardingPosition(pos2);
 		}
-		for(int i=0; i < (sizeX - 2) * 2; i+=2)
-		{
-			Vector3 monsterPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i + start),
-			                           monsterPrefab.transform.position.y,
-			                           Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (position.y + monsterNum%(sizeZ+1)));			
-			GameObject monster = MonsterCreationController.instance.InstantiateMonster (monsterPrefab, monsterPos);
+	}
 
-			monster.GetComponent<AbstractMonsterController> ().setSpeed (5f);
-
-			StandardMonsterController standardMonsterController = monster.GetComponent<StandardMonsterController> ();
-			if (standardMonsterController != null)
-			{
-				Vector3 pos1 = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i + start),
-				                            monsterPrefab.transform.position.y,
-				                            Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * position.y);		
-				Vector3 pos2 = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i + start),
-				                            monsterPrefab.transform.position.y,
-				                            Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (position.y + sizeZ+1));		
-
-				standardMonsterController.AddGuardingPosition(pos1);
-				standardMonsterController.AddGuardingPosition(pos2);
-			}
-
-			monsterNum++;
-		}
-
-		int keyNum = LevelFinishedController.instance.getNumberOfKeys ();
-		for(int j=0; j < sizeZ * 2; j+=2)
-		{
-			for(int i=0; i < (sizeX - 2) * 2; i+=2)
-			{
-				if (keyNum == 0)
-				{
-					continue;
-				}
-				keyNum--;
-				Vector3 keyPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * (position.x + i + start),
-				                              keyPrefab.transform.position.y,
-				                              Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (position.y + j));			
-				Instantiate (keyPrefab, keyPos, Quaternion.Euler(0, 0, 0));
-			}
-		}*/
+	private void createKey(int x, int z, int keyNum)
+	{
+		Vector3 keyPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+		                              keyPrefab.transform.position.y,
+		                              Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
+		Instantiate (keyPrefab, keyPos, Quaternion.Euler(0, 0, 0));
 	}
 }
