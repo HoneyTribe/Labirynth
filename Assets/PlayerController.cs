@@ -254,7 +254,10 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				//collision.gameObject.SendMessage("Recalculate");
 			}
 		}
+	}
 
+	void OnCollisionStay (Collision collision)
+	{
 		if(collision.collider.name == "Block")
 		{
 			rigidbody.velocity = Vector3.zero;

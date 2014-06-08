@@ -70,11 +70,11 @@ public class MenuController : MonoBehaviour {
 
 				if (selGridInt == i)
 				{
-					GUI.Button (new Rect (50 + x * 65, 100 + y * 65, 40, 40), (i + 1).ToString(), selectedSkin.button);
+					GUI.Button (new Rect (50 + x * 65, 80 + y * 65, 40, 40), (i + 1).ToString(), selectedSkin.button);
 				}
 				else
 				{
-					GUI.Button (new Rect (50 + x * 65, 100 + y * 65, 40, 40), (i + 1).ToString(), skin.button);
+					GUI.Button (new Rect (50 + x * 65, 80 + y * 65, 40, 40), (i + 1).ToString(), skin.button);
 				}
 
 				if (i>LevelFinishedController.instance.getMaxLevel())

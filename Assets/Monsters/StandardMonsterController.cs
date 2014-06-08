@@ -26,6 +26,19 @@ public class StandardMonsterController : AbstractMonsterController {
 					targets = checkIfAnyTargetAvailable(targets);
 				}
 
+				// guard
+				if (targets.Count == 0)
+				{
+					List<Vector3> guardingTargets = new List<Vector3>();
+					guardingTargets.Add(guardingPositions[currentGuardingPosition % guardingPositions.Count]);
+					targets = checkIfAnyTargetAvailable(guardingTargets);
+					if ((Mathf.Abs(transform.position.x - guardingTargets[0].x) < EPSILON) &&
+					    (Mathf.Abs(transform.position.z - guardingTargets[0].z) < EPSILON))
+					{
+						currentGuardingPosition++;
+					}
+				}
+
 				if (targets.Count != 0)
 				{
 					lastPaths = new Path[targets.Count];
@@ -38,10 +51,7 @@ public class StandardMonsterController : AbstractMonsterController {
 				}
 				else
 				{
-					newPosition = guardingPositions[currentGuardingPosition % guardingPositions.Count];
-					transform.rotation = Quaternion.LookRotation(newPosition - transform.localPosition);
-					textMesh.transform.rotation = Quaternion.Euler(new Vector3(90,0,0));
-					currentGuardingPosition++;
+					newPosition = transform.position;
 				}
 			}
 		}

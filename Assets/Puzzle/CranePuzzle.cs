@@ -165,7 +165,7 @@ public class CranePuzzle : ScriptableObject, Puzzle
 		                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (z + 2 * (monsterNum%internalSize)));			
 		GameObject monster = MonsterCreationController.instance.InstantiateMonster (monsterPrefab, monsterPos);
 		
-		monster.GetComponent<AbstractMonsterController> ().setSpeed (5f);
+		monster.GetComponent<AbstractMonsterController> ().setSpeed (10f);
 			
 		StandardMonsterController standardMonsterController = monster.GetComponent<StandardMonsterController> ();
 		if (standardMonsterController != null)
