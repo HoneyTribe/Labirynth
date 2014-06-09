@@ -98,3 +98,7 @@ Material:
         first:
           name: _RimCol
         second: {r: 0, g: .379310369, b: 1, a: 1}
+      data:
+        first:
+          name: _NotVisibleColor
+        second: {r: 0, g: 1, b: 0, a: 1}
