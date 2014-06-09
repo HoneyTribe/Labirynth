@@ -20,7 +20,7 @@ public class DeviceController : MonoBehaviour {
 	void Start () 
 	{
 		instance = this;
-		anim = GameObject.Find ("Hologram").GetComponent<Animator> ();
+		anim = GetComponent<Animator> ();
 		initialPosition = transform.position;
 		movement = initialPosition;
 	}
