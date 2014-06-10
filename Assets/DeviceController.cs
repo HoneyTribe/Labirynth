@@ -6,7 +6,7 @@ public class DeviceController : MonoBehaviour {
 	public static DeviceController instance;
 	public static float interval = 5f;
 	private static int activatedHash = Animator.StringToHash ("Activate");
-	private static int activatedStateHash = Animator.StringToHash ("Base Layer.Distract_device_light_Activated");
+	private static int activatedStateHash = Animator.StringToHash ("Base Layer.Distract_Device_Activated");
 
 	private Vector3 initialPosition;
 
