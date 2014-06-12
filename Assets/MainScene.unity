@@ -2350,7 +2350,7 @@ GameObject:
   - 33: {fileID: 206731943}
   - 23: {fileID: 206731942}
   - 95: {fileID: 206731941}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Puzzle_Prefab2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3353,6 +3353,10 @@ Prefab:
       propertyPath: m_Name
       value: Puzzle_Prefab1
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
+      propertyPath: m_Layer
+      value: 28
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
   m_RootGameObject: {fileID: 1456957627}
@@ -3396,6 +3400,10 @@ Prefab:
     - target: {fileID: 100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
       propertyPath: m_Name
       value: Puzzle_Prefab4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
+      propertyPath: m_Layer
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
@@ -4025,6 +4033,10 @@ Prefab:
     - target: {fileID: 100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
       propertyPath: m_Name
       value: Puzzle_Prefab2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
+      propertyPath: m_Layer
+      value: 28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
@@ -6836,13 +6848,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 663537374}
   - 95: {fileID: 663537375}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: End_Game_Animation_Puzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &663537374
 Transform:
   m_ObjectHideFlags: 0
@@ -6850,9 +6862,10 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 663537373}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0378813744, y: -1.54247284, z: -50.036541}
+  m_LocalPosition: {x: .0378813744, y: 28.3070107, z: -9.96118355}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 770153749}
   - {fileID: 1456957628}
   - {fileID: 206731940}
   - {fileID: 1361005910}
@@ -7791,6 +7804,10 @@ Prefab:
       propertyPath: m_Name
       value: Puzzle_Prefab3
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
+      propertyPath: m_Layer
+      value: 28
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
   m_RootGameObject: {fileID: 1361005906}
@@ -7917,6 +7934,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16204491e46fa5249bcb54430f83a920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &770153748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 770153749}
+  - 108: {fileID: 770153750}
+  m_Layer: 28
+  m_Name: Point light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &770153749
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 770153748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.132721424, y: 6.33999062, z: .107002258}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 663537374}
+--- !u!108 &770153750
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 770153748}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 18.1261787
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 268435456
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
 --- !u!1 &771104971
 GameObject:
   m_ObjectHideFlags: 0
@@ -13009,7 +13088,7 @@ GameObject:
   - 33: {fileID: 1252116578}
   - 23: {fileID: 1252116577}
   - 95: {fileID: 1252116576}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Puzzle_Prefab4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14961,7 +15040,7 @@ GameObject:
   - 33: {fileID: 1361005909}
   - 23: {fileID: 1361005908}
   - 95: {fileID: 1361005907}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Puzzle_Prefab3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16103,7 +16182,7 @@ GameObject:
   - 33: {fileID: 1456957631}
   - 23: {fileID: 1456957630}
   - 95: {fileID: 1456957629}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Puzzle_Prefab1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
