@@ -30,7 +30,14 @@ public class StandardMonsterController : AbstractMonsterController {
 				if (targets.Count == 0)
 				{
 					List<Vector3> guardingTargets = new List<Vector3>();
-					guardingTargets.Add(guardingPositions[currentGuardingPosition % guardingPositions.Count]);
+					if (guardingPositions.Count != 0)
+					{
+						guardingTargets.Add(guardingPositions[currentGuardingPosition % guardingPositions.Count]);
+					}
+					else
+					{
+						guardingTargets.Add(transform.position);
+					}
 					targets = checkIfAnyTargetAvailable(guardingTargets);
 					if ((Mathf.Abs(transform.position.x - guardingTargets[0].x) < EPSILON) &&
 					    (Mathf.Abs(transform.position.z - guardingTargets[0].z) < EPSILON))

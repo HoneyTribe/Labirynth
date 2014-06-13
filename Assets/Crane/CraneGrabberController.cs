@@ -117,6 +117,13 @@ public class CraneGrabberController : MonoBehaviour {
 			if ((heldObject == null) && (pickingUp))
 			{
 				GameObject obj = collider.gameObject;
+
+				// don't pickup player in machine
+				if ((obj.tag == "Player") && (obj.GetComponent<PlayerController>().hasEnteredAnyMachine()))
+				{
+					return;
+				}
+
 				if (obj.transform.parent != null)
 				{
 					obj = obj.transform.parent.gameObject;
