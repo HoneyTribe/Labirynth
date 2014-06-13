@@ -44,5 +44,9 @@ public class FusionController : MonoBehaviour {
 	public void ActivateFusion()
 	{
 		fusionActivated = true;
+		foreach (GameObject player in players)
+		{
+			player.SendMessage("ShowPuzzle");
+		}
 	}
 }

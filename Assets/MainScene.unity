@@ -4470,7 +4470,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 134250496
+    m_Bits: 402685952
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -5371,6 +5371,7 @@ GameObject:
   - 54: {fileID: 468870942}
   - 136: {fileID: 468870943}
   - 114: {fileID: 468870944}
+  - 114: {fileID: 468870939}
   m_Layer: 15
   m_Name: Player2
   m_TagString: Player
@@ -5410,6 +5411,17 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!114 &468870939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 468870936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b617880630f9043981bc346f92fb7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &468870940
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5886,6 +5898,7 @@ GameObject:
   - 54: {fileID: 504520873}
   - 136: {fileID: 504520878}
   - 114: {fileID: 504520879}
+  - 114: {fileID: 504520872}
   m_Layer: 15
   m_Name: Player1
   m_TagString: Player
@@ -5893,6 +5906,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &504520872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 504520871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b617880630f9043981bc346f92fb7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &504520873
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7891,6 +7915,7 @@ GameObject:
   - 54: {fileID: 707660197}
   - 136: {fileID: 707660195}
   - 114: {fileID: 707660194}
+  - 114: {fileID: 707660196}
   m_Layer: 15
   m_Name: Player3
   m_TagString: Player
@@ -7936,6 +7961,17 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &707660196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707660192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b617880630f9043981bc346f92fb7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &707660197
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14463,6 +14499,7 @@ GameObject:
   - 54: {fileID: 1232021374}
   - 136: {fileID: 1232021372}
   - 114: {fileID: 1232021371}
+  - 114: {fileID: 1232021373}
   m_Layer: 15
   m_Name: Player4
   m_TagString: Player
@@ -14508,6 +14545,17 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1232021373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232021369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b617880630f9043981bc346f92fb7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &1232021374
 Rigidbody:
   m_ObjectHideFlags: 0
