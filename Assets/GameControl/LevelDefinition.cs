@@ -53,7 +53,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Flying", 2.0f)
 					},5,6,7,7, null, null));
 					//7
-					levels2.Add(new Level(10,new List<MonsterTemplate>{},0,0,8,8, null, "CranePuzzle"));
+					levels2.Add(new Level(9,new List<MonsterTemplate>{},0,0,8,8, null, "CranePuzzle"));
 					//8
 					levels2.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
@@ -94,7 +94,7 @@ namespace AssemblyCSharp
 					//1
 					levels3.Add(new Level(2,new List<MonsterTemplate>{},15,15,6,6, null, null));
 					//2
-					levels3.Add(new Level(10,new List<MonsterTemplate>{},0,0,8,8, null, "First"));
+					levels3.Add(new Level(9,new List<MonsterTemplate>{},0,0,8,8, null, "First"));
 					//3
 					levels3.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.4f)
@@ -111,7 +111,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Flying", 2.0f)
 					},5,6,7,7, null, null));
 					//7
-					levels3.Add(new Level(10,new List<MonsterTemplate>{},0,0,8,8, null, "CranePuzzle"));
+					levels3.Add(new Level(9,new List<MonsterTemplate>{},0,0,8,8, null, "CranePuzzle"));
 					//8
 					levels3.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
@@ -151,7 +151,7 @@ namespace AssemblyCSharp
 					//1
 					levels4.Add(new Level(3,new List<MonsterTemplate>{},15,15,6,6, null, null));
 					//2
-					levels4.Add(new Level(10,new List<MonsterTemplate>{},0,0,8,8, null, "First"));
+					levels4.Add(new Level(9,new List<MonsterTemplate>{},0,0,8,8, null, "First"));
 					//3
 					levels4.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.4f)
@@ -168,7 +168,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Flying", 2.0f)
 					},5,6,7,7, null, null));
 					//7
-					levels4.Add(new Level(10,new List<MonsterTemplate>{},0,0,8,8, null, "CranePuzzle"));
+					levels4.Add(new Level(9,new List<MonsterTemplate>{},0,0,8,8, null, "CranePuzzle"));
 					//8
 					levels4.Add(new Level(5,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
