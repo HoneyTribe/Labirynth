@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class First : ScriptableObject, Puzzle
 {
-	private const int sizeX = 7;
+	private const int sizeX = 5;
 	private const int sizeZ = 3;
 
 	private Rect position;
