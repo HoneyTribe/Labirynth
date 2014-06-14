@@ -39,7 +39,6 @@ public class ScoreController : MonoBehaviour {
 		if (score == 0)
 		{
 			AudioController.instance.Play("004_CollectLastKey");
-			AudioController.instance.Play("003_CollectKeyB");
 			fusionLight.gameObject.SendMessage("TurnLightOn");
 			//leftDoor.gameObject.SendMessage("OpenDoor");
 			//rightDoor.gameObject.SendMessage("OpenDoor");
@@ -59,7 +58,7 @@ public class ScoreController : MonoBehaviour {
 		}
 		else
 		{
-			AudioController.instance.Play("003_CollectKeyB");
+			AudioController.instance.Play("003_CollectKey");
 		}
 	}
 
