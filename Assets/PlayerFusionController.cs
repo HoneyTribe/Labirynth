@@ -43,10 +43,10 @@ public class PlayerFusionController : MonoBehaviour {
 		{
 			puzzlePiece = (GameObject) Instantiate(puzzlePiece, Vector3.zero, Quaternion.Euler(0, 0, 0));
 			puzzlePiece.transform.parent = gameObject.transform;
-			puzzlePiece.transform.localPosition = new Vector3(0, 5, 0);
-			puzzlePiece.transform.localScale = new Vector3(puzzlePiece.transform.localScale.x / 4f,
-			                                               puzzlePiece.transform.localScale.y / 4f,
-			                                               puzzlePiece.transform.localScale.z / 4f);
+			puzzlePiece.transform.localPosition = new Vector3(0, 2, 0);
+			puzzlePiece.transform.localScale = new Vector3(puzzlePiece.transform.localScale.x / 3f,
+			                                               puzzlePiece.transform.localScale.y / 3f,
+			                                               puzzlePiece.transform.localScale.z / 3f);
 			puzzlePiece.SetActive(false);
 		}
 	}
