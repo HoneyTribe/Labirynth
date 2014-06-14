@@ -50,14 +50,17 @@ public class CraneGrabberController : MonoBehaviour {
 		{
 			if (!pickingUp)
 			{
-				if ((heldObject == null) && (CraneEnergyController.instance.canPickUp()))
+				if (heldObject == null)
 				{
-					this.newGrabberPosition = new Vector3 (transform.position.x, 
-					                                       transform.position.y - 7,
-					                                       transform.position.z);
-					this.grabberPosition = transform.position;
-					this.pickingUp = true;
-					CraneEnergyController.instance.pickingUp();
+					if (CraneEnergyController.instance.canPickUp())
+					{
+						this.newGrabberPosition = new Vector3 (transform.position.x, 
+						                                       transform.position.y - 7,
+						                                       transform.position.z);
+						this.grabberPosition = transform.position;
+						this.pickingUp = true;
+						CraneEnergyController.instance.pickingUp();
+					}
 				}
 				else
 				{
@@ -72,11 +75,21 @@ public class CraneGrabberController : MonoBehaviour {
 						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), true);
 						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), true);
 					}
+					Debug.Log("false");
 					CraneEnergyController.instance.holding(false);
 					heldObject = null;
 				}
 			}
 		}
+	}
+
+	IEnumerator ForceDrop() 
+	{
+		while (pickingUp) 
+		{
+			yield return new WaitForSeconds(0.1f);
+		}
+		PickUp ();
 	}
 
 	public void Smash() 
@@ -136,6 +149,7 @@ public class CraneGrabberController : MonoBehaviour {
 					obj.gameObject.SendMessage("setStopped", true);
 				}
 				heldObject = obj;
+				Debug.Log("true");
 				CraneEnergyController.instance.holding(true);
 			}
 		}

@@ -73,8 +73,9 @@ public class CraneEnergyController : MonoBehaviour {
 			changeEnergy (-Time.deltaTime * holdingCost);
 			if (energy == 0f)
 			{
+				Debug.Log("hello");
 				isHeld = false;
-				gameObject.SendMessage("PickUp");
+				gameObject.SendMessage("ForceDrop");
 			}
 		}
 		else if (beingSmashed)
