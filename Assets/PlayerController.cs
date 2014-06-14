@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((action > InputController.BUTTON_DURATION) || (action2 > InputController.BUTTON_DURATION))
 			{
 				lighthouseEntered = false;
+				AudioController.instance.Play("012_LightOffB");
 				TopLightController.instance.TurnOff();
 				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
@@ -57,12 +58,14 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((action > 0) && (action <= InputController.BUTTON_DURATION))
 			{
 				TopLightController.instance.AttractMonster();
+				AudioController.instance.Play("013_LightZap");
 			}
 
 			
 			if ((action2 > 0) && (action2 <= InputController.BUTTON_DURATION))
 			{
 				TopLightController.instance.ActivateItems();
+				AudioController.instance.Play("014_LightItem");
 			}
 
 			if(x < 0)
@@ -74,6 +77,8 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				LightController.instance.gameObject.SendMessage("MoveRight");
 			}
+
+
 		}
 		else if (craneEntered)
 		{
