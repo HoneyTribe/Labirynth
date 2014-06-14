@@ -65,6 +65,7 @@ public class MonsterDoorController : MonoBehaviour {
 	{
 		sign = 1;
 		timeLeft = interval;
+		AudioController.instance.Play ("28_MonsterDoor");
 	}
 
 	void CloseDoor ()
