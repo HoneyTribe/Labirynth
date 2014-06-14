@@ -10,9 +10,9 @@ namespace AssemblyCSharp
 
 				private static int firstLevelWithLightMachine = 0;
 				private static int firstLevelWithCrane = 3;
-				private static int firstLevelWithSmasher = 7;
-				private static int firstLevelWithDrone = 5;
-				private static int firstLevelWithStunGun = 6;
+				private static int firstLevelWithSmasher = 8;
+				private static int firstLevelWithDrone = 6;
+				private static int firstLevelWithStunGun = 10;
 
 				List<Level> levels1 = new List<Level> ();
 				List<Level> levels2 = new List<Level> ();
@@ -47,17 +47,18 @@ namespace AssemblyCSharp
 					levels2.Add(new Level(2,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
 						new MonsterTemplate("Standard", 2.6f)
-					},10,15,7,7, "EnableNoWallsEnding", null));
+					},5,10,7,7, "EnableNoWallsEnding", null));
 					//6
 					levels2.Add(new Level(2,new List<MonsterTemplate>{
 						new MonsterTemplate("Flying", 2.0f)
 					},5,6,7,7, null, null));
 					//7
-					levels2.Add(new Level(5,new List<MonsterTemplate>{},0,0,8,8, null, "CranePuzzle"));
+					levels2.Add(new Level(10,new List<MonsterTemplate>{},0,0,8,8, null, "CranePuzzle"));
 					//8
 					levels2.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
-						new MonsterTemplate("Flying", 2.4f)
+						new MonsterTemplate("Flying", 2.4f),
+						new MonsterTemplate("Standard", 3.0f),
 					},5,6,8,8, "EnableTrapEnding", null));
 					//9
 					levels2.Add(new Level(4,new List<MonsterTemplate>{
@@ -104,7 +105,7 @@ namespace AssemblyCSharp
 					levels3.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
 						new MonsterTemplate("Standard", 2.6f)
-					},10,15,7,7, "EnableNoWallsEnding", null));
+					},5,10,7,7, "EnableNoWallsEnding", null));
 					//6
 					levels3.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Flying", 2.0f)
@@ -161,7 +162,7 @@ namespace AssemblyCSharp
 					levels4.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
 						new MonsterTemplate("Standard", 2.6f)
-					},10,15,7,7, "EnableNoWallsEnding", null));
+					},5,10,7,7, "EnableNoWallsEnding", null));
 					//6
 					levels4.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Flying", 2.0f)
