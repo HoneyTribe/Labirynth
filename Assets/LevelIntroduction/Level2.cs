@@ -10,7 +10,7 @@ public class Level2 : LevelSetup {
 		//actions.Add(new CreateMonsterAction("Standard"));
 		//actions.Add(new MoveCameraAction("Monster"));
 		actions.Add(new MoveCameraAction("Player2"));
-		actions.Add(new TextAction(4, "Watch out for monsters!"));
+		actions.Add(new TextAction(4, "Watch out for monsters! Revive friends who get caught by touching them."));
 		actions.Add(new MoveCameraAction("DeviceContainer"));
 		actions.Add(new TextAction(4, "When in the maze: Tap your trigger button to drop the decoy."));
 		actions.Add(new MoveCameraAction("Lighthouse"));
