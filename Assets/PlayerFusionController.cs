@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class PlayerFusionController : MonoBehaviour {
 
+	private static float puzzleScale = 4f;
+
 	private GameObject puzzlePiece;
 
 	void Start()
@@ -44,9 +46,9 @@ public class PlayerFusionController : MonoBehaviour {
 			puzzlePiece = (GameObject) Instantiate(puzzlePiece, Vector3.zero, Quaternion.Euler(0, 0, 0));
 			puzzlePiece.transform.parent = gameObject.transform;
 			puzzlePiece.transform.localPosition = new Vector3(0, 5, 0);
-			puzzlePiece.transform.localScale = new Vector3(puzzlePiece.transform.localScale.x / 4f,
-			                                               puzzlePiece.transform.localScale.y / 4f,
-			                                               puzzlePiece.transform.localScale.z / 4f);
+			puzzlePiece.transform.localScale = new Vector3(puzzlePiece.transform.localScale.x / puzzleScale,
+			                                               puzzlePiece.transform.localScale.y / puzzleScale,
+			                                               puzzlePiece.transform.localScale.z / puzzleScale);
 			puzzlePiece.SetActive(false);
 		}
 	}
