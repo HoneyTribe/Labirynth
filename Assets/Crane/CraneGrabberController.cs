@@ -110,6 +110,7 @@ public class CraneGrabberController : MonoBehaviour {
 							flame.transform.parent = smashedWall.transform;
 							this.smashing = true;
 							CraneEnergyController.instance.smashing();
+							AudioController.instance.PlayInLoop("017_CraneLazer");
 						}
 					}
 				}
@@ -120,6 +121,7 @@ public class CraneGrabberController : MonoBehaviour {
 	void DestroyWall()
 	{
 		Destroy (smashedWall);
+		AudioController.instance.StopPlayingInLoop();
 	}
 	
 	void OnTriggerEnter (Collider collider)
