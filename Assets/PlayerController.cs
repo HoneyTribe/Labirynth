@@ -93,11 +93,13 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((action > 0) && (action <= InputController.BUTTON_DURATION))
 			{
 				CraneController.instance.PickUp();
+				AudioController.instance.Play("015_craneGrabs");
 			}
 
 			if ((action2 > 0) && (action2 <= InputController.BUTTON_DURATION))
 			{
 				CraneController.instance.SmashWall();
+				AudioController.instance.Play("017_CraneLazer");
 			}
 
 			if ((x != 0) || (z != 0))
@@ -148,6 +150,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 						jumpItem.rigidbody.isKinematic = true;
 						jumpItem.SendMessage("Take");
 						inventory.putItemIntoInventory();
+						AudioController.instance.Play("005_PickUp");
 					}
 				}
 				else
@@ -161,6 +164,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 					inventory.getInventoryItem().SendMessage("OnTriggerEnter", collider);
 					inventory.setAvailableItem(inventory.getInventoryItem());
 					inventory.clearInventory();
+					AudioController.instance.Play("006_Drop");
 				}
 			}
 
@@ -202,6 +206,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	public bool hasEnteredAnyMachine()
 	{
 		return lighthouseEntered || craneEntered || portalGunEntered;
+
 	}
 
 	public bool isParalysed()
@@ -223,6 +228,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				lighthouseEntered = true;
 				freeze();
 				TopLightController.instance.TurnOn();
+				AudioController.instance.Play("011_LightOn");
 			}
 		}
 		if(collision.collider.name == "Crane")
@@ -250,6 +256,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				paralysed = true;
 				gameController.SendMessage("PlayerParalysed");
+				AudioController.instance.Play("008_dead");
 				transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color=Color.grey;
 				collider.isTrigger = true;
 				collision.collider.rigidbody.velocity = Vector3.zero;
@@ -267,6 +274,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		{
 			rigidbody.velocity = Vector3.zero;
 			rigidbody.angularVelocity = Vector3.zero;
+			AudioController.instance.Play("021_BlockMovesB");
 			collision.gameObject.SendMessage("Move", -collision.contacts[0].normal);
 		}
 	}

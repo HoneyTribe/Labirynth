@@ -52,6 +52,7 @@ public class DeviceController : MonoBehaviour {
 		if (stateInfo.nameHash != activatedStateHash)
 		{
 			anim.SetTrigger (activatedHash);
+			AudioController.instance.Play("024_DecoyActive");
 		}
 		else
 		{
@@ -65,11 +66,13 @@ public class DeviceController : MonoBehaviour {
 		{
 			inLighthouse = false;
 			movement = new Vector3(positionToMove.x, 1, positionToMove.z);
+			AudioController.instance.Play("001_MoveDecoyMaze");
 		}
 		else
 		{
 			inLighthouse = true;
 			movement = initialPosition;
+			AudioController.instance.Play("002_MoveDecoyBase");
 		}
 	}
 }

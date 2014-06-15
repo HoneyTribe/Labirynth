@@ -32,19 +32,23 @@ public class MonsterCreationController : MonoBehaviour {
 		foreach (AssemblyCSharp.MonsterTemplate monster in LevelFinishedController.instance.getMonsters())
 		{
 			int entrance = Random.Range(0, 2);
+			AudioController.instance.Play("28_MonsterDoor");
 			if (entrance == 0)
 			{
 				monsterDoorLeft.gameObject.SendMessage("OpenDoor");
 				yield return new WaitForSeconds(4f);
 				CreateMonster(monsterDoorLeft, monster);
+
 			}
 			else
 			{
 				monsterDoorRight.gameObject.SendMessage("OpenDoor");
 				yield return new WaitForSeconds(4f);
 				CreateMonster(monsterDoorRight, monster);
+
 			}
 			yield return new WaitForSeconds(LevelFinishedController.instance.getTimeBetweenMonsters());
+
 		}
 	}
 
@@ -60,7 +64,6 @@ public class MonsterCreationController : MonoBehaviour {
 		                           position[posIndex]);
 		GameObject monster = InstantiateMonster (prefab, pos); 
 		monster.GetComponent<AbstractMonsterController> ().setSpeed (monsterTemplate.getSpeed());
-
 		return monster;
 	}
 

@@ -23,6 +23,7 @@ public class JumpBehaviour : MonoBehaviour {
 			{
 				state++;
 				time = 0;
+
 				Vector3 forward = transform.forward.normalized;
 				rigidbody.velocity = new Vector3 (forward.x, 0, forward.z) * speed;
 				timeAir = new Vector3(2 * Instantiation.instance.getSpaceX() * forward.x,
@@ -45,6 +46,7 @@ public class JumpBehaviour : MonoBehaviour {
 	{
 		state = 1;
 		time = 0f;
+		AudioController.instance.Play("007_Jump");
 		gameObject.SendMessage("setStopped", true);
 		rigidbody.useGravity = false;
 		rigidbody.velocity = new Vector3 (0, speed, 0);
