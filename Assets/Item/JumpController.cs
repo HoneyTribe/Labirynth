@@ -60,6 +60,7 @@ public class JumpController : MonoBehaviour {
 			foreach (GameObject obj in closeObjects)
 			{
 				obj.SendMessage("Jump");
+				AudioController.instance.Play("014_LightItem");
 			}
 		}
 	}

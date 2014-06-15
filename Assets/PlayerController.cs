@@ -65,7 +65,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((action2 > 0) && (action2 <= InputController.BUTTON_DURATION))
 			{
 				TopLightController.instance.ActivateItems();
-				AudioController.instance.Play("014_LightItem");
 			}
 
 			if(x < 0)
