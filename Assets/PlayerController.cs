@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	private bool inputBlocked;
 	private bool paralysed;
 	private Color originalColor;
-	private bool puzzleSound = false;
 	private float timeFromLastRevive = 0;
 
 	private List<GameObject> players = new List<GameObject>();
@@ -284,11 +283,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			rigidbody.velocity = Vector3.zero;
 			rigidbody.angularVelocity = Vector3.zero;
 			collision.gameObject.SendMessage("Move", -collision.contacts[0].normal);
-			if(puzzleSound == false)
-				{
-				AudioController.instance.Play("021_BlockMovesB");
-				}
-			puzzleSound = true;
 		}
 	}
 

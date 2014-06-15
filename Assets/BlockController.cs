@@ -51,6 +51,7 @@ public class BlockController : MonoBehaviour {
 				{					
 					moving = true;
 					target = new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z);
+					AudioController.instance.Play("021_BlockMovesB");
 				}
 			}
 		}
