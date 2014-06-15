@@ -4575,6 +4575,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3f79ad0a09a0bbf47837d1c76e6f561c, type: 2}
+    - target: {fileID: 100000, guid: 77a6ed218c233a14186d947ec111c13f, type: 3}
+      propertyPath: m_TagString
+      value: Machine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77a6ed218c233a14186d947ec111c13f, type: 3}
   m_RootGameObject: {fileID: 1614186312}
@@ -5836,7 +5840,7 @@ GameObject:
   - 23: {fileID: 501027825}
   m_Layer: 23
   m_Name: PortalGun
-  m_TagString: Untagged
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11678,7 +11682,7 @@ GameObject:
   - 23: {fileID: 1043791454}
   m_Layer: 18
   m_Name: Lighthouse
-  m_TagString: Untagged
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14786,7 +14790,7 @@ GameObject:
   - 23: {fileID: 1235173686}
   m_Layer: 23
   m_Name: Crane
-  m_TagString: Untagged
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19675,7 +19679,7 @@ GameObject:
   - 64: {fileID: 1614186317}
   m_Layer: 18
   m_Name: SpaceMachine_test7
-  m_TagString: Untagged
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

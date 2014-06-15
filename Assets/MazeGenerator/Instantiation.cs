@@ -91,7 +91,7 @@ public class Instantiation : MonoBehaviour {
 				// make sure node is not too close to any object
 				RaycastHit hit;
 				if ((!Physics.SphereCast(pos, 1.2f, Vector3.up, out hit)) ||
-					(!hit.collider.name.Contains("Machine")))
+					(!hit.collider.tag.Contains("Machine")))
 				{
 					GameObject node = (GameObject) Instantiate (nodePrefab, pos, Quaternion.Euler(0, 0, 0));
 					node.transform.parent = nodes.transform;
