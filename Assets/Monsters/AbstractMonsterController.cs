@@ -15,7 +15,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	protected TextMesh textMesh;
 
-	private static float paralysingInterval = 2f;
+	private static float paralysingInterval = 5f;
 	private float timeLeft;
 	private float paralysingTime;
 	protected bool recalculateTrigger;
