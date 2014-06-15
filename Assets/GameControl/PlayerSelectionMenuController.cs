@@ -83,6 +83,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 			if (!selGridInt.Contains(input.getPlayerId()))
 			{
 				selGridInt.Add(input.getPlayerId());
+				AudioController.instance.Play("003_CollectKey");
 			}
 
 			if (selGridInt.Count == LevelFinishedController.instance.getControllers().Count)
