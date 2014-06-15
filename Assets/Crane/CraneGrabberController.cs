@@ -79,6 +79,7 @@ public class CraneGrabberController : MonoBehaviour {
 					Debug.Log("false");
 					CraneEnergyController.instance.holding(false);
 					heldObject = null;
+					AudioController.instance.Play("031_CraneDrop");
 				}
 			}
 		}

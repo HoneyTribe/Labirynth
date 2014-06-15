@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour, StoppableObject {
 
 	private static int closeDistance = 3;
-	private static float timeBetweenRevivals = 1f;
+	private static float timeBetweenRevivals = 2f;
 	private float speed = 10;	
 
 	private bool lighthouseEntered = false;
@@ -201,6 +201,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 						transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color = originalColor;
 						collider.isTrigger = false;
 						paralysed = false;
+						AudioController.instance.Play("032_ReviveB");
 						timeFromLastRevive = Time.time;
 						break;
 					}
