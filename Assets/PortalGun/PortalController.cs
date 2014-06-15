@@ -37,6 +37,7 @@ public class PortalController : MonoBehaviour {
 					Vector3 centralPosition = Instantiation.instance.getCentralPosition(theOtherPortal.transform.position);
 					Vector3 pointBetween = Vector3.Lerp(centralPosition, theOtherPortal.transform.position, 0.5f);
 					obj.transform.position = new Vector3(pointBetween.x, obj.transform.position.y, pointBetween.z);
+					AudioController.instance.Play("030_DroneTeleHit");
 
 					if (obj.tag == "Monster")
 					{
@@ -60,7 +61,6 @@ public class PortalController : MonoBehaviour {
 			if (!closeObjects.Contains(collider.gameObject))
 			{
 				closeObjects.Add (collider.gameObject);
-				AudioController.instance.Play("030_DroneTeleHit");
 			}
 		}
 	}
