@@ -41,6 +41,7 @@ public class DeviceController : MonoBehaviour {
 			if (time <= 0)
 			{
 				anim.SetTrigger(activatedHash);
+				AudioController.instance.StopPlayingInLoop();
 			}
 		}
 	}
@@ -52,7 +53,7 @@ public class DeviceController : MonoBehaviour {
 		if (stateInfo.nameHash != activatedStateHash)
 		{
 			anim.SetTrigger (activatedHash);
-			AudioController.instance.Play("024_DecoyActive");
+			AudioController.instance.PlayInLoop("024_DecoyActive");
 		}
 		else
 		{
