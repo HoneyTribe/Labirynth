@@ -12,7 +12,8 @@ public class PuzzlePieceController : MonoBehaviour {
 
 	void Update()
 	{
-	
+		transform.LookAt(transform.position + myCamera.transform.rotation * Vector3.back,
+		                 myCamera.transform.rotation * Vector3.up);
 	}
 
 }
