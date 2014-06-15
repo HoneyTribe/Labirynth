@@ -87,12 +87,12 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				CraneController.instance.TurnOff();
 				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
+				AudioController.instance.Play("012_LightOffB");
 			}
 
 			if ((action > 0) && (action <= InputController.BUTTON_DURATION))
 			{
 				CraneController.instance.PickUp();
-				//AudioController.instance.Play("015_craneGrabs");
 			}
 
 			if ((action2 > 0) && (action2 <= InputController.BUTTON_DURATION))
@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				DroneController.instance.TurnOff();
 				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
+				AudioController.instance.Play("012_LightOffB");
 			}
 			
 			DroneController.instance.Move(new Vector3(x,action,z));
@@ -237,6 +238,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				craneEntered = true;
 				freeze();
 				CraneController.instance.TurnOn();
+				AudioController.instance.Play("011_LightOn");
 			}
 		}
 		if(collision.collider.name == "PortalGun")
@@ -246,6 +248,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				portalGunEntered = true;
 				freeze();
 				DroneController.instance.TurnOn();
+				AudioController.instance.Play("011_LightOn");
 			}
 		}
 		if((collision.collider.name == "Monster(Clone)") ||
