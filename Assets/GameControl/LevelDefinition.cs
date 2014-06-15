@@ -12,7 +12,8 @@ namespace AssemblyCSharp
 				private static int firstLevelWithCrane = 3;
 				private static int firstLevelWithSmasher = 8;
 				private static int firstLevelWithDrone = 6;
-				private static int firstLevelWithStunGun = 10;
+				private static int firstLevelWithStunGun = 6;
+		//10
 
 				List<Level> levels1 = new List<Level> ();
 				List<Level> levels2 = new List<Level> ();
