@@ -47,7 +47,7 @@ public class FusionController : MonoBehaviour {
 		fusionActivated = true;
 		foreach (GameObject player in players)
 		{
-			player.SendMessage("ShowPuzzle");
+			player.transform.Find("PuzzleContainer").SendMessage("ShowPuzzle");
 		}
 	}
 }
