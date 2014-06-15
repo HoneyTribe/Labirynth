@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((action > 0) && (action <= InputController.BUTTON_DURATION))
 			{
 				CraneController.instance.PickUp();
-				AudioController.instance.Play("015_craneGrabs");
+				//AudioController.instance.Play("015_craneGrabs");
 			}
 
 			if ((action2 > 0) && (action2 <= InputController.BUTTON_DURATION))

@@ -60,6 +60,7 @@ public class CraneGrabberController : MonoBehaviour {
 						this.grabberPosition = transform.position;
 						this.pickingUp = true;
 						CraneEnergyController.instance.pickingUp();
+						AudioController.instance.Play("015_craneGrabs");
 					}
 				}
 				else
