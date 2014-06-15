@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	private bool paralysed;
 	private Color originalColor;
 	private bool puzzleSound = false;
+	private float timeFromLastRevive = 0;
 
 	private List<GameObject> players = new List<GameObject>();
 
@@ -192,11 +193,15 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				if (Vector3.Distance(transform.localPosition, player.transform.localPosition) < closeDistance)
 				{
-					gameController.SendMessage("PlayerReviwed");
-					transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color = originalColor;
-					collider.isTrigger = false;
-					paralysed = false;
-					break;
+					if (Time.time - timeFromLastRevive > 1f)
+					{
+						gameController.SendMessage("PlayerReviwed");
+						transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color = originalColor;
+						collider.isTrigger = false;
+						paralysed = false;
+						timeFromLastRevive = Time.time;
+						break;
+					}
 				}
 			}
 		}
