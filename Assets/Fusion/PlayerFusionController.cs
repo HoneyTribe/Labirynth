@@ -8,7 +8,7 @@ public class PlayerFusionController : MonoBehaviour {
 
 	void Start()
 	{
-		int id = int.Parse(gameObject.name.Substring (6));
+		int id = int.Parse(gameObject.transform.parent.name.Substring (6));
 		int numberOfPlayers = LevelFinishedController.instance.getControllers().Count;
 		if (numberOfPlayers == 2) 
 		{
@@ -47,7 +47,7 @@ public class PlayerFusionController : MonoBehaviour {
 			puzzlePiece.transform.localScale = new Vector3(puzzlePiece.transform.localScale.x / 3f,
 			                                               puzzlePiece.transform.localScale.y / 3f,
 			                                               puzzlePiece.transform.localScale.z / 3f);
-			puzzlePiece.SetActive(false);
+			puzzlePiece.SetActive(true);
 		}
 	}
 
