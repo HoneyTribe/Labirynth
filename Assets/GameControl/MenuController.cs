@@ -48,7 +48,7 @@ public class MenuController : MonoBehaviour {
 		if ((action > 0) || (action2 > 0))
 		{
 			LevelFinishedController.instance.setLevel(selGridInt);
-			AudioController.instance.Play("003_CollectKey");
+			//AudioController.instance.Play("003_CollectKey");
 			Application.LoadLevel (0); 
 		}
 	}
