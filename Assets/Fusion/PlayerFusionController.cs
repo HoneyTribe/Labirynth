@@ -45,7 +45,7 @@ public class PlayerFusionController : MonoBehaviour {
 			puzzlePiece = (GameObject) Instantiate(puzzlePrefab, Vector3.zero, 
 			                                       Quaternion.Euler(90, 0, puzzlePrefab.transform.eulerAngles.z));
 			puzzlePiece.transform.parent = gameObject.transform;
-			puzzlePiece.transform.localPosition = new Vector3(0, 0, 0);
+			puzzlePiece.transform.localPosition = new Vector3(0, 5, 0);
 			puzzlePiece.transform.localScale = new Vector3(puzzlePiece.transform.localScale.x / 3f,
 			                                               puzzlePiece.transform.localScale.y / 3f,
 			                                               puzzlePiece.transform.localScale.z / 3f);
