@@ -31,7 +31,7 @@ public class TopLightController : MonoBehaviour {
 	void Start()
 	{
 		instance = this;
-		ball = GameObject.Find ("ball");
+		ball = GameObject.Find ("SpaceMachine_Light");
 
 		borderStyle = new GUIStyle ();
 		Texture2D borderTexture = new Texture2D (1, 1);
