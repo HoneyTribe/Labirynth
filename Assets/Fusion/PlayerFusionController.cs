@@ -8,17 +8,18 @@ public class PlayerFusionController : MonoBehaviour {
 
 	void Start()
 	{
+		GameObject puzzlePrefab = null;
 		int id = int.Parse(gameObject.transform.parent.name.Substring (6));
 		int numberOfPlayers = LevelFinishedController.instance.getControllers().Count;
 		if (numberOfPlayers == 2) 
 		{
 			if (id == 1)
 			{
-				puzzlePiece = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab_1and4");
+				puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab_1and4");
 			}
 			else
 			{
-				puzzlePiece = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab_2and3");
+				puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab_2and3");
 			}
 		}
 
@@ -26,24 +27,25 @@ public class PlayerFusionController : MonoBehaviour {
 		{
 			if ((id == 1) || (id == 2))
 			{
-				puzzlePiece = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab" + id);
+				puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab" + id);
 			}
 			else
 			{
-				puzzlePiece = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab_2and3");
+				puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab_2and3");
 			}
 		}
 
 		if (numberOfPlayers == 4) 
 		{
-			puzzlePiece = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab" + id);
+			puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab" + id);
 		}
 
 		if (numberOfPlayers > 1) 
 		{
-			puzzlePiece = (GameObject) Instantiate(puzzlePiece, Vector3.zero, Quaternion.Euler(0, 0, 0));
+			puzzlePiece = (GameObject) Instantiate(puzzlePrefab, Vector3.zero, 
+			                                       Quaternion.Euler(90, 0, puzzlePrefab.transform.eulerAngles.z));
 			puzzlePiece.transform.parent = gameObject.transform;
-			puzzlePiece.transform.localPosition = new Vector3(0, 2, 0);
+			puzzlePiece.transform.localPosition = new Vector3(0, 0, 0);
 			puzzlePiece.transform.localScale = new Vector3(puzzlePiece.transform.localScale.x / 3f,
 			                                               puzzlePiece.transform.localScale.y / 3f,
 			                                               puzzlePiece.transform.localScale.z / 3f);
