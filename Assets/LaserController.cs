@@ -31,6 +31,7 @@ public class LaserController : MonoBehaviour {
 		if (drawing)
 		{
 			((LineRenderer) renderer).SetPosition(1, 2 * (endPos - startPos));
+			AudioController.instance.Play("013_LightZap");
 			drawing = false;
 		}
 	}

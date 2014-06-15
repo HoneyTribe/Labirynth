@@ -59,7 +59,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((action > 0) && (action <= InputController.BUTTON_DURATION))
 			{
 				TopLightController.instance.AttractMonster();
-				AudioController.instance.Play("013_LightZap");
 			}
 
 			
