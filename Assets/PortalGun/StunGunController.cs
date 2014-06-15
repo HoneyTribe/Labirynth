@@ -8,6 +8,7 @@ public class StunGunController : MonoBehaviour {
 		if (collider.tag == "Monster")
 		{
 			collider.gameObject.SendMessage("Paralyse");
+			AudioController.instance.Play("020_DroneBombCollide");
 		}
 		else
 		{

@@ -126,7 +126,8 @@ public class DroneController : MonoBehaviour {
 						                           transform.position.z);
 						GameObject portal = (GameObject) Instantiate (portalPrefab, pos, Quaternion.Euler(0, 0, 0));
 						PortalController portalController = portal.GetComponent<PortalController>();
-						portal.rigidbody.velocity = -transform.up * 10; 
+						portal.rigidbody.velocity = -transform.up * 10;
+						AudioController.instance.Play("029_DroneTele");
 
 						// check groundController
 						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), true);
@@ -142,6 +143,7 @@ public class DroneController : MonoBehaviour {
 							secondPortal = portalController;
 							firstPortal.setTheOtherPortal(secondPortal);
 							secondPortal.setTheOtherPortal(firstPortal);
+							AudioController.instance.Play("029_DroneTele");
 						}
 						DronePowerController.instance.settingUp();
 					}
@@ -187,6 +189,7 @@ public class DroneController : MonoBehaviour {
 				stunGun.rigidbody.velocity = -transform.up * 10; 
 
 				DronePowerController.instance.usingStunGun();
+				AudioController.instance.Play("019_DroneBomb");
 			}
 		}
 	}

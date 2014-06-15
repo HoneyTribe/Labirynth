@@ -11902,6 +11902,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2b705bb20897e4850b063d36119dc14b, type: 3}
   - {fileID: 8300000, guid: 2395edce7813142d3989afeb2f570b66, type: 3}
   - {fileID: 8300000, guid: 8d98373df87fc44688f29b460b42b2e4, type: 3}
+  - {fileID: 8300000, guid: 0a32bb450efdf48b4947689444dad930, type: 3}
+  - {fileID: 8300000, guid: d50e90100f514485dbf3928e53668be8, type: 3}
+  - {fileID: 8300000, guid: 34a50446f01744b329fa083d3c43e954, type: 3}
+  - {fileID: 8300000, guid: 6e3d830b9543b4118a17ca18fa5b4dc9, type: 3}
   normalAudioSource: {fileID: 0}
   loopAudioSource: {fileID: 0}
 --- !u!4 &1045041659

@@ -100,6 +100,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	{
 		paralysedPosition = transform.position;
 		paralysingTime = paralysingInterval;
+
 	}
 
 	public void setSpeed(float speed)

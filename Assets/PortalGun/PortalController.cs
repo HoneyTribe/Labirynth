@@ -60,6 +60,7 @@ public class PortalController : MonoBehaviour {
 			if (!closeObjects.Contains(collider.gameObject))
 			{
 				closeObjects.Add (collider.gameObject);
+				AudioController.instance.Play("030_DroneTeleHit");
 			}
 		}
 	}
