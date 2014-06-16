@@ -10607,7 +10607,7 @@ GameObject:
   - 15: {fileID: 981957575}
   - 12: {fileID: 981957574}
   - 26: {fileID: 981957573}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Soap Bubbles5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19876,7 +19876,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1640799091}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Angry_particles_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21850,7 +21850,7 @@ GameObject:
   - 15: {fileID: 1819319459}
   - 12: {fileID: 1819319458}
   - 26: {fileID: 1819319457}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Soap Bubbles4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
