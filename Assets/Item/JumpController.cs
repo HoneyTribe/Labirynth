@@ -32,7 +32,7 @@ public class JumpController : MonoBehaviour {
 			taken = false;
 			if (currentCollider.name.Contains("Player"))
 			{
-				textMesh.text = "TAKE ME!";
+				//textMesh.text = "TAKE ME!";
 			}
 			else
 			{
