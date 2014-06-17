@@ -8,7 +8,7 @@ public class Level12 : LevelSetup {
 		List<Action> actions = new List<Action>();
 		
 		actions.Add(new MoveCameraAction("Player1"));
-		actions.Add(new TextAction(4, "Your ninja skills have grown. You nearly finished this demo!"));
+		actions.Add(new TextAction(4, "Did you really beat 11 levels already? Not bad at all :)"));
 
 		
 		return actions;

@@ -8,13 +8,13 @@ public class Level8 : LevelSetup {
 		List<Action> actions = new List<Action>();
 		
 
+		actions.Add(new MoveCameraAction("Drone"));
+		actions.Add(new TextAction(4, "Upgrade! You have a teleport drone! Tap your trigger to drop teleports."));
 		actions.Add(new MoveCameraAction("Player1"));
-		actions.Add(new TextAction(4, "Things are going to get more hectic now...!"));
+		actions.Add(new TextAction(4, "When two teleports are dropped friends and monsters can pass between them."));
+		actions.Add(new MoveCameraAction("Drone"));
+		actions.Add(new TextAction(4, "Each drop uses power. Aim carefully!"));
 
-		//actions.Add(new MoveCameraAction("Crane"));
-		//actions.Add(new TextAction(4, "Crane upgrade! Now you can remove walls with the crane lazer!"));
-		//actions.Add(new MoveCameraAction("Player2"));
-		//actions.Add(new TextAction(4, "Aim over a wall and tap your bumper when you have 100% power."));
 		
 		return actions;
 	}

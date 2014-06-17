@@ -6,13 +6,13 @@ namespace AssemblyCSharp
 		public class LevelDefinition
 		{
 				private static int firstLevelWithDevice = 1;
-				private static int firstLevelWithJumpItem = 2;
+				private static int firstLevelWithJumpItem = 10;
 
 				private static int firstLevelWithLightMachine = 0;
-				private static int firstLevelWithCrane = 3;
-				private static int firstLevelWithSmasher = 8;
-				private static int firstLevelWithDrone = 6;
-				private static int firstLevelWithStunGun = 10;
+				private static int firstLevelWithCrane = 4;
+				private static int firstLevelWithSmasher = 12;
+				private static int firstLevelWithDrone = 7;
+				private static int firstLevelWithStunGun = 13;
 
 				List<Level> levels1 = new List<Level> ();
 				List<Level> levels2 = new List<Level> ();
@@ -27,67 +27,90 @@ namespace AssemblyCSharp
 					// 1 player levels
 
 					//1
-					levels1.Add(new Level(4,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 2.4f)
+					levels1.Add(new Level(5,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 20.4f)
 					},1,15,7,7, null, null));
 
 		 	  		// 2 player levels
 
 					//1
-					levels2.Add(new Level(1,new List<MonsterTemplate>{},15,15,6,6, null, null));
+					levels2.Add(new Level(2,new List<MonsterTemplate>{},15,15,6,6, null, null));
 					//2
-					levels2.Add(new Level(5,new List<MonsterTemplate>{},0,0,8,8, null, "First"));
+					levels2.Add(new Level(5,new List<MonsterTemplate>{},0,0,7,7, null, "First"));
 					//3
-					levels2.Add(new Level(2,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 2.4f)
-					},15,6,6,6, null, null));
-					//4
-					levels2.Add(new Level(5,new List<MonsterTemplate>{},0,0,8,8, null, "SimpleCranePuzzle"));
-					//5
 					levels2.Add(new Level(2,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.6f),
 						new MonsterTemplate("Standard", 2.6f)
-					},5,10,7,7, "EnableNoWallsEnding", null));
+					},5,10,7,7, null, null));
+					//4
+					levels2.Add(new Level(3,new List<MonsterTemplate>{
+						new MonsterTemplate("Flying", 2.4f),
+						new MonsterTemplate("Flying", 2.4f)
+					},5,10,8,8, "EnableNoWallsEnding", null));
+					//5
+					levels2.Add(new Level(5,new List<MonsterTemplate>{
+					},5,10,7,7, null, "SimpleCranePuzzle"));
 					//6
-					levels2.Add(new Level(2,new List<MonsterTemplate>{
-						new MonsterTemplate("Flying", 2.0f)
-					},5,6,7,7, null, null));
+					levels2.Add(new Level(3,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 2.6f),
+						new MonsterTemplate("Standard", 2.6f)
+					},5,5,7,7, null, null));
 					//7
-					levels2.Add(new Level(9,new List<MonsterTemplate>{},0,0,8,8, null, "CranePuzzle"));
+					levels2.Add(new Level(4,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 2.8f),
+						new MonsterTemplate("Standard", 2.8f),
+						new MonsterTemplate("Flying", 2.4f)
+					},5,5,8,8, "EnableTrapEnding", null));
 					//8
+					levels2.Add(new Level(9,new List<MonsterTemplate>{
+					},5,5,7,7, null, "CranePuzzle"));
+					//9
 					levels2.Add(new Level(3,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
-						new MonsterTemplate("Flying", 2.4f),
 						new MonsterTemplate("Standard", 3.0f),
-					},5,6,8,8, "EnableTrapEnding", null));
-					//9
-					levels2.Add(new Level(4,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Flying", 2.4f)
-					},5,6,9,9, "EnableNoWallsEnding", null));
+						new MonsterTemplate("Standard", 3.0f)
+					},5,5,8,8, null, null));
 					//10
 					levels2.Add(new Level(4,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Flying", 2.4f),
+						new MonsterTemplate("Flying", 2.6f),
+						new MonsterTemplate("Flying", 2.6f),
 						new MonsterTemplate("Standard", 3.2f)
-					},5,6,9,9, "EnableTrapEnding", null));
+					},5,5,9,9, "EnableTrapEnding", null));
 					//11
-					levels2.Add(new Level(5,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Standard", 3.2f)
-					},5,10,10,10, null, null));
+					levels2.Add(new Level(3,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 2.4f)
+					},15,15,6,6, null, null));
 					//12
 					levels2.Add(new Level(5,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.2f),
+						new MonsterTemplate("Flying", 2.6f),
 						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Flying", 2.4f),
+						new MonsterTemplate("Flying", 2.6f),
+						new MonsterTemplate("Standard", 3.2f)
+					},5,8,10,10, "EnableNoWallsEnding", null));
+					//13
+					levels2.Add(new Level(5,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 2.2f),
+						new MonsterTemplate("Standard", 2.2f),
+						new MonsterTemplate("Standard", 2.2f),
+						new MonsterTemplate("Standard", 2.2f),
+						new MonsterTemplate("Standard", 2.2f)
+					},5,8,8,8, "EnableTrapEnding", null));
+					//14
+					levels2.Add(new Level(5,new List<MonsterTemplate>{
+						new MonsterTemplate("Flying", 2.6f),
+						new MonsterTemplate("Flying", 2.6f),
+						new MonsterTemplate("Flying", 2.6f)
+					},5,5,9,9, null, null));
+					//15
+					levels2.Add(new Level(5,new List<MonsterTemplate>{
+						new MonsterTemplate("Flying", 2.6f),
 						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Flying", 2.4f)
-					},5,10,10,10, null, null));	
+						new MonsterTemplate("Flying", 2.6f),
+						new MonsterTemplate("Standard", 3.2f),
+						new MonsterTemplate("Flying", 2.2f)
+					},5,5,10,10, null, null));
+
 
 					// 3 player levels	
 
