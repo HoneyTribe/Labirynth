@@ -5,8 +5,8 @@ public class DroneController : MonoBehaviour {
 
 	public static DroneController instance;
 	private const float stability = 0.5f;
-	private const float speed = 2.0f;
-	private const float retractingSpeed = 20f;
+	private const float speed = 3.0f;
+	private const float retractingSpeed = 30f;
 
 	public GameObject portalPrefab;
 	public GameObject stunGunPrefab;
@@ -92,7 +92,7 @@ public class DroneController : MonoBehaviour {
 	{
 		if (move == Vector3.zero)
 		{
-			rigidbody.drag = 2;
+			rigidbody.drag = 2.5f;
 		}
 		else
 		{
