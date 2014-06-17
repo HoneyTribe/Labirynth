@@ -160,7 +160,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (z + 2 * (monsterNum%internalSize)));			
 		GameObject monster = MonsterCreationController.instance.InstantiateMonster (monsterPrefab, monsterPos);
 		
-		monster.GetComponent<AbstractMonsterController> ().setSpeed (10f);
+		monster.GetComponent<AbstractMonsterController> ().setSpeed (7f);
 			
 		StandardMonsterController standardMonsterController = monster.GetComponent<StandardMonsterController> ();
 		if (standardMonsterController != null)
