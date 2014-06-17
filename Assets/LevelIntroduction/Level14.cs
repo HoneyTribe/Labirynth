@@ -13,7 +13,8 @@ public class Level14 : LevelSetup {
 		actions.Add(new TextAction(4, "Stunned monsters will freeze for a few seconds."));
 		actions.Add(new MoveCameraAction("Drone"));
 		actions.Add(new TextAction(4, "Power is used each time you drop a stun bomb."));
-		
+
+
 		return actions;
 	}
 	

@@ -9,9 +9,6 @@ public class Level3 : LevelSetup {
 		
 		actions.Add(new MoveCameraAction("DeviceContainer"));
 		actions.Add(new TextAction(4, "Put the decoy in cunning places."));
-
-
-
 		
 		return actions;
 	}

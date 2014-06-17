@@ -6,7 +6,6 @@ public class Level13 : LevelSetup {
 	public List<Action> Setup()
 	{
 		List<Action> actions = new List<Action>();
-
 		
 		actions.Add(new MoveCameraAction("Crane"));
 		actions.Add(new TextAction(4, "Crane upgrade! Now you can remove walls with the crane lazer!"));

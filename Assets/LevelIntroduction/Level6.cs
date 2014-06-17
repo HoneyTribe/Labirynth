@@ -9,6 +9,7 @@ public class Level6 : LevelSetup {
 		
 		actions.Add(new MoveCameraAction("Player1"));
 		actions.Add(new TextAction(4, "Never forget to revive your fallen friends. BFF or Die!"));
+
 		
 		return actions;
 	}

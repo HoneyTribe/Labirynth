@@ -12,7 +12,6 @@ public class Level5 : LevelSetup {
 		actions.Add(new MoveCameraAction("Crane"));
 		actions.Add(new TextAction(4, "Picking up costs power. Don't drain the power too soon!"));
 
-		
 		return actions;
 	}
 	

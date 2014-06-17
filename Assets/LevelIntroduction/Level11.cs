@@ -6,8 +6,6 @@ public class Level11 : LevelSetup {
 	public List<Action> Setup()
 	{
 		List<Action> actions = new List<Action>();
-		
-
 
 		actions.Add(new MoveCameraAction("JumpContainer(Clone)"));
 		actions.Add(new TextAction(4, "To pick up or drop the anti-grav box tap your bumper while standing on it."));
@@ -16,7 +14,6 @@ public class Level11 : LevelSetup {
 		actions.Add(new MoveCameraAction("Player1"));
 		actions.Add(new TextAction(4, "You can also force monsters to jump! Use power reserves wisely."));
 
-		
 		return actions;
 	}
 	

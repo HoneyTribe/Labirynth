@@ -10,7 +10,6 @@ public class Level12 : LevelSetup {
 		actions.Add(new MoveCameraAction("Player1"));
 		actions.Add(new TextAction(4, "Did you really beat 11 levels already? Not bad at all :)"));
 
-		
 		return actions;
 	}
 	

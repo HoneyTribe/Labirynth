@@ -11,8 +11,6 @@ public class Level4 : LevelSetup {
 		actions.Add(new MoveCameraAction("Monster"));
 		actions.Add(new TextAction(4, "Ghosts can walk through walls!"));
 
-
-
 		return actions;
 	}
 	
