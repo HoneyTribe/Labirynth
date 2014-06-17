@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Grid Material
-  m_Shader: {fileID: 4800000, guid: ab70c098a52a04be88096d20e1540cb8, type: 3}
+  m_Shader: {fileID: 4800000, guid: c8148224b6dc26245ac3afbd29dd651a, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,7 +17,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: c71838454206cca40b8009e2e326a1bc, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -31,7 +31,7 @@ Material:
         first:
           name: _FalloffTex
         second:
-          m_Texture: {fileID: 2800000, guid: cc90a732ad112a541100162a44295342, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -60,7 +60,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: .0588235259, b: .0588235259, a: 1}
+        second: {r: 1, g: 0, b: 0, a: 1}
       data:
         first:
           name: _TintColor
@@ -117,6 +117,14 @@ Material:
         first:
           name: _Projector_3
         second: {r: -.104516894, g: -.175117612, b: .978984177, a: 2.08773851}
+      data:
+        first:
+          name: _ColorH
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _ColorV
+        second: {r: .919118881, g: .047311306, b: .353947073, a: 1}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6

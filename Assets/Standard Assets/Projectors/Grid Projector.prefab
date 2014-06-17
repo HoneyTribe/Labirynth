@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400002}
   - 119: {fileID: 11900000}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: Grid Projector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: .707106888, y: 0, z: 0, w: .707106769}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.9764924, y: 6.6604948, z: .247999191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,16 +41,16 @@ Projector:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   serializedVersion: 2
-  m_NearClipPlane: .100000001
-  m_FarClipPlane: 50
+  m_NearClipPlane: 6.30000019
+  m_FarClipPlane: 11.6000004
   m_FieldOfView: 30
   m_AspectRatio: 1
   m_Orthographic: 0
-  m_OrthographicSize: 2
+  m_OrthographicSize: 2.81999993
   m_Material: {fileID: 2100000, guid: 52a1cf6eec0cc4f64bd6dfc9a3e8fe14, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294733311
 --- !u!1002 &11900001
 EditorExtensionImpl:
   serializedVersion: 6
