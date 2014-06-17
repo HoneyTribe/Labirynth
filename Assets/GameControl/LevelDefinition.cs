@@ -232,7 +232,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Standard", 3.0f)
 					},5,5,8,8, null, null));
 					//10
-					levels3.Add(new Level(4,new List<MonsterTemplate>{
+					levels4.Add(new Level(4,new List<MonsterTemplate>{
 						new MonsterTemplate("Flying", 2.6f),
 						new MonsterTemplate("Flying", 2.6f),
 						new MonsterTemplate("Standard", 3.2f)
