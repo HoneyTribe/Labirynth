@@ -20,7 +20,6 @@ public class CraneController : MonoBehaviour {
 
 	void Start()
 	{
-		rotationSpeed *= LevelFinishedController.instance.gameSpeed;
 		rotationPoint = new Vector3 (transform.position.x,
 		           					 transform.position.y,
 		                             transform.position.z - transform.localScale.z / 2f);
