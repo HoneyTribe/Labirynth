@@ -67,8 +67,8 @@ public class InControlManager : MonoBehaviour {
 		if (playerSelectionMenuController != null)
 		{
 			InputDevice input = InputManager.ActiveDevice;
-			bool left = (input.LeftTrigger.WasReleased) || (input.LeftBumper.WasReleased);
-			bool right = (input.RightTrigger.WasReleased) || (input.RightBumper.WasReleased);
+			bool left = (input.LeftTrigger.Value != 0) || (input.LeftBumper.Value != 0);
+			bool right = (input.RightTrigger.Value != 0) || (input.RightBumper.Value != 0);
 			bool found  = false;
 
 			if (left || right)
