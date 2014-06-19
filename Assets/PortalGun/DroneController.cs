@@ -6,7 +6,7 @@ public class DroneController : MonoBehaviour {
 	public static DroneController instance;
 	private const float stability = 0.5f;
 	private const float speed = 2.0f;
-	private const float retractingSpeed = 30f;
+	private const float retractingSpeed = 28f;
 
 	public GameObject portalPrefab;
 	public GameObject stunGunPrefab;
