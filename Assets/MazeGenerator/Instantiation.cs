@@ -150,11 +150,36 @@ public class Instantiation : MonoBehaviour {
 				return obj2.getDistance().CompareTo(obj1.getDistance());
 			}
 		);
+
+		List<KeyPosition> keysFull = new List<KeyPosition>(keys);
+		for (int i=keys.Count - 1; i<LevelFinishedController.instance.getNumberOfKeys(); i++) 
+		{
+			Vector2 tempPos = new Vector2(2 * Random.Range(0, sizeX) + 1, 2 * Random.Range(0, sizeZ) + 1);
+			bool found = false;
+			foreach (KeyPosition keyPos in keys)
+			{
+				if (keyPos.getPosition().Equals(tempPos))
+				{
+					found = true;
+					break;
+				}
+			}
+
+			if (!found)
+			{
+				keysFull.Add(new KeyPosition(tempPos, 0));
+			}
+			else
+			{
+				i--;
+			}
+		}
+
 		for (int i=0; i<LevelFinishedController.instance.getNumberOfKeys(); i++) 
 		{
-			Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * keys[i].getPosition().x,
+			Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * keysFull[i].getPosition().x,
 			                           keyPrefab.transform.position.y,
-			                           offsetZ + planeSizeZ/2f - spaceZ * keys[i].getPosition().y);
+			                           offsetZ + planeSizeZ/2f - spaceZ * keysFull[i].getPosition().y);
 			Quaternion rot = Quaternion.Euler(0, 0, 0);
 			Instantiate (keyPrefab, pos, rot); 
 		}
