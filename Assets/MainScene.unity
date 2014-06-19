@@ -2103,9 +2103,9 @@ Light:
   serializedVersion: 3
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.5
-  m_Range: 14
-  m_SpotAngle: 45
+  m_Intensity: 8
+  m_Range: 15
+  m_SpotAngle: 55
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -3968,7 +3968,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 348808867}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: .200000003
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -10025,7 +10025,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 8
   m_Range: 15
-  m_SpotAngle: 67
+  m_SpotAngle: 60
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -14735,7 +14735,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1248575365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .800000012, y: -16.3076096, z: 0}
+  m_LocalPosition: {x: .600000024, y: -16.3076096, z: 0}
   m_LocalScale: {x: .333333343, y: 2, z: .333333343}
   m_Children:
   - {fileID: 1526871700}

@@ -5,7 +5,7 @@ public class DroneController : MonoBehaviour {
 
 	public static DroneController instance;
 	private const float stability = 0.5f;
-	private const float speed = 3.0f;
+	private const float speed = 2.0f;
 	private const float retractingSpeed = 30f;
 
 	public GameObject portalPrefab;
@@ -92,20 +92,20 @@ public class DroneController : MonoBehaviour {
 	{
 		if (move == Vector3.zero)
 		{
-			rigidbody.drag = 2.5f;
+			rigidbody.drag = 3.0f;
 		}
 		else
 		{
-			rigidbody.drag = 0;
-			rigidbody.AddForce (move * Time.deltaTime * 500);
+			rigidbody.drag = 0.4f;
+			rigidbody.AddForce (move * Time.deltaTime * 320);
 			if (move.x != 0)
 			{
-				transform.Rotate(0,0,-move.x * Time.deltaTime * 20);
+				transform.Rotate(0,0,-move.x * Time.deltaTime * 25);
 			}
 
 			if (move.z != 0)
 			{
-				transform.Rotate(move.z * Time.deltaTime * 20,0,0);
+				transform.Rotate(move.z * Time.deltaTime * 25,0,0);
 			}
 		}
 	}
