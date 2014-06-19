@@ -38,10 +38,11 @@ public class Instantiation : MonoBehaviour {
 		spaceZ = planeSizeZ / (sizeZ * 2f);
 
 		int[,] grid = null;
+		Puzzle puzzle = null;
 		if (LevelFinishedController.instance.getPuzzleName() != null)
 		{
 			System.Type type = System.Type.GetType (LevelFinishedController.instance.getPuzzleName());
-			Puzzle puzzle = (Puzzle)ScriptableObject.CreateInstance(type);
+			puzzle = (Puzzle) ScriptableObject.CreateInstance(type);
 			grid = puzzle.getGrid();
 			puzzle.create();
 		}
@@ -59,6 +60,11 @@ public class Instantiation : MonoBehaviour {
 		drawHorisontalWalls (labirynth);
 		drawVerticalWalls (labirynth);
 		createNodes ();
+
+		if (LevelFinishedController.instance.getPuzzleName() != null)
+		{
+			puzzle.finish();
+		}
 	}	
 
 	void createNodes()

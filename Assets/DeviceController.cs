@@ -76,4 +76,9 @@ public class DeviceController : MonoBehaviour {
 			AudioController.instance.Play("002_MoveDecoyBase");
 		}
 	}
+
+	public bool isDeviceInLighthouse()
+	{
+		return inLighthouse;
+	}
 }

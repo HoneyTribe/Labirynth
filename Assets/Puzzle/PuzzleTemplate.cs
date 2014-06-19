@@ -184,4 +184,8 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		                              Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
 		Instantiate (keyPrefab, keyPos, Quaternion.Euler(0, 0, 0));
 	}
+
+	public void finish()
+	{
+	}
 }

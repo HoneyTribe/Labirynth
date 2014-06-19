@@ -16,6 +16,7 @@ public class First : ScriptableObject, Puzzle
 	private GameObject monsterPrefab;
 	private GameObject blockPrefab;
 	private GameObject keyPrefab;
+	private GameObject redButtonPrefab;
 
 	public First()
 	{
@@ -62,6 +63,7 @@ public class First : ScriptableObject, Puzzle
 		monsterPrefab = (GameObject) Resources.Load("Monster");
 		blockPrefab = (GameObject) Resources.Load("Textured Wall");
 		keyPrefab = (GameObject) Resources.Load("KeyContainer");
+		redButtonPrefab = (GameObject) Resources.Load("ControlPad_alert/Red button");
 	}
 
 	public int[,] getGrid()
@@ -83,6 +85,7 @@ public class First : ScriptableObject, Puzzle
 
 	public void create()
 	{
+		// block
 		float scaleFactorX = 2 * Instantiation.instance.getSpaceX() - 1f;
 		float scaleFactorZ = 2 * Instantiation.instance.getSpaceZ() - 1f;
 		Vector3 pos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * entrance.getEntrance().x,
@@ -95,6 +98,7 @@ public class First : ScriptableObject, Puzzle
 		                                         scaleFactorZ - Instantiation.compensatePillarInnerRadius);
 		block.AddComponent<BlockController> ();
 
+		// monsters
 		int monsterNum = 0;
 		int start = 0;
 		if (entrance.getEntrance().x == position.x)
@@ -127,6 +131,7 @@ public class First : ScriptableObject, Puzzle
 			monsterNum++;
 		}
 
+		// keys
 		int keyNum = LevelFinishedController.instance.getNumberOfKeys ();
 		for(int j=0; j < sizeZ * 2; j+=2)
 		{
@@ -143,5 +148,12 @@ public class First : ScriptableObject, Puzzle
 				Instantiate (keyPrefab, keyPos, Quaternion.Euler(0, 0, 0));
 			}
 		}
+	}
+
+	public void finish()
+	{
+		// red button
+		Vector3 buttonPos = new Vector3(0, 1.5f, -13);
+		Instantiate (redButtonPrefab, buttonPos, Quaternion.Euler(0, 0, 0)); 
 	}
 }

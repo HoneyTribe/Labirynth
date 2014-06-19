@@ -5,6 +5,7 @@ public interface Puzzle
 {
 	int[,] getGrid();
 	void create();
+	void finish();
 }
 
 
