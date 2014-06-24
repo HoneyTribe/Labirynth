@@ -3,14 +3,14 @@ guid: 779e5aafd99cfdb419e44753692c5843
 TextureImporter:
   serializedVersion: 2
   mipmaps:
-    mipMapMode: 0
+    mipMapMode: 1
     enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
-    mipMapFadeDistanceStart: 1
-    mipMapFadeDistanceEnd: 3
+    mipMapFadeDistanceStart: 8
+    mipMapFadeDistanceEnd: 10
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
@@ -24,7 +24,7 @@ TextureImporter:
   maxTextureSize: 256
   textureSettings:
     filterMode: 2
-    aniso: -1
+    aniso: 1
     mipBias: -1
     wrapMode: -1
   nPOTScale: 1
