@@ -3,7 +3,7 @@ guid: 4c436821a0d58eb469fe125ef0a028ee
 TextureImporter:
   serializedVersion: 2
   mipmaps:
-    mipMapMode: 0
+    mipMapMode: 1
     enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
