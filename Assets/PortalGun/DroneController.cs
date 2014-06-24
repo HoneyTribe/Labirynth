@@ -112,7 +112,7 @@ public class DroneController : MonoBehaviour {
 
 	public void Shoot ()
 	{
-		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithDrone())
+		if (LevelFinishedController.instance.isTeleportEnabled())
 	    {
 			if ((firstPortal == null) ||  (secondPortal == null))
 			{
@@ -178,7 +178,7 @@ public class DroneController : MonoBehaviour {
 
 	public void UseStunGun ()
 	{
-		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithStunGun())
+		if (LevelFinishedController.instance.isStunGunEnabled())
 		{
 			if (DronePowerController.instance.canUseStunGun() && !isDroneTooClose())
 			{

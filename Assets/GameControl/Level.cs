@@ -4,6 +4,7 @@ namespace AssemblyCSharp
 {
 		public class Level
 		{
+				private MachineCreator machineCreator;
 				private int numberOfKeys;
 				private List<MonsterTemplate> monsters;
 				private int timeToFirstMonster;
@@ -13,9 +14,10 @@ namespace AssemblyCSharp
 				private string ending;
 				private string puzzleName;
 
-				public Level (int numberOfKeys, List<MonsterTemplate> monsters, int timeToFirstMonster,
+				public Level (MachineCreator machineCreator, int numberOfKeys, List<MonsterTemplate> monsters, int timeToFirstMonster,
 		              int timeBetweenMonsters, int mazeSizeX, int mazeSizeZ, string ending, string puzzleName)
 				{
+					this.machineCreator = machineCreator;
 					this.numberOfKeys = numberOfKeys;
 					this.monsters = monsters;
 					this.timeToFirstMonster = timeToFirstMonster;
@@ -24,6 +26,11 @@ namespace AssemblyCSharp
 					this.mazeSizeZ = mazeSizeZ;
 					this.ending = ending;
 					this.puzzleName = puzzleName;
+				}
+
+				public MachineCreator getMachineCreator()
+				{
+					return machineCreator;
 				}
 
 				public int getNumberOfKeys()

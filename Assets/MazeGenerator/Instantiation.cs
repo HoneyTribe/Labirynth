@@ -109,21 +109,23 @@ public class Instantiation : MonoBehaviour {
 
 	void drawMachines()
 	{
-		if (LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithLightMachine())
+		if ((LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithLight()) &&
+			(!LevelFinishedController.instance.isDistractionEnabled()) &&
+			(!LevelFinishedController.instance.isItemActivationEnabled()))
 		{
 			GameObject.Find ("Lighthouse").SetActive(false);
 			GameObject.Find ("LightContainer").SetActive(false);
 		}
 
-		if ((LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithCrane()) &&
-			(LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithSmasher()))
+		if ((!LevelFinishedController.instance.isPickingUpEnabled()) &&
+		    (!LevelFinishedController.instance.isSmashingEnabled()))
 		{
 			GameObject.Find ("Crane").SetActive(false);
 			GameObject.Find ("CraneContainer").SetActive(false);
 		}
 
-		if ((LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithDrone()) &&
-			(LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithStunGun()))
+		if ((!LevelFinishedController.instance.isTeleportEnabled()) &&
+		    (!LevelFinishedController.instance.isStunGunEnabled()))
 		{
 			GameObject.Find ("PortalGun").SetActive(false);
 			GameObject.Find ("Drone").SetActive(false);
@@ -132,7 +134,7 @@ public class Instantiation : MonoBehaviour {
 
 	void drawDevice()
 	{
-		if (LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getFirstLevelWithDevice())
+		if (LevelFinishedController.instance.isDistractionEnabled())
 		{
 			Component[] components = GameObject.Find ("DeviceContainer").GetComponentsInChildren<MeshRenderer>();
 			foreach (Component component in components)
@@ -187,7 +189,7 @@ public class Instantiation : MonoBehaviour {
 
 	void drawJumps()
 	{
-		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithJumpItem())
+		if (LevelFinishedController.instance.isItemActivationEnabled())
 		{
 			Vector3 pos = getStart();
 			pos.y = 1.5f;

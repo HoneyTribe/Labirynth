@@ -46,7 +46,7 @@ public class CraneGrabberController : MonoBehaviour {
 
 	public void PickUp() 
 	{
-		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithCrane())
+		if (LevelFinishedController.instance.isPickingUpEnabled())
 		{
 			if (!pickingUp)
 			{
@@ -96,7 +96,7 @@ public class CraneGrabberController : MonoBehaviour {
 
 	public void Smash() 
 	{
-		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithSmasher())
+		if (LevelFinishedController.instance.isSmashingEnabled())
 		{
 			if (!smashing)
 			{

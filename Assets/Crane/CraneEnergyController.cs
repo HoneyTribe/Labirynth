@@ -116,12 +116,12 @@ public class CraneEnergyController : MonoBehaviour {
 	private float getMinCost()
 	{
 		float minCost = 1f;
-		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithCrane())
+		if (LevelFinishedController.instance.isPickingUpEnabled())
 		{
 			minCost = pickingUpCost;
 		}
 		
-		if (LevelFinishedController.instance.getLevel() >= LevelFinishedController.instance.getFirstLevelWithSmasher())
+		if (LevelFinishedController.instance.isSmashingEnabled())
 		{
 			if (minCost > 1f)
 			{

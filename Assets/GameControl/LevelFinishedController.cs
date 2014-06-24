@@ -169,6 +169,41 @@ public class LevelFinishedController : MonoBehaviour {
 		return levelDefinition.getLevels(controllers.Count)[level].getPuzzleName ();
 	}
 
+	public bool isDistractionEnabled()
+	{
+		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isDistractionEnabled();
+	}
+
+	public bool isItemActivationEnabled()
+	{
+		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isItemActivationEnabled();
+	}
+
+	public bool isPickingUpEnabled()
+	{
+		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isPickingUpEnabled();
+	}
+	
+	public bool isSmashingEnabled()
+	{
+		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isSmashingEnabled();
+	}
+
+	public bool isTeleportEnabled()
+	{
+		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isTeleportEnabled();
+	}
+	
+	public bool isStunGunEnabled()
+	{
+		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isStunGunEnabled();
+	}
+
+	public int getFirstLevelWithLight ()
+	{
+		return levelDefinition.getFirstLevelWithLight ();
+	}
+	
 	public bool isStopped()
 	{
 		return stopped;
@@ -187,41 +222,6 @@ public class LevelFinishedController : MonoBehaviour {
 	public int getLevel()
 	{
 		return level;
-	}
-
-	public int getFirstLevelWithDevice()
-	{
-		return levelDefinition.getFirstLevelWithDevice();
-	}
-
-	public int getFirstLevelWithJumpItem()
-	{
-		return levelDefinition.getFirstLevelWithJumpItem();
-	}
-
-	public int getFirstLevelWithLightMachine()
-	{
-		return levelDefinition.getFirstLevelWithLightMachine();
-	}
-	
-	public int getFirstLevelWithCrane()
-	{
-		return levelDefinition.getFirstLevelWithCrane();
-	}
-
-	public int getFirstLevelWithSmasher()
-	{
-		return levelDefinition.getFirstLevelWithSmasher();
-	}
-
-	public int getFirstLevelWithDrone()
-	{
-		return levelDefinition.getFirstLevelWithDrone();
-	}
-
-	public int getFirstLevelWithStunGun()
-	{
-		return levelDefinition.getFirstLevelWithStunGun();
 	}
 
 	public int getNumberOfLevels()
