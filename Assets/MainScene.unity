@@ -1988,7 +1988,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bbc59d963412b6d4892990db65cc252b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 58.7071037
+      value: -58.7070999
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bbc59d963412b6d4892990db65cc252b, type: 3}
       propertyPath: m_LocalScale.y
@@ -2736,7 +2736,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 389120645}
   m_GameObject: {fileID: 206731939}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -3060,7 +3060,7 @@ Transform:
   m_GameObject: {fileID: 266914446}
   m_LocalRotation: {x: 3.09086232e-08, y: .707106829, z: .707106829, w: -3.09086232e-08}
   m_LocalPosition: {x: .00133132935, y: .277319431, z: -.436507225}
-  m_LocalScale: {x: 58.7071037, y: 58.7071037, z: 58.7071037}
+  m_LocalScale: {x: -58.7070999, y: 58.7071037, z: 58.7071037}
   m_Children: []
   m_Father: {fileID: 1033124650}
 --- !u!95 &266914448
@@ -3817,6 +3817,10 @@ Prefab:
       propertyPath: m_Layer
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
   m_RootGameObject: {fileID: 1456957627}
@@ -3864,6 +3868,10 @@ Prefab:
     - target: {fileID: 100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
       propertyPath: m_Layer
       value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
@@ -4065,7 +4073,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1f3ed2a986fbdeb419c942236d4641fd, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -4476,6 +4484,10 @@ Prefab:
     - target: {fileID: 100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
       propertyPath: m_Name
       value: Puzzle_Prefab2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
@@ -8346,6 +8358,10 @@ Prefab:
       propertyPath: m_Layer
       value: 28
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0d490b8eef38d54c93b79711903d97a, type: 2}
   m_RootGameObject: {fileID: 1361005906}
@@ -10751,9 +10767,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1037846502}
-  - {fileID: 2043619463}
   - {fileID: 278751436}
   - {fileID: 2134565095}
+  - {fileID: 2043619463}
   m_Father: {fileID: 1898036547}
 --- !u!95 &983544388
 Animator:
@@ -14938,7 +14954,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 311281333}
   m_GameObject: {fileID: 1252116574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -17082,7 +17098,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 760974882}
   m_GameObject: {fileID: 1361005906}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -18218,7 +18234,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 309445474}
   m_GameObject: {fileID: 1456957627}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -22396,7 +22412,6 @@ Transform:
   m_Children:
   - {fileID: 31725039}
   - {fileID: 632557092}
-  - {fileID: 1638476072}
   - {fileID: 850149549}
   - {fileID: 483655116}
   - {fileID: 1345165721}
@@ -22405,6 +22420,7 @@ Transform:
   - {fileID: 983544387}
   - {fileID: 1522396965}
   - {fileID: 1845747560}
+  - {fileID: 1638476072}
   m_Father: {fileID: 2068684557}
 --- !u!1 &1910851405
 GameObject:
