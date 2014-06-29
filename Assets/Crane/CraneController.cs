@@ -92,7 +92,7 @@ public class CraneController : MonoBehaviour {
 					step *= extentionSpeed;
 				}
 
-				if (transform.localScale.z + step >= 3)
+				if (transform.localScale.z + step >= 1.52)
 				{
 					transform.localScale = new Vector3 (transform.localScale.x,
 					                                    transform.localScale.y,
