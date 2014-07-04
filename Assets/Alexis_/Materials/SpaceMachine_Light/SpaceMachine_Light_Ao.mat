@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: SpaceMachine_Light_Ao
-  m_Shader: {fileID: 12, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 10, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,7 +17,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: e6a1ded5ffbc56740bd6172f9f261902, type: 3}
+          m_Texture: {fileID: 2800000, guid: 02becef67d1be8a498ad394656c2e068, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -31,7 +31,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: .0931441858
+        second: .101473957
       data:
         first:
           name: _EmissionLM
@@ -40,7 +40,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .308823526, g: .308823526, b: .308823526, a: 1}
+        second: {r: .713235259, g: .713235259, b: .713235259, a: 1}
       data:
         first:
           name: _SpecColor
