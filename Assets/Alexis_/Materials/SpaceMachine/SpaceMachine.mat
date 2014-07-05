@@ -98,7 +98,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: .166936904
+        second: .154492065
       data:
         first:
           name: _EmissionLM
@@ -115,7 +115,7 @@ Material:
       data:
         first:
           name: _SpecColor
-        second: {r: .187737435, g: .198529422, b: .00291955308, a: 1}
+        second: {r: .990669847, g: 1, b: .83088237, a: 1}
       data:
         first:
           name: _Tint
