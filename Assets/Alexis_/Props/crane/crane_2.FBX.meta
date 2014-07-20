@@ -9,6 +9,7 @@ ModelImporter:
     3300000: //RootNode
     4300000: Cylinder042
     4300002: Crane
+    4300004: Crane001
     9500000: //RootNode
   materials:
     importMaterials: 1
