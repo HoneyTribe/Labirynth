@@ -19487,7 +19487,7 @@ GameObject:
   - 64: {fileID: 1462004207}
   m_Layer: 18
   m_Name: SpaceMachine
-  m_TagString: Untagged
+  m_TagString: Machine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24130,6 +24130,10 @@ Prefab:
     - target: {fileID: 400000, guid: 26e2ec192cb8681409131a6b1057d35a, type: 3}
       propertyPath: m_LocalScale.z
       value: 189.282654
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 26e2ec192cb8681409131a6b1057d35a, type: 3}
+      propertyPath: m_TagString
+      value: Machine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26e2ec192cb8681409131a6b1057d35a, type: 3}
