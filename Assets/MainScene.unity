@@ -9170,7 +9170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &792758631
 Transform:
   m_ObjectHideFlags: 0
@@ -16163,7 +16163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1313949388
 Animator:
   serializedVersion: 2
@@ -17846,7 +17846,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 66e581a081bfba341b0194aad9644294, type: 3}
   m_PrefabInternal: {fileID: 1129211376}
   m_GameObject: {fileID: 1447680122}
-  m_LocalRotation: {x: -.270598143, y: .653281748, z: .270597965, w: -.653281212}
+  m_LocalRotation: {x: -.270598173, y: .653281808, z: .270597994, w: -.653281271}
   m_LocalPosition: {x: .125754356, y: .0165119171, z: -.012447359}
   m_LocalScale: {x: 69.1751633, y: 69.1751556, z: 100.000015}
   m_Children: []
@@ -18892,6 +18892,10 @@ Prefab:
     - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_FarClipPlane
       value: 52.7999992
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
@@ -25148,7 +25152,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 66e581a081bfba341b0194aad9644294, type: 3}
   m_PrefabInternal: {fileID: 1453937487}
   m_GameObject: {fileID: 2142367437}
-  m_LocalRotation: {x: .653281748, y: .270598143, z: -.653281212, w: -.270597965}
+  m_LocalRotation: {x: .653281808, y: .270598173, z: -.653281271, w: -.270597994}
   m_LocalPosition: {x: .125754356, y: .0165119171, z: -.012447359}
   m_LocalScale: {x: 69.1751022, y: 69.1751175, z: 100.000015}
   m_Children: []
