@@ -69,6 +69,7 @@ public class InControlManager : MonoBehaviour {
 			InputDevice input = InputManager.ActiveDevice;
 			bool left = (input.LeftTrigger.Value != 0) || (input.LeftBumper.Value != 0);
 			bool right = (input.RightTrigger.Value != 0) || (input.RightBumper.Value != 0);
+			bool keyboard = input.Meta.Contains("keyboard");
 			bool found  = false;
 
 			if (left || right)
@@ -85,7 +86,7 @@ public class InControlManager : MonoBehaviour {
 					if (LevelFinishedController.instance.getControllers().Count != 4)
 					{
 						LevelFinishedController.instance.getControllers().Add(
-							new InputController(getDeviceId(input), left, playerSelectionMenuController, currentPlayer++));
+							new InputController(getDeviceId(input), keyboard, left, playerSelectionMenuController, currentPlayer++));
 					}
 				}
 			}

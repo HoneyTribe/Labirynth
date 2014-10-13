@@ -1,22 +1,32 @@
 ﻿public class PlayerSelectionState {
 
+	public static int PLAYER = 0;
+	public static int START = 1;
+	public static int HELP = 2;
+
 	private int id;
-	private bool cursorOnStart;
+	private int positionInMenu;
 
 	public PlayerSelectionState(int id)
 	{
 		this.id = id;
-		this.cursorOnStart = false;
+		this.positionInMenu = PLAYER;
 	}
 
-	public void moveCursorOnStart()
+	public void moveCursorDown()
 	{
-		this.cursorOnStart = true;
+		if (positionInMenu < HELP)
+		{
+			this.positionInMenu++;
+		}
 	}
 
-	public void moveCursorOutOfStart()
+	public void moveCursorUp()
 	{
-		this.cursorOnStart = false;
+		if (positionInMenu > PLAYER)
+		{
+			this.positionInMenu--;
+		}
 	}
 
 	public int getId()
@@ -24,8 +34,8 @@
 		return id;
 	}
 
-	public bool isCursorOnStart()
+	public int getPositionInMenu()
 	{
-		return cursorOnStart;
+		return positionInMenu;
 	}
 }

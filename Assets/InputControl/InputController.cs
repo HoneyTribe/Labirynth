@@ -21,6 +21,7 @@ public class InputController {
 	public KeyCode actionTrigger2;
 
 	private int device;
+	private bool keyboard;
 	private bool left;
 
 	private List<KeyCode> keys;
@@ -35,10 +36,11 @@ public class InputController {
 
 	private bool actionAxisBlocked;
 
-	public InputController(int device, bool left, PlayerSelectionMenuController playerSelectionMenuController,
+	public InputController(int device, bool keyboard, bool left, PlayerSelectionMenuController playerSelectionMenuController,
 	                       int playerId)
 	{
 		this.device = device;
+		this.keyboard = keyboard;
 		this.left = left;
 		this.playerSelectionMenuController = playerSelectionMenuController;
 
@@ -272,6 +274,11 @@ public class InputController {
 	public int getDevice()
 	{
 		return device;
+	}
+
+	public bool isKeyboard()
+	{
+		return keyboard;
 	}
 
 	public bool isLeft()
