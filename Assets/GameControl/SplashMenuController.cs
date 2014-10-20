@@ -12,7 +12,6 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	public Texture2D playersTexture;
 	public Texture2D padTexture;
 	public Texture2D keyboardTexture;
-	public Texture2D splashTexture;	
 
 	private List<PlayerSelectionState> selGridInt = new List<PlayerSelectionState> ();
 
@@ -20,10 +19,6 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	private GUIStyle padStyle = new GUIStyle();
 	private GUIStyle keyboardStyle = new GUIStyle();
 	private GUIStyle instructionstyle = null;
-
-    private GUIStyle splashStyle = new GUIStyle();
-	private GUIStyle backgroundStyle = new GUIStyle();
-	private bool splash = false;
 
 	public GameObject menuPrefab;
 
@@ -37,13 +32,6 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 
 		padStyle.normal.background = padTexture;
 		keyboardStyle.normal.background = keyboardTexture;
-
-		// splash
-		splashStyle.normal.background = splashTexture;
-		Texture2D texture = new Texture2D(1, 1);
-		texture.SetPixel(0,0,Color.white);
-		texture.Apply();
-		backgroundStyle.normal.background = texture;
 	}
 
 	public void handleLogic(float x, float z, float action, float action2, InputController input)
@@ -70,12 +58,6 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		
 		if ((action > 0) || (action2 > 0))
 		{
-			if (this.splash == true) 
-			{
-				this.splash = false;
-				return;
-			}
-
 			if (this.instructionstyle != null) 
 			{
 				this.instructionstyle = null;
@@ -126,15 +108,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	{
 		int numberOfPlayers = LevelFinishedController.instance.getControllers ().Count;
 
-		if (splash)
-		{
-			float width = 1280f/800*Screen.height;
-			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height ), backgroundStyle);
-			GUI.Box (new Rect((Screen.width - width)/2, 0, width, Screen.height), "", splashStyle);
-			GUI.Button (new Rect (Screen.width/2-60, Screen.height/2 + 120, 120, 40), "Start", skin.button);
-			GUI.EndGroup();
-		}
-		else if (this.instructionstyle != null)
+		if (this.instructionstyle != null)
 		{
 			float height = 800f/1280f*(Screen.width-200);
 			float half = (Screen.height - height)/2;
@@ -211,10 +185,5 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		}
 		
 		return false;
-	}
-
-	public void setSplash()
-	{
-		this.splash = true;
 	}
 }

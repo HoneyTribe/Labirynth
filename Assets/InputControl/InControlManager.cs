@@ -67,6 +67,11 @@ public class InControlManager : MonoBehaviour {
 		if (playerSelectionMenuController != null)
 		{
 			InputDevice input = InputManager.ActiveDevice;
+			if (input.MenuWasPressed)
+			{
+				playerSelectionMenuController.setSplash();
+				return;
+			}
 			bool left = (input.LeftTrigger.Value != 0) || (input.LeftBumper.Value != 0);
 			bool right = (input.RightTrigger.Value != 0) || (input.RightBumper.Value != 0);
 			bool keyboard = input.Meta.Contains("keyboard");

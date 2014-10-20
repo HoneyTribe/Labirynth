@@ -37,7 +37,8 @@ public class LevelFinishedController : MonoBehaviour {
 		levelDefinition = new AssemblyCSharp.LevelDefinition ();
 		stopped = true;
 		GameObject.Find ("GameController").SendMessage ("StopIntroduction", false);
-		Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		GameObject playerSelectionMenu = (GameObject) Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		playerSelectionMenu.GetComponent<PlayerSelectionMenuController>().setSplash();
 	}
 
 	private void LoadNewLevel()
@@ -117,7 +118,8 @@ public class LevelFinishedController : MonoBehaviour {
 
 	public void ShowPlayerSelectionMenu () 
 	{
-		if (GameObject.Find ("Player Selection Menu(Clone)") == null)
+		GameObject playerSelectionMenu = GameObject.Find ("Player Selection Menu(Clone)");
+		if ( playerSelectionMenu == null)
 		{
 			stopped = true;
 			Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
