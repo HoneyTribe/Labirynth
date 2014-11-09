@@ -38,7 +38,7 @@ public class LevelFinishedController : MonoBehaviour {
 		stopped = true;
 		GameObject.Find ("GameController").SendMessage ("StopIntroduction", false);
 		GameObject playerSelectionMenu = (GameObject) Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
-		playerSelectionMenu.GetComponent<PlayerSelectionMenuController>().setSplash();
+		playerSelectionMenu.GetComponent<PlayerSelectionMenuController>().setSplash(true);
 	}
 
 	private void LoadNewLevel()

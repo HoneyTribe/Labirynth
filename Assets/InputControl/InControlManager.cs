@@ -69,7 +69,7 @@ public class InControlManager : MonoBehaviour {
 			InputDevice input = InputManager.ActiveDevice;
 			if (input.MenuWasPressed)
 			{
-				playerSelectionMenuController.setSplash();
+				playerSelectionMenuController.setSplash(true);
 				return;
 			}
 			bool left = (input.LeftTrigger.Value != 0) || (input.LeftBumper.Value != 0);
@@ -79,6 +79,11 @@ public class InControlManager : MonoBehaviour {
 
 			if (left || right)
 			{
+				if (playerSelectionMenuController.isSplash())
+				{
+					playerSelectionMenuController.setSplash(false);
+					return;
+				}
 				foreach(InputController inputController in LevelFinishedController.instance.getControllers())
 				{
 					if ((inputController.getDevice() == getDeviceId(input)) && (inputController.isLeft() == left))

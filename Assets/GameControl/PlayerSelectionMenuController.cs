@@ -70,12 +70,6 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		
 		if ((action > 0) || (action2 > 0))
 		{
-			if (this.splash == true) 
-			{
-				this.splash = false;
-				return;
-			}
-
 			if (this.instructionstyle != null) 
 			{
 				this.instructionstyle = null;
@@ -213,8 +207,13 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		return false;
 	}
 
-	public void setSplash()
+	public void setSplash(bool splash)
 	{
-		this.splash = true;
+		this.splash = splash;
+	}
+
+	public bool isSplash()
+	{
+		return this.splash;
 	}
 }
