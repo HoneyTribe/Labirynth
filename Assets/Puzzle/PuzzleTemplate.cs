@@ -16,6 +16,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 	private int mazeSizeZ;
 
 	private GameObject monsterPrefab;
+	private GameObject lazyMonsterPrefab;
 	private GameObject blockPrefab;
 	private GameObject keyPrefab;
 
@@ -37,6 +38,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		mazeSizeZ = LevelFinishedController.instance.getMazeSizeZ ();
 
 		monsterPrefab = (GameObject) Resources.Load("Monster");
+		lazyMonsterPrefab = (GameObject) Resources.Load("LazyMonster");
 		blockPrefab = (GameObject) Resources.Load("Textured Wall");
 		keyPrefab = (GameObject) Resources.Load("KeyContainer");
 	}
@@ -127,8 +129,13 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 					createMonster (i, j, monsterNum);
 					monsterNum ++;
 				}
+				if (grid[i,j] == (int) TileType.LAZYMONSTER)
+				{
+					createLazyMonster (i, j, monsterNum);
+					monsterNum ++;
+				}
 
-				if ((grid[i,j] == (int) TileType.KEY) || (grid[i,j] == (int) TileType.MONSTER))
+				if ((grid[i,j] == (int) TileType.KEY) || (grid[i,j] == (int) TileType.MONSTER) || (grid[i,j] == (int) TileType.LAZYMONSTER))
 				{
 					if (keyNum != 0)
 					{
@@ -175,6 +182,15 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 			standardMonsterController.AddGuardingPosition(pos1);
 			standardMonsterController.AddGuardingPosition(pos2);
 		}
+	}
+
+	private void createLazyMonster(int x, int z, int monsterNum)
+	{
+		Vector3 monsterPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+		                                  monsterPrefab.transform.position.y,
+		                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (z + 2 * (monsterNum%internalSize)));			
+		GameObject monster = MonsterCreationController.instance.InstantiateMonster (lazyMonsterPrefab, monsterPos);
+		monster.GetComponent<AbstractMonsterController> ().setSpeed (7f);
 	}
 
 	private void createKey(int x, int z, int keyNum)

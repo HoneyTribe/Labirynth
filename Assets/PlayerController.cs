@@ -258,7 +258,8 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			}
 		}
 		if((collision.collider.name == "Monster(Clone)") ||
- 		   (collision.collider.name == "FlyingMonster(Clone)"))
+ 		   (collision.collider.name == "FlyingMonster(Clone)") ||
+		   (collision.collider.name == "LazyMonster(Clone)"))
 		{
 			if (!paralysed)
 			{

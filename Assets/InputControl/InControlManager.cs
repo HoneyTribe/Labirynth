@@ -79,23 +79,17 @@ public class InControlManager : MonoBehaviour {
 					Application.Quit();
 				}
 			}
-			InputControl trigger = null;
-			if (input.LeftTrigger.Value != 0) trigger = input.LeftTrigger;
-			if (input.LeftBumper.Value != 0) trigger = input.LeftBumper;
-			bool left = (trigger != null);
-			if (input.RightTrigger.Value != 0) trigger = input.RightTrigger;
-			if (input.RightBumper.Value != 0) trigger = input.RightBumper;
-			bool right = ((trigger != null) && (!left));
+			bool left = (input.LeftTrigger.Value != 0) || (input.LeftBumper.Value != 0);
+			bool right = (input.RightTrigger.Value != 0) || (input.RightBumper.Value != 0);
 			bool keyboard = input.Meta.Contains("keyboard");
 			bool found  = false;
 
 			// hasChanged to avoid key holding
-			if ((left || right) && (trigger.HasChanged))
+			if (left || right)
 			{
 				if (playerSelectionMenuController.isSplash())
 				{
 					playerSelectionMenuController.setSplash(false);
-					return;
 				}
 				foreach(InputController inputController in LevelFinishedController.instance.getControllers())
 				{

@@ -26,27 +26,52 @@ public class MenuController : MonoBehaviour {
 	{
 		if (x > 0)
 		{
-			if(selGridInt < LevelFinishedController.instance.getMaxLevel())
+			if(selGridInt % levelsPerRow != levelsPerRow - 1)
 			{
 				selGridInt++;
 			}
 			else
 			{
-				selGridInt = 0;
+				selGridInt -= levelsPerRow - 1;
 			}
 		}
 		
 		if (x < 0)
 		{
-			if(selGridInt > 0)
+			if(selGridInt % levelsPerRow != 0)
 			{
 				selGridInt--;
 			}
 			else
 			{
-				selGridInt = LevelFinishedController.instance.getMaxLevel();
+				selGridInt += levelsPerRow - 1;
 			}
 		}
+
+		if (z < 0)
+		{
+			if(selGridInt + levelsPerRow < LevelFinishedController.instance.getMaxLevel())
+			{
+				selGridInt += levelsPerRow;
+			}
+			else
+			{
+				selGridInt = selGridInt % levelsPerRow;
+			}
+		}
+
+		if (z > 0)
+		{
+			if(selGridInt - levelsPerRow < 0)
+			{
+				selGridInt = LevelFinishedController.instance.getMaxLevel() + 1 - levelsPerRow + (selGridInt % levelsPerRow);
+			}
+			else
+			{
+				selGridInt -= levelsPerRow;
+			}
+		}
+
 
 		if ((action > 0) || (action2 > 0))
 		{
