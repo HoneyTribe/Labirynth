@@ -7,8 +7,10 @@ public class MenuController : MonoBehaviour {
 	private static int levelsPerRow = 5;
 	public GUISkin skin;
 	public GUISkin selectedSkin;
+	public Texture2D background;
 	private GameObject gameController;
 	private int selGridInt;
+	private GUIStyle backgroundStyle = new GUIStyle();
 
 	void Start()
 	{
@@ -17,6 +19,7 @@ public class MenuController : MonoBehaviour {
 		{
 			input.SetMenu(this);
 		}
+		backgroundStyle.normal.background = background;
 	}
 
 	public void handleLogic(float x, float z, float action, float action2)
@@ -54,9 +57,9 @@ public class MenuController : MonoBehaviour {
 
 	void OnGUI () 
 	{
-		GUI.BeginGroup(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 150, 400, 300));
-			GUI.Box (new Rect(0, 0, 400, 300), "", skin.box);
-			GUI.Label (new Rect (0, 30, 400, 50), "Levels", skin.label);
+		GUI.BeginGroup(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 300, 600, 600));
+			GUI.Box (new Rect(0, 0, 600, 600), "", backgroundStyle);
+			GUI.Label (new Rect (100, 180, 400, 50), "Levels", skin.label);
 
 			for (int i=0; i<=LevelFinishedController.instance.getNumberOfLevels(); i++)
 			{
@@ -70,11 +73,11 @@ public class MenuController : MonoBehaviour {
 
 				if (selGridInt == i)
 				{
-					GUI.Button (new Rect (50 + x * 65, 80 + y * 65, 40, 40), (i + 1).ToString(), selectedSkin.button);
+					GUI.Button (new Rect (160 + x * 59, 235 + y * 59, 40, 40), (i + 1).ToString(), selectedSkin.button);
 				}
 				else
 				{
-					GUI.Button (new Rect (50 + x * 65, 80 + y * 65, 40, 40), (i + 1).ToString(), skin.button);
+					GUI.Button (new Rect (160 + x * 59, 235 + y * 59, 40, 40), (i + 1).ToString(), skin.button);
 				}
 
 				if (i>LevelFinishedController.instance.getMaxLevel())
