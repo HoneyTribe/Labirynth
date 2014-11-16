@@ -29,13 +29,13 @@ namespace InControl
 				{
 					Handle = "Action",
 					Target = InputControlType.LeftTrigger,
-					Source = KeyCodeButton( KeyCode.LeftAlt )
+					Source = KeyCodeButton( KeyCode.Space )
 				},
 				new InputControlMapping
 				{
 					Handle = "Action2",
 					Target = InputControlType.LeftBumper,
-					Source = KeyCodeButton( KeyCode.Space )
+					Source = KeyCodeButton( KeyCode.LeftAlt )
 				},
 				new InputControlMapping
 				{
