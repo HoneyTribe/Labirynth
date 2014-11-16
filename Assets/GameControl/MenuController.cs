@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class MenuController : MonoBehaviour {
 
@@ -26,31 +27,39 @@ public class MenuController : MonoBehaviour {
 	{
 		if (x > 0)
 		{
-			if(selGridInt % levelsPerRow != levelsPerRow - 1)
+			if ((selGridInt + 1) % levelsPerRow == 0)
 			{
-				selGridInt++;
+				selGridInt -= levelsPerRow - 1;
+			}
+			else if (selGridInt + 1 > LevelFinishedController.instance.getMaxLevel())
+			{
+				selGridInt = (LevelFinishedController.instance.getMaxLevel() / levelsPerRow) * levelsPerRow;
 			}
 			else
 			{
-				selGridInt -= levelsPerRow - 1;
+				selGridInt++;
 			}
 		}
 		
 		if (x < 0)
 		{
-			if(selGridInt % levelsPerRow != 0)
+			if(selGridInt % levelsPerRow == 0)
 			{
-				selGridInt--;
+				selGridInt += levelsPerRow - 1;
+				if (selGridInt > LevelFinishedController.instance.getMaxLevel())
+				{
+					selGridInt = LevelFinishedController.instance.getMaxLevel();
+				}
 			}
 			else
 			{
-				selGridInt += levelsPerRow - 1;
+				selGridInt--;
 			}
 		}
 
 		if (z < 0)
 		{
-			if(selGridInt + levelsPerRow < LevelFinishedController.instance.getMaxLevel())
+			if(selGridInt + levelsPerRow <= LevelFinishedController.instance.getMaxLevel())
 			{
 				selGridInt += levelsPerRow;
 			}
@@ -64,7 +73,13 @@ public class MenuController : MonoBehaviour {
 		{
 			if(selGridInt - levelsPerRow < 0)
 			{
-				selGridInt = LevelFinishedController.instance.getMaxLevel() + 1 - levelsPerRow + (selGridInt % levelsPerRow);
+				int posInRow = selGridInt % levelsPerRow;
+				int numberOfRows = LevelFinishedController.instance.getMaxLevel() / levelsPerRow;
+				selGridInt = numberOfRows * levelsPerRow + posInRow;
+				if (selGridInt > LevelFinishedController.instance.getMaxLevel())
+				{
+					selGridInt -= levelsPerRow;
+				}
 			}
 			else
 			{
@@ -84,7 +99,7 @@ public class MenuController : MonoBehaviour {
 	{
 		GUI.BeginGroup(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 300, 600, 600));
 			GUI.Box (new Rect(0, 0, 600, 600), "", backgroundStyle);
-			GUI.Label (new Rect (100, 180, 400, 50), "Levels", skin.label);
+			GUI.Label (new Rect (100, 165, 400, 50), "Levels", skin.label);
 
 			for (int i=0; i<=LevelFinishedController.instance.getNumberOfLevels(); i++)
 			{
@@ -98,11 +113,11 @@ public class MenuController : MonoBehaviour {
 
 				if (selGridInt == i)
 				{
-					GUI.Button (new Rect (160 + x * 59, 235 + y * 59, 40, 40), (i + 1).ToString(), selectedSkin.button);
+					GUI.Button (new Rect (160 + x * 59, 210 + y * 55, 40, 40), (i + 1).ToString(), selectedSkin.button);
 				}
 				else
 				{
-					GUI.Button (new Rect (160 + x * 59, 235 + y * 59, 40, 40), (i + 1).ToString(), skin.button);
+					GUI.Button (new Rect (160 + x * 59, 210 + y * 55, 40, 40), (i + 1).ToString(), skin.button);
 				}
 
 				if (i>LevelFinishedController.instance.getMaxLevel())
