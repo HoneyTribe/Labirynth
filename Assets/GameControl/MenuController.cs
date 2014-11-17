@@ -25,9 +25,21 @@ public class MenuController : MonoBehaviour {
 
 	public void handleLogic(float x, float z, float action, float action2)
 	{
+		// fix gamepad diagonal behaviour
+		if ((x != 0) && (z != 0))
+		{
+			if (Math.Abs(x) > Math.Abs (z))
+			{
+				z = 0;
+			}
+			else
+			{
+				x = 0;
+			}
+		}
+
 		if (x > 0)
 		{
-			Debug.LogError("x more" ) ;
 			if ((selGridInt + 1) % levelsPerRow == 0)
 			{
 				selGridInt -= levelsPerRow - 1;
@@ -44,7 +56,6 @@ public class MenuController : MonoBehaviour {
 		
 		if (x < 0)
 		{	
-			Debug.LogError("x less");
 			if(selGridInt % levelsPerRow == 0)
 			{
 				selGridInt += levelsPerRow - 1;
@@ -61,7 +72,6 @@ public class MenuController : MonoBehaviour {
 
 		if (z < 0)
 		{	
-			Debug.LogError("z less");
 			if(selGridInt + levelsPerRow <= LevelFinishedController.instance.getMaxLevel())
 			{
 				selGridInt += levelsPerRow;
@@ -74,7 +84,6 @@ public class MenuController : MonoBehaviour {
 
 		if (z > 0)
 		{
-			Debug.LogError("z more");
 			if(selGridInt - levelsPerRow < 0)
 			{
 				int posInRow = selGridInt % levelsPerRow;
@@ -94,7 +103,6 @@ public class MenuController : MonoBehaviour {
 
 		if ((action > 0) || (action2 > 0))
 		{
-			Debug.LogError("action");
 			LevelFinishedController.instance.setLevel(selGridInt);
 			Application.LoadLevel (0); 
 		}
