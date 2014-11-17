@@ -8736,6 +8736,7 @@ GameObject:
   - 4: {fileID: 762053455}
   - 114: {fileID: 762053454}
   - 114: {fileID: 762053456}
+  - 114: {fileID: 762053457}
   m_Layer: 0
   m_Name: EndingController
   m_TagString: Untagged
@@ -8774,6 +8775,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16204491e46fa5249bcb54430f83a920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &762053457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 762053453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4e18b6bbafb38947bbacb1b0b283296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &763187050
