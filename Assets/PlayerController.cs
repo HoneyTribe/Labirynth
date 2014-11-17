@@ -279,7 +279,8 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 	void OnCollisionStay (Collision collision)
 	{
-		if(collision.collider.name == "Block")
+		// if player jumps on the block its velocity shouldn't be zeroed, because he should slide
+		if ((collision.collider.name == "Block") && (gameObject.rigidbody.useGravity == false))
 		{
 			rigidbody.velocity = Vector3.zero;
 			rigidbody.angularVelocity = Vector3.zero;

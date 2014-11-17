@@ -135,7 +135,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 					monsterNum ++;
 				}
 
-				if ((grid[i,j] == (int) TileType.KEY) || (grid[i,j] == (int) TileType.MONSTER) || (grid[i,j] == (int) TileType.LAZYMONSTER))
+				if (grid[i,j] == (int) TileType.KEY)
 				{
 					if (keyNum != 0)
 					{
