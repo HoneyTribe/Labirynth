@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class Level11 : LevelSetup {
+/*public class Level11 : LevelSetup {
 	
+
 	public List<Action> Setup()
 	{
 		List<Action> actions = new List<Action>();
@@ -14,6 +15,7 @@ public class Level11 : LevelSetup {
 
 		return actions;
 	}
-	
+
 	
 }
+*/
