@@ -114,17 +114,13 @@ namespace AssemblyCSharp
 					//14
 					levels2.Add(new Level(new MachineCreator(false, true, true, false, true, false),
 			            40,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 4.0f),
-						new MonsterTemplate("Standard", 3.0f),
-						new MonsterTemplate("Standard", 4.2f),
-						new MonsterTemplate("Standard", 3.6f)
 					},5,10,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
 
 
 			//_______________________
 
 					//15
-					levels2.Add(new Level(new MachineCreator(false, false, false, false, true, true),
+			levels2.Add(new Level(new MachineCreator(false, false, false, true, true, true),
 						10,new List<MonsterTemplate>{
 					},5,5,9,9, null, "DronePuzzle"));
 
