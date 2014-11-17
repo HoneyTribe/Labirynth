@@ -7,8 +7,14 @@ public class Level6 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 		
-		actions.Add(new MoveCameraAction("Player1"));
-		actions.Add(new TextAction(4, "Never forget to revive your fallen friends. BFF or Die!"));
+		actions.Add(new MoveCameraAction("Lighthouse"));
+		actions.Add(new TextAction(4, "Upgrade! You have a Grabber!"));
+		actions.Add(new MoveCameraAction("Crane"));
+		actions.Add(new TextAction(4, "Tap Action-1 to pick up/drop friends, items and monsters."));
+		actions.Add(new MoveCameraAction("Crane"));
+		actions.Add(new TextAction(4, "Picking up costs power. Don't drain the power too soon!"));
+
+
 
 		
 		return actions;

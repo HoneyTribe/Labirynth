@@ -29,7 +29,7 @@ namespace AssemblyCSharp
 
 					//1 light
 					levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			        	2, new List<MonsterTemplate>{},15,15,6,6, null, null));
+			        	2, new List<MonsterTemplate>{},0,0,6,6, null, null));
 
 					//2 decoy
 					levels2.Add(new Level(new MachineCreator(false, false, false, false, false, false),
@@ -44,34 +44,34 @@ namespace AssemblyCSharp
 						2,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 2.8f),
 						new MonsterTemplate("Standard", 2.8f)
-					},5,10,7,7, null, null));
+					},4,4,7,7, null, null));
 
 					//5 ghost
 					levels2.Add(new Level(new MachineCreator(false, false, false, false, false, false),
 						3,new List<MonsterTemplate>{
 						new MonsterTemplate("Flying", 2.4f),
 						new MonsterTemplate("Flying", 2.4f)
-					},5,5,8,8, null, null));
+					},4,4,7,7, null, null));
 
 					//6 crane
 					levels2.Add(new Level(new MachineCreator(false, false, true, false, false, false),
-						16,new List<MonsterTemplate>{
-					},5,10,7,7, null, "SimpleCranePuzzle"));
+						14,new List<MonsterTemplate>{
+					},0,0,7,7, null, "SimpleCranePuzzle"));
 
 					//7
 					levels2.Add(new Level(new MachineCreator(false, false, true, false, false, false),
 						3,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 2.8f),
-						new MonsterTemplate("Standard", 2.8f)
-					},5,5,7,7, "EnableNoWallsEnding", "DecoyPuzzle"));
+						new MonsterTemplate("Standard", 3.0f),
+						new MonsterTemplate("Standard", 2.6f)
+					},4,4,8,8, "EnableNoWallsEnding", "DecoyPuzzle"));
 
 					//8 no walls
 					levels2.Add(new Level(new MachineCreator(false, false, false, false, true, false),
 					    49,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 4.0f),
-						new MonsterTemplate("Flying", 3.4f),
-						new MonsterTemplate("Standard", 3.0f)
-						},5,5,7,7, "EnableTrapEnding", "NoWalls"));
+						new MonsterTemplate("Flying", 3.6f),
+						new MonsterTemplate("Standard", 3.2f)
+						},4,4,7,7, "EnableTrapEnding", "NoWalls"));
 
 					//9 teleport
 					levels2.Add(new Level(new MachineCreator(false, false, false, false, true, false),

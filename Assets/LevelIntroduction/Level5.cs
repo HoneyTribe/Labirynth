@@ -6,11 +6,10 @@ public class Level5 : LevelSetup {
 	public List<Action> Setup()
 	{
 		List<Action> actions = new List<Action>();
-		
-		actions.Add(new MoveCameraAction("Crane"));
-		actions.Add(new TextAction(4, "Upgrade! You have a crane! Tap your trigger to pick up or drop friends, items and monsters."));
-		actions.Add(new MoveCameraAction("Crane"));
-		actions.Add(new TextAction(4, "Picking up costs power. Don't drain the power too soon!"));
+
+		actions.Add(new CreateMonsterAction("Flying"));
+		actions.Add(new MoveCameraAction("Monster"));
+		actions.Add(new TextAction(4, "Ghosts can walk through walls!"));
 
 		return actions;
 	}

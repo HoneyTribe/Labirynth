@@ -6,10 +6,9 @@ public class Level4 : LevelSetup {
 	public List<Action> Setup()
 	{
 		List<Action> actions = new List<Action>();
-		
-		actions.Add(new CreateMonsterAction("Flying"));
-		actions.Add(new MoveCameraAction("Monster"));
-		actions.Add(new TextAction(4, "Ghosts can walk through walls!"));
+
+		actions.Add(new MoveCameraAction("Lighthouse"));
+		actions.Add(new TextAction(4, "Be prepared to run!"));
 
 		return actions;
 	}

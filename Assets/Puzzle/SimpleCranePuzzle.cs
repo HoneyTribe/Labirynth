@@ -6,7 +6,31 @@ public class SimpleCranePuzzle : PuzzleTemplate
 {
 	public SimpleCranePuzzle() :base()
 	{
-		sizeX = 5;
+		sizeX = 4;
+		sizeZ = 4;
+	
+		extX = 1;
+		extZ = 1;
+		internalSize = sizeZ - 2; 
+		
+		templateSizeX = 8;
+		templateSizeZ = 8;
+		template = new int[8, 8] 	{{0,2,5,2,5,2,5,0},
+									{0,0,0,0,0,0,2,0},
+									{5,0,5,0,5,0,5,0},
+									{2,0,0,0,0,0,2,0},
+									{4,0,5,0,5,0,5,0},
+									{2,0,2,0,2,0,2,0},
+									{5,0,5,0,5,0,5,0},
+									{0,0,0,0,0,0,0,0}};
+		
+		extededTemplate = new int[sizeZ * 2 , sizeX * 2 ]; 
+		init ();
+	}
+}
+
+/*
+ sizeX = 5;
 		sizeZ = 4;
 		
 		extX = 1;
@@ -18,10 +42,6 @@ public class SimpleCranePuzzle : PuzzleTemplate
 		template = new int[5, 5] 	{{5,2,5,0,5},
 									{2,0,0,0,2},
 									{2,0,5,0,5},
-									{2,0,2,2,2},
+									{2,0,2,0,2},
 									{5,0,5,2,0}};
-		
-		extededTemplate = new int[sizeZ * 2 -1, sizeX * 2 -1]; 
-		init ();
-	}
-}
+*/

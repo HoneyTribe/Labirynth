@@ -9,14 +9,14 @@ public class Level2 : LevelSetup {
 		
 		//actions.Add(new CreateMonsterAction("Standard"));
 		//actions.Add(new MoveCameraAction("Monster"));
-		actions.Add(new MoveCameraAction("Player2"));
-		actions.Add(new TextAction(4, "Watch out for monsters! Revive friends who get caught by touching them."));
 		actions.Add(new MoveCameraAction("DeviceContainer"));
-		actions.Add(new TextAction(4, "When in the maze: Tap your trigger button to drop the decoy."));
-		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "When in the light-machine: Aim at monsters and tap your trigger button. Zap to distract!"));
+		actions.Add(new TextAction(4, "This is the Decoy. Use it to distract guards and monsters."));
+		actions.Add(new MoveCameraAction("Player2"));
+		actions.Add(new TextAction(4, "The maze runners can tap Action-1 to position the Decoy."));
 		actions.Add(new MoveCameraAction("Player1"));
-		actions.Add(new TextAction(4, "Each time you zap monsters the power is depleted."));
+		actions.Add(new TextAction(4, "The light-controller can tap Action-1 to zap & distract."));
+		actions.Add(new MoveCameraAction("Player2"));
+		actions.Add(new TextAction(4, "Touch your fallen friends to revive them!"));
 
 		return actions;
 	}
