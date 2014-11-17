@@ -111,8 +111,6 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Standard", 3.4f)
 					},5,8,9,9, "EnableTrapEnding", null));
 
-			//_______________________
-
 					//14
 					levels2.Add(new Level(new MachineCreator(false, true, true, false, true, false),
 			            40,new List<MonsterTemplate>{
@@ -123,7 +121,7 @@ namespace AssemblyCSharp
 					},5,10,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
 
 
-
+			//_______________________
 
 					//15
 					levels2.Add(new Level(new MachineCreator(false, false, false, false, true, true),
