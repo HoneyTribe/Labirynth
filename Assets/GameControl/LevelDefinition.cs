@@ -131,7 +131,7 @@ namespace AssemblyCSharp
 
 					//16
 					levels2.Add(new Level(new MachineCreator(false, false, false, true, false, false),
-						19,new List<MonsterTemplate>{
+						32,new List<MonsterTemplate>{
 					},5,5,9,9, null, "Lazer"));
 
 			//17
