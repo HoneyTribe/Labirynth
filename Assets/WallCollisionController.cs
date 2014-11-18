@@ -17,7 +17,7 @@ public class WallCollisionController : MonoBehaviour {
 			return;
 		}
 		// let him slide with current velocity
-		if (collider.rigidbody.velocity.magnitude > 0.010f)
+		if (collider.rigidbody.velocity.magnitude > 0.001f)
 		{
 			return;
 		}
