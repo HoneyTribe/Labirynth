@@ -9,8 +9,8 @@ public class SimpleCranePuzzle : PuzzleTemplate
 		sizeX = 4;
 		sizeZ = 4;
 	
-		extX = 1;
-		extZ = 1;
+		extX = 8;
+		extZ = 8;
 		internalSize = sizeZ - 2; 
 		
 		templateSizeX = 8;

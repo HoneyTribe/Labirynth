@@ -11998,6 +11998,7 @@ Transform:
   - {fileID: 1408017185}
   - {fileID: 165319306}
   - {fileID: 422095956}
+  - {fileID: 1892027922}
   m_Father: {fileID: 1061289935}
 --- !u!114 &1033124651
 MonoBehaviour:
@@ -22626,6 +22627,139 @@ Prefab:
   m_RootGameObject: {fileID: 1845747559}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1892027921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: 0d202bb26f0c16b448a919bb36707e32, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1892027922}
+  - 15: {fileID: 1892027926}
+  - 12: {fileID: 1892027925}
+  - 26: {fileID: 1892027924}
+  - 114: {fileID: 1892027923}
+  m_Layer: 23
+  m_Name: Sparks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1892027922
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: 0d202bb26f0c16b448a919bb36707e32, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1892027921}
+  m_LocalRotation: {x: -.545089304, y: 0, z: 0, w: .838378012}
+  m_LocalPosition: {x: .034083724, y: .639779568, z: .111776352}
+  m_LocalScale: {x: .5, y: .5, z: .49999997}
+  m_Children: []
+  m_Father: {fileID: 1033124650}
+--- !u!114 &1892027923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1892027921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f00c2a3a1484f34b970c61f21ba6ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 16
+--- !u!26 &1892027924
+ParticleRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2600000, guid: 0d202bb26f0c16b448a919bb36707e32,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1892027921}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: e097e0ca551c28647a5a126e44c35bbc, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  serializedVersion: 2
+  m_CameraVelocityScale: 0
+  m_StretchParticles: 3
+  m_LengthScale: 0
+  m_VelocityScale: .109999999
+  m_MaxParticleSize: 1
+  UV Animation:
+    x Tile: 3
+    y Tile: 1
+    cycles: 1
+--- !u!12 &1892027925
+ParticleAnimator:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1200000, guid: 0d202bb26f0c16b448a919bb36707e32,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1892027921}
+  Does Animate Color?: 0
+  colorAnimation[0]:
+    serializedVersion: 2
+    rgba: 15866104
+  colorAnimation[1]:
+    serializedVersion: 2
+    rgba: 16777215
+  colorAnimation[2]:
+    serializedVersion: 2
+    rgba: 16777215
+  colorAnimation[3]:
+    serializedVersion: 2
+    rgba: 4294967295
+  colorAnimation[4]:
+    serializedVersion: 2
+    rgba: 184549375
+  worldRotationAxis: {x: 0, y: 0, z: 0}
+  localRotationAxis: {x: 0, y: 0, z: 0}
+  sizeGrow: 0
+  rndForce: {x: 0, y: 0, z: 0}
+  force: {x: 0, y: 0, z: 0}
+  damping: 1
+  stopSimulation: 0
+  autodestruct: 1
+--- !u!15 &1892027926
+EllipsoidParticleEmitter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1500000, guid: 0d202bb26f0c16b448a919bb36707e32,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1892027921}
+  serializedVersion: 2
+  m_Enabled: 1
+  m_Emit: 1
+  minSize: .189999998
+  maxSize: .100000001
+  minEnergy: 0
+  maxEnergy: .720000029
+  minEmission: 16.7000008
+  maxEmission: 58.0999985
+  worldVelocity: {x: 0, y: 0, z: 0}
+  localVelocity: {x: -0, y: 0, z: 3}
+  rndVelocity: {x: 3, y: 3, z: 3}
+  emitterVelocityScale: .0500000007
+  tangentVelocity: {x: 0, y: 0, z: 0}
+  angularVelocity: 0
+  rndAngularVelocity: 0
+  rndRotation: 0
+  Simulate in Worldspace?: 0
+  m_OneShot: 1
+  m_Ellipsoid: {x: 0, y: 0, z: 0}
+  m_MinEmitterRange: 0
 --- !u!1001 &1895849476
 Prefab:
   m_ObjectHideFlags: 0

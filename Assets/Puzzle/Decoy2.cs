@@ -11,7 +11,7 @@ public class Decoy2 : PuzzleTemplate
 		
 		extX = 2;
 		extZ = 4;
-		internalSize = 1; 
+		internalSize = sizeZ - 2; 
 		
 		templateSizeX = 9;
 		templateSizeZ = 9;
