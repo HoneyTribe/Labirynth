@@ -41,16 +41,16 @@ namespace AssemblyCSharp
 
 					//4 monster door
 					levels2.Add(new Level(new MachineCreator(false, false, false, false, false, false),
-						2,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 2.8f),
-						new MonsterTemplate("Standard", 2.4f)
+						3,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 3.0f),
+						new MonsterTemplate("Standard", 2.5f)
 					},4,4,7,7, null, null));
 
 					//5 ghost
 					levels2.Add(new Level(new MachineCreator(false, false, false, false, false, false),
 						3,new List<MonsterTemplate>{
-						new MonsterTemplate("Flying", 2.6f),
-						new MonsterTemplate("Flying", 2.2f)
+						new MonsterTemplate("Flying", 3.0f),
+						new MonsterTemplate("Flying", 2.5f)
 					},4,4,7,7, null, null));
 
 					//6 crane
@@ -60,18 +60,17 @@ namespace AssemblyCSharp
 
 					//7
 					levels2.Add(new Level(new MachineCreator(false, false, true, false, false, false),
-						3,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 3.0f),
-						new MonsterTemplate("Standard", 2.6f)
-					},4,4,8,8, "EnableNoWallsEnding", "DecoyPuzzle"));
+						15,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 3.0f)
+					},5,5,8,8, "EnableNoWallsEnding", "Decoy2"));
 
 					//8 no walls
 					levels2.Add(new Level(new MachineCreator(false, false, true, false, false, false),
 					    49,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 4.0f),
-						new MonsterTemplate("Flying", 3.6f),
-						new MonsterTemplate("Standard", 3.2f)
-						},4,4,7,7, "EnableTrapEnding", "NoWalls"));
+						new MonsterTemplate("Standard", 5.0f),
+						new MonsterTemplate("Flying", 4.5f),
+						new MonsterTemplate("Standard", 4.0f)
+						},2,5,7,7, "EnableTrapEnding", "NoWalls"));
 
 					//9 teleport
 					levels2.Add(new Level(new MachineCreator(false, false, false, false, true, false),
@@ -81,34 +80,33 @@ namespace AssemblyCSharp
 					//10
 					levels2.Add(new Level(new MachineCreator(false, false, false, false, true, false),
 						5,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 3.8f),
-						new MonsterTemplate("Standard", 3.6f),
-						new MonsterTemplate("Standard", 3.4f)
+						new MonsterTemplate("Standard", 4.0f),
+						new MonsterTemplate("Standard", 3.5f),
+						new MonsterTemplate("Flying", 3.0f)
 					},5,5,8,8, "EnableTrapEnding", null));
 
-			//11 jump box
-			levels2.Add(new Level(new MachineCreator(false, true, false, false, false, false),
-				8,new List<MonsterTemplate>{
+					//11 jump box
+					levels2.Add(new Level(new MachineCreator(false, true, false, false, false, false),
+						8,new List<MonsterTemplate>{
 
-			},15,15,8,8, null, "FirstJumpBox"));
+					},15,15,8,8, null, "FirstJumpBox"));
 
 					// 12
 					levels2.Add(new Level(new MachineCreator(false, true, false, false, false, false),
-					    5,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 3.8f),
-						new MonsterTemplate("Flying", 3.2f),
-						new MonsterTemplate("Standard", 3.5f),
-						new MonsterTemplate("Flying", 2.8f)
+					    6,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 4.0f),
+						new MonsterTemplate("Flying", 3.5f),
+						new MonsterTemplate("Standard", 3.0f),
+						new MonsterTemplate("Flying", 2.5f)
 					},5,8,8,8, null, null));
 
 					//13 All machines
 					levels2.Add(new Level(new MachineCreator(false, true, true, false, true, false),
-					    6,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Flying", 2.6f),
-						new MonsterTemplate("Standard", 3.8f),
-						new MonsterTemplate("Flying", 2.8f),
-						new MonsterTemplate("Standard", 3.4f)
+					    7,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 4.5f),
+						new MonsterTemplate("Flying", 4.0f),
+						new MonsterTemplate("Standard", 3.5f),
+						new MonsterTemplate("Flying", 3.0f)
 					},5,8,9,9, "EnableTrapEnding", null));
 
 					//14
