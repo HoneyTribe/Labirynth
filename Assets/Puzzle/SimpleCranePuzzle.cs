@@ -29,19 +29,3 @@ public class SimpleCranePuzzle : PuzzleTemplate
 	}
 }
 
-/*
- sizeX = 5;
-		sizeZ = 4;
-		
-		extX = 1;
-		extZ = 1;
-		internalSize = sizeZ - 2; 
-		
-		templateSizeX = 5;
-		templateSizeZ = 5;
-		template = new int[5, 5] 	{{5,2,5,0,5},
-									{2,0,0,0,2},
-									{2,0,5,0,5},
-									{2,0,2,0,2},
-									{5,0,5,2,0}};
-*/
