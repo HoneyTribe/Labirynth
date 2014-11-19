@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class VisibilityController : MonoBehaviour {
 
-	public int level;
+	public List<int> level;
 
 	void Start () 
 	{
 		gameObject.SetActive(false);
-		if (LevelFinishedController.instance.getLevel() == level - 1)
+		if (level.Contains(LevelFinishedController.instance.getLevel()))
 		{
 			gameObject.SetActive(true);
 		}
