@@ -21,7 +21,7 @@ public class ImageAction : Action  {
 
 	public bool isFinished()
 	{
-		if (time > 5f) 
+		if (time > 8f) 
 		{
 			introductionController.setImage (null);
 			return true;

@@ -69,15 +69,11 @@ Material:
         first:
           name: _RimPow
         second: 21.5799999
-      data:
-        first:
-          name: _Parallax
-        second: .0199999996
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 0, g: .834483624, b: 1, a: 1}
+        second: {r: 0, g: .834490836, b: .99999994, a: 1}
       data:
         first:
           name: _SpecColor

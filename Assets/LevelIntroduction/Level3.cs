@@ -7,6 +7,7 @@ public class Level3 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 
+		actions.Add(new ImageAction("tut_03"));
 		actions.Add(new MoveCameraAction("Lighthouse"));
 		actions.Add(new TextAction(4, "Each time you zap the power is depleted."));
 		actions.Add(new MoveCameraAction("Player1"));

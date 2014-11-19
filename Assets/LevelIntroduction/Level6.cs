@@ -7,6 +7,7 @@ public class Level6 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 		
+		actions.Add(new ImageAction("tut_06"));
 		actions.Add(new MoveCameraAction("Lighthouse"));
 		actions.Add(new TextAction(4, "Upgrade! You have a Grabber!"));
 		actions.Add(new MoveCameraAction("Crane"));
