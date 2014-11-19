@@ -25,6 +25,7 @@ public class ScoreController : MonoBehaviour {
 		fusionLight = GameObject.Find ("lightHousePointLight");
 	}
 
+	/*
 	void OnGUI()
 	{
 		if (!LevelFinishedController.instance.isStopped())
@@ -32,6 +33,7 @@ public class ScoreController : MonoBehaviour {
 			GUI.Label (new Rect (Screen.width / 2 - 200, 40, 300, 100), "Keys to collect: " + score); 
 		}
 	}
+	*/
 
 	public void Score()
 	{

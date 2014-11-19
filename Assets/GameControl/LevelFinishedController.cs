@@ -72,7 +72,7 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		if (!stopped)
 		{
-			GUI.Label (new Rect (Screen.width / 2 - 200, 20, 300, 100), "Level: " + (level + 1)); 
+			GUI.Label (new Rect (Screen.width / 2 - 360, 50, 300, 300), "Level: " + (level + 1)); 
 		}
 
 		if (finished)
