@@ -7,6 +7,7 @@ public class Level9 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 
+		actions.Add(new ImageAction("tut_09"));
 		actions.Add(new MoveCameraAction("Drone"));
 		actions.Add(new TextAction(4, "Upgrade! You have a teleport drone! Tap Action-1 to drop teleports."));
 		actions.Add(new MoveCameraAction("Player1"));
