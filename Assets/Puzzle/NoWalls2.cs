@@ -11,7 +11,7 @@ public class NoWalls2 : PuzzleTemplate
 		
 		extX = 2;
 		extZ = 2;
-		internalSize = sizeZ - 2; 
+		internalSize = sizeZ -2; 
 		
 		templateSizeX = 15;
 		templateSizeZ =15;

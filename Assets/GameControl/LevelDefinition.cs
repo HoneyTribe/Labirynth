@@ -114,7 +114,7 @@ namespace AssemblyCSharp
 			            52,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Standard", 3.2f)
-					},30,30,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
+					},20,20,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
 
 					
 					//15
