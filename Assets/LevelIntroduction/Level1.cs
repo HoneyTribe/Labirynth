@@ -7,6 +7,7 @@ public class Level1 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 
+		actions.Add(new ImageAction("Keyboard_Controls"));
 		actions.Add(new MoveCameraAction("Lighthouse"));
 		actions.Add(new TextAction(4, "This is your Space-Time machine."));
 		actions.Add(new MoveCameraAction("Key"));

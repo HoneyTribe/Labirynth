@@ -24,6 +24,7 @@ public class IntroductionController : MonoBehaviour {
 	private GUIStyle[] styles;
 	private int textureId = -1;
 	private string text = null;
+	private Texture2D image = null;
 
 	private GUIStyle borderStyle;
 	private GUIStyle outerStyle;
@@ -109,6 +110,7 @@ public class IntroductionController : MonoBehaviour {
 
 				textureId = -1;
 				text = null;
+				image = null;
 				stoppedIntroduction = true;
 			}
 
@@ -146,11 +148,21 @@ public class IntroductionController : MonoBehaviour {
 
 				GUI.Box (new Rect (dialogSizeY, 10, dialogSizeX - dialogSizeY - 10, dialogSizeY - 20), "", borderStyle);
 				GUI.Box (new Rect (dialogSizeY + 1, 11, dialogSizeX - dialogSizeY - 10 - 2, dialogSizeY - 20 - 2), "", outerStyle);
-				
-			GUI.Label (new Rect (dialogSizeY + 10, 20, dialogSizeX - dialogSizeY - 30, dialogSizeY - 40), text, guiSkin.label);
+
+			if (this.image == null) 
+			{
+				GUI.Label (new Rect (dialogSizeY + 10, 20, dialogSizeX - dialogSizeY - 30, dialogSizeY - 40), text, guiSkin.label);
+			}
 			GUI.EndGroup();
 		}
-		
+		else if (this.image != null) 
+		{
+			float height = 800f/1280f*(Screen.width-200);
+			float half = (Screen.height - height)/2;
+			GUI.BeginGroup(new Rect(100, half, Screen.width-100, Screen.height - half ));
+			    GUI.DrawTexture (new Rect(0, 0, Screen.width-200, height), image);
+			GUI.EndGroup();
+		}	
 	}
 
 	public void setTextureId(int textureId)
@@ -161,5 +173,10 @@ public class IntroductionController : MonoBehaviour {
 	public void setText(string text)
 	{
 		this.text = text;
+	}
+
+	public void setImage(Texture2D image)
+	{
+		this.image = image;
 	}
 }
