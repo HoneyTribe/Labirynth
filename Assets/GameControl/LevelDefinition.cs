@@ -132,7 +132,7 @@ namespace AssemblyCSharp
 
 					//17 lazer 2
 					levels2.Add(new Level(new MachineCreator(true, false, false, true, false, false),
-					    20,new List<MonsterTemplate>{
+					    19,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 4.5f),
 						new MonsterTemplate("Standard", 4.0f)
 					},9,9,8,8, null, "Lazer2"));	
@@ -278,7 +278,7 @@ namespace AssemblyCSharp
 					
 					//17 lazer 2
 					levels3.Add(new Level(new MachineCreator(true, false, false, true, false, false),
-					                      20,new List<MonsterTemplate>{
+					                      19,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 4.5f),
 						new MonsterTemplate("Standard", 4.0f)
 					},9,9,8,8, null, "Lazer2"));	
@@ -428,7 +428,7 @@ namespace AssemblyCSharp
 					
 					//17 lazer 2
 					levels4.Add(new Level(new MachineCreator(true, false, false, true, false, false),
-					                      20,new List<MonsterTemplate>{
+					                      19,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 4.5f),
 						new MonsterTemplate("Standard", 4.0f),
 						new MonsterTemplate("Standard", 3.5f)
