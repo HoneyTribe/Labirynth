@@ -131,28 +131,26 @@ namespace AssemblyCSharp
 						32,new List<MonsterTemplate>{
 					},5,5,9,9, null, "Lazer"));
 
-			//_______________________
+		
 
 					//17 lazer 2
 					levels2.Add(new Level(new MachineCreator(false, false, false, true, false, false),
 					    20,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 4.5f),
 						new MonsterTemplate("Standard", 4.0f)
-						},9,9,8,8, null, "Lazer2"));	
+					},9,9,8,8, null, "Lazer2"));	
 
-			//18 drone bomb
-						levels2.Add(new Level(new MachineCreator(false, false, false, true, false, false),
-						8,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 4.5f),
-						new MonsterTemplate("Standard", 4.0f),
-						new MonsterTemplate("Standard", 3.5f)
-					},5,10,8,8, "EnableNoVerticalWallsEnding", null));
+					//18 drone bomb
+					levels2.Add(new Level(new MachineCreator(true, false, false, false, false, true),
+						17,new List<MonsterTemplate>{
+					new MonsterTemplate("Standard", 3.0f)
+					},15,10,8,8, "EnableNoVerticalWallsEnding", "DroneBomb"));
 
-
-			//19
-			levels2.Add(new Level(new MachineCreator(false, false, false, true, true, true),
-						10,new List<MonsterTemplate>{
-					},5,5,9,9, null, "DronePuzzle"));
+			//_______________________
+					//19
+					levels2.Add(new Level(new MachineCreator(true, false, false, true, true, true),
+						16,new List<MonsterTemplate>{
+					},15,5,9,9, null, "DroneBomb"));
 
 					//20 everything
 						levels2.Add(new Level(new MachineCreator(false, true, true, true, true, true),

@@ -27,7 +27,7 @@ public class Lazer2 : PuzzleTemplate
 			{0,0,2,2,2,2,2,0,0},
 			{6,0,5,2,3,2,5,0,5},
 			{2,0,0,0,2,0,0,0,2},
-			{2,2,5,0,0,0,5,2,5},
+			{2,2,5,0,0,0,5,2,5}
 		};
 		
 		extededTemplate = new int[sizeZ * 2 -1, sizeX * 2 -1]; 
