@@ -72,7 +72,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Standard", 4.0f)
 						},2,5,7,7, "EnableTrapEnding", "NoWalls"));
 
-					//9 teleport
+					//9 teleport drone
 					levels2.Add(new Level(new MachineCreator(false, false, false, false, true, false),
 						9,new List<MonsterTemplate>{
 					},5,5,7,7, null, "CranePuzzle"));
@@ -139,7 +139,15 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Standard", 4.5f),
 						new MonsterTemplate("Standard", 4.0f),
 						new MonsterTemplate("Standard", 3.5f)
-			},5,10,8,8, "EnableNoVerticalWallsEnding", null));
+					},5,10,8,8, "EnableNoVerticalWallsEnding", null));		
+
+					//18 lazer 3
+						levels2.Add(new Level(new MachineCreator(false, false, false, true, false, false),
+						8,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 4.5f),
+						new MonsterTemplate("Standard", 4.0f),
+						new MonsterTemplate("Standard", 3.5f)
+					},5,10,8,8, "EnableNoVerticalWallsEnding", null));
 
 
 			//18
