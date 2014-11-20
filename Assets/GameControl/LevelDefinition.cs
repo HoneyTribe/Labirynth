@@ -115,7 +115,6 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Standard", 3.2f)
 					},20,20,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
-
 					
 					//15
 					levels2.Add(new Level(new MachineCreator(false, true, true, false, true, false),
@@ -130,8 +129,6 @@ namespace AssemblyCSharp
 					levels2.Add(new Level(new MachineCreator(false, false, false, true, false, false),
 						32,new List<MonsterTemplate>{
 					},5,5,9,9, null, "Lazer"));
-
-		
 
 					//17 lazer 2
 					levels2.Add(new Level(new MachineCreator(false, false, false, true, false, false),
