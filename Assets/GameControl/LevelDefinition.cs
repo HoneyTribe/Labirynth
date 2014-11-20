@@ -307,7 +307,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Flying", 3.5f),
 						new MonsterTemplate("Standard", 4.0f),
 						new MonsterTemplate("Flying", 3.0f),
-						new MonsterTemplate("Standard", 2.5f),
+						new MonsterTemplate("Standard", 2.5f)
 					},5,8,10,10, "EnableTrapEnding", null));
 
 					// 4 player levels
@@ -375,7 +375,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Standard", 4.0f),
 						new MonsterTemplate("Standard", 3.5f),
 						new MonsterTemplate("Flying", 3.0f),
-						new MonsterTemplate("Flying", 2.5f),
+						new MonsterTemplate("Flying", 2.5f)
 						new MonsterTemplate("Standard", 3.8f)
 					},5,5,8,8, "EnableTrapEnding", null));
 					
@@ -457,7 +457,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Flying", 3.5f),
 						new MonsterTemplate("Standard", 4.0f),
 						new MonsterTemplate("Flying", 3.0f),
-						new MonsterTemplate("Standard", 2.5f),
+						new MonsterTemplate("Standard", 2.5f)
 					},5,8,10,10, "EnableTrapEnding", null));
 
 				}
