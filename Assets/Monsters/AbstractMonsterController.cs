@@ -99,9 +99,12 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	public void setAttracted()
 	{
 		timeLeft = DeviceController.interval;
-		particles = (GameObject) Instantiate(distractParticlesPrefab, Vector3.zero, Quaternion.Euler(0, 0, 0));
-		particles.transform.parent = gameObject.transform;
-		particles.transform.localPosition = Vector3.zero;
+		if (particles == null)
+		{
+			particles = (GameObject) Instantiate(distractParticlesPrefab, Vector3.zero, Quaternion.Euler(0, 0, 0));
+			particles.transform.parent = gameObject.transform;
+			particles.transform.localPosition = Vector3.zero;
+		}
 	}
 
 	public void Paralyse()
