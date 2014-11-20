@@ -134,7 +134,7 @@ public class Instantiation : MonoBehaviour {
 
 	void drawDevice()
 	{
-		if (LevelFinishedController.instance.isDistractionEnabled())
+		if (!LevelFinishedController.instance.isDistractionEnabled())
 		{
 			Component[] components = GameObject.Find ("DeviceContainer").GetComponentsInChildren<MeshRenderer>();
 			foreach (Component component in components)

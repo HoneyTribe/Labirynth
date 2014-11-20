@@ -63,17 +63,20 @@ public class DeviceController : MonoBehaviour {
 
 	public void Move(Vector3 positionToMove)
 	{
-		if (inLighthouse)
+		if (LevelFinishedController.instance.isDistractionEnabled())
 		{
-			inLighthouse = false;
-			movement = new Vector3(positionToMove.x, 1, positionToMove.z);
-			AudioController.instance.Play("001_MoveDecoyMaze");
-		}
-		else
-		{
-			inLighthouse = true;
-			movement = initialPosition;
-			AudioController.instance.Play("002_MoveDecoyBase");
+			if (inLighthouse)
+			{
+				inLighthouse = false;
+				movement = new Vector3(positionToMove.x, 1, positionToMove.z);
+				AudioController.instance.Play("001_MoveDecoyMaze");
+			}
+			else
+			{
+				inLighthouse = true;
+				movement = initialPosition;
+				AudioController.instance.Play("002_MoveDecoyBase");
+			}
 		}
 	}
 

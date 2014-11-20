@@ -128,51 +128,57 @@ public class TopLightController : MonoBehaviour {
 
 	public void AttractMonster()
 	{
-		if (energy>=attractionCost)
+		if (LevelFinishedController.instance.isDistractionEnabled())
 		{
-			bool monsterAttracted = false;
-			GameObject[] monsters = GameObject.FindGameObjectsWithTag ("Monster");
-			foreach (GameObject monster in monsters)
+			if (energy>=attractionCost)
 			{
-				if (isIlluminated(monster))
+				bool monsterAttracted = false;
+				GameObject[] monsters = GameObject.FindGameObjectsWithTag ("Monster");
+				foreach (GameObject monster in monsters)
 				{
-					monster.GetComponent<AbstractMonsterController>().setAttracted();
-					StartCoroutine(showLaser(monster.transform.localPosition));
-					monsterAttracted = true;
+					if (isIlluminated(monster))
+					{
+						monster.GetComponent<AbstractMonsterController>().setAttracted();
+						StartCoroutine(showLaser(monster.transform.localPosition));
+						monsterAttracted = true;
+					}
 				}
-			}
 
-			if (monsterAttracted)
-			{
-				changeEnergy(-attractionCost);
-				DeviceController.instance.ShowHologram();
+				if (monsterAttracted)
+				{
+					changeEnergy(-attractionCost);
+					DeviceController.instance.ShowHologram();
+				}
 			}
 		}
 	}
 
 	public void ActivateItems()
 	{
-		if (energy>=attractionCost)
+		if (LevelFinishedController.instance.isItemActivationEnabled())
 		{
-			bool itemActivated = false;
-			GameObject[] items = GameObject.FindGameObjectsWithTag ("Item");
-			foreach (GameObject item in items)
+			if (energy>=attractionCost)
 			{
-				if (isIlluminated(item))
+				bool itemActivated = false;
+				GameObject[] items = GameObject.FindGameObjectsWithTag ("Item");
+				foreach (GameObject item in items)
 				{
-					JumpController jumpController = item.GetComponent<JumpController>();
-					if (jumpController.hasAnyObjects())
+					if (isIlluminated(item))
 					{
-						jumpController.Activate();
-						StartCoroutine(showLaser(item.transform.localPosition));
-						itemActivated = true;
+						JumpController jumpController = item.GetComponent<JumpController>();
+						if (jumpController.hasAnyObjects())
+						{
+							jumpController.Activate();
+							StartCoroutine(showLaser(item.transform.localPosition));
+							itemActivated = true;
+						}
 					}
 				}
-			}
-		
-			if (itemActivated)
-			{
-				changeEnergy(-attractionCost);
+			
+				if (itemActivated)
+				{
+					changeEnergy(-attractionCost);
+				}
 			}
 		}
 	}
