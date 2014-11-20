@@ -242,7 +242,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Flying", 3.5f),
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Flying", 2.5f),
-						new MonsterTemplate("Standard", 2.0f)
+						new MonsterTemplate("Standard", 2.8f)
 					},5,8,8,8, null, null));
 					
 					//13 All machines
@@ -330,7 +330,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Standard", 2.5f),
 						new MonsterTemplate("Standard", 2.3f),
-						new MonsterTemplate("Standard", 2.0f)
+						new MonsterTemplate("Standard", 2.8f)
 					},4,4,7,7, null, null));
 					
 					//5 ghost
@@ -392,7 +392,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Flying", 3.5f),
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Flying", 2.5f),
-						new MonsterTemplate("Standard", 2.0f)
+						new MonsterTemplate("Standard", 2.8f)
 					},5,8,8,8, null, null));
 					
 					//13 All machines
