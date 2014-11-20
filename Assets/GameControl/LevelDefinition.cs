@@ -167,7 +167,7 @@ namespace AssemblyCSharp
 					// 3 player levels	
 
 					//1 light
-					levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
+					levels3.Add(new Level(new MachineCreator(false, false, false, false, false, false),
 					                      3, new List<MonsterTemplate>{},0,0,6,6, null, null));
 					
 					//2 decoy
@@ -175,7 +175,7 @@ namespace AssemblyCSharp
 					                      3,new List<MonsterTemplate>{},0,0,8,8, null, "DecoyPuzzle"));
 					
 					//3 monster + block
-					levels3.Add(new Level(new MachineCreator(false, false, false, false, false, false),
+					levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 					                      5,new List<MonsterTemplate>{},0,0,7,7, null, "First"));
 					
 					//4 monster door
