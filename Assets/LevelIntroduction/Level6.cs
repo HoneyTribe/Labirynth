@@ -11,7 +11,7 @@ public class Level6 : LevelSetup {
 		actions.Add(new MoveCameraAction("Lighthouse"));
 		actions.Add(new TextAction(4, "Upgrade! You have a Grabber!"));
 		actions.Add(new MoveCameraAction("Crane"));
-		actions.Add(new TextAction(4, "Tap Action-1 to pick up/drop friends, items and monsters."));
+		actions.Add(new TextAction(4, "Tap 'action-1' to pick up and drop things."));
 		actions.Add(new MoveCameraAction("Crane"));
 		actions.Add(new TextAction(4, "Picking up costs power. Don't drain the power too soon!"));
 

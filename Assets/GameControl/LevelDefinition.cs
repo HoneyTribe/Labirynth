@@ -140,14 +140,17 @@ namespace AssemblyCSharp
 					//18 drone bomb
 					levels2.Add(new Level(new MachineCreator(true, false, false, false, false, true),
 						17,new List<MonsterTemplate>{
+					new MonsterTemplate("Standard", 3.0f),
 					new MonsterTemplate("Standard", 3.0f)
-					},15,10,8,8, "EnableNoVerticalWallsEnding", "DroneBomb"));
+					},12,12,8,8, "EnableNoVerticalWallsEnding", "DroneBomb"));
 
-			//_______________________
 					//19
-					levels2.Add(new Level(new MachineCreator(true, false, false, true, true, true),
-						16,new List<MonsterTemplate>{
-					},15,5,9,9, null, "DroneBomb"));
+					levels2.Add(new Level(new MachineCreator(true, false, false, false, false, true),
+						8,new List<MonsterTemplate>{
+					new MonsterTemplate("Standard", 5.0f),
+					new MonsterTemplate("Standard", 4.5f),
+					new MonsterTemplate("Standard", 4.0f)
+					},7,7,8,8, null, null));
 
 					//20 everything
 						levels2.Add(new Level(new MachineCreator(false, true, true, true, true, true),
@@ -163,189 +166,292 @@ namespace AssemblyCSharp
 
 					// 3 player levels	
 
-					//1
+					//1 light
 					levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-						3,new List<MonsterTemplate>{},15,15,6,6, null, null));
-					//2
+					                      3, new List<MonsterTemplate>{},0,0,6,6, null, null));
+					
+					//2 decoy
 					levels3.Add(new Level(new MachineCreator(false, false, false, false, false, false),
-						5,new List<MonsterTemplate>{},0,0,7,7, null, "First"));
-					//3
+					                      3,new List<MonsterTemplate>{},0,0,7,7, null, "DecoyPuzzle"));
+					
+					//3 monster + block
 					levels3.Add(new Level(new MachineCreator(false, false, false, false, false, false),
-						3,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 2.6f),
-						new MonsterTemplate("Standard", 2.6f)
-					},5,10,7,7, null, null));
-					//4
+					                      5,new List<MonsterTemplate>{},0,0,7,7, null, "First"));
+					
+					//4 monster door
 					levels3.Add(new Level(new MachineCreator(false, false, false, false, false, false),
-						4,new List<MonsterTemplate>{
-						new MonsterTemplate("Flying", 2.4f),
-						new MonsterTemplate("Flying", 2.4f)
-					},5,10,8,8, "EnableNoWallsEnding", null));
-					//5
+					                      4,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 3.0f),
+						new MonsterTemplate("Standard", 2.5f),
+						new MonsterTemplate("Standard", 2.0f)
+					},4,4,7,7, null, null));
+					
+					//5 ghost
+					levels3.Add(new Level(new MachineCreator(false, false, false, false, false, false),
+					                      4,new List<MonsterTemplate>{
+						new MonsterTemplate("Flying", 3.0f),
+						new MonsterTemplate("Flying", 2.5f),
+						new MonsterTemplate("Flying", 2.0f)
+					},4,4,7,7, null, null));
+					
+					//6 crane
 					levels3.Add(new Level(new MachineCreator(false, false, true, false, false, false),
-						5,new List<MonsterTemplate>{
-					},5,10,7,7, null, "SimpleCranePuzzle"));
-					//6
-					levels3.Add(new Level(new MachineCreator(false, false, true, false, false, false),
-						4,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 2.6f),
-						new MonsterTemplate("Standard", 2.6f)
-					},5,5,8,8, null, null));
+					                      14,new List<MonsterTemplate>{
+					},0,0,7,7, null, "SimpleCranePuzzle"));
+					
 					//7
 					levels3.Add(new Level(new MachineCreator(false, false, true, false, false, false),
-						6,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 3.0f),
-						new MonsterTemplate("Standard", 3.0f),
-						new MonsterTemplate("Flying", 2.6f)
-					},5,5,8,8, "EnableTrapEnding", null));
-					//8
+					                      12,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 3.0f)
+					},5,5,8,8, "EnableNoWallsEnding", "Decoy2"));
+					
+					//8 no walls
+					levels3.Add(new Level(new MachineCreator(false, false, true, false, false, false),
+					                      49,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 5.0f),
+						new MonsterTemplate("Flying", 4.5f),
+						new MonsterTemplate("Standard", 4.0f)
+					},2,5,7,7, "EnableTrapEnding", "NoWalls"));
+					
+					//9 teleport drone
 					levels3.Add(new Level(new MachineCreator(false, false, false, false, true, false),
-						9,new List<MonsterTemplate>{
+					                      9,new List<MonsterTemplate>{
 					},5,5,7,7, null, "CranePuzzle"));
-					//9
-					levels3.Add(new Level(new MachineCreator(false, false, true, false, true, false),
-						8,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 3.4f),
-						new MonsterTemplate("Standard", 3.4f),
-						new MonsterTemplate("Standard", 3.4f)
-					},5,5,8,8, null, null));
+					
 					//10
-					levels3.Add(new Level(new MachineCreator(false, false, true, false, true, false),
-						10,new List<MonsterTemplate>{
-						new MonsterTemplate("Flying", 3.2f),
-						new MonsterTemplate("Flying", 3.2f),
-						new MonsterTemplate("Standard", 3.6f)
-					},5,5,9,9, "EnableTrapEnding", null));
-					//11
-					levels3.Add(new Level(new MachineCreator(false, false, true, true, false, false),
-						15,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 2.8f),
-						new MonsterTemplate("Standard", 2.8f),
-						new MonsterTemplate("Standard", 2.8f),
-						new MonsterTemplate("Standard", 2.8f)
+					levels3.Add(new Level(new MachineCreator(false, false, false, false, true, false),
+					                      6,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 4.0f),
+						new MonsterTemplate("Standard", 3.5f),
+						new MonsterTemplate("Flying", 3.0f),
+						new MonsterTemplate("Flying", 2.5f)
 					},5,5,8,8, "EnableTrapEnding", null));
-					//12
-					levels3.Add(new Level(new MachineCreator(false, false, false, false, true, true),
-						10,new List<MonsterTemplate>{
-					},5,5,9,9, null, "DronePuzzle"));
-					//13
-					levels3.Add(new Level(new MachineCreator(false, false, true, true, true, true),
-						8,new List<MonsterTemplate>{
-						new MonsterTemplate("Flying", 2.6f),
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Flying", 2.6f),
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Flying", 2.2f)
-					},5,5,10,10, null, null));
-					//14
+					
+					//11 jump box
 					levels3.Add(new Level(new MachineCreator(false, true, false, false, false, false),
-						6,new List<MonsterTemplate>{
+					                      8,new List<MonsterTemplate>{
+						
+					},15,15,8,8, null, "FirstJumpBox"));
+					
+					// 12
+					levels3.Add(new Level(new MachineCreator(false, true, false, false, false, false),
+					                      7,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 4.0f),
+						new MonsterTemplate("Flying", 3.5f),
 						new MonsterTemplate("Standard", 3.0f),
+						new MonsterTemplate("Flying", 2.5f),
+						new MonsterTemplate("Standard", 2.0f),
+					},5,8,8,8, null, null));
+					
+					//13 All machines
+					levels3.Add(new Level(new MachineCreator(false, true, true, false, true, false),
+					                      8,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 4.5f),
+						new MonsterTemplate("Flying", 4.0f),
+						new MonsterTemplate("Standard", 3.5f),
+						new MonsterTemplate("Flying", 3.0f),
+						new MonsterTemplate("Standard", 2.5f)
+					},5,8,9,9, "EnableTrapEnding", null));
+					
+					//14 
+					levels3.Add(new Level(new MachineCreator(false, true, true, false, true, false),
+					                      52,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 3.0f),
+						new MonsterTemplate("Standard", 3.2f)
+					},20,20,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
+					
+					//15
+					levels3.Add(new Level(new MachineCreator(false, true, true, false, true, false),
+					                      19,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 5.5f),
+						new MonsterTemplate("Standard", 5.0f),
+						new MonsterTemplate("Standard", 4.5f),
+						new MonsterTemplate("Standard", 4.0f)
+					},4,5,8,8, null, "Crane2"));
+					
+					//16 lazer
+					levels3.Add(new Level(new MachineCreator(false, false, false, true, false, false),
+					                      32,new List<MonsterTemplate>{
+					},5,5,9,9, null, "Lazer"));
+					
+					//17 lazer 2
+					levels3.Add(new Level(new MachineCreator(false, false, false, true, false, false),
+					                      20,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 4.5f),
+						new MonsterTemplate("Standard", 4.0f)
+					},9,9,8,8, null, "Lazer2"));	
+					
+					//18 drone bomb
+					levels3.Add(new Level(new MachineCreator(true, false, false, false, false, true),
+					                      17,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Standard", 3.0f)
-					},5,8,7,7, null, null));
-					//15
+					},12,12,8,8, "EnableNoVerticalWallsEnding", "DroneBomb"));
+					
+					//19
+					levels3.Add(new Level(new MachineCreator(true, false, false, false, false, true),
+					                      9,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 5.0f),
+						new MonsterTemplate("Standard", 4.5f),
+						new MonsterTemplate("Standard", 4.0f),
+						new MonsterTemplate("Standard", 3.5f)
+					},7,7,8,8, null, null));
+					
+					//20 everything
 					levels3.Add(new Level(new MachineCreator(false, true, true, true, true, true),
-						8,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Flying", 2.6f),
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Flying", 2.6f),
-						new MonsterTemplate("Standard", 3.2f)
-					},5,8,10,10, "EnableNoWallsEnding", null));
+					                      22,new List<MonsterTemplate>{
+						new MonsterTemplate("Flying", 4.5f),
+						new MonsterTemplate("Standard", 5.0f),
+						new MonsterTemplate("Flying", 3.5f),
+						new MonsterTemplate("Standard", 4.0f),
+						new MonsterTemplate("Flying", 3.0f),
+						new MonsterTemplate("Standard", 2.5f),
+					},5,8,10,10, "EnableTrapEnding", null));
 
 					// 4 player levels
 
-					//1
+					//1 light
 					levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-						3,new List<MonsterTemplate>{},15,15,6,6, null, null));
-					//2
+					                      3, new List<MonsterTemplate>{},0,0,6,6, null, null));
+					
+					//2 decoy
 					levels4.Add(new Level(new MachineCreator(false, false, false, false, false, false),
-						5,new List<MonsterTemplate>{},0,0,7,7, null, "First"));
-					//3
+					                      3,new List<MonsterTemplate>{},0,0,7,7, null, "DecoyPuzzle"));
+					
+					//3 monster + block
 					levels4.Add(new Level(new MachineCreator(false, false, false, false, false, false),
-						3,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 2.6f),
-						new MonsterTemplate("Standard", 2.6f)
-					},5,10,7,7, null, null));
-					//4
+					                      5,new List<MonsterTemplate>{},0,0,7,7, null, "First"));
+					
+					//4 monster door
 					levels4.Add(new Level(new MachineCreator(false, false, false, false, false, false),
-						4,new List<MonsterTemplate>{
-						new MonsterTemplate("Flying", 2.4f),
-						new MonsterTemplate("Flying", 2.4f)
-					},5,10,8,8, "EnableNoWallsEnding", null));
-					//5
+					                      4,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 3.0f),
+						new MonsterTemplate("Standard", 2.5f),
+						new MonsterTemplate("Standard", 2.0f)
+					},4,4,7,7, null, null));
+					
+					//5 ghost
+					levels4.Add(new Level(new MachineCreator(false, false, false, false, false, false),
+					                      4,new List<MonsterTemplate>{
+						new MonsterTemplate("Flying", 3.0f),
+						new MonsterTemplate("Flying", 2.5f),
+						new MonsterTemplate("Flying", 2.0f)
+					},4,4,7,7, null, null));
+					
+					//6 crane
 					levels4.Add(new Level(new MachineCreator(false, false, true, false, false, false),
-						5,new List<MonsterTemplate>{
-					},5,10,7,7, null, "SimpleCranePuzzle"));
-					//6
-					levels4.Add(new Level(new MachineCreator(false, false, true, false, false, false),
-						4,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 2.6f),
-						new MonsterTemplate("Standard", 2.6f)
-					},5,5,8,8, null, null));
+					                      14,new List<MonsterTemplate>{
+					},0,0,7,7, null, "SimpleCranePuzzle"));
+					
 					//7
 					levels4.Add(new Level(new MachineCreator(false, false, true, false, false, false),
-						6,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 3.0f),
-						new MonsterTemplate("Standard", 3.0f),
-						new MonsterTemplate("Flying", 2.6f)
-					},5,4,8,8, "EnableTrapEnding", null));
-					//8
+					                      12,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 3.0f)
+					},5,5,8,8, "EnableNoWallsEnding", "Decoy2"));
+					
+					//8 no walls
+					levels4.Add(new Level(new MachineCreator(false, false, true, false, false, false),
+					                      49,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 5.0f),
+						new MonsterTemplate("Flying", 4.5f),
+						new MonsterTemplate("Standard", 4.0f)
+					},2,5,7,7, "EnableTrapEnding", "NoWalls"));
+					
+					//9 teleport drone
 					levels4.Add(new Level(new MachineCreator(false, false, false, false, true, false),
-						9,new List<MonsterTemplate>{
+					                      9,new List<MonsterTemplate>{
 					},5,5,7,7, null, "CranePuzzle"));
-					//9
-					levels4.Add(new Level(new MachineCreator(false, false, true, false, true, false),
-						8,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 3.6f),
-						new MonsterTemplate("Standard", 3.6f),
-						new MonsterTemplate("Standard", 3.6f)
-					},5,4,8,8, null, null));
+					
 					//10
-					levels4.Add(new Level(new MachineCreator(false, false, true, false, true, false),
-						10,new List<MonsterTemplate>{
-						new MonsterTemplate("Flying", 3.2f),
-						new MonsterTemplate("Flying", 3.2f),
-						new MonsterTemplate("Standard", 3.8f)
-					},5,4,9,9, "EnableTrapEnding", null));
-					//11
-					levels4.Add(new Level(new MachineCreator(false, false, true, true, false, false),
-						20,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 2.8f),
-						new MonsterTemplate("Standard", 2.8f),
-						new MonsterTemplate("Standard", 2.8f),
-						new MonsterTemplate("Standard", 2.8f)
+					levels4.Add(new Level(new MachineCreator(false, false, false, false, true, false),
+					                      6,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 4.0f),
+						new MonsterTemplate("Standard", 3.5f),
+						new MonsterTemplate("Flying", 3.0f),
+						new MonsterTemplate("Flying", 2.5f)
 					},5,5,8,8, "EnableTrapEnding", null));
-					//12
-					levels4.Add(new Level(new MachineCreator(false, false, false, false, true, true),
-						7,new List<MonsterTemplate>{
-					},5,5,9,9, null, "DronePuzzle"));
-					//13
-					levels4.Add(new Level(new MachineCreator(false, false, true, true, true, true),
-						8,new List<MonsterTemplate>{
-						new MonsterTemplate("Flying", 2.6f),
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Flying", 2.6f),
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Flying", 2.2f)
-					},5,5,10,10, null, null));
-					//14
+					
+					//11 jump box
 					levels4.Add(new Level(new MachineCreator(false, true, false, false, false, false),
-						7,new List<MonsterTemplate>{
+					                      8,new List<MonsterTemplate>{
+						
+					},15,15,8,8, null, "FirstJumpBox"));
+					
+					// 12
+					levels4.Add(new Level(new MachineCreator(false, true, false, false, false, false),
+					                      7,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 4.0f),
+						new MonsterTemplate("Flying", 3.5f),
 						new MonsterTemplate("Standard", 3.0f),
+						new MonsterTemplate("Flying", 2.5f),
+						new MonsterTemplate("Standard", 2.0f),
+					},5,8,8,8, null, null));
+					
+					//13 All machines
+					levels4.Add(new Level(new MachineCreator(false, true, true, false, true, false),
+					                      8,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 4.5f),
+						new MonsterTemplate("Flying", 4.0f),
+						new MonsterTemplate("Standard", 3.5f),
+						new MonsterTemplate("Flying", 3.0f),
+						new MonsterTemplate("Standard", 2.5f)
+					},5,8,9,9, "EnableTrapEnding", null));
+					
+					//14 
+					levels4.Add(new Level(new MachineCreator(false, true, true, false, true, false),
+					                      52,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 3.0f),
+						new MonsterTemplate("Standard", 3.2f)
+					},20,20,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
+					
+					//15
+					levels4.Add(new Level(new MachineCreator(false, true, true, false, true, false),
+					                      19,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 5.5f),
+						new MonsterTemplate("Standard", 5.0f),
+						new MonsterTemplate("Standard", 4.5f),
+						new MonsterTemplate("Standard", 4.0f)
+					},4,5,8,8, null, "Crane2"));
+					
+					//16 lazer
+					levels4.Add(new Level(new MachineCreator(false, false, false, true, false, false),
+					                      32,new List<MonsterTemplate>{
+					},5,5,9,9, null, "Lazer"));
+					
+					//17 lazer 2
+					levels4.Add(new Level(new MachineCreator(false, false, false, true, false, false),
+					                      20,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 4.5f),
+						new MonsterTemplate("Standard", 4.0f)
+					},9,9,8,8, null, "Lazer2"));	
+					
+					//18 drone bomb
+					levels4.Add(new Level(new MachineCreator(true, false, false, false, false, true),
+					                      17,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 3.0f),
 						new MonsterTemplate("Standard", 3.0f)
-					},5,8,7,7, null, null));
-					//15
+					},12,12,8,8, "EnableNoVerticalWallsEnding", "DroneBomb"));
+					
+					//19
+					levels4.Add(new Level(new MachineCreator(true, false, false, false, false, true),
+					                      9,new List<MonsterTemplate>{
+						new MonsterTemplate("Standard", 5.0f),
+						new MonsterTemplate("Standard", 4.5f),
+						new MonsterTemplate("Standard", 4.0f),
+						new MonsterTemplate("Standard", 3.5f)
+					},7,7,8,8, null, null));
+					
+					//20 everything
 					levels4.Add(new Level(new MachineCreator(false, true, true, true, true, true),
-						9,new List<MonsterTemplate>{
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Flying", 2.6f),
-						new MonsterTemplate("Standard", 3.2f),
-						new MonsterTemplate("Flying", 2.6f),
-						new MonsterTemplate("Standard", 3.2f)
-					},5,8,10,10, "EnableNoWallsEnding", null));
+					                      22,new List<MonsterTemplate>{
+						new MonsterTemplate("Flying", 4.5f),
+						new MonsterTemplate("Standard", 5.0f),
+						new MonsterTemplate("Flying", 3.5f),
+						new MonsterTemplate("Standard", 4.0f),
+						new MonsterTemplate("Flying", 3.0f),
+						new MonsterTemplate("Standard", 2.5f),
+					},5,8,10,10, "EnableTrapEnding", null));
+
 				}
 
 				public List<Level> getLevels(int numOfPlayers)

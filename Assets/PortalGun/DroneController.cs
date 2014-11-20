@@ -92,11 +92,11 @@ public class DroneController : MonoBehaviour {
 	{
 		if (move == Vector3.zero)
 		{
-			rigidbody.drag = 3.0f;
+			rigidbody.drag = 4.5f;
 		}
 		else
 		{
-			rigidbody.drag = 0.4f;
+			rigidbody.drag = 0.1f;
 			rigidbody.AddForce (move * Time.deltaTime * 320);
 			if (move.x != 0)
 			{

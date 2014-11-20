@@ -13,11 +13,9 @@ public class Level2 : LevelSetup {
 		actions.Add(new MoveCameraAction("DeviceContainer"));
 		actions.Add(new TextAction(4, "This is the Decoy. Use it to distract guards and monsters."));
 		actions.Add(new MoveCameraAction("Player2"));
-		actions.Add(new TextAction(4, "The maze runners can tap Action-1 to position the Decoy."));
+		actions.Add(new TextAction(4, "Maze runners: tap 'action-1' to move the Decoy."));
 		actions.Add(new MoveCameraAction("Player1"));
-		actions.Add(new TextAction(4, "The light-controller can tap Action-1 to zap & distract."));
-		actions.Add(new MoveCameraAction("Player2"));
-		actions.Add(new TextAction(4, "Touch your fallen friends to revive them!"));
+		actions.Add(new TextAction(4, "Light-controller: tap 'action-1' to zap & distract!"));
 
 		return actions;
 	}

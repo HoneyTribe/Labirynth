@@ -5,8 +5,8 @@ public class DronePowerController : MonoBehaviour {
 
 	public static DronePowerController instance;
 
-	private const float settingUpCost = 0.3f; // constant cost of setting up a portal
-	private const float usingStunGunCost = 0.25f; // constant cost of using stun gun
+	private const float settingUpCost = 0.25f; // constant cost of setting up a portal
+	private const float usingStunGunCost = 0.10f; // constant cost of using stun gun
 	private const float restoreVelocity = 0.066f; // It needs 1/restoreVelocity seconds to regenerate (15 seconds).
 
 	private const int progressBarSize = 100;
