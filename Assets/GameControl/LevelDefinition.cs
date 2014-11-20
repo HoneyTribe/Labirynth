@@ -375,7 +375,7 @@ namespace AssemblyCSharp
 						new MonsterTemplate("Standard", 4.0f),
 						new MonsterTemplate("Standard", 3.5f),
 						new MonsterTemplate("Flying", 3.0f),
-						new MonsterTemplate("Flying", 2.5f)
+						new MonsterTemplate("Flying", 2.5f),
 						new MonsterTemplate("Standard", 3.8f)
 					},5,5,8,8, "EnableTrapEnding", null));
 					
@@ -430,7 +430,8 @@ namespace AssemblyCSharp
 					levels4.Add(new Level(new MachineCreator(false, false, false, true, false, false),
 					                      20,new List<MonsterTemplate>{
 						new MonsterTemplate("Standard", 4.5f),
-						new MonsterTemplate("Standard", 4.0f)
+						new MonsterTemplate("Standard", 4.0f),
+						new MonsterTemplate("Standard", 3.5f)
 					},9,9,8,8, null, "Lazer2"));	
 					
 					//18 drone bomb
