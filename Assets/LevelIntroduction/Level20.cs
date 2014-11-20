@@ -8,7 +8,7 @@ public class Level20 : LevelSetup {
 		List<Action> actions = new List<Action>();
 		
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "Ok this level is *really* hard. Good luck..."));
+		actions.Add(new TextAction(4, "We fixed everything! Good luck..."));
 		
 		return actions;
 	}

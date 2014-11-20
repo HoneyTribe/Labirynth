@@ -2744,7 +2744,7 @@ GameObject:
   - 12: {fileID: 201357282}
   - 26: {fileID: 201357281}
   - 114: {fileID: 201357280}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9095,7 +9095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9604083ffd93874883871d57531dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 05000000
+  level: 050000000f000000
 --- !u!23 &763187053
 Renderer:
   m_ObjectHideFlags: 0
@@ -16087,7 +16087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9604083ffd93874883871d57531dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 08000000
+  level: 0800000011000000
 --- !u!23 &1291615013
 Renderer:
   m_ObjectHideFlags: 0
