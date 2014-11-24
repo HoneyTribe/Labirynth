@@ -112,9 +112,10 @@ namespace AssemblyCSharp
 			//14 
 			levels2.Add(new Level(new MachineCreator(true, true, true, false, true, false),
 			                      52,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 3.5f),
-				new MonsterTemplate("Standard", 3.2f)
-			},20,20,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
+				new MonsterTemplate("Standard", 4.5f),
+				new MonsterTemplate("Standard", 4.0f),
+				new MonsterTemplate("Flying", 3.5f)
+			},15,15,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
 			
 			//15
 			levels2.Add(new Level(new MachineCreator(true, true, true, false, true, false),
@@ -146,7 +147,8 @@ namespace AssemblyCSharp
 			//19
 			levels2.Add(new Level(new MachineCreator(false, false, false, false, false, true),
 			                      37,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 5.0f),
+				new MonsterTemplate("Standard", 6.0f),
+				new MonsterTemplate("Standard", 5.5f),
 				new MonsterTemplate("Standard", 4.5f)
 			},4,4,7,7, null, "DroneBomb2"));
 			
@@ -156,8 +158,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 4.5f),
 				new MonsterTemplate("Standard", 5.0f),
 				new MonsterTemplate("Flying", 4.0f),
-				new MonsterTemplate("Standard", 4.2f),
-				new MonsterTemplate("Flying", 3.5f)
+				new MonsterTemplate("Standard", 4.2f)
 			},5,8,10,10, "EnableTrapEnding", null));
 			
 			
@@ -256,9 +257,10 @@ namespace AssemblyCSharp
 			//14 
 			levels3.Add(new Level(new MachineCreator(true, true, true, false, true, false),
 			                      52,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 3.5f),
-				new MonsterTemplate("Standard", 3.2f)
-			},20,20,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
+				new MonsterTemplate("Standard", 4.5f),
+				new MonsterTemplate("Flying", 3.5f),
+				new MonsterTemplate("Standard", 4.0f)
+			},13,13,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
 			
 			//15
 			levels3.Add(new Level(new MachineCreator(true, true, true, false, true, false),
@@ -290,8 +292,9 @@ namespace AssemblyCSharp
 			//19
 			levels3.Add(new Level(new MachineCreator(false, false, false, false, false, true),
 			                      37,new List<MonsterTemplate>{
+				new MonsterTemplate("Standard", 6.0f),
+				new MonsterTemplate("Standard", 5.5f),
 				new MonsterTemplate("Standard", 5.0f),
-				new MonsterTemplate("Standard", 4.5f),
 				new MonsterTemplate("Standard", 4.5f)
 			},4,4,7,7, null, "DroneBomb2"));
 			
@@ -301,8 +304,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 4.5f),
 				new MonsterTemplate("Standard", 5.0f),
 				new MonsterTemplate("Flying", 4.0f),
-				new MonsterTemplate("Standard", 4.5f),
-				new MonsterTemplate("Flying", 3.5f),
+				new MonsterTemplate("Standard", 4.2f),
 				new MonsterTemplate("Standard", 3.0f)
 			},5,8,10,10, "EnableTrapEnding", null));
 			
@@ -404,9 +406,11 @@ namespace AssemblyCSharp
 			//14 
 			levels4.Add(new Level(new MachineCreator(true, true, true, false, true, false),
 			                      52,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 3.5f),
-				new MonsterTemplate("Standard", 3.2f)
-			},20,20,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
+				new MonsterTemplate("Standard", 4.5f),
+				new MonsterTemplate("Flying", 3.5f),
+				new MonsterTemplate("Standard", 4.0f),
+				new MonsterTemplate("Standard", 4.2f)
+			},10,10,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
 			
 			//15
 			levels4.Add(new Level(new MachineCreator(true, true, true, false, true, false),
@@ -451,7 +455,6 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Standard", 5.0f),
 				new MonsterTemplate("Flying", 4.0f),
 				new MonsterTemplate("Standard", 4.2f),
-				new MonsterTemplate("Flying", 3.5f),
 				new MonsterTemplate("Standard", 3.0f)
 			},5,8,10,10, "EnableTrapEnding", null));
 			

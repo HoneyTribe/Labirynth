@@ -125,7 +125,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 			float width = 1280f/800*Screen.height;
 			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height ), backgroundStyle);
 			GUI.Box (new Rect((Screen.width - width)/2, 0, width, Screen.height), "", splashStyle);
-			GUI.Button (new Rect (Screen.width/2-60, Screen.height/2 + 120, 120, 38), "Start", skin.button);
+			//GUI.Button (new Rect (Screen.width/2-60, Screen.height/2 + 120, 120, 38), "Start", skin.button);
 			GUI.EndGroup();
 		}
 		else if (this.instructionstyle != null)
