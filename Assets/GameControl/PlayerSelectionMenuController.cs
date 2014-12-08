@@ -12,6 +12,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	public Texture2D playersTexture;
 	public Texture2D padTexture;
 	public Texture2D keyboardTexture;
+	public Texture2D mainSplashTexture;	
 	public Texture2D splashTexture;	
 
 	private List<PlayerSelectionState> selGridInt = new List<PlayerSelectionState> ();
@@ -21,9 +22,11 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	private GUIStyle keyboardStyle = new GUIStyle();
 	private GUIStyle instructionstyle = null;
 
+	private GUIStyle mainSplashStyle = new GUIStyle();
     private GUIStyle splashStyle = new GUIStyle();
+	private GUIStyle mainBackgroundStyle = new GUIStyle();
 	private GUIStyle backgroundStyle = new GUIStyle();
-	private bool splash = false;
+	private int splash = 0;
 
 	public GameObject menuPrefab;
 
@@ -38,12 +41,19 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		padStyle.normal.background = padTexture;
 		keyboardStyle.normal.background = keyboardTexture;
 
+		// main splash
+		mainSplashStyle.normal.background = mainSplashTexture;
+		Texture2D texture = new Texture2D(1, 1);
+		texture.SetPixel(0,0,Color.black);
+		texture.Apply();
+		mainBackgroundStyle.normal.background = texture;
+
 		// splash
 		splashStyle.normal.background = splashTexture;
-		Texture2D texture = new Texture2D(1, 1);
-		texture.SetPixel(0,0,Color.white);
-		texture.Apply();
-		backgroundStyle.normal.background = texture;
+		Texture2D texture2 = new Texture2D(1, 1);
+		texture2.SetPixel(0,0,Color.white);
+		texture2.Apply();
+		backgroundStyle.normal.background = texture2;
 	}
 
 	public void handleLogic(float x, float z, float action, float action2, InputController input)
@@ -84,7 +94,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 			}
 			else
 			{
-				if (state.getPositionInMenu() == PlayerSelectionState.START)
+				if ((selGridInt.Count > 1) && (state.getPositionInMenu() == PlayerSelectionState.START))
 				{
 					GameObject.Find ("GameController").SendMessage ("RemovePlayerSelectionMenu", null);
 					Destroy(gameObject);
@@ -118,14 +128,18 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 
 	void OnGUI () 
 	{
-		int numberOfPlayers = LevelFinishedController.instance.getControllers ().Count;
-
-		if (splash)
+		if (splash == 1)
+		{
+			float width = 1600f/900*Screen.height;
+			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height ), mainBackgroundStyle);
+			GUI.Box (new Rect((Screen.width - width)/2, 0, width, Screen.height), "", mainSplashStyle);
+			GUI.EndGroup();
+		}
+		else if (splash == 2)
 		{
 			float width = 1280f/800*Screen.height;
 			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height ), backgroundStyle);
 			GUI.Box (new Rect((Screen.width - width)/2, 0, width, Screen.height), "", splashStyle);
-			//GUI.Button (new Rect (Screen.width/2-60, Screen.height/2 + 120, 120, 38), "Start", skin.button);
 			GUI.EndGroup();
 		}
 		else if (this.instructionstyle != null)
@@ -157,15 +171,29 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					{
 						GUI.enabled = true;
 					}
-				}	
-				
+				}					
+
 				if (isAnyCursorOn(PlayerSelectionState.START))
 				{
-					GUI.Button (new Rect (140, 260, 120, 40), "Start", selectedSkin.button);
+					if (selGridInt.Count < 2)
+					{
+						GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 characters", selectedSkin.button);
+					}
+					else
+					{
+						GUI.Button (new Rect (140, 260, 120, 40), "Start", selectedSkin.button);
+					}
 				}
 				else
 				{
-					GUI.Button (new Rect (140, 260, 120, 40), "Start", skin.button);
+					if (selGridInt.Count < 2)
+					{
+						GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 players", skin.button);
+					}
+					else
+					{
+						GUI.Button (new Rect (140, 260, 120, 40), "Start", skin.button);
+					}
 				}
 
 				if (isAnyCursorOn(PlayerSelectionState.HELP))
@@ -207,12 +235,16 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		return false;
 	}
 
-	public void setSplash(bool splash)
+	public void setSplash(int splash)
 	{
 		this.splash = splash;
+		if (splash > 0)
+		{
+			selGridInt.Clear(); 
+		}
 	}
 
-	public bool isSplash()
+	public int getSplash()
 	{
 		return this.splash;
 	}

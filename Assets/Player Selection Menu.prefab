@@ -43,6 +43,7 @@ MonoBehaviour:
   playersTexture: {fileID: 2800000, guid: 07a3bcc337c7d4286ab3859cbc147e4b, type: 3}
   padTexture: {fileID: 2800000, guid: 27e01841680624f05bd653cbed9fa860, type: 3}
   keyboardTexture: {fileID: 2800000, guid: 66a81459628f04d668e235f2f236b21b, type: 3}
+  mainSplashTexture: {fileID: 2800000, guid: 157accce3ec4fa74096fede5a0b4e05b, type: 3}
   splashTexture: {fileID: 2800000, guid: 8741a7525a2a740b69970df031b4c522, type: 3}
   menuPrefab: {fileID: 100000, guid: 741efa72e5aa54145b2dcc38e25659ac, type: 2}
 --- !u!1001 &100100000

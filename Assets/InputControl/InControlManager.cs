@@ -69,9 +69,16 @@ public class InControlManager : MonoBehaviour {
 			InputDevice input = InputManager.ActiveDevice;
 			if (input.GetControl(InputControlType.Menu).WasPressed)
 			{
-				if (!playerSelectionMenuController.isSplash())
+				if (playerSelectionMenuController.getSplash() == 0)
 				{
-					playerSelectionMenuController.setSplash(true);
+					playerSelectionMenuController.setSplash(2);
+					currentPlayer = 1;
+					LevelFinishedController.instance.getControllers().Clear();
+					return;
+				}
+				else if (playerSelectionMenuController.getSplash() == 2)
+				{
+					playerSelectionMenuController.setSplash(1);
 					return;
 				}
 				else
@@ -79,18 +86,37 @@ public class InControlManager : MonoBehaviour {
 					Application.Quit();
 				}
 			}
-			bool left = (input.LeftTrigger.Value != 0) || (input.LeftBumper.Value != 0);
-			bool right = (input.RightTrigger.Value != 0) || (input.RightBumper.Value != 0);
+
+			bool left = false;
+			bool right = false;
+			if ((input.GetControl(InputControlType.LeftTrigger).WasPressed) || (input.GetControl(InputControlType.LeftBumper).WasPressed))
+			{
+				left = true;
+			}
+			if ((input.GetControl(InputControlType.RightTrigger).WasPressed) || (input.GetControl(InputControlType.RightBumper).WasPressed))
+			{
+				right = true;
+			}
+
+			//bool left = (input.LeftTrigger.Value != 0) || (input.LeftBumper.Value != 0);
+			//bool right = (input.RightTrigger.Value != 0) || (input.RightBumper.Value != 0);
 			bool keyboard = input.Meta.Contains("keyboard");
 			bool found  = false;
 
 			// hasChanged to avoid key holding
 			if (left || right)
 			{
-				if (playerSelectionMenuController.isSplash())
+				if (playerSelectionMenuController.getSplash() == 2)
 				{
-					playerSelectionMenuController.setSplash(false);
+					playerSelectionMenuController.setSplash(0);
+					return;
 				}
+				else if (playerSelectionMenuController.getSplash() == 1)
+				{
+					playerSelectionMenuController.setSplash(2);
+					return;
+				}
+
 				foreach(InputController inputController in LevelFinishedController.instance.getControllers())
 				{
 					if ((inputController.getDevice() == getDeviceId(input)) && (inputController.isLeft() == left))
