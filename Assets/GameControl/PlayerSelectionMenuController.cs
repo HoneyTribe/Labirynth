@@ -130,16 +130,18 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	{
 		if (splash == 1)
 		{
-			float width = 1600f/900*Screen.height;
+			GUI.depth = 0;
+			float height = Screen.width * 900/1600;
 			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height ), mainBackgroundStyle);
-			GUI.Box (new Rect((Screen.width - width)/2, 0, width, Screen.height), "", mainSplashStyle);
+			GUI.Box (new Rect(0, (Screen.height - height)/2, Screen.width, height), "", mainSplashStyle);
 			GUI.EndGroup();
 		}
 		else if (splash == 2)
 		{
-			float width = 1280f/800*Screen.height;
+			GUI.depth = 0;
+			float height = Screen.width * 800/1280;
 			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height ), backgroundStyle);
-			GUI.Box (new Rect((Screen.width - width)/2, 0, width, Screen.height), "", splashStyle);
+			GUI.Box (new Rect(0, (Screen.height - height)/2, Screen.width, height), "", splashStyle);
 			GUI.EndGroup();
 		}
 		else if (this.instructionstyle != null)
