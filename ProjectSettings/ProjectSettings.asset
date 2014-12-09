@@ -74,8 +74,6 @@ PlayerSettings:
     16:9: 1
     Others: 1
   iPhoneBundleIdentifier: com.Company.ProductName
-  metroEnableIndependentInputSource: 0
-  metroEnableLowLatencyPresentationAPI: 0
   productGUID: 2adabbfba1938654da1198218b493a64
   iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
@@ -108,11 +106,12 @@ PlayerSettings:
   AndroidSplashScreenScale: 0
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
-  resolutionDialogBanner: {fileID: 0}
+  resolutionDialogBanner: {fileID: 2800000, guid: 9cdddff27234fdb4fb08ca92ab453b5d,
+    type: 3}
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: ff7ac61eb7d7beb499f68a4234b65d69, type: 3}
       m_Size: 128
   m_BuildTargetBatching:
   - m_BuildTarget: Standalone
@@ -177,7 +176,6 @@ PlayerSettings:
   metroSplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   metroSplashScreenUseBackgroundColor: 0
   metroCapabilities: {}
-  metroUnprocessedPlugins: []
   metroCompilationOverrides: 1
   blackberryDeviceAddress: 
   blackberryDevicePassword: 
