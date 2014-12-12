@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: SpaceMachine
-  m_Shader: {fileID: 12, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 13, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -24,7 +24,7 @@ Material:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 7cec4fc9f20c5e145941cf016d68ff64, type: 3}
+          m_Texture: {fileID: 2800000, guid: 04aa28b7422d45648ae4da1da4eb9342, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -93,16 +93,16 @@ Material:
     m_Floats:
       data:
         first:
+          name: _InvFade
+        second: 1
+      data:
+        first:
           name: _Shininess
         second: .278303593
       data:
         first:
           name: _EmissionLM
         second: 0
-      data:
-        first:
-          name: _InvFade
-        second: 1
     m_Colors:
       data:
         first:
@@ -110,12 +110,12 @@ Material:
         second: {r: .742647052, g: .742647052, b: .742647052, a: 1}
       data:
         first:
-          name: _SpecColor
-        second: {r: .990669847, g: 1, b: .83088237, a: 1}
-      data:
-        first:
           name: _TintColor
         second: {r: .5, g: .5, b: .5, a: .5}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 1, g: .931034446, b: 0, a: 1}
       data:
         first:
           name: _Tint
