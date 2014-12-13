@@ -6,6 +6,8 @@ public class ScoreController : MonoBehaviour {
 	private int score;
 	private int numberOfPlayers;
 
+	private int randomNumber;
+
 	private GameObject leftDoor;
 	private GameObject rightDoor;
 	private GameObject leftExitLight;
@@ -41,7 +43,32 @@ public class ScoreController : MonoBehaviour {
 		if (score == 0)
 		{
 			AudioController.instance.Play("004_CollectLastKey");
-			AudioController.instance.Play("003_CollectKeyB");
+
+			randomNumber = Random.Range(1,4);
+			
+			if (randomNumber == 1)
+			{
+				AudioController.instance.Play("a4");
+				
+			}
+			
+			else if (randomNumber == 2)
+			{
+				AudioController.instance.Play("d4");
+				
+			}
+			
+			else if (randomNumber == 3)
+			{
+				AudioController.instance.Play("f4");
+				
+			}
+			
+			else if (randomNumber == 4)
+			{
+				AudioController.instance.Play("c5");
+				
+			}
 			fusionLight.gameObject.SendMessage("TurnLightOn");
 			//leftDoor.gameObject.SendMessage("OpenDoor");
 			//rightDoor.gameObject.SendMessage("OpenDoor");
@@ -61,7 +88,32 @@ public class ScoreController : MonoBehaviour {
 		}
 		else
 		{
-			AudioController.instance.Play("003_CollectKeyB");
+			randomNumber = Random.Range(1,4);
+
+			if (randomNumber == 1)
+			{
+				AudioController.instance.Play("a4");
+
+			}
+
+			else if (randomNumber == 2)
+			{
+				AudioController.instance.Play("d4");
+				
+			}
+
+			else if (randomNumber == 3)
+			{
+				AudioController.instance.Play("f4");
+				
+			}
+
+			else if (randomNumber == 4)
+			{
+				AudioController.instance.Play("c5");
+				
+			}
+
 		}
 	}
 
