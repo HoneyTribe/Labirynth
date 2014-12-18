@@ -4898,7 +4898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9604083ffd93874883871d57531dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 01000000
+  level: 0100000002000000
 --- !u!23 &281071246
 Renderer:
   m_ObjectHideFlags: 0
@@ -9370,7 +9370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9604083ffd93874883871d57531dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 01000000
+  level: 0100000002000000
 --- !u!23 &623227145
 Renderer:
   m_ObjectHideFlags: 0
