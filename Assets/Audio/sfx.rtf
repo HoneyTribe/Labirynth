@@ -5,9 +5,11 @@
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
 
 \f0\fs24 \cf0 001_MoveDecoyMaze\
+DeviceController.cs\
 Trigger once when the decoy is triggered to move to player position in maze.\
 \
 002_MoveDecoyBase\
+DeviceController.cs\
 Trigger once when the decoy is triggered to move to base position.\
 \
 003_CollectKeyB\
@@ -17,11 +19,11 @@ Trigger once when a key is collected.\
 Trigger once when last key is collected.\
 \
 005_PickUp\
-playerController.cs\
+PlayerController.cs\
 Trigger once when an item is picked up by maze player e.g when jump box is picked up.\
 \
 006_Drop\
-playerController.cs\
+PlayerController.cs\
 Trigger once when an item is dropped up by maze player e.g when jump box is dropped.\
 \
 007_Jump\
@@ -31,12 +33,15 @@ Trigger once when jump box is activated and player/monster jumps.\
 Trigger once when any player dies.\
 \
 011_LightOn\
+PlayerController.cs\
 Trigger once when a player enters the light.\
 \
 012_LightOffB\
+PlayerController.cs\
 Trigger once when a player exits the light.\
 \
 013_LightZap\
+LaserController.cs\
 Trigger once when light-player zaps monster(s)\
 \
 014_LightItem\
@@ -46,12 +51,14 @@ Trigger once when light-player activates an item\
 Trigger once when the crane is triggered to grab.\
 \
 017_CraneLazer\
+PlayerController.cs\
 Play on loop while craneSmash is activated and powering up.\
 \
 021_BlockMoves\
 Trigger once when the puzzle block is moved.\
 \
 024_DecoyActive\
+DeviceController.cs\
 Play on loop while distract device is active.\
 \
 026_FusionA 

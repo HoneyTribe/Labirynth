@@ -135,6 +135,35 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if (action > 0)
 			{
 				DeviceController.instance.Move(transform.position);
+
+				//green player 1
+				if (gameObject.name == "Player1")
+					{
+					print(gameObject.name);
+					GameObject.Find("Light_device").renderer.material.color = new Color(0.4f,0.8f,0.3f);
+					}
+
+				//blue player 2
+				else if (gameObject.name == "Player2")
+				{
+					print(gameObject.name);
+					GameObject.Find("Light_device").renderer.material.color = new Color(0.15f,0.6f,1);
+				}
+
+				//pink player 3
+				else if (gameObject.name == "Player3")
+				{
+					print(gameObject.name);
+					GameObject.Find("Light_device").renderer.material.color = new Color(0.83f,0.32f,0.5f);
+				}
+
+				//yellow player 4
+				else if (gameObject.name == "Player4")
+				{
+					print(gameObject.name);
+					GameObject.Find("Light_device").renderer.material.color = new Color(0.85f,0.82f,0.3f);
+				}
+
 			}
 
 			if (action2 > 0)

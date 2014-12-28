@@ -11,11 +11,11 @@ public class Level2 : LevelSetup {
 		//actions.Add(new MoveCameraAction("Monster"));
 		actions.Add(new ImageAction("tut_02"));
 		actions.Add(new MoveCameraAction("DeviceContainer"));
-		actions.Add(new TextAction(4, "This is the Decoy. Use it to distract guards and monsters."));
+		actions.Add(new TextAction(4, "This is the Decoy. Move it and then activate it to distract monsters."));
 		actions.Add(new MoveCameraAction("Player2"));
-		actions.Add(new TextAction(4, "Maze runners: tap 'action-1' to move the Decoy."));
+		actions.Add(new TextAction(4, "Maze runners: Tap 'action-1' to move the Decoy."));
 		actions.Add(new MoveCameraAction("Player1"));
-		actions.Add(new TextAction(4, "Light-controller: tap 'action-1' to zap & distract!"));
+		actions.Add(new TextAction(4, "Light-controller: Look at monsters and tap 'action-1'. Zap them to activate the decoy."));
 
 		return actions;
 	}
