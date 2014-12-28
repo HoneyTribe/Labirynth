@@ -56,6 +56,8 @@ public class TopLightController : MonoBehaviour {
 		lowEnergyTexture.SetPixel (0, 0, Color.red);
 		lowEnergyTexture.Apply ();
 		lowEnergyStyle.normal.background = lowEnergyTexture;
+
+		//scoreController = GameObject.Find ("GameController").GetComponent<ScoreController> ();
 	}
 
 	public bool isEntered()
@@ -104,6 +106,9 @@ public class TopLightController : MonoBehaviour {
 		entered = true;
 		param = maxIntensity / openningInterval;
 		timeLeft = openningInterval;
+
+		//print (scoreController.score);
+
 	}
 
 	public void TurnOff ()
