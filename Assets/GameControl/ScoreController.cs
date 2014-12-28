@@ -44,7 +44,7 @@ public class ScoreController : MonoBehaviour {
 		{
 			AudioController.instance.Play("004_CollectLastKey");
 
-			randomNumber = Random.Range(1,4);
+			randomNumber = Random.Range(1,5);
 			
 			if (randomNumber == 1)
 			{
