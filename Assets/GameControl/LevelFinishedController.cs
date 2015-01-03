@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class LevelFinishedController : MonoBehaviour {
 
+	public static bool ENABLE_ALL_LEVELS = true;
+
 	public static LevelFinishedController instance;
 	public float gameSpeed = 1.0f;
 
@@ -218,7 +220,10 @@ public class LevelFinishedController : MonoBehaviour {
 
 	public void updateMaxLevel()
 	{
-		maxLevel = getNumberOfLevels ();
+		if (ENABLE_ALL_LEVELS)
+		{
+			maxLevel = getNumberOfLevels ();
+		}
 	}
 
 	public int getLevel()
