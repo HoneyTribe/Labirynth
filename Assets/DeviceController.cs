@@ -61,7 +61,7 @@ public class DeviceController : MonoBehaviour {
 		}
 	}
 
-	public void Move(Vector3 positionToMove)
+	public void Move(Vector3 positionToMove, Color newColor)
 	{
 		if (LevelFinishedController.instance.isDistractionEnabled())
 		{
@@ -76,6 +76,11 @@ public class DeviceController : MonoBehaviour {
 				inLighthouse = true;
 				movement = initialPosition;
 				AudioController.instance.Play("002_MoveDecoyBase");
+			}
+
+			foreach (Transform child in gameObject.transform)
+			{
+				child.gameObject.renderer.material.color = newColor;
 			}
 		}
 	}
