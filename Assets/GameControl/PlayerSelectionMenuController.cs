@@ -51,7 +51,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		// splash
 		splashStyle.normal.background = splashTexture;
 		Texture2D texture2 = new Texture2D(1, 1);
-		texture2.SetPixel(0,0,Color.white);
+		texture2.SetPixel(0,0,Color.black);
 		texture2.Apply();
 		backgroundStyle.normal.background = texture2;
 	}
@@ -96,13 +96,17 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 			{
 				if ((selGridInt.Count > 1) && (state.getPositionInMenu() == PlayerSelectionState.START))
 				{
+					AudioController.instance.Play("003_CollectKey");
 					GameObject.Find ("GameController").SendMessage ("RemovePlayerSelectionMenu", null);
 					Destroy(gameObject);
 					LevelFinishedController.instance.updateMaxLevel();
 					Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+
 				}
 				if (state.getPositionInMenu() == PlayerSelectionState.HELP)
 				{
+					AudioController.instance.Play("003_CollectKey");
+
 					if (input.isKeyboard())
 					{
 						this.instructionstyle = keyboardStyle;
@@ -139,14 +143,14 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		else if (splash == 2)
 		{
 			GUI.depth = 0;
-			float height = Screen.width * 800/1280;
+			float height = Screen.width * 720/1280;
 			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height ), backgroundStyle);
 			GUI.Box (new Rect(0, (Screen.height - height)/2, Screen.width, height), "", splashStyle);
 			GUI.EndGroup();
 		}
 		else if (this.instructionstyle != null)
 		{
-			float height = 800f/1280f*(Screen.width-200);
+			float height = 720f/1280f*(Screen.width-200);
 			float half = (Screen.height - height)/2;
 			GUI.BeginGroup(new Rect(100, half, Screen.width-100, Screen.height - half ));
 				GUI.Box (new Rect(0, 0, Screen.width-200, height), "", instructionstyle);

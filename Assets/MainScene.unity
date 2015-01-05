@@ -23636,6 +23636,7 @@ GameObject:
   - 65: {fileID: 1634265006}
   - 23: {fileID: 1634265005}
   - 114: {fileID: 1634265009}
+  - 114: {fileID: 1634265010}
   m_Layer: 28
   m_Name: TextInstructionsFloor
   m_TagString: Untagged
@@ -23705,6 +23706,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15d0a53b81eb84ebeb2cffce7290017e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1634265010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1634265004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9604083ffd93874883871d57531dadb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 00000000
 --- !u!1 &1638476071
 GameObject:
   m_ObjectHideFlags: 0
