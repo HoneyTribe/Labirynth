@@ -159,7 +159,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		else
 		{
 			GUI.BeginGroup(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 400, 400));
-				GUI.Box (new Rect(0, 0, 400, 400), "", skin.box);
+			GUI.Box (new Rect(0, 0, 400, 400), "", skin.box);
 
 				for (int i=0; i<4; i++)
 				{
