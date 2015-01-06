@@ -41,10 +41,10 @@ MonoBehaviour:
   skin: {fileID: 11400000, guid: dde63bf31dd6b9047a2e02ddf7d4edd8, type: 2}
   selectedSkin: {fileID: 11400000, guid: 8ada2debd686951468768f588d558127, type: 2}
   playersTexture: {fileID: 2800000, guid: 07a3bcc337c7d4286ab3859cbc147e4b, type: 3}
-  padTexture: {fileID: 2800000, guid: 45f64d850f8ff41e29934ba4d15f15c7, type: 3}
-  keyboardTexture: {fileID: 2800000, guid: 45f64d850f8ff41e29934ba4d15f15c7, type: 3}
+  padTexture: {fileID: 2800000, guid: cecce27b84c50441bac382295dd9d9de, type: 3}
+  keyboardTexture: {fileID: 2800000, guid: cecce27b84c50441bac382295dd9d9de, type: 3}
   mainSplashTexture: {fileID: 2800000, guid: ff7ac61eb7d7beb499f68a4234b65d69, type: 3}
-  splashTexture: {fileID: 2800000, guid: 45f64d850f8ff41e29934ba4d15f15c7, type: 3}
+  splashTexture: {fileID: 2800000, guid: cecce27b84c50441bac382295dd9d9de, type: 3}
   menuPrefab: {fileID: 100000, guid: 741efa72e5aa54145b2dcc38e25659ac, type: 2}
 --- !u!1001 &100100000
 Prefab:
