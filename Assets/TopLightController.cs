@@ -27,6 +27,7 @@ public class TopLightController : MonoBehaviour {
 	private GameObject ball;
 
 	private bool entered;
+	//private ScoreController scoreController;
 
 	void Start()
 	{
