@@ -22,12 +22,13 @@ public class FloorInstructions : MonoBehaviour
 	{
 		if (topLightController.enterLight == true)
 		{
-			arrowCentre.transform.Translate(0,-1,0);
+			//arrowCentre.transform.Translate(0,-1,0,Space.World);
+			arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+
 			if (scoreController.publicScore > 0)
 			{
 				renderer.material.mainTexture = instructionsFloor_02;
 			}
-
 			else
 			{
 				renderer.material.mainTexture = instructionsFloor_02;
@@ -38,12 +39,13 @@ public class FloorInstructions : MonoBehaviour
 			if (scoreController.publicScore > 0)
 			{
 				renderer.material.mainTexture = instructionsFloor_01;
-				arrowCentre.transform.Translate(0,1,0);
+				//arrowCentre.transform.Translate(0,1,0,Space.World);
+				arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
 			}
-			
 			else
 			{
 				renderer.material.mainTexture = instructionsFloor_03;
+				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 			}
 
 
