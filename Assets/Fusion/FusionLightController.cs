@@ -70,12 +70,12 @@ public class FusionLightController : MonoBehaviour {
 		newPosition = new Vector3(gameObject.transform.localPosition.x,
 		                          07,
 		                          18);
-		positionSpeed = (10 - gameObject.transform.localPosition.y) / 2.0f;
+		positionSpeed = (10 - gameObject.transform.localPosition.y) * 2.0f;
 
 		newRange = 40;
 		rangeSpeed = (40 - light.range) / 2.0f;
 
-		newIntensity = 1;
-		intensitySpeed = (1 - light.intensity) / 2.0f;
+		newIntensity = 0.4f;
+		intensitySpeed = (1 - light.intensity) * 5.0f;
 	}
 }

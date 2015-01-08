@@ -27,7 +27,9 @@ public class TopLightController : MonoBehaviour {
 	private GameObject ball;
 
 	private bool entered;
-	//private ScoreController scoreController;
+	public bool enterLight;
+	private ScoreController scoreController;
+	private FloorInstructions floorInstructions;
 
 	void Start()
 	{
@@ -58,12 +60,14 @@ public class TopLightController : MonoBehaviour {
 		lowEnergyTexture.Apply ();
 		lowEnergyStyle.normal.background = lowEnergyTexture;
 
-		//scoreController = GameObject.Find ("GameController").GetComponent<ScoreController> ();
+		scoreController = GameObject.Find ("GameController").GetComponent<ScoreController> ();
+		floorInstructions = GameObject.Find ("TextInstructionsFloor").GetComponent<FloorInstructions> ();
 	}
 
 	public bool isEntered()
 	{
 		return entered;
+		return enterLight;
 	}
 
 	void OnGUI()
@@ -105,16 +109,17 @@ public class TopLightController : MonoBehaviour {
 	public void TurnOn ()
 	{
 		entered = true;
+		enterLight = true;
+		floorInstructions.ChangeInstructions();
 		param = maxIntensity / openningInterval;
 		timeLeft = openningInterval;
-
-		//print (scoreController.score);
-
 	}
 
 	public void TurnOff ()
 	{
 		entered = false;
+		enterLight = false;
+		floorInstructions.ChangeInstructions();
 		param = - maxIntensity / closingInterval;
 		timeLeft = closingInterval;
 	}

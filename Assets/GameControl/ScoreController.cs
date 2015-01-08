@@ -4,6 +4,7 @@ using System.Collections;
 public class ScoreController : MonoBehaviour {
 
 	private int score;
+	public int publicScore;
 	private int numberOfPlayers;
 
 	private int randomNumber;
@@ -23,6 +24,7 @@ public class ScoreController : MonoBehaviour {
 		rightExitLight = GameObject.Find ("winLightRight");
 		candleLights = GameObject.FindGameObjectsWithTag ("CandleLightTag");
 		score = LevelFinishedController.instance.getNumberOfKeys ();
+		publicScore = score;
 		numberOfPlayers = LevelFinishedController.instance.getControllers ().Count;
 		fusionLight = GameObject.Find ("lightHousePointLight");
 	}
@@ -40,6 +42,7 @@ public class ScoreController : MonoBehaviour {
 	public void Score()
 	{
 		score--;
+		publicScore = score;
 		if (score == 0)
 		{
 			AudioController.instance.Play("004_CollectLastKey");
