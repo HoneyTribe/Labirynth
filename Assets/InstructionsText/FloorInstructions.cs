@@ -30,7 +30,7 @@ public class FloorInstructions : MonoBehaviour
 
 			else
 			{
-				renderer.material.mainTexture = instructionsFloor_03;
+				renderer.material.mainTexture = instructionsFloor_02;
 			}
 		}
 
