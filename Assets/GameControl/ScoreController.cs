@@ -15,6 +15,7 @@ public class ScoreController : MonoBehaviour {
 	private GameObject rightExitLight;
 	private GameObject[] candleLights;
 	private GameObject fusionLight;
+	private FloorInstructions floorInstructions;
 	
 	void Start()
 	{ 
@@ -27,6 +28,7 @@ public class ScoreController : MonoBehaviour {
 		publicScore = score;
 		numberOfPlayers = LevelFinishedController.instance.getControllers ().Count;
 		fusionLight = GameObject.Find ("lightHousePointLight");
+		floorInstructions = GameObject.Find ("TextInstructionsFloor").GetComponent<FloorInstructions> ();
 	}
 
 	/*
@@ -43,6 +45,7 @@ public class ScoreController : MonoBehaviour {
 	{
 		score--;
 		publicScore = score;
+		floorInstructions.ChangeInstructions();
 		if (score == 0)
 		{
 			AudioController.instance.Play("004_CollectLastKey");
