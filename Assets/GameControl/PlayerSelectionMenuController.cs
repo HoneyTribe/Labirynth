@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class PlayerSelectionMenuController : MonoBehaviour {
 
 	private const int PLAYER_IMAGE_HEIGHT = 160;
+	private float iconSize = 160;
 
 	private static int playersPerRow = 2;
 	public GUISkin skin;
@@ -150,7 +151,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		}
 		else if (this.instructionstyle != null)
 		{
-			float height = 720f/1280f*(Screen.width-200);
+			float height = 720f/1280f * (Screen.width-200);
 			float half = (Screen.height - height)/2;
 			GUI.BeginGroup(new Rect(100, half, Screen.width-100, Screen.height - half ));
 				GUI.Box (new Rect(0, 0, Screen.width-200, height), "", instructionstyle);
@@ -158,20 +159,27 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		} 
 		else
 		{
-			GUI.BeginGroup(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 400, 400));
-			GUI.Box (new Rect(0, 0, 400, 400), "", skin.box);
+			//GUI.BeginGroup(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 400, 400));
+			float height = Screen.width * 720/1280;
+			int textHeight = 40;
+			GUI.BeginGroup(new Rect(0,0, Screen.width, height));
+			GUI.Box (new Rect(0, 0, Screen.width, height), "", skin.box);
 
 				for (int i=0; i<4; i++)
 				{
 					int x = i % playersPerRow;
 					int y = i / playersPerRow;
+					
 
 					if (getSelectedGrid(i+1) == null)
 					{
 						GUI.enabled = false;
 					}
 
-					GUI.Button (new Rect (110 + x * 100, 60 + y * 100, 90, 90), "", buttonStyles[i]);
+					//GUI.Button (new Rect (110 + x * 100, 60 + y * 100, 90, 90), "", buttonStyles[i]);
+					float screenScale = Screen.width/1280f;
+					GUI.Button (new Rect (Screen.width/2 - (screenScale * iconSize) + (x * screenScale * iconSize), height/4 + (y * iconSize * screenScale),
+				    screenScale * iconSize, screenScale * iconSize), "", buttonStyles[i]);
 
 					if (getSelectedGrid(i+1) == null)
 					{
@@ -183,32 +191,40 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 				{
 					if (selGridInt.Count < 2)
 					{
-						GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 characters", selectedSkin.button);
+					//GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 characters", selectedSkin.button);
+					GUI.Label(new Rect (Screen.width/2 - (340/2), height * 0.75f - (textHeight/2), 340, textHeight),
+					"Select at least 2 characters", selectedSkin.button);
 					}
 					else
 					{
-						GUI.Button (new Rect (140, 260, 120, 40), "Start", selectedSkin.button);
+					GUI.Button (new Rect (Screen.width/2 - (340/2), height * 0.75f - (textHeight/2), 340, textHeight),
+					"Start", selectedSkin.button);
 					}
 				}
 				else
 				{
 					if (selGridInt.Count < 2)
 					{
-						GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 players", skin.button);
+					//GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 players", skin.button);
+					GUI.Label(new Rect (Screen.width/2 - (340/2), height * 0.75f - (textHeight/2), 340, textHeight),
+					"Select at least 2 players", skin.button);
 					}
 					else
 					{
-						GUI.Button (new Rect (140, 260, 120, 40), "Start", skin.button);
+					GUI.Button (new Rect (Screen.width/2 - (340/2), height * 0.75f - (textHeight/2), 340, textHeight),
+					"Start", skin.button);
 					}
 				}
 
 				if (isAnyCursorOn(PlayerSelectionState.HELP))
 				{
-					GUI.Button (new Rect (140, 310, 120, 40), "Controls", selectedSkin.button);
+				GUI.Button (new Rect (Screen.width/2 - (120/2), height * 0.77f - (textHeight/2) + textHeight, 120, textHeight),
+				"Controls", selectedSkin.button);
 				}
 				else
 				{
-					GUI.Button (new Rect (140, 310, 120, 40), "Controls", skin.button);
+				GUI.Button (new Rect (Screen.width/2 - (120/2), height * 0.77f - (textHeight/2) + textHeight, 120, textHeight),
+				"Controls",skin.button);
 				}
 			GUI.EndGroup();
 		}
