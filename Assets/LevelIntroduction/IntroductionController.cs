@@ -157,7 +157,7 @@ public class IntroductionController : MonoBehaviour {
 		}
 		else if (this.image != null) 
 		{
-			float height = 800f/1280f*(Screen.width-200);
+			float height = 720f/1280f*(Screen.width-200);
 			float half = (Screen.height - height)/2;
 			GUI.BeginGroup(new Rect(100, half, Screen.width-100, Screen.height - half ));
 			    GUI.DrawTexture (new Rect(0, 0, Screen.width-200, height), image);

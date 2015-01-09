@@ -17,7 +17,7 @@ public class FloorInstructions : MonoBehaviour
 		arrowCentre = GameObject.Find ("ArrowCentre");
 	}
 
-
+	//Called from ScoreController.cs and TopLightController.cs
 	public void ChangeInstructions ()
 	{
 		if (topLightController.enterLight == true)
