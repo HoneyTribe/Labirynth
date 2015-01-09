@@ -3352,7 +3352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07dfd9c6b0dcbe749b922921b3a4ca3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersTexture: {fileID: 2800000, guid: 07a3bcc337c7d4286ab3859cbc147e4b, type: 3}
+  playersTexture: {fileID: 2800000, guid: b93a31080ceb04db0a5e0d71a0156d35, type: 3}
   teacherTexture: {fileID: 2800000, guid: ef0843bf821d043ca85ad9370e5c7374, type: 3}
   guiSkin: {fileID: 11400000, guid: 30ca4d179622f554183fe49dc20a52bb, type: 2}
 --- !u!114 &141250790
