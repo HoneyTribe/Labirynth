@@ -47,7 +47,7 @@ public class IntroductionController : MonoBehaviour {
 		{
 			actions = ((LevelSetup) Activator.CreateInstance (type)).Setup ();
 
-			actions.Insert (0, new WaitAction (1f));
+			//actions.Insert (0, new WaitAction (1f));
 			actions.Add (new WaitAction(1f));
 
 			movingBackAction = new MoveCameraAction (mainCamera.transform.position, mainCamera.transform.rotation);
@@ -159,8 +159,9 @@ public class IntroductionController : MonoBehaviour {
 		{
 			float height = 720f/1280f*(Screen.width-200);
 			float half = (Screen.height - height)/2;
-			GUI.BeginGroup(new Rect(100, half, Screen.width-100, Screen.height - half ));
-			    GUI.DrawTexture (new Rect(0, 0, Screen.width-200, height), image);
+			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height));
+				GUI.Box(new Rect(0, 0, Screen.width, Screen.height), "", outerStyle );
+			    GUI.DrawTexture (new Rect(100, half, Screen.width-200, height), image);
 			GUI.EndGroup();
 		}	
 	}
