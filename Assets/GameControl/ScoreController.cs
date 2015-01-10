@@ -126,6 +126,8 @@ public class ScoreController : MonoBehaviour {
 	public void PlayerParalysed()
 	{
 		numberOfPlayers --; 
+		floorInstructions.deadPlayersInstructions --;
+		floorInstructions.ChangeInstructions();
 		GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
 		if (numberOfPlayers == 0)
 		{
@@ -136,5 +138,7 @@ public class ScoreController : MonoBehaviour {
 	public void PlayerReviwed()
 	{
 		numberOfPlayers ++;
+		floorInstructions.deadPlayersInstructions ++;
+		floorInstructions.ChangeInstructions();
 	}
 }

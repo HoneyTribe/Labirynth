@@ -17,12 +17,15 @@ public class DeviceController : MonoBehaviour {
 
 	private Animator anim;
 
+	private FloorInstructions floorInstructions;
+
 	void Start () 
 	{
 		instance = this;
 		anim = GetComponent<Animator> ();
 		initialPosition = transform.position;
 		movement = initialPosition;
+		floorInstructions = GameObject.Find ("TextInstructionsFloor").GetComponent<FloorInstructions> ();
 	}
 	
 	// Update is called once per frame
@@ -69,12 +72,16 @@ public class DeviceController : MonoBehaviour {
 			{
 				inLighthouse = false;
 				movement = new Vector3(positionToMove.x, 1, positionToMove.z);
+				floorInstructions.decoyInMaze = 1;
+				floorInstructions.ChangeInstructions();
 				AudioController.instance.Play("001_MoveDecoyMaze");
 			}
 			else
 			{
 				inLighthouse = true;
 				movement = initialPosition;
+				floorInstructions.decoyInMaze = 0;
+				floorInstructions.ChangeInstructions();
 				AudioController.instance.Play("002_MoveDecoyBase");
 			}
 

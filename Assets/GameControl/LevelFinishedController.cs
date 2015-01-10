@@ -10,6 +10,7 @@ public class LevelFinishedController : MonoBehaviour {
 	public float gameSpeed = 1.0f;
 
 	private int level = 0;
+	public int publicLevel = 0;
 	private int maxLevel = 0;
 	private AssemblyCSharp.LevelDefinition levelDefinition;
 
@@ -46,6 +47,7 @@ public class LevelFinishedController : MonoBehaviour {
 	private void LoadNewLevel()
 	{
 		level++;
+		publicLevel++;
 		if (level > maxLevel)
 		{
 			maxLevel = level;
@@ -95,7 +97,7 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		finished = true; 
 		stopped = true;
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(3);
 		finished = false; 
 		LoadNewLevel();
 	}
@@ -229,6 +231,8 @@ public class LevelFinishedController : MonoBehaviour {
 	public int getLevel()
 	{
 		return level;
+		publicLevel = level;
+		return publicLevel;
 	}
 
 	public int getNumberOfLevels()
@@ -239,6 +243,7 @@ public class LevelFinishedController : MonoBehaviour {
 	public void setLevel(int newLevel)
 	{
 		level = newLevel;
+		publicLevel = level;
 	}
 
 	public List<InputController> getControllers()

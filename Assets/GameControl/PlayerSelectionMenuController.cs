@@ -162,6 +162,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 			//GUI.BeginGroup(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 400, 400));
 			float height = Screen.width * 720/1280;
 			int textHeight = 40;
+
 			GUI.BeginGroup(new Rect(0,0, Screen.width, height));
 			GUI.Box (new Rect(0, 0, Screen.width, height), "", skin.box);
 
