@@ -4,9 +4,9 @@ using System.Collections;
 public class DroneController : MonoBehaviour {
 
 	public static DroneController instance;
-	private const float stability = 0.5f;
+	private const float stability = 1.2f;
 	private const float speed = 2.0f;
-	private const float retractingSpeed = 28f;
+	private const float retractingSpeed = 38f;
 
 	public GameObject portalPrefab;
 	public GameObject stunGunPrefab;
@@ -92,11 +92,11 @@ public class DroneController : MonoBehaviour {
 	{
 		if (move == Vector3.zero)
 		{
-			rigidbody.drag = 8.5f;
+			rigidbody.drag = 6.0f;
 		}
 		else
 		{
-			rigidbody.drag = 0.2f;
+			rigidbody.drag = 0.1f;
 			rigidbody.AddForce (move * Time.deltaTime * 320);
 			if (move.x != 0)
 			{

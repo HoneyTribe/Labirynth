@@ -9,6 +9,7 @@ public class FloorInstructions : MonoBehaviour
 	private GameObject arrowCentre;
 	public int deadPlayersInstructions;
 	public int decoyInMaze;
+	// Receives variables from DeviceController.cs and ScoreController.cs
 	
 	//public Texture instructionsFloor_02;
 	
@@ -49,7 +50,7 @@ public class FloorInstructions : MonoBehaviour
 				}
 				else
 				{
-					GetComponentInChildren<TextMesh>().text = "High-five all players to time-shift";
+					GetComponentInChildren<TextMesh>().text = "High-five with all players to time-shift";
 					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
 		}

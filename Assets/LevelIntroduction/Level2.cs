@@ -15,7 +15,7 @@ public class Level2 : LevelSetup {
 		actions.Add(new MoveCameraAction("Player2"));
 		actions.Add(new TextAction(4, "Maze runners: Tap 'action-1' to move the Decoy."));
 		actions.Add(new MoveCameraAction("Player1"));
-		actions.Add(new TextAction(4, "Light-controller: Look at monsters and tap 'action-1'. Zap them to activate the decoy."));
+		actions.Add(new TextAction(4, "Light-controller: Look at monsters and tap 'action-1' to send them to the Decoy."));
 
 		return actions;
 	}
