@@ -212,13 +212,13 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 			selGridInt.Clear(); 
 		}
 
+		if (this.instructionPanel != null) 
+		{
+			Destroy (this.instructionPanel);
+		}
 		if (splash == 2)
 		{
 			this.instructionPanel = (GameObject) Instantiate (instructionPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
-		}
-		else if (this.instructionPanel != null) 
-		{
-			Destroy (this.instructionPanel);
 		}
 	}
 
