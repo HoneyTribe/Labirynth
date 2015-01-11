@@ -77,7 +77,7 @@ public class LevelFinishedController : MonoBehaviour {
 		if (!stopped)
 		{
 			GUI.Label (new Rect (Screen.width / 2 - 360, 50, 300, 300), "Level: " + (level + 1)); 
-			GUI.Label (new Rect (Screen.width / 2 - 360, 70, 300, 300), "HELP: F1 or Pause");
+			GUI.Label (new Rect (Screen.width / 2 - 360, 70, 300, 300), "HELP: F1 or Start");
 		}
 
 		if (finished)

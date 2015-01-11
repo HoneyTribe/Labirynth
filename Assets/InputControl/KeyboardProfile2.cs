@@ -46,7 +46,7 @@ namespace InControl
 				new InputControlMapping
 				{
 					Handle = "Pause",
-					Target = InputControlType.Pause,
+					Target = InputControlType.Start,
 					Source = KeyCodeButton( KeyCode.F1 )
 				}
 			};
