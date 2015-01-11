@@ -14,22 +14,18 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	public Texture2D padTexture;
 	public Texture2D keyboardTexture;
 	public Texture2D mainSplashTexture;	
-	public Texture2D splashTexture;	
 
 	private List<PlayerSelectionState> selGridInt = new List<PlayerSelectionState> ();
 
 	private GUIStyle[] buttonStyles = new GUIStyle[4];
-	private GUIStyle padStyle = new GUIStyle();
-	private GUIStyle keyboardStyle = new GUIStyle();
-	private GUIStyle instructionstyle = null;
 
 	private GUIStyle mainSplashStyle = new GUIStyle();
-    private GUIStyle splashStyle = new GUIStyle();
 	private GUIStyle mainBackgroundStyle = new GUIStyle();
-	private GUIStyle backgroundStyle = new GUIStyle();
 	private int splash = 0;
 
 	public GameObject menuPrefab;
+	public GameObject instructionPrefab;
+	private GameObject instructionPanel;
 
 	void Start()
 	{
@@ -39,51 +35,21 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		// Buttons
 		buttonStyles = SpritesLoader.getPlayerSprites (playersTexture);
 
-		padStyle.normal.background = padTexture;
-		keyboardStyle.normal.background = keyboardTexture;
-
 		// main splash
 		mainSplashStyle.normal.background = mainSplashTexture;
 		Texture2D texture = new Texture2D(1, 1);
 		texture.SetPixel(0,0,Color.black);
 		texture.Apply();
 		mainBackgroundStyle.normal.background = texture;
-
-		// splash
-		splashStyle.normal.background = splashTexture;
-		Texture2D texture2 = new Texture2D(1, 1);
-		texture2.SetPixel(0,0,Color.black);
-		texture2.Apply();
-		backgroundStyle.normal.background = texture2;
 	}
 
 	public void handleLogic(float x, float z, float action, float action2, InputController input)
 	{
-//		if ((x > 0) && (selGridInt < 2))
-//		{
-//			selGridInt++;
-//		}
-//		
-//		if ((x < 0) && (selGridInt >= 0))
-//		{
-//			selGridInt--;
-//		}
-//
-//		if ((z > 0) && (selGridInt < 2))
-//		{
-//			selGridInt += 2;
-//		}
-//		
-//		if ((z < 0) && (selGridInt >= 2))
-//		{
-//			selGridInt -= 2;
-//		}
-		
 		if ((action > 0) || (action2 > 0))
 		{
-			if (this.instructionstyle != null) 
+			if (this.instructionPanel != null) 
 			{
-				this.instructionstyle = null;
+				Destroy (instructionPanel);
 				return;
 			}
 
@@ -107,15 +73,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 				if (state.getPositionInMenu() == PlayerSelectionState.HELP)
 				{
 					AudioController.instance.Play("003_CollectKey");
-
-					if (input.isKeyboard())
-					{
-						this.instructionstyle = keyboardStyle;
-					}
-					else
-					{
-						this.instructionstyle = padStyle;
-					}
+					this.instructionPanel = (GameObject) Instantiate (instructionPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 				}
 			}
 		}
@@ -143,20 +101,8 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		}
 		else if (splash == 2)
 		{
-			GUI.depth = 0;
-			float height = Screen.width * 720/1280;
-			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height ), backgroundStyle);
-			GUI.Box (new Rect(0, (Screen.height - height)/2, Screen.width, height), "", splashStyle);
-			GUI.EndGroup();
+			//handled in setSplash method
 		}
-		else if (this.instructionstyle != null)
-		{
-			float height = 720f/1280f * (Screen.width-200);
-			float half = (Screen.height - height)/2;
-			GUI.BeginGroup(new Rect(100, half, Screen.width-100, Screen.height - half ));
-				GUI.Box (new Rect(0, 0, Screen.width-200, height), "", instructionstyle);
-			GUI.EndGroup();
-		} 
 		else
 		{
 			//GUI.BeginGroup(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 400, 400));
@@ -264,6 +210,15 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		if (splash > 0)
 		{
 			selGridInt.Clear(); 
+		}
+
+		if (splash == 2)
+		{
+			this.instructionPanel = (GameObject) Instantiate (instructionPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		}
+		else if (this.instructionPanel != null) 
+		{
+			Destroy (this.instructionPanel);
 		}
 	}
 

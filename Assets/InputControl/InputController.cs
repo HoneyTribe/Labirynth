@@ -264,6 +264,10 @@ public class InputController {
 		{
 			LevelFinishedController.instance.ShowPlayerSelectionMenu();
 		}
+		if (InputManager.Devices [device].GetControl(InputControlType.Pause).WasPressed)
+		{
+			LevelFinishedController.instance.ShowPlayerSelectionMenu();
+		}
 	}
 
 	public void SetMenu(MenuController menuController)
