@@ -30,10 +30,14 @@ public class IntroductionController : MonoBehaviour {
 	private GUIStyle outerStyle;
 
 	public GUISkin guiSkin;
+	
+	private FloorInstructions floorInstructions;
 
 	void Start()
 	{
 		instance = this;
+
+		floorInstructions = GameObject.Find ("TextInstructionsFloor").GetComponent<FloorInstructions> ();
 
 		GUIStyle[] playerStyles = SpritesLoader.getPlayerSprites (playersTexture);
 		List<GUIStyle> playerList = new List<GUIStyle> (playerStyles);
@@ -127,7 +131,7 @@ public class IntroductionController : MonoBehaviour {
 	{
 		playingIntroduction = false;
 		stoppingIntroduction = stopping;
-		FloorInstructions.instance.Activate();
+		floorInstructions.Activate();
 	}
 
 	public bool isPlayingIntroduction()

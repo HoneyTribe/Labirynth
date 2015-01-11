@@ -114,10 +114,6 @@ public class CraneController : MonoBehaviour {
 	{
 		entered = true;
 		craneLight.SendMessage ("TurnOn");
-		if(LevelFinishedController.instance.getLevel() == 5 )
-		{
-			FloorInstructions.instance.ChangeInstructions();
-		}
 		retracting = false;
 	}
 	
@@ -125,10 +121,6 @@ public class CraneController : MonoBehaviour {
 	{
 		entered = false;
 		craneLight.SendMessage ("TurnOff");
-		if(LevelFinishedController.instance.getLevel() == 5 )
-		{
-			FloorInstructions.instance.ChangeInstructions();
-		}
 		retracting = true;
 	}
 

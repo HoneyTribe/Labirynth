@@ -17,12 +17,15 @@ public class DeviceController : MonoBehaviour {
 
 	private Animator anim;
 
+	private FloorInstructions floorInstructions;
+
 	void Start () 
 	{
 		instance = this;
 		anim = GetComponent<Animator> ();
 		initialPosition = transform.position;
 		movement = initialPosition;
+		floorInstructions = GameObject.Find ("TextInstructionsFloor").GetComponent<FloorInstructions> ();
 	}
 	
 	// Update is called once per frame
@@ -32,7 +35,7 @@ public class DeviceController : MonoBehaviour {
 		if (distance > 0)
 		{
 			transform.position = Vector3.Lerp (
-			transform.position, movement, Time.deltaTime * speed / distance);
+				transform.position, movement, Time.deltaTime * speed / distance);
 		}
 
 		if (time > 0)
@@ -69,24 +72,16 @@ public class DeviceController : MonoBehaviour {
 			{
 				inLighthouse = false;
 				movement = new Vector3(positionToMove.x, 1, positionToMove.z);
-
-				if(LevelFinishedController.instance.getLevel() == 1 )
-				{
-					FloorInstructions.instance.ChangeInstructions();
-				}
-
+				floorInstructions.decoyInMaze = 1;
+				floorInstructions.ChangeInstructions();
 				AudioController.instance.Play("001_MoveDecoyMaze");
 			}
 			else
 			{
 				inLighthouse = true;
 				movement = initialPosition;
-
-				if(LevelFinishedController.instance.getLevel() == 1 )
-				{
-					FloorInstructions.instance.ChangeInstructions();
-				}
-
+				floorInstructions.decoyInMaze = 0;
+				floorInstructions.ChangeInstructions();
 				AudioController.instance.Play("002_MoveDecoyBase");
 			}
 

@@ -2946,11 +2946,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSpeed: 1.20000005
+  publicLevel: 0
   playerSelectionMenuPrefab: {fileID: 100000, guid: 2ba56796f5938214396ca4f41c34be06,
     type: 2}
   menuPrefab: {fileID: 100000, guid: 741efa72e5aa54145b2dcc38e25659ac, type: 2}
-  instructionPrefab: {fileID: 100000, guid: 9c3dd774359b4cf4e931f83b9b0f0cbf, type: 2}
-  instructionPanel: {fileID: 0}
 --- !u!4 &119015217
 Transform:
   m_ObjectHideFlags: 0
@@ -3428,6 +3427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b01d9d57fc10b514187adc847a6b0d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  publicScore: 0
 --- !u!114 &141250783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7292,7 +7292,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 372523223}
   m_LocalRotation: {x: 0, y: .143924415, z: 0, w: .989588678}
-  m_LocalPosition: {x: 3.93305159, y: -1, z: -.412280083}
+  m_LocalPosition: {x: 3.93305159, y: .00999999046, z: -.412280083}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 763187051}
@@ -22206,6 +22206,7 @@ MonoBehaviour:
   openningInterval: 1
   closingInterval: .5
   laserPrefab: {fileID: 100000, guid: ae600a4ab3eed27449e949abb4ce518e, type: 2}
+  enterLight: 0
 --- !u!1001 &1318208423
 Prefab:
   m_ObjectHideFlags: 0
@@ -28173,6 +28174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadPlayersInstructions: 0
+  decoyInMaze: 0
 --- !u!114 &1634265010
 MonoBehaviour:
   m_ObjectHideFlags: 0

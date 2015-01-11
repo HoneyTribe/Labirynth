@@ -3,9 +3,8 @@ using System.Collections;
 
 public class ScoreController : MonoBehaviour {
 
-	public static ScoreController instance;
-
 	private int score;
+	public int publicScore;
 	private int numberOfPlayers;
 
 	private int randomNumber;
@@ -16,19 +15,20 @@ public class ScoreController : MonoBehaviour {
 	private GameObject rightExitLight;
 	private GameObject[] candleLights;
 	private GameObject fusionLight;
+	private FloorInstructions floorInstructions;
 	
 	void Start()
 	{ 
-		instance = this;
-		
 		leftDoor = GameObject.Find ("LeftDoor");
 		rightDoor = GameObject.Find ("RightDoor");
 		leftExitLight = GameObject.Find ("winLightLeft");
 		rightExitLight = GameObject.Find ("winLightRight");
 		candleLights = GameObject.FindGameObjectsWithTag ("CandleLightTag");
 		score = LevelFinishedController.instance.getNumberOfKeys ();
+		publicScore = score;
 		numberOfPlayers = LevelFinishedController.instance.getControllers ().Count;
 		fusionLight = GameObject.Find ("lightHousePointLight");
+		floorInstructions = GameObject.Find ("TextInstructionsFloor").GetComponent<FloorInstructions> ();
 	}
 
 	/*
@@ -44,13 +44,8 @@ public class ScoreController : MonoBehaviour {
 	public void Score()
 	{
 		score--;
-
-		if(LevelFinishedController.instance.getLevel() == 0 || LevelFinishedController.instance.getLevel() == 1 ||
-		  LevelFinishedController.instance.getLevel() == 5 || LevelFinishedController.instance.getLevel() == 8)
-		{
-			FloorInstructions.instance.ChangeInstructions();
-		}
-
+		publicScore = score;
+		floorInstructions.ChangeInstructions();
 		if (score == 0)
 		{
 			AudioController.instance.Play("004_CollectLastKey");
@@ -131,8 +126,8 @@ public class ScoreController : MonoBehaviour {
 	public void PlayerParalysed()
 	{
 		numberOfPlayers --; 
-		FloorInstructions.instance.deadPlayersInstructions --;
-		FloorInstructions.instance.ChangeInstructions();
+		floorInstructions.deadPlayersInstructions --;
+		floorInstructions.ChangeInstructions();
 		GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
 		if (numberOfPlayers == 0)
 		{
@@ -143,12 +138,7 @@ public class ScoreController : MonoBehaviour {
 	public void PlayerReviwed()
 	{
 		numberOfPlayers ++;
-		FloorInstructions.instance.deadPlayersInstructions ++;
-		FloorInstructions.instance.ChangeInstructions();
-	}
-
-	public int getScore()
-	{
-		return score;
+		floorInstructions.deadPlayersInstructions ++;
+		floorInstructions.ChangeInstructions();
 	}
 }
