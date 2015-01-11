@@ -100,8 +100,8 @@ public class InputController {
 		}
 		else
 		{
-			handleMenu(action, action);
-			playerController.handleLogic (x, z, action, action);
+			handleMenu(action, action2);
+			playerController.handleLogic (x, z, action, action2);
 		}
 	}
 
