@@ -27,9 +27,7 @@ public class TopLightController : MonoBehaviour {
 	private GameObject ball;
 
 	private bool entered;
-	public bool enterLight;
 	private ScoreController scoreController;
-	private FloorInstructions floorInstructions;
 
 	void Start()
 	{
@@ -59,15 +57,11 @@ public class TopLightController : MonoBehaviour {
 		lowEnergyTexture.SetPixel (0, 0, Color.red);
 		lowEnergyTexture.Apply ();
 		lowEnergyStyle.normal.background = lowEnergyTexture;
-
-		scoreController = GameObject.Find ("GameController").GetComponent<ScoreController> ();
-		floorInstructions = GameObject.Find ("TextInstructionsFloor").GetComponent<FloorInstructions> ();
 	}
 
 	public bool isEntered()
 	{
 		return entered;
-		return enterLight;
 	}
 
 	void OnGUI()
@@ -109,19 +103,26 @@ public class TopLightController : MonoBehaviour {
 	public void TurnOn ()
 	{
 		entered = true;
-		enterLight = true;
-		floorInstructions.ChangeInstructions();
 		param = maxIntensity / openningInterval;
 		timeLeft = openningInterval;
+
+		if(LevelFinishedController.instance.getLevel() == 0 || LevelFinishedController.instance.getLevel() == 1 ||
+		   LevelFinishedController.instance.getLevel() == 5 || LevelFinishedController.instance.getLevel() == 8)
+		{
+			FloorInstructions.instance.ChangeInstructions();
+		}
 	}
 
 	public void TurnOff ()
 	{
 		entered = false;
-		enterLight = false;
-		floorInstructions.ChangeInstructions();
 		param = - maxIntensity / closingInterval;
 		timeLeft = closingInterval;
+		if(LevelFinishedController.instance.getLevel() == 0 || LevelFinishedController.instance.getLevel() == 1 ||
+		   LevelFinishedController.instance.getLevel() == 5 || LevelFinishedController.instance.getLevel() == 8)
+		{
+			FloorInstructions.instance.ChangeInstructions();
+		}
 	}
 
 	private void changeEnergy(float value)

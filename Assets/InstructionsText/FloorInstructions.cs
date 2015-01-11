@@ -3,35 +3,34 @@ using System.Collections;
 
 public class FloorInstructions : MonoBehaviour
 {
-	private ScoreController scoreController;
-	private TopLightController topLightController;
-	private LevelFinishedController levelFinishedController;
+	public static FloorInstructions instance;
+	
 	private GameObject arrowCentre;
+	private GameObject arrowRight;
 	public int deadPlayersInstructions;
-	public int decoyInMaze;
-	// Receives variables from DeviceController.cs and ScoreController.cs
+	// Reads variables from: LevelFinishedController.cs, DeviceController.cs, ScoreController.cs, TopLightController.cs,
+	// CraneController.cs
 	
 	//public Texture instructionsFloor_02;
 	
 	void Start()
 	{
-		scoreController = GameObject.Find ("GameController").GetComponent<ScoreController> ();
-		topLightController = GameObject.Find ("TopLight").GetComponent<TopLightController> ();
-		levelFinishedController = GameObject.Find ("LevelController").GetComponent<LevelFinishedController> ();
+		instance = this;
 		arrowCentre = GameObject.Find ("ArrowCentre");
-		//decoyInMaze = 0;
+		arrowRight = GameObject.Find ("ArrowRight");
 	}
 
-	//Called from ScoreController.cs and TopLightController.cs and DeviceController.cs
+	//Called from ScoreController.cs, TopLightController.cs, DeviceController.cs
 	public void ChangeInstructions ()
 	{	
-		if(levelFinishedController.publicLevel == 0)
+		//level1
+		if(LevelFinishedController.instance.getLevel() == 0)
 		{
-			if (topLightController.enterLight == true)
+			if (TopLightController.instance.isEntered() == true)
 			{
 				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 
-				if (scoreController.publicScore > 0)
+				if (ScoreController.instance.getScore() > 0)
 				{
 					//renderer.material.mainTexture = instructionsFloor_02;
 					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine.";
@@ -43,7 +42,7 @@ public class FloorInstructions : MonoBehaviour
 			}
 
 			else
-				if (scoreController.publicScore > 0)
+				if (ScoreController.instance.getScore() > 0)
 				{
 					GetComponentInChildren<TextMesh>().text = "Walk into          the light";
 					arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
@@ -54,16 +53,16 @@ public class FloorInstructions : MonoBehaviour
 					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
 		}
-
-		else if(levelFinishedController.publicLevel == 1)
+		//level 2
+		else if(LevelFinishedController.instance.getLevel() == 1)
 		{
-			if (deadPlayersInstructions ==0) //nobody dead
+			if (deadPlayersInstructions == 0) //nobody dead
 			{
-				if(decoyInMaze ==0)
+				if(DeviceController.instance.isDeviceInLighthouse() == true)
 				{
 					GetComponentInChildren<TextMesh>().text = "Maze-runners: Tap action-1 to move the Decoy.";
 				}
-				else if (decoyInMaze ==1 && topLightController.enterLight == true)
+				else if (DeviceController.instance.isDeviceInLighthouse() == false && TopLightController.instance.isEntered() == true)
 				{
 					GetComponentInChildren<TextMesh>().text = "Aim the light at monsters and tap action-1. Zap to distract.";
 				}
@@ -77,21 +76,41 @@ public class FloorInstructions : MonoBehaviour
 				GetComponentInChildren<TextMesh>().text = "Revive your fallen friends by touching them.";
 			}
 		}
+		//level6
+		else if(LevelFinishedController.instance.getLevel() == 5)
+		{
+			if(CraneController.instance.isEntered() == true)
+			{
+				GetComponentInChildren<TextMesh>().text = "Push up to extend. Tap action-1 to pick up/drop things.";
+				arrowRight.transform.position = new Vector3(4, -0.5f, -13);
+			}
+			else
+			{
+				GetComponentInChildren<TextMesh>().text = "Walk into the Grabber         entrance";
+				arrowRight.transform.position = new Vector3(4, 0.5f, -13);
+			}
+		}	
+
 
 	
 	}
 
-	// Called in Introduction Controller.cs in public void StopIntroduction(bool stopping) at approx line 132
+	// Display after intro. Called from Introduction Controller.cs in public void StopIntroduction(bool stopping) at approx line 132
 	public void Activate ()
-	{
-		if (levelFinishedController.publicLevel == 0)
+	{	
+		//level1
+		if (LevelFinishedController.instance.getLevel() == 0)
 			{
 			GetComponentInChildren<TextMesh>().text = "Walk into          the light";
 			arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
 			}
+		//level6
+		else if (LevelFinishedController.instance.getLevel() == 5)
+		{
+			GetComponentInChildren<TextMesh>().text = "Walk into the Grabber         entrance";
+			arrowRight.transform.position = new Vector3(4, 0.5f, -13);
+		}
+
 
 	}
-
-
-
 }
