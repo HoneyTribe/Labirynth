@@ -2276,7 +2276,7 @@ GameObject:
   - 4: {fileID: 64015260}
   - 119: {fileID: 64015261}
   m_Layer: 23
-  m_Name: Target
+  m_Name: Crane_Red_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2289,7 +2289,7 @@ Transform:
   m_PrefabInternal: {fileID: 2059873229}
   m_GameObject: {fileID: 64015259}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: -1.97649193, y: 6.66049433, z: .247999191}
+  m_LocalPosition: {x: -2, y: 6.5999999, z: .25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 422095956}
@@ -3784,7 +3784,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 8
   m_Range: 15
-  m_SpotAngle: 55
+  m_SpotAngle: 65
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -7292,7 +7292,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 372523223}
   m_LocalRotation: {x: 0, y: .143924415, z: 0, w: .989588678}
-  m_LocalPosition: {x: 3.93305159, y: .00999999046, z: -.412280083}
+  m_LocalPosition: {x: 3.93305159, y: -1, z: -.412280083}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 763187051}
@@ -7863,7 +7863,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 422095956}
   m_Layer: 23
-  m_Name: Red_Target
+  m_Name: Crane_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15173,7 +15173,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 8
   m_Range: 15
-  m_SpotAngle: 60
+  m_SpotAngle: 65
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -24423,6 +24423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c6dfac3a0dbbbd4fa1eb6e662372f16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  publicEnterCrane: 0
 --- !u!54 &1453559002
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34287,15 +34288,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.97649193
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.66049433
+      value: 6.5999999
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_LocalPosition.z
-      value: .247999191
+      value: .25
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_LocalRotation.x
@@ -34315,7 +34316,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_Name
-      value: Target
+      value: Crane_Red_Target
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_IgnoreLayers.m_Bits

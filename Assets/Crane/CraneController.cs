@@ -17,6 +17,9 @@ public class CraneController : MonoBehaviour {
 
 	private bool retracting;
 	private bool entered;
+	public bool publicEnterCrane;
+
+	private FloorInstructions floorInstructions;
 
 	void Start()
 	{
@@ -28,6 +31,7 @@ public class CraneController : MonoBehaviour {
 		grabberController = grabber.GetComponent<CraneGrabberController> ();
 		craneLight = GameObject.Find ("CraneLight");
 		instance = this;
+		floorInstructions = GameObject.Find ("TextInstructionsFloor").GetComponent<FloorInstructions> ();
 	}
 
 	public bool isEntered()
@@ -113,14 +117,18 @@ public class CraneController : MonoBehaviour {
 	public void TurnOn ()
 	{
 		entered = true;
+		publicEnterCrane = true;
 		craneLight.SendMessage ("TurnOn");
+		floorInstructions.ChangeInstructions();
 		retracting = false;
 	}
 	
 	public void TurnOff ()
 	{
 		entered = false;
+		publicEnterCrane = false;
 		craneLight.SendMessage ("TurnOff");
+		floorInstructions.ChangeInstructions();
 		retracting = true;
 	}
 
