@@ -89,7 +89,7 @@ public class InputController {
 					menuController.handleLogic (x, z, action, action2);
 				}
 			}
-			handleMenu();
+			handleMenu(action, action2);
 		}
 		else if (IntroductionController.instance.isPlayingIntroduction())
 		{
@@ -100,8 +100,8 @@ public class InputController {
 		}
 		else
 		{
-			handleMenu();
-			playerController.handleLogic (x, z, action, action2);
+			handleMenu(action, action);
+			playerController.handleLogic (x, z, action, action);
 		}
 	}
 
@@ -258,11 +258,26 @@ public class InputController {
 		}
 	}
 
-	private void handleMenu()
+	private void handleMenu(float action, float action2)
 	{
-		if (InputManager.Devices [device].MenuWasPressed)
+		if (!LevelFinishedController.instance.IsInstruction())
 		{
-			LevelFinishedController.instance.ShowPlayerSelectionMenu();
+			if (InputManager.Devices [device].GetControl(InputControlType.Menu).WasPressed)
+			{
+				LevelFinishedController.instance.ShowPlayerSelectionMenu();
+			}
+
+			if (InputManager.Devices [device].GetControl(InputControlType.Pause).WasPressed)
+			{
+				LevelFinishedController.instance.ShowInstruction();
+			}
+		}
+		else
+		{
+			if (action != 0 || action2 != 0)
+			{
+				LevelFinishedController.instance.HideInstruction();
+			}
 		}
 	}
 

@@ -10,12 +10,13 @@ public class LevelFinishedController : MonoBehaviour {
 	public float gameSpeed = 1.0f;
 
 	private int level = 0;
-	public int publicLevel = 0;
 	private int maxLevel = 0;
 	private AssemblyCSharp.LevelDefinition levelDefinition;
 
 	public GameObject playerSelectionMenuPrefab;
 	public GameObject menuPrefab;
+	public GameObject instructionPrefab;
+	public GameObject instructionPanel;
 
 	private List<InputController> controllers = new List<InputController> ();
 
@@ -47,7 +48,6 @@ public class LevelFinishedController : MonoBehaviour {
 	private void LoadNewLevel()
 	{
 		level++;
-		publicLevel++;
 		if (level > maxLevel)
 		{
 			maxLevel = level;
@@ -77,6 +77,7 @@ public class LevelFinishedController : MonoBehaviour {
 		if (!stopped)
 		{
 			GUI.Label (new Rect (Screen.width / 2 - 360, 50, 300, 300), "Level: " + (level + 1)); 
+			GUI.Label (new Rect (Screen.width / 2 - 360, 70, 300, 300), "HELP: F1 or Pause");
 		}
 
 		if (finished)
@@ -132,6 +133,27 @@ public class LevelFinishedController : MonoBehaviour {
 			{
 				Destroy(menu);
 			}
+		}
+	}
+
+	public void ShowInstruction () 
+	{
+		if ( instructionPanel == null)
+		{
+			instructionPanel = (GameObject) Instantiate(instructionPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		}
+	}
+
+	public bool IsInstruction () 
+	{
+		return (instructionPanel != null);
+	}
+
+	public void HideInstruction () 
+	{
+		if ( instructionPanel != null)
+		{
+			Destroy (instructionPanel);
 		}
 	}
 
@@ -231,8 +253,7 @@ public class LevelFinishedController : MonoBehaviour {
 	public int getLevel()
 	{
 		return level;
-		publicLevel = level;
-		return publicLevel;
+
 	}
 
 	public int getNumberOfLevels()
@@ -243,7 +264,6 @@ public class LevelFinishedController : MonoBehaviour {
 	public void setLevel(int newLevel)
 	{
 		level = newLevel;
-		publicLevel = level;
 	}
 
 	public List<InputController> getControllers()

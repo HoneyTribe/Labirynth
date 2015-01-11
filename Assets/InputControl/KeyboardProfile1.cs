@@ -42,6 +42,12 @@ namespace InControl
 					Handle = "Menu",
 					Target = InputControlType.Menu,
 					Source = KeyCodeButton( KeyCode.Escape )
+				},
+				new InputControlMapping
+				{
+					Handle = "Pause",
+					Target = InputControlType.Pause,
+					Source = KeyCodeButton( KeyCode.F1 )
 				}
 			};
 			
