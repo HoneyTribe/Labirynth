@@ -67,7 +67,7 @@ public class InControlManager : MonoBehaviour {
 		if (playerSelectionMenuController != null)
 		{
 			InputDevice input = InputManager.ActiveDevice;
-			if (input.GetControl(InputControlType.Menu).WasPressed)
+			if (input.GetControl(InputControlType.Select).WasPressed)
 			{
 				if (playerSelectionMenuController.getSplash() == 0)
 				{
