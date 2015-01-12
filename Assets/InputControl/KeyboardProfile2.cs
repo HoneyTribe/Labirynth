@@ -47,7 +47,7 @@ namespace InControl
 				{
 					Handle = "Pause",
 					Target = InputControlType.Start,
-					Source = KeyCodeButton( KeyCode.F2 )
+					Source = KeyCodeButton( KeyCode.F1 )
 				}
 			};
 			

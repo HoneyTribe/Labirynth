@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class LevelFinishedController : MonoBehaviour {
 
 	public static bool ENABLE_ALL_LEVELS = true;
+	public static float SHOW_INSTRUCTION_MIN_TIME = 0.5f;
 
 	public static LevelFinishedController instance;
 	public float gameSpeed = 1.0f;
@@ -17,6 +18,7 @@ public class LevelFinishedController : MonoBehaviour {
 	public GameObject menuPrefab;
 	public GameObject instructionPrefab;
 	public GameObject instructionPanel;
+	public float instructionPanelTime;
 
 	private List<InputController> controllers = new List<InputController> ();
 
@@ -43,6 +45,7 @@ public class LevelFinishedController : MonoBehaviour {
 		GameObject.Find ("GameController").SendMessage ("StopIntroduction", false);
 		GameObject playerSelectionMenu = (GameObject) Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 		playerSelectionMenu.GetComponent<PlayerSelectionMenuController>().setSplash(1);
+		instructionPanelTime = Time.time;
 	}
 
 	private void LoadNewLevel()
@@ -136,11 +139,15 @@ public class LevelFinishedController : MonoBehaviour {
 		}
 	}
 
+	// It must be time dependent :-(
+	// For keyboard: if F1 was pressed it will trigger the action 2 times, from every keyboard device 
+	// For gamepad: if Start was pressed it will trigger the action 2 times, from every player using that gamepad
 	public void ShowInstruction () 
 	{
-		if ( instructionPanel == null)
+		if (( instructionPanel == null) && (Time.time - instructionPanelTime > SHOW_INSTRUCTION_MIN_TIME))
 		{
 			instructionPanel = (GameObject) Instantiate(instructionPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+			instructionPanelTime = Time.time;
 		}
 	}
 
@@ -151,9 +158,10 @@ public class LevelFinishedController : MonoBehaviour {
 
 	public void HideInstruction () 
 	{
-		if ( instructionPanel != null)
+		if (( instructionPanel != null) && (Time.time - instructionPanelTime > SHOW_INSTRUCTION_MIN_TIME))
 		{
 			Destroy (instructionPanel);
+			instructionPanelTime = Time.time;
 		}
 	}
 
