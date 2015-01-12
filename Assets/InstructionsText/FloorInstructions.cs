@@ -5,24 +5,17 @@ public class FloorInstructions : MonoBehaviour
 {
 	public static FloorInstructions instance;
 	
-	//private GameObject arrowCentre;
-	//private GameObject arrowRight;
+	private GameObject arrowCentre;
+	private GameObject arrowRight;
 	public int deadPlayersInstructions;
 
-	public GameObject arrowM;
-	public GameObject arrowL;
-	public GameObject arrowR;
-
-	// Reads variables from: LevelFinishedController.cs, DeviceController.cs, ScoreController.cs, TopLightController.cs,
-	// CraneController.cs
-	
-	//public Texture instructionsFloor_02;
+	// Reads variables from: LevelFinishedController.cs, DeviceController.cs, ScoreController.cs, TopLightController.cs, CraneController.cs
 	
 	void Start()
 	{
 		instance = this;
-		//arrowCentre = GameObject.Find ("ArrowCentre");
-		//arrowRight = GameObject.Find ("ArrowRight");
+		arrowCentre = GameObject.Find ("ArrowCentre");
+		arrowRight = GameObject.Find ("ArrowRight");
 	}
 
 	//Called from ScoreController.cs, TopLightController.cs, DeviceController.cs
@@ -33,11 +26,10 @@ public class FloorInstructions : MonoBehaviour
 		{
 			if (TopLightController.instance.isEntered() == true)
 			{
-				//arrowM.transform.position = new Vector3(0, -0.5f, -13);
+				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 
 				if (ScoreController.instance.getScore() > 0)
 				{
-					//renderer.material.mainTexture = instructionsFloor_02;
 					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine.";
 				}
 				else
@@ -50,12 +42,12 @@ public class FloorInstructions : MonoBehaviour
 				if (ScoreController.instance.getScore() > 0)
 				{
 					GetComponentInChildren<TextMesh>().text = "Walk into          the light";
-					//arrowM.transform.position = new Vector3(0, 0.5f, -13);
+					arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
 				}
 				else
 				{
 					GetComponentInChildren<TextMesh>().text = "High-five with all players to time-shift";
-					//arrowM.transform.position = new Vector3(0, -0.5f, -13);
+					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
 		}
 		//level 2
@@ -87,12 +79,12 @@ public class FloorInstructions : MonoBehaviour
 			if(CraneController.instance.isEntered() == true)
 			{
 				GetComponentInChildren<TextMesh>().text = "Push up to extend. Tap action-1 to pick up/drop things.";
-				//arrowR.transform.position = new Vector3(4, -0.5f, -13);
+				arrowRight.transform.position = new Vector3(4, -0.5f, -13);
 			}
 			else
 			{
 				GetComponentInChildren<TextMesh>().text = "Walk into the Grabber         entrance";
-				//arrowR.transform.position = new Vector3(4, 0.5f, -13);
+				arrowRight.transform.position = new Vector3(4, 0.5f, -13);
 			}
 		}	
 
@@ -107,13 +99,13 @@ public class FloorInstructions : MonoBehaviour
 		if (LevelFinishedController.instance.getLevel() == 0)
 			{
 			GetComponentInChildren<TextMesh>().text = "Walk into          the light";
-			//arrowM.transform.position = new Vector3(0, 0.5f, -13);
+			arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
 			}
 		//level6
 		else if (LevelFinishedController.instance.getLevel() == 5)
 		{
 			GetComponentInChildren<TextMesh>().text = "Walk into the Grabber         entrance";
-			//arrowR.transform.position = new Vector3(4, 0.5f, -13);
+			arrowRight.transform.position = new Vector3(4, 0.5f, -13);
 		}
 
 
