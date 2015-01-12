@@ -276,6 +276,7 @@ public class InputController {
 			{
 				if (!selectButtonPressed)
 				{
+					Debug.Log("Show - true" + device);
 					selectButtonPressed = true;
 					LevelFinishedController.instance.ShowInstruction();
 				}
@@ -291,6 +292,7 @@ public class InputController {
 			{
 				if (!selectButtonPressed)
 				{
+					Debug.Log("Hide - true" + device);
 					selectButtonPressed = true;
 					LevelFinishedController.instance.HideInstruction();
 				}
