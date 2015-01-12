@@ -40,7 +40,7 @@ namespace InControl
 				new InputControlMapping
 				{
 					Handle = "Menu",
-					Target = InputControlType.Back,
+					Target = InputControlType.Select,
 					Source = KeyCodeButton( KeyCode.Escape )
 				},
 				new InputControlMapping

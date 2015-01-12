@@ -269,14 +269,15 @@ public class InputController {
 
 			if (InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed)
 			{
+				Debug.Log ("Show - " + device);
 				LevelFinishedController.instance.ShowInstruction();
 			}
 		}
 		else
 		{
-			if ((action != 0 || action2 != 0) || 
-				(InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed))
+			if (action != 0 || action2 != 0 || InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed)
 			{
+				Debug.Log("Hide - " + device + " " + action + action2);
 				LevelFinishedController.instance.HideInstruction();
 			}
 		}
