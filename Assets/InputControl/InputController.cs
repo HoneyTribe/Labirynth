@@ -274,7 +274,8 @@ public class InputController {
 		}
 		else
 		{
-			if (action != 0 || action2 != 0)
+			if ((action != 0 || action2 != 0) || 
+				(InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed))
 			{
 				LevelFinishedController.instance.HideInstruction();
 			}
