@@ -27,6 +27,7 @@ public class InputController {
 	private List<KeyCode> keys;
 	private bool menuButtonPressed;
 	private bool playerMenuButtonPressed;
+	private bool selectButtonPressed;
 
 	private float actionTime;
 	private float action2Time;
@@ -267,18 +268,32 @@ public class InputController {
 				LevelFinishedController.instance.ShowPlayerSelectionMenu();
 			}
 
-			if (InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed)
+			if (!InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed)
 			{
-				Debug.Log ("Show - " + device);
-				LevelFinishedController.instance.ShowInstruction();
+				selectButtonPressed = false;
+			}
+			else
+			{
+				if (!selectButtonPressed)
+				{
+					selectButtonPressed = true;
+					LevelFinishedController.instance.ShowInstruction();
+				}
 			}
 		}
 		else
 		{
-			if (action != 0 || action2 != 0 || InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed)
+			if (!InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed)
 			{
-				Debug.Log("Hide - " + device + " " + action + action2);
-				LevelFinishedController.instance.HideInstruction();
+				selectButtonPressed = false;
+			}
+			else
+			{
+				if (!selectButtonPressed)
+				{
+					selectButtonPressed = true;
+					LevelFinishedController.instance.HideInstruction();
+				}
 			}
 		}
 	}
