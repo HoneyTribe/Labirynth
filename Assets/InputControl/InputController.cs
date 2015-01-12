@@ -262,7 +262,7 @@ public class InputController {
 	{
 		if (!LevelFinishedController.instance.IsInstruction())
 		{
-			if (InputManager.Devices [device].GetControl(InputControlType.Back).WasPressed)
+			if (InputManager.Devices [device].GetControl(InputControlType.Select).WasPressed)
 			{
 				LevelFinishedController.instance.ShowPlayerSelectionMenu();
 			}
