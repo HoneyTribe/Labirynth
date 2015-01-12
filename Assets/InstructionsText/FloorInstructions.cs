@@ -7,6 +7,7 @@ public class FloorInstructions : MonoBehaviour
 	
 	private GameObject arrowCentre;
 	private GameObject arrowRight;
+	private GameObject arrowLeft;
 	public int deadPlayersInstructions;
 
 	// Reads variables from: LevelFinishedController.cs, DeviceController.cs, ScoreController.cs, TopLightController.cs, CraneController.cs
@@ -16,9 +17,10 @@ public class FloorInstructions : MonoBehaviour
 		instance = this;
 		arrowCentre = GameObject.Find ("ArrowCentre");
 		arrowRight = GameObject.Find ("ArrowRight");
+		arrowLeft = GameObject.Find ("ArrowLeft");
 	}
 
-	//Called from ScoreController.cs, TopLightController.cs, DeviceController.cs
+	//Called from ScoreController, TopLightController, DeviceController, DroneController
 	public void ChangeInstructions ()
 	{	
 		//level1
@@ -86,7 +88,22 @@ public class FloorInstructions : MonoBehaviour
 				GetComponentInChildren<TextMesh>().text = "Walk into the Grabber         entrance";
 				arrowRight.transform.position = new Vector3(4, 0.5f, -13);
 			}
+		}
+		//level9
+		else if(LevelFinishedController.instance.getLevel() == 8)
+		{
+			if(DroneController.instance.isEntered() == true)
+			{
+				GetComponentInChildren<TextMesh>().text = "Fly the teleport Drone. Tap Action-1 to drop teleports.";
+				arrowLeft.transform.position = new Vector3(-4, -0.5f, -13);
+			}
+			else
+			{
+				GetComponentInChildren<TextMesh>().text = "Walk into              the Drone entrance";
+				arrowLeft.transform.position = new Vector3(-4, 0.5f, -13);
+			}
 		}	
+
 
 
 	
@@ -107,6 +124,12 @@ public class FloorInstructions : MonoBehaviour
 		{
 			GetComponentInChildren<TextMesh>().text = "Walk into the Grabber         entrance";
 			arrowRight.transform.position = new Vector3(4, 0.5f, -13);
+		}
+		//level9
+		else if (LevelFinishedController.instance.getLevel() == 8)
+		{
+			GetComponentInChildren<TextMesh>().text = "Walk into             the Drone entrance";
+			arrowLeft.transform.position = new Vector3(-4, 0.5f, -13);
 		}
 
 

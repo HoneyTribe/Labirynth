@@ -79,6 +79,11 @@ public class DroneController : MonoBehaviour {
 	{
 		entered = true;
 		retracting = false;
+
+		if( LevelFinishedController.instance.getLevel() == 8)
+		{
+			FloorInstructions.instance.ChangeInstructions();
+		}
 	}
 
 	public void TurnOff()
@@ -86,6 +91,11 @@ public class DroneController : MonoBehaviour {
 		entered = false;
 		rigidbody.drag = 0;
 		retracting = true;
+
+		if( LevelFinishedController.instance.getLevel() == 8)
+		{
+			FloorInstructions.instance.ChangeInstructions();
+		}
 	}
 
 	public void Move (Vector3 move)
