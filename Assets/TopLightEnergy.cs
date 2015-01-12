@@ -23,7 +23,7 @@ public class TopLightEnergy : MonoBehaviour {
 		}
 		else
 		{
-			transform.position = new Vector3(lastPos.x, -30, lastPos.z-8);
+			transform.position = new Vector3(lastPos.x, -30.6f, lastPos.z-8);
 		}
 	}
 }
