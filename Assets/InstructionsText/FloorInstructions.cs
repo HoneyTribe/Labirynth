@@ -92,7 +92,8 @@ public class FloorInstructions : MonoBehaviour
 	
 	}
 
-	// Display after intro. Called from Introduction Controller.cs in public void StopIntroduction(bool stopping) at approx line 132
+	//Text after intro.
+	//Called from Introduction Controller.cs in public void StopIntroduction(bool stopping) at approx line 132
 	public void Activate ()
 	{	
 		//level1

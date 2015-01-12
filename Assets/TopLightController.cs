@@ -105,6 +105,7 @@ public class TopLightController : MonoBehaviour {
 		entered = true;
 		param = maxIntensity / openningInterval;
 		timeLeft = openningInterval;
+		TopLightEnergy.instance.ChangePos();
 
 		if(LevelFinishedController.instance.getLevel() == 0 || LevelFinishedController.instance.getLevel() == 1 ||
 		   LevelFinishedController.instance.getLevel() == 5 || LevelFinishedController.instance.getLevel() == 8)
@@ -118,6 +119,8 @@ public class TopLightController : MonoBehaviour {
 		entered = false;
 		param = - maxIntensity / closingInterval;
 		timeLeft = closingInterval;
+		TopLightEnergy.instance.ChangePos();
+
 		if(LevelFinishedController.instance.getLevel() == 0 || LevelFinishedController.instance.getLevel() == 1 ||
 		   LevelFinishedController.instance.getLevel() == 5 || LevelFinishedController.instance.getLevel() == 8)
 		{
