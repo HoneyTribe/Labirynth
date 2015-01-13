@@ -5337,7 +5337,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_Orthographic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_IgnoreLayers.m_Bits
@@ -5369,11 +5369,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_AspectRatio
-      value: .0500000007
+      value: .00999999978
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
@@ -6835,7 +6835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &336056217
 Transform:
   m_ObjectHideFlags: 0
@@ -6859,8 +6859,8 @@ Projector:
   m_NearClipPlane: 11
   m_FarClipPlane: 12
   m_FieldOfView: 1
-  m_AspectRatio: .0500000007
-  m_Orthographic: 1
+  m_AspectRatio: .00999999978
+  m_Orthographic: 0
   m_OrthographicSize: 1
   m_Material: {fileID: 2100000, guid: 52a1cf6eec0cc4f64bd6dfc9a3e8fe14, type: 2}
   m_IgnoreLayers:
@@ -18933,7 +18933,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_Orthographic
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_IgnoreLayers.m_Bits
@@ -18965,11 +18965,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_AspectRatio
-      value: .0500000007
+      value: .00999999978
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
@@ -24625,7 +24625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1410671091
 Transform:
   m_ObjectHideFlags: 0
@@ -24649,8 +24649,8 @@ Projector:
   m_NearClipPlane: 3
   m_FarClipPlane: 10
   m_FieldOfView: 1
-  m_AspectRatio: .0500000007
-  m_Orthographic: 1
+  m_AspectRatio: .00999999978
+  m_Orthographic: 0
   m_OrthographicSize: 1
   m_Material: {fileID: 2100000, guid: 52a1cf6eec0cc4f64bd6dfc9a3e8fe14, type: 2}
   m_IgnoreLayers:
@@ -35388,7 +35388,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043507661}
-  m_LocalRotation: {x: -.565562785, y: .510542512, z: .332734853, w: .555673063}
+  m_LocalRotation: {x: -.565562844, y: .510542572, z: .332734883, w: .555673122}
   m_LocalPosition: {x: -1.44359303, y: -17.7804337, z: -18.2103996}
   m_LocalScale: {x: 8.13866043, y: .100000009, z: 10}
   m_Children: []

@@ -36,7 +36,7 @@ public class JumpController : MonoBehaviour {
 			}
 			else
 			{
-				textMesh.text = "NOW!";
+				textMesh.text = "";
 			}
 		}
 	}
