@@ -111,6 +111,7 @@ public class IntroductionController : MonoBehaviour {
 				textureId = -1;
 				text = null;
 				image = null;
+				FloorInstructions.instance.Activate(); //Trigger floor instructions to appear
 				stoppedIntroduction = true;
 			}
 
@@ -127,7 +128,6 @@ public class IntroductionController : MonoBehaviour {
 	{
 		playingIntroduction = false;
 		stoppingIntroduction = stopping;
-		FloorInstructions.instance.Activate();
 	}
 
 	public bool isPlayingIntroduction()
