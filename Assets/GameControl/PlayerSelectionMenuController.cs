@@ -154,7 +154,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					{
 					//GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 players", skin.button);
 					GUI.Label(new Rect (Screen.width/2 - (340/2), height * 0.75f - (textHeight/2), 340, textHeight),
-					"Select at least 2 players", skin.button);
+					 "Select at least 2 characters", skin.button);
 					}
 					else
 					{

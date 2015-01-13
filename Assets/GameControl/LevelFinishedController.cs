@@ -92,7 +92,7 @@ public class LevelFinishedController : MonoBehaviour {
 		}
 		if (gameOver)
 		{
-			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300), "Try again.",LevEnd_GUISkin.label);
+			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300), "Try again",LevEnd_GUISkin.label);
 		}
 		if (congratulation)
 		{
