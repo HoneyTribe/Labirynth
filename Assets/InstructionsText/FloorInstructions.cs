@@ -55,24 +55,45 @@ public class FloorInstructions : MonoBehaviour
 		//level 2
 		else if(LevelFinishedController.instance.getLevel() == 1)
 		{
+			arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+
 			if (deadPlayersInstructions == 0) //nobody dead
 			{
-				if(DeviceController.instance.isDeviceInLighthouse() == true)
+				if(DeviceController.instance.isDeviceInLighthouse() == true
+				   && ScoreController.instance.getScore() > 0
+				   && TopLightController.instance.isEntered() == true)
 				{
 					GetComponentInChildren<TextMesh>().text = "Maze-runners: Tap action-1 to move the Decoy.";
+					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
-				else if (DeviceController.instance.isDeviceInLighthouse() == false && TopLightController.instance.isEntered() == true)
+				else if(ScoreController.instance.getScore() > 0
+				   		&& TopLightController.instance.isEntered() == false)
+				{
+					GetComponentInChildren<TextMesh>().text = "Walk into          the light";
+					arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
+				}
+				else if (DeviceController.instance.isDeviceInLighthouse() == false
+				         && TopLightController.instance.isEntered() == true)
 				{
 					GetComponentInChildren<TextMesh>().text = "Aim the light at monsters and tap action-1. Zap to distract.";
+					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+				}
+				else if (ScoreController.instance.getScore() == 0
+				         && TopLightController.instance.isEntered() == false)
+				{
+					GetComponentInChildren<TextMesh>().text = "High-five with all players to time-shift";
+					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
 				else
 				{
 					GetComponentInChildren<TextMesh>().text = "";
+					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
 			}
 			else //someone dead
 			{
 				GetComponentInChildren<TextMesh>().text = "Revive your fallen friends by touching them.";
+				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 			}
 		}
 		//level6
@@ -119,6 +140,12 @@ public class FloorInstructions : MonoBehaviour
 			GetComponentInChildren<TextMesh>().text = "Walk into          the light";
 			arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
 			}
+		//level2
+		if (LevelFinishedController.instance.getLevel() == 1)
+		{
+			GetComponentInChildren<TextMesh>().text = "Walk into          the light";
+			arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
+		}
 		//level6
 		else if (LevelFinishedController.instance.getLevel() == 5)
 		{

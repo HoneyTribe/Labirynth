@@ -18,6 +18,8 @@ public class LevelFinishedController : MonoBehaviour {
 	public GameObject menuPrefab;
 	public GameObject instructionPrefab;
 	public GameObject instructionPanel;
+	public GUISkin LevEnd_GUISkin;
+	public GUISkin help_GUISkin;
 	public float instructionPanelTime;
 
 	private List<InputController> controllers = new List<InputController> ();
@@ -79,21 +81,23 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		if (!stopped)
 		{
-			GUI.Label (new Rect (Screen.width / 2 - 360, 50, 300, 300), "Level: " + (level + 1)); 
-			GUI.Label (new Rect (Screen.width / 2 - 360, 70, 300, 300), "HELP: F1 or Start");
+			GUI.Label (new Rect (Screen.width / 2 - 360, 50, 300, 300), "Level: " + (level + 1),help_GUISkin.label); 
+			GUI.Label (new Rect (Screen.width / 2 - 360, 70, 300, 300), "HELP: 'H' or 'Start'",help_GUISkin.label);
 		}
 
 		if (finished)
 		{
-			GUI.Label (new Rect (Screen.width / 2 - 200, 200, 300, 100), "LEVEL COMPLETE");
+			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300), "Time shift initiated!" +
+			" Shifting 1 earth year forward...", LevEnd_GUISkin.label);
 		}
 		if (gameOver)
 		{
-			GUI.Label (new Rect (Screen.width / 2 - 200, 200, 300, 100), "GAME OVER");
+			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300), "Try again.",LevEnd_GUISkin.label);
 		}
 		if (congratulation)
 		{
-			GUI.Label (new Rect (Screen.width / 2 - 200, 200, 300, 100), "CONGRATULATION! YOU FINISHED THE GAME!");
+			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300),
+			"CONGRATULATIONS! YOU FINISHED THE DEMO!",LevEnd_GUISkin.label);
 		}
 	}
 
@@ -101,7 +105,7 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		finished = true; 
 		stopped = true;
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(4);
 		finished = false; 
 		LoadNewLevel();
 	}
@@ -110,7 +114,7 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		gameOver = true; 
 		stopped = true;
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(4);
 		gameOver = false;
 		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
@@ -119,7 +123,7 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		congratulation = true; 
 		stopped = true;
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(4);
 		congratulation = false;
 		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}

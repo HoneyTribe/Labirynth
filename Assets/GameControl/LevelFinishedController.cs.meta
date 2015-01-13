@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: e112fbb7148c45247b3198d0b4c0997c
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerSelectionMenuPrefab: {instanceID: 0}
+  - menuPrefab: {instanceID: 0}
+  - instructionPrefab: {instanceID: 0}
+  - instructionPanel: {instanceID: 0}
+  - LevEnd_GUISkin: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
