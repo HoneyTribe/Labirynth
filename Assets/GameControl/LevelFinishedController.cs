@@ -106,6 +106,7 @@ public class LevelFinishedController : MonoBehaviour {
 		finished = true; 
 		stopped = true;
 		yield return new WaitForSeconds(4);
+		FloorInstructions.instance.Remove();
 		finished = false; 
 		LoadNewLevel();
 	}
@@ -115,6 +116,8 @@ public class LevelFinishedController : MonoBehaviour {
 		gameOver = true; 
 		stopped = true;
 		yield return new WaitForSeconds(4);
+		Blackout.instance.transform.position = new Vector3(0, 15f, 0); //blackout
+		FloorInstructions.instance.Remove(); // remove floor instructions
 		gameOver = false;
 		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
@@ -124,6 +127,7 @@ public class LevelFinishedController : MonoBehaviour {
 		congratulation = true; 
 		stopped = true;
 		yield return new WaitForSeconds(4);
+		FloorInstructions.instance.Remove();
 		congratulation = false;
 		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
@@ -134,6 +138,8 @@ public class LevelFinishedController : MonoBehaviour {
 		if ( playerSelectionMenu == null)
 		{
 			stopped = true;
+			Blackout.instance.transform.position = new Vector3(0, 15f, 0); //blackout
+			FloorInstructions.instance.Remove(); // remove floor instructions
 			Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 			GameObject menu = GameObject.Find ("Menu(Clone)");
 			if (menu != null)

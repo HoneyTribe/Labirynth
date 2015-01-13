@@ -109,7 +109,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 			float height = Screen.width * 720/1280;
 			int textHeight = 40;
 
-			GUI.BeginGroup(new Rect(0,0, Screen.width, height));
+			GUI.BeginGroup(new Rect(0 ,(Screen.height - height)/2, Screen.width, height));
 			GUI.Box (new Rect(0, 0, Screen.width, height), "", skin.box);
 
 				for (int i=0; i<4; i++)
@@ -208,6 +208,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	{
 		this.splash = splash;
 		if (splash > 0)
+			Blackout.instance.transform.position = new Vector3(0, 15f, 0);
 		{
 			selGridInt.Clear(); 
 		}

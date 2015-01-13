@@ -120,7 +120,7 @@ public class FloorInstructions : MonoBehaviour
 			}
 			else
 			{
-				GetComponentInChildren<TextMesh>().text = "Walk into              the Drone entrance";
+				GetComponentInChildren<TextMesh>().text = "Walk into             the Drone entrance";
 				arrowLeft.transform.position = new Vector3(-4, 0.5f, -13);
 			}
 		}	
@@ -130,8 +130,8 @@ public class FloorInstructions : MonoBehaviour
 	
 	}
 
-	//Text after intro.
-	//Called from Introduction Controller.cs in public void StopIntroduction(bool stopping) at approx line 132
+	//Text to display after intro
+	//Called from Introduction Controller
 	public void Activate ()
 	{	
 		//level1
@@ -159,6 +159,13 @@ public class FloorInstructions : MonoBehaviour
 			arrowLeft.transform.position = new Vector3(-4, 0.5f, -13);
 		}
 
-
+	}
+	//Called from LevelFinishedController
+	public void Remove () //off screen
+	{
+		GetComponentInChildren<TextMesh>().text = "";
+		arrowLeft.transform.position = new Vector3(-4, -0.5f, -13);
+		arrowRight.transform.position = new Vector3(4, -0.5f, -13);
+		arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 	}
 }
