@@ -11,7 +11,9 @@ public class Level16 : LevelSetup {
 		actions.Add(new MoveCameraAction("Crane"));
 		actions.Add(new TextAction(4, "Uh-oh. The grabber was damaged during an upgrade..."));
 		actions.Add(new MoveCameraAction("Crane"));
-		actions.Add(new TextAction(4, "The upgrade works though. With full power tap 'action-2' and use the Wall-Lazer!"));
+		actions.Add(new TextAction(4, "At least the upgrade still works!"));
+		actions.Add(new MoveCameraAction("Crane"));
+		actions.Add(new TextAction(4, "If you have full power aim over a wall and tap action-2."));
 		
 		return actions;
 	}
