@@ -53,7 +53,10 @@ public class DronePowerController : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUI.BeginGroup(new Rect ((Screen.width / 4) - progressBarSize / 2, Screen.height - 20, progressBarSize, 10));
+		if(DroneController.instance.isEntered() == true)
+		{
+			GUI.BeginGroup(new Rect ((Screen.width / 4) - progressBarSize / 2, Screen.height - 20, progressBarSize, 10));
+			GUI.depth = 2;
 			GUI.Box (new Rect (0, 0, progressBarSize, 10), "", borderStyle);
 			GUI.Box (new Rect (1, 1, progressBarSize - 2, 8), "", outerStyle);
 			if (energy >= getMinCost())
@@ -64,7 +67,9 @@ public class DronePowerController : MonoBehaviour {
 			{
 				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", lowEnergyStyle);
 			}
-		GUI.EndGroup();
+			GUI.EndGroup();
+		}
+
 	}
 
 	public void settingUp()

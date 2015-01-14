@@ -81,8 +81,10 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		if (!stopped)
 		{
-			GUI.Label (new Rect (Screen.width / 2 - 360, 50, 300, 300), "Level: " + (level + 1),help_GUISkin.label); 
-			GUI.Label (new Rect (Screen.width / 2 - 360, 70, 300, 300), "HELP: 'H' or 'Start'",help_GUISkin.label);
+			//GUI.Label (new Rect (Screen.width / 2 - 360, 50, 300, 300), "Level: " + (level + 1),help_GUISkin.label); 
+			//GUI.Label (new Rect (Screen.width / 2 - 360, 70, 300, 300), "HELP: 'H' or 'Start'",help_GUISkin.label);
+			GUI.Label (new Rect (Screen.width * 0.05f, 50, 300, 300), "Level: " + (level + 1),help_GUISkin.label); 
+			GUI.Label (new Rect (Screen.width * 0.05f, 70, 300, 300), "HELP: 'H' or 'Start'",help_GUISkin.label);
 		}
 
 		if (finished)
@@ -117,7 +119,6 @@ public class LevelFinishedController : MonoBehaviour {
 		stopped = true;
 		FloorInstructions.instance.Remove(); // remove floor instructions
 		yield return new WaitForSeconds(4);
-		Blackout.instance.transform.position = new Vector3(0, 15f, 0); //blackout
 		gameOver = false;
 		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
@@ -138,7 +139,6 @@ public class LevelFinishedController : MonoBehaviour {
 		if ( playerSelectionMenu == null)
 		{
 			stopped = true;
-			Blackout.instance.transform.position = new Vector3(0, 15f, 0); //blackout
 			FloorInstructions.instance.Remove(); // remove floor instructions
 			Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 			GameObject menu = GameObject.Find ("Menu(Clone)");

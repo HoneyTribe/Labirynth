@@ -66,7 +66,10 @@ public class TopLightController : MonoBehaviour {
 
 	void OnGUI()
 	{
-		GUI.BeginGroup(new Rect (Screen.width / 2 - progressBarSize / 2, Screen.height - 20, progressBarSize, 10));
+		if(entered == true)
+		{
+			GUI.BeginGroup(new Rect (Screen.width / 2 - progressBarSize / 2, Screen.height - 20, progressBarSize, 10));
+			GUI.depth = 2;
 			GUI.Box (new Rect (0, 0, progressBarSize, 10), "", borderStyle);
 			GUI.Box (new Rect (1, 1, progressBarSize - 2, 8), "", outerStyle);
 			if (energy >= attractionCost)
@@ -77,7 +80,9 @@ public class TopLightController : MonoBehaviour {
 			{
 				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", lowEnergyStyle);
 			}
-		GUI.EndGroup();
+			GUI.EndGroup();
+		}
+		
 	}
 
 	void Update()

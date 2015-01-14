@@ -12,6 +12,7 @@ public class MenuController : MonoBehaviour {
 	private GameObject gameController;
 	private int selGridInt;
 	private GUIStyle backgroundStyle = new GUIStyle();
+	private GUIStyle outerStyle;
 
 	void Start()
 	{
@@ -21,6 +22,13 @@ public class MenuController : MonoBehaviour {
 			input.SetMenu(this);
 		}
 		backgroundStyle.normal.background = background;
+
+		//black background, full screen
+		outerStyle = new GUIStyle ();
+		Texture2D outerTexture = new Texture2D (1, 1);
+		outerTexture.SetPixel (0, 0, Color.black);
+		outerTexture.Apply ();
+		outerStyle.normal.background = outerTexture;
 	}
 
 	public void handleLogic(float x, float z, float action, float action2)
@@ -111,9 +119,16 @@ public class MenuController : MonoBehaviour {
 
 	void OnGUI () 
 	{
-		GUI.BeginGroup(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 300, 600, 600));
-			GUI.Box (new Rect(0, 0, 600, 600), "", backgroundStyle);
-			GUI.Label (new Rect (100, 165, 400, 50), "Levels", skin.label);
+		//GUI.BeginGroup(new Rect(Screen.width / 2 - 300, Screen.height / 2 - 300, 600, 600));
+			//GUI.Box (new Rect(0, 0, 600, 600), "", backgroundStyle);
+			//GUI.Label (new Rect (100, 165, 400, 50), "Levels", skin.label);
+
+		float x1 = Screen.width / 2 - 300;
+		float y1 =Screen.height / 2 - 300;
+
+		GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height), "", outerStyle );
+		GUI.Box (new Rect(x1, y1, 600, 600), "", backgroundStyle);
+		GUI.Label (new Rect (x1 + 100, y1 + 165, 400, 50), "Levels", skin.label);
 
 			for (int i=0; i<=LevelFinishedController.instance.getNumberOfLevels(); i++)
 			{
@@ -127,11 +142,11 @@ public class MenuController : MonoBehaviour {
 
 				if (selGridInt == i)
 				{
-					GUI.Button (new Rect (160 + x * 59, 210 + y * 55, 40, 40), (i + 1).ToString(), selectedSkin.button);
+				GUI.Button (new Rect (x1 +160 + x * 59, y1 + 210 + y * 55, 40, 40), (i + 1).ToString(), selectedSkin.button);
 				}
 				else
 				{
-					GUI.Button (new Rect (160 + x * 59, 210 + y * 55, 40, 40), (i + 1).ToString(), skin.button);
+				GUI.Button (new Rect (x1 +160 + x * 59, y1 + 210 + y * 55, 40, 40), (i + 1).ToString(), skin.button);
 				}
 
 				if (i>LevelFinishedController.instance.getMaxLevel())

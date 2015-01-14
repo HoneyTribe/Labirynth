@@ -22,6 +22,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	private GUIStyle mainSplashStyle = new GUIStyle();
 	private GUIStyle mainBackgroundStyle = new GUIStyle();
 	private int splash = 0;
+	private GUIStyle outerStyle;
 
 	public GameObject menuPrefab;
 	public GameObject instructionPrefab;
@@ -41,11 +42,18 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		texture.SetPixel(0,0,Color.black);
 		texture.Apply();
 		mainBackgroundStyle.normal.background = texture;
+
+		//black background, full screen
+		outerStyle = new GUIStyle ();
+		Texture2D outerTexture = new Texture2D (1, 1);
+		outerTexture.SetPixel (0, 0, Color.black);
+		outerTexture.Apply ();
+		outerStyle.normal.background = outerTexture;
 	}
 
 	public void handleLogic(float x, float z, float action, float action2, InputController input)
 	{
-		if ((action > 0) || (action2 > 0))
+		if ((action > 0) || (action2 > 0) )
 		{
 			if (this.instructionPanel != null) 
 			{
@@ -109,8 +117,12 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 			float height = Screen.width * 720/1280;
 			int textHeight = 40;
 
-			GUI.BeginGroup(new Rect(0 ,(Screen.height - height)/2, Screen.width, height));
-			GUI.Box (new Rect(0, 0, Screen.width, height), "", skin.box);
+			//GUI.BeginGroup(new Rect(0 ,(Screen.height - height)/2, Screen.width, height));
+			//GUI.Box (new Rect(0, 0, Screen.width, height), "", skin.box);
+
+			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height), "", outerStyle );
+			GUI.Box (new Rect(0 ,(Screen.height - height)/2, Screen.width, height), "", skin.box);
+
 
 				for (int i=0; i<4; i++)
 				{
@@ -125,7 +137,8 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 
 					//GUI.Button (new Rect (110 + x * 100, 60 + y * 100, 90, 90), "", buttonStyles[i]);
 					float screenScale = Screen.width/1280f;
-					GUI.Button (new Rect (Screen.width/2 - (screenScale * iconSize) + (x * screenScale * iconSize), height/4 + (y * iconSize * screenScale),
+					GUI.Button (new Rect (Screen.width/2 - (screenScale * iconSize) + (x * screenScale * iconSize),
+				    (Screen.height - height)/2 + height/4 + (y * iconSize * screenScale),
 				    screenScale * iconSize, screenScale * iconSize), "", buttonStyles[i]);
 
 					if (getSelectedGrid(i+1) == null)
@@ -139,12 +152,12 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					if (selGridInt.Count < 2)
 					{
 					//GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 characters", selectedSkin.button);
-					GUI.Label(new Rect (Screen.width/2 - (340/2), height * 0.75f - (textHeight/2), 340, textHeight),
+					GUI.Label(new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.75f - (textHeight/2), 340, textHeight),
 					"Select at least 2 characters", selectedSkin.button);
 					}
 					else
 					{
-					GUI.Button (new Rect (Screen.width/2 - (340/2), height * 0.75f - (textHeight/2), 340, textHeight),
+					GUI.Button (new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.75f - (textHeight/2), 340, textHeight),
 					"Start", selectedSkin.button);
 					}
 				}
@@ -153,24 +166,24 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					if (selGridInt.Count < 2)
 					{
 					//GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 players", skin.button);
-					GUI.Label(new Rect (Screen.width/2 - (340/2), height * 0.75f - (textHeight/2), 340, textHeight),
+					GUI.Label(new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.75f - (textHeight/2), 340, textHeight),
 					 "Select at least 2 characters", skin.button);
 					}
 					else
 					{
-					GUI.Button (new Rect (Screen.width/2 - (340/2), height * 0.75f - (textHeight/2), 340, textHeight),
+					GUI.Button (new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.75f - (textHeight/2), 340, textHeight),
 					"Start", skin.button);
 					}
 				}
 
 				if (isAnyCursorOn(PlayerSelectionState.HELP))
 				{
-				GUI.Button (new Rect (Screen.width/2 - (120/2), height * 0.77f - (textHeight/2) + textHeight, 120, textHeight),
+				GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 120, textHeight),
 				"Controls", selectedSkin.button);
 				}
 				else
 				{
-				GUI.Button (new Rect (Screen.width/2 - (120/2), height * 0.77f - (textHeight/2) + textHeight, 120, textHeight),
+				GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 120, textHeight),
 				"Controls",skin.button);
 				}
 			GUI.EndGroup();
@@ -208,7 +221,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	{
 		this.splash = splash;
 		if (splash > 0)
-			Blackout.instance.transform.position = new Vector3(0, 15f, 0);
+
 		{
 			selGridInt.Clear(); 
 		}
