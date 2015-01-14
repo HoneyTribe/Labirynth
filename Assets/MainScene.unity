@@ -2302,12 +2302,12 @@ Projector:
   m_GameObject: {fileID: 64015259}
   m_Enabled: 1
   serializedVersion: 2
-  m_NearClipPlane: 1.89999998
-  m_FarClipPlane: 10.8000002
-  m_FieldOfView: 41.3499985
+  m_NearClipPlane: 4
+  m_FarClipPlane: 13
+  m_FieldOfView: 10
   m_AspectRatio: 1
   m_Orthographic: 1
-  m_OrthographicSize: 2.81999993
+  m_OrthographicSize: 3.5
   m_Material: {fileID: 2100000, guid: 52a1cf6eec0cc4f64bd6dfc9a3e8fe14, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
@@ -3786,7 +3786,7 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 8
-  m_Range: 15
+  m_Range: 25
   m_SpotAngle: 55
   m_CookieSize: 10
   m_Shadows:
@@ -15621,7 +15621,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 8
   m_Range: 15
-  m_SpotAngle: 60
+  m_SpotAngle: 80
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -15862,7 +15862,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_OrthographicSize
-      value: 2.81999993
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_Orthographic
@@ -15871,6 +15871,18 @@ Prefab:
     - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_IgnoreLayers.m_Bits
       value: 4294962687
+      objectReference: {fileID: 0}
+    - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_NearClipPlane
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_FarClipPlane
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_FieldOfView
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
@@ -17798,7 +17810,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1061289934}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.00597739, y: 9.50923538, z: -17.0994949}
+  m_LocalPosition: {x: 3.00597739, y: 11.5, z: -17.0994949}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1584803933}
@@ -27441,12 +27453,12 @@ Projector:
   m_GameObject: {fileID: 1526871698}
   m_Enabled: 1
   serializedVersion: 2
-  m_NearClipPlane: 1.89999998
-  m_FarClipPlane: 10.8000002
-  m_FieldOfView: 41.3499985
+  m_NearClipPlane: 8
+  m_FarClipPlane: 13
+  m_FieldOfView: 20
   m_AspectRatio: 1
   m_Orthographic: 1
-  m_OrthographicSize: 2.81999993
+  m_OrthographicSize: 3.5
   m_Material: {fileID: 2100000, guid: 52a1cf6eec0cc4f64bd6dfc9a3e8fe14, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
@@ -35281,7 +35293,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043507661}
-  m_LocalRotation: {x: -.565562844, y: .510542572, z: .332734883, w: .555673122}
+  m_LocalRotation: {x: -.565562785, y: .510542512, z: .332734853, w: .555673063}
   m_LocalPosition: {x: -1.44359303, y: -17.7804337, z: -18.2103996}
   m_LocalScale: {x: 8.13866043, y: .100000009, z: 10}
   m_Children: []
@@ -35588,6 +35600,26 @@ Prefab:
     - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
       propertyPath: m_IgnoreLayers.m_Bits
       value: 4294962687
+      objectReference: {fileID: 0}
+    - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_Orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_FarClipPlane
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_FieldOfView
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_NearClipPlane
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11900000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
+      propertyPath: m_OrthographicSize
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a29e133e3841243b7b0ec432e3573cdd, type: 2}
