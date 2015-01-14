@@ -35,6 +35,7 @@ public class InControlManager : MonoBehaviour {
 
 		InputManager.AttachDevice( new UnityInputDevice( new KeyboardProfile1() ) );
 		InputManager.AttachDevice( new UnityInputDevice( new KeyboardProfile2() ) );
+		InputManager.AttachDevice( new UnityInputDevice( new CustomProfile() ) );
 
 //		foreach(InputDevice device in InputManager.Devices)
 //		{
@@ -86,6 +87,25 @@ public class InControlManager : MonoBehaviour {
 					Application.Quit();
 				}
 			}
+			if ((input.GetControl(InputControlType.LeftTrigger).WasPressed) ||
+			    (input.GetControl(InputControlType.LeftBumper).WasPressed) ||
+			    (input.GetControl(InputControlType.RightTrigger).WasPressed) ||
+			    (input.GetControl(InputControlType.RightBumper).WasPressed) ||
+				(input.GetControl(InputControlType.Action1).WasPressed) ||
+			    (input.GetControl(InputControlType.Action2).WasPressed) ||
+			    (input.GetControl(InputControlType.Action3).WasPressed))
+			{
+				if (playerSelectionMenuController.getSplash() == 2)
+				{
+					playerSelectionMenuController.setSplash(0);
+					return;
+				}
+				else if (playerSelectionMenuController.getSplash() == 1)
+				{
+					playerSelectionMenuController.setSplash(2);
+					return;
+				}
+			}
 
 			bool left = false;
 			bool right = false;
@@ -98,25 +118,12 @@ public class InControlManager : MonoBehaviour {
 				right = true;
 			}
 
-			//bool left = (input.LeftTrigger.Value != 0) || (input.LeftBumper.Value != 0);
-			//bool right = (input.RightTrigger.Value != 0) || (input.RightBumper.Value != 0);
 			bool keyboard = input.Meta.Contains("keyboard");
 			bool found  = false;
 
 			// hasChanged to avoid key holding
 			if (left || right)
 			{
-				if (playerSelectionMenuController.getSplash() == 2)
-				{
-					playerSelectionMenuController.setSplash(0);
-					return;
-				}
-				else if (playerSelectionMenuController.getSplash() == 1)
-				{
-					playerSelectionMenuController.setSplash(2);
-					return;
-				}
-
 				foreach(InputController inputController in LevelFinishedController.instance.getControllers())
 				{
 					if ((inputController.getDevice() == getDeviceId(input)) && (inputController.isLeft() == left))
