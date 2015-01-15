@@ -83,6 +83,7 @@ public class LevelFinishedController : MonoBehaviour {
 		{
 			//GUI.Label (new Rect (Screen.width / 2 - 360, 50, 300, 300), "Level: " + (level + 1),help_GUISkin.label); 
 			//GUI.Label (new Rect (Screen.width / 2 - 360, 70, 300, 300), "HELP: 'H' or 'Start'",help_GUISkin.label);
+			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width * 0.05f, 50, 300, 300), "Level: " + (level + 1),help_GUISkin.label); 
 			GUI.Label (new Rect (Screen.width * 0.05f, 70, 300, 300), "HELP: 'H' or 'Start'",help_GUISkin.label);
 		}

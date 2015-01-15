@@ -7,6 +7,7 @@ public class Level18 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 		
+		actions.Add (new ChangeCamAction());
 		actions.Add(new MoveCameraAction("Drone"));
 		actions.Add(new TextAction(4, "The teleport drone is broken... and the Decoy too. But..."));
 		actions.Add(new MoveCameraAction("Drone"));

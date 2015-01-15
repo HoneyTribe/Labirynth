@@ -7,6 +7,7 @@ public class Level10 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 		
+		actions.Add (new ChangeCamAction());
 		actions.Add(new MoveCameraAction("Lighthouse"));
 		actions.Add(new TextAction(4, "There is no I in BFF..."));
 

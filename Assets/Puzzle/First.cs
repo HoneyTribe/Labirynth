@@ -112,7 +112,7 @@ public class First : ScriptableObject, Puzzle
 			                           Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (position.y + monsterNum%(sizeZ+1)));			
 			GameObject monster = MonsterCreationController.instance.InstantiateMonster (monsterPrefab, monsterPos);
 
-			monster.GetComponent<AbstractMonsterController> ().setSpeed (5f);
+			monster.GetComponent<AbstractMonsterController> ().setSpeed (4f+(i*0.5f));
 
 			StandardMonsterController standardMonsterController = monster.GetComponent<StandardMonsterController> ();
 			if (standardMonsterController != null)

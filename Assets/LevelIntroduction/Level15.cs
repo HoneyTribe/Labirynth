@@ -7,8 +7,9 @@ public class Level15 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 		
+		actions.Add (new ChangeCamAction());
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "You are true BFF samurai. You nearly finished this demo..!"));
+		actions.Add(new TextAction(4, "You are true BFF samurai. You've nearly finished this demo..!"));
 		
 		return actions;
 	}

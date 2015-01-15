@@ -93,7 +93,8 @@ public class InControlManager : MonoBehaviour {
 			    (input.GetControl(InputControlType.RightBumper).WasPressed) ||
 				(input.GetControl(InputControlType.Action1).WasPressed) ||
 			    (input.GetControl(InputControlType.Action2).WasPressed) ||
-			    (input.GetControl(InputControlType.Action3).WasPressed))
+			    (input.GetControl(InputControlType.Action3).WasPressed) ||
+			    (input.GetControl(InputControlType.Start).WasPressed) )
 			{
 				if (playerSelectionMenuController.getSplash() == 2)
 				{

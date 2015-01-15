@@ -55,14 +55,15 @@ namespace AssemblyCSharp
 			
 			//6 crane
 			levels2.Add(new Level(new MachineCreator(true, false, true, false, false, false),
-			                      14,new List<MonsterTemplate>{
+			    14,new List<MonsterTemplate>{
 			},0,0,7,7, null, "SimpleCranePuzzle"));
 			
 			//7
 			levels2.Add(new Level(new MachineCreator(true, false, true, false, false, false),
-			                      12,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 3.5f)
-			},5,5,8,8, "EnableNoWallsEnding", "Decoy2"));
+			    12,new List<MonsterTemplate>{
+				new MonsterTemplate("Standard", 3.5f),
+				new MonsterTemplate("Standard", 4.0f)
+			},5,25,8,8, "EnableNoWallsEnding", "Decoy2"));
 			
 			//8 no walls
 			levels2.Add(new Level(new MachineCreator(true, false, true, false, false, false),
@@ -202,8 +203,9 @@ namespace AssemblyCSharp
 			levels3.Add(new Level(new MachineCreator(true, false, true, false, false, false),
 			                      12,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 4.0f),
-				new MonsterTemplate("Standard", 3.5f)
-			},5,5,8,8, "EnableNoWallsEnding", "Decoy2"));
+				new MonsterTemplate("Standard", 3.5f),
+				new MonsterTemplate("Standard", 4.5f)
+			},5,7,8,8, "EnableNoWallsEnding", "Decoy2"));
 			
 			//8 no walls
 			levels3.Add(new Level(new MachineCreator(true, false, true, false, false, false),
@@ -349,8 +351,9 @@ namespace AssemblyCSharp
 			                      12,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 4.0f),
 				new MonsterTemplate("Standard", 3.5f),
+				new MonsterTemplate("Standard", 4.5f),
 				new MonsterTemplate("Standard", 3.0f)
-			},5,5,8,8, "EnableNoWallsEnding", "Decoy2"));
+			},5,6,8,8, "EnableNoWallsEnding", "Decoy2"));
 			
 			//8 no walls
 			levels4.Add(new Level(new MachineCreator(true, false, true, false, false, false),

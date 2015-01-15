@@ -1,30 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ImageAction : Action  {
-
-	IntroductionController introductionController;
-	float time = 0;
-	Texture2D image;
+public class ChangeCamAction : Action
+{
 	
 	GameObject camera;
+	float time = 0;
 	float randomNumber;
-
-	public ImageAction(string imageName)
+	
+	public ChangeCamAction()
 	{
-		this.introductionController = GameObject.Find ("GameController").GetComponent<IntroductionController> ();
-		image = (Texture2D) Resources.Load(imageName, typeof(Texture2D));
 		this.camera = GameObject.Find ("MainCamera_Front");
 	}
 
 	public void act()
 	{
 		time += Time.deltaTime;
-		introductionController.setImage (image);
-
-		//camera
 		randomNumber = Time.time % 3;
-
 		if(randomNumber >=0 && randomNumber <1)
 		{
 			this.camera.transform.position = new Vector3(0, 45, 15);
@@ -32,7 +24,7 @@ public class ImageAction : Action  {
 		}
 		else if(randomNumber >=1 && randomNumber <2)
 		{
-			
+
 			this.camera.transform.position = new Vector3(8, 8, 15);
 			this.camera.transform.rotation = Quaternion.Euler(-40, 250, 0);
 		}
@@ -45,9 +37,8 @@ public class ImageAction : Action  {
 
 	public bool isFinished()
 	{
-		if (time > 5f) 
+		if (time > 0.2f) 
 		{
-			introductionController.setImage (null);
 			return true;
 		}
 		else
@@ -55,4 +46,5 @@ public class ImageAction : Action  {
 			return false;
 		}
 	}
+
 }

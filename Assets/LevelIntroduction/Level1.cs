@@ -7,7 +7,20 @@ public class Level1 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 
+		/*
+		actions.Add (new ChangeCamAction());
 		actions.Add(new ImageAction("tut_01"));
+		//actions.Add (new WaitAction(0.4f));
+		*/
+
+
+		actions.Add(new ImageAction("tut_01"));
+		//actions.Add (new WaitAction(1f));
+
+
+
+
+
 		actions.Add(new MoveCameraAction("Lighthouse"));
 		actions.Add(new TextAction(4, "This is your Space-Time machine."));
 		actions.Add(new MoveCameraAction("Key"));

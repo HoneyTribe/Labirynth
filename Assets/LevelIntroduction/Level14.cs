@@ -7,6 +7,7 @@ public class Level14 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 		
+		actions.Add (new ChangeCamAction());
 		actions.Add(new MoveCameraAction("Key"));
 		actions.Add(new TextAction(4, "Energy everywhere..!"));
 	
