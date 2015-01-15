@@ -90,15 +90,18 @@ public class LevelFinishedController : MonoBehaviour {
 
 		if (finished)
 		{
+			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300), "Time shift initiated!" +
 			" Shifting 1 earth year forward...", LevEnd_GUISkin.label);
 		}
 		if (gameOver)
 		{
+			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300), "Try again",LevEnd_GUISkin.label);
 		}
 		if (congratulation)
 		{
+			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300),
 			"CONGRATULATIONS! YOU FINISHED THE DEMO!",LevEnd_GUISkin.label);
 		}
