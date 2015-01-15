@@ -4,8 +4,9 @@ using System.Collections.Generic;
 
 public class LevelFinishedController : MonoBehaviour {
 
-	public static bool ENABLE_ALL_LEVELS = true;
+	public static bool ENABLE_ALL_LEVELS = false;
 	public static float SHOW_INSTRUCTION_MIN_TIME = 0.5f;
+	public static int savedMaxLevel;
 
 	public static LevelFinishedController instance;
 	public float gameSpeed = 1.0f;
@@ -48,15 +49,35 @@ public class LevelFinishedController : MonoBehaviour {
 		GameObject playerSelectionMenu = (GameObject) Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 		playerSelectionMenu.GetComponent<PlayerSelectionMenuController>().setSplash(1);
 		instructionPanelTime = Time.time;
+
+		//retreive saved max level
+		if (PlayerPrefs.HasKey("savedMaxLevel") &&  PlayerPrefs.GetInt("savedMaxLevel") > maxLevel)
+		{
+			maxLevel = PlayerPrefs.GetInt("savedMaxLevel");
+		}
 	}
 
 	private void LoadNewLevel()
 	{
 		level++;
+
 		if (level > maxLevel)
 		{
 			maxLevel = level;
+
+			//save maxLevel to disk
+			if (PlayerPrefs.HasKey("savedMaxLevel") && maxLevel > PlayerPrefs.GetInt("savedMaxLevel"))
+			{
+				PlayerPrefs.SetInt("savedMaxLevel", maxLevel);
+				PlayerPrefs.Save();
+			}
+			else if (PlayerPrefs.HasKey("savedMaxLevel") == false)
+			{
+				PlayerPrefs.SetInt("savedMaxLevel", maxLevel);
+				PlayerPrefs.Save();
+			}
 		}
+
 		if (level > getNumberOfLevels ())
 		{
 			StartCoroutine(GameFinished());
