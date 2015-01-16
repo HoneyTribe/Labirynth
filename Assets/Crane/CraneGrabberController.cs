@@ -55,7 +55,7 @@ public class CraneGrabberController : MonoBehaviour {
 					if (CraneEnergyController.instance.canPickUp())
 					{
 						this.newGrabberPosition = new Vector3 (transform.position.x, 
-						                                       transform.position.y - 7,
+						                                       transform.position.y - 12,
 						                                       transform.position.z);
 						this.grabberPosition = transform.position;
 						this.pickingUp = true;
