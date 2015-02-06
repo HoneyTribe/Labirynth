@@ -7,6 +7,8 @@ public class LevelFinishedController : MonoBehaviour {
 	public static bool ENABLE_ALL_LEVELS = false;
 	public static float SHOW_INSTRUCTION_MIN_TIME = 0.5f;
 	public static int savedMaxLevel;
+	private int bootups = 0;
+	private int totalLevels=20;
 
 	public static LevelFinishedController instance;
 	public float gameSpeed = 1.0f;
@@ -31,12 +33,33 @@ public class LevelFinishedController : MonoBehaviour {
 	private bool congratulation;
 	private bool stopped;
 
-	void Awake() {
-		if (instance == null) {
+	void Awake()
+	{
+		if (instance == null)
+		{
 			// this is the first instance - make it persist
 			DontDestroyOnLoad(gameObject);
 			instance = this;
-		} else {
+
+			//load bootups from disk and save
+			if (PlayerPrefs.HasKey("Savedbootups"))
+			{
+				bootups = PlayerPrefs.GetInt("Savedbootups") + 1;
+				PlayerPrefs.SetInt("Savedbootups", bootups);
+				PlayerPrefs.Save();
+				//send to analytics
+				GA.API.Design.NewEvent("Savedbootups",bootups);
+			}
+			else
+			{
+				bootups++;
+				PlayerPrefs.SetInt("Savedbootups", bootups);
+				PlayerPrefs.Save();
+			}
+		}
+
+		else 
+		{
 			// this must be a duplicate from a scene reload - DESTROY!
 			Destroy(this.gameObject);
 		} 
@@ -50,7 +73,25 @@ public class LevelFinishedController : MonoBehaviour {
 		GameObject playerSelectionMenu = (GameObject) Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 		playerSelectionMenu.GetComponent<PlayerSelectionMenuController>().setSplash(1);
 		instructionPanelTime = Time.time;
-		levelsCounter = new int[19];
+		levelsCounter = new int[totalLevels];
+
+		if (bootups == 0) //set all levelsCounter values to 0
+			{
+				for(int i = 0; i < totalLevels; i++)
+				{
+					levelsCounter[i]=0;
+				}
+			}
+		else //load levelsCounter
+			{
+				for(int i = 0; i < totalLevels; i++)
+				{
+					if(PlayerPrefs.HasKey("savedLevelsCounter"+i))
+					{
+						levelsCounter[i]= PlayerPrefs.GetInt("savedLevelsCounter"+i, levelsCounter[i]);
+					}
+				}
+			}
 
 		//retreive saved max level
 		if (PlayerPrefs.HasKey("savedMaxLevel") &&  PlayerPrefs.GetInt("savedMaxLevel") > maxLevel)
@@ -64,6 +105,9 @@ public class LevelFinishedController : MonoBehaviour {
 		//send levelCounter to analytics
 		levelsCounter[level]++;
 		GA.API.Design.NewEvent("levelsCounter" + ":" + level+1,levelsCounter[level]);
+		//save levelCouner to disk
+		PlayerPrefs.SetInt("savedLevelsCounter"+level, levelsCounter[level]);
+		PlayerPrefs.Save();
 
 		level++;
 
