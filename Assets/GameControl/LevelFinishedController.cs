@@ -13,6 +13,7 @@ public class LevelFinishedController : MonoBehaviour {
 
 	private int level = 0;
 	private int maxLevel = 0;
+	private int[] levelsCounter;
 	private AssemblyCSharp.LevelDefinition levelDefinition;
 
 	public GameObject playerSelectionMenuPrefab;
@@ -49,6 +50,7 @@ public class LevelFinishedController : MonoBehaviour {
 		GameObject playerSelectionMenu = (GameObject) Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 		playerSelectionMenu.GetComponent<PlayerSelectionMenuController>().setSplash(1);
 		instructionPanelTime = Time.time;
+		levelsCounter = new int[19];
 
 		//retreive saved max level
 		if (PlayerPrefs.HasKey("savedMaxLevel") &&  PlayerPrefs.GetInt("savedMaxLevel") > maxLevel)
@@ -59,6 +61,10 @@ public class LevelFinishedController : MonoBehaviour {
 
 	private void LoadNewLevel()
 	{
+		//send levelCounter to analytics
+		levelsCounter[level]++;
+		GA.API.Design.NewEvent("levelsCounter" + ":" + level+1,levelsCounter[level]);
+
 		level++;
 
 		if (level > maxLevel)
@@ -70,11 +76,15 @@ public class LevelFinishedController : MonoBehaviour {
 			{
 				PlayerPrefs.SetInt("savedMaxLevel", maxLevel);
 				PlayerPrefs.Save();
+				//send to analytics
+				GA.API.Design.NewEvent("maxLevel",savedMaxLevel);
 			}
 			else if (PlayerPrefs.HasKey("savedMaxLevel") == false)
 			{
 				PlayerPrefs.SetInt("savedMaxLevel", maxLevel);
 				PlayerPrefs.Save();
+				//send to analytics
+				GA.API.Design.NewEvent("maxLevel",savedMaxLevel);
 			}
 		}
 
