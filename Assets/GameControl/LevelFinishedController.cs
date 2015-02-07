@@ -101,6 +101,9 @@ public class LevelFinishedController : MonoBehaviour {
 		{
 			maxLevel = PlayerPrefs.GetInt("savedMaxLevel");
 		}
+
+		//retreive levCount
+		levCount = PlayerPrefs.GetInt("savedLevCount");
 	}
 
 	private void LoadNewLevel()
@@ -118,14 +121,14 @@ public class LevelFinishedController : MonoBehaviour {
 				PlayerPrefs.SetInt("savedMaxLevel", maxLevel);
 				PlayerPrefs.Save();
 				//send to analytics
-				GA.API.Design.NewEvent("maxLevel",savedMaxLevel);
+				GA.API.Design.NewEvent("maxLevel"+maxLevel,maxLevel);
 			}
 			else if (PlayerPrefs.HasKey("savedMaxLevel") == false)
 			{
 				PlayerPrefs.SetInt("savedMaxLevel", maxLevel);
 				PlayerPrefs.Save();
 				//send to analytics
-				GA.API.Design.NewEvent("maxLevel",savedMaxLevel);
+				GA.API.Design.NewEvent("maxLevel"+maxLevel,maxLevel);
 			}
 		}
 
@@ -152,6 +155,8 @@ public class LevelFinishedController : MonoBehaviour {
 	public void LevelCounter()
 	{
 		levCount++;
+		PlayerPrefs.SetInt("savedLevCount", levCount);
+		GA.API.Design.NewEvent("totalLevelsPlayed", levCount);
 		//print("levCount" + levCount);
 
 		//send levelCounter to analytics
