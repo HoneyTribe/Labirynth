@@ -9,6 +9,7 @@ public class LevelFinishedController : MonoBehaviour {
 	public static int savedMaxLevel;
 	private int bootups = 0;
 	private int totalLevels=20;
+	private int levCount = 0;
 
 	public static LevelFinishedController instance;
 	public float gameSpeed = 1.0f;
@@ -102,12 +103,7 @@ public class LevelFinishedController : MonoBehaviour {
 
 	private void LoadNewLevel()
 	{
-		//send levelCounter to analytics
-		levelsCounter[level]++;
-		GA.API.Design.NewEvent("levelsCounter" + ":" + level+1,levelsCounter[level]);
-		//save levelCouner to disk
-		PlayerPrefs.SetInt("savedLevelsCounter"+level, levelsCounter[level]);
-		PlayerPrefs.Save();
+		LevelCounter();
 
 		level++;
 
@@ -150,6 +146,19 @@ public class LevelFinishedController : MonoBehaviour {
 		gameOver = false;
 		congratulation = false;
 		stopped = false;
+	}
+
+	public void LevelCounter()
+	{
+		levCount++;
+		//print("levCount" + levCount);
+
+		//send levelCounter to analytics
+		levelsCounter[level]++;
+		GA.API.Design.NewEvent("levelsCounter" + ":" + level+1,levelsCounter[level]);
+		//save levelCouner to disk
+		PlayerPrefs.SetInt("savedLevelsCounter"+level, levelsCounter[level]);
+		PlayerPrefs.Save();
 	}
 	
 	void OnGUI()

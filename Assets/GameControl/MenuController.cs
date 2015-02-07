@@ -113,6 +113,7 @@ public class MenuController : MonoBehaviour {
 		{
 			//AudioController.instance.Play("003_CollectKey");
 			LevelFinishedController.instance.setLevel(selGridInt);
+			LevelFinishedController.instance.LevelCounter();
 			Application.LoadLevel (0); 
 		}
 	}
