@@ -56,6 +56,8 @@ public class LevelFinishedController : MonoBehaviour {
 				bootups++;
 				PlayerPrefs.SetInt("Savedbootups", bootups);
 				PlayerPrefs.Save();
+				//send to analytics
+				GA.API.Design.NewEvent("Savedbootups",bootups);
 			}
 		}
 
@@ -76,7 +78,7 @@ public class LevelFinishedController : MonoBehaviour {
 		instructionPanelTime = Time.time;
 		levelsCounter = new int[totalLevels];
 
-		if (bootups == 0) //set all levelsCounter values to 0
+		if (bootups == 1) //set all levelsCounter values to 0
 			{
 				for(int i = 0; i < totalLevels; i++)
 				{
@@ -89,7 +91,7 @@ public class LevelFinishedController : MonoBehaviour {
 				{
 					if(PlayerPrefs.HasKey("savedLevelsCounter"+i))
 					{
-						levelsCounter[i]= PlayerPrefs.GetInt("savedLevelsCounter"+i, levelsCounter[i]);
+						levelsCounter[i]= PlayerPrefs.GetInt("savedLevelsCounter"+i);
 					}
 				}
 			}
@@ -103,9 +105,8 @@ public class LevelFinishedController : MonoBehaviour {
 
 	private void LoadNewLevel()
 	{
-		LevelCounter();
-
 		level++;
+		LevelCounter();
 
 		if (level > maxLevel)
 		{
@@ -155,7 +156,7 @@ public class LevelFinishedController : MonoBehaviour {
 
 		//send levelCounter to analytics
 		levelsCounter[level]++;
-		GA.API.Design.NewEvent("levelsCounter" + ":" + level+1,levelsCounter[level]);
+		GA.API.Design.NewEvent("levelsCounter" + level,levelsCounter[level]);
 		//save levelCouner to disk
 		PlayerPrefs.SetInt("savedLevelsCounter"+level, levelsCounter[level]);
 		PlayerPrefs.Save();
