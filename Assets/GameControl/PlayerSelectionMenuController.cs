@@ -102,7 +102,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 				if (state.getPositionInMenu() == PlayerSelectionState.VERSION && version != versionRead && versionRead !="")
 				{
 					AudioController.instance.Play("003_CollectKey");
-					Application.OpenURL("http://tiny.cc/bff");
+					Application.OpenURL("http://tiny.cc/bffnew");
 				}
 			}
 		}
