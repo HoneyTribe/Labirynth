@@ -103,6 +103,7 @@ public class CraneController : MonoBehaviour {
 				else
 				{
 					retracting = false;
+					grabber.SendMessage("ForceDrop");
 				}
 			}
 
