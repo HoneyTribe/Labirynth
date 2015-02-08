@@ -40,6 +40,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skin: {fileID: 11400000, guid: dde63bf31dd6b9047a2e02ddf7d4edd8, type: 2}
   selectedSkin: {fileID: 11400000, guid: 8ada2debd686951468768f588d558127, type: 2}
+  error_GUIskin: {fileID: 11400000, guid: 99a7396cd9fbd43a7a03379631d199b1, type: 2}
+  neutral_GUIskin: {fileID: 11400000, guid: 5e826d985e5f045b1a3fadc30bc4fb86, type: 2}
+  neutralSelected_GUIskin: {fileID: 11400000, guid: dad851d7ea950479b8560630a9070be9,
+    type: 2}
   playersTexture: {fileID: 2800000, guid: b93a31080ceb04db0a5e0d71a0156d35, type: 3}
   padTexture: {fileID: 2800000, guid: ce7b4165032ef485bb82585ae230955f, type: 3}
   keyboardTexture: {fileID: 2800000, guid: ce7b4165032ef485bb82585ae230955f, type: 3}

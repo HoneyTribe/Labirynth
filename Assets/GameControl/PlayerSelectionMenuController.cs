@@ -13,6 +13,9 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	private static int playersPerRow = 2;
 	public GUISkin skin;
 	public GUISkin selectedSkin;
+	public GUISkin error_GUIskin;
+	public GUISkin neutral_GUIskin;
+	public GUISkin neutralSelected_GUIskin;
 	public Texture2D playersTexture;
 	public Texture2D padTexture;
 	public Texture2D keyboardTexture;
@@ -96,7 +99,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					AudioController.instance.Play("003_CollectKey");
 					this.instructionPanel = (GameObject) Instantiate (instructionPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 				}
-				if (state.getPositionInMenu() == PlayerSelectionState.UPDATE)
+				if (state.getPositionInMenu() == PlayerSelectionState.VERSION && version != versionRead && versionRead !="")
 				{
 					AudioController.instance.Play("003_CollectKey");
 					Application.OpenURL("http://tiny.cc/bff");
@@ -169,13 +172,12 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 				{
 					if (selGridInt.Count < 2)
 					{
-					//GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 characters", selectedSkin.button);
 					GUI.Label(new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 340, textHeight),
-					"Select at least 2 characters", selectedSkin.button);
+					"Select at least 2 characters", error_GUIskin.label);
 					}
 					else
 					{
-					GUI.Button (new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 340, textHeight),
+					GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 120, textHeight),
 					"Start", selectedSkin.button);
 					}
 				}
@@ -189,7 +191,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					}
 					else
 					{
-					GUI.Button (new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 340, textHeight),
+					GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 120, textHeight),
 					"Start", skin.button);
 					}
 				}
@@ -205,11 +207,10 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 				"Controls",skin.button);
 				}
 
-				if(versionRead != version)
+				if(versionRead != version && versionRead != "")
 				{
-					if (isAnyCursorOn(PlayerSelectionState.UPDATE))
+					if (isAnyCursorOn(PlayerSelectionState.VERSION))
 					{
-						
 						GUI.Button (new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 340, textHeight),
 						 "Get the shiny new update!",selectedSkin.button);
 					}
@@ -219,8 +220,32 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 						"Get the shiny new update!",skin.button);
 					}
 				}
-			//print ("verionsRead:" + versionRead);
-			//print ("version:" + version);
+				else if (versionRead == "")
+				{
+					if(isAnyCursorOn(PlayerSelectionState.VERSION))
+					{
+						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 360, textHeight),
+					     "No connection. Can't check for new version. ",neutralSelected_GUIskin.label);
+					}
+					else
+					{
+						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 360, textHeight),
+						"No connection. Can't check for new version. ",neutral_GUIskin.label);
+					}
+				}
+				else if (version == versionRead)
+				{
+					if(isAnyCursorOn(PlayerSelectionState.VERSION))
+					{
+						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 360, textHeight),
+						"You have the latest version "+version, neutralSelected_GUIskin.label);
+					}
+					else
+					{
+						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 360, textHeight),
+					     "You have the latest version " + version, neutral_GUIskin.label);
+					}
+				}
 
 			GUI.EndGroup();
 		}
