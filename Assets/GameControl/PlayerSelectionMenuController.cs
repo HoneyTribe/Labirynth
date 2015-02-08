@@ -172,7 +172,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 				{
 					if (selGridInt.Count < 2)
 					{
-					GUI.Label(new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 340, textHeight),
+					GUI.Label(new Rect (Screen.width/2 - (280/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 280, textHeight),
 					"Select at least 2 characters", error_GUIskin.label);
 					}
 					else
@@ -186,7 +186,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					if (selGridInt.Count < 2)
 					{
 					//GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 players", skin.button);
-					GUI.Label(new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 340, textHeight),
+					GUI.Label(new Rect (Screen.width/2 - (280/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 280, textHeight),
 					 "Select at least 2 characters", skin.button);
 					}
 					else
@@ -225,12 +225,12 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					if(isAnyCursorOn(PlayerSelectionState.VERSION))
 					{
 						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 360, textHeight),
-					     "No connection. Can't check for new version. ",neutralSelected_GUIskin.label);
+					     "Can't check for updates.",neutralSelected_GUIskin.label);
 					}
 					else
 					{
 						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 360, textHeight),
-						"No connection. Can't check for new version. ",neutral_GUIskin.label);
+						"No connection. Can't check for updates.",neutral_GUIskin.label);
 					}
 				}
 				else if (version == versionRead)
