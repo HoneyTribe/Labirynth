@@ -6,6 +6,8 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 
 	private const int PLAYER_IMAGE_HEIGHT = 160;
 	private float iconSize = 160;
+	private string version = "0.1.8";
+	private string url = "http://www.honeytribestudios.com/games1/BFF/bffVersion.txt";
 
 	private static int playersPerRow = 2;
 	public GUISkin skin;
@@ -49,6 +51,16 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		outerTexture.SetPixel (0, 0, Color.black);
 		outerTexture.Apply ();
 		outerStyle.normal.background = outerTexture;
+
+		//get version from server
+		WWW www = new WWW(url);			
+		StartCoroutine(WaitForRequest(www));
+	}
+
+	IEnumerator WaitForRequest(WWW www)
+	{
+		yield return www;
+		print (www.text);
 	}
 
 	public void handleLogic(float x, float z, float action, float action2, InputController input)
