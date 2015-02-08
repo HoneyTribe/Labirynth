@@ -103,7 +103,6 @@ public class CraneController : MonoBehaviour {
 				else
 				{
 					retracting = false;
-					grabber.SendMessage("ForceDrop");
 				}
 			}
 
@@ -125,6 +124,7 @@ public class CraneController : MonoBehaviour {
 	public void TurnOff ()
 	{
 		entered = false;
+		grabber.SendMessage("ForceDrop");
 		craneLight.SendMessage ("TurnOff");
 		if(LevelFinishedController.instance.getLevel() == 5 )
 		{

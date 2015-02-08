@@ -91,7 +91,10 @@ public class CraneGrabberController : MonoBehaviour {
 		{
 			yield return new WaitForSeconds(0.1f);
 		}
-		PickUp ();
+		if (heldObject != null)
+		{
+			PickUp ();
+		}
 	}
 
 	public void Smash() 
