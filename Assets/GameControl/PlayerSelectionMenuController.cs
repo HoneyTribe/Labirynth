@@ -8,6 +8,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	private float iconSize = 160;
 	private string version = "0.1.8";
 	private string url = "http://www.honeytribestudios.com/games1/BFF/bffVersion.txt";
+	private string versionRead;
 
 	private static int playersPerRow = 2;
 	public GUISkin skin;
@@ -60,7 +61,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	IEnumerator WaitForRequest(WWW www)
 	{
 		yield return www;
-		print (www.text);
+		versionRead = www.text;
 	}
 
 	public void handleLogic(float x, float z, float action, float action2, InputController input)
@@ -95,6 +96,11 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					AudioController.instance.Play("003_CollectKey");
 					this.instructionPanel = (GameObject) Instantiate (instructionPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 				}
+				if (state.getPositionInMenu() == PlayerSelectionState.UPDATE)
+				{
+					AudioController.instance.Play("003_CollectKey");
+					Application.OpenURL("http://tiny.cc/bff");
+				}
 			}
 		}
 
@@ -125,7 +131,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		}
 		else
 		{
-			//GUI.BeginGroup(new Rect(Screen.width / 2 - 200, Screen.height / 2 - 200, 400, 400));
+
 			float height = Screen.width * 720/1280;
 			int textHeight = 40;
 
@@ -150,7 +156,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					//GUI.Button (new Rect (110 + x * 100, 60 + y * 100, 90, 90), "", buttonStyles[i]);
 					float screenScale = Screen.width/1280f;
 					GUI.Button (new Rect (Screen.width/2 - (screenScale * iconSize) + (x * screenScale * iconSize),
-				    (Screen.height - height)/2 + height/4 + (y * iconSize * screenScale),
+				    (Screen.height - height)/2 + height*0.18f + (y * iconSize * screenScale),
 				    screenScale * iconSize, screenScale * iconSize), "", buttonStyles[i]);
 
 					if (getSelectedGrid(i+1) == null)
@@ -164,12 +170,12 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					if (selGridInt.Count < 2)
 					{
 					//GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 characters", selectedSkin.button);
-					GUI.Label(new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.75f - (textHeight/2), 340, textHeight),
+					GUI.Label(new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 340, textHeight),
 					"Select at least 2 characters", selectedSkin.button);
 					}
 					else
 					{
-					GUI.Button (new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.75f - (textHeight/2), 340, textHeight),
+					GUI.Button (new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 340, textHeight),
 					"Start", selectedSkin.button);
 					}
 				}
@@ -178,29 +184,54 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					if (selGridInt.Count < 2)
 					{
 					//GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 players", skin.button);
-					GUI.Label(new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.75f - (textHeight/2), 340, textHeight),
+					GUI.Label(new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 340, textHeight),
 					 "Select at least 2 characters", skin.button);
 					}
 					else
 					{
-					GUI.Button (new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.75f - (textHeight/2), 340, textHeight),
+					GUI.Button (new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 340, textHeight),
 					"Start", skin.button);
 					}
 				}
 
 				if (isAnyCursorOn(PlayerSelectionState.HELP))
 				{
-				GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 120, textHeight),
+				GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.70f - (textHeight/2) + textHeight, 120, textHeight),
 				"Controls", selectedSkin.button);
 				}
 				else
 				{
-				GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 120, textHeight),
+				GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.70f - (textHeight/2) + textHeight, 120, textHeight),
 				"Controls",skin.button);
 				}
+
+				if(versionRead != version)
+				{
+					if (isAnyCursorOn(PlayerSelectionState.UPDATE))
+					{
+						
+						GUI.Button (new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 340, textHeight),
+						 "Get the shiny new update!",selectedSkin.button);
+					}
+					else
+					{
+						GUI.Button (new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 340, textHeight),
+						"Get the shiny new update!",skin.button);
+					}
+				}
+			//print ("verionsRead:" + versionRead);
+			//print ("version:" + version);
+
 			GUI.EndGroup();
 		}
 
+		//WWW www = new WWW(url);
+		//if(www.text != version)
+		//{
+			//GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.80f - (textHeight/2) + textHeight, 120, textHeight),
+			//"You Sukarrr!",skin.button);
+			//print (www.text);
+		//}
 	}
 
 	private PlayerSelectionState getSelectedGrid(int id)

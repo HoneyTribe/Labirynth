@@ -3,6 +3,7 @@
 	public static int PLAYER = 0;
 	public static int START = 1;
 	public static int HELP = 2;
+	public static int UPDATE = 3;
 
 	private int id;
 	private int positionInMenu;
@@ -15,7 +16,7 @@
 
 	public void moveCursorDown()
 	{
-		if (positionInMenu < HELP)
+		if (positionInMenu < UPDATE)
 		{
 			this.positionInMenu++;
 		}
