@@ -207,20 +207,20 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 				"Controls",skin.button);
 				}
 
-				if(versionRead != version && versionRead != "")
+				if(versionRead != version && versionRead != "") // local version is old
 				{
 					if (isAnyCursorOn(PlayerSelectionState.VERSION))
 					{
-						GUI.Button (new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 340, textHeight),
+						GUI.Button (new Rect (Screen.width/2 - (300/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 300, textHeight),
 						 "Get the shiny new update!",selectedSkin.button);
 					}
 					else
 					{
-						GUI.Button (new Rect (Screen.width/2 - (340/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 340, textHeight),
+						GUI.Button (new Rect (Screen.width/2 - (280/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 280, textHeight),
 						"Get the shiny new update!",skin.button);
 					}
 				}
-				else if (versionRead == "")
+				else if (versionRead == "") //no internet connection
 				{
 					if(isAnyCursorOn(PlayerSelectionState.VERSION))
 					{
@@ -233,7 +233,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 						"No connection. Can't check for updates.",neutral_GUIskin.label);
 					}
 				}
-				else if (version == versionRead)
+				else if (version == versionRead) //local version is newest
 				{
 					if(isAnyCursorOn(PlayerSelectionState.VERSION))
 					{
