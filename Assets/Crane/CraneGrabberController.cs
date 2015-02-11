@@ -132,7 +132,7 @@ public class CraneGrabberController : MonoBehaviour {
 	void OnTriggerEnter (Collider collider)
 	{
 		this.newGrabberPosition = this.grabberPosition;
-		if ((collider.tag == "Monster") || (collider.tag == "Item") || (collider.tag == "Player"))
+		if ((collider.tag == "Monster") || (collider.tag == "Item") || (collider.tag == "Player") )
 		{
 			if ((heldObject == null) && (pickingUp))
 			{
@@ -151,12 +151,12 @@ public class CraneGrabberController : MonoBehaviour {
 				obj.rigidbody.useGravity = false;
 				obj.rigidbody.velocity = Vector3.zero;
 				obj.transform.parent = transform;
-				if ((obj.tag == "Player") || (obj.tag == "Monster"))
+				if ((obj.tag == "Player") || (obj.tag == "Monster") )
 				{
 					obj.gameObject.SendMessage("setStopped", true);
 				}
 				heldObject = obj;
-				Debug.Log("true");
+				//Debug.Log("true");
 				CraneEnergyController.instance.holding(true);
 			}
 		}

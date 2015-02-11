@@ -8,7 +8,7 @@ public class LevelFinishedController : MonoBehaviour {
 	public static float SHOW_INSTRUCTION_MIN_TIME = 0.5f;
 	public static int savedMaxLevel;
 	private int bootups = 0;
-	private int totalLevels=20;
+	private int totalLevels=21;
 	private int levCount = 0;
 
 	public static LevelFinishedController instance;
@@ -152,6 +152,7 @@ public class LevelFinishedController : MonoBehaviour {
 		stopped = false;
 	}
 
+	//triggered from this script and PlayerSelectionMenuController
 	public void LevelCounter()
 	{
 		levCount++;
@@ -176,7 +177,7 @@ public class LevelFinishedController : MonoBehaviour {
 			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width * 0.05f, 50, 300, 300), "Level: " + (level + 1), help_GUISkin.label); 
 			GUI.Label (new Rect (Screen.width * 0.05f, 70, 300, 300), "HELP: 'H' or 'Start'", help_GUISkin.label);
-			GUI.Label (new Rect (Screen.width * 0.05f, 90, 300, 300), "Version 0.1.8", help_GUISkin.label);
+			GUI.Label (new Rect (Screen.width * 0.05f, 90, 300, 300), "Version 0.1.9", help_GUISkin.label);
 		}
 
 		if (finished)

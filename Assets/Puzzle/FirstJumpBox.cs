@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class FirstJumpBox : PuzzleTemplate
 {
+	//0 = wall/post , 2 = space, 3 = block, 4 = mummy, 5 = key 6 = sleepingMonster
 	public FirstJumpBox() :base()
 	{
 		sizeX = 8;

@@ -11,13 +11,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d0c0342116464e26abb476a494c827a, type: 3}
   m_Name: GA_Settings
   m_EditorClassIdentifier: 
-  TotalMessagesSubmitted: 617
+  TotalMessagesSubmitted: 1044
   TotalMessagesFailed: 1
-  DesignMessagesSubmitted: 372
+  DesignMessagesSubmitted: 774
   DesignMessagesFailed: 1
   QualityMessagesSubmitted: 0
   QualityMessagesFailed: 0
-  ErrorMessagesSubmitted: 245
+  ErrorMessagesSubmitted: 270
   ErrorMessagesFailed: 0
   BusinessMessagesSubmitted: 0
   BusinessMessagesFailed: 0
@@ -26,7 +26,7 @@ MonoBehaviour:
   CustomArea: 
   GameKey: 03a3a6c8aa528fe27be74869f3a738f3
   SecretKey: fa458488d93b059d6e94b6b8a624a7a6c91a17a0
-  Build: 0.1
+  Build: 0.1.9
   SignUpOpen: 1
   FirstName: Shaz
   LastName: Yousaf
@@ -66,7 +66,7 @@ MonoBehaviour:
   IAD_position: {x: 0, y: 0}
   IAD_Duration: 10
   CB_foldout: 1
-  CurrentInspectorState: 2
+  CurrentInspectorState: 3
   ClosedHints: 
   DisplayHints: 0
   DisplayHintsScrollState: {x: 0, y: 0}
