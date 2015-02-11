@@ -6,7 +6,7 @@ public class DroneController : MonoBehaviour {
 	public static DroneController instance;
 	private const float stability = 1.2f;
 	private const float speed = 2.0f;
-	private const float retractingSpeed = 38f;
+	private const float retractingSpeed = 40f;
 
 	public GameObject portalPrefab;
 	public GameObject stunGunPrefab;
@@ -58,8 +58,8 @@ public class DroneController : MonoBehaviour {
 		    (ClampAngle(transform.eulerAngles.z, -20, 20) != transform.eulerAngles.z))
 		{
 			s = 10;
-			Debug.Log (transform.eulerAngles.x);
-			Debug.Log (transform.eulerAngles.z);
+			//Debug.Log (transform.eulerAngles.x);
+			//Debug.Log (transform.eulerAngles.z);
 		}
 		Vector3 predictedUp = Quaternion.AngleAxis(
 								rigidbody.angularVelocity.magnitude * Mathf.Rad2Deg * stability / s,
@@ -102,12 +102,12 @@ public class DroneController : MonoBehaviour {
 	{
 		if (move == Vector3.zero)
 		{
-			rigidbody.drag = 6.0f;
+			rigidbody.drag = 10.0f;
 		}
 		else
 		{
-			rigidbody.drag = 0.1f;
-			rigidbody.AddForce (move * Time.deltaTime * 320);
+			rigidbody.drag = 1.0f;
+			rigidbody.AddForce (move * Time.deltaTime * 450);
 			if (move.x != 0)
 			{
 				transform.Rotate(0,0,-move.x * Time.deltaTime * 25);

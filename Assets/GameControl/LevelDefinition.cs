@@ -85,6 +85,12 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Standard", 4.0f),
 				new MonsterTemplate("Flying", 3.5f)
 			},5,5,8,8, "EnableTrapEnding", null));
+
+			//11 Drone2
+			levels2.Add(new Level(new MachineCreator(true, false, false, false, true, false),
+			                      15,new List<MonsterTemplate>{
+				new MonsterTemplate("Flying", 3.5f)
+			},15,8,9,9, "EnableNoVerticalWallsEnding", "Drone2"));
 			
 			//11 jump box
 			levels2.Add(new Level(new MachineCreator(true, true, false, false, false, false),
@@ -236,6 +242,13 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 3.5f),
 				new MonsterTemplate("Flying", 3.0f)
 			},5,5,8,8, "EnableTrapEnding", null));
+
+			//11 Drone2
+			levels3.Add(new Level(new MachineCreator(true, false, false, false, true, false),
+			                      15,new List<MonsterTemplate>{
+				new MonsterTemplate("Flying", 3.5f),
+				new MonsterTemplate("Standard", 4.5f)
+			},10,10,9,9, "EnableNoVerticalWallsEnding", "Drone2"));
 			
 			//11 jump box
 			levels3.Add(new Level(new MachineCreator(true, true, false, false, false, false),
@@ -254,7 +267,7 @@ namespace AssemblyCSharp
 			},5,8,8,8, null, null));
 
 			// 13
-			levels2.Add(new Level(new MachineCreator(true, true, false, false, false, false),
+			levels3.Add(new Level(new MachineCreator(true, true, false, false, false, false),
 			                      13,new List<MonsterTemplate>{
 				new MonsterTemplate("Flying", 4.0f),
 				new MonsterTemplate("Standard", 4.5f),
@@ -394,6 +407,14 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 3.0f),
 				new MonsterTemplate("Standard", 3.8f)
 			},5,5,8,8, "EnableTrapEnding", null));
+
+			//11 Drone2
+			levels4.Add(new Level(new MachineCreator(true, false, false, false, true, false),
+			                      15,new List<MonsterTemplate>{
+				new MonsterTemplate("Flying", 3.5f),
+				new MonsterTemplate("Standard", 4.5f),
+				new MonsterTemplate("Standard", 5.0f)
+			},10,10,9,9, "EnableNoVerticalWallsEnding", "Drone2"));
 			
 			//11 jump box
 			levels4.Add(new Level(new MachineCreator(true, true, false, false, false, false),
@@ -412,7 +433,7 @@ namespace AssemblyCSharp
 			},5,8,8,8, null, null));
 
 			// 13
-			levels2.Add(new Level(new MachineCreator(true, true, false, false, false, false),
+			levels4.Add(new Level(new MachineCreator(true, true, false, false, false, false),
 			                      13,new List<MonsterTemplate>{
 				new MonsterTemplate("Flying", 4.0f),
 				new MonsterTemplate("Standard", 4.5f),
