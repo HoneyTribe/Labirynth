@@ -150,7 +150,14 @@ namespace AssemblyCSharp
 			                      19,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 4.5f),
 				new MonsterTemplate("Standard", 4.0f)
-			},9,9,8,8, null, "Lazer2"));	
+			},9,9,8,8, null, "Lazer2"));
+
+			//20 lazer 3
+			levels2.Add(new Level(new MachineCreator(true, false, false, true, false, false),
+			                      40,new List<MonsterTemplate>{
+				new MonsterTemplate("Flying", 4.0f),
+				new MonsterTemplate("Flying", 4.5f)
+			},12,12,8,8, "EnableNoVerticalWallsEnding", "Lazer3"));
 			
 			//18 drone bomb
 			levels2.Add(new Level(new MachineCreator(false, false, false, false, false, true),
@@ -311,7 +318,15 @@ namespace AssemblyCSharp
 			                      19,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 4.5f),
 				new MonsterTemplate("Standard", 4.5f)
-			},9,9,8,8, null, "Lazer2"));	
+			},9,9,8,8, null, "Lazer2"));
+
+			//20 lazer 3
+			levels3.Add(new Level(new MachineCreator(true, false, false, true, false, false),
+			                      40,new List<MonsterTemplate>{
+				new MonsterTemplate("Flying", 4.0f),
+				new MonsterTemplate("Flying", 4.5f),
+				new MonsterTemplate("Standard", 5.0f)
+			},10,10,8,8, "EnableNoVerticalWallsEnding", "Lazer3"));
 			
 			//18 drone bomb
 			levels3.Add(new Level(new MachineCreator(false, false, false, false, false, true),
@@ -478,7 +493,15 @@ namespace AssemblyCSharp
 			levels4.Add(new Level(new MachineCreator(true, false, false, true, false, false),
 			                      19,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 3.5f)
-			},9,9,8,8, null, "Lazer2"));	
+			},9,9,8,8, null, "Lazer2"));
+
+			//20 lazer 3
+			levels4.Add(new Level(new MachineCreator(true, false, false, true, false, false),
+			                      40,new List<MonsterTemplate>{
+				new MonsterTemplate("Flying", 4.0f),
+				new MonsterTemplate("Flying", 4.5f),
+				new MonsterTemplate("Standard", 5.0f)
+			},8,8,8,8, "EnableNoVerticalWallsEnding", "Lazer3"));
 			
 			//18 drone bomb
 			levels4.Add(new Level(new MachineCreator(false, false, false, false, false, true),
