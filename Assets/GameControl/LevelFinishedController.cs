@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 public class LevelFinishedController : MonoBehaviour {
 
-	public static bool ENABLE_ALL_LEVELS = false;
+	public static bool ENABLE_ALL_LEVELS = true;
 	public static float SHOW_INSTRUCTION_MIN_TIME = 0.5f;
 	public static int savedMaxLevel;
 	private int bootups = 0;
-	private int totalLevels=21;
+	private int totalLevels=25;
 	private int levCount = 0;
 
 	public static LevelFinishedController instance;
