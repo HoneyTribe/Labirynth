@@ -9,7 +9,7 @@ public class Level15 : LevelSetup {
 		
 		actions.Add (new ChangeCamAction());
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "You are true BFF samurai. You've nearly finished this demo..!"));
+		actions.Add(new TextAction(4, "The Teleport Drone, Grabber and Anti-Grav Box are all operational!"));
 		
 		return actions;
 	}

@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 public class LevelFinishedController : MonoBehaviour {
 
-	public static bool ENABLE_ALL_LEVELS = true;
-	public static float SHOW_INSTRUCTION_MIN_TIME = 0.5f;
+	public static bool ENABLE_ALL_LEVELS = false;
+	public static float SHOW_INSTRUCTION_MIN_TIME = 0.3f;
 	public static int savedMaxLevel;
 	private int bootups = 0;
-	private int totalLevels=25;
+	private int totalLevels =25;
 	private int levCount = 0;
 
 	public static LevelFinishedController instance;
@@ -109,9 +109,11 @@ public class LevelFinishedController : MonoBehaviour {
 	private void LoadNewLevel()
 	{
 		level++;
-		LevelCounter();
+		print ("totalLev" + getNumberOfLevels());
+		print("lev" + getLevel());
 
-		if (level > maxLevel)
+
+		if (level > maxLevel )//&& level < getNumberOfLevels())
 		{
 			maxLevel = level;
 
@@ -138,6 +140,7 @@ public class LevelFinishedController : MonoBehaviour {
 		}
 		else
 		{
+			LevelCounter();
 			Reset ();
 			stopped = true;
 			Application.LoadLevel (0); 
@@ -180,11 +183,17 @@ public class LevelFinishedController : MonoBehaviour {
 			GUI.Label (new Rect (Screen.width * 0.05f, 90, 300, 300), "Version 0.1.9", help_GUISkin.label);
 		}
 
-		if (finished)
+		if (finished && level < totalLevels-1)
 		{
 			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300), "Time shift initiated!" +
-			" Shifting 1 earth year forward...", LevEnd_GUISkin.label);
+			 "Shifting " + levelDefinition.getLevels(controllers.Count)[level].getNumberOfKeys() + " earth years forward...", LevEnd_GUISkin.label);
+		}
+		if (finished && level == totalLevels-1)
+		{
+			GUI.depth = 2;
+			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300),
+			 "Congratulations!",LevEnd_GUISkin.label);
 		}
 		if (gameOver)
 		{
@@ -195,7 +204,7 @@ public class LevelFinishedController : MonoBehaviour {
 		{
 			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300),
-			"CONGRATULATIONS! YOU FINISHED THE DEMO!",LevEnd_GUISkin.label);
+			 "Time-shifting 3000 years... soon. Continue the adventure in a future update!",LevEnd_GUISkin.label);
 		}
 	}
 
@@ -224,7 +233,7 @@ public class LevelFinishedController : MonoBehaviour {
 		congratulation = true; 
 		stopped = true;
 		FloorInstructions.instance.Remove();
-		yield return new WaitForSeconds(4);
+		yield return new WaitForSeconds(10);
 		congratulation = false;
 		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}

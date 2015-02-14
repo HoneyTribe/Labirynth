@@ -9,7 +9,7 @@ public class Level20 : LevelSetup {
 		
 		actions.Add (new ChangeCamAction());
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "We fixed everything! Good luck..."));
+		actions.Add(new TextAction(4, "You are true BFF samurai..!"));
 		
 		return actions;
 	}

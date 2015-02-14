@@ -9,7 +9,7 @@ public class Level24 : LevelSetup {
 		
 		actions.Add (new ChangeCamAction());
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "We fixed everything! Good luck..."));
+		actions.Add(new TextAction(4, "We fixed everything! Think about your strategy..."));
 		
 		return actions;
 	}

@@ -7,10 +7,6 @@ public class Level17 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 		
-		actions.Add (new ChangeCamAction());
-		actions.Add(new MoveCameraAction("Crane"));
-		actions.Add(new TextAction(4, "Let's see those lazer skills..!"));
-		
 		return actions;
 	}
 	

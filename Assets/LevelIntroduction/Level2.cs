@@ -11,11 +11,11 @@ public class Level2 : LevelSetup {
 		//actions.Add(new MoveCameraAction("Monster"));
 		actions.Add(new ImageAction("tut_02"));
 		actions.Add(new MoveCameraAction("DeviceContainer"));
-		actions.Add(new TextAction(4, "This is the Decoy. Use it to distract monsters."));
+		actions.Add(new TextAction(4, "This is the Decoy. Use it to distract dangerous lifeforms."));
 		actions.Add(new MoveCameraAction("Player2"));
 		actions.Add(new TextAction(4, "Any maze-runner can move the Decoy."));
 		actions.Add(new MoveCameraAction("Player1"));
-		actions.Add(new TextAction(4, "Only the Light-operator can activate the Decoy."));
+		actions.Add(new TextAction(4, "The light-controller can zap beings to send them to the Decoy."));
 
 		return actions;
 	}

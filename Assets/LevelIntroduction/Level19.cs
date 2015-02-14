@@ -8,8 +8,8 @@ public class Level19 : LevelSetup {
 		List<Action> actions = new List<Action>();
 		
 		actions.Add (new ChangeCamAction());
-		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "We should have everything operational soon..."));
+		actions.Add(new MoveCameraAction("Crane"));
+		actions.Add(new TextAction(4, "Try experimenting with what the Wall-Lazer can destroy."));
 		
 		return actions;
 	}
