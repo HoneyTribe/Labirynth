@@ -187,7 +187,7 @@ public class LevelFinishedController : MonoBehaviour {
 		{
 			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300), "Time shift initiated!" +
-			 "Shifting " + levelDefinition.getLevels(controllers.Count)[level].getNumberOfKeys() + " earth years forward...", LevEnd_GUISkin.label);
+			 " Shifting " + levelDefinition.getLevels(controllers.Count)[level].getNumberOfKeys() + " earth years forward...", LevEnd_GUISkin.label);
 		}
 		if (finished && level == totalLevels-1)
 		{
