@@ -129,7 +129,7 @@ public class MenuController : MonoBehaviour {
 
 		GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height), "", outerStyle );
 		GUI.Box (new Rect(x1, y1, 600, 600), "", backgroundStyle);
-		GUI.Label (new Rect (x1 + 100, y1 + 165, 400, 50), "Levels", skin.label);
+		GUI.Label (new Rect (x1 + 100, y1 + 160, 400, 50), "Levels", skin.label);
 
 			for (int i=0; i<=LevelFinishedController.instance.getNumberOfLevels(); i++)
 			{
