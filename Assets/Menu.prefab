@@ -40,7 +40,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skin: {fileID: 11400000, guid: dde63bf31dd6b9047a2e02ddf7d4edd8, type: 2}
   selectedSkin: {fileID: 11400000, guid: 8ada2debd686951468768f588d558127, type: 2}
-  background: {fileID: 2800000, guid: f941188c8deef59428491c0a201c9c1b, type: 3}
+  background: {fileID: 2800000, guid: e1615d50b2d544e2987f7e3127c8c56a, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
