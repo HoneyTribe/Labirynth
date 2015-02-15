@@ -5,73 +5,35 @@ public class DronePowerController : MonoBehaviour {
 
 	public static DronePowerController instance;
 
+	private static int STEPS = 11;
+
 	private const float settingUpCost = 0.30f; // constant cost of setting up a portal
 	private const float usingStunGunCost = 0.20f; // constant cost of using stun gun
 	private const float restoreVelocity = 0.066f; // It needs 1/restoreVelocity seconds to regenerate (15 seconds).
 
-	private const int progressBarSize = 100;
-
-	private GUIStyle borderStyle;
-	private GUIStyle outerStyle;
-	private GUIStyle energyStyle;
-	private GUIStyle lowEnergyStyle;
 	private float energy = 1f;
+
+	private int energyIndex = STEPS-1;
+	private Texture[] projectorTextures = new Texture[STEPS];
+	private Material projectorMaterial;
 
 	void Start()
 	{
 		instance = this;
-
-		borderStyle = new GUIStyle ();
-		Texture2D borderTexture = new Texture2D (1, 1);
-		borderTexture.SetPixel (0, 0, Color.white);
-		borderTexture.Apply ();
-		borderStyle.normal.background = borderTexture;
-
-		outerStyle = new GUIStyle ();
-		Texture2D outerTexture = new Texture2D (1, 1);
-		outerTexture.SetPixel (0, 0, Color.black);
-		outerTexture.Apply ();
-		outerStyle.normal.background = outerTexture;
-
-		energyStyle = new GUIStyle ();
-		Texture2D energyTexture = new Texture2D (1, 1);
-		energyTexture.SetPixel (0, 0, Color.blue);
-		energyTexture.Apply ();
-		energyStyle.normal.background = energyTexture;
-
-		lowEnergyStyle = new GUIStyle ();
-		Texture2D lowEnergyTexture = new Texture2D (1, 1);
-		lowEnergyTexture.SetPixel (0, 0, Color.red);
-		lowEnergyTexture.Apply ();
-		lowEnergyStyle.normal.background = lowEnergyTexture;
+		int step = 100/(STEPS-1);
+		for (int i=0; i<STEPS; i++)
+		{
+			projectorTextures[i] = (Texture2D) Resources.Load("EnergyBar/EnergyBar_target_" + i*step, typeof(Texture2D));
+		}
+		projectorMaterial = transform.GetChild (1).gameObject.transform.GetChild(0).gameObject.GetComponent<Projector> ().material;
+		projectorMaterial.SetTexture("_ShadowTex", projectorTextures [energyIndex]);
 	}
 
 	void Update()
 	{
 		changeEnergy (Time.deltaTime * restoreVelocity);
 	}
-
-	void OnGUI()
-	{
-		if(DroneController.instance.isEntered() == true)
-		{
-			GUI.BeginGroup(new Rect ((Screen.width / 4) - progressBarSize / 2, Screen.height - 20, progressBarSize, 10));
-			GUI.depth = 2;
-			GUI.Box (new Rect (0, 0, progressBarSize, 10), "", borderStyle);
-			GUI.Box (new Rect (1, 1, progressBarSize - 2, 8), "", outerStyle);
-			if (energy >= getMinCost())
-			{
-				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", energyStyle);
-			}
-			else
-			{
-				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", lowEnergyStyle);
-			}
-			GUI.EndGroup();
-		}
-
-	}
-
+	
 	public void settingUp()
 	{
 		changeEnergy (-settingUpCost);
@@ -92,25 +54,6 @@ public class DronePowerController : MonoBehaviour {
 		return energy >= usingStunGunCost;
 	}
 
-	private float getMinCost()
-	{
-		float minCost = 1f;
-		if (LevelFinishedController.instance.isTeleportEnabled())
-		{
-			minCost = settingUpCost;
-		}
-
-		if (LevelFinishedController.instance.isStunGunEnabled())
-		{
-			if (minCost > usingStunGunCost)
-			{
-				minCost = usingStunGunCost;
-			}
-		}
-
-		return minCost;
-	}
-
 	public void changeEnergy(float value)
 	{
 		energy += value;
@@ -122,5 +65,29 @@ public class DronePowerController : MonoBehaviour {
 		{
 			energy = 0.0f;
 		}
+		if ((int) (energy * 100/(STEPS-1)) != energyIndex)
+		{
+			energyIndex = (int) (energy * 100/(STEPS-1));
+			projectorMaterial.SetTexture("_ShadowTex", projectorTextures [energyIndex]);
+		}
+	}
+
+	private float getMinCost()
+	{
+		float minCost = 1f;
+		if (LevelFinishedController.instance.isTeleportEnabled())
+		{
+			minCost = settingUpCost;
+		}
+		
+		if (LevelFinishedController.instance.isStunGunEnabled())
+		{
+			if (minCost > usingStunGunCost)
+			{
+				minCost = usingStunGunCost;
+			}
+		}
+		
+		return minCost;
 	}
 }

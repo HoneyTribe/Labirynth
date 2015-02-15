@@ -5,71 +5,33 @@ public class CraneEnergyController : MonoBehaviour {
 
 	public static CraneEnergyController instance;
 
-	private const int progressBarSize = 100;
+	private static int STEPS = 11;
+
 	private const float holdingCost = 0.2f; // You can hold an object 1/holdingCost seconds (5 seconds).
 	private const float pickingUpCost = 0.05f; // constant cost of picking up - even if you failed
 	private const float restoreVelocity = 0.066f; // It needs 1/restoreVelocity seconds to regenerate (15 seconds).
 	private const float activationCost = 0.3f; 
 	private const float smashingCost = 0.5f; // Wall smashing takes object 1/smashingCost seconds (2 seconds).
 
-	private GUIStyle borderStyle;
-	private GUIStyle outerStyle;
-	private GUIStyle energyStyle;
-	private GUIStyle lowEnergyStyle;
 	private float energy = 1.0f;
 
 	private bool isHeld;
 	private bool beingSmashed;
 
+	private int energyIndex = STEPS-1;
+	private Texture[] projectorTextures = new Texture[STEPS];
+	private Material projectorMaterial;
+
 	void Start()
 	{
 		instance = this;
-
-		borderStyle = new GUIStyle ();
-		Texture2D borderTexture = new Texture2D (1, 1);
-		borderTexture.SetPixel (0, 0, Color.white);
-		borderTexture.Apply ();
-		borderStyle.normal.background = borderTexture;
-
-		outerStyle = new GUIStyle ();
-		Texture2D outerTexture = new Texture2D (1, 1);
-		outerTexture.SetPixel (0, 0, Color.black);
-		outerTexture.Apply ();
-		outerStyle.normal.background = outerTexture;
-
-		energyStyle = new GUIStyle ();
-		Texture2D energyTexture = new Texture2D (1, 1);
-		energyTexture.SetPixel (0, 0, Color.blue);
-		energyTexture.Apply ();
-		energyStyle.normal.background = energyTexture;
-
-		lowEnergyStyle = new GUIStyle ();
-		Texture2D lowEnergyTexture = new Texture2D (1, 1);
-		lowEnergyTexture.SetPixel (0, 0, Color.red);
-		lowEnergyTexture.Apply ();
-		lowEnergyStyle.normal.background = lowEnergyTexture;
-	}
-
-	void OnGUI()
-	{
-		if(CraneController.instance.isEntered() == true)
+		int step = 100/(STEPS-1);
+		for (int i=0; i<STEPS; i++)
 		{
-			GUI.BeginGroup(new Rect ((Screen.width / 4) *3 - progressBarSize / 2, Screen.height - 20, progressBarSize, 10));
-			GUI.depth = 2;
-			GUI.Box (new Rect (0, 0, progressBarSize, 10), "", borderStyle);
-			GUI.Box (new Rect (1, 1, progressBarSize - 2, 8), "", outerStyle);
-			if (energy >= getMinCost())
-			{
-				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", energyStyle);
-			}
-			else
-			{
-				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", lowEnergyStyle);
-			}
-			GUI.EndGroup();
+			projectorTextures[i] = (Texture2D) Resources.Load("EnergyBar/EnergyBar_target_" + i*step, typeof(Texture2D));
 		}
-
-
+		projectorMaterial = transform.GetChild (2).gameObject.transform.GetChild(0).gameObject.GetComponent<Projector> ().material;
+		projectorMaterial.SetTexture("_ShadowTex", projectorTextures [energyIndex]);
 	}
 
 	void Update()
@@ -118,6 +80,24 @@ public class CraneEnergyController : MonoBehaviour {
 		this.beingSmashed = true;
 	}
 
+	private void changeEnergy(float value)
+	{
+		energy += value;
+		if (energy > 1.0f)
+		{
+			energy = 1.0f;
+		}
+		if (energy < 0.0f)
+		{
+			energy = 0.0f;
+		}
+		if ((int) (energy * 100/(STEPS-1)) != energyIndex)
+		{
+			energyIndex = (int) (energy * 100/(STEPS-1));
+			projectorMaterial.SetTexture("_ShadowTex", projectorTextures [energyIndex]);
+		}
+	}
+
 	private float getMinCost()
 	{
 		float minCost = 1f;
@@ -137,18 +117,6 @@ public class CraneEnergyController : MonoBehaviour {
 		return minCost;
 	}
 
-	private void changeEnergy(float value)
-	{
-		energy += value;
-		if (energy > 1.0f)
-		{
-			energy = 1.0f;
-		}
-		if (energy < 0.0f)
-		{
-			energy = 0.0f;
-		}
-	}
 
 	public bool canPickUp()
 	{
