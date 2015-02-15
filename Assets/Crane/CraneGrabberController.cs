@@ -3,17 +3,32 @@ using System.Collections;
 
 public class CraneGrabberController : MonoBehaviour {
 
+	private static int STEPS = 11;
 	private float grabberSpeed = 30f;
 
 	private Vector3 grabberPosition;
 	private Vector3 newGrabberPosition;
 	private bool pickingUp;
 	private bool smashing;
+	private Texture[] projectorTextures = new Texture[STEPS];
 
 	private GameObject heldObject;
 	private GameObject smashedWall;
+	private GameObject projector;
 
 	public GameObject flamePrefab;
+
+	void Start()
+	{
+		int step = 100/(STEPS-1);
+		for (int i=0; i<STEPS; i++)
+		{
+			projectorTextures[i] = (Texture2D) Resources.Load("EnergyBar/EnergyBar_target_" + i*step, typeof(Texture2D));
+		}
+		projector = transform.GetChild (2).gameObject.transform.GetChild(0).gameObject;
+		Material m = projector.GetComponent<Projector> ().material;
+		//m.SetTexture("_ShadowTex", projectorTextures [0]);
+	}
 
 	void Update()
 	{
