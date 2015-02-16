@@ -44,6 +44,7 @@ MonoBehaviour:
   neutral_GUIskin: {fileID: 11400000, guid: 5e826d985e5f045b1a3fadc30bc4fb86, type: 2}
   neutralSelected_GUIskin: {fileID: 11400000, guid: dad851d7ea950479b8560630a9070be9,
     type: 2}
+  pinkButton_GUIskin: {fileID: 11400000, guid: b39efa451028a459591be77a2efe69de, type: 2}
   playersTexture: {fileID: 2800000, guid: b93a31080ceb04db0a5e0d71a0156d35, type: 3}
   padTexture: {fileID: 2800000, guid: 0b53dd12dad1747d8b4a12bcdd4a8678, type: 3}
   keyboardTexture: {fileID: 2800000, guid: 0b53dd12dad1747d8b4a12bcdd4a8678, type: 3}

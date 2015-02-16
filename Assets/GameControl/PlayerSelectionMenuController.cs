@@ -17,6 +17,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	public GUISkin error_GUIskin;
 	public GUISkin neutral_GUIskin;
 	public GUISkin neutralSelected_GUIskin;
+	public GUISkin pinkButton_GUIskin;
 	public Texture2D playersTexture;
 	public Texture2D padTexture;
 	public Texture2D keyboardTexture;
@@ -257,7 +258,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 						else
 						{
 							GUI.Button (new Rect (Screen.width/2 - (280/2), (Screen.height - height)/2 + height * 0.90f - (textHeight/2) + textHeight, 280, textHeight),
-							"Get the shiny new update!",skin.button);
+						    "Get the shiny new update!",pinkButton_GUIskin.button);
 						}
 					}
 					
