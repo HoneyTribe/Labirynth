@@ -9,6 +9,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	private string version = "0.1.9";
 	private string url = "http://www.honeytribestudios.com/games1/BFF/bffVersion.txt";
 	private string versionRead;
+	private int randomNum = 1;
 
 	private static int playersPerRow = 2;
 	public GUISkin skin;
@@ -104,6 +105,21 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					AudioController.instance.Play("003_CollectKey");
 					Application.OpenURL("http://tiny.cc/bffnew");
 				}
+				if (state.getPositionInMenu() == PlayerSelectionState.TWEET1 && versionRead !="")
+				{
+					AudioController.instance.Play("003_CollectKey");
+					randomNum = Random.Range(1,7);
+					// 1 = Polaris, 2 = CutePieMarzia, 3 = Stumpt, 4 = Hat Films, 5 = PewDiePie, 6 = the fine bros
+					Application.OpenURL("https://tiny.cc/bfftweet"+randomNum);
+				}
+				if (state.getPositionInMenu() == PlayerSelectionState.YOUTUBE && versionRead !="")
+				{
+					AudioController.instance.Play("003_CollectKey");
+					randomNum = Random.Range(1,7);
+					// 1 = i53 Fri, 2 = i53 Sat, 3 = Pixel Rogues, 4 = Team Banana, 5 = RazorSharp, 6 = Eneh (scaredgirl),
+					// 7 = purity sinners
+					Application.OpenURL("https://tiny.cc/bfftube"+randomNum);
+				}
 			}
 		}
 
@@ -172,7 +188,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 				{
 					if (selGridInt.Count < 2)
 					{
-					GUI.Label(new Rect (Screen.width/2 - (280/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 280, textHeight),
+					GUI.Label(new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 360, textHeight),
 					"Select at least 2 characters", error_GUIskin.label);
 					}
 					else
@@ -191,72 +207,113 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					}
 					else
 					{
-					GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 120, textHeight),
+					GUI.Button (new Rect (Screen.width/2 - (100/2), (Screen.height - height)/2 + height * 0.69f - (textHeight/2), 100, textHeight),
 					"Start", skin.button);
 					}
 				}
-
 				if (isAnyCursorOn(PlayerSelectionState.HELP))
 				{
-				GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.70f - (textHeight/2) + textHeight, 120, textHeight),
-				"Controls", selectedSkin.button);
+					GUI.Button (new Rect (Screen.width/2 - (140/2), (Screen.height - height)/2 + height * 0.70f - (textHeight/2) + textHeight, 140, textHeight),
+					            "Controls", selectedSkin.button);
 				}
 				else
 				{
-				GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.70f - (textHeight/2) + textHeight, 120, textHeight),
-				"Controls",skin.button);
+					GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.70f - (textHeight/2) + textHeight, 120, textHeight),
+					            "Controls",skin.button);
 				}
-
-				if(versionRead != version && versionRead != "") // local version is old
+				//internet connection
+				if(versionRead != "")
 				{
-					if (isAnyCursorOn(PlayerSelectionState.VERSION))
+
+					if (isAnyCursorOn(PlayerSelectionState.TWEET1))
 					{
-						GUI.Button (new Rect (Screen.width/2 - (300/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 300, textHeight),
-						 "Get the shiny new update!",selectedSkin.button);
+					GUI.Button (new Rect (Screen.width/2 - (390/2), (Screen.height - height)/2 + height * 0.765f - (textHeight/2) + textHeight, 390, textHeight),
+					"Tell youtubers to play BFF or Die!", selectedSkin.button);
 					}
 					else
 					{
-						GUI.Button (new Rect (Screen.width/2 - (280/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 280, textHeight),
-						"Get the shiny new update!",skin.button);
+					GUI.Button (new Rect (Screen.width/2 - (320/2), (Screen.height - height)/2 + height * 0.765f - (textHeight/2) + textHeight, 320, textHeight),
+					 "Tell youtubers to play BFF or Die!",skin.button);
+					}
+
+					if (isAnyCursorOn(PlayerSelectionState.YOUTUBE))
+					{
+					GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.83f - (textHeight/2) + textHeight, 360, textHeight),
+					"Watch BFF or Die on Youtube", selectedSkin.button);
+					}
+					else
+					{
+					GUI.Button (new Rect (Screen.width/2 - (320/2), (Screen.height - height)/2 + height * 0.83f - (textHeight/2) + textHeight, 320, textHeight),
+					 "Watch BFF or Die on Youtube",skin.button);
+					}
+
+					if(versionRead != version) // local version is old
+					{
+						if (isAnyCursorOn(PlayerSelectionState.VERSION))
+						{
+							GUI.Button (new Rect (Screen.width/2 - (300/2), (Screen.height - height)/2 + height * 0.90f - (textHeight/2) + textHeight, 300, textHeight),
+							 "Get the shiny new update!",selectedSkin.button);
+						}
+						else
+						{
+							GUI.Button (new Rect (Screen.width/2 - (280/2), (Screen.height - height)/2 + height * 0.90f - (textHeight/2) + textHeight, 280, textHeight),
+							"Get the shiny new update!",skin.button);
+						}
+					}
+					
+					else if (version == versionRead) //local version is newest
+					{
+						if(isAnyCursorOn(PlayerSelectionState.VERSION))
+						{
+							GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.90f - (textHeight/2) + textHeight, 360, textHeight),
+							"You have the latest version "+version, neutralSelected_GUIskin.label);
+						}
+						else
+						{
+							GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.90f - (textHeight/2) + textHeight, 360, textHeight),
+						     "You have the latest version " + version, neutral_GUIskin.label);
+						}
 					}
 				}
-				else if (versionRead == "") //no internet connection
+				//no internet
+				else
 				{
+					if (isAnyCursorOn(PlayerSelectionState.TWEET1))
+					{
+						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.765f - (textHeight/2) + textHeight, 360, textHeight),
+					     "Can't connect to Twitter", neutralSelected_GUIskin.label);
+					}
+					else
+					{
+						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.765f - (textHeight/2) + textHeight, 360, textHeight),
+					     "No connection. Can't connect to Twitter",neutral_GUIskin.label);
+					}
+					
+					if (isAnyCursorOn(PlayerSelectionState.YOUTUBE))
+					{
+						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.83f - (textHeight/2) + textHeight, 360, textHeight),
+					    "Can't connect to Youtube", neutralSelected_GUIskin.label);
+					}
+					else
+					{
+						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.83f - (textHeight/2) + textHeight, 360, textHeight),
+					    "No connection. Can't connect to Youtube",neutral_GUIskin.label);
+					}
+
 					if(isAnyCursorOn(PlayerSelectionState.VERSION))
 					{
-						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 360, textHeight),
-					     "Can't check for updates.",neutralSelected_GUIskin.label);
+						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.90f - (textHeight/2) + textHeight, 360, textHeight),
+						 "Can't check for updates.",neutralSelected_GUIskin.label);
 					}
 					else
 					{
-						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 360, textHeight),
+						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.90f - (textHeight/2) + textHeight, 360, textHeight),
 						"No connection. Can't check for updates.",neutral_GUIskin.label);
 					}
 				}
-				else if (version == versionRead) //local version is newest
-				{
-					if(isAnyCursorOn(PlayerSelectionState.VERSION))
-					{
-						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 360, textHeight),
-						"You have the latest version "+version, neutralSelected_GUIskin.label);
-					}
-					else
-					{
-						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.77f - (textHeight/2) + textHeight, 360, textHeight),
-					     "You have the latest version " + version, neutral_GUIskin.label);
-					}
-				}
-
 			GUI.EndGroup();
 		}
 
-		//WWW www = new WWW(url);
-		//if(www.text != version)
-		//{
-			//GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.80f - (textHeight/2) + textHeight, 120, textHeight),
-			//"You Sukarrr!",skin.button);
-			//print (www.text);
-		//}
 	}
 
 	private PlayerSelectionState getSelectedGrid(int id)
