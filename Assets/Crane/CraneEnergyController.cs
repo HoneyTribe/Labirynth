@@ -8,7 +8,7 @@ public class CraneEnergyController : MonoBehaviour {
 	private static int STEPS = 11;
 
 	private const float holdingCost = 0.2f; // You can hold an object 1/holdingCost seconds (5 seconds).
-	private const float pickingUpCost = 0.05f; // constant cost of picking up - even if you failed
+	private const float pickingUpCost = 0f; // constant cost of picking up - even if you failed
 	private const float restoreVelocity = 0.066f; // It needs 1/restoreVelocity seconds to regenerate (15 seconds).
 	private const float activationCost = 0.3f; 
 	private const float smashingCost = 0.5f; // Wall smashing takes object 1/smashingCost seconds (2 seconds).
