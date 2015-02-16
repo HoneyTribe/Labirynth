@@ -229,12 +229,12 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					if (isAnyCursorOn(PlayerSelectionState.TWEET1))
 					{
 					GUI.Button (new Rect (Screen.width/2 - (390/2), (Screen.height - height)/2 + height * 0.765f - (textHeight/2) + textHeight, 390, textHeight),
-					"Tell youtubers to play BFF or Die!", selectedSkin.button);
+					"Ask youtubers to play BFF or Die!", selectedSkin.button);
 					}
 					else
 					{
 					GUI.Button (new Rect (Screen.width/2 - (320/2), (Screen.height - height)/2 + height * 0.765f - (textHeight/2) + textHeight, 320, textHeight),
-					 "Tell youtubers to play BFF or Die!",skin.button);
+					 "Ask youtubers to play BFF or Die!",skin.button);
 					}
 
 					if (isAnyCursorOn(PlayerSelectionState.YOUTUBE))
@@ -282,34 +282,34 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					if (isAnyCursorOn(PlayerSelectionState.TWEET1))
 					{
 						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.765f - (textHeight/2) + textHeight, 360, textHeight),
-					     "Can't connect to Twitter", neutralSelected_GUIskin.label);
+					     "No connection", neutralSelected_GUIskin.label);
 					}
 					else
 					{
 						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.765f - (textHeight/2) + textHeight, 360, textHeight),
-					     "No connection. Can't connect to Twitter",neutral_GUIskin.label);
+					     "No connection",neutral_GUIskin.label);
 					}
 					
 					if (isAnyCursorOn(PlayerSelectionState.YOUTUBE))
 					{
 						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.83f - (textHeight/2) + textHeight, 360, textHeight),
-					    "Can't connect to Youtube", neutralSelected_GUIskin.label);
+					     "No connection", neutralSelected_GUIskin.label);
 					}
 					else
 					{
 						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.83f - (textHeight/2) + textHeight, 360, textHeight),
-					    "No connection. Can't connect to Youtube",neutral_GUIskin.label);
+					    "Can't connect to the internet",neutral_GUIskin.label);
 					}
 
 					if(isAnyCursorOn(PlayerSelectionState.VERSION))
 					{
 						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.90f - (textHeight/2) + textHeight, 360, textHeight),
-						 "Can't check for updates.",neutralSelected_GUIskin.label);
+						 "Can't check for updates",neutralSelected_GUIskin.label);
 					}
 					else
 					{
 						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.90f - (textHeight/2) + textHeight, 360, textHeight),
-						"No connection. Can't check for updates.",neutral_GUIskin.label);
+						"No connection. Can't check for updates",neutral_GUIskin.label);
 					}
 				}
 			GUI.EndGroup();
