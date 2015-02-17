@@ -18,6 +18,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	public GUISkin neutral_GUIskin;
 	public GUISkin neutralSelected_GUIskin;
 	public GUISkin pinkButton_GUIskin;
+	public GUISkin menuTop_GUIskin;
 	public Texture2D playersTexture;
 	public Texture2D padTexture;
 	public Texture2D keyboardTexture;
@@ -189,6 +190,25 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 						GUI.enabled = true;
 					}
 				}		
+				
+				//text above players
+				if (selGridInt.Count == 0)
+				{
+				GUI.Label(new Rect (Screen.width/2 - (460/2), (Screen.height - height)/2 + height * 0.10f - (textHeight/2), 460, textHeight),
+				"Tap action-1 to join", menuTop_GUIskin.label);
+				}
+				else if (selGridInt.Count == 1)
+				{
+				GUI.Label(new Rect (Screen.width/2 - (460/2), (Screen.height - height)/2 + height * 0.10f - (textHeight/2), 460, textHeight),
+				 "Select at least 2 characters", menuTop_GUIskin.label);
+				}
+				if (selGridInt.Count >= 2 && isAnyCursorOn(PlayerSelectionState.START) == false && isAnyCursorOn(PlayerSelectionState.TWEET1) == false
+			    && isAnyCursorOn(PlayerSelectionState.YOUTUBE) == false && isAnyCursorOn(PlayerSelectionState.FACEBOOK) == false
+			    && isAnyCursorOn(PlayerSelectionState.VERSION) == false && isAnyCursorOn(PlayerSelectionState.HELP) == false)
+				{
+				GUI.Label(new Rect (Screen.width/2 - (460/2), (Screen.height - height)/2 + height * 0.10f - (textHeight/2), 460, textHeight),
+				"Push down and tap on start", menuTop_GUIskin.label);
+				}
 
 				if (isAnyCursorOn(PlayerSelectionState.START))
 				{
