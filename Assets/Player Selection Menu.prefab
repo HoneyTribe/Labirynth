@@ -46,8 +46,8 @@ MonoBehaviour:
     type: 2}
   pinkButton_GUIskin: {fileID: 11400000, guid: b39efa451028a459591be77a2efe69de, type: 2}
   playersTexture: {fileID: 2800000, guid: b93a31080ceb04db0a5e0d71a0156d35, type: 3}
-  padTexture: {fileID: 2800000, guid: 0b53dd12dad1747d8b4a12bcdd4a8678, type: 3}
-  keyboardTexture: {fileID: 2800000, guid: 0b53dd12dad1747d8b4a12bcdd4a8678, type: 3}
+  padTexture: {fileID: 2800000, guid: ffdb14d6b88c7487d959daa41cad4634, type: 3}
+  keyboardTexture: {fileID: 2800000, guid: ffdb14d6b88c7487d959daa41cad4634, type: 3}
   mainSplashTexture: {fileID: 2800000, guid: ff7ac61eb7d7beb499f68a4234b65d69, type: 3}
   menuPrefab: {fileID: 100000, guid: 741efa72e5aa54145b2dcc38e25659ac, type: 2}
   instructionPrefab: {fileID: 100000, guid: 9c3dd774359b4cf4e931f83b9b0f0cbf, type: 2}

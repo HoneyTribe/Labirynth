@@ -32,6 +32,8 @@ public class CraneEnergyController : MonoBehaviour {
 		}
 		projectorMaterial = transform.GetChild (2).gameObject.transform.GetChild(0).gameObject.GetComponent<Projector> ().material;
 		projectorMaterial.SetTexture("_ShadowTex", projectorTextures [energyIndex]);
+		//color = new Color(0.85f,0.82f,0.3f);
+		gameObject.transform.GetChild (2).renderer.material.SetColor("_Color",Color.green);
 	}
 
 	void Update()
