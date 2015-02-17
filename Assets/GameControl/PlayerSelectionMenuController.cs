@@ -10,6 +10,8 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	private string url = "http://www.honeytribestudios.com/games1/BFF/bffVersion.txt";
 	private string versionRead;
 	private int randomNum = 1;
+	private int levForYoutubers = 7;
+	private int levForComment = 10;
 
 	private static int playersPerRow = 2;
 	public GUISkin skin;
@@ -107,7 +109,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					AudioController.instance.Play("003_CollectKey");
 					Application.OpenURL("http://tiny.cc/bffnew");
 				}
-				if (state.getPositionInMenu() == PlayerSelectionState.TWEET1 && versionRead !="")
+				if (state.getPositionInMenu() == PlayerSelectionState.TWEET1 && versionRead !="" && LevelFinishedController.instance.getMaxLevel()>levForYoutubers)
 				{
 					AudioController.instance.Play("003_CollectKey");
 					randomNum = Random.Range(1,7);
@@ -122,7 +124,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					// 7 = purity sinners
 					Application.OpenURL("https://tiny.cc/bfftube"+randomNum);
 				}
-				if (state.getPositionInMenu() == PlayerSelectionState.FACEBOOK && versionRead !="")
+				if (state.getPositionInMenu() == PlayerSelectionState.FACEBOOK && versionRead !="" && LevelFinishedController.instance.getMaxLevel()>levForComment)
 				{
 					AudioController.instance.Play("003_CollectKey");
 					Application.OpenURL("http://tiny.cc/bffface");
@@ -250,38 +252,71 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 				//internet connection
 				if(versionRead != "")
 				{
-
-					if (isAnyCursorOn(PlayerSelectionState.TWEET1))
-					{
-					GUI.Button (new Rect (Screen.width/2 - (390/2), (Screen.height - height)/2 + height * 0.66f - (textHeight/2) + textHeight, 390, textHeight),
-					"Ask youtubers to play BFF or Die!", selectedSkin.button);
-					}
-					else
-					{
-					GUI.Button (new Rect (Screen.width/2 - (320/2), (Screen.height - height)/2 + height * 0.66f - (textHeight/2) + textHeight, 320, textHeight),
-					 "Ask youtubers to play BFF or Die!",skin.button);
-					}
-
+					
 					if (isAnyCursorOn(PlayerSelectionState.YOUTUBE))
 					{
-					GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.72f - (textHeight/2) + textHeight, 360, textHeight),
-					"Watch BFF or Die on Youtube", selectedSkin.button);
+					GUI.Button (new Rect (Screen.width/2 - (400/2), (Screen.height - height)/2 + height * 0.66f - (textHeight/2) + textHeight, 400, textHeight),
+					"Tell us about your BFF or Die video!", selectedSkin.button);
 					}
 					else
 					{
-					GUI.Button (new Rect (Screen.width/2 - (280/2), (Screen.height - height)/2 + height * 0.72f - (textHeight/2) + textHeight, 280, textHeight),
+					GUI.Button (new Rect (Screen.width/2 - (280/2), (Screen.height - height)/2 + height * 0.66f - (textHeight/2) + textHeight, 280, textHeight),
 					 "Watch BFF or Die on Youtube",skin.button);
 					}
 
-					if (isAnyCursorOn(PlayerSelectionState.FACEBOOK))
+					// beat level 7
+						if(LevelFinishedController.instance.getMaxLevel()>levForYoutubers)
 					{
-						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.78f - (textHeight/2) + textHeight, 360, textHeight),
-					     "...so we can quote you online", selectedSkin.button);
+						if (isAnyCursorOn(PlayerSelectionState.TWEET1))
+						{
+							GUI.Button (new Rect (Screen.width/2 - (390/2), (Screen.height - height)/2 + height * 0.72f - (textHeight/2) + textHeight, 390, textHeight),
+							 "Ask youtubers to play BFF or Die!", selectedSkin.button);
+						}
+						else
+						{
+							GUI.Button (new Rect (Screen.width/2 - (320/2), (Screen.height - height)/2 + height * 0.72f - (textHeight/2) + textHeight, 320, textHeight),
+							 "Ask youtubers to play BFF or Die!",skin.button);
+						}
 					}
 					else
 					{
-						GUI.Button (new Rect (Screen.width/2 - (350/2), (Screen.height - height)/2 + height * 0.78f - (textHeight/2) + textHeight, 350, textHeight),
-					     "Send us a comment about BFF or Die...",skin.button);
+							if (isAnyCursorOn(PlayerSelectionState.TWEET1))
+						{
+							GUI.Button (new Rect (Screen.width/2 - (390/2), (Screen.height - height)/2 + height * 0.72f - (textHeight/2) + textHeight, 390, textHeight),
+							 "???", neutralSelected_GUIskin.label);
+						}
+						else
+						{
+							GUI.Button (new Rect (Screen.width/2 - (320/2), (Screen.height - height)/2 + height * 0.72f - (textHeight/2) + textHeight, 320, textHeight),
+							 "???",neutral_GUIskin.label);
+						}
+					}
+					// beat level 10
+					if(LevelFinishedController.instance.getMaxLevel()>levForComment)
+					{
+						if (isAnyCursorOn(PlayerSelectionState.FACEBOOK))
+						{
+							GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.78f - (textHeight/2) + textHeight, 360, textHeight),
+						     "...so we can quote you online", selectedSkin.button);
+						}
+						else
+						{
+							GUI.Button (new Rect (Screen.width/2 - (350/2), (Screen.height - height)/2 + height * 0.78f - (textHeight/2) + textHeight, 350, textHeight),
+						     "Send us a comment about BFF or Die...",skin.button);
+						}
+					}
+					else
+					{
+						if (isAnyCursorOn(PlayerSelectionState.FACEBOOK))
+						{
+							GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.78f - (textHeight/2) + textHeight, 360, textHeight),
+						     "???", neutralSelected_GUIskin.label);
+						}
+						else
+						{
+							GUI.Button (new Rect (Screen.width/2 - (350/2), (Screen.height - height)/2 + height * 0.78f - (textHeight/2) + textHeight, 350, textHeight),
+							 "???",neutral_GUIskin.label);
+						}
 					}
 
 					if(versionRead != version) // local version is old
@@ -315,32 +350,34 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 				//no internet
 				else
 				{
-					if (isAnyCursorOn(PlayerSelectionState.TWEET1))
-					{
-						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.66f - (textHeight/2) + textHeight, 360, textHeight),
-					     "No connection", neutralSelected_GUIskin.label);
-					}
-					else
-					{
-						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.66f - (textHeight/2) + textHeight, 360, textHeight),
-					     "No connection",neutral_GUIskin.label);
-					}
+					
 					
 					if (isAnyCursorOn(PlayerSelectionState.YOUTUBE))
 					{
-						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.72f - (textHeight/2) + textHeight, 360, textHeight),
-					     "No connection", neutralSelected_GUIskin.label);
+						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.66f - (textHeight/2) + textHeight, 360, textHeight),
+					     "Your router is sad :(", neutralSelected_GUIskin.label);
+					}
+					else
+					{
+						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.66f - (textHeight/2) + textHeight, 360, textHeight),
+					    "Can't connect to the internet",neutral_GUIskin.label);
+					}
+
+					if (isAnyCursorOn(PlayerSelectionState.TWEET1))
+					{
+						GUI.Button (new Rect (Screen.width/2 - (420/2), (Screen.height - height)/2 + height * 0.72f - (textHeight/2) + textHeight, 420, textHeight),
+						 "Nor is your network access", neutralSelected_GUIskin.label);
 					}
 					else
 					{
 						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.72f - (textHeight/2) + textHeight, 360, textHeight),
-					    "Can't connect to the internet",neutral_GUIskin.label);
+						 "The stars are not aligned",neutral_GUIskin.label);
 					}
 
 					if (isAnyCursorOn(PlayerSelectionState.FACEBOOK))
 					{
 						GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.78f - (textHeight/2) + textHeight, 360, textHeight),
-						 "Sort out you internet", neutralSelected_GUIskin.label);
+						 "Sort out your internet", neutralSelected_GUIskin.label);
 					}
 					else
 					{
@@ -351,7 +388,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					if(isAnyCursorOn(PlayerSelectionState.VERSION))
 					{
 						GUI.Label (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.85f - (textHeight/2) + textHeight, 360, textHeight),
-						 "Can't check for updates",neutralSelected_GUIskin.label);
+						 "Don't you like updates?",neutralSelected_GUIskin.label);
 					}
 					else
 					{

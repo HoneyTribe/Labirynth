@@ -3,8 +3,8 @@
 	public static int PLAYER = 0;
 	public static int START = 1;
 	public static int HELP = 2;
-	public static int TWEET1 = 3;
-	public static int YOUTUBE = 4;
+	public static int YOUTUBE = 3;
+	public static int TWEET1 = 4;
 	public static int FACEBOOK = 5;
 	public static int VERSION = 6;
 
