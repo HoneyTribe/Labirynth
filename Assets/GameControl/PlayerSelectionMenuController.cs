@@ -256,7 +256,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					if (isAnyCursorOn(PlayerSelectionState.YOUTUBE))
 					{
 					GUI.Button (new Rect (Screen.width/2 - (400/2), (Screen.height - height)/2 + height * 0.66f - (textHeight/2) + textHeight, 400, textHeight),
-					"Tell us about your BFF or Die video!", selectedSkin.button);
+					"Make a BFF or Die video and tell us!", selectedSkin.button);
 					}
 					else
 					{
