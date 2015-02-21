@@ -270,7 +270,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 						if (isAnyCursorOn(PlayerSelectionState.TWEET1))
 						{
 							GUI.Button (new Rect (Screen.width/2 - (390/2), (Screen.height - height)/2 + height * 0.72f - (textHeight/2) + textHeight, 390, textHeight),
-							 "Ask youtubers to play BFF or Die!", selectedSkin.button);
+							 "Or tell your friends about it", selectedSkin.button);
 						}
 						else
 						{
@@ -283,7 +283,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 							if (isAnyCursorOn(PlayerSelectionState.TWEET1))
 						{
 							GUI.Button (new Rect (Screen.width/2 - (390/2), (Screen.height - height)/2 + height * 0.72f - (textHeight/2) + textHeight, 390, textHeight),
-							 "???", neutralSelected_GUIskin.label);
+							 "Keep playing", neutralSelected_GUIskin.label);
 						}
 						else
 						{
@@ -309,8 +309,8 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					{
 						if (isAnyCursorOn(PlayerSelectionState.FACEBOOK))
 						{
-							GUI.Button (new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.78f - (textHeight/2) + textHeight, 360, textHeight),
-						     "???", neutralSelected_GUIskin.label);
+							GUI.Button (new Rect (Screen.width/2 - (420/2), (Screen.height - height)/2 + height * 0.78f - (textHeight/2) + textHeight, 420, textHeight),
+						     "Finish more levels", neutralSelected_GUIskin.label);
 						}
 						else
 						{
