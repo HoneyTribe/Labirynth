@@ -119,7 +119,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					// 8 = Immortal HD, 9 = Inside Gaming, 10 = Jerma985, 11 = dad nerd cubed,12 - I has cupcake, 13 = Rooster Teeth
 
 					//Current:
-					// 1 = BarryDennen12, 12k subs // 2 = GameFrontDotCom, 140k subs // 3 = stumpt, 26k subs // 4 = KBMODGaming, 7k subs
+					// 1 = BarryDennen12, 12k subs // 2 = GameFrontDotCom, 140k subs // 3 = stumptgamers, 26k subs // 4 = KBMODGaming, 7k subs
 					// 5 = TwoAngryGamersTV, 31k subs
 					Application.OpenURL("https://tiny.cc/bfftweet"+randomNum);
 				}
