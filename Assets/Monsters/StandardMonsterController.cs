@@ -10,7 +10,7 @@ public class StandardMonsterController : AbstractMonsterController {
 
 	private List<Vector3> guardingPositions = new List<Vector3>();
 	private int currentGuardingPosition = 0;
-
+	
 	public override void go () 
 	{
 		float distance = Vector3.Distance(transform.localPosition, newPosition);
@@ -157,4 +157,5 @@ public class StandardMonsterController : AbstractMonsterController {
 	{
 		guardingPositions.Add (position);
 	}
+	
 }
