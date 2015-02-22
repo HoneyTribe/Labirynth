@@ -112,16 +112,23 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 				if (state.getPositionInMenu() == PlayerSelectionState.TWEET1 && versionRead !="" && LevelFinishedController.instance.getMaxLevel()>levForYoutubers)
 				{
 					AudioController.instance.Play("003_CollectKey");
-					randomNum = Random.Range(1,7);
-					// 1 = Polaris, 2 = CutePieMarzia, 3 = Stumpt, 4 = Hat Films, 5 = PewDiePie, 6 = the fine bros
+					randomNum = Random.Range(1,6);
+					//Old:
+					// 1 = Polaris, 2 = CutePieMarzia, 3 = Stumpt, 4 = Hat Films, 5 = PewDiePie,
+					//6 = the fine bros, 7 = The Killer Bits
+					// 8 = Immortal HD, 9 = Inside Gaming, 10 = Jerma985, 11 = dad nerd cubed,12 - I has cupcake, 13 = Rooster Teeth
+
+					//Current:
+					// 1 = BarryDennen12, 12k subs // 2 = GameFrontDotCom, 140k subs // 3 = stumpt, 26k subs // 4 = KBMODGaming, 7k subs
+					// 5 = TwoAngryGamersTV, 31k subs
 					Application.OpenURL("https://tiny.cc/bfftweet"+randomNum);
 				}
 				if (state.getPositionInMenu() == PlayerSelectionState.YOUTUBE && versionRead !="")
 				{
 					AudioController.instance.Play("003_CollectKey");
-					randomNum = Random.Range(1,7);
-					// 1 = i53 Fri, 2 = i53 Sat, 3 = Pixel Rogues, 4 = Team Banana, 5 = RazorSharp, 6 = Eneh (scaredgirl),
-					// 7 = purity sinners
+					randomNum = Random.Range(1,12);
+					// 1 = i53 Fri, 2 = i53 Sat, 3 = Pixel Rogues_1, 4 = Team Banana, 5 = RazorSharp, 6 = Eneh (scaredgirl),
+					// 7 = purity sinners, 8 radius, 9 = Pixel Rogues_2, 10 = Pixel Rogues_3, 11 = Pixel Rogues_4,
 					Application.OpenURL("https://tiny.cc/bfftube"+randomNum);
 				}
 				if (state.getPositionInMenu() == PlayerSelectionState.FACEBOOK && versionRead !="" && LevelFinishedController.instance.getMaxLevel()>levForComment)
@@ -162,9 +169,6 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 
 			float height = Screen.width * 720/1280;
 			int textHeight = 40;
-
-			//GUI.BeginGroup(new Rect(0 ,(Screen.height - height)/2, Screen.width, height));
-			//GUI.Box (new Rect(0, 0, Screen.width, height), "", skin.box);
 
 			GUI.BeginGroup(new Rect(0, 0, Screen.width, Screen.height), "", outerStyle );
 			GUI.Box (new Rect(0 ,(Screen.height - height)/2, Screen.width, height), "", skin.box);
@@ -274,8 +278,8 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 						}
 						else
 						{
-							GUI.Button (new Rect (Screen.width/2 - (320/2), (Screen.height - height)/2 + height * 0.72f - (textHeight/2) + textHeight, 320, textHeight),
-							 "Ask youtubers to play BFF or Die!",skin.button);
+							GUI.Button (new Rect (Screen.width/2 - (350/2), (Screen.height - height)/2 + height * 0.72f - (textHeight/2) + textHeight, 350, textHeight),
+							 "Ask these youtubers to play BFF or Die!",skin.button);
 						}
 					}
 					else
