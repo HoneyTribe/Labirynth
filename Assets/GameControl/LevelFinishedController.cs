@@ -42,6 +42,9 @@ public class LevelFinishedController : MonoBehaviour {
 			DontDestroyOnLoad(gameObject);
 			instance = this;
 
+			//hide mouse curser
+			Screen.showCursor = false;
+
 			//load bootups from disk and save
 			if (PlayerPrefs.HasKey("Savedbootups"))
 			{
