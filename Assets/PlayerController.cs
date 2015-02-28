@@ -165,6 +165,8 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 					GameObject jumpItem = inventory.getAvailablItem();
 					if (jumpItem != null)
 					{
+						JumpController.instance.addToBoxCollideCount();
+						FloorInstructions.instance.ChangeInstructions();
 						jumpItem.transform.localPosition = new Vector3(transform.localPosition.x,
 						                                               transform.localPosition.y + 4,
 						                                               transform.localPosition.z);
@@ -177,6 +179,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				}
 				else
 				{
+					JumpController.instance.resetBoxCollideCount();
 					inventory.getInventoryItem().transform.position = new Vector3(transform.localPosition.x,
 					                                            					   1.5f,
 					                                               					   transform.localPosition.z);
@@ -314,6 +317,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		if (currentCollider.tag == "Item")
 		{
 			inventory.setAvailableItem(currentCollider.gameObject);
+
 		}
 	}
 
@@ -331,4 +335,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		rigidbody.angularVelocity = Vector3.zero;
 		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
 	}
+
+
+
 }

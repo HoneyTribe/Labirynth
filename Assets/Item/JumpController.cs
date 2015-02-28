@@ -4,13 +4,17 @@ using System.Collections.Generic;
 
 public class JumpController : MonoBehaviour {
 
+	public static JumpController instance;
+
 	private List<GameObject> closeObjects = new List<GameObject>();
 
 	private TextMesh textMesh;
 	private bool taken;
+	private int boxCollideCount = 0; // reset in PlayerController
 
 	void Start()
 	{
+		instance = this;
 		textMesh = gameObject.GetComponentInChildren<TextMesh> ();
 	}
 
@@ -33,6 +37,14 @@ public class JumpController : MonoBehaviour {
 			if (currentCollider.name.Contains("Player"))
 			{
 				//textMesh.text = "TAKE ME!";
+				if(LevelFinishedController.instance.getLevel() == 11)
+				{
+				boxCollideCount++;
+				print ("boxCount: "+boxCollideCount);
+				FloorInstructions.instance.ChangeInstructions();
+				}
+
+
 			}
 			else
 			{
@@ -69,4 +81,22 @@ public class JumpController : MonoBehaviour {
 	{
 		return ((!taken) && (closeObjects.Count != 0));
 	}
+
+	public int GetBoxCollideCount()
+	{
+		return boxCollideCount;
+	}
+
+	//triggered in PlayerController
+	public void resetBoxCollideCount()
+	{
+		boxCollideCount = -1;
+	}
+
+	//triggered in PlayerController
+	public void addToBoxCollideCount()
+	{
+		boxCollideCount++;
+	}
+	
 }

@@ -20,7 +20,7 @@ public class FloorInstructions : MonoBehaviour
 		arrowLeft = GameObject.Find ("ArrowLeft");
 	}
 
-	//Called from ScoreController, TopLightController, DeviceController, DroneController
+	//Called from ScoreController, TopLightController, DeviceController, DroneController, JumpController
 	public void ChangeInstructions ()
 	{	
 		//level1
@@ -43,16 +43,16 @@ public class FloorInstructions : MonoBehaviour
 			else
 				if (ScoreController.instance.getScore() > 0)
 				{
-					GetComponentInChildren<TextMesh>().text = "Walk into          the light";
+					GetComponentInChildren<TextMesh>().text = "Walk into          the light.";
 					arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
 				}
 				else
 				{
-					GetComponentInChildren<TextMesh>().text = "High-five with all players to time-shift";
+					GetComponentInChildren<TextMesh>().text = "High-five with all players to time-shift.";
 					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
 		}
-		//level 2
+		//level 2, first decoy level
 		else if(LevelFinishedController.instance.getLevel() == 1)
 		{
 			arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
@@ -69,7 +69,7 @@ public class FloorInstructions : MonoBehaviour
 				else if(ScoreController.instance.getScore() > 0
 				   		&& TopLightController.instance.isEntered() == false)
 				{
-					GetComponentInChildren<TextMesh>().text = "Walk into          the light";
+					GetComponentInChildren<TextMesh>().text = "Walk into          the light.";
 					arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
 				}
 				else if (DeviceController.instance.isDeviceInLighthouse() == false
@@ -81,7 +81,7 @@ public class FloorInstructions : MonoBehaviour
 				else if (ScoreController.instance.getScore() == 0
 				         && TopLightController.instance.isEntered() == false)
 				{
-					GetComponentInChildren<TextMesh>().text = "High-five with all players to time-shift";
+					GetComponentInChildren<TextMesh>().text = "High-five with all players to time-shift.";
 					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
 				else
@@ -96,7 +96,7 @@ public class FloorInstructions : MonoBehaviour
 				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 			}
 		}
-		//level6
+		//level 6, 1st crane level
 		else if(LevelFinishedController.instance.getLevel() == 5)
 		{
 			if(CraneController.instance.isEntered() == true)
@@ -110,7 +110,7 @@ public class FloorInstructions : MonoBehaviour
 				arrowRight.transform.position = new Vector3(4, 0.5f, -13);
 			}
 		}
-		//level9
+		//level 9, 1st drone level
 		else if(LevelFinishedController.instance.getLevel() == 8)
 		{
 			if(DroneController.instance.isEntered() == true)
@@ -122,6 +122,22 @@ public class FloorInstructions : MonoBehaviour
 			{
 				GetComponentInChildren<TextMesh>().text = "Walk into             the Drone entrance";
 				arrowLeft.transform.position = new Vector3(-4, 0.5f, -13);
+			}
+		}	
+		//level 12, 1st jump box level
+		else if(LevelFinishedController.instance.getLevel() == 11)
+		{
+			if(JumpController.instance.GetBoxCollideCount() > 0 && ScoreController.instance.getScore() > 0)
+			{
+				GetComponentInChildren<TextMesh>().text = "Tap action-2 to pick up or drop items.";
+			}
+			else if(JumpController.instance.GetBoxCollideCount() <= 0 && ScoreController.instance.getScore() > 0 && TopLightController.instance.isEntered() == true)
+			{
+				GetComponentInChildren<TextMesh>().text = "Aim the light at your BFF and tap action-2 while they're on the Box.";
+			}
+			else if( ScoreController.instance.getScore() == 0)
+			{
+				GetComponentInChildren<TextMesh>().text = "Now choose your path wisely..!";
 			}
 		}	
 
@@ -157,6 +173,11 @@ public class FloorInstructions : MonoBehaviour
 		{
 			GetComponentInChildren<TextMesh>().text = "Walk into             the Drone entrance";
 			arrowLeft.transform.position = new Vector3(-4, 0.5f, -13);
+		}
+		//level12
+		else if (LevelFinishedController.instance.getLevel() == 11)
+		{
+			GetComponentInChildren<TextMesh>().text = "Go and pick up the Anti-Grav Box";
 		}
 
 	}
