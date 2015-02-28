@@ -25355,6 +25355,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1461774277}
+  - 114: {fileID: 1461774278}
   m_Layer: 0
   m_Name: Light_EnergyBar
   m_TagString: Untagged
@@ -25375,6 +25376,18 @@ Transform:
   - {fileID: 114963459}
   - {fileID: 1885268741}
   m_Father: {fileID: 1315711813}
+--- !u!114 &1461774278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1461774276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9604083ffd93874883871d57531dadb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001500000016000000170000001800000019000000
 --- !u!1 &1462004206
 GameObject:
   m_ObjectHideFlags: 0
@@ -33018,7 +33031,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043507661}
-  m_LocalRotation: {x: -.565562844, y: .510542572, z: .332734883, w: .555673122}
+  m_LocalRotation: {x: -.565562785, y: .510542512, z: .332734853, w: .555673063}
   m_LocalPosition: {x: -1.44359303, y: -17.7804337, z: -18.2103996}
   m_LocalScale: {x: 8.13866043, y: .100000009, z: 10}
   m_Children: []

@@ -163,7 +163,7 @@ namespace AssemblyCSharp
 			},4,3,7,7, null, "DroneBomb3"));
 
 			//21 lazer
-			levels2.Add(new Level(new MachineCreator(true, false, false, true, false, false),
+			levels2.Add(new Level(new MachineCreator(false, false, false, true, false, false),
 			                      32,new List<MonsterTemplate>{
 			},5,5,9,9, null, "Lazer"));
 			
@@ -347,7 +347,7 @@ namespace AssemblyCSharp
 			},3,3,7,7, null, "DroneBomb3"));
 
 			//21 lazer
-			levels3.Add(new Level(new MachineCreator(true, false, false, true, false, false),
+			levels3.Add(new Level(new MachineCreator(false, false, false, true, false, false),
 			                      32,new List<MonsterTemplate>{
 			},5,5,9,9, null, "Lazer"));
 			
@@ -540,7 +540,7 @@ namespace AssemblyCSharp
 			},3,2,7,7, null, "DroneBomb3"));
 
 			//21 lazer
-			levels4.Add(new Level(new MachineCreator(true, false, false, true, false, false),
+			levels4.Add(new Level(new MachineCreator(false, false, false, true, false, false),
 			                      32,new List<MonsterTemplate>{
 			},5,5,9,9, null, "Lazer"));
 			
