@@ -160,7 +160,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Standard", 11.0f),
 				new MonsterTemplate("Standard", 10.0f),
 				new MonsterTemplate("Standard", 9.0f)
-			},2,4,7,7, null, "DroneBomb3"));
+			},4,3,7,7, null, "DroneBomb3"));
 
 			//21 lazer
 			levels2.Add(new Level(new MachineCreator(true, false, false, true, false, false),
@@ -344,7 +344,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Standard", 10.0f),
 				new MonsterTemplate("Standard", 9.0f),
 				new MonsterTemplate("Standard", 8.0f)
-			},1,3,7,7, null, "DroneBomb3"));
+			},3,3,7,7, null, "DroneBomb3"));
 
 			//21 lazer
 			levels3.Add(new Level(new MachineCreator(true, false, false, true, false, false),
@@ -537,7 +537,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Standard", 10.0f),
 				new MonsterTemplate("Standard", 9.0f),
 				new MonsterTemplate("Standard", 8.0f)
-			},1,2,7,7, null, "DroneBomb3"));
+			},3,2,7,7, null, "DroneBomb3"));
 
 			//21 lazer
 			levels4.Add(new Level(new MachineCreator(true, false, false, true, false, false),
