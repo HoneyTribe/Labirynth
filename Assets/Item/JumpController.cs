@@ -40,7 +40,7 @@ public class JumpController : MonoBehaviour {
 				if(LevelFinishedController.instance.getLevel() == 11)
 				{
 				boxCollideCount++;
-				print ("boxCount: "+boxCollideCount);
+				//print ("boxCount: "+boxCollideCount);
 				FloorInstructions.instance.ChangeInstructions();
 				}
 
