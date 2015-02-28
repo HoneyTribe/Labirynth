@@ -125,7 +125,7 @@ namespace AssemblyCSharp
 			
 			//16 
 			levels2.Add(new Level(new MachineCreator(true, true, true, false, true, false),
-			                      52,new List<MonsterTemplate>{
+			                      51,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 4.5f),
 				new MonsterTemplate("Standard", 4.0f),
 				new MonsterTemplate("Flying", 3.5f)
@@ -307,7 +307,7 @@ namespace AssemblyCSharp
 			
 			//16
 			levels3.Add(new Level(new MachineCreator(true, true, true, false, true, false),
-			                      52,new List<MonsterTemplate>{
+			                      51,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 4.5f),
 				new MonsterTemplate("Flying", 3.5f),
 				new MonsterTemplate("Standard", 4.0f)
@@ -498,7 +498,7 @@ namespace AssemblyCSharp
 			
 			//16 
 			levels4.Add(new Level(new MachineCreator(true, true, true, false, true, false),
-			                      52,new List<MonsterTemplate>{
+			                      51,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 4.5f),
 				new MonsterTemplate("Flying", 3.5f),
 				new MonsterTemplate("Standard", 4.0f),

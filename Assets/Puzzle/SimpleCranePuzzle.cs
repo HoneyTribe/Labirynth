@@ -11,7 +11,7 @@ public class SimpleCranePuzzle : PuzzleTemplate
 	
 		extX = 2;
 		extZ = 4;
-		internalSize = sizeZ - 2; 
+		internalSize = sizeZ - 1; 
 		
 		templateSizeX = 7;
 		templateSizeZ = 7;
@@ -19,9 +19,9 @@ public class SimpleCranePuzzle : PuzzleTemplate
 		{
 			{0,2,5,2,5,2,5},
 			{0,0,0,0,0,0,2},
-			{5,0,5,0,5,0,5},
-			{2,0,0,0,0,0,2},
 			{4,0,5,0,5,0,5},
+			{2,0,0,0,0,0,2},
+			{5,0,5,0,5,0,5},
 			{2,0,2,0,2,0,2},
 			{5,0,5,0,5,0,5}						
 		};
