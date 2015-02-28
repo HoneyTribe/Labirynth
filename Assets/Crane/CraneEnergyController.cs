@@ -11,7 +11,8 @@ public class CraneEnergyController : MonoBehaviour {
 	private const float pickingUpCost = 0f; // constant cost of picking up - even if you failed
 	private const float restoreVelocity = 0.066f; // It needs 1/restoreVelocity seconds to regenerate (15 seconds).
 	private const float activationCost = 0.3f; 
-	private const float smashingCost = 0.99f; // Wall smashing takes 1/smashingCost seconds (1 second).
+	private const float smashingCost = 0.6f; // Wall smashing takes 1/smashingCost seconds (1 second).
+	private const float smashCost = 0.99f; // Percent energy needed to use wall smash.
 
 	private float energy = 1.0f;
 
@@ -119,9 +120,9 @@ public class CraneEnergyController : MonoBehaviour {
 		
 		if (LevelFinishedController.instance.isSmashingEnabled())
 		{
-			if (smashingCost > minCost)
+			if (smashCost > minCost)
 			{
-				minCost = smashingCost;
+				minCost = smashCost;
 			}
 		}
 		
