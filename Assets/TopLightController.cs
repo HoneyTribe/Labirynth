@@ -5,9 +5,10 @@ public class TopLightController : MonoBehaviour {
 
 	public static TopLightController instance;
 
+	private static int STEPS = 21;
+
 	private static float maxIntensity = 0.8f;
 
-	private static int progressBarSize = 100;
 	private static float attractionCost = 0.3f;
 	private static float restoreVelocity = 0.03125f; // It needs 1/restoreVelocity seconds to regenerate (32 seconds).
 
@@ -16,10 +17,7 @@ public class TopLightController : MonoBehaviour {
 	private float timeLeft = 0.0f;
 
 	private float param;
-	private GUIStyle borderStyle;
-	private GUIStyle outerStyle;
-	private GUIStyle energyStyle;
-	private GUIStyle lowEnergyStyle;
+	private float energyParam;
 	private float energy = 1.0f;
 
 	public GameObject laserPrefab;
@@ -29,60 +27,35 @@ public class TopLightController : MonoBehaviour {
 	private bool entered;
 	private ScoreController scoreController;
 
+	private int energyIndex = STEPS-1;
+	private Texture[] projectorTexturesBlue = new Texture[STEPS];
+	private Texture[] projectorTexturesRed  = new Texture[STEPS];
+	private Material projectorMaterial;
+	private Color newColor;
+
 	void Start()
 	{
 		instance = this;
 		ball = GameObject.Find ("SpaceMachine_Light");
 
-		borderStyle = new GUIStyle ();
-		Texture2D borderTexture = new Texture2D (1, 1);
-		borderTexture.SetPixel (0, 0, Color.white);
-		borderTexture.Apply ();
-		borderStyle.normal.background = borderTexture;
-
-		outerStyle = new GUIStyle ();
-		Texture2D outerTexture = new Texture2D (1, 1);
-		outerTexture.SetPixel (0, 0, Color.black);
-		outerTexture.Apply ();
-		outerStyle.normal.background = outerTexture;
-
-		energyStyle = new GUIStyle ();
-		Texture2D energyTexture = new Texture2D (1, 1);
-		energyTexture.SetPixel (0, 0, Color.blue);
-		energyTexture.Apply ();
-		energyStyle.normal.background = energyTexture;
-
-		lowEnergyStyle = new GUIStyle ();
-		Texture2D lowEnergyTexture = new Texture2D (1, 1);
-		lowEnergyTexture.SetPixel (0, 0, Color.red);
-		lowEnergyTexture.Apply ();
-		lowEnergyStyle.normal.background = lowEnergyTexture;
+		int step = 100/(STEPS-1);
+		projectorTexturesBlue[0] = (Texture2D) Resources.Load("EnergyBar/Light_EnergyBar/Gray/EnergyBar_light_gray", typeof(Texture2D));
+		projectorTexturesRed[0] = (Texture2D) Resources.Load("EnergyBar/Light_EnergyBar/Gray/EnergyBar_light_gray", typeof(Texture2D));
+		for (int i=1; i<STEPS; i++)
+		{
+			projectorTexturesBlue[i] = (Texture2D) Resources.Load("EnergyBar/Light_EnergyBar/Bleu/EnergyBar_light_bleu_" + i*step, typeof(Texture2D));
+			projectorTexturesRed[i] = (Texture2D) Resources.Load("EnergyBar/Light_EnergyBar/Red/EnergyBar_light_Red_" + i*step, typeof(Texture2D));
+		}
+		projectorMaterial = transform.GetChild (3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Projector> ().material;
+		projectorMaterial.SetTexture("_ShadowTex", projectorTexturesBlue [energyIndex]);
+		newColor = projectorMaterial.color;
+		newColor.a = 0.0f;
+		projectorMaterial.color = newColor;
 	}
 
 	public bool isEntered()
 	{
 		return entered;
-	}
-
-	void OnGUI()
-	{
-		if(entered == true)
-		{
-			GUI.BeginGroup(new Rect (Screen.width / 2 - progressBarSize / 2, Screen.height - 20, progressBarSize, 10));
-			GUI.depth = 2;
-			GUI.Box (new Rect (0, 0, progressBarSize, 10), "", borderStyle);
-			GUI.Box (new Rect (1, 1, progressBarSize - 2, 8), "", outerStyle);
-			if (energy >= attractionCost)
-			{
-				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", energyStyle);
-			}
-			else
-			{
-				GUI.Box (new Rect (1, 1, energy * (progressBarSize - 2), 8), "", lowEnergyStyle);
-			}
-			GUI.EndGroup();
-		}
-		
 	}
 
 	void Update()
@@ -92,8 +65,12 @@ public class TopLightController : MonoBehaviour {
 		if (timeLeft > 0)
 		{
 			float lightStep = param * Time.deltaTime;
-
 			light.intensity += lightStep;
+
+			float energyStep = energyParam * Time.deltaTime;
+			newColor.a += energyStep;
+			projectorMaterial.color = newColor;
+
 			timeLeft -= Time.deltaTime;
 		}
 		else
@@ -102,6 +79,11 @@ public class TopLightController : MonoBehaviour {
 			{
 				light.intensity = 0;
 			}
+			if (energyParam < 0)
+			{
+				newColor.a = 0;
+				projectorMaterial.color = newColor;
+			}
 		}
 	}
 	
@@ -109,6 +91,7 @@ public class TopLightController : MonoBehaviour {
 	{
 		entered = true;
 		param = maxIntensity / openningInterval;
+		energyParam = 1 / openningInterval;
 		timeLeft = openningInterval;
 		TopLightEnergy.instance.ChangePos();
 
@@ -124,6 +107,7 @@ public class TopLightController : MonoBehaviour {
 	{
 		entered = false;
 		param = - maxIntensity / closingInterval;
+		energyParam = - 1 / closingInterval;
 		timeLeft = closingInterval;
 		TopLightEnergy.instance.ChangePos();
 
@@ -145,6 +129,28 @@ public class TopLightController : MonoBehaviour {
 		{
 			energy = 0.0f;
 		}
+		if ((int) (energy * (STEPS-1)) != energyIndex)
+		{
+			energyIndex = (int) (energy * (STEPS-1));
+			if (energy > getMinCost())
+			{
+				projectorMaterial.SetTexture("_ShadowTex", projectorTexturesBlue [energyIndex]);
+			}
+			else
+			{
+				projectorMaterial.SetTexture("_ShadowTex", projectorTexturesRed [energyIndex]);
+			}
+		}
+	}
+
+	private float getMinCost()
+	{
+		float minCost = 0f;
+		if (LevelFinishedController.instance.isDistractionEnabled())
+		{
+			minCost = attractionCost;
+		}
+		return minCost;
 	}
 
 	public void AttractMonster()

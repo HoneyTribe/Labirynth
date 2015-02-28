@@ -5,7 +5,7 @@ public class DronePowerController : MonoBehaviour {
 
 	public static DronePowerController instance;
 
-	private static int STEPS = 11;
+	private static int STEPS = 21;
 
 	private const float settingUpCost = 0.30f; // constant cost of setting up a portal
 	private const float usingStunGunCost = 0.20f; // constant cost of using stun gun
@@ -14,19 +14,23 @@ public class DronePowerController : MonoBehaviour {
 	private float energy = 1f;
 
 	private int energyIndex = STEPS-1;
-	private Texture[] projectorTextures = new Texture[STEPS];
+	private Texture[] projectorTexturesBlue = new Texture[STEPS];
+	private Texture[] projectorTexturesRed  = new Texture[STEPS];
 	private Material projectorMaterial;
 
 	void Start()
 	{
 		instance = this;
 		int step = 100/(STEPS-1);
-		for (int i=0; i<STEPS; i++)
+		projectorTexturesBlue[0] = (Texture2D) Resources.Load("EnergyBar/Gray/Energy_Bar_target_gray", typeof(Texture2D));
+		projectorTexturesRed[0] = (Texture2D) Resources.Load("EnergyBar/Gray/Energy_Bar_target_gray", typeof(Texture2D));
+		for (int i=1; i<STEPS; i++)
 		{
-			projectorTextures[i] = (Texture2D) Resources.Load("EnergyBar/EnergyBar_target_" + i*step, typeof(Texture2D));
+			projectorTexturesBlue[i] = (Texture2D) Resources.Load("EnergyBar/Bleu/Energy_Bar_target_bleu_" + i*step, typeof(Texture2D));
+			projectorTexturesRed[i] = (Texture2D) Resources.Load("EnergyBar/Red/Energy_Bar_target_red_" + i*step, typeof(Texture2D));
 		}
 		projectorMaterial = transform.GetChild (1).gameObject.transform.GetChild(0).gameObject.GetComponent<Projector> ().material;
-		projectorMaterial.SetTexture("_ShadowTex", projectorTextures [energyIndex]);
+		projectorMaterial.SetTexture("_ShadowTex", projectorTexturesBlue [energyIndex]);
 	}
 
 	void Update()
@@ -65,16 +69,23 @@ public class DronePowerController : MonoBehaviour {
 		{
 			energy = 0.0f;
 		}
-		if ((int) (energy * 100/(STEPS-1)) != energyIndex)
+		if ((int) (energy * (STEPS-1)) != energyIndex)
 		{
-			energyIndex = (int) (energy * 100/(STEPS-1));
-			projectorMaterial.SetTexture("_ShadowTex", projectorTextures [energyIndex]);
+			energyIndex = (int) (energy * (STEPS-1));
+			if (energy > getMinCost())
+			{
+				projectorMaterial.SetTexture("_ShadowTex", projectorTexturesBlue [energyIndex]);
+			}
+			else
+			{
+				projectorMaterial.SetTexture("_ShadowTex", projectorTexturesRed [energyIndex]);
+			}
 		}
 	}
 
 	private float getMinCost()
 	{
-		float minCost = 1f;
+		float minCost = 0f;
 		if (LevelFinishedController.instance.isTeleportEnabled())
 		{
 			minCost = settingUpCost;
@@ -82,7 +93,7 @@ public class DronePowerController : MonoBehaviour {
 		
 		if (LevelFinishedController.instance.isStunGunEnabled())
 		{
-			if (minCost > usingStunGunCost)
+			if (usingStunGunCost > minCost)
 			{
 				minCost = usingStunGunCost;
 			}
