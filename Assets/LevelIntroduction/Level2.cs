@@ -15,7 +15,7 @@ public class Level2 : LevelSetup {
 		actions.Add(new MoveCameraAction("Player2"));
 		actions.Add(new TextAction(4, "Any maze-runner can move the Decoy."));
 		actions.Add(new MoveCameraAction("Player1"));
-		actions.Add(new TextAction(4, "The light-controller can zap beings to send them to the Decoy."));
+		actions.Add(new TextAction(4, "The light-controller can zap organisms to send them to the Decoy."));
 
 		return actions;
 	}

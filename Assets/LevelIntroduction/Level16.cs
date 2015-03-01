@@ -7,8 +7,9 @@ public class Level16 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 
+		actions.Add (new ChangeCamAction());
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "Keep collecting that energy. We need it to time-shift back home."));
+		actions.Add(new TextAction(4, "Keep collecting the energy. You need it to refuel and time-shift back home."));
 		
 		return actions;
 	}

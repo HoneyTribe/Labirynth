@@ -75,7 +75,7 @@ public class FloorInstructions : MonoBehaviour
 				else if (DeviceController.instance.isDeviceInLighthouse() == false
 				         && TopLightController.instance.isEntered() == true)
 				{
-					GetComponentInChildren<TextMesh>().text = "Aim the light at monsters and tap action-1. Zap to distract.";
+					GetComponentInChildren<TextMesh>().text = "Aim the light at dangerous things and tap action-1. Zap to distract.";
 					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
 				else if (ScoreController.instance.getScore() == 0

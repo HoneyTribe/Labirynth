@@ -10,7 +10,7 @@ public class Level5 : LevelSetup {
 		actions.Add (new ChangeCamAction());
 		actions.Add(new CreateMonsterAction("Flying"));
 		actions.Add(new MoveCameraAction("Monster"));
-		actions.Add(new TextAction(4, "Ghosts can float through walls!"));
+		actions.Add(new TextAction(4, "A ghost?! How is this possible..?"));
 
 		return actions;
 	}
