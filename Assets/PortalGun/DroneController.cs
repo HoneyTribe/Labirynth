@@ -11,6 +11,7 @@ public class DroneController : MonoBehaviour {
 	public GameObject portalPrefab;
 	public GameObject stunGunPrefab;
 
+	private GameObject droneLight;
 	private Vector3 originalPosition;
 	private bool retracting;
 
@@ -23,6 +24,7 @@ public class DroneController : MonoBehaviour {
 	{
 		originalPosition = transform.position;
 		instance = this;
+		droneLight = GameObject.Find ("targetLight");
 	}
 
 	void Update()
@@ -78,6 +80,7 @@ public class DroneController : MonoBehaviour {
 	public void TurnOn ()
 	{
 		entered = true;
+		droneLight.SendMessage ("TurnOn");
 		retracting = false;
 
 		if( LevelFinishedController.instance.getLevel() == 8)
@@ -89,6 +92,7 @@ public class DroneController : MonoBehaviour {
 	public void TurnOff()
 	{
 		entered = false;
+		droneLight.SendMessage ("TurnOff");
 		rigidbody.drag = 0;
 		retracting = true;
 
