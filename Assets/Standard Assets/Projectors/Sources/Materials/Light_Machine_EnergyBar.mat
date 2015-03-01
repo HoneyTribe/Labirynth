@@ -31,7 +31,7 @@ Material:
         first:
           name: _ShadowTex
         second:
-          m_Texture: {fileID: 2800000, guid: 2cabd9c393c5e6846a93ce447847f4e1, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 0, y: 0}
           m_Offset: {x: 0, y: 0}
       data:
@@ -46,7 +46,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .516356885, g: .516356885, b: .516356885, a: 0}
+        second: {r: .516368091, g: .516368091, b: .516368091, a: 1.01912808}
       data:
         first:
           name: _Emission
