@@ -11008,6 +11008,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 624564559}
+  - 123: {fileID: 624564560}
   m_Layer: 20
   m_Name: Flame
   m_TagString: Untagged
@@ -11030,6 +11031,21 @@ Transform:
   - {fileID: 1984985319}
   - {fileID: 1655515513}
   m_Father: {fileID: 2068684557}
+--- !u!123 &624564560
+LensFlare:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 624564558}
+  m_Enabled: 1
+  m_Flare: {fileID: 12100000, guid: f5b5241a51c3658429f3cae3a57dae58, type: 2}
+  m_Color: {r: .492647052, g: .44098407, b: .152141005, a: 0}
+  m_Brightness: .75
+  m_FadeSpeed: 1.74000001
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 6
+  m_Directional: 0
 --- !u!1 &627753339
 GameObject:
   m_ObjectHideFlags: 0
@@ -24063,6 +24079,7 @@ GameObject:
   - 33: {fileID: 1370328762}
   - 23: {fileID: 1370328761}
   - 95: {fileID: 1370328760}
+  - 123: {fileID: 1370328764}
   m_Layer: 18
   m_Name: SpaceMachine_Light
   m_TagString: Untagged
@@ -24127,6 +24144,21 @@ Transform:
   m_Children:
   - {fileID: 201357279}
   m_Father: {fileID: 1152225370}
+--- !u!123 &1370328764
+LensFlare:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1370328759}
+  m_Enabled: 1
+  m_Flare: {fileID: 12100000, guid: f5b5241a51c3658429f3cae3a57dae58, type: 2}
+  m_Color: {r: .316176474, g: .275259525, b: .0464965478, a: 0}
+  m_Brightness: 1.66999996
+  m_FadeSpeed: 2.94000006
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 6
+  m_Directional: 0
 --- !u!1 &1372181620
 GameObject:
   m_ObjectHideFlags: 0
@@ -24667,6 +24699,48 @@ Projector:
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 4294962687
+--- !u!1 &1413672832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1413672834}
+  - 123: {fileID: 1413672833}
+  m_Layer: 0
+  m_Name: Lens
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!123 &1413672833
+LensFlare:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1413672832}
+  m_Enabled: 1
+  m_Flare: {fileID: 12100000, guid: 563c4d86ee2e1bc43974631aa1e45110, type: 2}
+  m_Color: {r: .476252735, g: .106779836, b: .580882311, a: 0}
+  m_Brightness: 1
+  m_FadeSpeed: 2.68000007
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 6
+  m_Directional: 0
+--- !u!4 &1413672834
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1413672832}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -29.7240353, y: 2.61185455, z: -17.9890785}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1413684545
 GameObject:
   m_ObjectHideFlags: 0
@@ -29468,6 +29542,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1701271293}
+  - 123: {fileID: 1701271294}
   m_Layer: 20
   m_Name: Flame
   m_TagString: Untagged
@@ -29490,6 +29565,21 @@ Transform:
   - {fileID: 805079280}
   - {fileID: 364378883}
   m_Father: {fileID: 2068684557}
+--- !u!123 &1701271294
+LensFlare:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1701271292}
+  m_Enabled: 1
+  m_Flare: {fileID: 12100000, guid: f5b5241a51c3658429f3cae3a57dae58, type: 2}
+  m_Color: {r: .492647052, g: .44098407, b: .152141005, a: 0}
+  m_Brightness: .75
+  m_FadeSpeed: 1.74000001
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 6
+  m_Directional: 0
 --- !u!1001 &1707056701
 Prefab:
   m_ObjectHideFlags: 0
@@ -34768,6 +34858,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2137566519}
+  - 123: {fileID: 2137566520}
   m_Layer: 20
   m_Name: Flame
   m_TagString: Untagged
@@ -34790,6 +34881,21 @@ Transform:
   - {fileID: 125153034}
   - {fileID: 311709575}
   m_Father: {fileID: 2068684557}
+--- !u!123 &2137566520
+LensFlare:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2137566518}
+  m_Enabled: 1
+  m_Flare: {fileID: 12100000, guid: f5b5241a51c3658429f3cae3a57dae58, type: 2}
+  m_Color: {r: .492647052, g: .44098407, b: .152141005, a: 0}
+  m_Brightness: .75
+  m_FadeSpeed: 1.74000001
+  m_IgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 6
+  m_Directional: 0
 --- !u!1 &2139729605
 GameObject:
   m_ObjectHideFlags: 0
