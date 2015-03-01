@@ -5,6 +5,8 @@ public class DronePowerController : MonoBehaviour {
 
 	public static DronePowerController instance;
 
+	public Material projectorMaterial;
+
 	private static int STEPS = 21;
 
 	private const float settingUpCost = 0.30f; // constant cost of setting up a portal
@@ -16,7 +18,6 @@ public class DronePowerController : MonoBehaviour {
 	private int energyIndex = STEPS-1;
 	private Texture[] projectorTexturesBlue = new Texture[STEPS];
 	private Texture[] projectorTexturesRed  = new Texture[STEPS];
-	private Material projectorMaterial;
 
 	void Start()
 	{
@@ -29,7 +30,6 @@ public class DronePowerController : MonoBehaviour {
 			projectorTexturesBlue[i] = (Texture2D) Resources.Load("EnergyBar/Bleu/Energy_Bar_target_bleu_" + i*step, typeof(Texture2D));
 			projectorTexturesRed[i] = (Texture2D) Resources.Load("EnergyBar/Red/Energy_Bar_target_red_" + i*step, typeof(Texture2D));
 		}
-		projectorMaterial = transform.GetChild (1).gameObject.transform.GetChild(0).gameObject.GetComponent<Projector> ().material;
 		projectorMaterial.SetTexture("_ShadowTex", projectorTexturesBlue [energyIndex]);
 	}
 

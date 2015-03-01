@@ -7,17 +7,32 @@ public class CraneLightController : MonoBehaviour {
 
 	public float openningInterval = 1.0f;
 	public float closingInterval = 0.5f;
+	public Material projectorMaterial;
 	private float timeLeft = 0.0f;
 
 	private float param;
+	private float energyParam;
+
+	private Color newColor;
+
+	void Start()
+	{
+		newColor = projectorMaterial.color;
+		newColor.a = 0.0f;
+		projectorMaterial.color = newColor;
+	}
 
 	void Update()
 	{
 		if (timeLeft > 0)
 		{
 			float lightStep = param * Time.deltaTime;
-
 			light.intensity += lightStep;
+
+			float energyStep = energyParam * Time.deltaTime;
+			newColor.a += energyStep;
+			projectorMaterial.color = newColor;
+
 			timeLeft -= Time.deltaTime;
 		}
 		else
@@ -26,18 +41,25 @@ public class CraneLightController : MonoBehaviour {
 			{
 				light.intensity = 0;
 			}
+			if (energyParam < 0)
+			{
+				newColor.a = 0;
+				projectorMaterial.color = newColor;
+			}
 		}
 	}
 	
 	void TurnOn ()
 	{
 		param = maxIntensity / openningInterval;
+		energyParam = 1 / openningInterval;
 		timeLeft = openningInterval;
 	}
 
 	void TurnOff ()
 	{
 		param = - maxIntensity / closingInterval;
+		energyParam = - 1 / closingInterval;
 		timeLeft = closingInterval;
 	}
 }

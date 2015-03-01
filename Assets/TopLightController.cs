@@ -14,6 +14,7 @@ public class TopLightController : MonoBehaviour {
 
 	public float openningInterval = 1.0f;
 	public float closingInterval = 0.5f;
+	public Material projectorMaterial;
 	private float timeLeft = 0.0f;
 
 	private float param;
@@ -30,7 +31,6 @@ public class TopLightController : MonoBehaviour {
 	private int energyIndex = STEPS-1;
 	private Texture[] projectorTexturesBlue = new Texture[STEPS];
 	private Texture[] projectorTexturesRed  = new Texture[STEPS];
-	private Material projectorMaterial;
 	private Color newColor;
 
 	void Start()
@@ -46,7 +46,6 @@ public class TopLightController : MonoBehaviour {
 			projectorTexturesBlue[i] = (Texture2D) Resources.Load("EnergyBar/Light_EnergyBar/Bleu/EnergyBar_light_bleu_" + i*step, typeof(Texture2D));
 			projectorTexturesRed[i] = (Texture2D) Resources.Load("EnergyBar/Light_EnergyBar/Red/EnergyBar_light_Red_" + i*step, typeof(Texture2D));
 		}
-		projectorMaterial = transform.GetChild (3).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.GetComponent<Projector> ().material;
 		projectorMaterial.SetTexture("_ShadowTex", projectorTexturesBlue [energyIndex]);
 		newColor = projectorMaterial.color;
 		newColor.a = 0.0f;

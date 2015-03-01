@@ -5,6 +5,8 @@ public class CraneEnergyController : MonoBehaviour {
 
 	public static CraneEnergyController instance;
 
+	public Material projectorMaterial;
+
 	private static int STEPS = 21;
 
 	private const float holdingCost = 0.2f; // You can hold for 1/holdingCost seconds (5 seconds).
@@ -22,7 +24,6 @@ public class CraneEnergyController : MonoBehaviour {
 	private int energyIndex = STEPS-1;
 	private Texture[] projectorTexturesBlue = new Texture[STEPS];
 	private Texture[] projectorTexturesRed  = new Texture[STEPS];
-	private Material projectorMaterial;
 
 	void Start()
 	{
@@ -35,7 +36,6 @@ public class CraneEnergyController : MonoBehaviour {
 			projectorTexturesBlue[i] = (Texture2D) Resources.Load("EnergyBar/Bleu/Energy_Bar_target_bleu_" + i*step, typeof(Texture2D));
 			projectorTexturesRed[i] = (Texture2D) Resources.Load("EnergyBar/Red/Energy_Bar_target_red_" + i*step, typeof(Texture2D));
 		}
-		projectorMaterial = transform.GetChild (2).gameObject.transform.GetChild(0).gameObject.GetComponent<Projector> ().material;
 		projectorMaterial.SetTexture("_ShadowTex", projectorTexturesBlue [energyIndex]);
 	}
 
