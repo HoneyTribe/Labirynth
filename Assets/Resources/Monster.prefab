@@ -148,7 +148,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400018}
   - 95: {fileID: 9500004}
-  m_Layer: 17
+  m_Layer: 31
   m_Name: TargetMonster_Layer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
