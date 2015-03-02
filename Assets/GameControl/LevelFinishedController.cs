@@ -52,7 +52,7 @@ public class LevelFinishedController : MonoBehaviour {
 				PlayerPrefs.SetInt("Savedbootups", bootups);
 				PlayerPrefs.Save();
 				//send to analytics
-				GA.API.Design.NewEvent("Bootups");
+				GA.API.Design.NewEvent("Bootups", 1);
 			}
 			else
 			{
@@ -60,7 +60,7 @@ public class LevelFinishedController : MonoBehaviour {
 				PlayerPrefs.SetInt("Savedbootups", bootups);
 				PlayerPrefs.Save();
 				//send to analytics
-				GA.API.Design.NewEvent("Bootups");
+				GA.API.Design.NewEvent("Bootups",1);
 			}
 		}
 
@@ -163,12 +163,12 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		levCount++;
 		PlayerPrefs.SetInt("savedLevCount", levCount);
-		GA.API.Design.NewEvent("totalLevelsPlayed");
+		GA.API.Design.NewEvent("totalLevelsPlayed", 1);
 		//print("levCount" + levCount);
 
 		//send levelCounter to analytics
 		levelsCounter[level]++;
-		GA.API.Design.NewEvent("levelsCounter" + level);
+		GA.API.Design.NewEvent("levelsCounter" + level, 1);
 		//save levelCouner to disk
 		PlayerPrefs.SetInt("savedLevelsCounter"+level, levelsCounter[level]);
 		PlayerPrefs.Save();
