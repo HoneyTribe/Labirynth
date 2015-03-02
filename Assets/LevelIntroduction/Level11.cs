@@ -12,7 +12,7 @@ public class Level11 : LevelSetup {
 		actions.Add(new MoveCameraAction("Lighthouse"));
 		actions.Add(new TextAction(4, "I still don't know what caused the crash to Earth-space-time."));
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "I'll let you know if analyis reveals any information."));
+		actions.Add(new TextAction(4, "I'll let you know if analysis reveals any information."));
 		
 		return actions;
 	}
