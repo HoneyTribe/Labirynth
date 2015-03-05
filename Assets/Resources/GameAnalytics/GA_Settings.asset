@@ -36,10 +36,10 @@ MonoBehaviour:
   EmailOptIn: 0
   EmailGA: shaz@honeytribestudios.com
   IntroScreen: 0
-  DebugMode: 1
+  DebugMode: 0
   DebugAddEvent: 0
   SendExampleGameDataToMyGame: 0
-  RunInEditorPlayMode: 1
+  RunInEditorPlayMode: 0
   UseBundleVersion: 0
   AllowRoaming: 1
   ArchiveData: 1
@@ -66,7 +66,7 @@ MonoBehaviour:
   IAD_position: {x: 0, y: 0}
   IAD_Duration: 10
   CB_foldout: 1
-  CurrentInspectorState: 3
+  CurrentInspectorState: 2
   ClosedHints: 
   DisplayHints: 0
   DisplayHintsScrollState: {x: 0, y: 0}

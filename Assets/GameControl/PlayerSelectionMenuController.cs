@@ -10,8 +10,8 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	private string url = "http://www.honeytribestudios.com/games1/BFF/bffVersion.txt";
 	private string versionRead;
 	private int randomNum = 1;
-	private int levForYoutubers = 7;
-	private int levForComment = 10;
+	private int levForYoutubers = 10;
+	private int levForComment = 16;
 
 	private static int playersPerRow = 2;
 	public GUISkin skin;
