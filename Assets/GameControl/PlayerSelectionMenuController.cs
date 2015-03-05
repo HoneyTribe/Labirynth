@@ -260,12 +260,12 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 					if (isAnyCursorOn(PlayerSelectionState.YOUTUBE))
 					{
 					GUI.Button (new Rect (Screen.width/2 - (400/2), (Screen.height - height)/2 + height * 0.66f - (textHeight/2) + textHeight, 400, textHeight),
-					"Make a BFF or Die video and tell us!", selectedSkin.button);
+					"...and we'll link to your video!", selectedSkin.button);
 					}
 					else
 					{
-					GUI.Button (new Rect (Screen.width/2 - (280/2), (Screen.height - height)/2 + height * 0.66f - (textHeight/2) + textHeight, 280, textHeight),
-					 "Watch BFF or Die on Youtube",skin.button);
+					GUI.Button (new Rect (Screen.width/2 - (380/2), (Screen.height - height)/2 + height * 0.66f - (textHeight/2) + textHeight, 380, textHeight),
+					 "Make a good BFF or Die video and tell us...",skin.button);
 					}
 
 					// beat level 7
