@@ -25,13 +25,13 @@ public class PlayerFusionController : MonoBehaviour {
 
 		if (numberOfPlayers == 3) 
 		{
-			if ((id == 1) || (id == 2))
+			if ((id == 2) || (id == 3))
 			{
 				puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab" + id);
 			}
 			else
 			{
-				puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab_2and3");
+				puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab_1and4");
 			}
 		}
 
