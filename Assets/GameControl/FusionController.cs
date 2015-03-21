@@ -27,14 +27,16 @@ public class FusionController : MonoBehaviour {
 			foreach (GameObject player in players)
 			{
 				float distance = Vector3.Distance(players[0].transform.localPosition, player.transform.localPosition);
-				if (distance < closeDistance)
+				if ((finished) && (distance < closeDistance))
 				{
-					RaycastHit hit;
-					Vector3 direction = (players[0].transform.position - player.transform.position); 
-					if (Physics.SphereCast(player.transform.position, 1f, direction, out hit, distance))
+					Vector3 direction = (players[0].transform.position - player.transform.position);
+					foreach (RaycastHit hit in Physics.RaycastAll(player.transform.position, direction, distance))
 					{
-						finished = false;
-						break;
+						if (hit.collider.tag != "Player")
+						{
+							finished = false;
+							break;
+						}
 					}
 				}
 				else 
