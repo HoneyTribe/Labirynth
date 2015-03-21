@@ -26,7 +26,7 @@ public class JumpController : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider currentCollider)
 	{
-		if ((currentCollider.tag == "Monster") || (currentCollider.tag  == "Player"))
+		if ((!taken) && ((currentCollider.tag == "Monster") || (currentCollider.tag  == "Player")))
 		{
 			if (!closeObjects.Contains(currentCollider.gameObject))
 			{
@@ -55,7 +55,7 @@ public class JumpController : MonoBehaviour {
 
 	public void OnTriggerExit (Collider currentCollider)
 	{
-		if ((currentCollider.name.Contains("Monster")) || (currentCollider.name.Contains("Player")))
+		if ((!taken) && ((currentCollider.name.Contains("Monster")) || (currentCollider.name.Contains("Player"))))
 		{
 			closeObjects.Remove (currentCollider.gameObject);
 			if (closeObjects.Count == 0)
