@@ -42,8 +42,8 @@ namespace AssemblyCSharp
 			//4 monster door
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			      3,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 3.8f),
-				new MonsterTemplate("Standard", 3.3f)
+				new MonsterTemplate("Standard", 4.5f),
+				new MonsterTemplate("Standard", 4.0f)
 			},4,4,7,7, null, null));
 			
 			//5 ghost
@@ -61,8 +61,8 @@ namespace AssemblyCSharp
 			//7
 			levels2.Add(new Level(new MachineCreator(true, false, true, false, false, false),
 			    12,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 3.5f),
-				new MonsterTemplate("Standard", 4.0f)
+				new MonsterTemplate("Standard", 4.0f),
+				new MonsterTemplate("Standard", 4.5f)
 			},5,25,8,8, "EnableNoWallsEnding", "Decoy2"));
 			
 			//8 no walls
@@ -157,9 +157,9 @@ namespace AssemblyCSharp
 			//20 bomb 3
 			levels2.Add(new Level(new MachineCreator(false, false, false, false, false, true),
 			                      34,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 11.0f),
-				new MonsterTemplate("Standard", 10.0f),
-				new MonsterTemplate("Standard", 9.0f)
+				new MonsterTemplate("Standard", 10.5f),
+				new MonsterTemplate("Standard", 9.5f),
+				new MonsterTemplate("Standard", 10.0f)
 			},4,3,7,7, null, "DroneBomb3"));
 
 			//21 lazer
@@ -215,9 +215,9 @@ namespace AssemblyCSharp
 			//4 monster door
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			                      4,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 3.5f),
-				new MonsterTemplate("Standard", 3.8f),
-				new MonsterTemplate("Standard", 3.2f)
+				new MonsterTemplate("Standard", 4.0f),
+				new MonsterTemplate("Standard", 4.5f),
+				new MonsterTemplate("Standard", 3.5f)
 			},4,4,7,7, null, null));
 			
 			//5 ghost
@@ -236,9 +236,9 @@ namespace AssemblyCSharp
 			//7
 			levels3.Add(new Level(new MachineCreator(true, false, true, false, false, false),
 			                      12,new List<MonsterTemplate>{
+				new MonsterTemplate("Standard", 4.5f),
 				new MonsterTemplate("Standard", 4.0f),
-				new MonsterTemplate("Standard", 3.5f),
-				new MonsterTemplate("Standard", 4.5f)
+				new MonsterTemplate("Standard", 5.0f)
 			},5,7,8,8, "EnableNoWallsEnding", "Decoy2"));
 			
 			//8 no walls
@@ -340,10 +340,10 @@ namespace AssemblyCSharp
 			//20 bomb 3 - chase
 			levels3.Add(new Level(new MachineCreator(false, false, false, false, false, true),
 			                      34,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 11.0f),
-				new MonsterTemplate("Standard", 10.0f),
-				new MonsterTemplate("Standard", 9.0f),
-				new MonsterTemplate("Standard", 8.0f)
+				new MonsterTemplate("Standard", 10.5f),
+				new MonsterTemplate("Standard", 9.5f),
+				new MonsterTemplate("Standard", 8.5f),
+				new MonsterTemplate("Standard", 7.5f)
 			},3,3,7,7, null, "DroneBomb3"));
 
 			//21 lazer
@@ -400,10 +400,10 @@ namespace AssemblyCSharp
 			//4 monster door
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			                      5,new List<MonsterTemplate>{
+				new MonsterTemplate("Standard", 4.5f),
+				new MonsterTemplate("Standard", 4.0f),
 				new MonsterTemplate("Standard", 3.5f),
-				new MonsterTemplate("Standard", 3.8f),
-				new MonsterTemplate("Standard", 3.2f),
-				new MonsterTemplate("Standard", 4.0f)
+				new MonsterTemplate("Standard", 5.0f)
 			},4,4,7,7, null, null));
 			
 			//5 ghost
@@ -422,10 +422,10 @@ namespace AssemblyCSharp
 			//7
 			levels4.Add(new Level(new MachineCreator(true, false, true, false, false, false),
 			                      12,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 4.0f),
-				new MonsterTemplate("Standard", 3.5f),
 				new MonsterTemplate("Standard", 4.5f),
-				new MonsterTemplate("Standard", 3.0f)
+				new MonsterTemplate("Standard", 4.0f),
+				new MonsterTemplate("Standard", 5.0f),
+				new MonsterTemplate("Standard", 3.5f)
 			},5,6,8,8, "EnableNoWallsEnding", "Decoy2"));
 			
 			//8 no walls
@@ -533,10 +533,10 @@ namespace AssemblyCSharp
 			//20 bomb 3 - chase
 			levels4.Add(new Level(new MachineCreator(false, false, false, false, false, true),
 			                      34,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 11.0f),
-				new MonsterTemplate("Standard", 10.0f),
-				new MonsterTemplate("Standard", 9.0f),
-				new MonsterTemplate("Standard", 8.0f)
+				new MonsterTemplate("Standard", 10.5f),
+				new MonsterTemplate("Standard", 9.5f),
+				new MonsterTemplate("Standard", 8.5f),
+				new MonsterTemplate("Standard", 7.5f)
 			},3,2,7,7, null, "DroneBomb3"));
 
 			//21 lazer
