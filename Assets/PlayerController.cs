@@ -186,7 +186,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 					inventory.getInventoryItem().transform.rotation = Quaternion.Euler(0,0,0);
 					inventory.getInventoryItem().transform.parent = null;
 					inventory.getInventoryItem().rigidbody.isKinematic = false;
-					inventory.getInventoryItem().SendMessage("OnTriggerEnter", collider);
+					inventory.getInventoryItem().SendMessage("Leave");
 					inventory.setAvailableItem(inventory.getInventoryItem());
 					inventory.clearInventory();
 					AudioController.instance.Play("006_Drop");

@@ -8,35 +8,35 @@ public class JumpController : MonoBehaviour {
 
 	private List<GameObject> closeObjects = new List<GameObject>();
 
-	private TextMesh textMesh;
 	private bool taken;
 	private int boxCollideCount = 0; // reset in PlayerController
 
 	void Start()
 	{
 		instance = this;
-		textMesh = gameObject.GetComponentInChildren<TextMesh> ();
 	}
 
 	public void Take()
 	{
 		taken = true;
-		textMesh.text = "";
+	}
+
+	public void Leave()
+	{
+		taken = false;
 	}
 
 	public void OnTriggerEnter(Collider currentCollider)
 	{
-		if ((!taken) && ((currentCollider.tag == "Monster") || (currentCollider.tag  == "Player")))
+		if ((currentCollider.tag == "Monster") || (currentCollider.tag  == "Player"))
 		{
 			if (!closeObjects.Contains(currentCollider.gameObject))
 			{
 				closeObjects.Add (currentCollider.gameObject);
 			}
 
-			taken = false;
 			if (currentCollider.name.Contains("Player"))
 			{
-				//textMesh.text = "TAKE ME!";
 				if(LevelFinishedController.instance.getLevel() == 11)
 				{
 				boxCollideCount++;
@@ -46,22 +46,14 @@ public class JumpController : MonoBehaviour {
 
 
 			}
-			else
-			{
-				textMesh.text = "";
-			}
 		}
 	}
 
 	public void OnTriggerExit (Collider currentCollider)
 	{
-		if ((!taken) && ((currentCollider.name.Contains("Monster")) || (currentCollider.name.Contains("Player"))))
+		if ((currentCollider.name.Contains("Monster")) || (currentCollider.name.Contains("Player")))
 		{
 			closeObjects.Remove (currentCollider.gameObject);
-			if (closeObjects.Count == 0)
-			{
-				textMesh.text = "";
-			}
 		}
 	}
 
