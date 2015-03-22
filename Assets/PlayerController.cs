@@ -214,19 +214,32 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	{
 		if (paralysed)
 		{
-			foreach (GameObject player in players)
+			bool monsterAround = false;
+			GameObject[] monsters = GameObject.FindGameObjectsWithTag ("Monster");
+			foreach (GameObject monster in monsters)
 			{
-				if (Vector3.Distance(transform.localPosition, player.transform.localPosition) < closeDistance)
+				if (Vector3.Distance(transform.position, monster.transform.position) < closeDistance)
 				{
-					if (Time.time - timeFromLastRevive > timeBetweenRevivals)
+					monsterAround = true;
+					break;
+				}
+			}
+			if (!monsterAround)
+			{
+				foreach (GameObject player in players)
+				{
+					if (Vector3.Distance(transform.localPosition, player.transform.localPosition) < closeDistance)
 					{
-						gameController.SendMessage("PlayerReviwed");
-						transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color = originalColor;
-						collider.isTrigger = false;
-						paralysed = false;
-						AudioController.instance.Play("032_ReviveB");
-						timeFromLastRevive = Time.time;
-						break;
+						if (Time.time - timeFromLastRevive > timeBetweenRevivals)
+						{
+							gameController.SendMessage("PlayerReviwed");
+							transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color = originalColor;
+							collider.isTrigger = false;
+							paralysed = false;
+							AudioController.instance.Play("032_ReviveB");
+							timeFromLastRevive = Time.time;
+							break;
+						}
 					}
 				}
 			}
@@ -281,9 +294,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				AudioController.instance.Play("011_LightOn");
 			}
 		}
-		if((collision.collider.name == "Monster(Clone)") ||
- 		   (collision.collider.name == "FlyingMonster(Clone)") ||
-		   (collision.collider.name == "LazyMonster(Clone)"))
+		if(collision.collider.tag == "Monster")
 		{
 			if (!paralysed)
 			{
