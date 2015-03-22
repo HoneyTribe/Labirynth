@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 public class NoVerticalWallsEnding : MonoBehaviour {
 
-	private static float interval = 5;
+	public static NoVerticalWallsEnding instance;
+
+	private static float interval = 3.5f;
 
 	private bool endingEnabled;
 	private float time;
@@ -14,6 +16,8 @@ public class NoVerticalWallsEnding : MonoBehaviour {
 
 	void Start()
 	{
+		instance = this;
+
 		GameObject[] w = GameObject.FindGameObjectsWithTag ("Wall");
 		foreach (GameObject wall in w)
 		{
@@ -38,8 +42,9 @@ public class NoVerticalWallsEnding : MonoBehaviour {
 			float step = -Time.deltaTime * 2.5f / interval;
 			time += Time.deltaTime;
 			earthquakeTimer += Time.deltaTime;
+		
 
-			if (earthquakeTimer > 1)
+			if (earthquakeTimer > 0.7f)
 			{
 				GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
 				earthquakeTimer = 0;
@@ -63,7 +68,7 @@ public class NoVerticalWallsEnding : MonoBehaviour {
 		}
 	}
 	
-	void EnableNoVerticalWallsEnding()
+	public void EnableNoVerticalWallsEnding()
 	{
 		this.endingEnabled = true;
 	}

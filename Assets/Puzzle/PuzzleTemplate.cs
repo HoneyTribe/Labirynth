@@ -19,6 +19,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 	private GameObject lazyMonsterPrefab;
 	private GameObject blockPrefab;
 	private GameObject keyPrefab;
+	private GameObject triggerPrefab;
 
 	protected int extX;
 	protected int extZ;
@@ -41,6 +42,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		lazyMonsterPrefab = (GameObject) Resources.Load("LazyMonster");
 		blockPrefab = (GameObject) Resources.Load("Textured Wall");
 		keyPrefab = (GameObject) Resources.Load("KeyContainer");
+		triggerPrefab = (GameObject) Resources.Load("Trigger");
 	}
 
 	public void init()
@@ -143,6 +145,10 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 						keyNum --;
 					}
 				}
+				if (grid[i,j] == (int) TileType.TRIGGER)
+				{
+					createTrigger (i, j);
+				}
 			}
 		}
 	}
@@ -167,7 +173,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (z + 2 * (monsterNum%internalSize)));			
 		GameObject monster = MonsterCreationController.instance.InstantiateMonster (monsterPrefab, monsterPos);
 		
-		monster.GetComponent<AbstractMonsterController> ().setSpeed (7f);
+		monster.GetComponent<AbstractMonsterController> ().setSpeed (4.5f+(monsterNum+1* 1f));
 			
 		StandardMonsterController standardMonsterController = monster.GetComponent<StandardMonsterController> ();
 		if (standardMonsterController != null)
@@ -190,7 +196,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		                                  monsterPrefab.transform.position.y,
 		                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (z + 2 * (monsterNum%internalSize)));			
 		GameObject monster = MonsterCreationController.instance.InstantiateMonster (lazyMonsterPrefab, monsterPos);
-		monster.GetComponent<AbstractMonsterController> ().setSpeed (7f);
+		monster.GetComponent<AbstractMonsterController> ().setSpeed (4.5f+(monsterNum+1* 1f));
 	}
 
 	private void createKey(int x, int z, int keyNum)
@@ -199,6 +205,14 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		                              keyPrefab.transform.position.y,
 		                              Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
 		Instantiate (keyPrefab, keyPos, Quaternion.Euler(0, 0, 0));
+	}
+
+	private void createTrigger(int x, int z)
+	{
+		Vector3 triggerPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+		                              triggerPrefab.transform.position.y,
+		                              Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
+		Instantiate (triggerPrefab, triggerPos, Quaternion.Euler(0, 0, 0));
 	}
 
 	public void finish()
