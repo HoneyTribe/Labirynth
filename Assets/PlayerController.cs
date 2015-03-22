@@ -285,15 +285,15 @@ public class PlayerController : MonoBehaviour, StoppableObject {
  		   (collision.collider.name == "FlyingMonster(Clone)") ||
 		   (collision.collider.name == "LazyMonster(Clone)"))
 		{
-			collision.collider.rigidbody.velocity = Vector3.zero;
-			collision.collider.rigidbody.angularVelocity = Vector3.zero;
-			if ((!paralysed) && (Time.time - timeFromLastRevive > timeBetweenRevivals))
+			if (!paralysed)
 			{
 				paralysed = true;
 				gameController.SendMessage("PlayerParalysed");
 				AudioController.instance.Play("008_dead");
 				transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color=Color.grey;
 				collider.isTrigger = true;
+				collision.collider.rigidbody.velocity = Vector3.zero;
+				collision.collider.rigidbody.angularVelocity = Vector3.zero;
 				rigidbody.velocity = Vector3.zero;
 				rigidbody.angularVelocity = Vector3.zero;
 				//collision.gameObject.SendMessage("Recalculate");
@@ -301,17 +301,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		}
 	}
 
-	void OnCollisionExit (Collision collision)
-	{
-		if((collision.collider.name == "Monster(Clone)") ||
-		   (collision.collider.name == "FlyingMonster(Clone)") ||
-		   (collision.collider.name == "LazyMonster(Clone)"))
-		{
-			collision.collider.rigidbody.velocity = Vector3.zero;
-			collision.collider.rigidbody.angularVelocity = Vector3.zero;
-		}
-	}
-		
 	void OnCollisionStay (Collision collision)
 	{
 		// if player jumps on the block its velocity shouldn't be zeroed, because he should slide
