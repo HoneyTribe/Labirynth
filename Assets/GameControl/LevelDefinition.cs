@@ -30,10 +30,14 @@ namespace AssemblyCSharp
 			//1 light
 			levels2.Add(new Level(new MachineCreator(false, false, false, false, false, false),
 			    2, new List<MonsterTemplate>{},0,0,6,6, null, null));
+
+			//2 trigger tutorial
+			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
+			     10,new List<MonsterTemplate>{},0,0,7,7, null, "TriggerTut"));
 			
 			//2 decoy tutorial
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			     7,new List<MonsterTemplate>{},0,0,7,7, null, "DecoyTut"));
+			     25,new List<MonsterTemplate>{},0,0,7,7, null, "DecoyTut"));
 
 			//3 decoy + can die
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -46,8 +50,8 @@ namespace AssemblyCSharp
 			//5 monster door
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			      3,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 4.5f),
-				new MonsterTemplate("Standard", 4.0f)
+				new MonsterTemplate("Standard", 5.0f),
+				new MonsterTemplate("Standard", 4.5f)
 			},4,4,7,7, null, null));
 			
 			//6 ghost
@@ -127,7 +131,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 3.5f)
 			},5,8,9,9, "EnableTrapEnding", null));
 			
-			//17 
+			//17 all machines
 			levels2.Add(new Level(new MachineCreator(true, true, true, false, true, false),
 			                      51,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 4.5f),
@@ -135,7 +139,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 3.5f)
 			},15,15,8,8, "EnableNoVerticalWallsEnding", "NoWalls2"));
 			
-			//18
+			//18 all machines
 			levels2.Add(new Level(new MachineCreator(true, true, true, false, true, false),
 			                      19,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 5.5f),
@@ -189,7 +193,14 @@ namespace AssemblyCSharp
 			levels2.Add(new Level(new MachineCreator(true, true, true, true, true, true),
 			                      23,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 7.0f)
-			},8,8,8,8, null, "Snake"));
+			},8,8,8,8, "EnableNoVerticalWallsEnding", "Snake"));
+
+			//27 everything, bff
+			levels2.Add(new Level(new MachineCreator(true, true, true, true, true, true),
+			                      28,new List<MonsterTemplate>{
+				new MonsterTemplate("Standard", 6.0f),
+				new MonsterTemplate("Flying", 5.0f)
+			},8,8,9,9, "EnableNoVerticalWallsEnding", "BFF"));
 			
 			//26 everything
 			levels2.Add(new Level(new MachineCreator(true, true, true, true, true, true),
@@ -207,6 +218,14 @@ namespace AssemblyCSharp
 			//1 light
 			levels3.Add(new Level(new MachineCreator(false, false, false, false, false, false),
 			                      3, new List<MonsterTemplate>{},0,0,6,6, null, null));
+
+			//2 trigger tutorial
+			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
+			                      10,new List<MonsterTemplate>{},0,0,7,7, null, "TriggerTut"));
+			
+			//2 decoy tutorial
+			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
+			                      25,new List<MonsterTemplate>{},0,0,7,7, null, "DecoyTut"));
 			
 			//2 decoy
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -219,9 +238,9 @@ namespace AssemblyCSharp
 			//4 monster door
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			                      4,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 4.0f),
-				new MonsterTemplate("Standard", 4.5f),
-				new MonsterTemplate("Standard", 3.5f)
+				new MonsterTemplate("Standard", 5.0f),
+				new MonsterTemplate("Standard", 5.5f),
+				new MonsterTemplate("Standard", 4.5f)
 			},4,4,7,7, null, null));
 			
 			//5 ghost
@@ -375,7 +394,7 @@ namespace AssemblyCSharp
 			                      23,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 7.0f),
 				new MonsterTemplate("Standard", 7.5f)
-			},8,8,8,8, null, "Snake"));
+			},8,8,8,8, "EnableNoVerticalWallsEnding", "Snake"));
 			
 			//25 everything
 			levels3.Add(new Level(new MachineCreator(true, true, true, true, true, true),
@@ -392,6 +411,14 @@ namespace AssemblyCSharp
 			//1 light
 			levels4.Add(new Level(new MachineCreator(false, false, false, false, false, false),
 			                      4, new List<MonsterTemplate>{},0,0,6,6, null, null));
+
+			//2 trigger tutorial
+			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
+			                      10,new List<MonsterTemplate>{},0,0,7,7, null, "TriggerTut"));
+			
+			//2 decoy tutorial
+			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
+			                      25,new List<MonsterTemplate>{},0,0,7,7, null, "DecoyTut"));
 			
 			//2 decoy
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -404,10 +431,10 @@ namespace AssemblyCSharp
 			//4 monster door
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			                      5,new List<MonsterTemplate>{
+				new MonsterTemplate("Standard", 5.0f),
+				new MonsterTemplate("Standard", 5.5f),
 				new MonsterTemplate("Standard", 4.5f),
-				new MonsterTemplate("Standard", 4.0f),
-				new MonsterTemplate("Standard", 3.5f),
-				new MonsterTemplate("Standard", 5.0f)
+				new MonsterTemplate("Standard", 6.0f)
 			},4,4,7,7, null, null));
 			
 			//5 ghost
@@ -568,7 +595,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Standard", 7.0f),
 				new MonsterTemplate("Standard", 7.5f),
 				new MonsterTemplate("Standard", 8.0f)
-			},8,8,8,8, null, "Snake"));
+			},8,8,8,8, "EnableNoVerticalWallsEnding", "Snake"));
 			
 			//25 everything
 			levels4.Add(new Level(new MachineCreator(true, true, true, true, true, true),

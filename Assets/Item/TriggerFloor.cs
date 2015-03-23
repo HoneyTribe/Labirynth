@@ -4,13 +4,6 @@ using System.Collections;
 public class TriggerFloor : MonoBehaviour
 {
 
-	//public static TriggerFloor instance;
-	
-	//void Start ()
-	//{
-	//	instance = this;
-	//}
-	
 	public void OnTriggerEnter(Collider currentCollider)
 	{
 		if ((currentCollider.tag == "Monster") || (currentCollider.tag  == "Player"))

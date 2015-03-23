@@ -10,7 +10,7 @@ public class TopLightController : MonoBehaviour {
 	private static float maxIntensity = 0.8f;
 
 	private static float attractionCost = 0.3f;
-	private static float restoreVelocity = 0.03125f; // It needs 1/restoreVelocity seconds to regenerate (32 seconds).
+	private static float restoreVelocity = 0.03f; // It needs 1/restoreVelocity seconds to regenerate (30 seconds).
 
 	public float openningInterval = 1.0f;
 	public float closingInterval = 0.5f;
