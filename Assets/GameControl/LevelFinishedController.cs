@@ -363,6 +363,11 @@ public class LevelFinishedController : MonoBehaviour {
 		return stopped;
 	}
 
+	public void setStopped(bool stopped)
+	{
+		this.stopped = stopped;
+	}
+
 	public int getMaxLevel()
 	{
 		return maxLevel;

@@ -56,9 +56,9 @@ public class Instantiation : MonoBehaviour {
 			drawKeys (labirynth.getKeys ());
 		}
 		drawJumps ();
-		drawSmallWalls (labirynth);
-		drawHorisontalWalls (labirynth);
-		drawVerticalWalls (labirynth);
+		drawSmallWalls (labirynth, 0);
+		drawHorisontalWalls (labirynth, 0);
+		drawVerticalWalls (labirynth, 0);
 		createNodes ();
 
 		if (LevelFinishedController.instance.getPuzzleName() != null)
@@ -198,8 +198,9 @@ public class Instantiation : MonoBehaviour {
 		}
 	}
 
-	void drawSmallWalls(Labirynth labirynth)
+	List<GameObject> drawSmallWalls(Labirynth labirynth, float yOffset)
 	{
+		List<GameObject> walls = new List<GameObject> ();
 		for (int z=2; z<=sizeZ * 2; z+=2) // don't draw edges
 		{
 			for (int x=2; x<=sizeX * 2 - 2; x+=2)  // don't draw edges
@@ -207,7 +208,7 @@ public class Instantiation : MonoBehaviour {
 				if (labirynth.getWalls(x, z) == (int) TileType.WALL)
 				{
 					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
-					                           smallWallPrefab.transform.position.y,
+					                           smallWallPrefab.transform.position.y + yOffset,
 					                           offsetZ + planeSizeZ/2f - spaceZ * z);
 					int angle = Random.Range(0, 4) * 90;
 					GameObject obj = (GameObject)Instantiate (smallWallPrefab, pos, Quaternion.Euler(0, angle, 0)); 
@@ -216,14 +217,17 @@ public class Instantiation : MonoBehaviour {
 					{
 						obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
 					}
+					walls.Add(obj); 
 				}
 			}
 			
 		}
+		return walls;
 	}
 
-	void drawHorisontalWalls(Labirynth labirynth)
+	List<GameObject> drawHorisontalWalls(Labirynth labirynth, float yOffset)
 	{
+		List<GameObject> walls = new List<GameObject> ();
 		float scaleFactorX = 2*spaceX - 1f;
 		for (int z=2; z<=sizeZ * 2; z+=2) // don't draw edges
 		{
@@ -233,7 +237,7 @@ public class Instantiation : MonoBehaviour {
 				{
 					float zPosition = offsetZ + planeSizeZ/2f - spaceZ * z;
 					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
-					                           wallPrefab.transform.position.y,
+					                           wallPrefab.transform.position.y + yOffset,
 					                           zPosition);
 					GameObject obj = (GameObject) Instantiate (wallPrefab, pos, Quaternion.Euler(0, 0, 0));
 					obj.transform.localScale = new Vector3(scaleFactorX + compensatePillarInnerRadius, 
@@ -243,13 +247,16 @@ public class Instantiation : MonoBehaviour {
 					{
 						obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
 					}
+					walls.Add(obj); 
 				}
 			}				
 		}
+		return walls;
 	}
 
-	void drawVerticalWalls(Labirynth labirynth)
+	List<GameObject> drawVerticalWalls(Labirynth labirynth, float yOffset)
 	{
+		List<GameObject> walls = new List<GameObject> ();
 		float scaleFactorZ = 2*spaceZ - 1f;
 		for (int z=1; z<=sizeZ * 2 - 1; z+=2) 
 		{
@@ -258,7 +265,7 @@ public class Instantiation : MonoBehaviour {
 				if (labirynth.getWalls(x, z) == (int) TileType.WALL)		
 				{
 					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
-					                           wallPrefab.transform.position.y,
+					                           wallPrefab.transform.position.y + yOffset,
 					                           offsetZ + planeSizeZ/2f - spaceZ * z);
 					GameObject obj = (GameObject) Instantiate (wallPrefab, pos, Quaternion.Euler(0, 90, 0));
 					obj.transform.localScale = new Vector3(scaleFactorZ + compensatePillarInnerRadius,
@@ -268,10 +275,11 @@ public class Instantiation : MonoBehaviour {
 					{
 						obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
 					}
+					walls.Add(obj); 
 				}
-			}
-			
+			}			
 		}
+		return walls;
 	}
 
 	public Vector3 getStart()
@@ -392,6 +400,19 @@ public class Instantiation : MonoBehaviour {
 			}
 		}
 
+		return walls;
+	}
+
+	public List<GameObject> createNewWalls()
+	{
+		labirynth = new Labirynth (sizeX, sizeZ, null);
+		labirynth.generate ();
+
+		List<GameObject> walls = new List<GameObject> ();
+		walls.AddRange (drawHorisontalWalls (labirynth, -2.5f));
+		walls.AddRange (drawVerticalWalls (labirynth, -2.5f));
+		walls.AddRange (drawSmallWalls (labirynth, -2.5f));
+								
 		return walls;
 	}
 }

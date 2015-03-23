@@ -29,7 +29,7 @@ namespace AssemblyCSharp
 			
 			//1 light
 			levels2.Add(new Level(new MachineCreator(false, false, false, false, false, false),
-			    2, new List<MonsterTemplate>{},0,0,6,6, null, null));
+			    2, new List<MonsterTemplate>{},0,0,6,6, "EnableNewMazeEnding", null));
 
 			//2 trigger tutorial
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
