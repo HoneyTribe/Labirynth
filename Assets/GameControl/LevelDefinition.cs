@@ -37,7 +37,7 @@ namespace AssemblyCSharp
 			
 			//3 decoy tutorial
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			     25,new List<MonsterTemplate>{},0,0,7,7, null, "DecoyTut"));
+			     52,new List<MonsterTemplate>{},0,0,10,10, null, "DecoyTut"));
 
 			//4 decoy + can die
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -75,11 +75,11 @@ namespace AssemblyCSharp
 			
 			//10 crane, "look at all that energy"
 			levels2.Add(new Level(new MachineCreator(true, false, true, false, false, false),
-			                      49,new List<MonsterTemplate>{
+			                      61,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 5.0f),
 				new MonsterTemplate("Flying", 3.5f),
 				new MonsterTemplate("Standard", 4.5f)
-			},2,5,7,7, "EnableTrapEnding", "NoWalls"));
+			},2,5,8,8, "EnableTrapEnding", "NoWalls"));
 			
 			//11 teleport drone
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, true, false),
