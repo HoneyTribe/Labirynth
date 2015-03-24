@@ -11,7 +11,7 @@ public class Boxes : PuzzleTemplate
 		
 		extX = 2;
 		extZ = 4;
-		internalSize = sizeZ - 7; 
+		internalSize = sizeZ - 6; 
 		
 		templateSizeX = 17;
 		templateSizeZ = 17;

@@ -10,7 +10,7 @@ public class TriggerVerticalWalls : MonoBehaviour
 		{
 			NoVerticalWallsEnding.instance.EnableNoVerticalWallsEnding();
 			AudioController.instance.Play("021_BlockMovesB");
-			gameObject.transform.Translate (0, -1.5f, 0);
+			gameObject.transform.Translate (0, -1.1f, 0);
 		}
 	}
 }
