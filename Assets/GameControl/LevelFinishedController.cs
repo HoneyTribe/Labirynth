@@ -8,7 +8,7 @@ public class LevelFinishedController : MonoBehaviour {
 	public static float SHOW_INSTRUCTION_MIN_TIME = 0.3f;
 	public static int savedMaxLevel;
 	private int bootups = 0;
-	private int totalLevels =28;
+	private int totalLevels =30;
 	private int levCount = 0;
 
 	public static LevelFinishedController instance;
