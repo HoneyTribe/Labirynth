@@ -20,6 +20,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 	private GameObject blockPrefab;
 	private GameObject keyPrefab;
 	private GameObject triggerPrefab;
+	private GameObject triggerHorizontalPrefab;
 
 	protected int extX;
 	protected int extZ;
@@ -43,6 +44,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		blockPrefab = (GameObject) Resources.Load("Textured Wall");
 		keyPrefab = (GameObject) Resources.Load("KeyContainer");
 		triggerPrefab = (GameObject) Resources.Load("Trigger");
+		triggerHorizontalPrefab = (GameObject) Resources.Load("TriggerHorizontal");
 	}
 
 	public void init()
@@ -136,7 +138,6 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 					createLazyMonster (i, j, monsterNum);
 					monsterNum ++;
 				}
-
 				if (grid[i,j] == (int) TileType.KEY)
 				{
 					if (keyNum != 0)
@@ -149,25 +150,29 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 				{
 					createTrigger (i, j);
 				}
+				if (grid[i,j] == (int) TileType.TRIGGERHORIZONTAL)
+				{
+					createTriggerHorizontal (i, j);
+				}
 			}
 		}
 	}
 
-	private void createBlock(int x, int z)
-	{
-		Vector3 pos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
-		                           blockPrefab.transform.position.y,
-		                           Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
-		GameObject block = (GameObject) Instantiate (blockPrefab, pos, Quaternion.Euler(0, 0, 0));
-		block.name = "Block";
-		block.transform.localScale = new Vector3(scaleFactorX - Instantiation.compensatePillarInnerRadius, 
-		                                         blockPrefab.transform.localScale.y,
-		                                         scaleFactorZ - Instantiation.compensatePillarInnerRadius);
-		block.AddComponent<BlockController> ();
-	}
-
-	private void createMonster(int x, int z, int monsterNum)
-	{
+		private void createBlock(int x, int z)
+		{
+			Vector3 pos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+			                           blockPrefab.transform.position.y,
+			                           Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
+			GameObject block = (GameObject) Instantiate (blockPrefab, pos, Quaternion.Euler(0, 0, 0));
+			block.name = "Block";
+			block.transform.localScale = new Vector3(scaleFactorX - Instantiation.compensatePillarInnerRadius, 
+			                                         blockPrefab.transform.localScale.y,
+			                                         scaleFactorZ - Instantiation.compensatePillarInnerRadius);
+			block.AddComponent<BlockController> ();
+		}
+		/*
+		private void createMonster(int x, int z, int monsterNum)
+		{
 		Vector3 monsterPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
 		                                  monsterPrefab.transform.position.y,
 		                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (z + 2 * (monsterNum%internalSize)));			
@@ -176,6 +181,19 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		monster.GetComponent<AbstractMonsterController> ().setSpeed (4.5f+(monsterNum+1* 1f));
 			
 		StandardMonsterController standardMonsterController = monster.GetComponent<StandardMonsterController> ();
+		*/
+
+		private void createMonster(int x, int z, int monsterNum)
+		{
+			Vector3 monsterPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+			                                  monsterPrefab.transform.position.y,
+			                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
+			GameObject monster = MonsterCreationController.instance.InstantiateMonster (monsterPrefab, monsterPos);
+			
+			monster.GetComponent<AbstractMonsterController> ().setSpeed (4.5f+(monsterNum+1* 1f));
+			
+			StandardMonsterController standardMonsterController = monster.GetComponent<StandardMonsterController> ();
+
 		if (standardMonsterController != null)
 		{
 			Vector3 pos1 = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
@@ -188,32 +206,41 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 			standardMonsterController.AddGuardingPosition(pos1);
 			standardMonsterController.AddGuardingPosition(pos2);
 		}
-	}
+		
+		}
 
-	private void createLazyMonster(int x, int z, int monsterNum)
-	{
-		Vector3 monsterPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
-		                                  monsterPrefab.transform.position.y,
-		                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * (z + 2 * (monsterNum%internalSize)));			
-		GameObject monster = MonsterCreationController.instance.InstantiateMonster (lazyMonsterPrefab, monsterPos);
-		monster.GetComponent<AbstractMonsterController> ().setSpeed (4.5f+(monsterNum+1* 1f));
-	}
+		private void createLazyMonster(int x, int z, int monsterNum)
+		{
+			Vector3 monsterPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+			                                  monsterPrefab.transform.position.y,
+			                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
+			GameObject monster = MonsterCreationController.instance.InstantiateMonster (lazyMonsterPrefab, monsterPos);
+			monster.GetComponent<AbstractMonsterController> ().setSpeed (4.5f+(monsterNum+1* 1f));
+		}
 
-	private void createKey(int x, int z, int keyNum)
-	{
-		Vector3 keyPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
-		                              keyPrefab.transform.position.y,
-		                              Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
-		Instantiate (keyPrefab, keyPos, Quaternion.Euler(0, 0, 0));
-	}
+		private void createKey(int x, int z, int keyNum)
+		{
+			Vector3 keyPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+			                              keyPrefab.transform.position.y,
+			                              Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
+			Instantiate (keyPrefab, keyPos, Quaternion.Euler(0, 0, 0));
+		}
 
-	private void createTrigger(int x, int z)
-	{
-		Vector3 triggerPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
-		                              triggerPrefab.transform.position.y,
-		                              Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
-		Instantiate (triggerPrefab, triggerPos, Quaternion.Euler(0, 0, 0));
-	}
+		private void createTrigger(int x, int z)
+		{
+			Vector3 triggerPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+			                              triggerPrefab.transform.position.y,
+			                              Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
+			Instantiate (triggerPrefab, triggerPos, Quaternion.Euler(0, 0, 0));
+		}
+
+		private void createTriggerHorizontal(int x, int z)
+		{
+			Vector3 triggerHorizontalPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+			                                  triggerHorizontalPrefab.transform.position.y,
+			                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
+			Instantiate (triggerHorizontalPrefab, triggerHorizontalPos, Quaternion.Euler(0, 0, 0));
+		}
 
 	public void finish()
 	{

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class TrapEnding : MonoBehaviour {
 
-	private static float interval = 5;
+	private static float interval = 3.5f;
 
 	private bool endingEnabled;
 	private float time;
@@ -48,7 +48,7 @@ public class TrapEnding : MonoBehaviour {
 			time += Time.deltaTime;
 			earthquakeTimer += Time.deltaTime;
 
-			if (earthquakeTimer > 1)
+			if (earthquakeTimer > 0.7f)
 			{
 				GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
 				earthquakeTimer = 0;

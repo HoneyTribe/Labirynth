@@ -9,6 +9,7 @@ public enum TileType
 	MONSTER = 4,
 	KEY = 5,
 	LAZYMONSTER = 6,
-	TRIGGER = 7
+	TRIGGER = 7,
+	TRIGGERHORIZONTAL = 8
 }
 

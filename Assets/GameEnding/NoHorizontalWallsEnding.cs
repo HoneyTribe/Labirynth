@@ -1,23 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class NoWallsEnding : MonoBehaviour {
-
+public class NoHorizontalWallsEnding : MonoBehaviour {
+	
+	public static NoHorizontalWallsEnding instance;
+	
 	private static float interval = 3.5f;
-
+	
 	private bool endingEnabled;
 	private float time;
 	private float earthquakeTimer;
-
-	private GameObject[] pillars;
-	private GameObject[] walls;
-
+	
+	private List<GameObject> walls = new List<GameObject>();
+	
 	void Start()
 	{
-		pillars = GameObject.FindGameObjectsWithTag ("Pillar");
-		walls = GameObject.FindGameObjectsWithTag ("Wall");
+		instance = this;
+		
+		GameObject[] w = GameObject.FindGameObjectsWithTag ("Wall");
+		foreach (GameObject wall in w)
+		{
+			// keep horizontal
+			if (wall.transform.rotation.w == 1.0f)
+			{
+				walls.Add(wall);
+			}
+		}
 	}
-
+	
 	void Update()
 	{
 		if (endingEnabled)
@@ -27,43 +38,37 @@ public class NoWallsEnding : MonoBehaviour {
 				endingEnabled = false;
 				AstarPath.active.Scan();
 			}
-
+			
 			float step = -Time.deltaTime * 2.5f / interval;
 			time += Time.deltaTime;
 			earthquakeTimer += Time.deltaTime;
-
+			
+			
 			if (earthquakeTimer > 0.7f)
 			{
 				GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
 				earthquakeTimer = 0;
 			}
-
+			
 			foreach (GameObject wall in walls)
 			{
-				wall.transform.Translate (0, step, 0);
+				if (wall != null)
+				{
+					wall.transform.Translate (0, step, 0);
+				}
 			}
-
-			foreach (GameObject pillar in pillars)
-			{
-				pillar.transform.Translate (0, step, 0);
-			}
-
+			
 			if (time > interval)			{
-
+				
 				foreach (GameObject wall in walls)
 				{
 					Destroy(wall);
-				}
-				
-				foreach (GameObject pillar in pillars)
-				{
-					Destroy(pillar);
 				}
 			}
 		}
 	}
 	
-	void EnableNoWallsEnding()
+	public void EnableNoHorizontalWallsEnding()
 	{
 		this.endingEnabled = true;
 	}
