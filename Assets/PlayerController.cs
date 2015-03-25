@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	{
 		if ((inputBlocked) || (paralysed) || (LevelFinishedController.instance.isStopped()))
 		{
+			rigidbody.velocity = Vector3.zero;
 			return;
 		}
 

@@ -5,11 +5,12 @@ public class NewMazeEnding : MonoBehaviour {
 
 	public static NewMazeEnding instance;
 
-	private static float interval = 5;
+	private static float interval = 3.5f;
 
 	private bool endingEnabled;
 	private float time;
 	private float earthquakeTimer;
+	private int triggerCount = 0;
 
 	private List<GameObject> pillars = new List<GameObject>();
 	private List<GameObject> walls = new List<GameObject>();
@@ -35,9 +36,11 @@ public class NewMazeEnding : MonoBehaviour {
 	{
 		if (endingEnabled)
 		{
+
 			if (time > interval) // it should happen after destroy
 			{
 				endingEnabled = false;
+				time = 0;
 				AstarPath.active.Scan();
 				LevelFinishedController.instance.setStopped(false);
 				return;
@@ -47,7 +50,7 @@ public class NewMazeEnding : MonoBehaviour {
 			time += Time.deltaTime;
 			earthquakeTimer += Time.deltaTime;
 
-			if (earthquakeTimer > 1)
+			if (earthquakeTimer > 0.7f)
 			{
 				GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
 				earthquakeTimer = 0;
@@ -68,8 +71,8 @@ public class NewMazeEnding : MonoBehaviour {
 				risingWall.transform.Translate (0, -step, 0);
 			}
 
-			if (time > interval)			{
-
+			if (time > interval)
+			{
 				foreach (GameObject wall in walls)
 				{
 					Destroy(wall);
@@ -79,12 +82,29 @@ public class NewMazeEnding : MonoBehaviour {
 				{
 					Destroy(pillar);
 				}
+
+				triggerCount++;
 			}
 		}
 	}
 	
 	public void EnableNewMazeEnding()
 	{
+
+		print (triggerCount);
+		if(triggerCount > 0)
+		{
+			foreach (GameObject pillar in GameObject.FindGameObjectsWithTag ("Pillar"))
+			{
+				pillars.Add(pillar);
+			}
+			
+			foreach (GameObject wall in GameObject.FindGameObjectsWithTag ("Wall"))
+			{
+				walls.Add(wall);
+			}
+		}
+
 		risingWalls = Instantiation.instance.createNewWalls();
 		this.endingEnabled = true;
 		LevelFinishedController.instance.setStopped(true);
