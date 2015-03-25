@@ -10,26 +10,15 @@ public class NewMazeEnding : MonoBehaviour {
 	private bool endingEnabled;
 	private float time;
 	private float earthquakeTimer;
-	private int triggerCount = 0;
 
-	private List<GameObject> pillars = new List<GameObject>();
-	private List<GameObject> walls = new List<GameObject>();
+	private List<GameObject> pillars;
+	private List<GameObject> walls;
 
 	private List<GameObject> risingWalls;
 	
 	void Start()
 	{
-		instance = this;
-
-		foreach (GameObject pillar in GameObject.FindGameObjectsWithTag ("Pillar"))
-		{
-			pillars.Add(pillar);
-		}
-		
-		foreach (GameObject wall in GameObject.FindGameObjectsWithTag ("Wall"))
-		{
-			walls.Add(wall);
-		}
+		instance = this;		
 	}
 
 	void Update()
@@ -82,27 +71,22 @@ public class NewMazeEnding : MonoBehaviour {
 				{
 					Destroy(pillar);
 				}
-
-				triggerCount++;
 			}
 		}
 	}
 	
 	public void EnableNewMazeEnding()
 	{
-
-		print (triggerCount);
-		if(triggerCount > 0)
+		pillars = new List<GameObject>();
+		foreach (GameObject pillar in GameObject.FindGameObjectsWithTag ("Pillar"))
 		{
-			foreach (GameObject pillar in GameObject.FindGameObjectsWithTag ("Pillar"))
-			{
-				pillars.Add(pillar);
-			}
-			
-			foreach (GameObject wall in GameObject.FindGameObjectsWithTag ("Wall"))
-			{
-				walls.Add(wall);
-			}
+			pillars.Add(pillar);
+		}
+
+		walls = new List<GameObject> ();		
+		foreach (GameObject wall in GameObject.FindGameObjectsWithTag ("Wall"))
+		{
+			walls.Add(wall);
 		}
 
 		risingWalls = Instantiation.instance.createNewWalls();
