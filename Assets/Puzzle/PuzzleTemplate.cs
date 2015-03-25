@@ -21,6 +21,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 	private GameObject keyPrefab;
 	private GameObject triggerPrefab;
 	private GameObject triggerHorizontalPrefab;
+	private GameObject triggerNewMazePrefab;
 
 	protected int extX;
 	protected int extZ;
@@ -45,6 +46,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		keyPrefab = (GameObject) Resources.Load("KeyContainer");
 		triggerPrefab = (GameObject) Resources.Load("Trigger");
 		triggerHorizontalPrefab = (GameObject) Resources.Load("TriggerHorizontal");
+		triggerNewMazePrefab = (GameObject) Resources.Load("TriggerNewMaze");
 	}
 
 	public void init()
@@ -154,6 +156,10 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 				{
 					createTriggerHorizontal (i, j);
 				}
+				if (grid[i,j] == (int) TileType.TRIGGERNEWMAZE)
+				{
+					createTriggerNewMaze (i, j);
+				}
 			}
 		}
 	}
@@ -240,6 +246,13 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 			                                  triggerHorizontalPrefab.transform.position.y,
 			                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
 			Instantiate (triggerHorizontalPrefab, triggerHorizontalPos, Quaternion.Euler(0, 0, 0));
+		}
+		private void createTriggerNewMaze(int x, int z)
+		{
+			Vector3 triggerNewMazePos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+			                                            triggerNewMazePrefab.transform.position.y,
+			                                            Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
+			Instantiate (triggerNewMazePrefab, triggerNewMazePos, Quaternion.Euler(0, 0, 0));
 		}
 
 	public void finish()

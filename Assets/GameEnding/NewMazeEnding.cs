@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class NewMazeEnding : MonoBehaviour {
 
+	public static NewMazeEnding instance;
+
 	private static float interval = 5;
 
 	private bool endingEnabled;
@@ -16,6 +18,8 @@ public class NewMazeEnding : MonoBehaviour {
 	
 	void Start()
 	{
+		instance = this;
+
 		foreach (GameObject pillar in GameObject.FindGameObjectsWithTag ("Pillar"))
 		{
 			pillars.Add(pillar);
@@ -79,7 +83,7 @@ public class NewMazeEnding : MonoBehaviour {
 		}
 	}
 	
-	void EnableNewMazeEnding()
+	public void EnableNewMazeEnding()
 	{
 		risingWalls = Instantiation.instance.createNewWalls();
 		this.endingEnabled = true;

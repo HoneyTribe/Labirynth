@@ -17,7 +17,7 @@ public class SimpleCranePuzzle : PuzzleTemplate
 		templateSizeZ = 7;
 		template = new int[7, 7] 	
 		{
-			{0,2,5,2,5,2,5},
+			{5,2,5,2,5,2,5},
 			{0,0,0,0,0,0,2},
 			{4,0,5,0,5,0,5},
 			{2,0,0,0,0,0,2},
