@@ -96,10 +96,9 @@ namespace AssemblyCSharp
 
 			//13 drone + new maze triggers
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, true, false),
-			    33,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 7.0f),
-				new MonsterTemplate("Standard", 8.0f)
-			},10,10,8,8, null, "NewMazes"));
+			    28,new List<MonsterTemplate>{
+				new MonsterTemplate("Flying", 3.5f)
+			},15,8,8,8, null, "NewMazes"));
 
 			//14 two triggers
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),

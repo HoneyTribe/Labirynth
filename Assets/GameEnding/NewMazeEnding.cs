@@ -5,7 +5,7 @@ public class NewMazeEnding : MonoBehaviour {
 
 	public static NewMazeEnding instance;
 
-	private static float interval = 3.5f;
+	private static float interval = 5;
 
 	private bool endingEnabled;
 	private float time;
@@ -38,10 +38,8 @@ public class NewMazeEnding : MonoBehaviour {
 			if (time > interval) // it should happen after destroy
 			{
 				endingEnabled = false;
-				time = 0;
 				AstarPath.active.Scan();
 				LevelFinishedController.instance.setStopped(false);
-				print (endingEnabled);
 				return;
 			}
 
@@ -49,7 +47,7 @@ public class NewMazeEnding : MonoBehaviour {
 			time += Time.deltaTime;
 			earthquakeTimer += Time.deltaTime;
 
-			if (earthquakeTimer > 0.7f)
+			if (earthquakeTimer > 1)
 			{
 				GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
 				earthquakeTimer = 0;
@@ -70,21 +68,18 @@ public class NewMazeEnding : MonoBehaviour {
 				risingWall.transform.Translate (0, -step, 0);
 			}
 
+			if (time > interval)			{
 
-			 if (time > interval)
-			 {
-
-				foreach (GameObject pillar in GameObject.FindGameObjectsWithTag ("Pillar"))
+				foreach (GameObject wall in walls)
 				{
-					pillars.Add(pillar);
+					Destroy(wall);
 				}
 				
-				foreach (GameObject wall in GameObject.FindGameObjectsWithTag ("Wall"))
+				foreach (GameObject pillar in pillars)
 				{
-					walls.Add(wall);
+					Destroy(pillar);
 				}
 			}
-
 		}
 	}
 	
