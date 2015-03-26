@@ -10,6 +10,19 @@ public class FloorInstructions : MonoBehaviour
 	private GameObject arrowLeft;
 	public int deadPlayersInstructions;
 
+	public int firstLightLevel = 0;
+	public int firstTriggerLevel = 1;
+	public int firstDecoyLevel = 2;
+	public int secondDecoyLevel = 3;
+	public int firstBlockLevel = 4;
+	public int firstDoorLevel = 5;
+	public int firstGhostLevel = 6;
+	public int firstCraneLevel = 7;
+	public int firstDroneLevel = 10;
+	public int firstJumpBoxLevel = 14;
+	public int firstDroneBombLevel = 20;
+	public int firstCraneLazerLevel = 23;
+
 	// Reads variables from: LevelFinishedController.cs, DeviceController.cs, ScoreController.cs, TopLightController.cs, CraneController.cs
 	
 	void Start()
@@ -23,8 +36,8 @@ public class FloorInstructions : MonoBehaviour
 	//Called from ScoreController, TopLightController, DeviceController, DroneController, JumpController
 	public void ChangeInstructions ()
 	{	
-		//level1
-		if(LevelFinishedController.instance.getLevel() == 0)
+		//light
+		if(LevelFinishedController.instance.getLevel() == firstLightLevel)
 		{
 			if (TopLightController.instance.isEntered() == true)
 			{
@@ -36,7 +49,7 @@ public class FloorInstructions : MonoBehaviour
 				}
 				else
 				{
-					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine.";
+					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine and then high-five.";
 				}
 			}
 
@@ -52,8 +65,8 @@ public class FloorInstructions : MonoBehaviour
 					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
 		}
-		//level 2, first decoy level
-		else if(LevelFinishedController.instance.getLevel() == 1)
+		// first decoy level
+		else if(LevelFinishedController.instance.getLevel() == firstDecoyLevel)
 		{
 			arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 
@@ -73,9 +86,35 @@ public class FloorInstructions : MonoBehaviour
 					arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
 				}
 				else if (DeviceController.instance.isDeviceInLighthouse() == false
-				         && TopLightController.instance.isEntered() == true)
+				         && TopLightController.instance.isEntered() == true
+				         && ScoreController.instance.getScore() > 0
+				         && TopLightController.instance.getZapCount() % 2 == 0)
 				{
-					GetComponentInChildren<TextMesh>().text = "Aim the light at dangerous things and tap action-1. Zap to distract.";
+					GetComponentInChildren<TextMesh>().text = "Aim the light at hazards and tap action-1. Zap to distract.";
+					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+				}
+				else if (DeviceController.instance.isDeviceInLighthouse() == false
+				         && TopLightController.instance.isEntered() == true
+				         && ScoreController.instance.getScore() > 0
+				         && TopLightController.instance.getZapCount() % 2 == 1
+				         && DeviceController.instance.getDecoyCount() %2 == 0)
+				{
+					GetComponentInChildren<TextMesh>().text = "Maze runers can reposition the Decoy by tapping action-1.";
+					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+				}
+				else if (DeviceController.instance.isDeviceInLighthouse() == false
+				         && TopLightController.instance.isEntered() == true
+				         && ScoreController.instance.getScore() > 0
+				         && TopLightController.instance.getZapCount() % 2 == 1
+				         && DeviceController.instance.getDecoyCount() %2 == 1)
+				{
+					GetComponentInChildren<TextMesh>().text = "When zapped, hazards move to the Decoy temporarily.";
+					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+				}
+				else if (TopLightController.instance.isEntered() == true
+				         && ScoreController.instance.getScore() == 0)
+				{
+					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine.";
 					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
 				else if (ScoreController.instance.getScore() == 0
@@ -96,8 +135,54 @@ public class FloorInstructions : MonoBehaviour
 				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 			}
 		}
-		//level 6, 1st crane level
-		else if(LevelFinishedController.instance.getLevel() == 5)
+
+		// second decoy level
+		else if(LevelFinishedController.instance.getLevel() == secondDecoyLevel)
+		{
+			arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+			
+			if (deadPlayersInstructions == 0) //nobody dead
+			{
+				if(DeviceController.instance.isDeviceInLighthouse() == true
+				   && ScoreController.instance.getScore() > 0
+				   && TopLightController.instance.isEntered() == true)
+				{
+					GetComponentInChildren<TextMesh>().text = "Maze-runners: Tap action-1 to move the Decoy.";
+					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+				}
+				else if(ScoreController.instance.getScore() > 0
+				        && TopLightController.instance.isEntered() == false)
+				{
+					GetComponentInChildren<TextMesh>().text = "Walk into          the light.";
+					arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
+				}
+				else if (DeviceController.instance.isDeviceInLighthouse() == false
+				         && TopLightController.instance.isEntered() == true)
+				{
+					GetComponentInChildren<TextMesh>().text = "Aim the light at hazards and tap action-1. Zap to distract.";
+					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+				}
+				else if (ScoreController.instance.getScore() == 0
+				         && TopLightController.instance.isEntered() == false)
+				{
+					GetComponentInChildren<TextMesh>().text = "High-five with all players to time-shift.";
+					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+				}
+				else
+				{
+					GetComponentInChildren<TextMesh>().text = "";
+					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+				}
+			}
+			else //someone dead
+			{
+				GetComponentInChildren<TextMesh>().text = "Revive your fallen friends by touching them.";
+				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+			}
+		}
+
+		//1st crane level
+		else if(LevelFinishedController.instance.getLevel() == firstCraneLevel)
 		{
 			if(CraneController.instance.isEntered() == true)
 			{
@@ -110,8 +195,8 @@ public class FloorInstructions : MonoBehaviour
 				arrowRight.transform.position = new Vector3(4, 0.5f, -13);
 			}
 		}
-		//level 9, 1st drone level
-		else if(LevelFinishedController.instance.getLevel() == 8)
+		//1st drone level
+		else if(LevelFinishedController.instance.getLevel() == firstDroneLevel)
 		{
 			if(DroneController.instance.isEntered() == true)
 			{
@@ -124,8 +209,8 @@ public class FloorInstructions : MonoBehaviour
 				arrowLeft.transform.position = new Vector3(-4, 0.5f, -13);
 			}
 		}	
-		//level 12, 1st jump box level
-		else if(LevelFinishedController.instance.getLevel() == 11)
+		//1st jump box level
+		else if(LevelFinishedController.instance.getLevel() == firstJumpBoxLevel)
 		{
 			if(JumpController.instance.GetBoxCollideCount() > 0 && ScoreController.instance.getScore() > 0)
 			{
@@ -141,41 +226,38 @@ public class FloorInstructions : MonoBehaviour
 			}
 		}	
 
-
-
-	
 	}
 
 	//Text to display after intro
 	//Called from Introduction Controller
 	public void Activate ()
 	{	
-		//level1
-		if (LevelFinishedController.instance.getLevel() == 0)
+		//light
+		if (LevelFinishedController.instance.getLevel() == firstLightLevel)
 			{
 			GetComponentInChildren<TextMesh>().text = "Walk into          the light";
 			arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
 			}
-		//level2
-		if (LevelFinishedController.instance.getLevel() == 1)
+		//trigger
+		if (LevelFinishedController.instance.getLevel() == firstTriggerLevel)
 		{
 			GetComponentInChildren<TextMesh>().text = "Walk into          the light";
 			arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
 		}
-		//level6
-		else if (LevelFinishedController.instance.getLevel() == 5)
+		//crane
+		else if (LevelFinishedController.instance.getLevel() == firstCraneLevel)
 		{
 			GetComponentInChildren<TextMesh>().text = "Walk into the Grabber         entrance";
 			arrowRight.transform.position = new Vector3(4, 0.5f, -13);
 		}
-		//level9
-		else if (LevelFinishedController.instance.getLevel() == 8)
+		//drone
+		else if (LevelFinishedController.instance.getLevel() == firstDroneLevel)
 		{
 			GetComponentInChildren<TextMesh>().text = "Walk into             the Drone entrance";
 			arrowLeft.transform.position = new Vector3(-4, 0.5f, -13);
 		}
-		//level12
-		else if (LevelFinishedController.instance.getLevel() == 11)
+		//jump box
+		else if (LevelFinishedController.instance.getLevel() == firstJumpBoxLevel)
 		{
 			GetComponentInChildren<TextMesh>().text = "Go and pick up the Anti-Grav Box";
 		}

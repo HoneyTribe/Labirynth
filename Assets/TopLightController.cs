@@ -21,6 +21,8 @@ public class TopLightController : MonoBehaviour {
 	private float energyParam;
 	private float energy = 1.0f;
 
+	private int zapCount = 0;
+
 	public GameObject laserPrefab;
 
 	private GameObject ball;
@@ -93,9 +95,11 @@ public class TopLightController : MonoBehaviour {
 		energyParam = 1 / openningInterval;
 		timeLeft = openningInterval;
 
-		if(LevelFinishedController.instance.getLevel() == 0 || LevelFinishedController.instance.getLevel() == 1 ||
-		   LevelFinishedController.instance.getLevel() == 5 || LevelFinishedController.instance.getLevel() == 8 ||
-		   LevelFinishedController.instance.getLevel() == 11)
+		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstJumpBoxLevel)
 		{
 			FloorInstructions.instance.ChangeInstructions();
 		}
@@ -108,8 +112,10 @@ public class TopLightController : MonoBehaviour {
 		energyParam = - 1 / closingInterval;
 		timeLeft = closingInterval;
 
-		if(LevelFinishedController.instance.getLevel() == 0 || LevelFinishedController.instance.getLevel() == 1 ||
-		   LevelFinishedController.instance.getLevel() == 5 || LevelFinishedController.instance.getLevel() == 8)
+		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel)
 		{
 			FloorInstructions.instance.ChangeInstructions();
 		}
@@ -172,6 +178,13 @@ public class TopLightController : MonoBehaviour {
 				{
 					changeEnergy(-attractionCost);
 					DeviceController.instance.ShowHologram();
+
+					zapCount++;
+					if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
+					   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel)
+					{
+						FloorInstructions.instance.ChangeInstructions();
+					}
 				}
 			}
 		}
@@ -241,5 +254,10 @@ public class TopLightController : MonoBehaviour {
 
 		Destroy (laser);
 		Destroy (laser2);
+	}
+
+	public int getZapCount()
+	{
+		return zapCount;
 	}
 }

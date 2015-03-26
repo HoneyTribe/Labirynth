@@ -14,6 +14,7 @@ public class DeviceController : MonoBehaviour {
 	private float time;
 	private bool inLighthouse = true;
 	private float speed = 65.0f;
+	private int decoyCount = 0;
 
 	private Animator anim;
 
@@ -70,11 +71,11 @@ public class DeviceController : MonoBehaviour {
 				inLighthouse = false;
 				movement = new Vector3(positionToMove.x, 1, positionToMove.z);
 
-				if(LevelFinishedController.instance.getLevel() == 1 )
+				if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel )
 				{
 					FloorInstructions.instance.ChangeInstructions();
 				}
-
+				decoyCount++;
 				AudioController.instance.Play("001_MoveDecoyMaze");
 			}
 			else
@@ -82,7 +83,7 @@ public class DeviceController : MonoBehaviour {
 				inLighthouse = true;
 				movement = initialPosition;
 
-				if(LevelFinishedController.instance.getLevel() == 1 )
+				if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel )
 				{
 					FloorInstructions.instance.ChangeInstructions();
 				}
@@ -100,5 +101,10 @@ public class DeviceController : MonoBehaviour {
 	public bool isDeviceInLighthouse()
 	{
 		return inLighthouse;
+	}
+
+	public int getDecoyCount()
+	{
+		return decoyCount;
 	}
 }

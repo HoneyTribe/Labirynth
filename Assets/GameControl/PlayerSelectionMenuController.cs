@@ -127,8 +127,8 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 				{
 					AudioController.instance.Play("003_CollectKey");
 					randomNum = Random.Range(1,12);
-					// 1 = i53 Fri, 2 = i53 Sat, 3 = Pixel Rogues_1, 4 = Team Banana, 5 = RazorSharp, 6 = Eneh (scaredgirl),
-					// 7 = purity sinners, 8 radius, 9 = Pixel Rogues_2, 10 = Pixel Rogues_3, 11 = Pixel Rogues_4,
+					// 1 = Quit Gaming_1, 2 = Chef Kiyo_1-player, 3 = Pixel Rogues_1, 4 = Team Banana, 5 = RazorSharp, 6 = Super Kickin It_2,
+					// 7 = purity sinners, 8 Indiecent Exposure, 9 = Pixel Rogues_2, 10 = Pixel Rogues_3, 11 = Pixel Rogues_4,
 					Application.OpenURL("https://tiny.cc/bfftube"+randomNum);
 				}
 				if (state.getPositionInMenu() == PlayerSelectionState.FACEBOOK && versionRead !="" && LevelFinishedController.instance.getMaxLevel()>levForComment)

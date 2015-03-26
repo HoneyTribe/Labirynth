@@ -45,9 +45,11 @@ public class ScoreController : MonoBehaviour {
 	{
 		score--;
 
-		if(LevelFinishedController.instance.getLevel() == 0 || LevelFinishedController.instance.getLevel() == 1 ||
-		  LevelFinishedController.instance.getLevel() == 5 || LevelFinishedController.instance.getLevel() == 8 ||
-		   LevelFinishedController.instance.getLevel() == 11)
+		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstJumpBoxLevel)
 		{
 			FloorInstructions.instance.ChangeInstructions();
 		}

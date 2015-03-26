@@ -27993,6 +27993,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadPlayersInstructions: 0
+  firstLightLevel: 0
+  firstTriggerLevel: 1
+  firstDecoyLevel: 2
+  secondDecoyLevel: 3
+  firstBlockLevel: 4
+  firstDoorLevel: 5
+  firstGhostLevel: 6
+  firstCraneLevel: 7
+  firstDroneLevel: 10
+  firstJumpBoxLevel: 14
+  firstDroneBombLevel: 20
+  firstCraneLazerLevel: 23
 --- !u!1 &1635647500
 GameObject:
   m_ObjectHideFlags: 0

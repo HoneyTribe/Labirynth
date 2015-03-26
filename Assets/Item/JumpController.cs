@@ -35,17 +35,16 @@ public class JumpController : MonoBehaviour {
 				closeObjects.Add (currentCollider.gameObject);
 			}
 
-			if (currentCollider.name.Contains("Player"))
-			{
-				if(LevelFinishedController.instance.getLevel() == 11)
-				{
-				boxCollideCount++;
-				//print ("boxCount: "+boxCollideCount);
-				FloorInstructions.instance.ChangeInstructions();
-				}
+			//if (currentCollider.name.Contains("Player"))
+			//{
+				//if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstJumpBoxLevel)
+				//{
+				//boxCollideCount++;
+				//FloorInstructions.instance.ChangeInstructions();
+				//}
 
 
-			}
+			//}
 		}
 	}
 

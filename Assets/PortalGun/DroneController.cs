@@ -83,7 +83,7 @@ public class DroneController : MonoBehaviour {
 		droneLight.SendMessage ("TurnOn");
 		retracting = false;
 
-		if( LevelFinishedController.instance.getLevel() == 8)
+		if( LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel)
 		{
 			FloorInstructions.instance.ChangeInstructions();
 		}
@@ -96,7 +96,7 @@ public class DroneController : MonoBehaviour {
 		rigidbody.drag = 0;
 		retracting = true;
 
-		if( LevelFinishedController.instance.getLevel() == 8)
+		if( LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel)
 		{
 			FloorInstructions.instance.ChangeInstructions();
 		}
