@@ -45,7 +45,7 @@ public class FloorInstructions : MonoBehaviour
 
 				if (ScoreController.instance.getScore() > 0)
 				{
-					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine.";
+					GetComponentInChildren<TextMesh>().text = "The maze runners can collect all the energy.";
 				}
 				else
 				{
@@ -64,6 +64,36 @@ public class FloorInstructions : MonoBehaviour
 					GetComponentInChildren<TextMesh>().text = "High-five with all players to time-shift.";
 					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
+		}
+
+		//trigger
+		if(LevelFinishedController.instance.getLevel() == firstTriggerLevel)
+		{
+			if (TopLightController.instance.isEntered() == true)
+			{
+				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+				
+				if (ScoreController.instance.getScore() > 0)
+				{
+					GetComponentInChildren<TextMesh>().text = "Touch that trigger over there.";
+				}
+				else
+				{
+					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine and then high-five.";
+				}
+			}
+			
+			else
+				if (ScoreController.instance.getScore() > 0)
+			{
+				GetComponentInChildren<TextMesh>().text = "Walk into          the light.";
+				arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
+			}
+			else
+			{
+				GetComponentInChildren<TextMesh>().text = "High-five with all players to time-shift.";
+				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+			}
 		}
 
 		// first decoy level
@@ -93,7 +123,7 @@ public class FloorInstructions : MonoBehaviour
 					else if(TopLightController.instance.getZapCount() % 2 == 1
 					        && DeviceController.instance.getDecoyCount() % 2 == 0)
 					{
-						GetComponentInChildren<TextMesh>().text = "Aim the light at hazards and tap action-1. Zap to distract.";
+						GetComponentInChildren<TextMesh>().text = "Tap action-1 to zap. Hazards will walk towards the Decoy.";
 						arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 					}
 
