@@ -66,6 +66,7 @@ public class DeviceController : MonoBehaviour {
 	{
 		if (LevelFinishedController.instance.isDistractionEnabled())
 		{
+			decoyCount++;
 			if (inLighthouse)
 			{
 				inLighthouse = false;
@@ -75,7 +76,7 @@ public class DeviceController : MonoBehaviour {
 				{
 					FloorInstructions.instance.ChangeInstructions();
 				}
-				decoyCount++;
+
 				AudioController.instance.Play("001_MoveDecoyMaze");
 			}
 			else
