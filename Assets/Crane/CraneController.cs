@@ -114,7 +114,7 @@ public class CraneController : MonoBehaviour {
 	{
 		entered = true;
 		craneLight.SendMessage ("TurnOn");
-		if(LevelFinishedController.instance.getLevel() == 5 )
+		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel )
 		{
 			FloorInstructions.instance.ChangeInstructions();
 		}
@@ -126,7 +126,7 @@ public class CraneController : MonoBehaviour {
 		entered = false;
 		grabber.SendMessage("ForceDrop");
 		craneLight.SendMessage ("TurnOff");
-		if(LevelFinishedController.instance.getLevel() == 5 )
+		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel )
 		{
 			FloorInstructions.instance.ChangeInstructions();
 		}

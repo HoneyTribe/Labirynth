@@ -72,7 +72,8 @@ public class DeviceController : MonoBehaviour {
 				inLighthouse = false;
 				movement = new Vector3(positionToMove.x, 1, positionToMove.z);
 
-				if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel )
+				if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
+				   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel)
 				{
 					FloorInstructions.instance.ChangeInstructions();
 				}
@@ -84,7 +85,8 @@ public class DeviceController : MonoBehaviour {
 				inLighthouse = true;
 				movement = initialPosition;
 
-				if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel )
+				if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
+				   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel)
 				{
 					FloorInstructions.instance.ChangeInstructions();
 				}

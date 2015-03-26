@@ -140,13 +140,36 @@ public class FloorInstructions : MonoBehaviour
 			arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 			
 			if (deadPlayersInstructions == 0) //nobody dead
-			{
-				if(DeviceController.instance.isDeviceInLighthouse() == true
-				   && ScoreController.instance.getScore() > 0
-				   && TopLightController.instance.isEntered() == true)
+			{	
+				if(TopLightController.instance.isEntered() == true
+				   && ScoreController.instance.getScore() > 0)
 				{
-					GetComponentInChildren<TextMesh>().text = "Maze-runners: Tap action-1 to move the Decoy.";
-					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+					if(TopLightController.instance.getZapCount() % 2 == 0
+					   && DeviceController.instance.getDecoyCount() % 2 == 0)
+					{
+						GetComponentInChildren<TextMesh>().text = "Don't leave the Decoy behind the light-controller.";
+						arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+					}
+					
+					else if(TopLightController.instance.getZapCount() % 2 == 1
+					        && DeviceController.instance.getDecoyCount() % 2 == 1)
+					{
+						GetComponentInChildren<TextMesh>().text = "Put the Decoy in cunning places.";
+						arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+					}
+					
+					else if(TopLightController.instance.getZapCount() % 2 == 1
+					        && DeviceController.instance.getDecoyCount() % 2 == 0)
+					{
+						GetComponentInChildren<TextMesh>().text = "Hazards are temporaily mind-controlled when zapped.";
+						arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+					}
+					
+					else
+					{
+						GetComponentInChildren<TextMesh>().text = "Each time you zap the power is depleted temporarily.";
+						arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+					}
 				}
 				else if(ScoreController.instance.getScore() > 0
 				        && TopLightController.instance.isEntered() == false)
@@ -154,16 +177,16 @@ public class FloorInstructions : MonoBehaviour
 					GetComponentInChildren<TextMesh>().text = "Walk into          the light.";
 					arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
 				}
-				else if (DeviceController.instance.isDeviceInLighthouse() == false
-				         && TopLightController.instance.isEntered() == true)
+				else if (TopLightController.instance.isEntered() == true
+				         && ScoreController.instance.getScore() == 0)
 				{
-					GetComponentInChildren<TextMesh>().text = "Aim the light at hazards and tap action-1. Zap to distract.";
+					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine and then high-five.";
 					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
 				else if (ScoreController.instance.getScore() == 0
 				         && TopLightController.instance.isEntered() == false)
 				{
-					GetComponentInChildren<TextMesh>().text = "High-five with all players to time-shift.";
+					GetComponentInChildren<TextMesh>().text = "High-five with all players to time shift.";
 					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
 				else
@@ -174,11 +197,10 @@ public class FloorInstructions : MonoBehaviour
 			}
 			else //someone dead
 			{
-				GetComponentInChildren<TextMesh>().text = "Revive your fallen friends by touching them.";
+				GetComponentInChildren<TextMesh>().text = "Revive your friends by touching them. Avoid hazards!";
 				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 			}
 		}
-
 		//1st crane level
 		else if(LevelFinishedController.instance.getLevel() == firstCraneLevel)
 		{
@@ -244,6 +266,12 @@ public class FloorInstructions : MonoBehaviour
 		}
 		//decoy
 		if (LevelFinishedController.instance.getLevel() == firstDecoyLevel)
+		{
+			GetComponentInChildren<TextMesh>().text = "Walk into          the light";
+			arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
+		}
+		// 2nd decoy
+		if (LevelFinishedController.instance.getLevel() == secondDecoyLevel)
 		{
 			GetComponentInChildren<TextMesh>().text = "Walk into          the light";
 			arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
