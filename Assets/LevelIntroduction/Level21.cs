@@ -6,15 +6,13 @@ public class Level21 : LevelSetup {
 	public List<Action> Setup()
 	{
 		List<Action> actions = new List<Action>();
-		
-		actions.Add(new ImageAction("tut_16"));
-		actions.Add(new MoveCameraAction("Crane"));
-		actions.Add(new TextAction(4, "Uh-oh. The Grabber was damaged during an upgrade..."));
-		actions.Add(new MoveCameraAction("Crane"));
-		actions.Add(new TextAction(4, "At least the upgrade still works!"));
-		actions.Add(new MoveCameraAction("Crane"));
-		actions.Add(new TextAction(4, "If you have full power aim over a wall and tap action-2."));
-		
+
+		actions.Add (new ChangeCamAction());
+		actions.Add(new MoveCameraAction("Drone"));
+		actions.Add(new TextAction(4, "The Teleport Drone is broken... and the Decoy too. But..."));
+		actions.Add(new MoveCameraAction("Drone"));
+		actions.Add(new TextAction(4, "We installed a new abilty! Drop stun bombs by tapping action-2."));
+
 		return actions;
 	}
 	

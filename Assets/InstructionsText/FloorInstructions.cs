@@ -75,7 +75,7 @@ public class FloorInstructions : MonoBehaviour
 				
 				if (ScoreController.instance.getScore() > 0)
 				{
-					GetComponentInChildren<TextMesh>().text = "Touch that trigger over there.";
+					GetComponentInChildren<TextMesh>().text = "What does that button over there do?";
 				}
 				else
 				{

@@ -8,9 +8,9 @@ public class Level5 : LevelSetup {
 		List<Action> actions = new List<Action>();
 
 		actions.Add (new ChangeCamAction());
-		actions.Add(new CreateMonsterAction("Flying"));
-		actions.Add(new MoveCameraAction("Monster"));
-		actions.Add(new TextAction(4, "A ghost?! How is this possible..?"));
+
+		actions.Add(new MoveCameraAction("Lighthouse"));
+		actions.Add(new TextAction(4, "Explore the maze carefully."));
 
 		return actions;
 	}

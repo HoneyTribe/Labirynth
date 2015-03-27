@@ -16,7 +16,9 @@ public class Level1 : LevelSetup {
 
 		actions.Add(new ImageAction("tut_01"));
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "Is everyone ok after the crash? Luckily the Space-Time machine is still operational."));
+		actions.Add(new TextAction(4, "Is everyone ok after the crash?!"));
+		actions.Add(new MoveCameraAction("Lighthouse"));
+		actions.Add(new TextAction(4, "Luckily the Space-Time machine is still operational."));
 		actions.Add(new MoveCameraAction("Key"));
 		actions.Add(new TextAction(4, "Collect all the energy to refuel it and get back home."));
 		actions.Add(new MoveCameraAction("Player2"));

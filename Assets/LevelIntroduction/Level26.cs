@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class Level19 : LevelSetup {
+public class Level26 : LevelSetup {
 	
 	public List<Action> Setup()
 	{
 		List<Action> actions = new List<Action>();
-		
+	
 		actions.Add (new ChangeCamAction());
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "The spirit of BFF is strong within you!"));
+		actions.Add(new TextAction(4, "You are true BFF samurai..!"));
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "The reason we Chrosi have thrived as a species is because of our abilty to collaborate."));
-		
+		actions.Add(new TextAction(4, "When you get back home I'm promoting you all to the Elite Class."));
+
 		return actions;
 	}
 	

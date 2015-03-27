@@ -209,7 +209,7 @@ namespace AssemblyCSharp
 			
 			//30 everything, normal maze + new maze ending
 			levels2.Add(new Level(new MachineCreator(true, true, true, true, true, true),
-			    22,new List<MonsterTemplate>{
+			    50,new List<MonsterTemplate>{
 				new MonsterTemplate("Flying", 4.5f),
 				new MonsterTemplate("Standard", 5.0f),
 				new MonsterTemplate("Flying", 4.0f),
