@@ -75,7 +75,7 @@ namespace AssemblyCSharp
 			
 			//10 crane, "look at all that energy"
 			levels2.Add(new Level(new MachineCreator(true, false, true, false, false, false),
-			                      61,new List<MonsterTemplate>{
+			    61,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 5.0f),
 				new MonsterTemplate("Flying", 3.5f),
 				new MonsterTemplate("Standard", 4.5f)
@@ -230,7 +230,7 @@ namespace AssemblyCSharp
 			
 			//3 decoy tutorial
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			                      52,new List<MonsterTemplate>{},0,0,7,7, null, "DecoyTut"));
+			                      52,new List<MonsterTemplate>{},0,0,10,10, null, "DecoyTut"));
 			
 			//4 decoy + can die
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -271,12 +271,12 @@ namespace AssemblyCSharp
 			
 			//10 no walls, "look at all that energy"
 			levels3.Add(new Level(new MachineCreator(true, false, true, false, false, false),
-			                      61,new List<MonsterTemplate>{
+			    61,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 5.0f),
 				new MonsterTemplate("Flying", 3.5f),
 				new MonsterTemplate("Standard", 4.5f),
 				new MonsterTemplate("Flying", 3.0f)
-			},2,4,7,7, "EnableTrapEnding", "NoWalls"));
+			},2,4,8,8, "EnableTrapEnding", "NoWalls"));
 			
 			//11 teleport drone, puzzle
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, true, false),
@@ -397,7 +397,7 @@ namespace AssemblyCSharp
 			},10,10,8,8, "EnableNoVerticalWallsEnding", "Lazer3"));
 
 			//27 Nothing
-			levels2.Add(new Level(new MachineCreator(false, false, false, false, false, false),
+			levels3.Add(new Level(new MachineCreator(false, false, false, false, false, false),
 			    26,new List<MonsterTemplate>{
 			},1,1,8,8, null, "Run"));
 
@@ -438,7 +438,7 @@ namespace AssemblyCSharp
 			
 			//3 decoy tutorial
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			                      52,new List<MonsterTemplate>{},0,0,7,7, null, "DecoyTut"));
+			                      52,new List<MonsterTemplate>{},0,0,10,10, null, "DecoyTut"));
 			
 			//4 decoy + can die
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -481,13 +481,13 @@ namespace AssemblyCSharp
 			
 			//10 no walls "look at all that energy"
 			levels4.Add(new Level(new MachineCreator(true, false, true, false, false, false),
-			                      61,new List<MonsterTemplate>{
+			    61,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 5.0f),
 				new MonsterTemplate("Flying", 3.5f),
 				new MonsterTemplate("Standard", 4.5f),
 				new MonsterTemplate("Flying", 4.0f),
 				new MonsterTemplate("Flying", 3.0f)
-			},2,4,7,7, "EnableTrapEnding", "NoWalls"));
+			},2,4,8,8, "EnableTrapEnding", "NoWalls"));
 			
 			//11 teleport drone
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, true, false),
@@ -623,7 +623,7 @@ namespace AssemblyCSharp
 			},8,8,8,8, "EnableNoVerticalWallsEnding", "Snake"));
 
 			//29 everything, bff, 2 triggers
-			levels3.Add(new Level(new MachineCreator(true, true, true, true, true, true),
+			levels4.Add(new Level(new MachineCreator(true, true, true, true, true, true),
 			    28,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 6.0f),
 				new MonsterTemplate("Flying", 5.0f),
