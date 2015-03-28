@@ -32,7 +32,7 @@ namespace AssemblyCSharp
 			    2, new List<MonsterTemplate>{},0,0,6,6, null, null));
 
 			//2 trigger tutorial
-			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
+			levels2.Add(new Level(new MachineCreator(false, false, false, false, false, false),
 			     10,new List<MonsterTemplate>{},0,0,7,7, null, "TriggerTut"));
 			
 			//3 decoy tutorial
@@ -225,7 +225,7 @@ namespace AssemblyCSharp
 			                      3, new List<MonsterTemplate>{},0,0,6,6, null, null));
 
 			//2 trigger tutorial
-			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
+			levels3.Add(new Level(new MachineCreator(false, false, false, false, false, false),
 			                      10,new List<MonsterTemplate>{},0,0,7,7, null, "TriggerTut"));
 			
 			//3 decoy tutorial
@@ -433,7 +433,7 @@ namespace AssemblyCSharp
 			                      4, new List<MonsterTemplate>{},0,0,6,6, null, null));
 
 			//2 trigger tutorial
-			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
+			levels4.Add(new Level(new MachineCreator(false, false, false, false, false, false),
 			                      10,new List<MonsterTemplate>{},0,0,7,7, null, "TriggerTut"));
 			
 			//3 decoy tutorial
