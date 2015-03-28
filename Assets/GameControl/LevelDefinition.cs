@@ -145,7 +145,7 @@ namespace AssemblyCSharp
 			
 			//20 all machines, two triggers
 			levels2.Add(new Level(new MachineCreator(true, true, true, false, true, false),
-			    44,new List<MonsterTemplate>{
+			    35,new List<MonsterTemplate>{
 				new MonsterTemplate("Flying", 4.0f)
 			},8,8,9,9, null, "Boxes"));
 			
@@ -348,7 +348,7 @@ namespace AssemblyCSharp
 			
 			//20 all machines
 			levels3.Add(new Level(new MachineCreator(true, true, true, false, true, false),
-			    44,new List<MonsterTemplate>{
+			    35,new List<MonsterTemplate>{
 				new MonsterTemplate("Flying", 4.0f),
 				new MonsterTemplate("Flying", 4.5f)
 			},8,8,9,9, null, "Boxes"));
@@ -561,7 +561,7 @@ namespace AssemblyCSharp
 			
 			//20 all machines
 			levels4.Add(new Level(new MachineCreator(true, true, true, false, true, false),
-			    44,new List<MonsterTemplate>{
+			    35,new List<MonsterTemplate>{
 				new MonsterTemplate("Flying", 4.0f),
 				new MonsterTemplate("Flying", 4.5f),
 				new MonsterTemplate("Flying", 5.0f)
