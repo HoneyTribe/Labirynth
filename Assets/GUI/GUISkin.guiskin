@@ -118,12 +118,12 @@ MonoBehaviour:
       m_Top: 0
       m_Bottom: 0
     m_Font: {fileID: 12800000, guid: 3195aa4b6c18ea14286069d721ae166d, type: 3}
-    m_FontSize: 24
+    m_FontSize: 22
     m_FontStyle: 0
     m_Alignment: 4
     m_WordWrap: 0
     m_RichText: 1
-    m_TextClipping: 1
+    m_TextClipping: 0
     m_ImagePosition: 0
     m_ContentOffset: {x: 0, y: 0}
     m_FixedWidth: 0
