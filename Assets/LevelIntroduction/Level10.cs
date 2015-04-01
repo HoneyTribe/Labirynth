@@ -8,10 +8,8 @@ public class Level10 : LevelSetup {
 		List<Action> actions = new List<Action>();
 
 		actions.Add (new ChangeCamAction());
-		actions.Add(new MoveCameraAction("Key"));
+		actions.Add(new MoveCameraAction("Player1"));
 		actions.Add(new TextAction(4, "Look at all that energy!"));
-		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "Remember your training from the Time Academy... BFF or Die!"));
 
 		return actions;
 	}

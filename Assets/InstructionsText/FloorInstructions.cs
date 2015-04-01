@@ -123,7 +123,7 @@ public class FloorInstructions : MonoBehaviour
 					else if(TopLightController.instance.getZapCount() % 2 == 1
 					        && DeviceController.instance.getDecoyCount() % 2 == 0)
 					{
-						GetComponentInChildren<TextMesh>().text = "Tap action-1 to zap. Hazards will walk towards the Decoy.";
+						GetComponentInChildren<TextMesh>().text = "Zap-notized hazards will walk towards the Decoy. Tap to zap.";
 						arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 					}
 

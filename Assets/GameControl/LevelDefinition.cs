@@ -156,7 +156,7 @@ namespace AssemblyCSharp
 			
 			//22 bomb 2, pac man
 			levels2.Add(new Level(new MachineCreator(false, false, false, false, false, true),
-			    37,new List<MonsterTemplate>{
+			    38,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 8.5f),
 				new MonsterTemplate("Standard", 8.0f),
 				new MonsterTemplate("Standard", 7.5f)
@@ -306,7 +306,7 @@ namespace AssemblyCSharp
 			
 			//15 jump box
 			levels3.Add(new Level(new MachineCreator(true, true, false, false, false, false),
-			8,new List<MonsterTemplate>{	
+			11,new List<MonsterTemplate>{	
 			},15,15,8,8, null, "FirstJumpBox"));
 			
 			// 16 jump box + normal maze + new ending
@@ -360,7 +360,7 @@ namespace AssemblyCSharp
 			
 			//22 bomb 2 - chase
 			levels3.Add(new Level(new MachineCreator(false, false, false, false, false, true),
-			    37,new List<MonsterTemplate>{
+			    38,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 8.5f),
 				new MonsterTemplate("Standard", 8.0f),
 				new MonsterTemplate("Flying", 6.0f),
@@ -424,7 +424,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 4.0f),
 				new MonsterTemplate("Standard", 4.2f),
 				new MonsterTemplate("Standard", 3.0f)
-			},5,8,10,10, null, null));
+			},5,8,10,10, "EnableNewMazeEnding", null));
 			
 			// 4 player levels
 			
@@ -574,7 +574,7 @@ namespace AssemblyCSharp
 			
 			//22 bomb 2 - chase
 			levels4.Add(new Level(new MachineCreator(false, false, false, false, false, true),
-			    37,new List<MonsterTemplate>{
+			    38,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 8.5f),
 				new MonsterTemplate("Flying", 7.0f),
 				new MonsterTemplate("Standard", 8.0f),
@@ -631,7 +631,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Standard", 8.0f)
 				},8,6,9,9, null, "BFF"));
 			
-			//29 everything
+			//30 everything
 			levels4.Add(new Level(new MachineCreator(true, true, true, true, true, true),
 			    22,new List<MonsterTemplate>{
 				new MonsterTemplate("Flying", 4.5f),
@@ -639,7 +639,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 4.0f),
 				new MonsterTemplate("Standard", 4.2f),
 				new MonsterTemplate("Standard", 3.0f)
-			},5,8,10,10, null, null));
+			},5,8,10,10, "EnableNewMazeEnding", null));
 			
 		}
 		

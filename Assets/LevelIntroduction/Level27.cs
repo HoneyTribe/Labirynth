@@ -9,7 +9,7 @@ public class Level27 : LevelSetup {
 		
 		actions.Add (new ChangeCamAction());
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "Eveything needed to go back in maintenence"));
+		actions.Add(new TextAction(4, "All the equipment needed a check in maintenance."));
 		
 		return actions;
 	}
