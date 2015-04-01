@@ -109,6 +109,25 @@ public class LevelFinishedController : MonoBehaviour {
 		levCount = PlayerPrefs.GetInt("savedLevCount");
 	}
 
+	void Update()
+	{
+		if (Input.GetKeyDown("l"))
+		{
+			if(ENABLE_ALL_LEVELS == true)
+			{
+				ENABLE_ALL_LEVELS = false;
+				maxLevel = 0;
+				AudioController.instance.Play("003_CollectKey");
+			}
+			else
+			{
+				ENABLE_ALL_LEVELS = true;
+				maxLevel = 29;
+				AudioController.instance.Play("003_CollectKey");
+			}
+		}
+	}
+
 	private void LoadNewLevel()
 	{
 		level++;
@@ -401,4 +420,5 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		return controllers;
 	}
+	
 }

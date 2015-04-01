@@ -518,7 +518,7 @@ namespace AssemblyCSharp
 			
 			//15 jump box
 			levels4.Add(new Level(new MachineCreator(true, true, false, false, false, false),
-			8,new List<MonsterTemplate>{
+			11,new List<MonsterTemplate>{
 			},15,15,8,8, null, "FirstJumpBox"));
 
 			// 16 jump box + normal maze + new ending
