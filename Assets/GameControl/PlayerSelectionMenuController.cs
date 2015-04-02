@@ -6,7 +6,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 
 	private const int PLAYER_IMAGE_HEIGHT = 136;
 	private float iconSize = 136;
-	private string version = "0.1.9";
+	private string version = "0.2";
 	private string url = "http://www.honeytribestudios.com/games1/BFF/bffVersion.txt";
 	private string versionRead;
 	private int randomNum = 1;

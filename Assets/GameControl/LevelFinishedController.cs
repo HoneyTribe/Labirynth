@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class LevelFinishedController : MonoBehaviour {
 
-	public static bool ENABLE_ALL_LEVELS = true;
+	public static bool ENABLE_ALL_LEVELS = false;
 	public static float SHOW_INSTRUCTION_MIN_TIME = 0.3f;
 	public static int savedMaxLevel;
 	private int bootups = 0;
@@ -108,7 +108,7 @@ public class LevelFinishedController : MonoBehaviour {
 		//retreive levCount
 		levCount = PlayerPrefs.GetInt("savedLevCount");
 	}
-
+	/*
 	void Update()
 	{
 		if (Input.GetKeyDown("l"))
@@ -127,7 +127,7 @@ public class LevelFinishedController : MonoBehaviour {
 			}
 		}
 	}
-
+	*/
 	private void LoadNewLevel()
 	{
 		level++;
@@ -145,14 +145,14 @@ public class LevelFinishedController : MonoBehaviour {
 				PlayerPrefs.SetInt("savedMaxLevel", maxLevel);
 				PlayerPrefs.Save();
 				//send to analytics
-				GA.API.Design.NewEvent("maxLevel"+maxLevel);
+				GA.API.Design.NewEvent("maxLevel"+maxLevel,1);
 			}
 			else if (PlayerPrefs.HasKey("savedMaxLevel") == false)
 			{
 				PlayerPrefs.SetInt("savedMaxLevel", maxLevel);
 				PlayerPrefs.Save();
 				//send to analytics
-				GA.API.Design.NewEvent("maxLevel"+maxLevel);
+				GA.API.Design.NewEvent("maxLevel"+maxLevel,1);
 			}
 		}
 
@@ -202,7 +202,7 @@ public class LevelFinishedController : MonoBehaviour {
 			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width * 0.05f, 50, 300, 300), "Level: " + (level + 1), help_GUISkin.label); 
 			GUI.Label (new Rect (Screen.width * 0.05f, 70, 300, 300), "HELP: 'H' or 'Start'", help_GUISkin.label);
-			GUI.Label (new Rect (Screen.width * 0.05f, 90, 300, 300), "Version 0.1.9", help_GUISkin.label);
+			GUI.Label (new Rect (Screen.width * 0.05f, 90, 300, 300), "Alpha v0.2", help_GUISkin.label);
 		}
 
 		if (finished && level < totalLevels-1)
