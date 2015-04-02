@@ -172,7 +172,7 @@ namespace AssemblyCSharp
 
 			//24 lazer
 			levels2.Add(new Level(new MachineCreator(false, false, false, true, false, false),
-				32,new List<MonsterTemplate>{
+				31,new List<MonsterTemplate>{
 			},5,5,9,9, null, "Lazer"));
 			
 			//25 lazer 2
@@ -378,7 +378,7 @@ namespace AssemblyCSharp
 
 			//24 lazer
 			levels3.Add(new Level(new MachineCreator(false, false, false, true, false, false),
-			  	32,new List<MonsterTemplate>{
+			  	31,new List<MonsterTemplate>{
 			},5,5,9,9, null, "Lazer"));
 			
 			//25 lazer 2
@@ -592,7 +592,7 @@ namespace AssemblyCSharp
 
 			//24 lazer
 			levels4.Add(new Level(new MachineCreator(false, false, false, true, false, false),
-			    32,new List<MonsterTemplate>{
+			    31,new List<MonsterTemplate>{
 			},5,5,9,9, null, "Lazer"));
 			
 			//25 lazer 2

@@ -83,7 +83,8 @@ public class DroneController : MonoBehaviour {
 		droneLight.SendMessage ("TurnOn");
 		retracting = false;
 
-		if( LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel)
+		if( LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneBombLevel)
 		{
 			FloorInstructions.instance.ChangeInstructions();
 		}
@@ -96,7 +97,8 @@ public class DroneController : MonoBehaviour {
 		rigidbody.drag = 0;
 		retracting = true;
 
-		if( LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel)
+		if( LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneBombLevel)
 		{
 			FloorInstructions.instance.ChangeInstructions();
 		}
@@ -106,11 +108,11 @@ public class DroneController : MonoBehaviour {
 	{
 		if (move == Vector3.zero)
 		{
-			rigidbody.drag = 15.0f;
+			rigidbody.drag = 18.0f;
 		}
 		else
 		{
-			rigidbody.drag = 1.0f;
+			rigidbody.drag = 0.5f;
 			rigidbody.AddForce (move * Time.deltaTime * 450);
 			if (move.x != 0)
 			{

@@ -274,7 +274,45 @@ public class FloorInstructions : MonoBehaviour
 			{
 				GetComponentInChildren<TextMesh>().text = "Now choose your path wisely..!";
 			}
-		}	
+		}
+		//1st drone bomb level
+		else if(LevelFinishedController.instance.getLevel() == firstDroneBombLevel)
+		{
+			if(DroneController.instance.isEntered() == true && ScoreController.instance.getScore() > 0)
+			{
+				GetComponentInChildren<TextMesh>().text = "Fly the teleport Drone. Tap Action-2 and drop stun bombs.";
+				arrowLeft.transform.position = new Vector3(-4, -0.5f, -13);
+			}
+			else if (DroneController.instance.isEntered() == false && ScoreController.instance.getScore() > 0)
+			{
+				GetComponentInChildren<TextMesh>().text = "Walk into             the Drone entrance";
+				arrowLeft.transform.position = new Vector3(-4, 0.5f, -13);
+			}
+			else
+			{
+				GetComponentInChildren<TextMesh>().text = "";
+				arrowLeft.transform.position = new Vector3(-4, -0.5f, -13);
+			}
+		}
+		//1st crane level
+		else if(LevelFinishedController.instance.getLevel() == firstCraneLazerLevel)
+		{
+			if(CraneController.instance.isEntered() == true && ScoreController.instance.getScore() > 0)
+			{
+				GetComponentInChildren<TextMesh>().text = "If at 100% power tap action-2 when above walls.";
+				arrowRight.transform.position = new Vector3(4, -0.5f, -13);
+			}
+			else if (CraneController.instance.isEntered() == false && ScoreController.instance.getScore() > 0)
+			{
+				GetComponentInChildren<TextMesh>().text = "Walk into the Wall-Lazer           entrance";
+				arrowRight.transform.position = new Vector3(4, 0.5f, -13);
+			}
+			else
+			{
+				GetComponentInChildren<TextMesh>().text = "";
+				arrowRight.transform.position = new Vector3(4, -0.5f, -13);
+			}
+		}
 
 	}
 
@@ -322,6 +360,18 @@ public class FloorInstructions : MonoBehaviour
 		else if (LevelFinishedController.instance.getLevel() == firstJumpBoxLevel)
 		{
 			GetComponentInChildren<TextMesh>().text = "Go and pick up the Anti-Grav Box";
+		}
+		//drone bomb
+		else if (LevelFinishedController.instance.getLevel() == firstDroneBombLevel)
+		{
+			GetComponentInChildren<TextMesh>().text = "Walk into             the Drone entrance";
+			arrowLeft.transform.position = new Vector3(-4, 0.5f, -13);
+		}
+		//crane lazer
+		else if (LevelFinishedController.instance.getLevel() == firstCraneLazerLevel)
+		{
+			GetComponentInChildren<TextMesh>().text = "Walk into the Wall-Lazer           entrance";
+			arrowRight.transform.position = new Vector3(4, 0.5f, -13);
 		}
 
 	}
