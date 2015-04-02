@@ -17381,6 +17381,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3a33a7098d6ab4c1899ebb4628f6ec53, type: 3}
   - {fileID: 8300000, guid: 0e696bb14456748c9aa1935149be5c47, type: 3}
   - {fileID: 8300000, guid: 6d5d8095742b140d0a1c02cca527e776, type: 3}
+  - {fileID: 8300000, guid: 4a2c62dae4b13413489ecd300813eea7, type: 3}
   normalAudioSource: {fileID: 0}
   loopAudioSource: {fileID: 0}
 --- !u!4 &1045041659

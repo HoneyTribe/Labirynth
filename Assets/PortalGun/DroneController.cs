@@ -171,6 +171,7 @@ public class DroneController : MonoBehaviour {
 				Destroy (secondPortal.gameObject);
 				firstPortal = null;
 				secondPortal = null;
+				AudioController.instance.Play("034_CancelTele");
 			}
 		}
 	}
