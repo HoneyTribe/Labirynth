@@ -42,6 +42,7 @@ public class NewMazeEnding : MonoBehaviour {
 			if (earthquakeTimer > 0.7f)
 			{
 				GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
+				AudioController.instance.Play("033_Earthquake");
 				earthquakeTimer = 0;
 			}
 
