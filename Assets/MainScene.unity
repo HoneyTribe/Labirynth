@@ -3475,7 +3475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07dfd9c6b0dcbe749b922921b3a4ca3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersTexture: {fileID: 2800000, guid: b93a31080ceb04db0a5e0d71a0156d35, type: 3}
+  playersTexture: {fileID: 2800000, guid: 2d51b38bce71342a69855c492e07b8e5, type: 3}
   teacherTexture: {fileID: 2800000, guid: ef0843bf821d043ca85ad9370e5c7374, type: 3}
   guiSkin: {fileID: 11400000, guid: 30ca4d179622f554183fe49dc20a52bb, type: 2}
 --- !u!114 &141250790
@@ -33027,7 +33027,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043507661}
-  m_LocalRotation: {x: -.565562785, y: .510542512, z: .332734853, w: .555673063}
+  m_LocalRotation: {x: -.565562844, y: .510542572, z: .332734883, w: .555673122}
   m_LocalPosition: {x: -1.44359303, y: -17.7804337, z: -18.2103996}
   m_LocalScale: {x: 8.13866043, y: .100000009, z: 10}
   m_Children: []
