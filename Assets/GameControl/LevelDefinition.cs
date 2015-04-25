@@ -37,7 +37,7 @@ namespace AssemblyCSharp
 			
 			//3 decoy tutorial
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			     52,new List<MonsterTemplate>{},0,0,10,10, null, "DecoyTut"));
+			     2,new List<MonsterTemplate>{},0,0,9,9, null, "Zap"));
 
 			//4 decoy + can die
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
