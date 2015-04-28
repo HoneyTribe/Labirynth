@@ -106,9 +106,9 @@ namespace AssemblyCSharp
 			15,new List<MonsterTemplate>{},0,0,8,8, null, "TwoTriggers"));
 			
 			//15 jump box, can't die
-			levels2.Add(new Level(new MachineCreator(true, true, false, false, false, false),
-			    11,new List<MonsterTemplate>{
-			},15,15,8,8, null, "FirstJumpBox"));
+			levels2.Add(new Level(new MachineCreator(false, true, false, false, false, false),
+			    40,new List<MonsterTemplate>{
+			},0,0,9,9, null, "FirstJumpBox"));
 			
 			//16 normal maze + jump box + new maze ending
 			levels2.Add(new Level(new MachineCreator(true, true, false, false, false, false),

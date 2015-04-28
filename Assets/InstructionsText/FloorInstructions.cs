@@ -272,7 +272,7 @@ public class FloorInstructions : MonoBehaviour
 			}
 			else if( ScoreController.instance.getScore() == 0)
 			{
-				GetComponentInChildren<TextMesh>().text = "Now choose your path wisely..!";
+				GetComponentInChildren<TextMesh>().text = "You can practice using the anti-grav box here safely.";
 			}
 		}
 		//1st drone bomb level
