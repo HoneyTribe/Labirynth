@@ -20,8 +20,8 @@ public class Jump2 : PuzzleTemplate
 			//0 = wall/post , 2 = space, 3 = block, 4 = mummy, 5 = key 6 = sleepingMonster
 			// to make a gap at edge of screen place a 0 and a 2 behind it
 
-			{5,2,5,2,5,2,3,2,4,2,5},
-			{2,2,2,2,2,2,2,0,0,0,0},
+			{5,2,2,0,2,2,3,2,4,2,5},
+			{2,2,2,0,2,2,2,0,0,0,0},
 			{5,2,2,2,5,2,2,0,5,2,5},
 			{0,0,2,0,0,0,0,0,2,2,2},
 			{0,0,3,0,5,2,5,2,5,2,5},

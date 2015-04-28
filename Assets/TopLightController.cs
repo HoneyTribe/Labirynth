@@ -96,6 +96,7 @@ public class TopLightController : MonoBehaviour {
 		timeLeft = openningInterval;
 
 		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstBlockLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstTriggerLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel
@@ -115,6 +116,7 @@ public class TopLightController : MonoBehaviour {
 		timeLeft = closingInterval;
 
 		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstBlockLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstTriggerLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel

@@ -10,18 +10,19 @@ public class FloorInstructions : MonoBehaviour
 	private GameObject arrowLeft;
 	public int deadPlayersInstructions;
 
+	//These are attached to the object TextInstructionsFloor
 	public int firstLightLevel = 0;
-	public int firstTriggerLevel = 1;
-	public int firstDecoyLevel = 2;
-	public int secondDecoyLevel = 3;
-	public int firstBlockLevel = 4;
-	public int firstDoorLevel = 5;
-	public int firstGhostLevel = 6;
-	public int firstCraneLevel = 7;
-	public int firstDroneLevel = 10;
-	public int firstJumpBoxLevel = 14;
-	public int firstDroneBombLevel = 20;
-	public int firstCraneLazerLevel = 23;
+	public int firstTriggerLevel = 11;
+	public int firstDecoyLevel = 3;
+	public int secondDecoyLevel = 4;
+	public int firstBlockLevel = 1;
+	public int firstDoorLevel = 6;
+	public int firstGhostLevel = 7;
+	public int firstCraneLevel = 8;
+	public int firstDroneLevel = 14;
+	public int firstJumpBoxLevel = 17;
+	public int firstDroneBombLevel = 23;
+	public int firstCraneLazerLevel = 26;
 
 	// Reads variables from: LevelFinishedController.cs, DeviceController.cs, ScoreController.cs, TopLightController.cs, CraneController.cs
 	
@@ -65,9 +66,38 @@ public class FloorInstructions : MonoBehaviour
 					arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 				}
 		}
+		//first block
+		else if(LevelFinishedController.instance.getLevel() == firstBlockLevel)
+		{
+			if (TopLightController.instance.isEntered() == true)
+			{
+				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+				
+				if (ScoreController.instance.getScore() > 0)
+				{
+					GetComponentInChildren<TextMesh>().text = "";
+				}
+				else
+				{
+					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine and then high-five.";
+				}
+			}
+			
+			else
+				if (ScoreController.instance.getScore() > 0)
+			{
+				GetComponentInChildren<TextMesh>().text = "Walk into          the light.";
+				arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
+			}
+			else
+			{
+				GetComponentInChildren<TextMesh>().text = "High-five with all players to time-shift.";
+				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+			}
+		}
 
 		//trigger
-		if(LevelFinishedController.instance.getLevel() == firstTriggerLevel)
+		else if(LevelFinishedController.instance.getLevel() == firstTriggerLevel)
 		{
 			if (TopLightController.instance.isEntered() == true)
 			{
@@ -326,6 +356,12 @@ public class FloorInstructions : MonoBehaviour
 			GetComponentInChildren<TextMesh>().text = "Walk into          the light";
 			arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
 			}
+		//1st block
+		if (LevelFinishedController.instance.getLevel() == firstBlockLevel)
+		{
+			GetComponentInChildren<TextMesh>().text = "Walk into          the light";
+			arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
+		}
 		//trigger
 		if (LevelFinishedController.instance.getLevel() == firstTriggerLevel)
 		{

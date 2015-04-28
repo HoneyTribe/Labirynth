@@ -47,6 +47,7 @@ public class ScoreController : MonoBehaviour {
 
 		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstTriggerLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstBlockLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel
