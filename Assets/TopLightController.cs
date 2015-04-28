@@ -97,6 +97,7 @@ public class TopLightController : MonoBehaviour {
 
 		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstBlockLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstZapLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstTriggerLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel
@@ -117,6 +118,7 @@ public class TopLightController : MonoBehaviour {
 
 		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstBlockLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstZapLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstTriggerLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel
@@ -188,6 +190,7 @@ public class TopLightController : MonoBehaviour {
 
 					zapCount++;
 					if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
+					   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstZapLevel
 					   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel)
 					{
 						FloorInstructions.instance.ChangeInstructions();

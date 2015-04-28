@@ -222,8 +222,24 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Standard", 6.0f),
 				new MonsterTemplate("Flying", 5.0f)
 			},8,8,9,9, null, "BFF"));
+
+			//33 everything, all ghosts
+			levels2.Add(new Level(new MachineCreator(true, true, true, true, true, true),
+			    42,new List<MonsterTemplate>{
+				new MonsterTemplate("Flying", 5.0f),
+				new MonsterTemplate("Flying", 5.5f),
+				new MonsterTemplate("Flying", 6.0f)
+			},6,8,9,9, "EnableNewMazeEnding", "Boo"));
+
+			//34 everything, push blocks
+			levels2.Add(new Level(new MachineCreator(true, true, true, true, true, true),
+			    14,new List<MonsterTemplate>{
+				new MonsterTemplate("Standard", 5.0f),
+				new MonsterTemplate("Standard", 5.5f),
+				new MonsterTemplate("Standard", 6.0f)
+			},8,8,9,9, null, "PushBlocks"));
 			
-			//33 everything, normal maze + new maze ending
+			//35 everything, normal maze + new maze ending
 			levels2.Add(new Level(new MachineCreator(true, true, true, true, true, true),
 			    40,new List<MonsterTemplate>{
 				new MonsterTemplate("Flying", 4.5f),

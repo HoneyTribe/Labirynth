@@ -10555,7 +10555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9604083ffd93874883871d57531dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 03000000
+  level: 0300000004000000
 --- !u!23 &623227145
 Renderer:
   m_ObjectHideFlags: 0
@@ -25258,7 +25258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9604083ffd93874883871d57531dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 02000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000011000000120000001300000018000000190000001b0000001c0000001d000000
+  level: 020000000300000004000000050000000600000007000000090000000a0000000b0000000c0000000d0000000e0000000f0000001000000012000000130000001400000015000000160000001b0000001c0000001d0000001e0000001f000000200000002100000022000000
 --- !u!1 &1462004206
 GameObject:
   m_ObjectHideFlags: 0
@@ -27830,13 +27830,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deadPlayersInstructions: 0
   firstLightLevel: 0
-  firstTriggerLevel: 11
+  firstBlockLevel: 1
+  firstZapLevel: 2
   firstDecoyLevel: 3
   secondDecoyLevel: 4
-  firstBlockLevel: 1
   firstDoorLevel: 6
   firstGhostLevel: 7
   firstCraneLevel: 8
+  firstTriggerLevel: 11
   firstDroneLevel: 14
   firstJumpBoxLevel: 17
   firstDroneBombLevel: 23

@@ -12,13 +12,14 @@ public class FloorInstructions : MonoBehaviour
 
 	//These are attached to the object TextInstructionsFloor
 	public int firstLightLevel = 0;
-	public int firstTriggerLevel = 11;
+	public int firstBlockLevel = 1;
+	public int firstZapLevel = 2;
 	public int firstDecoyLevel = 3;
 	public int secondDecoyLevel = 4;
-	public int firstBlockLevel = 1;
 	public int firstDoorLevel = 6;
 	public int firstGhostLevel = 7;
 	public int firstCraneLevel = 8;
+	public int firstTriggerLevel = 11;
 	public int firstDroneLevel = 14;
 	public int firstJumpBoxLevel = 17;
 	public int firstDroneBombLevel = 23;

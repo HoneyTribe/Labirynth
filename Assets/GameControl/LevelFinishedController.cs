@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 public class LevelFinishedController : MonoBehaviour {
 
-	public static bool ENABLE_ALL_LEVELS = false;
+	public static bool ENABLE_ALL_LEVELS = true;
 	public static float SHOW_INSTRUCTION_MIN_TIME = 0.3f;
 	public static int savedMaxLevel;
 	private int bootups = 0;
-	private int totalLevels =32;
+	private int totalLevels = 35;
 	private int levCount = 0;
 
 	public static LevelFinishedController instance;
@@ -104,7 +104,6 @@ public class LevelFinishedController : MonoBehaviour {
 		{
 			maxLevel = PlayerPrefs.GetInt("savedMaxLevel");
 		}
-
 		//retreive levCount
 		levCount = PlayerPrefs.GetInt("savedLevCount");
 	}
@@ -117,6 +116,7 @@ public class LevelFinishedController : MonoBehaviour {
 			{
 				ENABLE_ALL_LEVELS = false;
 				maxLevel = 0;
+				level = 0;
 				AudioController.instance.Play("003_CollectKey");
 			}
 			else
@@ -202,7 +202,6 @@ public class LevelFinishedController : MonoBehaviour {
 			GUI.Label (new Rect (Screen.width * 0.05f, 70, 300, 300), "Level: " + (level + 1), help_GUISkin.label); 
 			GUI.Label (new Rect (Screen.width * 0.05f, 110, 300, 300), "Help: 'H' or 'Start'", help_GUISkin.label);
 			GUI.Label (new Rect (Screen.width * 0.05f, 130, 300, 300), "Quit: 'Escape' or 'Back'", help_GUISkin.label);
-
 		}
 
 		if (finished && level < totalLevels-1)
