@@ -64,7 +64,7 @@ public class DeviceController : MonoBehaviour {
 
 	public void Move(Vector3 positionToMove, Color newColor)
 	{
-		if (LevelFinishedController.instance.isDistractionEnabled())
+		if (LevelFinishedController.instance.isDistractionEnabled() && !LevelFinishedController.instance.isDecoyFixed())
 		{
 			decoyCount++;
 			if (inLighthouse)
@@ -104,6 +104,11 @@ public class DeviceController : MonoBehaviour {
 	public bool isDeviceInLighthouse()
 	{
 		return inLighthouse;
+	}
+
+	public void setMovement(Vector3 movement)
+	{
+		this.movement = movement;
 	}
 
 	public int getDecoyCount()

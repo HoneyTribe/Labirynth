@@ -34,6 +34,8 @@ public class LevelFinishedController : MonoBehaviour {
 	private bool congratulation;
 	private bool stopped;
 
+	private bool decoyFixed;
+
 	void Awake()
 	{
 		if (instance == null)
@@ -419,5 +421,14 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		return controllers;
 	}
-	
+
+	public bool isDecoyFixed()
+	{
+		return decoyFixed;
+	}
+
+	public void setDecoyFixed(bool decoyFixed)
+	{
+		this.decoyFixed = decoyFixed;
+	}
 }

@@ -32,6 +32,7 @@ public class Instantiation : MonoBehaviour {
 	{
 		instance = this;
 
+		LevelFinishedController.instance.setDecoyFixed (false);
 		sizeX = LevelFinishedController.instance.getMazeSizeX();
 		sizeZ = LevelFinishedController.instance.getMazeSizeZ();
 		spaceX = planeSizeX / (sizeX * 2f);

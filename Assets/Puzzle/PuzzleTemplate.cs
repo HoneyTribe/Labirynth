@@ -160,6 +160,10 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 				{
 					createTriggerNewMaze (i, j);
 				}
+				if (grid[i,j] == (int) TileType.DECOY)
+				{
+					createDecoy (i, j);
+				}
 			}
 		}
 	}
@@ -253,6 +257,14 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 			                                            triggerNewMazePrefab.transform.position.y,
 			                                            Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
 			Instantiate (triggerNewMazePrefab, triggerNewMazePos, Quaternion.Euler(0, 0, 0));
+		}
+		private void createDecoy(int x, int z)
+		{
+			Vector3 decoyMazePos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+			                                    1f,
+			                                    Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
+			DeviceController.instance.setMovement(decoyMazePos);
+			LevelFinishedController.instance.setDecoyFixed (true);
 		}
 
 	public void finish()
