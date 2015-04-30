@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 
 public class Level23 : LevelSetup {
@@ -10,8 +10,8 @@ public class Level23 : LevelSetup {
 		
 		actions.Add (new ChangeCamAction());
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "Don't let fear slow you down!"));
-		
+		actions.Add(new TextAction(4, "Sometimes the most simple solution is right in front of you."));
+
 		return actions;
 	}
 	

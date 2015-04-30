@@ -9,10 +9,8 @@ public class Level17 : LevelSetup {
 
 		actions.Add (new ChangeCamAction());
 		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "You may not have been the best students at the Time Academy..."));
-		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "... but you are working well together. You make me proud."));
-		
+		actions.Add(new TextAction(4, "Hmm, those buttons over there look different."));
+
 		return actions;
 	}
 	

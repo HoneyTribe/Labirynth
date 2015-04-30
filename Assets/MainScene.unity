@@ -677,7 +677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9604083ffd93874883871d57531dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 140000001500000016000000
+  level: 170000001800000019000000
 --- !u!26 &36656155
 ParticleRenderer:
   m_ObjectHideFlags: 0
@@ -4300,7 +4300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &201357279
 Transform:
   m_ObjectHideFlags: 0
@@ -10603,8 +10603,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 623227143}
   m_LocalRotation: {x: 0, y: .707106888, z: 0, w: .707106769}
-  m_LocalPosition: {x: -.0982680321, y: 1.0612545, z: -11.0009041}
-  m_LocalScale: {x: .300000012, y: 1, z: 40}
+  m_LocalPosition: {x: -.0982680321, y: 1.5, z: -11.0215292}
+  m_LocalScale: {x: .200000003, y: 2, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &624564558
@@ -31117,7 +31117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9604083ffd93874883871d57531dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 170000001800000019000000
+  level: 1a0000001b0000001c000000
 --- !u!26 &1892027924
 ParticleRenderer:
   m_ObjectHideFlags: 0
@@ -31192,9 +31192,9 @@ EllipsoidParticleEmitter:
   m_Enabled: 1
   m_Emit: 1
   minSize: .189999998
-  maxSize: .100000001
+  maxSize: .200000003
   minEnergy: 0
-  maxEnergy: .720000029
+  maxEnergy: .699999988
   minEmission: 16.7000008
   maxEmission: 58.0999985
   worldVelocity: {x: 0, y: 0, z: 0}
@@ -32862,7 +32862,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043507661}
-  m_LocalRotation: {x: -.565562844, y: .510542572, z: .332734883, w: .555673122}
+  m_LocalRotation: {x: -.565562785, y: .510542512, z: .332734853, w: .555673063}
   m_LocalPosition: {x: -1.44359303, y: -17.7804337, z: -18.2103996}
   m_LocalScale: {x: 8.13866043, y: .100000009, z: 10}
   m_Children: []

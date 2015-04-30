@@ -7,8 +7,9 @@ public class Level16 : LevelSetup {
 	{
 		List<Action> actions = new List<Action>();
 
-		actions.Add(new MoveCameraAction("Lighthouse"));
-		actions.Add(new TextAction(4, "Remember your training from the Time Academy... BFF or Die!"));
+		actions.Add (new ChangeCamAction());
+		actions.Add(new MoveCameraAction("Drone"));
+		actions.Add(new TextAction(4, "Your teleporting skills are coming along nicely."));
 
 		return actions;
 	}
