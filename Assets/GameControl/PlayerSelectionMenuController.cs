@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using InControl;
 
 public class PlayerSelectionMenuController : MonoBehaviour {
 
@@ -72,8 +73,17 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 		versionRead = www.text;
 	}
 
-	public void handleLogic(float x, float z, float action, float action2, InputController input)
+	public void handleLogic(float x, float z, float action, float action2, bool start, InputController input)
 	{
+		if ((start) && (selGridInt.Count > 1) && (gameObject.activeInHierarchy)) // third condition needed for keyboard
+		{
+			AudioController.instance.Play("003_CollectKey");
+			GameObject.Find ("GameController").SendMessage ("RemovePlayerSelectionMenu", null);
+			Destroy(gameObject);
+			gameObject.SetActive(false);
+			LevelFinishedController.instance.updateMaxLevel();
+			Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		}
 		if ((action > 0) || (action2 > 0) )
 		{
 			if (this.instructionPanel != null) 
@@ -90,15 +100,6 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 			}
 			else
 			{
-				if ((selGridInt.Count > 1) && (state.getPositionInMenu() == PlayerSelectionState.START))
-				{
-					AudioController.instance.Play("003_CollectKey");
-					GameObject.Find ("GameController").SendMessage ("RemovePlayerSelectionMenu", null);
-					Destroy(gameObject);
-					LevelFinishedController.instance.updateMaxLevel();
-					Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
-
-				}
 				if (state.getPositionInMenu() == PlayerSelectionState.HELP)
 				{
 					AudioController.instance.Play("003_CollectKey");
@@ -208,41 +209,14 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 				GUI.Label(new Rect (Screen.width/2 - (460/2), (Screen.height - height)/2 + height * 0.10f - (textHeight/2), 460, textHeight),
 				 "Select at least 2 characters", menuTop_GUIskin.label);
 				}
-				if (selGridInt.Count >= 2 && isAnyCursorOn(PlayerSelectionState.START) == false && isAnyCursorOn(PlayerSelectionState.TWEET1) == false
+				if (selGridInt.Count >= 2 && isAnyCursorOn(PlayerSelectionState.TWEET1) == false
 			    && isAnyCursorOn(PlayerSelectionState.YOUTUBE) == false && isAnyCursorOn(PlayerSelectionState.FACEBOOK) == false
 			    && isAnyCursorOn(PlayerSelectionState.VERSION) == false && isAnyCursorOn(PlayerSelectionState.HELP) == false)
 				{
 				GUI.Label(new Rect (Screen.width/2 - (460/2), (Screen.height - height)/2 + height * 0.10f - (textHeight/2), 460, textHeight),
-				"Push down and tap on start", menuTop_GUIskin.label);
+				"Press start or 'H'", menuTop_GUIskin.label);
 				}
 
-				if (isAnyCursorOn(PlayerSelectionState.START))
-				{
-					if (selGridInt.Count < 2)
-					{
-					GUI.Label(new Rect (Screen.width/2 - (360/2), (Screen.height - height)/2 + height * 0.60f - (textHeight/2), 360, textHeight),
-					"Select at least 2 characters", error_GUIskin.label);
-					}
-					else
-					{
-					GUI.Button (new Rect (Screen.width/2 - (120/2), (Screen.height - height)/2 + height * 0.60f - (textHeight/2), 120, textHeight),
-					"Start", selectedSkin.button);
-					}
-				}
-				else
-				{
-					if (selGridInt.Count < 2)
-					{
-					//GUI.Label(new Rect (30, 260, 340, 40), "Select at least 2 players", skin.button);
-					GUI.Label(new Rect (Screen.width/2 - (280/2), (Screen.height - height)/2 + height * 0.60f - (textHeight/2), 280, textHeight),
-					 "Select at least 2 characters", skin.button);
-					}
-					else
-					{
-					GUI.Button (new Rect (Screen.width/2 - (80/2), (Screen.height - height)/2 + height * 0.60f - (textHeight/2), 80, textHeight),
-					"Start", skin.button);
-					}
-				}
 				if (isAnyCursorOn(PlayerSelectionState.HELP))
 				{
 					GUI.Button (new Rect (Screen.width/2 - (140/2), (Screen.height - height)/2 + height * 0.603f - (textHeight/2) + textHeight, 140, textHeight),

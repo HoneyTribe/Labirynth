@@ -62,7 +62,8 @@ public class InputController {
 
 		if (playerSelectionMenuController)
 		{
-			if ((x == 0) && (z == 0) && (action == 0) && (action2 == 0))
+			bool start = InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed;
+			if ((x == 0) && (z == 0) && (action == 0) && (action2 == 0) && (!start))
 			{
 				playerMenuButtonPressed = false;
 			}
@@ -71,7 +72,7 @@ public class InputController {
 				if (!playerMenuButtonPressed)
 				{
 					playerMenuButtonPressed = true;
-					playerSelectionMenuController.handleLogic (x, z, action, action2, this);
+					playerSelectionMenuController.handleLogic (x, z, action, action2, start, this);
 				}
 			}
 		}
