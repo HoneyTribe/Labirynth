@@ -6,7 +6,7 @@ public class MonsterCreationController : MonoBehaviour {
 
 	public static MonsterCreationController instance;
 
-	private int monsterNumber;
+	private static int monsterNumber;
 	private GameObject monsterDoorLeft;
 	private GameObject monsterDoorRight;
 
@@ -79,7 +79,7 @@ public class MonsterCreationController : MonoBehaviour {
 		}
 	}
 
-	public GameObject InstantiateMonster(GameObject prefab, Vector3 position)
+	public static GameObject InstantiateMonster(GameObject prefab, Vector3 position)
 	{
 		GameObject monster = (GameObject) Instantiate (prefab, position, Quaternion.Euler(0, 0, 0));
 		// remove flickering caused by z-fighting problem

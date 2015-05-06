@@ -43,6 +43,7 @@ public class LevelFinishedController : MonoBehaviour {
 			// this is the first instance - make it persist
 			DontDestroyOnLoad(gameObject);
 			instance = this;
+			Application.LoadLevel(0);
 
 			//hide mouse curser
 			Screen.showCursor = false;
@@ -76,10 +77,13 @@ public class LevelFinishedController : MonoBehaviour {
 	void Start()
 	{
 		levelDefinition = new AssemblyCSharp.LevelDefinition ();
-		stopped = true;
-		GameObject.Find ("GameController").SendMessage ("StopIntroduction", false);
-		GameObject playerSelectionMenu = (GameObject) Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
-		playerSelectionMenu.GetComponent<PlayerSelectionMenuController>().setSplash(1);
+		stopped = false;
+		if (GameObject.Find ("GameController").GetComponent<IntroductionController>() != null)
+		{
+			GameObject.Find ("GameController").SendMessage ("StopIntroduction", false);
+		}
+		//GameObject playerSelectionMenu = (GameObject) Instantiate (playerSelectionMenuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		//playerSelectionMenu.GetComponent<PlayerSelectionMenuController>().setSplash(1);
 		instructionPanelTime = Time.time;
 		levelsCounter = new int[totalLevels];
 
@@ -165,7 +169,7 @@ public class LevelFinishedController : MonoBehaviour {
 			LevelCounter();
 			Reset ();
 			stopped = true;
-			Application.LoadLevel (0); 
+			Application.LoadLevel (1); 
 		}
 	}
 
@@ -420,6 +424,11 @@ public class LevelFinishedController : MonoBehaviour {
 	public List<InputController> getControllers()
 	{
 		return controllers;
+	}
+
+	public void setControllers(List<InputController> controllers)
+	{
+		this.controllers = controllers;
 	}
 
 	public bool isDecoyFixed()

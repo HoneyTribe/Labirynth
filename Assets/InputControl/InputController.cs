@@ -47,6 +47,7 @@ public class InputController {
 		//this.playerController = GameObject.Find ("Player" + playerId).GetComponent<PlayerController> ();
 		this.playerId = playerId;
 		keys = new List<KeyCode> ();
+		updatePlayer ();
 		//keys.Add (moveRight);
 		//keys.Add (moveLeft);
 	}
@@ -60,39 +61,7 @@ public class InputController {
 		handleAxis (ref x, ref z, ref action, ref action2);
 		//handleKeys (ref x, ref z, ref action, ref action2);
 
-		if (playerSelectionMenuController)
-		{
-			bool start = InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed;
-			if ((x == 0) && (z == 0) && (action == 0) && (action2 == 0) && (!start))
-			{
-				playerMenuButtonPressed = false;
-			}
-			else
-			{
-				if (!playerMenuButtonPressed)
-				{
-					playerMenuButtonPressed = true;
-					playerSelectionMenuController.handleLogic (x, z, action, action2, start, this);
-				}
-			}
-		}
-		else if (menuController != null)
-		{
-			if ((x == 0) && (z == 0) && (action == 0) && (action2 == 0))
-			{
-				menuButtonPressed = false;
-			}
-			else
-			{
-				if (!menuButtonPressed)
-				{
-					menuButtonPressed = true;
-					menuController.handleLogic (x, z, action, action2);
-				}
-			}
-			handleMenu(action, action2);
-		}
-		else if (IntroductionController.instance.isPlayingIntroduction())
+		if (IntroductionController.instance != null && IntroductionController.instance.isPlayingIntroduction())
 		{
 			if ((action > 0) || (action2 > 0))
 			{
@@ -265,17 +234,18 @@ public class InputController {
 		{
 			if (InputManager.Devices [device].GetControl(InputControlType.Select).WasPressed)
 			{
-				LevelFinishedController.instance.ShowPlayerSelectionMenu();
+				Application.LoadLevel(0);
+				//LevelFinishedController.instance.ShowPlayerSelectionMenu();
 			}
 
-			if (InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed)
-			{
-				LevelFinishedController.instance.ShowInstruction();
-			}
+			//if (InputManager.Devices [device].GetControl(InputControlType.Select).WasPressed)
+			//{
+			//	LevelFinishedController.instance.ShowInstruction();
+			//}
 		}
 		else
 		{
-			if (InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed)
+			if (InputManager.Devices [device].GetControl(InputControlType.Select).WasPressed)
 			{
 				LevelFinishedController.instance.HideInstruction();
 			}

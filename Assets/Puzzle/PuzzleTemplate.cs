@@ -198,7 +198,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 			Vector3 monsterPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
 			                                  monsterPrefab.transform.position.y,
 			                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
-			GameObject monster = MonsterCreationController.instance.InstantiateMonster (monsterPrefab, monsterPos);
+			GameObject monster = MonsterCreationController.InstantiateMonster (monsterPrefab, monsterPos);
 			
 			monster.GetComponent<AbstractMonsterController> ().setSpeed (4.5f+(monsterNum+1* 1f));
 			
@@ -224,7 +224,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 			Vector3 monsterPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
 			                                  monsterPrefab.transform.position.y,
 			                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
-			GameObject monster = MonsterCreationController.instance.InstantiateMonster (lazyMonsterPrefab, monsterPos);
+			GameObject monster = MonsterCreationController.InstantiateMonster (lazyMonsterPrefab, monsterPos);
 			monster.GetComponent<AbstractMonsterController> ().setSpeed (4.5f+(monsterNum+1* 1f));
 		}
 

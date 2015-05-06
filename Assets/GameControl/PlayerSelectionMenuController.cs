@@ -43,7 +43,7 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	void Start()
 	{
 		LevelFinishedController.instance.getControllers().Clear();
-		GameObject.Find ("GameController").SendMessage ("SetPlayerSelectionMenu", this);
+		//GameObject.Find ("GameController").SendMessage ("SetPlayerSelectionMenu", this);
 
 		// Buttons
 		buttonStyles = SpritesLoader.getPlayerSprites (playersTexture);

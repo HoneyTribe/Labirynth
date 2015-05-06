@@ -48,75 +48,59 @@ public class InControlManager : MonoBehaviour {
 //			Debug.Log("Detached device:" + device.Name);
 //		}
 
+		instance = this;
+		if (Application.loadedLevel == 0)
+		{
+			currentPlayer = 1;
+			LevelFinishedController.instance.setControllers(new List<InputController> ());
+		}
+		else
+		{
+			// disable not active players
+			List<int> playerIds = new List<int>(){1,2,3,4};
+			foreach(InputController inputController in LevelFinishedController.instance.getControllers())
+			{
+				playerIds.Remove(inputController.getPlayerId());
+			}
+			foreach(int playerId in playerIds)
+			{
+				GameObject.Find ("Player" + playerId).SetActive(false);
+			}
+		}
+
 		foreach(InputController inputController in LevelFinishedController.instance.getControllers())
 		{
 			inputController.updatePlayer();
 		}
-
-		for (int i = LevelFinishedController.instance.getControllers().Count + 1; i <= 4; i++)
-		{
-			GameObject.Find ("Player" + i).SetActive(false);
-		}
-
-		instance = this;
 	}
 
 	void Update () 
 	{
 		InputManager.Update ();
 
-		if (playerSelectionMenuController != null)
+		if (Application.loadedLevel == 0)
 		{
 			InputDevice input = InputManager.ActiveDevice;
-			if (input.GetControl(InputControlType.Select).WasPressed)
-			{
-				if (playerSelectionMenuController.getSplash() == 0)
-				{
-					playerSelectionMenuController.setSplash(2);
-					currentPlayer = 1;
-					LevelFinishedController.instance.getControllers().Clear();
-					return;
-				}
-				else if (playerSelectionMenuController.getSplash() == 2)
-				{
-					playerSelectionMenuController.setSplash(1);
-					return;
-				}
-				else
-				{
-					Application.Quit();
-				}
-			}
-			if ((input.GetControl(InputControlType.LeftTrigger).WasPressed) ||
-			    (input.GetControl(InputControlType.LeftBumper).WasPressed) ||
-			    (input.GetControl(InputControlType.RightTrigger).WasPressed) ||
-			    (input.GetControl(InputControlType.RightBumper).WasPressed) ||
-				(input.GetControl(InputControlType.Action1).WasPressed) ||
-			    (input.GetControl(InputControlType.Action2).WasPressed) ||
-			    (input.GetControl(InputControlType.Action3).WasPressed) ||
-			    (input.GetControl(InputControlType.Start).WasPressed) )
-			{
-				if (playerSelectionMenuController.getSplash() == 2)
-				{
-					playerSelectionMenuController.setSplash(0);
-					return;
-				}
-				else if (playerSelectionMenuController.getSplash() == 1)
-				{
-					playerSelectionMenuController.setSplash(2);
-					return;
-				}
-			}
 
 			bool left = false;
 			bool right = false;
-			if ((input.GetControl(InputControlType.LeftTrigger).WasPressed) || (input.GetControl(InputControlType.LeftBumper).WasPressed))
+			if ((input.GetControl(InputControlType.LeftTrigger).WasPressed) || 
+			    (input.GetControl(InputControlType.LeftBumper).WasPressed) ||
+			    (input.GetControl(InputControlType.LeftStickX).WasPressed) ||
+			    (input.GetControl(InputControlType.LeftStickY).WasPressed))
 			{
 				left = true;
 			}
-			if ((input.GetControl(InputControlType.RightTrigger).WasPressed) || (input.GetControl(InputControlType.RightBumper).WasPressed))
+			if ((input.GetControl(InputControlType.RightTrigger).WasPressed) || 
+			    (input.GetControl(InputControlType.RightBumper).WasPressed) ||
+			    (input.GetControl(InputControlType.RightStickX).WasPressed) ||
+			    (input.GetControl(InputControlType.RightStickY).WasPressed))
 			{
 				right = true;
+			}
+			if (input.GetControl(InputControlType.Start).WasPressed)
+			{
+				collectPlayersAndStart();
 			}
 
 			bool keyboard = input.Meta.Contains("keyboard");
@@ -171,5 +155,25 @@ public class InControlManager : MonoBehaviour {
 		}
 
 		throw new UnityException("Can't find device = " + inputDevice.Meta);
+	}
+
+	private void collectPlayersAndStart() 
+	{
+		List<InputController> usedControllers = new List<InputController> ();
+		Bounds portalBounds = GameObject.Find ("Portal").renderer.bounds;
+		foreach(InputController inputController in LevelFinishedController.instance.getControllers())
+		{
+			if (portalBounds.Intersects(GameObject.Find ("Player" + inputController.getPlayerId()).renderer.bounds))
+			{
+				usedControllers.Add(inputController);
+			}
+		}
+		if (usedControllers.Count > 1) // at least 2 players
+		{
+			LevelFinishedController.instance.setControllers(usedControllers);
+			LevelFinishedController.instance.setLevel(0);
+			LevelFinishedController.instance.LevelCounter();
+			Application.LoadLevel (1); 
+		}
 	}
 }
