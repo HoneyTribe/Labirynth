@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	private bool lighthouseEntered = false;
 	private bool craneEntered = false;
 	private bool portalGunEntered = false;
+	private LevelChangeController levelChangeEntered = null;
 
 	private GameObject gameController;
 
@@ -30,11 +31,11 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		gameController = GameObject.Find ("GameController");
 		originalColor = transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color;
 
-		for (int i=1; i<=LevelFinishedController.instance.getControllers().Count; i++)
+		foreach (InputController inputController in LevelFinishedController.instance.getControllers())
 		{
-			if (!gameObject.name.Contains(i.ToString()))
+			if (!gameObject.name.Contains(inputController.getPlayerId().ToString()))
 			{
-				players.Add(GameObject.Find ("Player" + i));
+				players.Add(GameObject.Find ("Player" + inputController.getPlayerId()));
 			}
 		}
 	}
@@ -127,6 +128,17 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((action2 > 0) && (action2 <= InputController.BUTTON_DURATION))
 			{
 				DroneController.instance.UseStunGun();
+			}
+		}
+		else if (levelChangeEntered != null)
+		{
+			if (x * levelChangeEntered.change > 0)
+			{
+				levelChangeEntered.Change();
+			}
+			if (x * levelChangeEntered.change < 0 || z != 0)
+			{
+				levelChangeEntered = null;
 			}
 		}
 		else
@@ -309,6 +321,12 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				rigidbody.angularVelocity = Vector3.zero;
 				//collision.gameObject.SendMessage("Recalculate");
 			}
+		}
+		if(collision.collider.name == "Up" || collision.collider.name == "Down")
+		{
+			levelChangeEntered = collision.collider.gameObject.GetComponent<LevelChangeController>();
+			rigidbody.velocity = Vector3.zero;
+			rigidbody.angularVelocity = Vector3.zero;
 		}
 	}
 

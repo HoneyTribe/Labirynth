@@ -3,19 +3,35 @@ using System.Collections;
 
 public class LevelChangeController : MonoBehaviour {
 
+	private static float interval = 0.1f;
+
 	public int change;
 
 	private TextMesh levelScreen;
+	private float time = interval;
 
 	void Start ()
 	{
 		levelScreen = GameObject.Find ("Level").GetComponent<TextMesh> ();
 	}
 
-	void OnCollisionEnter (Collision collision)
+	public void Change ()
+	{
+		time -= Time.deltaTime;
+		if (time < 0)
+		{
+			UpdateLevel ();
+			time = interval;
+		}
+	}
+
+	private void UpdateLevel ()
 	{
 		int newLevel = LevelFinishedController.instance.getLevel () + change;
-		LevelFinishedController.instance.setLevel (newLevel);
-		levelScreen.text = (newLevel + 1).ToString();
+		if (newLevel >= 0 && newLevel <= LevelFinishedController.instance.getMaxLevel())
+		{
+			LevelFinishedController.instance.setLevel (newLevel);
+			levelScreen.text = (newLevel + 1).ToString();
+		}
 	}
 }
