@@ -12,9 +12,9 @@ public class FusionController : MonoBehaviour {
 	void Start () 
 	{
 		levelController = GameObject.Find ("LevelController");
-		for (int i=1; i<=LevelFinishedController.instance.getControllers().Count; i++)
+		foreach(InputController inputController in LevelFinishedController.instance.getControllers())
 		{
-			players.Add(GameObject.Find ("Player" + i));
+			players.Add(GameObject.Find ("Player" + inputController.getPlayerId()));
 		}
 	}
 	
