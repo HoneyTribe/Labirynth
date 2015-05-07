@@ -53,6 +53,8 @@ public class InControlManager : MonoBehaviour {
 		{
 			currentPlayer = 1;
 			LevelFinishedController.instance.setControllers(new List<InputController> ());
+			TextMesh levelScreen = GameObject.Find ("Level").GetComponent<TextMesh>();
+			levelScreen.text = (LevelFinishedController.instance.getLevel() + 1).ToString();
 		}
 		else
 		{
@@ -171,7 +173,6 @@ public class InControlManager : MonoBehaviour {
 		if (usedControllers.Count > 1) // at least 2 players
 		{
 			LevelFinishedController.instance.setControllers(usedControllers);
-			LevelFinishedController.instance.setLevel(0);
 			LevelFinishedController.instance.LevelCounter();
 			Application.LoadLevel (1); 
 		}
