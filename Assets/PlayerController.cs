@@ -136,9 +136,12 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				levelChangeEntered.Change();
 			}
-			if (x * levelChangeEntered.change < 0 || z != 0)
+			else
 			{
-				levelChangeEntered = null;
+				if (x * levelChangeEntered.change < 0 || z != 0)
+				{
+					levelChangeEntered = null;
+				}
 			}
 		}
 		else
