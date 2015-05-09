@@ -1509,7 +1509,7 @@ GameObject:
   - 33: {fileID: 226081899}
   - 65: {fileID: 226081898}
   - 23: {fileID: 226081897}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Wall_Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1522,7 +1522,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 226081896}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -1563,7 +1563,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 226081896}
   m_LocalRotation: {x: .500000119, y: .5, z: .5, w: .49999994}
-  m_LocalPosition: {x: 0, y: -.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3542,18 +3542,17 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &855555203
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 855555202}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 30}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
+  m_LocalPosition: {x: -.0463609695, y: 0, z: 13.7479744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1798142473}
   - {fileID: 2009325772}
   m_Father: {fileID: 0}
 --- !u!102 &855555204
@@ -3563,9 +3562,9 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 855555202}
-  m_Text: At least 2 playersWalk into The Time-Space Portal.
+  m_Text: At least 2 players must enter the portal
   m_OffsetZ: 0
-  m_CharacterSize: .800000012
+  m_CharacterSize: .600000024
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 0
@@ -3791,14 +3790,14 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 977871566}
-  m_Text: 
+  m_Text: Zone 1
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: .0599999987
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 30
+  m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 12800000, guid: 3195aa4b6c18ea14286069d721ae166d, type: 3}
@@ -3833,8 +3832,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 977871566}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 0, y: 0, z: .699999988}
-  m_LocalScale: {x: .100000001, y: .100000009, z: 2}
+  m_LocalPosition: {x: 0, y: 0, z: -.72803843}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1985764909}
 --- !u!1 &993309388
@@ -5375,76 +5374,6 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
---- !u!1 &1798142472
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1798142473}
-  - 23: {fileID: 1798142475}
-  - 102: {fileID: 1798142474}
-  m_Layer: 12
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1798142473
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1798142472}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5.80046034, z: -.12740539}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 855555203}
---- !u!102 &1798142474
-TextMesh:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1798142472}
-  m_Text: Press Start/Enter when all players are ready.
-  m_OffsetZ: 0
-  m_CharacterSize: .600000024
-  m_LineSpacing: 1
-  m_Anchor: 4
-  m_Alignment: 0
-  m_TabSize: 4
-  m_FontSize: 0
-  m_FontStyle: 0
-  m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 3195aa4b6c18ea14286069d721ae166d, type: 3}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4293388263
---- !u!23 &1798142475
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1798142472}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 3195aa4b6c18ea14286069d721ae166d, type: 3}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
 --- !u!1 &1806688238
 GameObject:
   m_ObjectHideFlags: 0
@@ -6036,7 +5965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2009325772
 Transform:
   m_ObjectHideFlags: 0
@@ -6044,7 +5973,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2009325771}
   m_LocalRotation: {x: 3.87430191e-07, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -11.3903952, z: -.24524644}
+  m_LocalPosition: {x: 0, y: -3.11475158, z: .999896109}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 855555203}
@@ -6055,7 +5984,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2009325771}
-  m_Text: AT least 2 players must enter.
+  m_Text: Press Start/Enter when ready
   m_OffsetZ: 0
   m_CharacterSize: .600000024
   m_LineSpacing: 1
@@ -6141,7 +6070,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2014009218}
-  m_LocalRotation: {x: -.026739819, y: .765575886, z: -.642397881, w: -.0224393681}
+  m_LocalRotation: {x: -.0334197059, y: .765313387, z: -.642177641, w: -.0280445181}
   m_LocalPosition: {x: 1, y: 3, z: 19}
   m_LocalScale: {x: 4, y: 1, z: 2.25}
   m_Children: []
