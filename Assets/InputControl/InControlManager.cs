@@ -55,6 +55,10 @@ public class InControlManager : MonoBehaviour {
 			LevelFinishedController.instance.setControllers(new List<InputController> ());
 			TextMesh levelScreen = GameObject.Find ("Level").GetComponent<TextMesh>();
 			levelScreen.text = "Zone " + (LevelFinishedController.instance.getLevel() + 1);
+			if (LevelFinishedController.instance.getMaxLevel() == 0)
+			{
+				GameObject.Find ("StickContainer").SetActive(false);
+			}
 		}
 		else
 		{

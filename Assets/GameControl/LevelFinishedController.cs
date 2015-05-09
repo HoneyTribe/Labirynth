@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -252,7 +252,8 @@ public class LevelFinishedController : MonoBehaviour {
 		FloorInstructions.instance.Remove(); // remove floor instructions
 		yield return new WaitForSeconds(4);
 		gameOver = false;
-		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		Application.LoadLevel (1); 
+		//Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 
 	IEnumerator GameFinished () 
@@ -262,7 +263,8 @@ public class LevelFinishedController : MonoBehaviour {
 		FloorInstructions.instance.Remove();
 		yield return new WaitForSeconds(10);
 		congratulation = false;
-		Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
+		Application.LoadLevel (1); 
+		//Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 
 	public void ShowPlayerSelectionMenu () 
