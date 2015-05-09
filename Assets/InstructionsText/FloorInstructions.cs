@@ -9,6 +9,7 @@ public class FloorInstructions : MonoBehaviour
 	private GameObject arrowRight;
 	private GameObject arrowLeft;
 	private GameObject controlImagePad1Move;
+	private GameObject controlImagePad2Move;
 	public int deadPlayersInstructions;
 
 
@@ -36,6 +37,7 @@ public class FloorInstructions : MonoBehaviour
 		arrowRight = GameObject.Find ("ArrowRight");
 		arrowLeft = GameObject.Find ("ArrowLeft");
 		controlImagePad1Move = GameObject.Find ("ControlImagePad1Move");
+		controlImagePad2Move = GameObject.Find ("ControlImagePad2Move");
 	}
 
 	//Called from ScoreController, TopLightController, DeviceController, DroneController, JumpController
@@ -55,7 +57,7 @@ public class FloorInstructions : MonoBehaviour
 				else
 				{
 					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine and then high-five.";
-					controlImagePad1Move.transform.position = new Vector3(-0.3f, 0.5f, -6f);
+					controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -6f);
 				}
 			}
 
@@ -85,7 +87,7 @@ public class FloorInstructions : MonoBehaviour
 				else
 				{
 					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine and then high-five.";
-					controlImagePad1Move.transform.position = new Vector3(-0.3f, 0.5f, -5f);
+					controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -5f);
 				}
 			}
 			
@@ -459,18 +461,21 @@ public class FloorInstructions : MonoBehaviour
 		else if (LevelFinishedController.instance.getLevel() == firstJumpBoxLevel)
 		{
 			GetComponentInChildren<TextMesh>().text = "Go and pick up the Anti-Grav Box";
+			controlImagePad2Move.transform.position = new Vector3(-0.3f, 1f, 0f);
 		}
 		//drone bomb
 		else if (LevelFinishedController.instance.getLevel() == firstDroneBombLevel)
 		{
 			GetComponentInChildren<TextMesh>().text = "Walk into             the Drone entrance";
 			arrowLeft.transform.position = new Vector3(-4, 0.5f, -13);
+			controlImagePad2Move.transform.position = new Vector3(-2.3f, 1f, 1f);
 		}
 		//crane lazer
 		else if (LevelFinishedController.instance.getLevel() == firstCraneLazerLevel)
 		{
 			GetComponentInChildren<TextMesh>().text = "Walk into the Wall-Lazer           entrance";
 			arrowRight.transform.position = new Vector3(4, 0.5f, -13);
+			controlImagePad2Move.transform.position = new Vector3(-0.3f, 1f, -5f);
 		}
 
 	}
