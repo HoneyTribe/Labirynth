@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using InControl;
 
@@ -188,19 +189,22 @@ public class InControlManager : MonoBehaviour {
 	private void collectPlayersAndStart() 
 	{
 		List<InputController> usedControllers = new List<InputController> ();
+		List<GameObject> playersInPortal = new List<GameObject> ();
 		Bounds portalBounds = GameObject.Find ("Portal").renderer.bounds;
 		foreach(InputController inputController in LevelFinishedController.instance.getControllers())
 		{
-			if (portalBounds.Intersects(GameObject.Find ("Player" + inputController.getPlayerId()).renderer.bounds))
+			GameObject player = GameObject.Find ("Player" + inputController.getPlayerId());
+			if (portalBounds.Intersects(player.renderer.bounds))
 			{
 				usedControllers.Add(inputController);
+				playersInPortal.Add (player);
 			}
 		}
 		if (usedControllers.Count > 1) // at least 2 players
 		{
 			LevelFinishedController.instance.setControllers(usedControllers);
 			LevelFinishedController.instance.LevelCounter();
-			Application.LoadLevel (1); 
+			RotationController.instance.startRotation(playersInPortal);
 		}
 	}
 }
