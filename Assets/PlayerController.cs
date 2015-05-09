@@ -325,7 +325,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				//collision.gameObject.SendMessage("Recalculate");
 			}
 		}
-		if(collision.collider.name == "Up" || collision.collider.name == "Down")
+		if(collision.collider.name == "Platform")
 		{
 			levelChangeEntered = collision.collider.gameObject.GetComponent<LevelChangeController>();
 			rigidbody.velocity = Vector3.zero;

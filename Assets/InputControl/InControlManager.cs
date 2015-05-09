@@ -54,7 +54,7 @@ public class InControlManager : MonoBehaviour {
 			currentPlayer = 1;
 			LevelFinishedController.instance.setControllers(new List<InputController> ());
 			TextMesh levelScreen = GameObject.Find ("Level").GetComponent<TextMesh>();
-			levelScreen.text = (LevelFinishedController.instance.getLevel() + 1).ToString();
+			levelScreen.text = "Zone " + (LevelFinishedController.instance.getLevel() + 1);
 		}
 		else
 		{
