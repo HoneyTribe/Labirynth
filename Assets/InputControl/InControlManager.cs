@@ -84,6 +84,28 @@ public class InControlManager : MonoBehaviour {
 		{
 			InputDevice input = InputManager.ActiveDevice;
 
+			if (SplashController.instance.isVisible())
+			{
+				if ((input.GetControl(InputControlType.LeftTrigger).WasPressed) ||
+				    (input.GetControl(InputControlType.LeftBumper).WasPressed) ||
+				    (input.GetControl(InputControlType.RightTrigger).WasPressed) ||
+				    (input.GetControl(InputControlType.RightBumper).WasPressed) ||
+				    (input.GetControl(InputControlType.Action1).WasPressed) ||
+				    (input.GetControl(InputControlType.Action2).WasPressed) ||
+				    (input.GetControl(InputControlType.Action3).WasPressed) ||
+				    (input.GetControl(InputControlType.Start).WasPressed) )
+				{
+					SplashController.instance.setVisible(false);
+					return;
+				}
+			}
+
+			if (input.GetControl(InputControlType.Select).WasPressed)
+			{
+				LevelFinishedController.instance.setLevel(0);
+				Application.LoadLevel(0);
+			}
+				
 			bool left = false;
 			bool right = false;
 			if ((input.GetControl(InputControlType.LeftTrigger).WasPressed) || 
