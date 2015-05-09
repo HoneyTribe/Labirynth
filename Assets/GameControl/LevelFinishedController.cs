@@ -248,7 +248,7 @@ public class LevelFinishedController : MonoBehaviour {
 	public IEnumerator PlayerLost () 
 	{
 		gameOver = true; 
-		stopped = true;
+		stopped = false;
 		FloorInstructions.instance.Remove(); // remove floor instructions
 		yield return new WaitForSeconds(4);
 		gameOver = false;
@@ -259,7 +259,7 @@ public class LevelFinishedController : MonoBehaviour {
 	IEnumerator GameFinished () 
 	{
 		congratulation = true; 
-		stopped = true;
+		stopped = false;
 		FloorInstructions.instance.Remove();
 		yield return new WaitForSeconds(10);
 		congratulation = false;
