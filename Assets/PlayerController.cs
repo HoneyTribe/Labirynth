@@ -146,68 +146,70 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		}
 		else
 		{
-			if (action > 0)
+			if (Application.loadedLevel != 0)
 			{
-				Color newColor;
-				//green player 1
-				if (gameObject.name == "Player1")
+				if (action > 0)
 				{
-					newColor = new Color(0.4f,0.8f,0.3f);
-				}
-				//blue player 2
-				else if (gameObject.name == "Player2")
-				{
-					newColor = new Color(0.15f,0.6f,1);
-				}
-				//pink player 3
-				else if (gameObject.name == "Player3")
-				{
-					newColor = new Color(0.83f,0.32f,0.5f);
-				}
-				//yellow player 4
-				else 
-				{
-					newColor = new Color(0.85f,0.82f,0.3f);
-				}
-				DeviceController.instance.Move(transform.position, newColor);
-
-			}
-
-			if (action2 > 0)
-			{
-				if (inventory.getInventoryItem() == null)
-				{
-					GameObject jumpItem = inventory.getAvailablItem();
-					if (jumpItem != null)
+					Color newColor;
+					//green player 1
+					if (gameObject.name == "Player1")
 					{
-						JumpController.instance.addToBoxCollideCount();
-						FloorInstructions.instance.ChangeInstructions();
-						jumpItem.transform.localPosition = new Vector3(transform.localPosition.x,
-						                                               transform.localPosition.y + 4,
-						                                               transform.localPosition.z);
-						jumpItem.transform.parent = gameObject.transform;
-						jumpItem.rigidbody.isKinematic = true;
-						jumpItem.SendMessage("Take");
-						inventory.putItemIntoInventory();
-						AudioController.instance.Play("005_PickUp");
+						newColor = new Color(0.4f,0.8f,0.3f);
+					}
+					//blue player 2
+					else if (gameObject.name == "Player2")
+					{
+						newColor = new Color(0.15f,0.6f,1);
+					}
+					//pink player 3
+					else if (gameObject.name == "Player3")
+					{
+						newColor = new Color(0.83f,0.32f,0.5f);
+					}
+					//yellow player 4
+					else 
+					{
+						newColor = new Color(0.85f,0.82f,0.3f);
+					}
+					DeviceController.instance.Move(transform.position, newColor);
+
+				}
+
+				if (action2 > 0)
+				{
+					if (inventory.getInventoryItem() == null)
+					{
+						GameObject jumpItem = inventory.getAvailablItem();
+						if (jumpItem != null)
+						{
+							JumpController.instance.addToBoxCollideCount();
+							FloorInstructions.instance.ChangeInstructions();
+							jumpItem.transform.localPosition = new Vector3(transform.localPosition.x,
+							                                               transform.localPosition.y + 4,
+							                                               transform.localPosition.z);
+							jumpItem.transform.parent = gameObject.transform;
+							jumpItem.rigidbody.isKinematic = true;
+							jumpItem.SendMessage("Take");
+							inventory.putItemIntoInventory();
+							AudioController.instance.Play("005_PickUp");
+						}
+					}
+					else
+					{
+						JumpController.instance.resetBoxCollideCount();
+						inventory.getInventoryItem().transform.position = new Vector3(transform.localPosition.x,
+						                                            					   1.5f,
+						                                               					   transform.localPosition.z);
+						inventory.getInventoryItem().transform.rotation = Quaternion.Euler(0,0,0);
+						inventory.getInventoryItem().transform.parent = null;
+						inventory.getInventoryItem().rigidbody.isKinematic = false;
+						inventory.getInventoryItem().SendMessage("Leave");
+						inventory.setAvailableItem(inventory.getInventoryItem());
+						inventory.clearInventory();
+						AudioController.instance.Play("006_Drop");
 					}
 				}
-				else
-				{
-					JumpController.instance.resetBoxCollideCount();
-					inventory.getInventoryItem().transform.position = new Vector3(transform.localPosition.x,
-					                                            					   1.5f,
-					                                               					   transform.localPosition.z);
-					inventory.getInventoryItem().transform.rotation = Quaternion.Euler(0,0,0);
-					inventory.getInventoryItem().transform.parent = null;
-					inventory.getInventoryItem().rigidbody.isKinematic = false;
-					inventory.getInventoryItem().SendMessage("Leave");
-					inventory.setAvailableItem(inventory.getInventoryItem());
-					inventory.clearInventory();
-					AudioController.instance.Play("006_Drop");
-				}
 			}
-
 			if ((x != 0) || (z != 0))
 			{
 				playerActive = true;
