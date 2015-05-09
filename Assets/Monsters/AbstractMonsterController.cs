@@ -36,11 +36,10 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 		GameObject gameController = GameObject.Find ("GameController");
 		device = GameObject.Find ("DeviceContainer");
-		for (int i = 1; i<= LevelFinishedController.instance.getControllers().Count; i++)
+		foreach (InputController inputController in LevelFinishedController.instance.getControllers())
 		{
-			playerControllers.Add (GameObject.Find ("Player" + i).GetComponent<PlayerController>());
+			playerControllers.Add(GameObject.Find ("Player" + inputController.getPlayerId()).GetComponent<PlayerController>());
 		}
-
 		recalculateTrigger = true;
 		distractParticlesPrefab = (GameObject) Resources.Load("Angry_ennemie/Angry_Ennemie_Prefab_3");
 	}
