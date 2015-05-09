@@ -230,24 +230,21 @@ public class InputController {
 
 	private void handleMenu(float action, float action2)
 	{
-		if (!LevelFinishedController.instance.IsInstruction())
+		if (Application.loadedLevel != 0)
 		{
-			if (InputManager.Devices [device].GetControl(InputControlType.Select).WasPressed)
+			if (!LevelFinishedController.instance.IsInstruction())
 			{
-				Application.LoadLevel(0);
-				//LevelFinishedController.instance.ShowPlayerSelectionMenu();
+				if (InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed)
+				{
+					LevelFinishedController.instance.ShowInstruction();
+				}
 			}
-
-			//if (InputManager.Devices [device].GetControl(InputControlType.Select).WasPressed)
-			//{
-			//	LevelFinishedController.instance.ShowInstruction();
-			//}
-		}
-		else
-		{
-			if (InputManager.Devices [device].GetControl(InputControlType.Select).WasPressed)
+			else
 			{
-				LevelFinishedController.instance.HideInstruction();
+				if (InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed)
+				{
+					LevelFinishedController.instance.HideInstruction();
+				}
 			}
 		}
 	}
