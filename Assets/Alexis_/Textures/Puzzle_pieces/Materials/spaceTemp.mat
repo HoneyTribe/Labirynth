@@ -237,7 +237,7 @@ Material:
       data:
         first:
           name: _TintColor
-        second: {r: .0882353187, g: .0882353187, b: .0882353187, a: .501960814}
+        second: {r: .139705896, g: .139705896, b: .139705896, a: .501960814}
       data:
         first:
           name: _Emission

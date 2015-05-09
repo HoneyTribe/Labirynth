@@ -12,6 +12,7 @@ public class LevelChangeController : MonoBehaviour {
 	private GameObject stick;
 	private float time = interval;
 	private float deflectionTime;
+	private int audioCount = 0;
 
 	void Start ()
 	{
@@ -28,6 +29,10 @@ public class LevelChangeController : MonoBehaviour {
 		{
 			deflectionTime = Time.time;
 			stick.transform.rotation =  Quaternion.Euler(0, 0, -change * deflection);
+				if (time < 0)
+				{
+				AudioController.instance.Play("035_Select");
+				}
 		}
 		if (time < 0)
 		{
@@ -50,7 +55,7 @@ public class LevelChangeController : MonoBehaviour {
 		if (newLevel >= 0 && newLevel <= LevelFinishedController.instance.getMaxLevel())
 		{
 			LevelFinishedController.instance.setLevel (newLevel);
-			levelScreen.text = "Zone " + (newLevel + 1);
+			levelScreen.text = "Zone " + (newLevel + 1) + "/35";
 		}
 	}
 }
