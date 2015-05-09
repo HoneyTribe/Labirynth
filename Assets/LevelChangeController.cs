@@ -23,7 +23,8 @@ public class LevelChangeController : MonoBehaviour {
 	public void Change ()
 	{
 		time -= Time.deltaTime;
-		if (stick.transform.rotation.z == 0)
+		if ((stick.transform.rotation.z == 0) && 
+		    (LevelFinishedController.instance.getLevel() > 0 && LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getMaxLevel()))
 		{
 			deflectionTime = Time.time;
 			stick.transform.rotation =  Quaternion.Euler(0, 0, -change * deflection);
