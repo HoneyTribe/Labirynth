@@ -8,7 +8,9 @@ public class FloorInstructions : MonoBehaviour
 	private GameObject arrowCentre;
 	private GameObject arrowRight;
 	private GameObject arrowLeft;
+	private GameObject controlImagePad1Move;
 	public int deadPlayersInstructions;
+
 
 	//These are attached to the object TextInstructionsFloor
 	public int firstLightLevel = 0;
@@ -33,6 +35,7 @@ public class FloorInstructions : MonoBehaviour
 		arrowCentre = GameObject.Find ("ArrowCentre");
 		arrowRight = GameObject.Find ("ArrowRight");
 		arrowLeft = GameObject.Find ("ArrowLeft");
+		controlImagePad1Move = GameObject.Find ("ControlImagePad1Move");
 	}
 
 	//Called from ScoreController, TopLightController, DeviceController, DroneController, JumpController
@@ -52,6 +55,7 @@ public class FloorInstructions : MonoBehaviour
 				else
 				{
 					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine and then high-five.";
+					controlImagePad1Move.transform.position = new Vector3(-0.3f, 0.5f, -6f);
 				}
 			}
 
@@ -81,6 +85,7 @@ public class FloorInstructions : MonoBehaviour
 				else
 				{
 					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine and then high-five.";
+					controlImagePad1Move.transform.position = new Vector3(-0.3f, 0.5f, -5f);
 				}
 			}
 			
@@ -235,7 +240,7 @@ public class FloorInstructions : MonoBehaviour
 					else if(TopLightController.instance.getZapCount() % 2 == 1
 					        && DeviceController.instance.getDecoyCount() % 2 == 1)
 					{
-						GetComponentInChildren<TextMesh>().text = "Put the Decoy in cunning places.";
+						GetComponentInChildren<TextMesh>().text = "Put the Decoy in strategic places.";
 						arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 					}
 					
@@ -418,6 +423,7 @@ public class FloorInstructions : MonoBehaviour
 		{
 			GetComponentInChildren<TextMesh>().text = "Walk into          the light";
 			arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
+			controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -6f);
 		}
 		//trigger
 		if (LevelFinishedController.instance.getLevel() == firstTriggerLevel)

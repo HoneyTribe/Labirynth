@@ -27259,7 +27259,7 @@ GameObject:
   - 23: {fileID: 1597515720}
   - 114: {fileID: 1597515724}
   m_Layer: 10
-  m_Name: ControlImage_Pad1
+  m_Name: ControlImagePad1Move
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27300,7 +27300,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1597515719}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: -.349385738, y: 1, z: -6.79427338}
+  m_LocalPosition: {x: -.300000012, y: -.5, z: -6.80000019}
   m_LocalScale: {x: 2.5, y: 1, z: 1.25}
   m_Children: []
   m_Father: {fileID: 0}
@@ -27315,7 +27315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9604083ffd93874883871d57531dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 00000000
+  level: 000000000100000002000000
 --- !u!1 &1599895711
 GameObject:
   m_ObjectHideFlags: 0

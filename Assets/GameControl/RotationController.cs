@@ -6,7 +6,7 @@ public class RotationController : MonoBehaviour {
 	public static RotationController instance;
 
 	private List<GameObject> players;
-	private float index = 400f;
+	private float index = 200f;
 	private float time;
 	private bool up;
 
