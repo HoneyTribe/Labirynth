@@ -50,6 +50,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _Detail
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _ShadowTex
         second:
           m_Texture: {fileID: 0}
@@ -193,11 +200,11 @@ Material:
       data:
         first:
           name: _InvFade
-        second: .466071427
+        second: .0923214257
       data:
         first:
           name: _Shininess
-        second: .078125
+        second: 1
       data:
         first:
           name: _EmissionLM
@@ -222,15 +229,15 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .272058845, g: .268057972, b: .268057972, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: 1, g: 1, b: 1, a: 0}
+        second: {r: .911764681, g: .911764681, b: .911764681, a: 0}
       data:
         first:
           name: _TintColor
-        second: {r: .117647052, g: .117647052, b: .117647052, a: .501960814}
+        second: {r: .0882353187, g: .0882353187, b: .0882353187, a: .501960814}
       data:
         first:
           name: _Emission
@@ -238,7 +245,7 @@ Material:
       data:
         first:
           name: _ReflectColor
-        second: {r: 1, g: 1, b: 1, a: .5}
+        second: {r: 0, g: 0, b: 0, a: .501960814}
       data:
         first:
           name: _Tint
@@ -263,3 +270,7 @@ Material:
         first:
           name: _EmisColor
         second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _NotVisibleColor
+        second: {r: 0, g: 0, b: 0, a: 1}
