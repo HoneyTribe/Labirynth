@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class LevelFinishedController : MonoBehaviour {
 
-	public static bool ENABLE_ALL_LEVELS = true;
+	public static bool ENABLE_ALL_LEVELS = false;
 	public static float SHOW_INSTRUCTION_MIN_TIME = 0.3f;
 	public static int savedMaxLevel;
 	private int bootups = 0;
@@ -92,6 +92,7 @@ public class LevelFinishedController : MonoBehaviour {
 					levelsCounter[i]=0;
 				}
 			}
+
 		else //load levelsCounter
 			{
 				for(int i = 0; i < totalLevels; i++)
@@ -110,6 +111,7 @@ public class LevelFinishedController : MonoBehaviour {
 		}
 		//retreive levCount
 		levCount = PlayerPrefs.GetInt("savedLevCount");
+
 	}
 
 	void Update()
@@ -197,15 +199,15 @@ public class LevelFinishedController : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		if (!stopped)
+		if (!stopped && Application.loadedLevelName != "Home")
 		{
 			//GUI.Label (new Rect (Screen.width / 2 - 360, 50, 300, 300), "Level: " + (level + 1),help_GUISkin.label); 
 			//GUI.Label (new Rect (Screen.width / 2 - 360, 70, 300, 300), "HELP: 'Enter' or 'Start'",help_GUISkin.label);
 			GUI.depth = 2;
-			GUI.Label (new Rect (Screen.width * 0.05f, 50, 300, 300), "Alpha Demo 0.2", help_GUISkin.label);
+			//GUI.Label (new Rect (Screen.width * 0.05f, 50, 300, 300), "Alpha Demo 0.2", help_GUISkin.label);
 			GUI.Label (new Rect (Screen.width * 0.05f, 70, 300, 300), "Level: " + (level + 1), help_GUISkin.label); 
-			GUI.Label (new Rect (Screen.width * 0.05f, 110, 300, 300), "Help: 'Enter' or 'Start'", help_GUISkin.label);
-			GUI.Label (new Rect (Screen.width * 0.05f, 130, 300, 300), "Quit: 'Escape' or 'Back'", help_GUISkin.label);
+			GUI.Label (new Rect (Screen.width * 0.05f, 90, 300, 300), "Help: 'Enter' or 'Start'", help_GUISkin.label);
+			GUI.Label (new Rect (Screen.width * 0.05f, 110, 300, 300), "Quit: 'Escape' or 'Back'", help_GUISkin.label);
 		}
 
 		if (finished && level < totalLevels-1)
