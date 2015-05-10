@@ -21,7 +21,7 @@ public class RotationController : MonoBehaviour {
 		{
 			foreach(GameObject player in players)
 			{
-				player.transform.RotateAround(Vector3.zero, Vector3.up, index * Time.deltaTime);
+				player.transform.RotateAround(new Vector3(0, 0, 10), Vector3.up, index * Time.deltaTime);
 				if (up)
 				{
 					player.transform.Translate(Vector3.up * 100 * Time.deltaTime);
