@@ -155,6 +155,13 @@ public class InControlManager : MonoBehaviour {
 				}
 			}
 		}
+		else
+		{
+			if (InputManager.ActiveDevice.GetControl(InputControlType.Select).WasPressed)
+			{
+				Application.LoadLevel(0);
+			}
+		}
 
 		foreach(InputController input in LevelFinishedController.instance.getControllers())
 		{
