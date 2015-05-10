@@ -420,6 +420,11 @@ public class LevelFinishedController : MonoBehaviour {
 		return  levelDefinition.getLevels (controllers.Count).Count - 1;
 	}
 
+	public int getTotalLevels()
+	{
+		return  totalLevels;
+	}
+
 	public void setLevel(int newLevel)
 	{
 		level = newLevel;

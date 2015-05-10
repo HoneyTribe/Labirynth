@@ -55,7 +55,7 @@ public class LevelChangeController : MonoBehaviour {
 		if (newLevel >= 0 && newLevel <= LevelFinishedController.instance.getMaxLevel())
 		{
 			LevelFinishedController.instance.setLevel (newLevel);
-			levelScreen.text = "Zone " + (newLevel + 1) + "/35";
+			levelScreen.text = "Zone " + (newLevel + 1) + "/" + LevelFinishedController.instance.getTotalLevels();
 		}
 	}
 }
