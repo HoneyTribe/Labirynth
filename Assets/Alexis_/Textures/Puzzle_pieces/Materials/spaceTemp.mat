@@ -71,14 +71,14 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Detail
+          name: _ParallaxMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _ParallaxMap
+          name: _Detail
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -200,19 +200,19 @@ Material:
       data:
         first:
           name: _Shininess
-        second: 1
+        second: .00999999978
       data:
         first:
           name: _EmissionLM
         second: 0
       data:
         first:
-          name: _InvFade
-        second: .0923214257
-      data:
-        first:
           name: _Parallax
         second: .0199999996
+      data:
+        first:
+          name: _InvFade
+        second: .0923214257
       data:
         first:
           name: _MaxRadius
@@ -229,19 +229,19 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .102941155, g: .102941155, b: .102941155, a: 1}
+        second: {r: .125, g: .125, b: .125, a: 1}
       data:
         first:
-          name: _Emission
-        second: {r: 0, g: 0, b: 0, a: 0}
+          name: _SpecColor
+        second: {r: .0749351159, g: .194068462, b: .242647052, a: 0}
       data:
         first:
           name: _TintColor
         second: {r: .139705896, g: .139705896, b: .139705896, a: .501960814}
       data:
         first:
-          name: _SpecColor
-        second: {r: .911764681, g: .911764681, b: .911764681, a: 0}
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _ReflectColor
