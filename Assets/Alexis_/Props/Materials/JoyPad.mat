@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: No Name
-  m_Shader: {fileID: 10512, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: JoyPad
+  m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,7 +17,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 97fe21232d1c1cd47918d3768580aaff, type: 3}
+          m_Texture: {fileID: 2800000, guid: 34871d7397d90424eb7ac460c36b1438, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -36,14 +36,14 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Bump
+          name: _ParallaxMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _ParallaxMap
+          name: _Bump
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -84,6 +84,10 @@ Material:
         second: {r: 0, g: .668965816, b: 1, a: 1}
       data:
         first:
+          name: _NotVisibleColor
+        second: {r: 0, g: 1, b: 0, a: 1}
+      data:
+        first:
           name: _MyColor
         second: {r: .249783739, g: .791632354, b: .970588207, a: 1}
       data:
@@ -94,7 +98,3 @@ Material:
         first:
           name: _RimCol
         second: {r: 0, g: .379310369, b: 1, a: 1}
-      data:
-        first:
-          name: _NotVisibleColor
-        second: {r: 0, g: 1, b: 0, a: 1}

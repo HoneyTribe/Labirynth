@@ -17,7 +17,7 @@ public class LevelChangeController : MonoBehaviour {
 	void Start ()
 	{
 		levelScreen = GameObject.Find ("Level").GetComponent<TextMesh> ();
-		stick = GameObject.Find ("StickAndBall");
+		stick = GameObject.Find ("Joypad");
 		deflectionTime = Time.time;
 	}
 
