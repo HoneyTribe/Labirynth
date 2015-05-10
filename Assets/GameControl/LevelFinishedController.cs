@@ -199,14 +199,17 @@ public class LevelFinishedController : MonoBehaviour {
 	
 	void OnGUI()
 	{
-		if (!stopped && Application.loadedLevelName != "Home" & IntroductionController.instance.isPlayingIntroduction()== false )
+		if (Application.loadedLevel != 0 )
 		{
-			//GUI.Label (new Rect (Screen.width / 2 - 360, 50, 300, 300), "Level: " + (level + 1),help_GUISkin.label); 
-			//GUI.Label (new Rect (Screen.width / 2 - 360, 70, 300, 300), "HELP: 'Enter' or 'Start'",help_GUISkin.label);
-			GUI.depth = 2;
-			GUI.Label (new Rect (Screen.width * 0.05f, 70, 300, 300), "Zone " + (level + 1), help_GUISkin.label); 
-			GUI.Label (new Rect (Screen.width * 0.05f, 90, 300, 300), "Help: 'Start' or 'Enter'", help_GUISkin.label);
-			GUI.Label (new Rect (Screen.width * 0.05f, 110, 300, 300), "Quit: 'Back' or 'Escape'", help_GUISkin.label);
+			if (!stopped && IntroductionController.instance.isPlayingIntroduction()== false )
+			{
+				//GUI.Label (new Rect (Screen.width / 2 - 360, 50, 300, 300), "Level: " + (level + 1),help_GUISkin.label); 
+				//GUI.Label (new Rect (Screen.width / 2 - 360, 70, 300, 300), "HELP: 'Enter' or 'Start'",help_GUISkin.label);
+				GUI.depth = 2;
+				GUI.Label (new Rect (Screen.width * 0.05f, 70, 300, 300), "Zone " + (level + 1), help_GUISkin.label); 
+				GUI.Label (new Rect (Screen.width * 0.05f, 90, 300, 300), "Help: 'Start' or 'Enter'", help_GUISkin.label);
+				GUI.Label (new Rect (Screen.width * 0.05f, 110, 300, 300), "Quit: 'Back' or 'Escape'", help_GUISkin.label);
+			}
 		}
 
 		if (finished && level < totalLevels-1)
