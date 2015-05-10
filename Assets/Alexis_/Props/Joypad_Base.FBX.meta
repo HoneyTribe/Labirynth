@@ -1,31 +1,13 @@
 fileFormatVersion: 2
-guid: 0e0e07664858c4c4e9623cd93b20ffb6
+guid: 8e444974ae86b1e4d966ffdabed53c55
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Joypad 1
-    100004: Joypad_base
-    100006: Joypad
-    100008: Joypad_Base
     400000: //RootNode
-    400002: Joypad 1
-    400004: Joypad_base
-    400006: Joypad
-    400008: Joypad_Base
-    2300000: Joypad 1
-    2300002: Joypad_base
-    2300004: Joypad
-    2300006: Joypad_Base
-    2300008: //RootNode
-    3300000: Joypad 1
-    3300002: Joypad_base
-    3300004: Joypad
-    3300006: Joypad_Base
-    3300008: //RootNode
-    4300000: Joypad_base
-    4300002: Joypad
-    4300004: Joypad_Base
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Joypad_Base
     9500000: //RootNode
   materials:
     importMaterials: 1
