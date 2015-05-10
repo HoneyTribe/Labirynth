@@ -1896,6 +1896,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 308508033}
   - 108: {fileID: 308508032}
+  - 95: {fileID: 308508034}
   m_Layer: 8
   m_Name: lightHousePointLight
   m_TagString: Untagged
@@ -1949,6 +1950,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!95 &308508034
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 308508031}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 07bdf4cbf86e7784c9801301911f2013, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!1001 &309948600
 Prefab:
   m_ObjectHideFlags: 0
@@ -5064,6 +5079,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1365308154}
   - 108: {fileID: 1365308153}
+  - 95: {fileID: 1365308155}
   m_Layer: 8
   m_Name: lightHousePointLight_Spot
   m_TagString: Untagged
@@ -5117,6 +5133,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!95 &1365308155
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1365308152}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8c3621987e593f34180a1c35860ee615, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!1 &1386612975
 GameObject:
   m_ObjectHideFlags: 0
@@ -7481,6 +7511,7 @@ GameObject:
   - 4: {fileID: 2014009221}
   - 33: {fileID: 2014009220}
   - 23: {fileID: 2014009219}
+  - 95: {fileID: 2014009222}
   m_Layer: 12
   m_Name: Logo
   m_TagString: Untagged
@@ -7522,11 +7553,25 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2014009218}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37412879e-08}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37737988e-08}
   m_LocalPosition: {x: 4, y: .119999997, z: -11.1400003}
   m_LocalScale: {x: 3.54359007, y: .885897517, z: .885897517}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!95 &2014009222
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2014009218}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7abe2d93709886c46b80acf874d1e26c, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!1001 &2020741725
 Prefab:
   m_ObjectHideFlags: 0
