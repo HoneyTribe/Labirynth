@@ -32,9 +32,15 @@ public class RotationController : MonoBehaviour {
 				index = index * 2f;
 				time = Time.time;
 			}
+			if (index > 200)
+			{
+				AudioController.instance.Play("026_FusionB");
+				
+			}
 			if (index > 1000)
 			{
 				up = true;
+
 			}
 			if (players[0].transform.position.y > 50)
 			{
