@@ -92,13 +92,13 @@ namespace AssemblyCSharp
 			//13 switch 2
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			    52,new List<MonsterTemplate>{
-				new MonsterTemplate("Flying", 3.0f)
+				new MonsterTemplate("Flying", 4.0f)
 			},11,11,10,10, null, "DecoyTut"));
 
 			//14 switch 3
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			    10,new List<MonsterTemplate>{
-				new MonsterTemplate("Flying", 3.5f)
+				new MonsterTemplate("Flying", 4.5f)
 			},12,12,8,8, null, "TwoTriggers"));
 			
 			//15 teleport drone
@@ -321,15 +321,15 @@ namespace AssemblyCSharp
 			//13 switch 2
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			    52,new List<MonsterTemplate>{
-				new MonsterTemplate("Flying", 3.0f),
-				new MonsterTemplate("Flying", 3.5f)
+				new MonsterTemplate("Flying", 4.0f),
+				new MonsterTemplate("Flying", 4.5f)
 			},6,5,10,10, null, "DecoyTut"));
 			
 			//14 switch 3
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			    10,new List<MonsterTemplate>{
-				new MonsterTemplate("Flying", 3.5f),
-				new MonsterTemplate("Flying", 4.0f)
+				new MonsterTemplate("Flying", 4.5f),
+				new MonsterTemplate("Flying", 5.0f)
 			},6,5,8,8, null, "TwoTriggers"));
 			
 			//15 teleport drone, puzzle
@@ -569,17 +569,17 @@ namespace AssemblyCSharp
 			//13 switch 2
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			    52,new List<MonsterTemplate>{
-				new MonsterTemplate("Flying", 3.0f),
-				new MonsterTemplate("Flying", 3.5f),
-				new MonsterTemplate("Flying", 4.0f)
+				new MonsterTemplate("Flying", 4.0f),
+				new MonsterTemplate("Flying", 4.5f),
+				new MonsterTemplate("Flying", 5.0f)
 			},6,5,10,10, null, "DecoyTut"));
 			
 			//14 switch 3
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			    10,new List<MonsterTemplate>{
-				new MonsterTemplate("Flying", 3.5f),
-				new MonsterTemplate("Flying", 4.0f),
-				new MonsterTemplate("Flying", 4.5f)
+				new MonsterTemplate("Flying", 4.5f),
+				new MonsterTemplate("Flying", 5.0f),
+				new MonsterTemplate("Flying", 5.5f)
 			},6,5,8,8, null, "TwoTriggers"));
 
 			//15 teleport drone
