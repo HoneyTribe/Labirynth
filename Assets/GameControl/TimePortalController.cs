@@ -25,7 +25,7 @@ public class TimePortalController : MonoBehaviour {
 		LevelFinishedController.instance.setStopped (true);
 		yield return new WaitForSeconds(3);
 		this.transition.enabled = true;
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(3);
 		Application.LoadLevel (1);
 	}
 }
