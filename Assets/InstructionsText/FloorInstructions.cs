@@ -87,7 +87,7 @@ public class FloorInstructions : MonoBehaviour
 				else
 				{
 					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine and then high-five.";
-					controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -5f);
+					controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -6f);
 				}
 			}
 			
@@ -95,7 +95,7 @@ public class FloorInstructions : MonoBehaviour
 				if (ScoreController.instance.getScore() > 0)
 			{
 				GetComponentInChildren<TextMesh>().text = "Walk into          the light.";
-				arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
+				arrowCentre.transform.position = new Vector3(0, 0.5f, -14);
 			}
 			else
 			{
@@ -438,6 +438,7 @@ public class FloorInstructions : MonoBehaviour
 		{
 			GetComponentInChildren<TextMesh>().text = "Walk into          the light";
 			arrowCentre.transform.position = new Vector3(0, 0.5f, -13);
+			controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -6f);
 		}
 		// 2nd decoy
 		if (LevelFinishedController.instance.getLevel() == secondDecoyLevel)
@@ -468,7 +469,7 @@ public class FloorInstructions : MonoBehaviour
 		{
 			GetComponentInChildren<TextMesh>().text = "Walk into             the Drone entrance";
 			arrowLeft.transform.position = new Vector3(-4, 0.5f, -13);
-			controlImagePad2Move.transform.position = new Vector3(-2.3f, 1f, 1f);
+			controlImagePad2Move.transform.position = new Vector3(-2.3f, 1f, 0f);
 		}
 		//crane lazer
 		else if (LevelFinishedController.instance.getLevel() == firstCraneLazerLevel)
