@@ -10,16 +10,24 @@ public class TimePortalController : MonoBehaviour {
 
 	private Animator anim;
 	private Animator transition;
+	private GameObject text;
+	private GameObject textEnter;
 
 	void Start()
 	{
 		instance = this;
 		anim = GameObject.Find ("Portal_").GetComponent<Animator> ();
+		text = GameObject.Find ("Text");
+		textEnter = GameObject.Find ("Text_Enter");
+
 		transition = GameObject.Find ("TransitionTemp").GetComponent<Animator>();
 	}
 
 	public IEnumerator startTimePortal()
 	{
+		Destroy(text);
+		Destroy(textEnter);
+
 		this.anim.SetTrigger(activatedHash);
 		AudioController.instance.Play("026_FusionB");
 		LevelFinishedController.instance.setStopped (true);
