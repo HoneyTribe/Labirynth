@@ -211,7 +211,7 @@ public class InControlManager : MonoBehaviour {
 		{
 			LevelFinishedController.instance.setControllers(usedControllers);
 			LevelFinishedController.instance.LevelCounter();
-			RotationController.instance.startRotation(playersInPortal);
+			StartCoroutine(TimePortalController.instance.startTimePortal());
 		}
 	}
 }
