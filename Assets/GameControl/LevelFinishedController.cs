@@ -3,22 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class LevelFinishedController : MonoBehaviour {
-
+	
 	public static bool ENABLE_ALL_LEVELS = false;
 	public static float SHOW_INSTRUCTION_MIN_TIME = 0.3f;
 	public static int savedMaxLevel;
 	private int bootups = 0;
 	private int totalLevels = 35;
 	private int levCount = 0;
-
+	private int[] attempt;
+	private int dynamicDifficulty = 1;
+	private int attemptsForChange = 3;
+	private int delay = 2;
+	private int delayMax = 5;
+	
 	public static LevelFinishedController instance;
 	public float gameSpeed = 1.0f;
-
+	
 	private int level = 0;
 	private int maxLevel = 0;
 	private int[] levelsCounter;
 	private AssemblyCSharp.LevelDefinition levelDefinition;
-
+	
 	public GameObject playerSelectionMenuPrefab;
 	public GameObject menuPrefab;
 	public GameObject instructionPrefab;
@@ -26,16 +31,16 @@ public class LevelFinishedController : MonoBehaviour {
 	public GUISkin LevEnd_GUISkin;
 	public GUISkin help_GUISkin;
 	public float instructionPanelTime;
-
+	
 	private List<InputController> controllers = new List<InputController> ();
-
+	
 	private bool finished;
 	private bool gameOver;
 	private bool congratulation;
 	private bool stopped;
-
+	
 	private bool decoyFixed;
-
+	
 	void Awake()
 	{
 		if (instance == null)
@@ -44,10 +49,10 @@ public class LevelFinishedController : MonoBehaviour {
 			DontDestroyOnLoad(gameObject);
 			instance = this;
 			Application.LoadLevel(0);
-
+			
 			//hide mouse curser
 			Screen.showCursor = false;
-
+			
 			//load bootups from disk and save
 			if (PlayerPrefs.HasKey("Savedbootups"))
 			{
@@ -66,7 +71,7 @@ public class LevelFinishedController : MonoBehaviour {
 				GA.API.Design.NewEvent("Bootups",1);
 			}
 		}
-
+		
 		else 
 		{
 			// this must be a duplicate from a scene reload - DESTROY!
@@ -84,26 +89,27 @@ public class LevelFinishedController : MonoBehaviour {
 		}
 		instructionPanelTime = Time.time;
 		levelsCounter = new int[totalLevels];
-
+		attempt = new int[totalLevels];
+		
 		if (bootups == 1) //set all levelsCounter values to 0
+		{
+			for(int i = 0; i < totalLevels; i++)
 			{
-				for(int i = 0; i < totalLevels; i++)
-				{
-					levelsCounter[i]=0;
-				}
+				levelsCounter[i]=0;
 			}
-
+		}
+		
 		else //load levelsCounter
+		{
+			for(int i = 0; i < totalLevels; i++)
 			{
-				for(int i = 0; i < totalLevels; i++)
+				if(PlayerPrefs.HasKey("savedLevelsCounter"+i))
 				{
-					if(PlayerPrefs.HasKey("savedLevelsCounter"+i))
-					{
-						levelsCounter[i]= PlayerPrefs.GetInt("savedLevelsCounter"+i);
-					}
+					levelsCounter[i]= PlayerPrefs.GetInt("savedLevelsCounter"+i);
 				}
 			}
-
+		}
+		
 		//retreive saved max level
 		if (PlayerPrefs.HasKey("savedMaxLevel") &&  PlayerPrefs.GetInt("savedMaxLevel") > maxLevel)
 		{
@@ -111,9 +117,9 @@ public class LevelFinishedController : MonoBehaviour {
 		}
 		//retreive levCount
 		levCount = PlayerPrefs.GetInt("savedLevCount");
-
+		
 	}
-
+	
 	void Update()
 	{
 		if (Input.GetKeyDown("l"))
@@ -133,16 +139,15 @@ public class LevelFinishedController : MonoBehaviour {
 			}
 		}
 	}
-
+	
 	private void LoadNewLevel()
 	{
 		level++;
-
-
-		if (level > maxLevel )//&& level < getNumberOfLevels())
+		
+		if (level > maxLevel )
 		{
 			maxLevel = level;
-
+			
 			//save maxLevel to disk
 			if (PlayerPrefs.HasKey("savedMaxLevel") && maxLevel > PlayerPrefs.GetInt("savedMaxLevel"))
 			{
@@ -159,7 +164,7 @@ public class LevelFinishedController : MonoBehaviour {
 				GA.API.Design.NewEvent("maxLevel"+maxLevel,1);
 			}
 		}
-
+		
 		if (level > getNumberOfLevels ())
 		{
 			StartCoroutine(GameFinished());
@@ -172,7 +177,7 @@ public class LevelFinishedController : MonoBehaviour {
 			Application.LoadLevel (1); 
 		}
 	}
-
+	
 	public void Reset()
 	{
 		finished = false;
@@ -180,7 +185,7 @@ public class LevelFinishedController : MonoBehaviour {
 		congratulation = false;
 		stopped = false;
 	}
-
+	
 	//triggered from this script and PlayerSelectionMenuController
 	public void LevelCounter()
 	{
@@ -188,7 +193,7 @@ public class LevelFinishedController : MonoBehaviour {
 		PlayerPrefs.SetInt("savedLevCount", levCount);
 		GA.API.Design.NewEvent("totalLevelsPlayed", 1);
 		//print("levCount" + levCount);
-
+		
 		//send levelCounter to analytics
 		levelsCounter[level]++;
 		GA.API.Design.NewEvent("levelsCounter" + level, 1);
@@ -203,26 +208,23 @@ public class LevelFinishedController : MonoBehaviour {
 		{
 			if (!stopped && IntroductionController.instance.isPlayingIntroduction()== false )
 			{
-				//GUI.Label (new Rect (Screen.width / 2 - 360, 50, 300, 300), "Level: " + (level + 1),help_GUISkin.label); 
-				//GUI.Label (new Rect (Screen.width / 2 - 360, 70, 300, 300), "HELP: 'Enter' or 'Start'",help_GUISkin.label);
 				GUI.depth = 2;
 				GUI.Label (new Rect (Screen.width * 0.05f, 70, 300, 300), "Zone " + (level + 1), help_GUISkin.label); 
 				GUI.Label (new Rect (Screen.width * 0.05f, 90, 300, 300), "Help: 'Start' or 'Enter'", help_GUISkin.label);
 				GUI.Label (new Rect (Screen.width * 0.05f, 110, 300, 300), "Quit: 'Back' or 'Escape'", help_GUISkin.label);
 			}
 		}
-
 		if (finished && level < totalLevels-1)
 		{
 			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300), "Time shift initiated!" +
-			 " Travelling " + levelDefinition.getLevels(controllers.Count)[level].getNumberOfKeys() + " earth years forward...", LevEnd_GUISkin.label);
+			           " Travelling " + levelDefinition.getLevels(controllers.Count)[level].getNumberOfKeys() + " earth years forward...", LevEnd_GUISkin.label);
 		}
 		if (finished && level == totalLevels-1)
 		{
 			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300),
-			 "Congratulations!",LevEnd_GUISkin.label);
+			           "Congratulations!",LevEnd_GUISkin.label);
 		}
 		if (gameOver)
 		{
@@ -233,42 +235,58 @@ public class LevelFinishedController : MonoBehaviour {
 		{
 			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300),
-			 "Time-shifting 3000 years... soon. Continue the adventure in a future update!",LevEnd_GUISkin.label);
+			           "Time-shifting 3000 years... soon. Continue the adventure in a future update!",LevEnd_GUISkin.label);
 		}
 	}
-
+	
 	IEnumerator PlayerFinished () 
 	{
 		finished = true; 
 		stopped = true;
+		
+		attempt[level] = 0;
+		//PlayerPrefs.SetInt("savedAttempt"+level, attempt[level]);
+		//PlayerPrefs.Save();
+		
 		FloorInstructions.instance.Remove();
 		yield return new WaitForSeconds(4);
 		finished = false; 
 		LoadNewLevel();
 	}
-
+	
 	public IEnumerator PlayerLost () 
 	{
 		gameOver = true; 
 		stopped = false;
+		
+		attempt[level]++;
+		print(attempt[level]);
+		//PlayerPrefs.SetInt("savedAttempt"+level, attempt[level]);
+		//PlayerPrefs.Save();
+		
 		FloorInstructions.instance.Remove(); // remove floor instructions
 		yield return new WaitForSeconds(4);
 		gameOver = false;
 		Application.LoadLevel (0); 
 		//Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
-
+	
 	IEnumerator GameFinished () 
 	{
 		congratulation = true; 
 		stopped = false;
+		
+		attempt[level] = 1;
+		//PlayerPrefs.SetInt("savedAttempt"+level, attempt[level]);
+		//PlayerPrefs.Save();
+		
 		FloorInstructions.instance.Remove();
 		yield return new WaitForSeconds(10);
 		congratulation = false;
 		Application.LoadLevel (0); 
 		//Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
-
+	
 	public void ShowPlayerSelectionMenu () 
 	{
 		GameObject playerSelectionMenu = GameObject.Find ("Player Selection Menu(Clone)");
@@ -284,7 +302,7 @@ public class LevelFinishedController : MonoBehaviour {
 			}
 		}
 	}
-
+	
 	// It must be time dependent :-(
 	// For keyboard: if F1 was pressed it will trigger the action 2 times, from every keyboard device 
 	// For gamepad: if Start was pressed it will trigger the action 2 times, from every player using that gamepad
@@ -296,12 +314,12 @@ public class LevelFinishedController : MonoBehaviour {
 			instructionPanelTime = Time.time;
 		}
 	}
-
+	
 	public bool IsInstruction () 
 	{
 		return (instructionPanel != null);
 	}
-
+	
 	public void HideInstruction () 
 	{
 		if (( instructionPanel != null) && (Time.time - instructionPanelTime > SHOW_INSTRUCTION_MIN_TIME))
@@ -310,32 +328,33 @@ public class LevelFinishedController : MonoBehaviour {
 			instructionPanelTime = Time.time;
 		}
 	}
-
+	
 	public int getNumberOfKeys()
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getNumberOfKeys();
 	}
-
+	
 	public List<AssemblyCSharp.MonsterTemplate> getMonsters()
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getMonsters ();
 	}
-
+	
 	public int getTimeToFirstMonster()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getTimeToFirstMonster ();
+		return levelDefinition.getLevels(controllers.Count)[level].getTimeToFirstMonster ()
+			+ (dynamicDifficulty * (int)(Mathf.Min(attempt[level] / attemptsForChange, delayMax) * delay));
 	}
-
+	
 	public int getTimeBetweenMonsters()
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getTimeBetweenMonsters ();
 	}
-
+	
 	public int getMazeSizeX()
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getMazeSizeX ();
 	}
-
+	
 	public int getMazeSizeZ()
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getMazeSizeZ ();
@@ -345,22 +364,22 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getEnding ();
 	}
-
+	
 	public string getPuzzleName()
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getPuzzleName ();
 	}
-
+	
 	public bool isDistractionEnabled()
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isDistractionEnabled();
 	}
-
+	
 	public bool isItemActivationEnabled()
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isItemActivationEnabled();
 	}
-
+	
 	public bool isPickingUpEnabled()
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isPickingUpEnabled();
@@ -370,7 +389,7 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isSmashingEnabled();
 	}
-
+	
 	public bool isTeleportEnabled()
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isTeleportEnabled();
@@ -380,7 +399,7 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isStunGunEnabled();
 	}
-
+	
 	public int getFirstLevelWithLight ()
 	{
 		return levelDefinition.getFirstLevelWithLight ();
@@ -390,17 +409,17 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		return stopped;
 	}
-
+	
 	public void setStopped(bool stopped)
 	{
 		this.stopped = stopped;
 	}
-
+	
 	public int getMaxLevel()
 	{
 		return maxLevel;
 	}
-
+	
 	public void updateMaxLevel()
 	{
 		if (ENABLE_ALL_LEVELS)
@@ -408,45 +427,50 @@ public class LevelFinishedController : MonoBehaviour {
 			maxLevel = getNumberOfLevels ();
 		}
 	}
-
+	
 	public int getLevel()
 	{
 		return level;
-
+		
 	}
-
+	
 	public int getNumberOfLevels()
 	{
 		return  levelDefinition.getLevels (controllers.Count).Count - 1;
 	}
-
+	
 	public int getTotalLevels()
 	{
 		return  totalLevels;
 	}
-
+	
 	public void setLevel(int newLevel)
 	{
 		level = newLevel;
 	}
-
+	
 	public List<InputController> getControllers()
 	{
 		return controllers;
 	}
-
+	
 	public void setControllers(List<InputController> controllers)
 	{
 		this.controllers = controllers;
 	}
-
+	
 	public bool isDecoyFixed()
 	{
 		return decoyFixed;
 	}
-
+	
 	public void setDecoyFixed(bool decoyFixed)
 	{
 		this.decoyFixed = decoyFixed;
 	}
+	//public int getAttempt()
+	//{
+	//	return (dynamicDifficulty * (int)(attempt[level] / attemptsForChange) * delay);
+	//}
+	
 }
