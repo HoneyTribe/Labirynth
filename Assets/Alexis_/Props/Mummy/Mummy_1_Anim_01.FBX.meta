@@ -1,0 +1,498 @@
+fileFormatVersion: 2
+guid: 95b95d0859d4e6044a6086682afd39e2
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bone001
+    100002: Bone001(mirrored)
+    100004: Bone002
+    100006: Bone002(mirrored)
+    100008: Bone003
+    100010: Bone003(mirrored)
+    100012: Bone004
+    100014: Bone004(mirrored)
+    100016: Bone006
+    100018: Bone007
+    100020: Bone009(mirrored)
+    100022: Bone009(mirrored)(mirrored)
+    100024: Bone010(mirrored)
+    100026: Bone010(mirrored)(mirrored)
+    100028: Bone011(mirrored)
+    100030: Bone011(mirrored)(mirrored)
+    100032: Bone012(mirrored)
+    100034: Bone012(mirrored)(mirrored)
+    100036: Bone013
+    100038: Bone013(mirrored)
+    100040: Bone014
+    100042: Head_Bone
+    100044: Mummy
+    100046: //RootNode
+    100048: Mummy_Pivot
+    400000: Bone001
+    400002: Bone001(mirrored)
+    400004: Bone002
+    400006: Bone002(mirrored)
+    400008: Bone003
+    400010: Bone003(mirrored)
+    400012: Bone004
+    400014: Bone004(mirrored)
+    400016: Bone006
+    400018: Bone007
+    400020: Bone009(mirrored)
+    400022: Bone009(mirrored)(mirrored)
+    400024: Bone010(mirrored)
+    400026: Bone010(mirrored)(mirrored)
+    400028: Bone011(mirrored)
+    400030: Bone011(mirrored)(mirrored)
+    400032: Bone012(mirrored)
+    400034: Bone012(mirrored)(mirrored)
+    400036: Bone013
+    400038: Bone013(mirrored)
+    400040: Bone014
+    400042: Head_Bone
+    400044: Mummy
+    400046: //RootNode
+    400048: Mummy_Pivot
+    2300000: Mummy
+    3300000: Mummy
+    4300000: Mummy
+    7400000: Mummy_GoToSleep
+    7400002: Mummy_Sleeping
+    7400004: Mummy_WakeUp
+    7400006: Mummy_SimpleRun
+    7400008: Mummy_Zapped
+    9500000: //RootNode
+    13700000: Mummy
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Mummy_GoToSleep
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mummy
+        weight: 1
+      - path: Mummy_Pivot
+        weight: 1
+      - path: Mummy_Pivot/Bone001
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)/Bone004(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013/Bone012(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)/Bone012(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014/Head_Bone
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Mummy_Sleeping
+      takeName: Take 001
+      firstFrame: 10
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mummy
+        weight: 1
+      - path: Mummy_Pivot
+        weight: 1
+      - path: Mummy_Pivot/Bone001
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)/Bone004(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013/Bone012(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)/Bone012(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014/Head_Bone
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Mummy_WakeUp
+      takeName: Take 001
+      firstFrame: 65
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mummy
+        weight: 1
+      - path: Mummy_Pivot
+        weight: 1
+      - path: Mummy_Pivot/Bone001
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)/Bone004(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013/Bone012(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)/Bone012(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014/Head_Bone
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Mummy_SimpleRun
+      takeName: Take 001
+      firstFrame: 100
+      lastFrame: 126
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mummy
+        weight: 1
+      - path: Mummy_Pivot
+        weight: 1
+      - path: Mummy_Pivot/Bone001
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)/Bone004(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013/Bone012(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)/Bone012(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014/Head_Bone
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Mummy_Zapped
+      takeName: Take 001
+      firstFrame: 130
+      lastFrame: 148
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mummy
+        weight: 1
+      - path: Mummy_Pivot
+        weight: 1
+      - path: Mummy_Pivot/Bone001
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)/Bone004(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013/Bone012(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)/Bone012(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014/Head_Bone
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .75
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
