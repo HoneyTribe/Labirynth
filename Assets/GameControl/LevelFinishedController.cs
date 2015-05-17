@@ -13,8 +13,8 @@ public class LevelFinishedController : MonoBehaviour {
 	private int[] attempt;
 	private int dynamicDifficulty = 1;
 	private int attemptsForChange = 3;
-	private int delay = 2;
-	private int delayMax = 5;
+	private int delay = 1;
+	private int delayMax = 3;
 	
 	public static LevelFinishedController instance;
 	public float gameSpeed = 1.0f;
@@ -347,7 +347,8 @@ public class LevelFinishedController : MonoBehaviour {
 	
 	public int getTimeBetweenMonsters()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getTimeBetweenMonsters ();
+		return levelDefinition.getLevels(controllers.Count)[level].getTimeBetweenMonsters ()
+			+ (dynamicDifficulty * (int)(Mathf.Min(attempt[level] / attemptsForChange, delayMax) * delay));
 	}
 	
 	public int getMazeSizeX()
