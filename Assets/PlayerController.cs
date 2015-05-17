@@ -245,7 +245,9 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				foreach (GameObject player in players)
 				{
-					if (Vector3.Distance(transform.localPosition, player.transform.localPosition) < closeDistance)
+
+					if ((!player.GetComponent<PlayerController>().isParalysed()) && 
+						(Vector3.Distance(transform.localPosition, player.transform.localPosition) < closeDistance))
 					{
 						if (Time.time - timeFromLastRevive > timeBetweenRevivals)
 						{
