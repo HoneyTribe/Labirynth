@@ -61,6 +61,8 @@ ModelImporter:
     7400004: Mummy_WakeUp
     7400006: Mummy_SimpleRun
     7400008: Mummy_Zapped
+    7400010: Idle_Funny
+    7400012: Idle_Simple
     9500000: //RootNode
     13700000: Mummy
   materials:
@@ -393,6 +395,158 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mummy
+        weight: 1
+      - path: Mummy_Pivot
+        weight: 1
+      - path: Mummy_Pivot/Bone001
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)/Bone004(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013/Bone012(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)/Bone012(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014/Head_Bone
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle_Funny
+      takeName: Take 001
+      firstFrame: 149
+      lastFrame: 309
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mummy
+        weight: 1
+      - path: Mummy_Pivot
+        weight: 1
+      - path: Mummy_Pivot/Bone001
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003
+        weight: 1
+      - path: Mummy_Pivot/Bone001/Bone002/Bone003/Bone004
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone001(mirrored)/Bone002(mirrored)/Bone003(mirrored)/Bone004(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)/Bone010(mirrored)/Bone011(mirrored)/Bone013/Bone012(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone009(mirrored)(mirrored)/Bone010(mirrored)(mirrored)/Bone011(mirrored)(mirrored)/Bone013(mirrored)/Bone012(mirrored)(mirrored)
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014
+        weight: 1
+      - path: Mummy_Pivot/Bone006/Bone007/Bone014/Head_Bone
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle_Simple
+      takeName: Take 001
+      firstFrame: 311
+      lastFrame: 515
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
