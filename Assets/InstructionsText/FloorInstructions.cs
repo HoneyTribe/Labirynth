@@ -87,7 +87,7 @@ public class FloorInstructions : MonoBehaviour
 				else
 				{
 					GetComponentInChildren<TextMesh>().text = "Hold action-1 to exit the machine and then high-five.";
-					controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -6f);
+					controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -4.5f);
 				}
 			}
 			
@@ -462,7 +462,7 @@ public class FloorInstructions : MonoBehaviour
 		else if (LevelFinishedController.instance.getLevel() == firstJumpBoxLevel)
 		{
 			GetComponentInChildren<TextMesh>().text = "Go and pick up the Anti-Grav Box";
-			controlImagePad2Move.transform.position = new Vector3(-0.3f, 1f, 0f);
+			controlImagePad2Move.transform.position = new Vector3(-0.3f, 1f, 1f);
 		}
 		//drone bomb
 		else if (LevelFinishedController.instance.getLevel() == firstDroneBombLevel)
@@ -476,7 +476,7 @@ public class FloorInstructions : MonoBehaviour
 		{
 			GetComponentInChildren<TextMesh>().text = "Walk into the Wall-Lazer           entrance";
 			arrowRight.transform.position = new Vector3(4, 0.5f, -13);
-			controlImagePad2Move.transform.position = new Vector3(-0.3f, 1f, -5f);
+			controlImagePad2Move.transform.position = new Vector3(-0.3f, 1f, -3.5f);
 		}
 
 	}
