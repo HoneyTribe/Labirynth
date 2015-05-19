@@ -8672,7 +8672,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2009325771}
-  m_Text: Move First to be player 1 (green)
+  m_Text: Move First to be the green character
   m_OffsetZ: 0
   m_CharacterSize: .600000024
   m_LineSpacing: 1
