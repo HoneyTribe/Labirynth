@@ -53,7 +53,7 @@ namespace AssemblyCSharp
 			
 			//7 1st monster door
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			     3,new List<MonsterTemplate>{
+			    3,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 5.0f),
 				new MonsterTemplate("Standard", 4.5f)
 			},4,4,7,7, null, null));
@@ -280,8 +280,7 @@ namespace AssemblyCSharp
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			    4,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 5.0f),
-				new MonsterTemplate("Standard", 5.5f),
-				new MonsterTemplate("Standard", 4.5f)
+				new MonsterTemplate("Standard", 5.5f)
 			},4,4,7,7, null, null));
 			
 			//8 ghost
@@ -526,8 +525,7 @@ namespace AssemblyCSharp
 			    5,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 5.0f),
 				new MonsterTemplate("Standard", 5.5f),
-				new MonsterTemplate("Standard", 4.5f),
-				new MonsterTemplate("Standard", 6.0f)
+				new MonsterTemplate("Standard", 4.5f)
 			},4,4,7,7, null, null));
 			
 			//8 ghost

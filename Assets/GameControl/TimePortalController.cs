@@ -28,6 +28,13 @@ public class TimePortalController : MonoBehaviour {
 		Destroy(text);
 		Destroy(textEnter);
 
+		//GameObject[] allPlayers= GameObject.FindGameObjectsWithTag ("Player");
+		//foreach (GameObject player in allPlayers)
+		//{
+		//	player.rigidbody.velocity = Vector3.zero;
+			//player.rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
+		//}
+
 		this.anim.SetTrigger(activatedHash);
 		AudioController.instance.Play("026_FusionB");
 		LevelFinishedController.instance.setStopped (true);

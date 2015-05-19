@@ -7,8 +7,8 @@ public class InControlManager : MonoBehaviour {
 
 	public static InControlManager instance;
 	private PlayerSelectionMenuController playerSelectionMenuController;
-
 	private int currentPlayer;
+	private GameObject text_enter;
 
 	void Start ()
 	{
@@ -50,6 +50,8 @@ public class InControlManager : MonoBehaviour {
 //		}
 
 		instance = this;
+		text_enter = GameObject.Find ("Text_Enter");
+
 		if (Application.loadedLevel == 0)
 		{
 			currentPlayer = 1;
@@ -212,6 +214,10 @@ public class InControlManager : MonoBehaviour {
 			LevelFinishedController.instance.setControllers(usedControllers);
 			LevelFinishedController.instance.LevelCounter();
 			StartCoroutine(TimePortalController.instance.startTimePortal());
+		}
+		else
+		{
+			text_enter.GetComponentInChildren<TextMesh>().text = "At least 2 characters must enter";
 		}
 	}
 }
