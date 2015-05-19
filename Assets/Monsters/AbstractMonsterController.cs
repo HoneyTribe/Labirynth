@@ -7,6 +7,8 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	protected static Vector3 MASK = new Vector3 (1, 0, 1);
 	protected static float EPSILON = 0.01f;
 
+	private static int activatedHash = Animator.StringToHash ("Activate");
+
 	protected float speed;
 
 	private GameObject topLight;
@@ -28,11 +30,14 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	private GameObject distractParticlesPrefab;
 	private GameObject particles;
 
+	private Animator anim;
+
 	public abstract void go ();
 
 	void Start () {
 
 		textMesh = gameObject.GetComponentInChildren<TextMesh> ();
+		anim = gameObject.GetComponentInChildren<Animator> ();
 
 		GameObject gameController = GameObject.Find ("GameController");
 		device = GameObject.Find ("DeviceContainer");
@@ -59,12 +64,14 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			if (timeLeft == DeviceController.interval)
 			{
 				recalculateTrigger  = true;
+				if (anim!=null) anim.SetTrigger(activatedHash);
 			}
 			timeLeft -= Time.deltaTime;
 			textMesh.text = ((int) (timeLeft + 1)).ToString();
 			if (timeLeft <= 0)
 			{
 				recalculateTrigger = true;
+				if (anim!=null) anim.SetTrigger(activatedHash);
 				Destroy(particles);
 			}
 		}
