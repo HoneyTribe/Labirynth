@@ -23,22 +23,41 @@ public class LevelChangeController : MonoBehaviour {
 
 	public void Change ()
 	{
-		time -= Time.deltaTime;
-		if ((stick.transform.rotation.z == 0) && 
-		    (LevelFinishedController.instance.getLevel() > 0 && LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getMaxLevel()))
+		if(change > 0)
 		{
-			deflectionTime = Time.time;
-			stick.transform.rotation =  Quaternion.Euler(0, 0, -change * deflection);
+			time -= Time.deltaTime;
+			if ((stick.transform.rotation.z == 0) && 
+			    (LevelFinishedController.instance.getLevel() >= 0 && LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getMaxLevel()))
+			{
+				deflectionTime = Time.time;
+				stick.transform.rotation =  Quaternion.Euler(0, 0, -change * deflection);
 				if (time < 0)
 				{
-				AudioController.instance.Play("035_Select");
+					AudioController.instance.Play("035_Select");
 				}
+			}
+		}
+		else
+		{
+			time -= Time.deltaTime;
+			if ((stick.transform.rotation.z == 0) && 
+			    (LevelFinishedController.instance.getLevel() > 0 && LevelFinishedController.instance.getLevel() <= LevelFinishedController.instance.getMaxLevel()))
+			{
+				deflectionTime = Time.time;
+				stick.transform.rotation =  Quaternion.Euler(0, 0, -change * deflection);
+				if (time < 0)
+				{
+					AudioController.instance.Play("035_Select");
+
+				}
+			}
 		}
 		if (time < 0)
 		{
 			UpdateLevel ();
 			time = interval;
 		}
+
 	}
 
 	void Update()
