@@ -9,6 +9,7 @@ public class InControlManager : MonoBehaviour {
 	private PlayerSelectionMenuController playerSelectionMenuController;
 	private int currentPlayer;
 	private GameObject text_enter;
+	private bool portalStarted;
 
 	void Start ()
 	{
@@ -87,7 +88,7 @@ public class InControlManager : MonoBehaviour {
 	{
 		InputManager.Update ();
 
-		if (Application.loadedLevel == 0)
+		if ((Application.loadedLevel == 0) && (!portalStarted))
 		{
 			InputDevice input = InputManager.ActiveDevice;
 
@@ -199,7 +200,6 @@ public class InControlManager : MonoBehaviour {
 	private void collectPlayersAndStart() 
 	{
 		List<InputController> usedControllers = new List<InputController> ();
-		List<GameObject> playersInPortal = new List<GameObject> ();
 		Bounds portalBounds = GameObject.Find ("Portal").renderer.bounds;
 		foreach(InputController inputController in LevelFinishedController.instance.getControllers())
 		{
@@ -207,11 +207,11 @@ public class InControlManager : MonoBehaviour {
 			if (portalBounds.Intersects(player.renderer.bounds))
 			{
 				usedControllers.Add(inputController);
-				playersInPortal.Add (player);
 			}
 		}
 		if (usedControllers.Count > 1) // at least 2 players
 		{
+			portalStarted = true;
 			LevelFinishedController.instance.setControllers(usedControllers);
 			LevelFinishedController.instance.LevelCounter();
 			StartCoroutine(TimePortalController.instance.startTimePortal());
