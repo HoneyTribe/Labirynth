@@ -254,7 +254,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Mummy_Zapped
-  m_Speed: 1
+  m_Speed: .600000024
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400008, guid: 95b95d0859d4e6044a6086682afd39e2, type: 3}
@@ -281,21 +281,6 @@ StateMachine:
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110200000}
-      second:
-      - {fileID: 110197132}
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 110238243}
-      second:
-      - {fileID: 110109485}
-      - {fileID: 110124318}
-    data:
       first: {fileID: 0}
       second: []
     data:
@@ -303,17 +288,23 @@ StateMachine:
       second:
       - {fileID: 110194652}
     data:
-      first: {fileID: 0}
-      second: []
+      first: {fileID: 110292564}
+      second:
+      - {fileID: 110182390}
     data:
       first: {fileID: 110278924}
       second:
       - {fileID: 110100000}
       - {fileID: 110137431}
     data:
-      first: {fileID: 110292564}
+      first: {fileID: 110238243}
       second:
-      - {fileID: 110182390}
+      - {fileID: 110109485}
+      - {fileID: 110124318}
+    data:
+      first: {fileID: 110200000}
+      second:
+      - {fileID: 110197132}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 288, y: -84, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

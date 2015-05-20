@@ -179,7 +179,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Mummy_WakeUp
-  m_Speed: 1
+  m_Speed: .5
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400004, guid: 95b95d0859d4e6044a6086682afd39e2, type: 3}
@@ -210,29 +210,26 @@ StateMachine:
       first: {fileID: 0}
       second: []
     data:
-      first: {fileID: 110200000}
-      second:
-      - {fileID: 110119811}
-    data:
-      first: {fileID: 110200634}
-      second: []
-    data:
-      first: {fileID: 110243178}
-      second: []
-    data:
       first: {fileID: 110261142}
       second:
       - {fileID: 110144164}
     data:
-      first: {fileID: 110271040}
+      first: {fileID: 110200000}
       second:
-      - {fileID: 110100000}
+      - {fileID: 110119811}
     data:
       first: {fileID: 110274213}
       second:
       - {fileID: 110106125}
     data:
-      first: {fileID: 0}
+      first: {fileID: 110271040}
+      second:
+      - {fileID: 110100000}
+    data:
+      first: {fileID: 110243178}
+      second: []
+    data:
+      first: {fileID: 110200634}
       second: []
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 36, y: 0, z: 0}

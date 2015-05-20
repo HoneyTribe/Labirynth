@@ -187,6 +187,7 @@ public class TopLightController : MonoBehaviour {
 				{
 					changeEnergy(-attractionCost);
 					DeviceController.instance.ShowHologram();
+					AudioController.instance.Play("013_LightZap");
 
 					zapCount++;
 					if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
