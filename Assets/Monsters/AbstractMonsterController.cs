@@ -7,7 +7,8 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	protected static Vector3 MASK = new Vector3 (1, 0, 1);
 	protected static float EPSILON = 0.01f;
 
-	private static int activatedHash = Animator.StringToHash ("Activate");
+	private static int activatHash = Animator.StringToHash ("Activate");
+	private static int stopHash = Animator.StringToHash ("Stop");
 
 	protected float speed;
 
@@ -64,14 +65,14 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			if (timeLeft == DeviceController.interval)
 			{
 				recalculateTrigger  = true;
-				if (anim!=null) anim.SetTrigger(activatedHash);
+				if (anim!=null) anim.SetTrigger(activatHash);
 			}
 			timeLeft -= Time.deltaTime;
 			textMesh.text = ((int) (timeLeft + 1)).ToString();
 			if (timeLeft <= 0)
 			{
 				recalculateTrigger = true;
-				if (anim!=null) anim.SetTrigger(activatedHash);
+				if (anim!=null) anim.SetTrigger(stopHash);
 				Destroy(particles);
 			}
 		}
