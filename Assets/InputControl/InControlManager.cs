@@ -161,6 +161,7 @@ public class InControlManager : MonoBehaviour {
 		{
 			if (InputManager.ActiveDevice.GetControl(InputControlType.Select).WasPressed)
 			{
+				LevelFinishedController.instance.Reset();
 				Application.LoadLevel(0);
 			}
 		}
