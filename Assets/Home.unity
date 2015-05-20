@@ -8733,6 +8733,7 @@ GameObject:
   - 23: {fileID: 2014009219}
   - 95: {fileID: 2014009222}
   - 111: {fileID: 2014009223}
+  - 114: {fileID: 2014009224}
   m_Layer: 12
   m_Name: Logo
   m_TagString: Untagged
@@ -8775,7 +8776,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2014009218}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: -20, y: .00999999978, z: 2}
+  m_LocalPosition: {x: -20, y: .00999999978, z: 1}
   m_LocalScale: {x: 2.4000001, y: 0, z: .600000024}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8808,6 +8809,17 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &2014009224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2014009218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34d16329a4374c28b819e37052d2e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2015479389
 GameObject:
   m_ObjectHideFlags: 0
