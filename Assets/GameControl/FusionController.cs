@@ -49,7 +49,7 @@ public class FusionController : MonoBehaviour {
 			if (finished)
 			{
 				fusionActivated = false;
-				AudioController.instance.Play ("026_FusionB");
+				AudioController.instance.Play ("026_FusionC");
 				foreach(GameObject player in players)
 				{
 					player.rigidbody.velocity = Vector3.zero;

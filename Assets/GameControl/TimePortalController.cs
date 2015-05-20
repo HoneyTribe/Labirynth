@@ -36,7 +36,7 @@ public class TimePortalController : MonoBehaviour {
 		//}
 
 		this.anim.SetTrigger(activatedHash);
-		AudioController.instance.Play("026_FusionB");
+		AudioController.instance.Play("026_FusionC");
 		LevelFinishedController.instance.setStopped (true);
 		yield return new WaitForSeconds(0.5f);
 		this.transition.enabled = true;

@@ -4,7 +4,6 @@ using System.Collections;
 public class TopLightController : MonoBehaviour {
 
 	public static TopLightController instance;
-
 	private static int STEPS = 21;
 
 	private static float maxIntensity = 0.8f;
