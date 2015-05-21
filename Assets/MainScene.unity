@@ -10174,7 +10174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &594548674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27262,7 +27262,7 @@ GameObject:
   - 33: {fileID: 1597515722}
   - 23: {fileID: 1597515720}
   - 114: {fileID: 1597515724}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: ControlImagePad1Move
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -113,7 +113,7 @@ public class FloorInstructions : MonoBehaviour
 				{
 					if(TopLightController.instance.getZapCount() == 0)
 					{
-						GetComponentInChildren<TextMesh>().text = "Hypnotize the mummy. Aim the light at it and tap action 1.";
+						GetComponentInChildren<TextMesh>().text = "Hypnotize the mummy. Aim at the mummy and tap action-1.";
 						arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 					}
 					
@@ -174,20 +174,20 @@ public class FloorInstructions : MonoBehaviour
 					else if(TopLightController.instance.getZapCount() % 2 == 1
 					   && DeviceController.instance.getDecoyCount() % 2 == 1)
 					{
-						GetComponentInChildren<TextMesh>().text = "You can reposition the Decoy by tapping action-1 in the maze.";
+						GetComponentInChildren<TextMesh>().text = "You can reposition the Decoy. Tap action-1 when in the maze.";
 						arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 					}
 
 					else if(TopLightController.instance.getZapCount() % 2 == 1
 					        && DeviceController.instance.getDecoyCount() % 2 == 0)
 					{
-						GetComponentInChildren<TextMesh>().text = "Hypnotize the mummies. Aim the light at them and tap action-1.";
+						GetComponentInChildren<TextMesh>().text = "Hypnotize the mummies. Aim at them and tap action-1.";
 						arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 					}
 
 					else
 					{
-						GetComponentInChildren<TextMesh>().text = "Hypnotize the mummies. Aim the light at them and tap action-1.";
+						GetComponentInChildren<TextMesh>().text = "Hypnotize the mummies. Aim at them and tap action-1.";
 						arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 					}
 				}

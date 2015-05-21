@@ -10,12 +10,14 @@ public class LevelFinishedController : MonoBehaviour {
 	private int bootups = 0;
 	private int totalLevels = 35;
 	private int levCount = 0;
-	private int[] attempt;
+	private int[] attempt; //amount of times died on same level
 	private int dynamicDifficulty = 1;
 	private int attemptsForChange = 3;
 	private int delay = 1;
 	private int delayMax = 3;
-	private int analytics = 0;
+	private int analytics = 0; // send data to analytics server
+	private int unlock = 1; // press "l" to toggle unlocked and locked levels
+	private int home = 1; //loads max saved level from disk
 	
 	public static LevelFinishedController instance;
 	public float gameSpeed = 1.0f;
@@ -116,36 +118,45 @@ public class LevelFinishedController : MonoBehaviour {
 				}
 			}
 		}
-		
-		//retreive saved max level
-		if (PlayerPrefs.HasKey("savedMaxLevel") &&  PlayerPrefs.GetInt("savedMaxLevel") > maxLevel)
+
+		if(home == 1)
 		{
-			maxLevel = PlayerPrefs.GetInt("savedMaxLevel");
+			//retreive saved max level
+			if (PlayerPrefs.HasKey("savedMaxLevel") &&  PlayerPrefs.GetInt("savedMaxLevel") > maxLevel)
+			{
+				maxLevel = PlayerPrefs.GetInt("savedMaxLevel");
+			}
 		}
+
 		//retreive levCount
 		levCount = PlayerPrefs.GetInt("savedLevCount");
 		
 	}
-	
+
+
 	void Update()
 	{
-		if (Input.GetKeyDown("l"))
+		if(unlock == 1)
 		{
-			if(ENABLE_ALL_LEVELS == true)
+			if (Input.GetKeyDown("l"))
 			{
-				ENABLE_ALL_LEVELS = false;
-				maxLevel = 0;
-				level = 0;
-				AudioController.instance.Play("003_CollectKey");
-			}
-			else
-			{
-				ENABLE_ALL_LEVELS = true;
-				maxLevel = totalLevels-1;
-				AudioController.instance.Play("003_CollectKey");
+				if(ENABLE_ALL_LEVELS == true)
+				{
+					ENABLE_ALL_LEVELS = false;
+					maxLevel = 0;
+					level = 0;
+					AudioController.instance.Play("003_CollectKey");
+				}
+				else
+				{
+					ENABLE_ALL_LEVELS = true;
+					maxLevel = totalLevels-1;
+					AudioController.instance.Play("003_CollectKey");
+				}
 			}
 		}
 	}
+
 	
 	private void LoadNewLevel()
 	{
