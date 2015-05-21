@@ -15,6 +15,7 @@ public class LevelFinishedController : MonoBehaviour {
 	private int attemptsForChange = 3;
 	private int delay = 1;
 	private int delayMax = 3;
+	private int analytics = 0;
 	
 	public static LevelFinishedController instance;
 	public float gameSpeed = 1.0f;
@@ -60,7 +61,10 @@ public class LevelFinishedController : MonoBehaviour {
 				PlayerPrefs.SetInt("Savedbootups", bootups);
 				PlayerPrefs.Save();
 				//send to analytics
+				if(analytics ==1)
+				{
 				GA.API.Design.NewEvent("Bootups", 1);
+				}
 			}
 			else
 			{
@@ -68,7 +72,10 @@ public class LevelFinishedController : MonoBehaviour {
 				PlayerPrefs.SetInt("Savedbootups", bootups);
 				PlayerPrefs.Save();
 				//send to analytics
+				if(analytics ==1)
+				{
 				GA.API.Design.NewEvent("Bootups",1);
+				}
 			}
 		}
 		
@@ -154,14 +161,20 @@ public class LevelFinishedController : MonoBehaviour {
 				PlayerPrefs.SetInt("savedMaxLevel", maxLevel);
 				PlayerPrefs.Save();
 				//send to analytics
+				if(analytics ==1)
+				{
 				GA.API.Design.NewEvent("maxLevel"+maxLevel,1);
+				}
 			}
 			else if (PlayerPrefs.HasKey("savedMaxLevel") == false)
 			{
 				PlayerPrefs.SetInt("savedMaxLevel", maxLevel);
 				PlayerPrefs.Save();
 				//send to analytics
+				if(analytics ==1)
+				{
 				GA.API.Design.NewEvent("maxLevel"+maxLevel,1);
+				}
 			}
 		}
 		
@@ -191,12 +204,18 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		levCount++;
 		PlayerPrefs.SetInt("savedLevCount", levCount);
+		if(analytics ==1)
+		{
 		GA.API.Design.NewEvent("totalLevelsPlayed", 1);
+		}
 		//print("levCount" + levCount);
 		
 		//send levelCounter to analytics
 		levelsCounter[level]++;
+		if(analytics ==1)
+		{
 		GA.API.Design.NewEvent("levelsCounter" + level, 1);
+		}
 		//save levelCouner to disk
 		PlayerPrefs.SetInt("savedLevelsCounter"+level, levelsCounter[level]);
 		PlayerPrefs.Save();
@@ -469,9 +488,5 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		this.decoyFixed = decoyFixed;
 	}
-	//public int getAttempt()
-	//{
-	//	return (dynamicDifficulty * (int)(attempt[level] / attemptsForChange) * delay);
-	//}
 	
 }
