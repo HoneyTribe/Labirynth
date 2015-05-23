@@ -174,7 +174,7 @@ public class FloorInstructions : MonoBehaviour
 					else if(TopLightController.instance.getZapCount() % 2 == 1
 					   && DeviceController.instance.getDecoyCount() % 2 == 1)
 					{
-						GetComponentInChildren<TextMesh>().text = "You can reposition the Decoy. Tap action-1 when in the maze.";
+						GetComponentInChildren<TextMesh>().text = "Don't leave the Decoy on the space machine.";
 						arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 					}
 
@@ -235,7 +235,7 @@ public class FloorInstructions : MonoBehaviour
 					if(TopLightController.instance.getZapCount() % 2 == 0
 					   && DeviceController.instance.getDecoyCount() % 2 == 0)
 					{
-						GetComponentInChildren<TextMesh>().text = "Don't leave the Decoy behind the light-controller.";
+						GetComponentInChildren<TextMesh>().text = "Don't leave the Decoy behind the space machine!";
 						arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 					}
 					

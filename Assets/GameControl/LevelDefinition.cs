@@ -41,7 +41,7 @@ namespace AssemblyCSharp
 
 			//4 decoy tut + can die
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			     33,new List<MonsterTemplate>{},0,0,9,9, null, "DecoyAndZap"));
+			     7,new List<MonsterTemplate>{},0,0,9,9, null, "DecoyAndZap"));
 
 			//5 decoy + can die
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -266,7 +266,7 @@ namespace AssemblyCSharp
 			
 			//4 decoy tut + can die
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			   33,new List<MonsterTemplate>{},0,0,9,9, null, "DecoyAndZap"));
+			   7,new List<MonsterTemplate>{},0,0,9,9, null, "DecoyAndZap"));
 			
 			//5 decoy + can die
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -510,7 +510,7 @@ namespace AssemblyCSharp
 			
 			//4 decoy tut + can die
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			    33,new List<MonsterTemplate>{},0,0,9,9, null, "DecoyAndZap"));
+			    7,new List<MonsterTemplate>{},0,0,9,9, null, "DecoyAndZap"));
 			
 			//5 decoy + can die
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),

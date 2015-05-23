@@ -11,13 +11,13 @@ public class LevelFinishedController : MonoBehaviour {
 	private int totalLevels = 35;
 	private int levCount = 0;
 	private int[] attempt; //amount of times died on same level
-	private int dynamicDifficulty = 1;
-	private int attemptsForChange = 3;
-	private int delay = 1;
+	private int dynamicDifficulty = 1; //turns on/off dynamic difficulty
+	private int attemptsForChange = 3; // number of deaths on one level before dynamic difficulty is activated.
+	private int delay = 1; //time added to each monster spawn.
 	private int delayMax = 3;
-	private int analytics = 0; // send data to analytics server
-	private int unlock = 1; // press "l" to toggle unlocked and locked levels
-	private int home = 1; //loads max saved level from disk
+	private int analytics = 1; // tuns on/off. send data to analytics server
+	private int unlock = 0; // turns on/off. press "l" to toggle unlocked and locked levels
+	private int home = 1; // turns on /off. loads max saved level from disk
 	
 	public static LevelFinishedController instance;
 	public float gameSpeed = 1.0f;
