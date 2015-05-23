@@ -219,7 +219,6 @@ public class LevelFinishedController : MonoBehaviour {
 		{
 		GA.API.Design.NewEvent("totalLevelsPlayed", 1);
 		}
-		//print("levCount" + levCount);
 		
 		//send levelCounter to analytics
 		levelsCounter[level]++;
@@ -290,7 +289,6 @@ public class LevelFinishedController : MonoBehaviour {
 		stopped = false;
 		
 		attempt[level]++;
-		print(attempt[level]);
 		//PlayerPrefs.SetInt("savedAttempt"+level, attempt[level]);
 		//PlayerPrefs.Save();
 		

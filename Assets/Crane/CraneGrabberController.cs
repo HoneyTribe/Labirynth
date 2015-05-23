@@ -76,7 +76,7 @@ public class CraneGrabberController : MonoBehaviour {
 						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), true);
 						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), true);
 					}
-					Debug.Log("false");
+					//Debug.Log("false");
 					CraneEnergyController.instance.holding(false);
 					heldObject = null;
 					AudioController.instance.Play("031_CraneDrop");
