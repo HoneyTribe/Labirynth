@@ -13,7 +13,7 @@ public class LevelFinishedController : MonoBehaviour {
 	private int[] attempt; //amount of times died on same level
 	private int dynamicDifficulty = 1; //turns on/off dynamic difficulty
 	private int attemptsForChange = 3; // number of deaths on one level before dynamic difficulty is activated.
-	private int delay = 1; //time added to each monster spawn.
+	private int delay = 1; //time added to each monster spawn if dynamic difficulty is active.
 	private int delayMax = 3;
 	private int analytics = 1; // tuns on/off. send data to analytics server
 	private int unlock = 0; // turns on/off. press "l" to toggle unlocked and locked levels

@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: PuzzlePortal_4
+  m_Name: MenuPuzzle1
   serializedVersion: 2
   m_AnimatorParameters:
   - m_Name: Activate
@@ -32,7 +32,25 @@ Transition:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110255639}
+  m_SrcState: {fileID: 0}
+  m_DstState: {fileID: 110200000}
+  m_TransitionDuration: .100000001
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 5
+    m_ConditionEvent: 
+    m_EventTreshold: 0
+    m_ExitTime: .899999976
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+--- !u!1101 &110162329
+Transition:
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110265542}
   m_DstState: {fileID: 110200000}
   m_TransitionDuration: .100000001
   m_TransitionOffset: 0
@@ -49,17 +67,17 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: PuzzlePortal4
+  m_Name: MenuPuzzle1
   m_Speed: .5
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 830df74b9702f4e03a63e2d52c73287a, type: 2}
+  - {fileID: 7400000, guid: fe42c9199fdd941648f257b6e8f7cb92, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 60, y: 72, z: 0}
+  m_Position: {x: 12, y: 48, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110255639
+--- !u!1102 &110265542
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
@@ -70,7 +88,7 @@ State:
   m_Motions:
   - {fileID: 0}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 60, y: 0, z: 0}
+  m_Position: {x: 12, y: -12, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -81,17 +99,17 @@ StateMachine:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110255639}
+  m_DefaultState: {fileID: 110265542}
   m_States:
   - {fileID: 110200000}
-  - {fileID: 110255639}
+  - {fileID: 110265542}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110255639}
+      first: {fileID: 110265542}
       second:
-      - {fileID: 110100000}
+      - {fileID: 110162329}
     data:
       first: {fileID: 0}
       second: []
@@ -99,5 +117,5 @@ StateMachine:
       first: {fileID: 110200000}
       second: []
   m_MotionSetCount: 1
-  m_AnyStatePosition: {x: 60, y: -84, z: 0}
+  m_AnyStatePosition: {x: 84, y: -84, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
