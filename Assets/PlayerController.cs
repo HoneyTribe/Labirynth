@@ -326,6 +326,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				collision.collider.rigidbody.angularVelocity = Vector3.zero;
 				rigidbody.velocity = Vector3.zero;
 				rigidbody.angularVelocity = Vector3.zero;
+				FloorInstructions.instance.ShowReviveInstructions();
 				//collision.gameObject.SendMessage("Recalculate");
 			}
 		}

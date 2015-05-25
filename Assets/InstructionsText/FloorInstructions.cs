@@ -10,7 +10,9 @@ public class FloorInstructions : MonoBehaviour
 	private GameObject arrowLeft;
 	private GameObject controlImagePad1Move;
 	private GameObject controlImagePad2Move;
-	public int deadPlayersInstructions;
+	private GameObject co_reviveAlert;
+	public int deadPlayersInstructions;// triggered in ScoreController
+	private int deadCountMax = 3; // number of character deaths for revive alert to no longer display.
 
 
 	//These are attached to the object TextInstructionsFloor
@@ -38,6 +40,7 @@ public class FloorInstructions : MonoBehaviour
 		arrowLeft = GameObject.Find ("ArrowLeft");
 		controlImagePad1Move = GameObject.Find ("ControlImagePad1Move");
 		controlImagePad2Move = GameObject.Find ("ControlImagePad2Move");
+		co_reviveAlert = GameObject.Find ("Co_ReviveAlert");
 	}
 
 	//Called from ScoreController, TopLightController, DeviceController, DroneController, JumpController
@@ -487,5 +490,17 @@ public class FloorInstructions : MonoBehaviour
 		arrowLeft.transform.position = new Vector3(-4, -0.5f, -13);
 		arrowRight.transform.position = new Vector3(4, -0.5f, -13);
 		arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
+	}
+	// Called from PlayerController
+	public void ShowReviveInstructions() 
+	{
+		LevelFinishedController.instance.setDeadCount();
+		if (LevelFinishedController.instance.getDeadCount() <= deadCountMax)
+		{
+			controlImagePad1Move.transform.position = new Vector3(-0.3f, -1f, -6f);
+			controlImagePad1Move.transform.position = new Vector3(-0.3f, -1f, -6f);
+			co_reviveAlert.transform.position = new Vector3(0f, 1f, -6f);
+		}
+
 	}
 }

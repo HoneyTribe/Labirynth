@@ -18,6 +18,7 @@ public class LevelFinishedController : MonoBehaviour {
 	private int analytics = 1; // tuns on/off. send data to analytics server
 	private int unlock = 0; // turns on/off. press "l" to toggle unlocked and locked levels
 	private int home = 1; // turns on /off. loads max saved level from disk
+	private int deadCount = 0; // number of times a character is paralysed
 	
 	public static LevelFinishedController instance;
 	public float gameSpeed = 1.0f;
@@ -125,6 +126,12 @@ public class LevelFinishedController : MonoBehaviour {
 			if (PlayerPrefs.HasKey("savedMaxLevel") &&  PlayerPrefs.GetInt("savedMaxLevel") > maxLevel)
 			{
 				maxLevel = PlayerPrefs.GetInt("savedMaxLevel");
+			}
+
+			//retreive deadCount
+			if (PlayerPrefs.HasKey("savedDeadCount"))
+			{
+				deadCount = PlayerPrefs.GetInt("savedDeadCount");
 			}
 		}
 
@@ -496,6 +503,15 @@ public class LevelFinishedController : MonoBehaviour {
 	public void setDecoyFixed(bool decoyFixed)
 	{
 		this.decoyFixed = decoyFixed;
+	}
+	public void setDeadCount()
+	{
+		deadCount++;
+		PlayerPrefs.SetInt("savedDeadCount", deadCount);
+	}
+	public int getDeadCount()
+	{
+		return deadCount;
 	}
 	
 }
