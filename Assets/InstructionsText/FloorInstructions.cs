@@ -220,7 +220,7 @@ public class FloorInstructions : MonoBehaviour
 			}
 			else //someone dead
 			{
-				GetComponentInChildren<TextMesh>().text = "Revive your friends by touching them. Avoid mummies!";
+				GetComponentInChildren<TextMesh>().text = "Revive your friends by touching them but first move the mummy!";
 				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 			}
 		}
@@ -288,7 +288,7 @@ public class FloorInstructions : MonoBehaviour
 			}
 			else //someone dead
 			{
-				GetComponentInChildren<TextMesh>().text = "Revive your friends by touching them. Avoid hazards!";
+				GetComponentInChildren<TextMesh>().text = "Revive your friends by touching them but first move the mummy!";
 				arrowCentre.transform.position = new Vector3(0, -0.5f, -13);
 			}
 		}
