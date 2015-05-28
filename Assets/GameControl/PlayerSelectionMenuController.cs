@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using InControl;
 
-public class PlayerSelectionMenuController : MonoBehaviour {
-
+public class PlayerSelectionMenuController : MonoBehaviour
+{
+	/*
 	private const int PLAYER_IMAGE_HEIGHT = 136;
 	private float iconSize = 136;
 	private string version = "0.2";
@@ -428,4 +429,5 @@ public class PlayerSelectionMenuController : MonoBehaviour {
 	{
 		return this.splash;
 	}
+	*/
 }

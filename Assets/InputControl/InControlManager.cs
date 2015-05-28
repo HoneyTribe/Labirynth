@@ -207,6 +207,11 @@ public class InControlManager : MonoBehaviour {
 			if (portalBounds.Intersects(player.renderer.bounds))
 			{
 				usedControllers.Add(inputController);
+
+				if (TextBarrier2.instance.getPlayersInPortal() < 2)
+				{
+					text_enter.GetComponentInChildren<TextMesh>().text = "At least 2 characters must enter";
+				}
 			}
 		}
 		if (usedControllers.Count > 1) // at least 2 players
@@ -215,10 +220,6 @@ public class InControlManager : MonoBehaviour {
 			LevelFinishedController.instance.setControllers(usedControllers);
 			LevelFinishedController.instance.LevelCounter();
 			StartCoroutine(TimePortalController.instance.startTimePortal());
-		}
-		else
-		{
-			text_enter.GetComponentInChildren<TextMesh>().text = "At least 2 characters must enter";
 		}
 	}
 }
