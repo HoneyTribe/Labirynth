@@ -46,11 +46,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .517179608, g: .517179608, b: .517179608, a: 1.00131702}
-      data:
-        first:
-          name: _Emission
-        second: {r: 0, g: 0, b: 0, a: 0}
+        second: {r: .517185211, g: .517185211, b: .517185211, a: 1.0014379}
       data:
         first:
           name: _TintColor
@@ -103,6 +99,10 @@ Material:
         first:
           name: _Projector_2
         second: {r: -.107604526, g: -.180290937, b: 1.00790524, a: 1.94646192}
+      data:
+        first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6
