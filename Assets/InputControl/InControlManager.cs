@@ -208,7 +208,7 @@ public class InControlManager : MonoBehaviour {
 			{
 				usedControllers.Add(inputController);
 
-				if (TextBarrier2.instance.getPlayersInPortal() < 2)
+				if (usedControllers.Count < 2)
 				{
 					text_enter.GetComponentInChildren<TextMesh>().text = "At least 2 characters must enter";
 				}

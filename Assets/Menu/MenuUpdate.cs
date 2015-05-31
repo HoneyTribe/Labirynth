@@ -19,6 +19,7 @@ public class MenuUpdate : MonoBehaviour
 		y = transform.position.y;
 		z = transform.position.z;
 
+
 		//get version from server
 		WWW www = new WWW(url);			
 		StartCoroutine(WaitForRequest(www));
@@ -34,7 +35,7 @@ public class MenuUpdate : MonoBehaviour
 
 	private void getUpdate()
 	{
-		if(versionRead != "") //internet connection
+		if(versionRead != "") //has internet connection
 		{
 			if(versionRead != version) // local version is old
 			{
@@ -64,6 +65,16 @@ public class MenuUpdate : MonoBehaviour
 		{
 			text_enter.GetComponentInChildren<TextMesh>().text = "";
 		}
+	}
+
+	public string getVersionRead()
+	{
+		return versionRead;
+	}
+
+	public string getVersion()
+	{
+		return version;
 	}
 
 
