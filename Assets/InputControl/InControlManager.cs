@@ -135,7 +135,7 @@ public class InControlManager : MonoBehaviour {
 				collectPlayersAndStart();
 			}
 
-			if (MenuUpdate.instance.getplayersInside() <=1 && input.GetControl(InputControlType.Start).WasPressed)
+			if ( (MenuUpdate.instance.getplayersInside() >=1) && (input.GetControl(InputControlType.Start).WasPressed) )
 			{
 				Application.OpenURL("http://tiny.cc/bffnew");
 			}
