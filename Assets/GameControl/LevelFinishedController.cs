@@ -16,8 +16,8 @@ public class LevelFinishedController : MonoBehaviour {
 	private int delay = 1; //time added to each monster spawn if dynamic difficulty is active.
 	private int delayMax = 3;
 	private int analytics = 0; // tuns on/off. send data to analytics server
-	private int unlock = 0; // turns on/off. press "l" to toggle unlocked and locked levels
-	private int homeVersion = 1; // turns on /off. loads max saved level from disk and saved deadCount
+	private int unlock = 1; // turns on/off. press "l" to toggle unlocked and locked levels
+	private int homeVersion = 0; // turns on /off. loads max saved level from disk and saved deadCount
 	private int deadCount = 0; // number of times a character is paralysed
 	
 	public static LevelFinishedController instance;
