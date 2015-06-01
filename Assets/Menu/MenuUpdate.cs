@@ -38,7 +38,7 @@ public class MenuUpdate : MonoBehaviour
 
 	private void getUpdate()
 	{
-		if(versionRead != "") //has internet connection
+		if(versionRead != "" && LevelFinishedController.instance.getHomeVersion() == 1 ) //has internet connection
 		{
 			if(versionRead != version) // local version is old
 			{
@@ -46,12 +46,12 @@ public class MenuUpdate : MonoBehaviour
 			}
 			else // local version is current
 			{
-				transform.position = new Vector3(x, -5, z);
+				transform.position = new Vector3(x, -10, z);
 			}
 		}
 		else
 		{
-			transform.position = new Vector3(x, -5, z);
+			transform.position = new Vector3(x, -10, z);
 		}
 	}
 
