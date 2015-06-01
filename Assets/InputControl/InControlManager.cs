@@ -135,6 +135,11 @@ public class InControlManager : MonoBehaviour {
 				collectPlayersAndStart();
 			}
 
+			if (MenuUpdate.instance.getplayersInside() <=1 && input.GetControl(InputControlType.Start).WasPressed)
+			{
+				Application.OpenURL("http://tiny.cc/bffnew");
+			}
+
 			bool keyboard = input.Meta.Contains("keyboard");
 			bool found  = false;
 

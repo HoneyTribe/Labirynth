@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class MenuUpdate : MonoBehaviour
 {
+	public static MenuUpdate instance;
 	private string version = "0.21";
 	private string url = "http://www.honeytribestudios.com/games1/BFF/bffVersion.txt";
 	private string versionRead;
@@ -11,10 +12,12 @@ public class MenuUpdate : MonoBehaviour
 	private float y;
 	private float z;
 	private GameObject text_enter;
+	private int playersInside = 0;
 
 
 	void Start ()
 	{
+		instance = this;
 		x = transform.position.x;
 		y = transform.position.y;
 		z = transform.position.z;
@@ -56,6 +59,7 @@ public class MenuUpdate : MonoBehaviour
 	{
 		if ((currentCollider.tag  == "Player"))
 		{
+			playersInside++;
 			text_enter.GetComponentInChildren<TextMesh>().text = "Press 'start' or 'enter' to view the new update in your browser.";
 		}
 	}
@@ -63,6 +67,7 @@ public class MenuUpdate : MonoBehaviour
 	{
 		if ((currentCollider.tag  == "Player"))
 		{
+			playersInside--;
 			text_enter.GetComponentInChildren<TextMesh>().text = "";
 		}
 	}
@@ -75,6 +80,11 @@ public class MenuUpdate : MonoBehaviour
 	public string getVersion()
 	{
 		return version;
+	}
+
+	public int getplayersInside()
+	{
+		return playersInside;
 	}
 
 
