@@ -14,6 +14,7 @@ public class TextBarrier1 : MonoBehaviour
 	private Animator anim3;
 	private Animator anim4;
 	private Animator anim0;
+	private Animator animUpdate;
 
 	void Start()
 	{
@@ -24,6 +25,7 @@ public class TextBarrier1 : MonoBehaviour
 		anim2 = GameObject.Find ("Puzzle_2").GetComponent<Animator> ();
 		anim3 = GameObject.Find ("Puzzle_3").GetComponent<Animator> ();
 		anim4 = GameObject.Find ("Puzzle_4").GetComponent<Animator> ();
+		animUpdate = GameObject.Find ("Update_Button_01").GetComponent<Animator> ();
 	}
 
 	//public IEnumerator PortalOn()
@@ -37,11 +39,12 @@ public class TextBarrier1 : MonoBehaviour
 		if ((currentCollider.tag  == "Player"))
 		{
 			text_enter.GetComponentInChildren<TextMesh>().text = "2-4 characters must enter the portal";
-			this.anim1.SetTrigger(activatedHash);
-			this.anim2.SetTrigger(activatedHash);
-			this.anim3.SetTrigger(activatedHash);
-			this.anim4.SetTrigger(activatedHash);
-			this.anim0.SetTrigger(activateHash);
+			anim1.SetTrigger(activatedHash);
+			anim2.SetTrigger(activatedHash);
+			anim3.SetTrigger(activatedHash);
+			anim4.SetTrigger(activatedHash);
+			anim0.SetTrigger(activateHash);
+			animUpdate.SetTrigger(activatedHash);
 		}
 	}
 }
