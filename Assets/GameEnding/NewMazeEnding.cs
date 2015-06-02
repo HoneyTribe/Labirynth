@@ -5,7 +5,7 @@ public class NewMazeEnding : MonoBehaviour {
 
 	public static NewMazeEnding instance;
 
-	private static float interval = 3.5f;
+	private static float interval = 2.2f;
 
 	private bool endingEnabled;
 	private float time;
