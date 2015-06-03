@@ -274,7 +274,7 @@ namespace AssemblyCSharp
 			
 			//6 mummy + block
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			    5,new List<MonsterTemplate>{},0,0,7,7, null, "First"));
+				6,new List<MonsterTemplate>{},0,0,8,8, null, "FirstMummyChase"));
 			
 			//7 monster door
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -518,7 +518,7 @@ namespace AssemblyCSharp
 			
 			//6 mummy + block
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			     5,new List<MonsterTemplate>{},0,0,7,7, null, "First"));
+				6,new List<MonsterTemplate>{},0,0,8,8, null, "FirstMummyChase"));
 			
 			//7 monster door
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
