@@ -35,6 +35,12 @@ public class TimePortalController : MonoBehaviour {
 			//player.rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
 		//}
 
+		GameObject[] allPlayers= GameObject.FindGameObjectsWithTag ("Player");
+		foreach (GameObject player in allPlayers)
+		{
+			player.rigidbody.velocity = Vector3.zero;
+		}
+		
 		this.anim.SetTrigger(activatedHash);
 		AudioController.instance.Play("026_FusionC");
 		LevelFinishedController.instance.setStopped (true);

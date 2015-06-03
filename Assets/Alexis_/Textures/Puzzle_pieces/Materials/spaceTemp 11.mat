@@ -80,11 +80,11 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: .94546932}
+        second: {r: 1, g: 1, b: 1, a: 1.10019672}
       data:
         first:
           name: _SpecColor
-        second: {r: .497071266, g: .497071266, b: .497071266, a: 1}
+        second: {r: .225488052, g: .225488052, b: .225488052, a: 1}
       data:
         first:
           name: _TintColor
@@ -92,7 +92,7 @@ Material:
       data:
         first:
           name: _Emission
-        second: {r: .548532009, g: .706537664, b: .578071594, a: 1}
+        second: {r: .184637725, g: .74734652, b: .853809536, a: 1}
       data:
         first:
           name: _Scale
