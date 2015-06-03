@@ -60,7 +60,7 @@ public class MenuUpdate : MonoBehaviour
 		if ((currentCollider.tag  == "Player"))
 		{
 			playersInside++;
-			text_enter.GetComponentInChildren<TextMesh>().text = "Press 'start' or 'enter' to view the new update in your browser.";
+			text_enter.GetComponentInChildren<TextMesh>().text = "Press 'start'/'enter' to view the update";
 		}
 	}
 	public void OnTriggerExit(Collider currentCollider)
@@ -68,7 +68,7 @@ public class MenuUpdate : MonoBehaviour
 		if ((currentCollider.tag  == "Player"))
 		{
 			playersInside--;
-			text_enter.GetComponentInChildren<TextMesh>().text = "";
+			text_enter.GetComponentInChildren<TextMesh>().text = "2-4 characters must enter the portal";
 		}
 	}
 

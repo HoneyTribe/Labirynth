@@ -20,8 +20,11 @@ public class TextBarrier2 : MonoBehaviour
 	{
 		if ((currentCollider.tag  == "Player"))
 		{
-			text_enter.GetComponentInChildren<TextMesh>().text = "press 'start' or 'enter' when all players are ready";
 			playersInPortal++;
+			if(playersInPortal >=2)
+			{
+			text_enter.GetComponentInChildren<TextMesh>().text = "press 'start'/'enter' when everybody is ready";
+			}
 		}
 	}
 
