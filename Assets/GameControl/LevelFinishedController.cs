@@ -17,7 +17,7 @@ public class LevelFinishedController : MonoBehaviour {
 	private int delayMax = 3;
 	private int analytics = 0; // tuns on/off. send data to analytics server
 	private int unlock = 0; // turns on/off. press "l" to toggle unlocked and locked levels
-	private int homeVersion = 1; // turns on /off. loads max saved level from disk and saved deadCount
+	private int homeVersion = 0; // turns on /off. loads max saved level from disk and saved deadCount
 	private int deadCount = 0; // number of times a character is paralysed
 	
 	public static LevelFinishedController instance;
@@ -138,6 +138,9 @@ public class LevelFinishedController : MonoBehaviour {
 
 		//retreive levCount
 		levCount = PlayerPrefs.GetInt("savedLevCount");
+
+		//unlock levels if needed
+		updateMaxLevel();
 		
 	}
 
@@ -461,8 +464,14 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		if (ENABLE_ALL_LEVELS)
 		{
-			maxLevel = getNumberOfLevels ();
+			//maxLevel = getNumberOfLevels ();
+			maxLevel = totalLevels-1;
 		}
+	}
+
+	public bool getEnableAllLevels()
+	{
+		return ENABLE_ALL_LEVELS;
 	}
 	
 	public int getLevel()
