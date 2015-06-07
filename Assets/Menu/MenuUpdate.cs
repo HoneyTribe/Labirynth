@@ -68,7 +68,10 @@ public class MenuUpdate : MonoBehaviour
 		if ((currentCollider.tag  == "Player"))
 		{
 			playersInside--;
-			text_enter.GetComponentInChildren<TextMesh>().text = "2-4 characters must enter the portal";
+			if (playersInside == 0)
+			{
+				text_enter.GetComponentInChildren<TextMesh>().text = "2-4 characters must enter the portal";
+			}
 		}
 	}
 
