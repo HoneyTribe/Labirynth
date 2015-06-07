@@ -2725,6 +2725,7 @@ GameObject:
   - 54: {fileID: 468870942}
   - 136: {fileID: 468870943}
   - 114: {fileID: 468870944}
+  - 75: {fileID: 468870939}
   m_Layer: 15
   m_Name: Player2
   m_TagString: Player
@@ -2764,6 +2765,17 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!75 &468870939
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 468870936}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -100, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!33 &468870940
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2850,7 +2862,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4d505f5c7770790498d603e52024849b, type: 3}
   m_PrefabInternal: {fileID: 270543577}
   m_GameObject: {fileID: 501457235}
-  m_LocalRotation: {x: 0, y: 0, z: .70710659, w: -.707106948}
+  m_LocalRotation: {x: 0, y: 0, z: .70710665, w: -.707107008}
   m_LocalPosition: {x: 1, y: -18.1756039, z: -2}
   m_LocalScale: {x: 425, y: 8.5, z: 8.5}
   m_Children: []
@@ -2914,6 +2926,7 @@ GameObject:
   - 54: {fileID: 504520873}
   - 136: {fileID: 504520878}
   - 114: {fileID: 504520879}
+  - 75: {fileID: 504520872}
   m_Layer: 15
   m_Name: Player1
   m_TagString: Player
@@ -2921,6 +2934,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!75 &504520872
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 504520871}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -100, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!54 &504520873
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3198,7 +3222,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f8a1916f6f5091a4980602a114194ed1, type: 3}
   m_PrefabInternal: {fileID: 1666312131}
   m_GameObject: {fileID: 540935972}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
+  m_LocalRotation: {x: 0, y: 0, z: .707106888, w: .707106769}
   m_LocalPosition: {x: -2, y: -80, z: -2}
   m_LocalScale: {x: 425, y: 8.5, z: 8.5}
   m_Children: []
@@ -3667,6 +3691,7 @@ GameObject:
   - 54: {fileID: 707660197}
   - 136: {fileID: 707660195}
   - 114: {fileID: 707660194}
+  - 75: {fileID: 707660196}
   m_Layer: 15
   m_Name: Player3
   m_TagString: Player
@@ -3714,6 +3739,17 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!75 &707660196
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 707660192}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -100, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!54 &707660197
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5752,6 +5788,7 @@ GameObject:
   - 54: {fileID: 1232021374}
   - 136: {fileID: 1232021372}
   - 114: {fileID: 1232021371}
+  - 75: {fileID: 1232021373}
   m_Layer: 15
   m_Name: Player4
   m_TagString: Player
@@ -5799,6 +5836,17 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!75 &1232021373
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1232021369}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -100, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!54 &1232021374
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6532,7 +6580,7 @@ Transform:
   m_GameObject: {fileID: 1596525308}
   m_LocalRotation: {x: .706433952, y: -.0308435522, z: -.0308435354, w: .706433594}
   m_LocalPosition: {x: 1.88378608, y: .458543301, z: -.00800085068}
-  m_LocalScale: {x: .990913153, y: .990913153, z: .678391576}
+  m_LocalScale: {x: .990913093, y: .990913153, z: .678391576}
   m_Children: []
   m_Father: {fileID: 903329844}
 --- !u!23 &1596525310
