@@ -179,4 +179,9 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	{
 		recalculateTrigger = true;
 	}
+
+	public float getTimeLeft()
+	{
+		return timeLeft;
+	}
 }

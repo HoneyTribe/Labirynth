@@ -15,7 +15,6 @@ public class DeviceController : MonoBehaviour {
 	private bool inLighthouse = true;
 	private float speed = 65.0f;
 	private int decoyCount = 0;
-
 	private Animator anim;
 
 	void Start () 
@@ -115,4 +114,5 @@ public class DeviceController : MonoBehaviour {
 	{
 		return decoyCount;
 	}
+
 }

@@ -5,36 +5,31 @@ using System.Collections.Generic;
 public class DistractLine : MonoBehaviour 
 {
 	
-	public static DistractLine instance;
+	//public static DistractLine instance;
 	
 	private GameObject device;
-	//private Transform other;
 
 	void Start()
 	{
-		instance = this;
+		//instance = this;
 		device = GameObject.Find ("Device");
 	}
 	
 	void Update()
 	{
+		if(transform.parent.GetComponent<AbstractMonsterController>().getTimeLeft() > 0 )
+		{
+			float dist = Vector3.Distance(device.transform.position, transform.parent.position);
+			Vector3 pos = transform.parent.position + (device.transform.position - transform.parent.position) / 2;
 
-		float dist = Vector3.Distance(device.transform.position, transform.position);
-		//Vector3 dir = (transform.position - device.transform.position).normalized;
-
-		transform.localScale = new Vector3(transform.localScale.x, dist, transform.localScale.z);
-		//transform.rotation.y = dir * 10;
-
-		//Vector3 heading = device.transform.position - transform.position;
-		//Vector3 distance = heading.magnitude;
-		//Vector3 direction = heading / distance;
-
-		//transform.localScale = new Vector3(transform.localScale.x, distance, transform.localScale.z);
-		//transform.rotation.y = direction;
-
-
-
-
+			transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, dist * 0.5f);
+			transform.position = new Vector3(pos.x, pos.y, pos.z);
+			transform.LookAt(transform.parent);
+		}
+		else
+		{
+			transform.position = new Vector3(0, -10, 0);
+		}
 
 	}
 }

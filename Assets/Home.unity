@@ -1381,7 +1381,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 119015215}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 5a13198f72965480896a30159d5bd2fe, type: 3}
   m_PlayOnAwake: 1
@@ -2771,7 +2771,7 @@ ConstantForce:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 468870936}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Force: {x: 0, y: -100, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
@@ -2940,7 +2940,7 @@ ConstantForce:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 504520871}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Force: {x: 0, y: -100, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
@@ -3745,7 +3745,7 @@ ConstantForce:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 707660192}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Force: {x: 0, y: -100, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
@@ -5898,7 +5898,7 @@ ConstantForce:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1232021369}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Force: {x: 0, y: -100, z: 0}
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
