@@ -71,6 +71,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			textMesh.text = ((int) (timeLeft + 1)).ToString();
 			if (timeLeft <= 0)
 			{
+				rigidbody.velocity = Vector3.zero;
 				recalculateTrigger = true;
 				if (anim!=null) anim.SetTrigger(stopHash);
 				Destroy(particles);
