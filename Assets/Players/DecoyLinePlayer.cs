@@ -37,7 +37,7 @@ public class DecoyLinePlayer: MonoBehaviour
 	
 	void Update()
 	{
-		if(transform.parent.position.y > 1 && transform.parent.position.y < 9f)
+		if(!LevelFinishedController.instance.isDecoyFixed() && transform.parent.position.y > 1 && transform.parent.position.y < 9f)
 		{
 			//effect.enableEmission = true;
 
