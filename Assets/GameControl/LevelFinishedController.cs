@@ -289,6 +289,7 @@ public class LevelFinishedController : MonoBehaviour {
 		//PlayerPrefs.Save();
 		
 		FloorInstructions.instance.Remove();
+		LevelEnd.instance.LevEnd();
 		yield return new WaitForSeconds(4);
 		finished = false; 
 		LoadNewLevel();
