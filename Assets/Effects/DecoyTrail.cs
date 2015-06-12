@@ -20,6 +20,7 @@ public class DecoyTrail : MonoBehaviour
 	public float endDuration = 0.2f;
 	Transform myTransform;
 	private TrailRenderer trail;
+	private LensFlare lens;
 	//Transform parentTransform;
 	//Transform deviceTransform;
 	Vector3 myTempPos;
@@ -30,6 +31,7 @@ public class DecoyTrail : MonoBehaviour
 		device = GameObject.Find ("Device");
 		myTransform = this.transform;
 		trail = GetComponent<TrailRenderer>();
+		lens = GetComponent<LensFlare>();
 		//effect = transform.particleSystem;
 	}
 
@@ -38,7 +40,8 @@ public class DecoyTrail : MonoBehaviour
 		if(transform.parent.GetComponent<AbstractMonsterController>().getTimeLeft() > 0 )
 		{
 
-			//trail.enabled = true;
+			trail.enabled = true;
+			lens.enabled = true;
 			trail.time = trailDuration;
 			if(resetTime == false)
 			{
@@ -72,9 +75,24 @@ public class DecoyTrail : MonoBehaviour
 			myTransform.position = transform.parent.position;
 			//trail.enabled = false;
 			trail.time = endDuration;
+			StartCoroutine(DisableTrail());
 		}
 		
 	}
+
+	IEnumerator DisableTrail()
+		
+	{
+		yield return new WaitForSeconds(endDuration);
+		if(transform.parent.GetComponent<AbstractMonsterController>().getTimeLeft() <= 0 )
+		{
+			trail.enabled = false;
+			lens.enabled = false;
+		}
+	}
+
+
+
 
 	private void resetTimer()
 	{
