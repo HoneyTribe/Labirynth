@@ -161,4 +161,9 @@ public class ScoreController : MonoBehaviour {
 	{
 		return score;
 	}
+
+	public int getNumberOfPlayers()
+	{
+		return numberOfPlayers;
+	}
 }

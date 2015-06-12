@@ -141,6 +141,8 @@ public class LevelFinishedController : MonoBehaviour {
 
 		//unlock levels if needed
 		updateMaxLevel();
+
+		//Reset();
 		
 	}
 
@@ -171,8 +173,11 @@ public class LevelFinishedController : MonoBehaviour {
 	
 	private void LoadNewLevel()
 	{
-		level++;
-		
+		if(level < getNumberOfLevels())
+		{
+			level++;
+		}
+
 		if (level > maxLevel )
 		{
 			maxLevel = level;
@@ -200,15 +205,15 @@ public class LevelFinishedController : MonoBehaviour {
 			}
 		}
 		
-		if (level > getNumberOfLevels ())
+		if (level == getNumberOfLevels() )
 		{
-			StartCoroutine(GameFinished());
+			StartCoroutine(GameFinished() );
 		}
-		else
+		if (level < getNumberOfLevels() )
 		{
 			LevelCounter();
 			Reset ();
-			stopped = true;
+			//stopped = true;
 			Application.LoadLevel (1); 
 		}
 	}
@@ -246,7 +251,8 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		if (Application.loadedLevel != 0 )
 		{
-			if (!stopped && IntroductionController.instance.isPlayingIntroduction()== false )
+			if (!stopped && IntroductionController.instance.isPlayingIntroduction()== false &&
+			    ScoreController.instance.getScore() > 0 && ScoreController.instance.getNumberOfPlayers() > 0)
 			{
 				GUI.depth = 2;
 				GUI.Label (new Rect (Screen.width * 0.05f, 70, 300, 300), "Zone " + (level + 1), help_GUISkin.label); 
@@ -260,7 +266,7 @@ public class LevelFinishedController : MonoBehaviour {
 			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300), "Time shift initiated!" +
 			           " Travelling " + levelDefinition.getLevels(controllers.Count)[level].getNumberOfKeys() + " earth years forward...", LevEnd_GUISkin.label);
 		}
-		if (finished && level == totalLevels-1)
+		if (finished && level == totalLevels-1 && !congratulation)
 		{
 			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300),
@@ -290,15 +296,14 @@ public class LevelFinishedController : MonoBehaviour {
 		
 		FloorInstructions.instance.Remove();
 		LevelEnd.instance.LevEnd();
-		yield return new WaitForSeconds(4);
-		finished = false; 
+		yield return new WaitForSeconds(4); 
 		LoadNewLevel();
 	}
 	
 	public IEnumerator PlayerLost () 
 	{
 		gameOver = true; 
-		stopped = false;
+		stopped = true;
 		
 		attempt[level]++;
 		//PlayerPrefs.SetInt("savedAttempt"+level, attempt[level]);
@@ -306,7 +311,7 @@ public class LevelFinishedController : MonoBehaviour {
 		
 		FloorInstructions.instance.Remove(); // remove floor instructions
 		yield return new WaitForSeconds(4);
-		gameOver = false;
+		Reset();
 		Application.LoadLevel (0); 
 		//Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
@@ -314,16 +319,17 @@ public class LevelFinishedController : MonoBehaviour {
 	IEnumerator GameFinished () 
 	{
 		congratulation = true; 
-		stopped = false;
+		stopped = true;
 		
-		attempt[level] = 1;
+		attempt[level-1] = 0;
 		//PlayerPrefs.SetInt("savedAttempt"+level, attempt[level]);
 		//PlayerPrefs.Save();
 		
 		FloorInstructions.instance.Remove();
-		yield return new WaitForSeconds(10);
-		congratulation = false;
+		yield return new WaitForSeconds(5);
+		Reset();
 		Application.LoadLevel (0); 
+
 		//Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 	

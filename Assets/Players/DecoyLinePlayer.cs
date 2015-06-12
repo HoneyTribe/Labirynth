@@ -32,6 +32,11 @@ public class DecoyLinePlayer: MonoBehaviour
 		blue = new Color(0.15f,0.6f,1);
 		pink = new Color(0.83f,0.32f,0.5f);
 		yellow = new Color(0.85f,0.82f,0.3f);
+
+		//green = player1.transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color;
+		//blue = player2.transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color;
+		//pink = player3.transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color;
+		//yellow = player4.transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color;
 		//effect = transform.particleSystem;
 	}
 	
