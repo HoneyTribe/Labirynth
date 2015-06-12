@@ -290,7 +290,7 @@ public class LevelFinishedController : MonoBehaviour {
 		
 		FloorInstructions.instance.Remove();
 		LevelEnd.instance.LevEnd();
-		yield return new WaitForSeconds(4);
+		yield return new WaitForSeconds(5);
 		finished = false; 
 		LoadNewLevel();
 	}
