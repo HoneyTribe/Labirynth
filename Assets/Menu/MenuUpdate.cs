@@ -21,12 +21,14 @@ public class MenuUpdate : MonoBehaviour
 		x = transform.position.x;
 		y = transform.position.y;
 		z = transform.position.z;
-
-
-		//get version from server
-		WWW www = new WWW(url);			
-		StartCoroutine(WaitForRequest(www));
 		text_enter = GameObject.Find ("Text_Enter");
+
+
+		if(LevelFinishedController.instance.getHomeVersion() == 1 && Application.loadedLevel == 0)//get version from server
+		{
+			WWW www = new WWW(url);			
+			StartCoroutine(WaitForRequest(www));
+		}
 	}
 
 	IEnumerator WaitForRequest(WWW www)
