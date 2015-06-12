@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	private bool paralysed;
 	private Color originalColor;
 	private float timeFromLastRevive = 0;
+	private Animator reviveAnim;
+	private static int activatedHash = Animator.StringToHash ("Start");
 
 	private List<GameObject> players = new List<GameObject>();
 
@@ -30,6 +32,14 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		speed *= LevelFinishedController.instance.gameSpeed;
 		gameController = GameObject.Find ("GameController");
 		originalColor = transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color;
+
+		for(int i =0; i<transform.childCount; i++)
+		{
+			if(transform.GetChild(i).name=="Revive")
+			{
+				reviveAnim = transform.GetChild(i).GetComponent<Animator> ();
+			}
+		}
 
 		foreach (InputController inputController in LevelFinishedController.instance.getControllers())
 		{
@@ -253,6 +263,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 						{
 							gameController.SendMessage("PlayerReviwed");
 							transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color = originalColor;
+							reviveAnim.SetTrigger(activatedHash);
 							collider.isTrigger = false;
 							paralysed = false;
 							AudioController.instance.Play("032_ReviveB");
