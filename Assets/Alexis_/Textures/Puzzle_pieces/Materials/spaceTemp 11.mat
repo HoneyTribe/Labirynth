@@ -36,14 +36,14 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Detail
+          name: _ParallaxMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _ParallaxMap
+          name: _Detail
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -62,10 +62,6 @@ Material:
         second: 0
       data:
         first:
-          name: _InvFade
-        second: 1
-      data:
-        first:
           name: _Shininess
         second: .078125
       data:
@@ -74,25 +70,29 @@ Material:
         second: .0199999996
       data:
         first:
+          name: _InvFade
+        second: 1
+      data:
+        first:
           name: _SquashAmount
         second: 1
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: .97798866}
+        second: {r: 1, g: 1, b: 1, a: 5.73841789e-05}
       data:
         first:
           name: _SpecColor
-        second: {r: .486185819, g: .486185819, b: .486185819, a: 1}
-      data:
-        first:
-          name: _Emission
-        second: {r: .532949626, g: .707851946, b: .586115599, a: 1}
+        second: {r: .798961401, g: .798961401, b: .798961401, a: 1}
       data:
         first:
           name: _TintColor
         second: {r: .5, g: .5, b: .5, a: .5}
+      data:
+        first:
+          name: _Emission
+        second: {r: .999772727, g: .675663292, b: .405340105, a: 1}
       data:
         first:
           name: _Scale

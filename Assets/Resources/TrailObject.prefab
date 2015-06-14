@@ -9,11 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
-  - 65: {fileID: 6500000}
   - 23: {fileID: 2300000}
-  - 114: {fileID: 11400000}
   - 96: {fileID: 9600000}
   - 123: {fileID: 12300000}
+  - 114: {fileID: 11400000}
   m_Layer: 19
   m_Name: TrailObject
   m_TagString: Untagged
@@ -28,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.54627228, y: 2.82152748, z: 7.05292654}
+  m_LocalPosition: {x: 3.50071192, y: 6.08316994, z: -22.5343933}
   m_LocalScale: {x: .5, y: .833333313, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,18 +59,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6500000
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!96 &9600000
 TrailRenderer:
   m_ObjectHideFlags: 1
@@ -113,7 +100,7 @@ TrailRenderer:
       serializedVersion: 2
       rgba: 16777215
   m_MinVertexDistance: .200000003
-  m_Autodestruct: 1
+  m_Autodestruct: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,7 +109,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b215264824e014f309ca7d1011dbc348, type: 3}
+  m_Script: {fileID: 11500000, guid: 1e294ffe9ec1146248e051e86792ab3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!123 &12300000
