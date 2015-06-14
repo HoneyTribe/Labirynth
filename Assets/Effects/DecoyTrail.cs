@@ -4,66 +4,71 @@ using System.Collections.Generic;
 
 public class DecoyTrail : MonoBehaviour 
 {
-
-	//public static DistractLine instance;
-	
-	private GameObject device;
-	private ParticleSystem effect;
+	//public variables
 	public float speed = 25.0f;
+	public float mummyOffset = 0.0f;
+	public float decoyOffset = 0.0f;
+	public float arcHeight = 8f;
+	public float closeDistance = 0.4f;
+	public float trailDuration = 1.0f;
+	public float endDuration = 0.3f;
+	//
 	private bool resetTime = false;
 	private float startTime;
-	public float closeDistance = 0.1f;
-	public float mummyOffset = 3.0f;
-	public float decoyOffset = 0.0f;
-	public float constant = 2.0f;
-	public float trailDuration = 2.0f;
-	public float endDuration = 0.2f;
-	Transform myTransform;
+	private float dist;
+	private float distCovered;
+	private float fracJourney;
 	private TrailRenderer trail;
 	private LensFlare lens;
-	//Transform parentTransform;
-	//Transform deviceTransform;
-	Vector3 myTempPos;
+	private Transform myTransform;
+	private Vector3 myTempPos;
+	private Vector3 vectorToTarget;
+	private float distanceToTarget;
+	private GameObject device;
+	private ParticleSystem effect;
 	
 	void Start()
 	{
-		//instance = this;
 		device = GameObject.Find ("Device");
 		myTransform = this.transform;
 		trail = GetComponent<TrailRenderer>();
 		lens = GetComponent<LensFlare>();
-		//effect = transform.particleSystem;
 	}
 
 	void Update()
 	{
 		if(transform.parent.GetComponent<AbstractMonsterController>().getTimeLeft() > 0 )
 		{
-
 			trail.enabled = true;
 			lens.enabled = true;
 			trail.time = trailDuration;
+
 			if(resetTime == false)
 			{
 				resetTimer();
 			}
 
-			if(Vector3.Distance(myTransform.position, device.transform.position) > closeDistance)
-			{
-				float dist = Vector3.Distance(device.transform.position, transform.parent.position);
-				float distCovered = (Time.time - startTime) * speed;
-				float fracJourney = distCovered / dist;
+			vectorToTarget = device.transform.position - transform.position;
+			vectorToTarget.y = 0;
+			distanceToTarget = vectorToTarget.magnitude;
 
-				//this works// transform.position = Vector3.Lerp(transform.parent.position, device.transform.position, fracJourney) ;
+			//if(Vector3.Distance(myTransform.position, device.transform.position) > closeDistance)
+			if(distanceToTarget > closeDistance)
+			{
+				distCovered = (Time.time - startTime) * speed;
+				fracJourney = distCovered / distanceToTarget;
+				//transform.position = Vector3.Lerp(transform.parent.position, device.transform.position, fracJourney) ;
 
 				myTempPos = myTransform.position;
 				myTempPos.x = Mathf.Lerp(transform.parent.position.x, device.transform.position.x, fracJourney) ;
-				myTempPos.y = Mathf.Lerp(transform.parent.position.y + mummyOffset, device.transform.position.y + decoyOffset, fracJourney) ;
-				//myTempPos.y = (Mathf.Sin(constant * (Time.time - startTime) * Mathf.PI)+ 1) / 2 + mummyOffset;
+				//straight line Y
+				//myTempPos.y = Mathf.Lerp(transform.parent.position.y + mummyOffset, device.transform.position.y + decoyOffset, fracJourney) ;
+				//arc Y
+				myTempPos.y = (Mathf.Sin(fracJourney * Mathf.PI) +1) /2 * arcHeight ;
 				myTempPos.z = Mathf.Lerp(transform.parent.position.z, device.transform.position.z, fracJourney) ;
 				myTransform.position = myTempPos;
 			}
-			if(Vector3.Distance(myTransform.position, device.transform.position) <= closeDistance)
+			else
 			{
 				myTransform.position = transform.parent.position;
 				resetTime = false;
@@ -73,7 +78,6 @@ public class DecoyTrail : MonoBehaviour
 		else
 		{
 			myTransform.position = transform.parent.position;
-			//trail.enabled = false;
 			trail.time = endDuration;
 			StartCoroutine(DisableTrail());
 		}
@@ -90,10 +94,7 @@ public class DecoyTrail : MonoBehaviour
 			lens.enabled = false;
 		}
 	}
-
-
-
-
+	
 	private void resetTimer()
 	{
 		startTime = Time.time;
