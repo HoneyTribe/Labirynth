@@ -312,7 +312,7 @@ public class LevelFinishedController : MonoBehaviour {
 		FloorInstructions.instance.Remove(); // remove floor instructions
 		yield return new WaitForSeconds(4);
 		Reset();
-		Application.LoadLevel (0); 
+		Application.LoadLevel (1); 
 		//Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}
 	
@@ -321,7 +321,7 @@ public class LevelFinishedController : MonoBehaviour {
 		congratulation = true; 
 		stopped = true;
 		
-		attempt[level-1] = 0;
+		attempt[level] = 0;
 		//PlayerPrefs.SetInt("savedAttempt"+level, attempt[level]);
 		//PlayerPrefs.Save();
 		
