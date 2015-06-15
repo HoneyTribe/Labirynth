@@ -40,8 +40,8 @@ public class DecoyTrailOnce : MonoBehaviour
 	{
 		if(transform.parent.GetComponent<AbstractMonsterController>().getTimeLeft() > 0 )
 		{
-			trail.enabled = true;
-			lens.enabled = true;
+			//trail.enabled = true;
+			//lens.enabled = true;
 			trail.time = trailDuration;
 
 			if(resetTime == false)

@@ -212,8 +212,9 @@ public class LevelFinishedController : MonoBehaviour {
 		if (level < getNumberOfLevels() )
 		{
 			LevelCounter();
-			Reset ();
-			//stopped = true;
+			//Reset ();
+			stopped = true;
+			finished = false;
 			Application.LoadLevel (1); 
 		}
 	}
