@@ -297,7 +297,7 @@ public class LevelFinishedController : MonoBehaviour {
 		
 		FloorInstructions.instance.Remove();
 		LevelEnd.instance.LevEnd();
-		yield return new WaitForSeconds(4); 
+		yield return new WaitForSeconds(4);
 		LoadNewLevel();
 	}
 	
@@ -312,7 +312,9 @@ public class LevelFinishedController : MonoBehaviour {
 		
 		FloorInstructions.instance.Remove(); // remove floor instructions
 		yield return new WaitForSeconds(4);
-		Reset();
+		//Reset();
+		finished = false;
+		gameOver = false;
 		Application.LoadLevel (1); 
 		//Instantiate (menuPrefab, Vector3.zero, Quaternion.Euler (0, 0, 0));
 	}

@@ -5,13 +5,14 @@ using System.Collections.Generic;
 public class DecoyTrail : MonoBehaviour 
 {
 	//public variables
-	public float speed = 25.0f;
-	public float mummyOffset = 0.0f;
-	public float decoyOffset = 0.0f;
-	public float arcHeight = 8f;
-	public float closeDistance = 0.4f;
-	public float trailDuration = 1.0f;
-	public float endDuration = 0.3f;
+	private float speed = 25.0f;
+	private float mummyOffset = 3.0f;
+	private float decoyOffset = 0.0f;
+	private float arcHeight = 8f;
+	private float closeDistance = 0.1f;
+	private float trailDuration = 1.0f;
+	private float endDuration = 0.3f;
+	private float lensFadeSpeed = 0.88f;
 	//
 	private bool resetTime = false;
 	private float startTime;
@@ -33,6 +34,8 @@ public class DecoyTrail : MonoBehaviour
 		myTransform = this.transform;
 		trail = GetComponent<TrailRenderer>();
 		lens = GetComponent<LensFlare>();
+		trail.time = trailDuration;
+		lens.fadeSpeed = lensFadeSpeed;
 	}
 
 	void Update()
@@ -41,7 +44,7 @@ public class DecoyTrail : MonoBehaviour
 		{
 			trail.enabled = true;
 			lens.enabled = true;
-			trail.time = trailDuration;
+
 
 			if(resetTime == false)
 			{
@@ -52,7 +55,6 @@ public class DecoyTrail : MonoBehaviour
 			vectorToTarget.y = 0;
 			distanceToTarget = vectorToTarget.magnitude;
 
-			//if(Vector3.Distance(myTransform.position, device.transform.position) > closeDistance)
 			if(distanceToTarget > closeDistance)
 			{
 				distCovered = (Time.time - startTime) * speed;
@@ -62,14 +64,15 @@ public class DecoyTrail : MonoBehaviour
 				myTempPos = myTransform.position;
 				myTempPos.x = Mathf.Lerp(transform.parent.position.x, device.transform.position.x, fracJourney) ;
 				//straight line Y
-				//myTempPos.y = Mathf.Lerp(transform.parent.position.y + mummyOffset, device.transform.position.y + decoyOffset, fracJourney) ;
+				myTempPos.y = Mathf.Lerp(transform.parent.position.y + mummyOffset, device.transform.position.y + decoyOffset, fracJourney) ;
 				//arc Y
-				myTempPos.y = (Mathf.Sin(fracJourney * Mathf.PI) +1) /2 * arcHeight ;
+				//myTempPos.y = (Mathf.Sin(fracJourney * Mathf.PI) +1) /2 * arcHeight ;
 				myTempPos.z = Mathf.Lerp(transform.parent.position.z, device.transform.position.z, fracJourney) ;
 				myTransform.position = myTempPos;
 			}
 			else
 			{
+				trail.time = 0f;
 				myTransform.position = transform.parent.position;
 				resetTime = false;
 			}
@@ -79,6 +82,7 @@ public class DecoyTrail : MonoBehaviour
 		{
 			myTransform.position = transform.parent.position;
 			trail.time = endDuration;
+			lens.fadeSpeed = endDuration;
 			StartCoroutine(DisableTrail());
 		}
 		
@@ -98,6 +102,8 @@ public class DecoyTrail : MonoBehaviour
 	private void resetTimer()
 	{
 		startTime = Time.time;
+		trail.time = trailDuration;
+		lens.fadeSpeed = lensFadeSpeed;
 		resetTime = true;
 	}
 

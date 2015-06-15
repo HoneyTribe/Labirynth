@@ -30,7 +30,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	private bool monsterStopped;
 
-	private SpawnDecoyTrail spawnDecoyTrail;
+	//private SpawnDecoyTrail spawnDecoyTrail;
 
 	//private GameObject distractParticlesPrefab;
 	//private GameObject particles;
@@ -46,7 +46,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 		GameObject gameController = GameObject.Find ("GameController");
 		device = GameObject.Find ("DeviceContainer");
-		spawnDecoyTrail = GetComponent<SpawnDecoyTrail>();
+		//spawnDecoyTrail = GetComponent<SpawnDecoyTrail>();
 		foreach (InputController inputController in LevelFinishedController.instance.getControllers())
 		{
 			playerControllers.Add(GameObject.Find ("Player" + inputController.getPlayerId()).GetComponent<PlayerController>());
@@ -71,7 +71,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			{
 				recalculateTrigger  = true;
 				if (anim!=null) anim.SetTrigger(activatHash);
-				spawnDecoyTrail.changeHasSpawned();
+				//spawnDecoyTrail.changeHasSpawned();
 
 			}
 			timeLeft -= Time.deltaTime;
