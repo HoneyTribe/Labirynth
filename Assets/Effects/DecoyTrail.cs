@@ -72,7 +72,7 @@ public class DecoyTrail : MonoBehaviour
 			}
 			else
 			{
-				trail.time = 0f;
+				//trail.time = 0f;
 				myTransform.position = transform.parent.position;
 				resetTime = false;
 			}
