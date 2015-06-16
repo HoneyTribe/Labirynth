@@ -135,6 +135,17 @@ public class LevelFinishedController : MonoBehaviour {
 				deadCount = PlayerPrefs.GetInt("savedDeadCount");
 			}
 
+			//have max level ready to play on startup
+			if(Application.loadedLevel == 0)
+			{
+				menuCount++;
+				
+				if(menuCount == 1)
+				{
+					level = maxLevel;
+				}
+			}
+
 		}
 
 		//retreive levCount
@@ -143,17 +154,6 @@ public class LevelFinishedController : MonoBehaviour {
 		//unlock levels if needed
 		updateMaxLevel();
 
-		//have max level ready to play on startup
-		if(Application.loadedLevel == 0)
-		{
-			menuCount++;
-
-			if(menuCount == 1)
-			{
-				level = maxLevel;
-			}
-		}
-	
 	}
 
 

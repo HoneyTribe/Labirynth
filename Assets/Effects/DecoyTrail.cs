@@ -30,7 +30,7 @@ public class DecoyTrail : MonoBehaviour
 	
 	void Start()
 	{
-		device = GameObject.Find ("Device");
+		device = GameObject.Find ("DeviceContainer");
 		myTransform = this.transform;
 		trail = GetComponent<TrailRenderer>();
 		lens = GetComponent<LensFlare>();

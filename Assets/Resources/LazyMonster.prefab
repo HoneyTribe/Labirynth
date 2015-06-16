@@ -448,7 +448,6 @@ GameObject:
   - 23: {fileID: 2300004}
   - 96: {fileID: 9600000}
   - 123: {fileID: 12300000}
-  - 114: {fileID: 11400008}
   - 114: {fileID: 11400010}
   m_Layer: 19
   m_Name: TrailObject
@@ -1022,17 +1021,6 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25b8d69cb8cd14c5da6c0d0b1dc8e795, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11400008
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100056}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e294ffe9ec1146248e051e86792ab3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11400010
