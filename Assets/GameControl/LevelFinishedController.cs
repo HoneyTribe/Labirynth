@@ -19,7 +19,6 @@ public class LevelFinishedController : MonoBehaviour {
 	private int unlock = 0; // turns on/off. press "l" to toggle unlocked and locked levels
 	private int homeVersion = 1; // turns on /off. loads max saved level from disk and saved deadCount
 	private int deadCount = 0; // number of times a character is paralysed
-	private int menuCount = 0; //number of times menu visited in current session
 	
 	public static LevelFinishedController instance;
 	public float gameSpeed = 1.0f;
@@ -143,17 +142,8 @@ public class LevelFinishedController : MonoBehaviour {
 		//unlock levels if needed
 		updateMaxLevel();
 
-		//have max level ready to play on startup
-		if(Application.loadedLevel == 0)
-		{
-			menuCount++;
-
-			if(menuCount == 1)
-			{
-				level = maxLevel;
-			}
-		}
-	
+		//Reset();
+		
 	}
 
 

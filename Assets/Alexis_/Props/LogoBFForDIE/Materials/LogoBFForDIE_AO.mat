@@ -20,22 +20,11 @@ Material:
           m_Texture: {fileID: 2800000, guid: 442ca1fa1b1b8da42a386a9f2418a048, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Illum
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _Shininess
         second: .00999999978
-      data:
-        first:
-          name: _EmissionLM
-        second: 0
     m_Colors:
       data:
         first:
@@ -45,7 +34,3 @@ Material:
         first:
           name: _SpecColor
         second: {r: 0, g: .83448261, b: .99999994, a: 1}
-      data:
-        first:
-          name: _NotVisibleColor
-        second: {r: 0, g: 1, b: 0, a: 1}
