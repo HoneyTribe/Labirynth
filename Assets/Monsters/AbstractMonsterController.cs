@@ -30,6 +30,9 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	private bool monsterStopped;
 
+	public bool canBeZapped = false;
+	public bool savedCanBeZapped = false;
+
 	//private SpawnDecoyTrail spawnDecoyTrail;
 
 	//private GameObject distractParticlesPrefab;

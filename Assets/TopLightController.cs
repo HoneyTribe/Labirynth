@@ -10,6 +10,7 @@ public class TopLightController : MonoBehaviour {
 
 	private static float attractionCost = 0.3f;
 	private static float restoreVelocity = 0.03f; // It needs 1/restoreVelocity seconds to regenerate (30 seconds).
+	private bool monsterTarget;
 
 	public float openningInterval = 1.0f;
 	public float closingInterval = 0.5f;
@@ -34,10 +35,13 @@ public class TopLightController : MonoBehaviour {
 	private Texture[] projectorTexturesRed  = new Texture[STEPS];
 	private Color newColor;
 
+	private GameObject[] monsterList;
+
 	void Start()
 	{
 		instance = this;
 		ball = GameObject.Find ("SpaceMachine_Light");
+		monsterList = GameObject.FindGameObjectsWithTag ("Monster");
 
 		int step = 100/(STEPS-1);
 		projectorTexturesBlue[0] = (Texture2D) Resources.Load("EnergyBar/Light_EnergyBar/Gray/EnergyBar_light_gray", typeof(Texture2D));
@@ -83,6 +87,70 @@ public class TopLightController : MonoBehaviour {
 			{
 				newColor.a = 0;
 				projectorMaterial.color = newColor;
+			}
+		}
+
+		foreach (GameObject monster in monsterList)
+		{
+			//myScript = GetComponent<AbstractMonsterController>();
+
+			if ( isIlluminated(monster) && energy >= attractionCost )
+			{
+				monster.GetComponent<AbstractMonsterController>().canBeZapped = true;
+				MonsterTargetOn();
+			}
+			else
+			{
+				monster.GetComponent<AbstractMonsterController>().canBeZapped = false;
+				MonsterTargetOff();
+			}
+		}
+	}
+
+	//triggered from MonsterCreationController
+	public void updateMonsterList()
+	{
+		monsterList = GameObject.FindGameObjectsWithTag ("Monster");
+	}
+
+	private void MonsterTargetOn()
+	{
+		foreach (GameObject monster in monsterList)
+		{
+			if (monster.GetComponent<AbstractMonsterController>().canBeZapped == true
+			    && monster.GetComponent<AbstractMonsterController>().savedCanBeZapped == false)
+			{
+				for(int i =0; i<monster.transform.childCount; i++)
+				{
+					if(monster.transform.GetChild(i).name=="TargetRotationPivot")
+					{
+						int StartTargetHash = Animator.StringToHash ("StartTarget");
+						monster.transform.GetChild(i).GetComponent<Animator>().SetTrigger(StartTargetHash);
+					}
+				}
+
+				monster.GetComponent<AbstractMonsterController>().savedCanBeZapped = true;
+			}
+		}
+	}
+
+	private void MonsterTargetOff()
+	{
+		foreach (GameObject monster in monsterList)
+		{
+			if (monster.GetComponent<AbstractMonsterController>().canBeZapped == false
+			    && monster.GetComponent<AbstractMonsterController>().savedCanBeZapped == true)
+			{
+				for(int i =0; i<monster.transform.childCount; i++)
+				{
+					if(monster.transform.GetChild(i).name=="TargetRotationPivot")
+					{
+						int FinishTargetHash = Animator.StringToHash ("FinishTarget");
+						monster.transform.GetChild(i).GetComponent<Animator>().SetTrigger(FinishTargetHash);
+					}
+				}
+
+				monster.GetComponent<AbstractMonsterController>().savedCanBeZapped = false;
 			}
 		}
 	}

@@ -38,13 +38,14 @@ public class MonsterCreationController : MonoBehaviour {
 				monsterDoorLeft.gameObject.SendMessage("OpenDoor");
 				yield return new WaitForSeconds(4f);
 				CreateMonster(monsterDoorLeft, monster);
-
+				TopLightController.instance.updateMonsterList();
 			}
 			else
 			{
 				monsterDoorRight.gameObject.SendMessage("OpenDoor");
 				yield return new WaitForSeconds(4f);
 				CreateMonster(monsterDoorRight, monster);
+				TopLightController.instance.updateMonsterList();
 
 			}
 			yield return new WaitForSeconds(LevelFinishedController.instance.getTimeBetweenMonsters());
