@@ -31,7 +31,7 @@ Material:
         first:
           name: _ShadowTex
         second:
-          m_Texture: {fileID: 2800000, guid: c1033e6982692e5479c0e516b3c4668e, type: 3}
+          m_Texture: {fileID: 2800000, guid: 2cabd9c393c5e6846a93ce447847f4e1, type: 3}
           m_Scale: {x: 0, y: 0}
           m_Offset: {x: 0, y: 0}
       data:
@@ -46,15 +46,15 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: .51753217, g: .51753217, b: .51753217, a: 1.0044229}
-      data:
-        first:
-          name: _TintColor
-        second: {r: .5, g: .5, b: .5, a: .5}
+        second: {r: .517543375, g: .517543375, b: .517543375, a: 1.00401413}
       data:
         first:
           name: _Emission
         second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .5, g: .5, b: .5, a: .5}
       data:
         first:
           name: BumpMapScale
