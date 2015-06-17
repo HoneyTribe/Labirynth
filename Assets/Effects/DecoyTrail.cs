@@ -7,7 +7,7 @@ public class DecoyTrail : MonoBehaviour
 	//public variables
 	private float speed = 25.0f;
 	private float mummyOffset = 3.0f;
-	private float decoyOffset = 0.0f;
+	private float decoyOffset = 3.0f;
 	private float arcHeight = 8f;
 	private float closeDistance = 0.1f;
 	private float trailDuration = 1.0f;
@@ -73,14 +73,18 @@ public class DecoyTrail : MonoBehaviour
 			else
 			{
 				//trail.time = 0f;
-				myTransform.position = transform.parent.position;
+				myTempPos = transform.parent.position;
+				myTempPos.y += mummyOffset;
+				myTransform.position = myTempPos;
 				resetTime = false;
 			}
 
 		}
 		else
 		{
-			myTransform.position = transform.parent.position;
+			myTempPos = transform.parent.position;
+			myTempPos.y += mummyOffset;
+			myTransform.position = myTempPos;
 			trail.time = endDuration;
 			lens.fadeSpeed = endDuration;
 			StartCoroutine(DisableTrail());
