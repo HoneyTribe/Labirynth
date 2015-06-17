@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: 1st_alien
-  m_Shader: {fileID: 12, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: Ghost02
+  m_Shader: {fileID: 4800000, guid: 582ad923c90ad3749a459a19575a4100, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,26 +17,19 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 462e38aef8752f440ab2a8f1cf347fca, type: 3}
+          m_Texture: {fileID: 2800000, guid: f2382b524a2ea4021b0dd2e59efd186a, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _DecalTex
+          name: _BumpTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 0cb17906ae7cc8647ab26690ab01ac42, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Detail
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Illum
+          name: _Bump
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -45,17 +38,25 @@ Material:
       data:
         first:
           name: _Shininess
-        second: 1
+        second: .310926139
       data:
         first:
-          name: _EmissionLM
-        second: 0
+          name: _RimPower
+        second: 3.88392854
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .241842359, g: .441176474, b: .178416967, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: .944827557, g: 1, b: 0, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _RimColor
+        second: {r: 1, g: 1, b: 1, a: 0}
+      data:
+        first:
+          name: _MyColor
+        second: {r: .0758619308, g: 0, b: 1, a: 1}
