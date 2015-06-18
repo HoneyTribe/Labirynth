@@ -186,7 +186,7 @@ public class LevelFinishedController : MonoBehaviour {
 			level++;
 		
 
-		if (level > maxLevel )
+		if (level > maxLevel && level < getNumberOfLevels() )
 		{
 			maxLevel = level;
 			
