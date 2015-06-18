@@ -122,7 +122,7 @@ public class TopLightController : MonoBehaviour {
 			{
 				for(int i =0; i<monster.transform.childCount; i++)
 				{
-					if(monster.transform.GetChild(i).name=="TargetRotationPivot")
+					if(monster.transform.GetChild(i).name=="TargetMonster_2")
 					{
 						int StartTargetHash = Animator.StringToHash ("StartTarget");
 						monster.transform.GetChild(i).GetComponent<Animator>().SetTrigger(StartTargetHash);
@@ -143,7 +143,7 @@ public class TopLightController : MonoBehaviour {
 			{
 				for(int i =0; i<monster.transform.childCount; i++)
 				{
-					if(monster.transform.GetChild(i).name=="TargetRotationPivot")
+					if(monster.transform.GetChild(i).name=="TargetMonster_2")
 					{
 						int FinishTargetHash = Animator.StringToHash ("FinishTarget");
 						monster.transform.GetChild(i).GetComponent<Animator>().SetTrigger(FinishTargetHash);
