@@ -11,6 +11,8 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	private static int stopHash = Animator.StringToHash ("Stop");
 	private static int IdleHash = Animator.StringToHash ("Idle");
 	private static int NotIdleHash = Animator.StringToHash ("NotIdle");
+	private bool idleSaved = true;
+	private bool idle = true;
 
 	protected float speed;
 
@@ -107,12 +109,34 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		// check if standard monster stopped moving. Trigger idle anim.
 		if(this.name == "Monster(Clone)" && this.rigidbody.IsSleeping() == true)
 		{
-			anim.SetTrigger(IdleHash);
+			idle = true;
+			Idle();
 		}
 		else if(this.name == "Monster(Clone)" && this.rigidbody.IsSleeping() == false)
 		{
-			anim.SetTrigger(NotIdleHash);
+			idle = false;
+			NotIdle();
 		}
+	}
+
+	private void Idle()
+	{
+		if(idle == true && idleSaved == false)
+		{
+			anim.SetTrigger(IdleHash);
+			print("idle");
+		}
+		idleSaved = true;
+	}
+
+	private void NotIdle()
+	{
+		if(idle == false && idleSaved == true)
+		{
+			anim.SetTrigger(NotIdleHash);
+			print("not idle");
+		}
+		idleSaved = false;
 	}
 
 	public void setStopped(bool monsterStopped)
