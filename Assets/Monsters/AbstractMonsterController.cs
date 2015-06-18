@@ -107,16 +107,20 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		recalculateTrigger = false;
 
 		// check if standard monster stopped moving. Trigger idle anim.
-		if(this.name == "Monster(Clone)" && this.rigidbody.IsSleeping() == true)
+		if(this.name == "Monster(Clone)")
 		{
-			idle = true;
-			Idle();
+			if (this.rigidbody.IsSleeping() == true)
+			{
+				idle = true;
+				Idle();
+			}
+			else
+			{
+				idle = false;
+				NotIdle();
+			}
 		}
-		else if(this.name == "Monster(Clone)" && this.rigidbody.IsSleeping() == false)
-		{
-			idle = false;
-			NotIdle();
-		}
+
 	}
 
 	private void Idle()
@@ -124,9 +128,9 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		if(idle == true && idleSaved == false)
 		{
 			anim.SetTrigger(IdleHash);
-			print("idle");
+			idleSaved = true;
 		}
-		idleSaved = true;
+
 	}
 
 	private void NotIdle()
@@ -134,9 +138,9 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		if(idle == false && idleSaved == true)
 		{
 			anim.SetTrigger(NotIdleHash);
-			print("not idle");
+			idleSaved = false;
 		}
-		idleSaved = false;
+
 	}
 
 	public void setStopped(bool monsterStopped)
