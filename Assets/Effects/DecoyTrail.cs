@@ -40,7 +40,7 @@ public class DecoyTrail : MonoBehaviour
 
 	void Update()
 	{
-		if(transform.parent.GetComponent<AbstractMonsterController>().getTimeLeft() > 0 )
+		if(transform.parent.GetComponent<AbstractMonsterController>().getTimeLeft() > 0 && LevelFinishedController.instance.isStopped()==false)
 		{
 			trail.enabled = true;
 			lens.enabled = true;
