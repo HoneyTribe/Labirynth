@@ -263,7 +263,10 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 						{
 							gameController.SendMessage("PlayerReviwed");
 							transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color = originalColor;
-							reviveAnim.SetTrigger(activatedHash);
+							if(IntroductionController.instance.isPlayingIntroduction()== false && Application.loadedLevel !=0)
+							{	
+								reviveAnim.SetTrigger(activatedHash);
+							}
 							collider.isTrigger = false;
 							paralysed = false;
 							AudioController.instance.Play("032_ReviveB");
