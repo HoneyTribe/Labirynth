@@ -16,7 +16,8 @@ public class KeyController : MonoBehaviour {
 	private Transform myTransform;
 	private Vector3 myTempPos;
 	private bool destroyed = false;
-	private float closeDistance = 0.95f;
+	private bool collected = false;
+	private float closeDistance = 0.65f;
 	private float arcHeight = 15f;
 
 	void Start()
@@ -48,8 +49,8 @@ public class KeyController : MonoBehaviour {
 			if(fracJourney >= closeDistance && destroyed == false)
 			{
 				//ScoreController.instance.MinusScore();
-				gameController.gameObject.SendMessage("MinusScore");
 				destroyed = true;
+				gameController.gameObject.SendMessage("MinusScore");
 				Destroy(gameObject.transform.parent.gameObject);
 			}
 		}
@@ -57,8 +58,10 @@ public class KeyController : MonoBehaviour {
 	
 	void OnTriggerEnter (Collider currentCollider)
 	{
-		if ( (currentCollider.tag == "Player") && !currentCollider.gameObject.GetComponent<PlayerController>().isParalysed()  )
+		if ( (currentCollider.tag == "Player") && !currentCollider.gameObject.GetComponent<PlayerController>().isParalysed() 
+		    && collected == false)
 		{
+			collected = true;
 			gameController.gameObject.SendMessage("Score");
 
 			vectorToTarget = machine.transform.position - transform.parent.position;
@@ -67,6 +70,7 @@ public class KeyController : MonoBehaviour {
 
 			startTime = Time.time;
 			move = true;
+
 		}
 	}
 	

@@ -5626,7 +5626,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 205031043}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -33483,6 +33483,10 @@ Prefab:
     - target: {fileID: 100000, guid: 26e2ec192cb8681409131a6b1057d35a, type: 3}
       propertyPath: m_TagString
       value: Machine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 26e2ec192cb8681409131a6b1057d35a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26e2ec192cb8681409131a6b1057d35a, type: 3}
