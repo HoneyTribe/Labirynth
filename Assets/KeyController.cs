@@ -17,7 +17,7 @@ public class KeyController : MonoBehaviour {
 	private Vector3 myTempPos;
 	private bool destroyed = false;
 	private float closeDistance = 0.95f;
-	private float arcHeight = 11f;
+	private float arcHeight = 15f;
 
 	void Start()
 	{
@@ -35,7 +35,7 @@ public class KeyController : MonoBehaviour {
 
 			myTempPos = myTransform.position;
 			myTempPos.x = Mathf.Lerp(myTransform.position.x, machine.transform.position.x, fracJourney)
-						+ (Mathf.Sin(fracJourney * Mathf.PI * 1) +0) /1 * arcHeight;
+						+ ( Mathf.Sin(fracJourney * Mathf.PI) * (arcHeight *(myTempPos.x/Mathf.Abs(myTempPos.x))) );
 			//straight line Y
 			myTempPos.y = Mathf.Lerp(myTransform.position.y, machine.transform.position.y, fracJourney) ;
 			//arc Y
