@@ -41,10 +41,35 @@ public class ScoreController : MonoBehaviour {
 	}
 	*/
 
-	public void Score()
+	public void MinusScore()
 	{
 		score--;
 
+		if (score == 0)
+		{
+			AudioController.instance.Play("004_CollectLastKey");
+
+			fusionLight.gameObject.SendMessage("TurnLightOn");
+			//leftDoor.gameObject.SendMessage("OpenDoor");
+			//rightDoor.gameObject.SendMessage("OpenDoor");
+			//leftExitLight.gameObject.SendMessage("TurnLightOn");
+			//rightExitLight.gameObject.SendMessage("TurnLightOn");
+			//foreach (GameObject light in candleLights)
+			//{
+			//	light.gameObject.SendMessage("TurnLightOn");
+			//}
+			GameObject.Find ("GameController").SendMessage("ActivateFusion");
+			
+			string endingName = LevelFinishedController.instance.getEnding();
+			if (endingName != null)
+			{
+				GameObject.Find ("EndingController").SendMessage(endingName);
+			}
+		}
+	}
+
+	public void Score()
+	{
 		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstZapLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstTriggerLevel
@@ -60,10 +85,6 @@ public class ScoreController : MonoBehaviour {
 		{
 			FloorInstructions.instance.ChangeInstructions();
 		}
-
-		if (score == 0)
-		{
-			AudioController.instance.Play("004_CollectLastKey");
 
 			randomNumber = Random.Range(1,5);
 			
@@ -90,52 +111,7 @@ public class ScoreController : MonoBehaviour {
 				AudioController.instance.Play("c5");
 				
 			}
-			fusionLight.gameObject.SendMessage("TurnLightOn");
-			//leftDoor.gameObject.SendMessage("OpenDoor");
-			//rightDoor.gameObject.SendMessage("OpenDoor");
-			//leftExitLight.gameObject.SendMessage("TurnLightOn");
-			//rightExitLight.gameObject.SendMessage("TurnLightOn");
-			//foreach (GameObject light in candleLights)
-			//{
-			//	light.gameObject.SendMessage("TurnLightOn");
-			//}
-			GameObject.Find ("GameController").SendMessage("ActivateFusion");
 			
-			string endingName = LevelFinishedController.instance.getEnding();
-			if (endingName != null)
-			{
-				GameObject.Find ("EndingController").SendMessage(endingName);
-			}
-		}
-		else
-		{
-			randomNumber = Random.Range(1,4);
-
-			if (randomNumber == 1)
-			{
-				AudioController.instance.Play("a4");
-
-			}
-
-			else if (randomNumber == 2)
-			{
-				AudioController.instance.Play("d4");
-				
-			}
-
-			else if (randomNumber == 3)
-			{
-				AudioController.instance.Play("f4");
-				
-			}
-
-			else if (randomNumber == 4)
-			{
-				AudioController.instance.Play("c5");
-				
-			}
-
-		}
 	}
 
 	public void PlayerParalysed()
