@@ -126,10 +126,11 @@ public class TopLightController : MonoBehaviour {
 					{
 						int StartTargetHash = Animator.StringToHash ("StartTarget");
 						monster.transform.GetChild(i).GetComponent<Animator>().SetTrigger(StartTargetHash);
+						monster.GetComponent<AbstractMonsterController>().savedCanBeZapped = true;
 					}
 				}
 
-				monster.GetComponent<AbstractMonsterController>().savedCanBeZapped = true;
+
 			}
 		}
 	}
@@ -147,10 +148,11 @@ public class TopLightController : MonoBehaviour {
 					{
 						int FinishTargetHash = Animator.StringToHash ("FinishTarget");
 						monster.transform.GetChild(i).GetComponent<Animator>().SetTrigger(FinishTargetHash);
+						monster.GetComponent<AbstractMonsterController>().savedCanBeZapped = false;
 					}
 				}
 
-				monster.GetComponent<AbstractMonsterController>().savedCanBeZapped = false;
+
 			}
 		}
 	}

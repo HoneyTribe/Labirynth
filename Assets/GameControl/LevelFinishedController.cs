@@ -183,10 +183,8 @@ public class LevelFinishedController : MonoBehaviour {
 	
 	private void LoadNewLevel()
 	{
-		if(level < getNumberOfLevels())
-		{
 			level++;
-		}
+		
 
 		if (level > maxLevel )
 		{
@@ -215,11 +213,12 @@ public class LevelFinishedController : MonoBehaviour {
 			}
 		}
 		
-		if (level == getNumberOfLevels() )
+		if (level > getNumberOfLevels() )
 		{
+			level = getNumberOfLevels();
 			StartCoroutine(GameFinished() );
 		}
-		if (level < getNumberOfLevels() )
+		else
 		{
 			LevelCounter();
 			//Reset ();
