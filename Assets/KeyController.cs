@@ -11,7 +11,7 @@ public class KeyController : MonoBehaviour {
 	private float distCovered;
 	private float fracJourney;
 	private float startTime;
-	private float speed = 25.0f;
+	private float speed = 35.0f;
 	private GameObject machine;
 	private Transform myTransform;
 	private Vector3 myTempPos;
