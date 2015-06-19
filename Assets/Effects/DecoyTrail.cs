@@ -5,14 +5,14 @@ using System.Collections.Generic;
 public class DecoyTrail : MonoBehaviour 
 {
 	//public variables
-	private float speed = 25.0f;
+	private float speed = 10.0f;
 	private float mummyOffset = 3.0f;
 	private float decoyOffset = 3.0f;
 	private float arcHeight = 8f;
 	private float closeDistance = 0.1f;
-	private float trailDuration = 1.0f;
+	private float trailDuration = 0.7f;
 	private float endDuration = 0.3f;
-	private float lensFadeSpeed = 0.88f;
+	//private float lensFadeSpeed = 0.0f;
 	//
 	private bool resetTime = false;
 	private float startTime;
@@ -20,7 +20,7 @@ public class DecoyTrail : MonoBehaviour
 	private float distCovered;
 	private float fracJourney;
 	private TrailRenderer trail;
-	private LensFlare lens;
+	//private LensFlare lens;
 	private Transform myTransform;
 	private Vector3 myTempPos;
 	private Vector3 vectorToTarget;
@@ -33,9 +33,9 @@ public class DecoyTrail : MonoBehaviour
 		device = GameObject.Find ("DeviceContainer");
 		myTransform = this.transform;
 		trail = GetComponent<TrailRenderer>();
-		lens = GetComponent<LensFlare>();
+		//lens = GetComponent<LensFlare>();
 		trail.time = trailDuration;
-		lens.fadeSpeed = lensFadeSpeed;
+		//lens.fadeSpeed = lensFadeSpeed;
 	}
 
 	void Update()
@@ -43,7 +43,7 @@ public class DecoyTrail : MonoBehaviour
 		if(transform.parent.GetComponent<AbstractMonsterController>().getTimeLeft() > 0 && LevelFinishedController.instance.isStopped()==false)
 		{
 			trail.enabled = true;
-			lens.enabled = true;
+			//lens.enabled = true;
 
 
 			if(resetTime == false)
@@ -86,7 +86,7 @@ public class DecoyTrail : MonoBehaviour
 			myTempPos.y += mummyOffset;
 			myTransform.position = myTempPos;
 			trail.time = endDuration;
-			lens.fadeSpeed = endDuration;
+			//lens.fadeSpeed = endDuration;
 			StartCoroutine(DisableTrail());
 		}
 		
@@ -99,7 +99,7 @@ public class DecoyTrail : MonoBehaviour
 		if(transform.parent.GetComponent<AbstractMonsterController>().getTimeLeft() <= 0 )
 		{
 			trail.enabled = false;
-			lens.enabled = false;
+			//lens.enabled = false;
 		}
 	}
 	
@@ -107,7 +107,7 @@ public class DecoyTrail : MonoBehaviour
 	{
 		startTime = Time.time;
 		trail.time = trailDuration;
-		lens.fadeSpeed = lensFadeSpeed;
+		//lens.fadeSpeed = lensFadeSpeed;
 		resetTime = true;
 	}
 
