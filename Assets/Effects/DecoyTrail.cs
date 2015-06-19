@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class DecoyTrail : MonoBehaviour 
 {
-	//public variables
 	private float speed = 10.0f;
 	private float mummyOffset = 3.0f;
 	private float decoyOffset = 3.0f;
@@ -105,10 +104,10 @@ public class DecoyTrail : MonoBehaviour
 	
 	private void resetTimer()
 	{
+		resetTime = true;
 		startTime = Time.time;
 		trail.time = trailDuration;
 		//lens.fadeSpeed = lensFadeSpeed;
-		resetTime = true;
 	}
 
 }

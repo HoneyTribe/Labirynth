@@ -127,8 +127,8 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	{
 		if(idle == true && idleSaved == false)
 		{
-			anim.SetTrigger(IdleHash);
 			idleSaved = true;
+			anim.SetTrigger(IdleHash);
 		}
 
 	}
@@ -137,8 +137,8 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	{
 		if(idle == false && idleSaved == true)
 		{
-			anim.SetTrigger(NotIdleHash);
 			idleSaved = false;
+			anim.SetTrigger(NotIdleHash);
 		}
 
 	}
