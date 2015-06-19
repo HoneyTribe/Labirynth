@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	private Color originalColor;
 	private float timeFromLastRevive = 0;
 	private Animator reviveAnim;
-	private static int activatedHash = Animator.StringToHash ("Start");
+	private static int startReviveHash = Animator.StringToHash ("StartRevive");
 
 	private List<GameObject> players = new List<GameObject>();
 
@@ -263,9 +263,9 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 						{
 							gameController.SendMessage("PlayerReviwed");
 							transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color = originalColor;
-							if(IntroductionController.instance.isPlayingIntroduction()== false && Application.loadedLevel !=0)
+							if(IntroductionController.instance.isPlayingIntroduction() == false && Application.loadedLevel !=0)
 							{	
-								reviveAnim.SetTrigger(activatedHash);
+								//reviveAnim.SetTrigger(startReviveHash);
 							}
 							collider.isTrigger = false;
 							paralysed = false;
