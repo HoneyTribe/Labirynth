@@ -62,10 +62,11 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((action > InputController.BUTTON_DURATION) || (action2 > InputController.BUTTON_DURATION))
 			{
 				lighthouseEntered = false;
+				MachineDoorsController.instance.OpenLightDoor();
 				AudioController.instance.Play("012_LightOffB");
 				TopLightController.instance.TurnOff();
 				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
+				rigidbody.transform.Translate(new Vector3(0,0,2.0f));
 			}
 
 			if ((action > 0) && (action <= InputController.BUTTON_DURATION))
@@ -303,8 +304,10 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				lighthouseEntered = true;
 				freeze();
+				rigidbody.transform.rotation = (Quaternion.Euler(0,0,0));
 				TopLightController.instance.TurnOn();
 				AudioController.instance.Play("011_LightOn");
+				MachineDoorsController.instance.CloseLightDoor();
 			}
 		}
 		if(collision.collider.name == "Crane")
