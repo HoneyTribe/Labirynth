@@ -71,7 +71,6 @@ public class DecoyTrail : MonoBehaviour
 			}
 			else
 			{
-				//trail.time = 0f;
 				myTempPos = transform.parent.position;
 				myTempPos.y += mummyOffset;
 				myTransform.position = myTempPos;
