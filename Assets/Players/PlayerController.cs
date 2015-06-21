@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((action > InputController.BUTTON_DURATION) || (action2 > InputController.BUTTON_DURATION))
 			{
 				lighthouseEntered = false;
-				MachineDoorsController.instance.OpenLightDoor();
+				//MachineDoorsController.instance.OpenLightDoor();
 				AudioController.instance.Play("012_LightOffB");
 				TopLightController.instance.TurnOff();
 				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
@@ -74,6 +74,15 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				TopLightController.instance.AttractMonster();
 			}
 
+			if ((action > InputController.MIN_BUTTON_DURATION) || (action2 > InputController.MIN_BUTTON_DURATION))
+			{
+				MachineDoorsController.instance.OpenLightDoor();
+			}
+
+			if ((action > InputController.MIN_BUTTON_DURATION) && (action < InputController.BUTTON_DURATION) )//|| (action2 > InputController.MIN_BUTTON_DURATION))
+			{
+				MachineDoorsController.instance.CloseLightDoor();
+			}
 			
 			if ((action2 > 0) && (action2 <= InputController.BUTTON_DURATION))
 			{

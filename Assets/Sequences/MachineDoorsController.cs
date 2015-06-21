@@ -80,16 +80,13 @@ public class MachineDoorsController : MonoBehaviour
 
 	private void CanCloseLightDoor()
 	{
-		//if(LevelFinishedController.instance.isDistractionEnabled() == true || LevelFinishedController.instance.isItemActivationEnabled() == true)
-		//{
 		if( playersInBase == 0 && TopLightController.instance.isEntered() == false)
 		{	
 			CloseLightDoor();
 		}
-		//}
 	}
 
-	// triggered from PlayerController
+	// triggered from this script & PlayerController
 	public void CloseLightDoor()
 	{
 		if(lightDoorOpen == true)
