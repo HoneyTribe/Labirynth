@@ -124,6 +124,7 @@ public class InputController {
 		if (Input.GetKeyDown (actionTrigger))
 		{
 			actionTime = Time.time;
+
 		}
 
 		if ((actionTime != 0) && ((Input.GetKeyUp (actionTrigger)) || (Time.time - actionTime > BUTTON_DURATION)))

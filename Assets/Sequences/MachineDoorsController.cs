@@ -7,6 +7,8 @@ public class MachineDoorsController : MonoBehaviour
 
 	private int playersInBase = 0;
 	private bool lightDoorOpen;
+	private bool craneDoorOpen;
+	private bool droneDoorOpen;
 	private Animator lightDoorAnim;
 	private Animator craneDoorAnim;
 	private Animator droneDoorAnim;
@@ -27,11 +29,18 @@ public class MachineDoorsController : MonoBehaviour
 		if ((currentCollider.tag  == "Player"))
 		{
 			playersInBase ++;
-			print (playersInBase);
 
 			CanOpenLightDoor();
-			//OpenCraneDoor();
-			//OpenDroneDoor();
+
+			if(LevelFinishedController.instance.isPickingUpEnabled() == true || LevelFinishedController.instance.isSmashingEnabled() == true)
+			{
+				CanOpenCraneDoor();
+			}
+
+			if(LevelFinishedController.instance.isStunGunEnabled() == true || LevelFinishedController.instance.isTeleportEnabled() == true)
+			{
+				CanOpenDroneDoor();
+			}
 		}
 	}
 
@@ -40,11 +49,18 @@ public class MachineDoorsController : MonoBehaviour
 		if ((currentCollider.tag  == "Player"))
 		{
 			playersInBase --;
-			print (playersInBase);
 
 			CanCloseLightDoor();
-			//CloseCraneDoor();
-			//CloseDroneDoor();
+
+			if(LevelFinishedController.instance.isPickingUpEnabled() == true || LevelFinishedController.instance.isSmashingEnabled() == true)
+			{
+				CanCloseCraneDoor();
+			}
+			
+			if(LevelFinishedController.instance.isStunGunEnabled() == true || LevelFinishedController.instance.isTeleportEnabled() == true)
+			{
+				CanCloseDroneDoor();
+			}
 		}
 	}
 
@@ -57,6 +73,8 @@ public class MachineDoorsController : MonoBehaviour
 	{
 		playersInBase ++;
 	}
+
+	////////// light door ////////////
 
 	private void CanOpenLightDoor()
 	{
@@ -96,27 +114,79 @@ public class MachineDoorsController : MonoBehaviour
 		}
 	}
 
-
+	////////// crane door ////////////
 
 	private void CanOpenCraneDoor()
 	{
-		if(LevelFinishedController.instance.isPickingUpEnabled() == true || LevelFinishedController.instance.isSmashingEnabled() == true)
-		{
-			if(IntroductionController.instance.isPlayingIntroduction()== false && playersInBase > 0 && CraneController.instance.isEntered() == false)
+		if(playersInBase > 0 && CraneController.instance.isEntered() == false)
 			{	
-				craneDoorAnim.SetTrigger(OpenDoorHash);
+				OpenCraneDoor();
 			}
+	}
+
+	// triggered from this script & PlayerController
+	public void OpenCraneDoor()
+	{
+		if (craneDoorOpen == false)
+		{
+			craneDoorAnim.SetTrigger(OpenDoorHash);
+			craneDoorOpen = true;
 		}
 	}
 
-	private void CanOpenDroneDoor()
+	private void CanCloseCraneDoor()
 	{
-		if(LevelFinishedController.instance.isStunGunEnabled() == true || LevelFinishedController.instance.isTeleportEnabled() == true)
-		{
-			if(IntroductionController.instance.isPlayingIntroduction()== false && playersInBase > 0 && DroneController.instance.isEntered() == false)
-			{	
-				droneDoorAnim.SetTrigger(OpenDoorHash);
-			}
+		if( playersInBase == 0 && CraneController.instance.isEntered() == false)
+		{	
+			CloseCraneDoor();
 		}
 	}
+	
+	// triggered from this script & PlayerController
+	public void CloseCraneDoor()
+	{
+		if(craneDoorOpen == true)
+		{
+			craneDoorAnim.SetTrigger(CloseDoorHash);
+			craneDoorOpen = false;
+		}
+	}
+
+	////////// drone door ////////////
+
+	private void CanOpenDroneDoor()
+	{
+			if(playersInBase > 0 && DroneController.instance.isEntered() == false)
+			{	
+				OpenDroneDoor();
+			}
+	}
+
+	public void OpenDroneDoor()
+	{
+		if(droneDoorOpen == false)
+		{
+			droneDoorAnim.SetTrigger(OpenDoorHash);
+			droneDoorOpen = true;
+		}
+	}
+
+	private void CanCloseDroneDoor()
+	{
+		if( playersInBase == 0 && DroneController.instance.isEntered() == false)
+		{	
+			CloseDroneDoor();
+		}
+	}
+	
+	// triggered from this script & PlayerController
+	public void CloseDroneDoor()
+	{
+		if(droneDoorOpen == true)
+		{
+			droneDoorAnim.SetTrigger(CloseDoorHash);
+			droneDoorOpen = false;
+		}
+	}
+
 }

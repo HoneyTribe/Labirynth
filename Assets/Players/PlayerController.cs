@@ -62,7 +62,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((action > InputController.BUTTON_DURATION) || (action2 > InputController.BUTTON_DURATION))
 			{
 				lighthouseEntered = false;
-				//MachineDoorsController.instance.OpenLightDoor();
 				AudioController.instance.Play("012_LightOffB");
 				TopLightController.instance.TurnOff();
 				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
@@ -79,7 +78,8 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				MachineDoorsController.instance.OpenLightDoor();
 			}
 
-			if ((action > InputController.MIN_BUTTON_DURATION) && (action < InputController.BUTTON_DURATION) )//|| (action2 > InputController.MIN_BUTTON_DURATION))
+			if ((action > InputController.MIN_BUTTON_DURATION) && (action < InputController.BUTTON_DURATION) 
+				|| (action2 > InputController.MIN_BUTTON_DURATION) && (action2 < InputController.BUTTON_DURATION) )
 			{
 				MachineDoorsController.instance.CloseLightDoor();
 			}
@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				craneEntered = false;
 				CraneController.instance.TurnOff();
 				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
+				rigidbody.transform.Translate(new Vector3(0,0,2.0f));
 				AudioController.instance.Play("012_LightOffB");
 			}
 
@@ -126,6 +126,17 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				CraneController.instance.Move(new Vector3(x,action,z));
 			}
+
+			if ((action > InputController.MIN_BUTTON_DURATION) || (action2 > InputController.MIN_BUTTON_DURATION))
+			{
+				MachineDoorsController.instance.OpenCraneDoor();
+			}
+			
+			if ((action > InputController.MIN_BUTTON_DURATION) && (action < InputController.BUTTON_DURATION) 
+			    || (action2 > InputController.MIN_BUTTON_DURATION) && (action2 < InputController.BUTTON_DURATION) )
+			{
+				MachineDoorsController.instance.CloseCraneDoor();
+			}
 		}
 		else if (portalGunEntered)
 		{
@@ -134,7 +145,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				portalGunEntered = false;
 				DroneController.instance.TurnOff();
 				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-				rigidbody.transform.Translate(new Vector3(0,0,-1.0f));
+				rigidbody.transform.Translate(new Vector3(0,0,2.0f));
 				AudioController.instance.Play("012_LightOffB");
 			}
 			
@@ -148,6 +159,17 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((action2 > 0) && (action2 <= InputController.BUTTON_DURATION))
 			{
 				DroneController.instance.UseStunGun();
+			}
+
+			if ((action > InputController.MIN_BUTTON_DURATION) || (action2 > InputController.MIN_BUTTON_DURATION))
+			{
+				MachineDoorsController.instance.OpenDroneDoor();
+			}
+			
+			if ((action > InputController.MIN_BUTTON_DURATION) && (action < InputController.BUTTON_DURATION) 
+			    || (action2 > InputController.MIN_BUTTON_DURATION) && (action2 < InputController.BUTTON_DURATION) )
+			{
+				MachineDoorsController.instance.CloseDroneDoor();
 			}
 		}
 		else if (levelChangeEntered != null)
@@ -325,8 +347,10 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				craneEntered = true;
 				freeze();
+				rigidbody.transform.rotation = (Quaternion.Euler(0,0,0));
 				CraneController.instance.TurnOn();
 				AudioController.instance.Play("011_LightOn");
+				MachineDoorsController.instance.CloseCraneDoor();
 			}
 		}
 		if(collision.collider.name == "PortalGun")
@@ -335,8 +359,10 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				portalGunEntered = true;
 				freeze();
+				rigidbody.transform.rotation = (Quaternion.Euler(0,0,0));
 				DroneController.instance.TurnOn();
 				AudioController.instance.Play("011_LightOn");
+				MachineDoorsController.instance.CloseDroneDoor();
 			}
 		}
 		if(collision.collider.tag == "Monster")
