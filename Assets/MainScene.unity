@@ -22113,6 +22113,14 @@ Prefab:
       propertyPath: m_Layer
       value: 18
       objectReference: {fileID: 0}
+    - target: {fileID: 2300002, guid: ccd2b7df4317e4040b3d34c9820689d6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 380b4c3319d8f8848abf031a38285d6d, type: 2}
+    - target: {fileID: 2300004, guid: ccd2b7df4317e4040b3d34c9820689d6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 380b4c3319d8f8848abf031a38285d6d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccd2b7df4317e4040b3d34c9820689d6, type: 3}
   m_RootGameObject: {fileID: 36645133}
