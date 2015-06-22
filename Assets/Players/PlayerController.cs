@@ -281,6 +281,16 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 					monsterAround = true;
 					break;
 				}
+
+				// activate help alert
+				for(int i =0; i<transform.childCount; i++)
+				{
+					if(transform.GetChild(i).name=="Help")
+					{
+						transform.GetChild(i).GetComponent<Help>().activateHelp();
+					}
+				}
+
 			}
 			if (!monsterAround)
 			{
@@ -294,10 +304,17 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 						{
 							gameController.SendMessage("PlayerReviwed");
 							transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color = originalColor;
-							if(IntroductionController.instance.isPlayingIntroduction() == false && Application.loadedLevel !=0)
-							{	
-								//reviveAnim.SetTrigger(startReviveHash);
+							reviveAnim.SetTrigger(startReviveHash);
+
+							// deactivate help alert
+							for(int i =0; i<transform.childCount; i++)
+							{
+								if(transform.GetChild(i).name=="Help")
+								{
+									transform.GetChild(i).GetComponent<Help>().deactivateHelp();
+								}
 							}
+
 							collider.isTrigger = false;
 							paralysed = false;
 							AudioController.instance.Play("032_ReviveB");
