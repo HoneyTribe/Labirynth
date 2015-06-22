@@ -99,7 +99,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				LightController.instance.gameObject.SendMessage("MoveRight");
 			}
 
-
 		}
 		else if (craneEntered)
 		{
