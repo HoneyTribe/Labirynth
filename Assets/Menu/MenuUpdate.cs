@@ -11,17 +11,22 @@ public class MenuUpdate : MonoBehaviour
 	private float x;
 	private float y;
 	private float z;
-	private GameObject text_enter;
+	//private GameObject text_enter;
 	private int playersInside = 0;
-
-
+	private Animator anim;
+	private static int OnHash = Animator.StringToHash ("On");
+	private static int OffHash = Animator.StringToHash ("Off");
+	private bool animOn;
+	private bool savedAnimOn;
+	
 	void Start ()
 	{
 		instance = this;
 		x = transform.position.x;
 		y = transform.position.y;
 		z = transform.position.z;
-		text_enter = GameObject.Find ("Text_Enter");
+		//text_enter = GameObject.Find ("Text_Enter");
+		anim = GameObject.Find ("UpdatePopUp").GetComponent<Animator>();
 
 
 		if(LevelFinishedController.instance.getHomeVersion() == 1 && Application.loadedLevel == 0)//get version from server
@@ -62,9 +67,14 @@ public class MenuUpdate : MonoBehaviour
 		if ((currentCollider.tag  == "Player"))
 		{
 			playersInside++;
-			text_enter.GetComponentInChildren<TextMesh>().text = "Press 'start'/'enter' to view the update";
+			if (playersInside == 1)
+			{
+				animOn = true;
+				TriggerAnimOpen();
+			}
 		}
 	}
+
 	public void OnTriggerExit(Collider currentCollider)
 	{
 		if ((currentCollider.tag  == "Player"))
@@ -72,8 +82,27 @@ public class MenuUpdate : MonoBehaviour
 			playersInside--;
 			if (playersInside == 0)
 			{
-				text_enter.GetComponentInChildren<TextMesh>().text = "2-4 characters must enter the portal";
+				animOn = false;
+				TriggerAnimClose();
 			}
+		}
+	}
+
+	private void TriggerAnimOpen()
+	{
+		if (animOn == true && savedAnimOn == false)
+		{
+			savedAnimOn = true;
+			anim.SetTrigger(OnHash);
+		}
+	}
+
+	private void TriggerAnimClose()
+	{
+		if (animOn == false && savedAnimOn == true)
+		{
+			savedAnimOn = false;
+			anim.SetTrigger(OffHash);
 		}
 	}
 

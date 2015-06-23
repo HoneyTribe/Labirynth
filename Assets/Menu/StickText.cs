@@ -2,43 +2,22 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class MenuExit : MonoBehaviour
+public class StickText : MonoBehaviour
 {
-	public static MenuExit instance;
-	private float x;
-	private float y;
-	private float z;
-	//private GameObject text_enter;
 	private int playersInside = 0;
 	private Animator anim;
 	private static int OnHash = Animator.StringToHash ("On");
 	private static int OffHash = Animator.StringToHash ("Off");
 	private bool animOn;
 	private bool savedAnimOn;
+	private TextMesh levelScreen;
+	private float delayForText = 0.4f;
 	
 	
 	void Start ()
 	{
-		instance = this;
-		x = transform.position.x;
-		y = transform.position.y;
-		z = transform.position.z;
-		//text_enter = GameObject.Find ("Text_Enter");
-		anim = GameObject.Find ("ExitPopUp").GetComponent<Animator>();
-		position();
-	}
-
-	
-	private void position()
-	{
-		if(LevelFinishedController.instance.getHomeVersion() == 1 )
-		{
-		transform.position = new Vector3(x, y, z);
-		}
-		else // exhibition version
-		{
-		transform.position = new Vector3(x, -10, z);
-		}
+		anim = GameObject.Find ("StickPopUp").GetComponent<Animator>();
+		levelScreen = GameObject.Find ("Level").GetComponent<TextMesh>();
 	}
 	
 	public void OnTriggerEnter(Collider currentCollider)
@@ -73,6 +52,7 @@ public class MenuExit : MonoBehaviour
 		{
 			savedAnimOn = true;
 			anim.SetTrigger(OnHash);
+			StartCoroutine( ShowLevelText() );
 		}
 	}
 	
@@ -82,13 +62,17 @@ public class MenuExit : MonoBehaviour
 		{
 			savedAnimOn = false;
 			anim.SetTrigger(OffHash);
+			levelScreen.text = "";
 		}
 	}
 
-	public int getplayersInside()
+	IEnumerator ShowLevelText()
 	{
-		return playersInside;
+		yield return new WaitForSeconds(delayForText);
+		if (animOn == true)
+		{
+			levelScreen.text = "Zone " + (LevelFinishedController.instance.getLevel() + 1) + "/" + LevelFinishedController.instance.getTotalLevels();
+		}
 	}
-	
-	
+
 }
