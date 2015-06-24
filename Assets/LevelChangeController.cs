@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LevelChangeController : MonoBehaviour {
 
-	private static float interval = 0.1f;
+	private static float interval = 0.15f;
 	private static float deflection = 20f;
 
 	public int change;
