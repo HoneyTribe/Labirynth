@@ -13,11 +13,11 @@ SceneSettings:
 --- !u!104 &2
 RenderSettings:
   m_Fog: 0
-  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
+  m_FogColor: {r: .867647052, g: .867647052, b: .867647052, a: 1}
   m_FogMode: 3
-  m_FogDensity: .00999999978
+  m_FogDensity: .0199999996
   m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_LinearFogEnd: 100
   m_AmbientLight: {r: 0, g: 0, b: 0, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: .5
@@ -20880,103 +20880,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 606663268}
   m_GameObject: {fileID: 1135909771}
   m_Mesh: {fileID: 4300000, guid: 7e29d2fe1574b984289010e960cbf39b, type: 3}
---- !u!1 &1136220962
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1136220968}
-  - 20: {fileID: 1136220967}
-  - 92: {fileID: 1136220966}
-  - 124: {fileID: 1136220965}
-  - 81: {fileID: 1136220964}
-  - 114: {fileID: 1136220963}
-  m_Layer: 0
-  m_Name: MainCamera_Angled
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1136220963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1136220962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f24065a25d0df34c8daf748cd61242f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodePrefab: {fileID: 0}
-  wallPrefab: {fileID: 0}
-  smallWallPrefab: {fileID: 100000, guid: 5680e8d2cea395041bd115ebfa201b18, type: 2}
-  keyPrefab: {fileID: 0}
-  jumpPrefab: {fileID: 0}
---- !u!81 &1136220964
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1136220962}
-  m_Enabled: 1
---- !u!124 &1136220965
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1136220962}
-  m_Enabled: 1
---- !u!92 &1136220966
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1136220962}
-  m_Enabled: 1
---- !u!20 &1136220967
-Camera:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1136220962}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: .300000012
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_HDR: 0
-  m_OcclusionCulling: 1
---- !u!4 &1136220968
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1136220962}
-  m_LocalRotation: {x: .535255194, y: .0735064074, z: -.0468287654, w: .840182006}
-  m_LocalPosition: {x: -5, y: 35, z: -20}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
 --- !u!1 &1146513501
 GameObject:
   m_ObjectHideFlags: 0
@@ -24723,6 +24626,7 @@ MonoBehaviour:
   closingInterval: .5
   projectorMaterial: {fileID: 2100000, guid: 542755a637815434ebee3e91f0e44ac9, type: 2}
   laserPrefab: {fileID: 100000, guid: ae600a4ab3eed27449e949abb4ce518e, type: 2}
+  zapPrefab: {fileID: 100000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
 --- !u!1001 &1318208423
 Prefab:
   m_ObjectHideFlags: 0
@@ -35773,7 +35677,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043507661}
-  m_LocalRotation: {x: -.565562844, y: .510542572, z: .332734883, w: .555673122}
+  m_LocalRotation: {x: -.565562785, y: .510542512, z: .332734853, w: .555673063}
   m_LocalPosition: {x: -1.44359303, y: -17.7804337, z: -18.2103996}
   m_LocalScale: {x: 8.13866043, y: .100000009, z: 10}
   m_Children: []

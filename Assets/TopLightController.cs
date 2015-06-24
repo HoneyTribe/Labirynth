@@ -24,6 +24,7 @@ public class TopLightController : MonoBehaviour {
 	private int zapCount = 0;
 
 	public GameObject laserPrefab;
+	public GameObject zapPrefab;
 
 	private GameObject ball;
 
@@ -327,6 +328,12 @@ public class TopLightController : MonoBehaviour {
 		GameObject laser = (GameObject) Instantiate (laserPrefab, ball.transform.position, Quaternion.Euler(0, 0, 0)); 
 		LaserController laserController = laser.GetComponent<LaserController>();
 		laserController.shoot (ball.transform.position, monsterPosition);
+
+		GameObject zap = (GameObject) Instantiate (zapPrefab, ball.transform.position, Quaternion.Euler(0, 0, 0)); 
+		ZapShoot zapShoot = zap.GetComponent<ZapShoot>();
+		zapShoot.shoot (ball.transform.position, monsterPosition);
+
+
 		yield return new WaitForSeconds(0.2f);
 
 		GameObject laser2 = (GameObject) Instantiate (laserPrefab, monsterPosition, Quaternion.Euler(0, 0, 0)); 

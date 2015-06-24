@@ -27,14 +27,10 @@ public class SpawnDecoyTrail : MonoBehaviour
 
 	private void spawn()
 	{
-
-
 			trailObject = (GameObject) Instantiate(trailObject, transform.position, transform.rotation);
 			trailObject.transform.parent = gameObject.transform;
 			trailObject.transform.localPosition = Vector3.zero;
 			hasSpawned = true;
-
-
 	}
 	//triggered from DecoyTrailOnce and AbstractMonsterController
 	public void changeHasSpawned()
