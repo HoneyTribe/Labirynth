@@ -108,7 +108,7 @@ public class DroneController : MonoBehaviour {
 	{
 		if (move == Vector3.zero)
 		{
-			rigidbody.drag = 18.0f;
+			rigidbody.drag = 20.0f;
 		}
 		else
 		{
