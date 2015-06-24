@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 	private List<GameObject> players = new List<GameObject>();
 
+	public Vector3 playerTempPos;
+
 	void Start()
 	{
 		speed *= LevelFinishedController.instance.gameSpeed;

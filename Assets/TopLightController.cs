@@ -93,16 +93,18 @@ public class TopLightController : MonoBehaviour {
 		foreach (GameObject monster in monsterList)
 		{
 			//myScript = GetComponent<AbstractMonsterController>();
-
-			if ( isIlluminated(monster) && energy >= attractionCost )
+			if(LevelFinishedController.instance.isDistractionEnabled() == true)
 			{
-				monster.GetComponent<AbstractMonsterController>().canBeZapped = true;
-				MonsterTargetOn();
-			}
-			else
-			{
-				monster.GetComponent<AbstractMonsterController>().canBeZapped = false;
-				MonsterTargetOff();
+				if ( isIlluminated(monster) && energy >= attractionCost )
+				{
+					monster.GetComponent<AbstractMonsterController>().canBeZapped = true;
+					MonsterTargetOn();
+				}
+				else
+				{
+					monster.GetComponent<AbstractMonsterController>().canBeZapped = false;
+					MonsterTargetOff();
+				}
 			}
 		}
 	}

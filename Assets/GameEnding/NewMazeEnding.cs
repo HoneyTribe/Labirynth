@@ -15,16 +15,24 @@ public class NewMazeEnding : MonoBehaviour {
 	private List<GameObject> walls;
 
 	private List<GameObject> risingWalls;
+
+	private GameObject[] allPlayers;
 	
 	void Start()
 	{
-		instance = this;		
+		instance = this;
+		allPlayers= GameObject.FindGameObjectsWithTag ("Player");
 	}
 
 	void Update()
 	{
 		if (endingEnabled)
 		{
+
+			foreach (GameObject player in allPlayers)
+			{
+				player.transform.position = player.GetComponent<PlayerController>().playerTempPos;
+			}
 
 			if (time > interval) // it should happen after destroy
 			{
@@ -33,13 +41,12 @@ public class NewMazeEnding : MonoBehaviour {
 				AstarPath.active.Scan();
 				LevelFinishedController.instance.setStopped(false);
 
-				GameObject[] allPlayers= GameObject.FindGameObjectsWithTag ("Player");
-				foreach (GameObject player in allPlayers)
-				{
-					Vector3 temp = transform.position;
-					temp.y = 1.48f;
-					transform.position = temp;
-				}
+				//foreach (GameObject player in allPlayers)
+				//{
+				//	Vector3 temp = transform.position;
+				//	temp.y = 1.48f;
+				//	transform.position = temp;
+				//}
 
 				return;
 			}
@@ -87,6 +94,14 @@ public class NewMazeEnding : MonoBehaviour {
 	
 	public void EnableNewMazeEnding()
 	{
+		foreach (GameObject player in allPlayers)
+		{
+			//Vector3 temp = transform.position;
+			//temp.y = 1.48f;
+			//transform.position = temp;
+			player.GetComponent<PlayerController>().playerTempPos = player.transform.position;
+		}
+
 		pillars = new List<GameObject>();
 		foreach (GameObject pillar in GameObject.FindGameObjectsWithTag ("Pillar"))
 		{
