@@ -325,24 +325,24 @@ public class TopLightController : MonoBehaviour {
 
 	IEnumerator showLaser(Vector3 monsterPosition)
 	{
-		GameObject laser = (GameObject) Instantiate (laserPrefab, ball.transform.position, Quaternion.Euler(0, 0, 0)); 
-		LaserController laserController = laser.GetComponent<LaserController>();
-		laserController.shoot (ball.transform.position, monsterPosition);
+		//GameObject laser = (GameObject) Instantiate (laserPrefab, ball.transform.position, Quaternion.Euler(0, 0, 0)); 
+		//LaserController laserController = laser.GetComponent<LaserController>();
+		//laserController.shoot (ball.transform.position, monsterPosition);
 
 		GameObject zap = (GameObject) Instantiate (zapPrefab, ball.transform.position, Quaternion.Euler(0, 0, 0)); 
 		ZapShoot zapShoot = zap.GetComponent<ZapShoot>();
 		zapShoot.shoot (ball.transform.position, monsterPosition);
 
 
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(0.3f);
+		Destroy (zap);
+		//GameObject laser2 = (GameObject) Instantiate (laserPrefab, monsterPosition, Quaternion.Euler(0, 0, 0)); 
+		//LaserController laserController2 = laser2.GetComponent<LaserController>();
+		//laserController2.shoot (monsterPosition, DeviceController.instance.transform.position);
+		//yield return new WaitForSeconds(0.2f);
 
-		GameObject laser2 = (GameObject) Instantiate (laserPrefab, monsterPosition, Quaternion.Euler(0, 0, 0)); 
-		LaserController laserController2 = laser2.GetComponent<LaserController>();
-		laserController2.shoot (monsterPosition, DeviceController.instance.transform.position);
-		yield return new WaitForSeconds(0.2f);
-
-		Destroy (laser);
-		Destroy (laser2);
+		//Destroy (laser);
+		//Destroy (laser2);
 	}
 
 	public int getZapCount()

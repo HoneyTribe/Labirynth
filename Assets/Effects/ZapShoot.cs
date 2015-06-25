@@ -67,18 +67,20 @@ public class ZapShoot : MonoBehaviour
 		
 		pos = startPos + (endPos - startPos) / 2;
 		transform.position = pos;
-		StartCoroutine(Destroy());
+		//StartCoroutine(Destroy());
 		
 		//startTime = Time.time;
 		
 		
 	}
-	
+
+	/*
 	IEnumerator Destroy()
 	{
 		yield return new WaitForSeconds(destroyDuration);
 		Destroy(gameObject);
 	}
+	*/
 	
 	/*
 	void Update()
