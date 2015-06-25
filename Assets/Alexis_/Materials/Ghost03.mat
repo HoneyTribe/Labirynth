@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Decoy_
+  m_Name: Ghost03
   m_Shader: {fileID: 4800000, guid: e2daee1bd07dd704f932969eacf4f016, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -17,7 +17,21 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 97fe21232d1c1cd47918d3768580aaff, type: 3}
+          m_Texture: {fileID: 2800000, guid: f2382b524a2ea4021b0dd2e59efd186a, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 0cb17906ae7cc8647ab26690ab01ac42, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Bump
+        second:
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -30,16 +44,20 @@ Material:
     m_Floats:
       data:
         first:
-          name: _Cutoff
-        second: .899999976
-      data:
-        first:
-          name: PixelSnap
-        second: 0
-      data:
-        first:
           name: _Shininess
-        second: .699999988
+        second: .310926139
+      data:
+        first:
+          name: _RimPower
+        second: 2.14285731
+      data:
+        first:
+          name: _ScrollX
+        second: 1
+      data:
+        first:
+          name: _ScrollY
+        second: 51.5800018
       data:
         first:
           name: _Inside
@@ -51,25 +69,33 @@ Material:
       data:
         first:
           name: _Speed
-        second: 5
+        second: 3.63392854
       data:
         first:
           name: _Tile
-        second: 1.96428573
+        second: 3.41071415
       data:
         first:
           name: _Strength
-        second: 1.78571427
+        second: 1.5
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .786764741, g: .786764741, b: .786764741, a: 1}
-      data:
-        first:
-          name: _Emission
-        second: {r: 0, g: 0, b: 0, a: 0}
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _SpecColor
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _RimColor
+        second: {r: .99999994, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _MyColor
+        second: {r: .0758619308, g: 0, b: 1, a: 1}
+      data:
+        first:
+          name: _InnerColor
+        second: {r: 1, g: 0, b: 0, a: 0}

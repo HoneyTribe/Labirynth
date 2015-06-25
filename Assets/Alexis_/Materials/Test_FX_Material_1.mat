@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Test_FX_Material_1
-  m_Shader: {fileID: 10512, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: e2daee1bd07dd704f932969eacf4f016, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -97,6 +97,13 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Texture
+        second:
+          m_Texture: {fileID: 2800000, guid: 527965173b00f43f9a1b8fc9e8c2e64b, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -110,15 +117,31 @@ Material:
         first:
           name: _InvFade
         second: .00999999978
+      data:
+        first:
+          name: _Inside
+        second: 1.39285719
+      data:
+        first:
+          name: _Rim
+        second: 1
+      data:
+        first:
+          name: _Speed
+        second: 2.58928561
+      data:
+        first:
+          name: _Tile
+        second: 4.83928585
+      data:
+        first:
+          name: _Strength
+        second: 2.48214293
     m_Colors:
       data:
         first:
           name: _Color
         second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _SpecColor
-        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _Emission
@@ -127,6 +150,10 @@ Material:
         first:
           name: _TintColor
         second: {r: .99999994, g: .99999994, b: .99999994, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _ReflectColor
