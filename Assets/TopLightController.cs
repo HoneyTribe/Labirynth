@@ -38,6 +38,12 @@ public class TopLightController : MonoBehaviour {
 
 	private GameObject[] monsterList;
 
+	// Variables for spawning zap prefab
+	private float sizeOfZap = 1.0f;
+	private float disToMonster;
+	private Vector3 lineToMonster;
+	private GameObject zap;
+
 	void Start()
 	{
 		instance = this;
@@ -250,7 +256,8 @@ public class TopLightController : MonoBehaviour {
 					if (isIlluminated(monster))
 					{
 						monster.GetComponent<AbstractMonsterController>().setAttracted();
-						StartCoroutine(showLaser(monster.transform.localPosition));
+						StartCoroutine(SpawnZap(monster.transform.localPosition));
+						//SpawnZap(monster.transform.localPosition);
 						monsterAttracted = true;
 					}
 				}
@@ -323,24 +330,48 @@ public class TopLightController : MonoBehaviour {
 		}
 	}
 
-	IEnumerator showLaser(Vector3 monsterPosition)
+	IEnumerator SpawnZap(Vector3 monsterPosition)
+	//private Vector3 SpawnZap(Vector3 monsterPosition)
 	{
-		//GameObject laser = (GameObject) Instantiate (laserPrefab, ball.transform.position, Quaternion.Euler(0, 0, 0)); 
-		//LaserController laserController = laser.GetComponent<LaserController>();
-		//laserController.shoot (ball.transform.position, monsterPosition);
 
-		GameObject zap = (GameObject) Instantiate (zapPrefab, ball.transform.position, Quaternion.Euler(0, 0, 0)); 
-		ZapShoot zapShoot = zap.GetComponent<ZapShoot>();
-		zapShoot.shoot (ball.transform.position, monsterPosition);
+		//GameObject zap = (GameObject) Instantiate (zapPrefab, ball.transform.position, Quaternion.Euler(0, 0, 0)); 
+		//ZapShoot zapShoot = zap.GetComponent<ZapShoot>();
+		//zapShoot.shoot (ball.transform.position, monsterPosition);
 
+		// Get your "straight line"
+		lineToMonster = monsterPosition - ball.transform.position ;
+
+		//distance of line
+		disToMonster = lineToMonster.magnitude;
+		
+		// Instantiate the gameobject every x meters on that line
+		for( float dist = sizeOfZap * 6 ; dist < disToMonster ; dist += sizeOfZap )
+		{
+			zap = (GameObject) Instantiate( zapPrefab ) ;
+			zap.transform.position = ball.transform.position + lineToMonster.normalized * dist;
+			zap.transform.LookAt(monsterPosition);
+			//StartCoroutine(DestroyZap());
+			// Or
+			// GameObject newGameObject = GameObject.Instantiate( prefab, objectA.transform.position + vector.normalized * dist, Quaternion.identity ) ;
+		}
 
 		yield return new WaitForSeconds(0.3f);
-		Destroy (zap);
+
+	}
+
+	IEnumerator showLaser(Vector3 monsterPosition)
+	{
+		GameObject laser = (GameObject) Instantiate (laserPrefab, ball.transform.position, Quaternion.Euler(0, 0, 0)); 
+		LaserController laserController = laser.GetComponent<LaserController>();
+		laserController.shoot (ball.transform.position, monsterPosition);
+
+		yield return new WaitForSeconds(0.3f);
+		Destroy (laser);
 		//GameObject laser2 = (GameObject) Instantiate (laserPrefab, monsterPosition, Quaternion.Euler(0, 0, 0)); 
 		//LaserController laserController2 = laser2.GetComponent<LaserController>();
 		//laserController2.shoot (monsterPosition, DeviceController.instance.transform.position);
 		//yield return new WaitForSeconds(0.2f);
-
+		
 		//Destroy (laser);
 		//Destroy (laser2);
 	}
