@@ -1,0 +1,218 @@
+fileFormatVersion: 2
+guid: efc0ed8481aac1344b762d2ec741d701
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: 1st_Alien_v003
+    100002: Alien_Head
+    100004: //RootNode
+    100006: Bone005(mirrored)(mirrored)001
+    100008: Bone005(mirrored)001
+    100010: Bone006(mirrored)(mirrored)001
+    100012: Bone006(mirrored)001
+    100014: Bone011(mirrored)001
+    100016: Bone012(mirrored)001
+    100018: Bone013(mirrored)001
+    100020: Bone035(mirrored)001
+    100022: Bone040(mirrored)001
+    100024: Bone041(mirrored)001
+    100026: Bone042(mirrored)001
+    100028: Bone044(mirrored)001
+    100030: Bone045(mirrored)001
+    100032: Bone049
+    100034: Bone050
+    100036: Bone051
+    100038: Bone053
+    100040: Bone054
+    100042: Bone056
+    100044: Bone058
+    100046: Bone062
+    100048: Bone063
+    100050: Bone064
+    100052: Bone066
+    100054: Bone067
+    100056: Bone069
+    100058: connectBone001(mirrored)001
+    100060: connectBone002
+    100062: Pivot
+    400000: 1st_Alien_v003
+    400002: Alien_Head
+    400004: //RootNode
+    400006: Bone005(mirrored)(mirrored)001
+    400008: Bone005(mirrored)001
+    400010: Bone006(mirrored)(mirrored)001
+    400012: Bone006(mirrored)001
+    400014: Bone011(mirrored)001
+    400016: Bone012(mirrored)001
+    400018: Bone013(mirrored)001
+    400020: Bone035(mirrored)001
+    400022: Bone040(mirrored)001
+    400024: Bone041(mirrored)001
+    400026: Bone042(mirrored)001
+    400028: Bone044(mirrored)001
+    400030: Bone045(mirrored)001
+    400032: Bone049
+    400034: Bone050
+    400036: Bone051
+    400038: Bone053
+    400040: Bone054
+    400042: Bone056
+    400044: Bone058
+    400046: Bone062
+    400048: Bone063
+    400050: Bone064
+    400052: Bone066
+    400054: Bone067
+    400056: Bone069
+    400058: connectBone001(mirrored)001
+    400060: connectBone002
+    400062: Pivot
+    2300000: 1st_Alien_v003
+    3300000: 1st_Alien_v003
+    4300000: 1st_Alien_v003
+    7400000: Fast_Walk
+    9500000: //RootNode
+    13700000: 1st_Alien_v003
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Fast_Walk
+      takeName: Take 001
+      firstFrame: 5
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: 1st_Alien_v003
+        weight: 1
+      - path: Pivot
+        weight: 1
+      - path: Pivot/Bone011(mirrored)001
+        weight: 1
+      - path: Pivot/Bone011(mirrored)001/Bone012(mirrored)001
+        weight: 1
+      - path: Pivot/Bone011(mirrored)001/Bone012(mirrored)001/Bone013(mirrored)001
+        weight: 1
+      - path: Pivot/Bone049
+        weight: 1
+      - path: Pivot/Bone049/Bone050
+        weight: 1
+      - path: Pivot/Bone049/Bone050/Bone051
+        weight: 1
+      - path: Pivot/Bone053
+        weight: 1
+      - path: Pivot/Bone053/Bone054
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Alien_Head
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Alien_Head/Bone035(mirrored)001
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Alien_Head/Bone056
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Alien_Head/Bone058
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)(mirrored)001
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)(mirrored)001/Bone006(mirrored)(mirrored)001
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)(mirrored)001/Bone006(mirrored)(mirrored)001/connectBone001(mirrored)001
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)(mirrored)001/Bone006(mirrored)(mirrored)001/connectBone001(mirrored)001/Bone040(mirrored)001
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)(mirrored)001/Bone006(mirrored)(mirrored)001/connectBone001(mirrored)001/Bone040(mirrored)001/Bone041(mirrored)001
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)(mirrored)001/Bone006(mirrored)(mirrored)001/connectBone001(mirrored)001/Bone040(mirrored)001/Bone041(mirrored)001/Bone042(mirrored)001
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)(mirrored)001/Bone006(mirrored)(mirrored)001/connectBone001(mirrored)001/Bone044(mirrored)001
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)(mirrored)001/Bone006(mirrored)(mirrored)001/connectBone001(mirrored)001/Bone044(mirrored)001/Bone045(mirrored)001
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)001
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)001/Bone006(mirrored)001
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)001/Bone006(mirrored)001/connectBone002
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)001/Bone006(mirrored)001/connectBone002/Bone062
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)001/Bone006(mirrored)001/connectBone002/Bone062/Bone063
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)001/Bone006(mirrored)001/connectBone002/Bone062/Bone063/Bone064
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)001/Bone006(mirrored)001/connectBone002/Bone066
+        weight: 1
+      - path: Pivot/Bone053/Bone054/Bone005(mirrored)001/Bone006(mirrored)001/connectBone002/Bone066/Bone067
+        weight: 1
+      - path: Pivot/Bone069
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .340000004
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
