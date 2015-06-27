@@ -273,7 +273,14 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				playerActive = true;
 				rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
-				transform.rotation = Quaternion.LookRotation(new Vector3(x, 0, z)); 
+				transform.rotation = Quaternion.LookRotation(new Vector3(x, 0, z));
+
+				if(this.name == "Player2")
+				{
+					// run or idle animation
+					idle = false;
+					NotIdle();
+				}
 			}
 			else
 			{
@@ -281,6 +288,13 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				{
 					playerActive = false;
 					rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
+
+					if(this.name == "Player2")
+					{
+						// run or idle animation
+						idle = true;
+						Idle();
+					}
 				}
 			}
 		}
@@ -343,6 +357,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				}
 			}
 		}
+		/*
 		if(this.name == "Player2")
 		{
 		// run or idle animation
@@ -357,6 +372,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			NotIdle();
 		}
 		}
+		*/
 	}
 
 	private void Idle()
