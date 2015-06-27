@@ -3128,7 +3128,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4d505f5c7770790498d603e52024849b, type: 3}
   m_PrefabInternal: {fileID: 270543577}
   m_GameObject: {fileID: 501457235}
-  m_LocalRotation: {x: 0, y: 0, z: .70710665, w: -.707107008}
+  m_LocalRotation: {x: 0, y: 0, z: .70710659, w: -.707106948}
   m_LocalPosition: {x: 61.7617874, y: 7.99726582, z: -.0296993256}
   m_LocalScale: {x: -187, y: 212.500015, z: 212.5}
   m_Children: []
@@ -3524,7 +3524,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f8a1916f6f5091a4980602a114194ed1, type: 3}
   m_PrefabInternal: {fileID: 1666312131}
   m_GameObject: {fileID: 540935972}
-  m_LocalRotation: {x: 0, y: 0, z: .707106888, w: .707106769}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
   m_LocalPosition: {x: -3.28216553, y: 35.2000008, z: -22.8196774}
   m_LocalScale: {x: -187, y: 212.500015, z: 212.5}
   m_Children: []
@@ -3653,7 +3653,7 @@ GameObject:
   - 4: {fileID: 545638052}
   - 95: {fileID: 545638053}
   m_Layer: 15
-  m_Name: Alien_P1_01
+  m_Name: AlienAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5352,7 +5352,7 @@ Transform:
   m_GameObject: {fileID: 969755605}
   m_LocalRotation: {x: .205352396, y: .205356076, z: -.67663008, w: .676632106}
   m_LocalPosition: {x: 0, y: .660354793, z: -.0806720704}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: .99999994}
   m_Children:
   - {fileID: 1486541009}
   - {fileID: 1209777211}
@@ -6954,7 +6954,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400034, guid: efc0ed8481aac1344b762d2ec741d701, type: 3}
   m_PrefabInternal: {fileID: 1641752971}
   m_GameObject: {fileID: 1299829328}
-  m_LocalRotation: {x: -.241621345, y: -.347969353, z: -.152786657, w: .892856538}
+  m_LocalRotation: {x: -.24162133, y: -.347969323, z: -.152786642, w: .892856479}
   m_LocalPosition: {x: -.32941255, y: 6.07967365e-08, z: -1.01327897e-08}
   m_LocalScale: {x: .999999642, y: 1.00000024, z: 1}
   m_Children:
@@ -7666,7 +7666,7 @@ Transform:
   m_GameObject: {fileID: 1596525308}
   m_LocalRotation: {x: .706433952, y: -.0308435522, z: -.0308435354, w: .706433594}
   m_LocalPosition: {x: 1.88378608, y: .458543301, z: -.00800085068}
-  m_LocalScale: {x: .990913093, y: .990913153, z: .678391576}
+  m_LocalScale: {x: .990913153, y: .990913153, z: .678391576}
   m_Children: []
   m_Father: {fileID: 903329844}
 --- !u!23 &1596525310
@@ -8354,6 +8354,10 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ea9763e496519c84b88d99054af112a2, type: 2}
+    - target: {fileID: 100004, guid: efc0ed8481aac1344b762d2ec741d701, type: 3}
+      propertyPath: m_Name
+      value: AlienAnim
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: efc0ed8481aac1344b762d2ec741d701, type: 3}
   m_RootGameObject: {fileID: 545638051}
@@ -10164,8 +10168,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 969755606}
   m_AABB:
-    m_Center: {x: -1.27327907, y: 3.75509262e-06, z: -1.07385254}
-    m_Extent: {x: 1.94140828, y: 1.57710719, z: 1.81676054}
+    m_Center: {x: -1.27327907, y: 3.81469727e-06, z: -1.07385254}
+    m_Extent: {x: 1.94140828, y: 1.57710731, z: 1.81676054}
   m_DirtyAABB: 0
 --- !u!1 &1877612184
 GameObject:

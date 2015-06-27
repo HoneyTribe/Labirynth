@@ -29,13 +29,20 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 	public Vector3 playerTempPos;
 
+	private static int RunHash = Animator.StringToHash ("Run");
+	private static int IdleHash = Animator.StringToHash ("Idle");
+	private Animator runAnim;
+	private bool idle;
+	private bool idleSaved = true;
+
 	void Start()
 	{
 		speed *= LevelFinishedController.instance.gameSpeed;
 		gameController = GameObject.Find ("GameController");
 		originalColor = transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color;
 
-		for(int i =0; i<transform.childCount; i++)
+		//get revive animator
+		for(int i =0; i < transform.childCount; i++)
 		{
 			if(transform.GetChild(i).name=="Revive")
 			{
@@ -48,6 +55,15 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if (!gameObject.name.Contains(inputController.getPlayerId().ToString()))
 			{
 				players.Add(GameObject.Find ("Player" + inputController.getPlayerId()));
+			}
+		}
+
+		// get run animator
+		for(int i =0; i < transform.childCount; i++)
+		{
+			if(transform.GetChild(i).name=="AlienAnim")
+			{
+				runAnim = transform.GetChild(i).GetComponent<Animator> ();
 			}
 		}
 	}
@@ -327,6 +343,40 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				}
 			}
 		}
+		if(this.name == "Player2")
+		{
+		// run or idle animation
+			if (playerActive == false)
+		{
+			idle = true;
+			Idle();
+		}
+		else
+		{
+			idle = false;
+			NotIdle();
+		}
+		}
+	}
+
+	private void Idle()
+	{
+		if(idle == true && idleSaved == false)
+		{
+			idleSaved = true;
+			runAnim.SetTrigger(IdleHash);
+		}
+		
+	}
+	
+	private void NotIdle()
+	{
+		if(idle == false && idleSaved == true)
+		{
+			idleSaved = false;
+			runAnim.SetTrigger(RunHash);
+		}
+		
 	}
 
 	public bool hasEnteredAnyMachine()
