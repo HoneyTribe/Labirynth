@@ -22,9 +22,9 @@ public class MenuUpdate : MonoBehaviour
 	void Start ()
 	{
 		instance = this;
-		x = transform.position.x;
-		y = transform.position.y;
-		z = transform.position.z;
+		x = transform.parent.position.x;
+		y = transform.parent.position.y;
+		z = transform.parent.position.z;
 		text_enter = GameObject.Find ("Text_Enter");
 		anim = GameObject.Find ("UpdatePopUp").GetComponent<Animator>();
 
@@ -45,20 +45,20 @@ public class MenuUpdate : MonoBehaviour
 
 	private void getUpdate()
 	{
-		if(versionRead != "" && LevelFinishedController.instance.getHomeVersion() == 1 ) //has internet connection
+		if(versionRead != "" && LevelFinishedController.instance.getHomeVersion() == 1 ) //has internet connection and is home version
 		{
 			if(versionRead != version) // local version is old
 			{
-				transform.position = new Vector3(x, y, z);
+				transform.parent.position = new Vector3(x, y, z);
 			}
 			else // local version is current
 			{
-				transform.position = new Vector3(x, -10, z);
+				transform.parent.position = new Vector3(x, -10, z);
 			}
 		}
 		else
 		{
-			transform.position = new Vector3(x, -10, z);
+			transform.parent.position = new Vector3(x, -10, z);
 		}
 	}
 

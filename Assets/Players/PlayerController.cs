@@ -275,12 +275,9 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
 				transform.rotation = Quaternion.LookRotation(new Vector3(x, 0, z));
 
-				if(this.name == "Player2")
-				{
-					// run or idle animation
+					// run animation
 					idle = false;
 					NotIdle();
-				}
 			}
 			else
 			{
@@ -289,12 +286,9 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 					playerActive = false;
 					rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
 
-					if(this.name == "Player2")
-					{
-						// run or idle animation
+						//idle animation
 						idle = true;
 						Idle();
-					}
 				}
 			}
 		}
