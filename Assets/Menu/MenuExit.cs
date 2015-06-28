@@ -8,7 +8,7 @@ public class MenuExit : MonoBehaviour
 	private float x;
 	private float y;
 	private float z;
-	//private GameObject text_enter;
+	private GameObject text_enter;
 	private int playersInside = 0;
 	private Animator anim;
 	private static int OnHash = Animator.StringToHash ("On");
@@ -23,7 +23,7 @@ public class MenuExit : MonoBehaviour
 		x = transform.position.x;
 		y = transform.position.y;
 		z = transform.position.z;
-		//text_enter = GameObject.Find ("Text_Enter");
+		text_enter = GameObject.Find ("Text_Enter");
 		anim = GameObject.Find ("ExitPopUp").GetComponent<Animator>();
 		position();
 	}
@@ -49,6 +49,7 @@ public class MenuExit : MonoBehaviour
 			if (playersInside == 1)
 			{
 				animOn = true;
+				text_enter.GetComponentInChildren<TextMesh>().text = "To exit the game press 'start'/'enter'";
 				TriggerAnimOpen();
 			}
 		}
@@ -62,6 +63,7 @@ public class MenuExit : MonoBehaviour
 			if (playersInside == 0)
 			{
 				animOn = false;
+				text_enter.GetComponentInChildren<TextMesh>().text = "2-4 characters must enter the portal";
 				TriggerAnimClose();
 			}
 		}

@@ -5,13 +5,13 @@ using System.Collections.Generic;
 public class MenuUpdate : MonoBehaviour
 {
 	public static MenuUpdate instance;
-	private string version = "0.21";
+	private string version = "0.2";
 	private string url = "http://www.honeytribestudios.com/games1/BFF/bffVersion.txt";
 	private string versionRead;
 	private float x;
 	private float y;
 	private float z;
-	//private GameObject text_enter;
+	private GameObject text_enter;
 	private int playersInside = 0;
 	private Animator anim;
 	private static int OnHash = Animator.StringToHash ("On");
@@ -25,7 +25,7 @@ public class MenuUpdate : MonoBehaviour
 		x = transform.position.x;
 		y = transform.position.y;
 		z = transform.position.z;
-		//text_enter = GameObject.Find ("Text_Enter");
+		text_enter = GameObject.Find ("Text_Enter");
 		anim = GameObject.Find ("UpdatePopUp").GetComponent<Animator>();
 
 
@@ -70,6 +70,7 @@ public class MenuUpdate : MonoBehaviour
 			if (playersInside == 1)
 			{
 				animOn = true;
+				text_enter.GetComponentInChildren<TextMesh>().text = "Press 'start'/'enter' to view the update";
 				TriggerAnimOpen();
 			}
 		}
@@ -83,6 +84,7 @@ public class MenuUpdate : MonoBehaviour
 			if (playersInside == 0)
 			{
 				animOn = false;
+				text_enter.GetComponentInChildren<TextMesh>().text = "2-4 characters must enter the portal";
 				TriggerAnimClose();
 			}
 		}
