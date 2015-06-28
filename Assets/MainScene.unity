@@ -905,7 +905,8 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7500000, guid: 38d5eabda9b150545b6facb3350cf7af, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 38d5eabda9b150545b6facb3350cf7af, type: 2}
   m_RootGameObject: {fileID: 1671574971}
   m_IsPrefabParent: 0
@@ -12571,7 +12572,8 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7500000, guid: bbbb03a4982df454ba1584e579839b0a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: bbbb03a4982df454ba1584e579839b0a, type: 2}
   m_RootGameObject: {fileID: 1383332669}
   m_IsPrefabParent: 0
@@ -14603,7 +14605,6 @@ GameObject:
   - 54: {fileID: 758967909}
   - 136: {fileID: 758967908}
   - 114: {fileID: 758967907}
-  - 75: {fileID: 758967906}
   m_Layer: 15
   m_Name: Player2
   m_TagString: Player
@@ -14628,18 +14629,6 @@ Transform:
   - {fileID: 726650326}
   - {fileID: 1214463961}
   m_Father: {fileID: 0}
---- !u!75 &758967906
-ConstantForce:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 7500000, guid: 4843e48d3f2e17943a609fd3e239b1b6,
-    type: 2}
-  m_PrefabInternal: {fileID: 1681458102}
-  m_GameObject: {fileID: 758967904}
-  m_Enabled: 1
-  m_Force: {x: 0, y: -50, z: 0}
-  m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!114 &758967907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27016,7 +27005,6 @@ GameObject:
   - 54: {fileID: 1383332674}
   - 136: {fileID: 1383332673}
   - 114: {fileID: 1383332672}
-  - 75: {fileID: 1383332671}
   m_Layer: 15
   m_Name: Player3
   m_TagString: Player
@@ -27041,18 +27029,6 @@ Transform:
   - {fileID: 983075258}
   - {fileID: 1517732559}
   m_Father: {fileID: 0}
---- !u!75 &1383332671
-ConstantForce:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 7500000, guid: bbbb03a4982df454ba1584e579839b0a,
-    type: 2}
-  m_PrefabInternal: {fileID: 637553151}
-  m_GameObject: {fileID: 1383332669}
-  m_Enabled: 1
-  m_Force: {x: 0, y: -50, z: 0}
-  m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!114 &1383332672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32730,7 +32706,6 @@ GameObject:
   - 54: {fileID: 1671574976}
   - 136: {fileID: 1671574975}
   - 114: {fileID: 1671574974}
-  - 75: {fileID: 1671574973}
   m_Layer: 15
   m_Name: Player1
   m_TagString: Player
@@ -32755,18 +32730,6 @@ Transform:
   - {fileID: 398967098}
   - {fileID: 1248748170}
   m_Father: {fileID: 0}
---- !u!75 &1671574973
-ConstantForce:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 7500000, guid: 38d5eabda9b150545b6facb3350cf7af,
-    type: 2}
-  m_PrefabInternal: {fileID: 40859024}
-  m_GameObject: {fileID: 1671574971}
-  m_Enabled: 1
-  m_Force: {x: 0, y: -50, z: 0}
-  m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!114 &1671574974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33071,7 +33034,20 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9500002, guid: 4843e48d3f2e17943a609fd3e239b1b6, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500002, guid: 4843e48d3f2e17943a609fd3e239b1b6, type: 2}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500000, guid: 4843e48d3f2e17943a609fd3e239b1b6, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 7500000, guid: 4843e48d3f2e17943a609fd3e239b1b6, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4843e48d3f2e17943a609fd3e239b1b6, type: 2}
   m_RootGameObject: {fileID: 758967904}
   m_IsPrefabParent: 0
@@ -36987,7 +36963,8 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7500000, guid: fb870c25432bb604086fab2e870117d8, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: fb870c25432bb604086fab2e870117d8, type: 2}
   m_RootGameObject: {fileID: 2133734899}
   m_IsPrefabParent: 0
@@ -38423,7 +38400,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043507661}
-  m_LocalRotation: {x: -.565562844, y: .510542572, z: .332734883, w: .555673122}
+  m_LocalRotation: {x: -.565562785, y: .510542512, z: .332734853, w: .555673063}
   m_LocalPosition: {x: -1.44359303, y: -17.7804337, z: -18.2103996}
   m_LocalScale: {x: 8.13866043, y: .100000009, z: 10}
   m_Children: []
@@ -39975,7 +39952,6 @@ GameObject:
   - 54: {fileID: 2133734904}
   - 136: {fileID: 2133734903}
   - 114: {fileID: 2133734902}
-  - 75: {fileID: 2133734901}
   m_Layer: 15
   m_Name: Player4
   m_TagString: Player
@@ -40000,18 +39976,6 @@ Transform:
   - {fileID: 1368351928}
   - {fileID: 592834088}
   m_Father: {fileID: 0}
---- !u!75 &2133734901
-ConstantForce:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 7500000, guid: fb870c25432bb604086fab2e870117d8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1944610492}
-  m_GameObject: {fileID: 2133734899}
-  m_Enabled: 1
-  m_Force: {x: 0, y: -50, z: 0}
-  m_RelativeForce: {x: 0, y: 0, z: 0}
-  m_Torque: {x: 0, y: 0, z: 0}
-  m_RelativeTorque: {x: 0, y: 0, z: 0}
 --- !u!114 &2133734902
 MonoBehaviour:
   m_ObjectHideFlags: 0
