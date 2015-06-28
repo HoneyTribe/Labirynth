@@ -45,6 +45,22 @@ public class ScoreController : MonoBehaviour {
 	{
 		score--;
 
+		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstZapLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstTriggerLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstBlockLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstJumpBoxLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneBombLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLazerLevel)
+		{
+			FloorInstructions.instance.ChangeInstructions();
+		}
+
 		if (score == 0)
 		{
 			AudioController.instance.Play("004_CollectLastKey");
@@ -70,22 +86,6 @@ public class ScoreController : MonoBehaviour {
 
 	public void Score()
 	{
-		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstZapLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstTriggerLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstBlockLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstJumpBoxLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneBombLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLazerLevel)
-		{
-			FloorInstructions.instance.ChangeInstructions();
-		}
-
 			randomNumber = Random.Range(1,5);
 			
 			if (randomNumber == 1)

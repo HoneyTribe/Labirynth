@@ -39,9 +39,10 @@ public class TopLightController : MonoBehaviour {
 	private GameObject[] monsterList;
 
 	// Variables for spawning zap prefab
-	private float sizeOfZap = 1.0f;
+	private float sizeOfZap = 5.0f;
 	private float disToMonster;
 	private Vector3 lineToMonster;
+	private float zapOffset = 1.0f;
 	private GameObject zap;
 
 	void Start()
@@ -345,7 +346,7 @@ public class TopLightController : MonoBehaviour {
 		disToMonster = lineToMonster.magnitude;
 		
 		// Instantiate the gameobject every x meters on that line
-		for( float dist = sizeOfZap * 6 ; dist < disToMonster ; dist += sizeOfZap )
+		for( float dist = sizeOfZap ; dist < (disToMonster - zapOffset) ; dist += sizeOfZap )
 		{
 			zap = (GameObject) Instantiate( zapPrefab ) ;
 			zap.transform.position = ball.transform.position + lineToMonster.normalized * dist;
@@ -355,7 +356,7 @@ public class TopLightController : MonoBehaviour {
 			// GameObject newGameObject = GameObject.Instantiate( prefab, objectA.transform.position + vector.normalized * dist, Quaternion.identity ) ;
 		}
 
-		yield return new WaitForSeconds(0.3f);
+		yield return new WaitForSeconds(0.15f);
 
 	}
 
