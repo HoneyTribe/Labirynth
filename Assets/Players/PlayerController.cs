@@ -378,7 +378,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		*/
 	}
 
-	public void Idle()
+	private void Idle()
 	{
 		if(idle == true && idleSaved == false)
 		{
@@ -395,12 +395,13 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			idleSaved = false;
 			runAnim.SetTrigger(RunHash);
 		}
-		
+
 	}
 
-	public void ChangeIdle()
+	public void TriggerPlayerIdle()
 	{
 		idle = true;
+		Idle();
 	}
 
 	public bool hasEnteredAnyMachine()

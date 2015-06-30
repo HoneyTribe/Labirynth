@@ -57,8 +57,7 @@ public class FusionController : MonoBehaviour {
 				foreach(GameObject player in players)
 				{
 					player.rigidbody.velocity = Vector3.zero;
-					player.GetComponent<PlayerController>().ChangeIdle();
-					player.GetComponent<PlayerController>().Idle();
+					player.GetComponent<PlayerController>().TriggerPlayerIdle();
 				}
 				levelController.gameObject.SendMessage("PlayerFinished");
 			}
