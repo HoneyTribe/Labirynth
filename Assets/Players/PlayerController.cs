@@ -117,6 +117,9 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				LightController.instance.gameObject.SendMessage("MoveRight");
 			}
 
+			idle = true;
+			Idle();
+
 		}
 		else if (craneEntered)
 		{
@@ -154,6 +157,9 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				MachineDoorsController.instance.CloseCraneDoor();
 			}
+
+			idle = true;
+			Idle();
 		}
 		else if (portalGunEntered)
 		{
@@ -188,6 +194,9 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			{
 				MachineDoorsController.instance.CloseDroneDoor();
 			}
+
+			idle = true;
+			Idle();
 		}
 		else if (levelChangeEntered != null)
 		{
