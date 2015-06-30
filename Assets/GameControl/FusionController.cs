@@ -3,7 +3,9 @@ using System.Collections.Generic;
 
 public class FusionController : MonoBehaviour {
 
-	private static int closeDistance = 3;
+	private static int closeDistance;
+	private int closeDistanceConstant = 1;
+
 
 	private GameObject levelController;
 	private List<GameObject> players = new List<GameObject>();
@@ -16,6 +18,8 @@ public class FusionController : MonoBehaviour {
 		{
 			players.Add(GameObject.Find ("Player" + inputController.getPlayerId()));
 		}
+
+		closeDistance = closeDistanceConstant + LevelFinishedController.instance.getControllers().Count;
 	}
 	
 	void Update () 
