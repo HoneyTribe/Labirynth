@@ -31,7 +31,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: .00999999978
+        second: .154492065
       data:
         first:
           name: _EmissionLM
@@ -40,11 +40,11 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 1, g: .244624734, b: .176470578, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: 0, g: .83448261, b: .99999994, a: 1}
+        second: {r: .613792896, g: 0, b: 1, a: 1}
       data:
         first:
           name: _NotVisibleColor
