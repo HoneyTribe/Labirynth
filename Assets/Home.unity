@@ -2610,8 +2610,8 @@ Light:
     m_Resolution: -1
     m_Strength: 1
     m_Bias: .0299999993
-    m_Softness: 2.73000002
-    m_SoftnessFade: 1.08000004
+    m_Softness: 8
+    m_SoftnessFade: 5
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
@@ -9037,10 +9037,10 @@ Light:
   m_Enabled: 1
   serializedVersion: 3
   m_Type: 0
-  m_Color: {r: 0, g: .572580814, b: 1, a: 1}
-  m_Intensity: 8
-  m_Range: 32.4000015
-  m_SpotAngle: 179
+  m_Color: {r: .105882354, g: .541176498, b: .90196079, a: 1}
+  m_Intensity: 4.78000021
+  m_Range: 22.8400002
+  m_SpotAngle: 149.399994
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -9056,7 +9056,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 37376
   m_Lightmapping: 1
   m_ShadowSamples: 1
   m_ShadowRadius: 0
@@ -9070,7 +9070,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1415281770}
   m_LocalRotation: {x: 1, y: 1.94707184e-07, z: 1.94707184e-07, w: 3.79108874e-14}
-  m_LocalPosition: {x: -2.41132057e-07, y: 1.6063385, z: 12.2204046}
+  m_LocalPosition: {x: 1.18250057e-07, y: .297767639, z: 12.6060972}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
