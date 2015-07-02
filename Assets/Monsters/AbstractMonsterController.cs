@@ -38,6 +38,12 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	private GameObject distractParticlesPrefab;
 	private GameObject particles;
 
+	public Shader normalShader;
+	public Shader toonShader;
+	public Shader ghostShader;
+	public Renderer rend;
+	public string myName;
+
 	private Animator anim;
 
 	public abstract void go ();
@@ -55,7 +61,29 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		}
 		recalculateTrigger = true;
 		distractParticlesPrefab = (GameObject) Resources.Load("Angry_ennemie/Angry_Ennemie_Prefab_3");
+
+		normalShader = Shader.Find("Diffuse");
+		toonShader = Shader.Find("Toon/Basic Outline");
+		ghostShader = Shader.Find("Transparent/Bumped Specular"); 
+
+		if(this.name == "LazyMonster(Clone)" || this.name == "Monster(Clone)")
+		{
+			rend = transform.Find("Mummy_1_Anim_01/Mummy").GetComponent<Renderer>();
+			//rend.material = mummy;
+			//rend.material.SetFloat("OutlineWidth", 5.5f);
+			//rend.material.SetFloat("OutlineColor", );
+		}
+		else if(this.name == "FlyingMonster(Clone)")
+		{
+			rend = transform.Find("Ghost").GetComponent<Renderer>();
+			normalShader = ghostShader;
+			//rend.material = mummy;
+			rend.material.SetFloat("_Outline", 10.0f);
+			//rend.material.SetFloat("OutlineColor", );
+		}
 	}
+
+
 
 	void Update () {
 
@@ -73,6 +101,8 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			{
 				recalculateTrigger  = true;
 				if (anim!=null) anim.SetTrigger(activatHash);
+				rend.material.shader = toonShader;
+				StartCoroutine(ChangeShader());
 				//spawnDecoyTrail.changeHasSpawned();
 
 			}
@@ -83,6 +113,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 				rigidbody.velocity = Vector3.zero;
 				recalculateTrigger = true;
 				if (anim!=null) anim.SetTrigger(stopHash);
+				rend.material.shader = normalShader;
 				Destroy(particles);
 			}
 		}
@@ -118,6 +149,12 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			}
 		}
 
+	}
+
+	IEnumerator ChangeShader()
+	{
+		yield return new WaitForSeconds(0.3f);
+		rend.material.shader = normalShader;
 	}
 
 	private void Idle()
