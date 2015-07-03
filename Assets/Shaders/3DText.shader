@@ -1,20 +1,58 @@
 ﻿Shader "GUI/3DText"
-{ 
-	Properties {
-		_MainTex ("Font Texture", 2D) = "white" {}
-		_Color ("Text Color", Color) = (1,1,1,1)
-	}
+
+{
+    Properties
+    {
+        _MainTex ("Font Texture", 2D) = "white" {}
+    }
  
-	SubShader {
-		Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" }
-		Lighting Off Cull Off ZWrite Off Fog { Mode Off }
-		Blend SrcAlpha OneMinusSrcAlpha
-		Pass {
-			Color [_Color]
-			SetTexture [_MainTex] {
-				combine primary, texture * primary
-			}
-		}
-	}
+    SubShader
+    {
+        Tags { "RenderType"="Transparent" "Queue"="Transparent"}
+     
+        Pass
+        {
+            Blend SrcAlpha OneMinusSrcAlpha
+            ZWrite Off
+         
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #include "UnityCG.cginc"
+ 
+            sampler2D _MainTex;
+         
+            struct v2f {
+                float4 pos : SV_POSITION;
+                fixed4 color : COLOR;
+                float2 uv : TEXCOORD0;
+            };
+         
+            struct appdata {
+                float4 vertex : POSITION;
+                fixed4 color : COLOR;
+                float2 texcoord : TEXCOORD0;
+            };
+ 
+            float4 _MainTex_ST;
+         
+            v2f vert (appdata v)
+            {
+                v2f o;
+                o.pos = mul(UNITY_MATRIX_MVP, v.vertex);
+                o.color = v.color;
+                o.uv    = TRANSFORM_TEX (v.texcoord, _MainTex);
+                return o;
+            }
+         
+            fixed4 frag (v2f o) : COLOR
+            {
+                // this gives us text or not based on alpha, apparently
+                o.color.a  *= tex2D( _MainTex, o.uv ).a;
+                return o.color;
+            }
+            ENDCG
+        }
+    }
 }
 

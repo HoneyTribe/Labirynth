@@ -954,7 +954,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 3195aa4b6c18ea14286069d721ae166d, type: 3}
+  - {fileID: 2100000, guid: c62da0bae35224bf58a00fe3c63b80d4, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1215,7 +1215,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 3195aa4b6c18ea14286069d721ae166d, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4281940410
+    rgba: 4278190080
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
