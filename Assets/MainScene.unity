@@ -10865,7 +10865,7 @@ Behaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 525393510}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &525393515
 Camera:
   m_ObjectHideFlags: 0
@@ -31918,7 +31918,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1634265004}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: 0, y: .5, z: -12.713726}
+  m_LocalPosition: {x: 0, y: 1, z: -12.713726}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 154413363}

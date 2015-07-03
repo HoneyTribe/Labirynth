@@ -35,14 +35,14 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	public bool canBeZapped = false;
 	public bool savedCanBeZapped = false;
 
-	private GameObject distractParticlesPrefab;
-	private GameObject particles;
+	//private GameObject distractParticlesPrefab;
+	//private GameObject particles;
 
-	public Shader normalShader;
-	public Shader toonShader;
-	public Shader ghostShader;
-	public Renderer rend;
-	public string myName;
+	private Shader normalShader;
+	private Shader toonShader;
+	private Shader ghostShader;
+	private Renderer rend;
+	private string myName;
 
 	private Animator anim;
 
@@ -60,7 +60,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			playerControllers.Add(GameObject.Find ("Player" + inputController.getPlayerId()).GetComponent<PlayerController>());
 		}
 		recalculateTrigger = true;
-		distractParticlesPrefab = (GameObject) Resources.Load("Angry_ennemie/Angry_Ennemie_Prefab_3");
+		//distractParticlesPrefab = (GameObject) Resources.Load("Angry_ennemie/Angry_Ennemie_Prefab_3");
 
 		normalShader = Shader.Find("Diffuse");
 		toonShader = Shader.Find("Toon/Basic Outline");
@@ -113,7 +113,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 				recalculateTrigger = true;
 				if (anim!=null) anim.SetTrigger(stopHash);
 				rend.material.shader = normalShader;
-				Destroy(particles);
+				//Destroy(particles);
 			}
 		}
 
@@ -189,14 +189,14 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	{
 		timeLeft = DeviceController.interval;
 
-
+		/*
 		if (particles == null)
 		{
 			particles = (GameObject) Instantiate(distractParticlesPrefab, Vector3.zero, Quaternion.Euler(0, 0, 0));
 			particles.transform.parent = gameObject.transform;
 			particles.transform.localPosition = Vector3.zero;
 		}
-
+		*/
 	}
 
 	public void Paralyse()
