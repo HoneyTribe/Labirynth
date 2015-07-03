@@ -34,6 +34,10 @@ public class MenuUpdate : MonoBehaviour
 			WWW www = new WWW(url);			
 			StartCoroutine(WaitForRequest(www));
 		}
+		else
+		{
+			transform.parent.position = new Vector3(x, -10, z);
+		}
 	}
 
 	IEnumerator WaitForRequest(WWW www)

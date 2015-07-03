@@ -77,8 +77,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		{
 			rend = transform.Find("Ghost").GetComponent<Renderer>();
 			normalShader = ghostShader;
-			//rend.material = mummy;
-			rend.material.SetFloat("_Outline", 10.0f);
+			//rend.material.SetFloat("_Outline", 10.0f);
 			//rend.material.SetFloat("OutlineColor", );
 		}
 	}

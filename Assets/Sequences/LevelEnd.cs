@@ -25,6 +25,7 @@ public class LevelEnd : MonoBehaviour
 	private GameObject piece4;
 	private int numberOfPlayers;
 	private float closeDistance = 1.0f;
+	private GameObject[] players;
 
 	
 	void Start ()
@@ -35,6 +36,108 @@ public class LevelEnd : MonoBehaviour
 		camera = GameObject.Find ("MainCamera_Front");
 		numberOfPlayers = LevelFinishedController.instance.getControllers().Count;
 		anim = this.GetComponent<Animator>();
+
+		players= GameObject.FindGameObjectsWithTag ("Player");
+		if(players[0].transform.name == "Player1")
+		{
+			player1 = GameObject.Find ("Player1");
+		}
+		else if(players[0].transform.name == "Player2")
+		{
+			player1 = GameObject.Find ("Player2");
+		}
+		else if(players[0].transform.name == "Player3")
+		{
+			player1 = GameObject.Find ("Player3");
+		}
+		else if(players[0].transform.name == "Player4")
+		{
+			player1 = GameObject.Find ("Player4");
+		}
+
+
+		print (players[0]);
+		print (players[1]);
+
+		if (numberOfPlayers == 2)
+		{
+			for(int i =0; i < players[0].transform.childCount; i++)
+			{
+				if(players[0].transform.GetChild(i).name=="PuzzleContainer")
+				{
+					piece1 = players[0].transform.GetChild(i).gameObject;
+				}
+			}
+
+			for(int i =0; i < players[1].transform.childCount; i++)
+			{
+				if(players[1].transform.GetChild(i).name=="PuzzleContainer")
+				{
+					piece2 = players[1].transform.GetChild(i).gameObject;
+				}
+			}
+		}
+		else if (numberOfPlayers == 3)
+		{
+			for(int i =0; i < players[0].transform.childCount; i++)
+			{
+				if(players[0].transform.GetChild(i).name=="PuzzleContainer")
+				{
+					piece1 = players[0].transform.GetChild(i).gameObject;
+				}
+			}
+
+			for(int i =0; i < players[1].transform.childCount; i++)
+			{
+				if(players[1].transform.GetChild(i).name=="PuzzleContainer")
+				{
+					piece2 = players[1].transform.GetChild(i).gameObject;
+				}
+			}
+
+			for(int i =0; i < players[2].transform.childCount; i++)
+			{
+				if(players[2].transform.GetChild(i).name=="PuzzleContainer")
+				{
+					piece3 = players[2].transform.GetChild(i).gameObject;
+				}
+			}
+		}
+		else
+		{
+			for(int i =0; i < players[0].transform.childCount; i++)
+			{
+				if(players[0].transform.GetChild(i).name=="PuzzleContainer")
+				{
+					piece1 = players[0].transform.GetChild(i).gameObject;
+				}
+			}
+
+			for(int i =0; i < players[1].transform.childCount; i++)
+			{
+				if(players[1].transform.GetChild(i).name=="PuzzleContainer")
+				{
+					piece2 = players[1].transform.GetChild(i).gameObject;
+				}
+			}
+
+			for(int i =0; i < players[2].transform.childCount; i++)
+			{
+				if(players[2].transform.GetChild(i).name=="PuzzleContainer")
+				{
+					piece3 = players[2].transform.GetChild(i).gameObject;
+				}
+			}
+
+			for(int i =0; i < players[3].transform.childCount; i++)
+			{
+				if(players[3].transform.GetChild(i).name=="PuzzleContainer")
+				{
+					piece4 = players[3].transform.GetChild(i).gameObject;
+				}
+			}
+			//piece4 = players[3].Find("PuzzleContainer");
+		}
 	
 	}
 
@@ -69,41 +172,24 @@ public class LevelEnd : MonoBehaviour
 		camTempPos.z = player1.transform.position.z + playerOffsetZ;
 		newCameraPosition = camTempPos;
 
-		//newCameraRotation = Quaternion.Euler(70, 20, 45);
 		newCameraRotation = Quaternion.Euler(55, 20, 20);
-		//transform.rotation = Quaternion.Euler(50, 30, 30);
 
 		if (numberOfPlayers == 2)
 		{
-			piece1 = GameObject.Find("Player1/PuzzleContainer");
 			Destroy(piece1);
-
-			piece2 = GameObject.Find("Player2/PuzzleContainer");
 			Destroy(piece2);
 		}
 		else if (numberOfPlayers == 3)
 		{
-			piece1 = GameObject.Find("Player1/PuzzleContainer");
 			Destroy(piece1);
-			
-			piece2 = GameObject.Find("Player2/PuzzleContainer");
 			Destroy(piece2);
-
-			piece3 = GameObject.Find("Player3/PuzzleContainer");
 			Destroy(piece3);
 		}
 		else
 		{
-			piece1 = GameObject.Find("Player1/PuzzleContainer");
 			Destroy(piece1);
-			
-			piece2 = GameObject.Find("Player2/PuzzleContainer");
 			Destroy(piece2);
-			
-			piece3 = GameObject.Find("Player3/PuzzleContainer");
 			Destroy(piece3);
-
-			piece4 = GameObject.Find("Player4/PuzzleContainer");
 			Destroy(piece4);
 		}
 
