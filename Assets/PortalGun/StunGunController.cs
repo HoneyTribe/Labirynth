@@ -10,12 +10,10 @@ public class StunGunController : MonoBehaviour {
 			collider.gameObject.SendMessage("Paralyse");
 			AudioController.instance.Play("020_DroneBombCollide");
 		}
-		else
+		else if (collider.name == "Ground" || collider.name == "SpaceMachine")
 		{
-			if (collider.name != "Drone")
-			{
-				Destroy (gameObject);
-			}
+			Destroy (gameObject);
 		}
+		
 	}
 }
