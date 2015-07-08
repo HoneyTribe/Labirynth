@@ -12,6 +12,7 @@ public class MenuUpdate : MonoBehaviour
 	private float y;
 	private float z;
 	private GameObject text_enter;
+	private GameObject useAnalytics;
 	private int playersInside = 0;
 	private Animator anim;
 	private static int OnHash = Animator.StringToHash ("On");
@@ -26,6 +27,7 @@ public class MenuUpdate : MonoBehaviour
 		y = transform.parent.position.y;
 		z = transform.parent.position.z;
 		text_enter = GameObject.Find ("Text_Enter");
+		useAnalytics = GameObject.Find ("GA_SystemTracker");
 		anim = GameObject.Find ("UpdatePopUp").GetComponent<Animator>();
 
 
@@ -37,6 +39,7 @@ public class MenuUpdate : MonoBehaviour
 		else
 		{
 			transform.parent.position = new Vector3(x, -10, z);
+			useAnalytics.SetActive(false);
 		}
 	}
 
@@ -60,9 +63,10 @@ public class MenuUpdate : MonoBehaviour
 				transform.parent.position = new Vector3(x, -10, z);
 			}
 		}
-		else
+		else // no internet or not home version
 		{
 			transform.parent.position = new Vector3(x, -10, z);
+			useAnalytics.SetActive(false);
 		}
 	}
 
