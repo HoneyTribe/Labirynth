@@ -22,6 +22,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 	private GameObject triggerPrefab;
 	private GameObject triggerHorizontalPrefab;
 	private GameObject triggerNewMazePrefab;
+	private GameObject triggerOneWallPrefab;
 
 	protected int extX;
 	protected int extZ;
@@ -47,6 +48,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		triggerPrefab = (GameObject) Resources.Load("Trigger");
 		triggerHorizontalPrefab = (GameObject) Resources.Load("TriggerHorizontal");
 		triggerNewMazePrefab = (GameObject) Resources.Load("TriggerNewMaze");
+		triggerOneWallPrefab = (GameObject) Resources.Load("TriggerOneWall");
 	}
 
 	public void init()
@@ -164,6 +166,10 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 				{
 					createDecoy (i, j);
 				}
+				if (grid[i,j] == (int) TileType.TRIGGERONEWALL)
+				{
+					createTriggerOneWall (i, j);
+				}
 			}
 		}
 	}
@@ -265,6 +271,13 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 			                                    Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
 			DeviceController.instance.setMovement(decoyMazePos);
 			LevelFinishedController.instance.setDecoyFixed (true);
+		}
+		private void createTriggerOneWall(int x, int z)
+		{
+			Vector3 triggerPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+		                                      triggerOneWallPrefab.transform.position.y,
+			                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
+		Instantiate (triggerOneWallPrefab, triggerPos, Quaternion.Euler(0, 0, 0));
 		}
 
 	public void finish()
