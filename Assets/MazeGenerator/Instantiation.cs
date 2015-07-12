@@ -213,7 +213,7 @@ public class Instantiation : MonoBehaviour {
 					                           offsetZ + planeSizeZ/2f - spaceZ * z);
 					int angle = Random.Range(0, 4) * 90;
 					GameObject obj = (GameObject)Instantiate (smallWallPrefab, pos, Quaternion.Euler(0, angle, 0)); 
-
+					obj.name = obj.name + labirynth.getParams(x, z);
 					if (z == sizeZ * 2) // last row
 					{
 						obj.layer = LayerMask.NameToLayer("1stRowMazeWalls");
@@ -241,6 +241,7 @@ public class Instantiation : MonoBehaviour {
 					                           wallPrefab.transform.position.y + yOffset,
 					                           zPosition);
 					GameObject obj = (GameObject) Instantiate (wallPrefab, pos, Quaternion.Euler(0, 0, 0));
+					obj.name = obj.name + labirynth.getParams(x, z);
 					obj.transform.localScale = new Vector3(scaleFactorX + compensatePillarInnerRadius, 
                                               			   wallPrefab.transform.localScale.y,
                                               			   wallPrefab.transform.localScale.z);
@@ -269,6 +270,7 @@ public class Instantiation : MonoBehaviour {
 					                           wallPrefab.transform.position.y + yOffset,
 					                           offsetZ + planeSizeZ/2f - spaceZ * z);
 					GameObject obj = (GameObject) Instantiate (wallPrefab, pos, Quaternion.Euler(0, 90, 0));
+					obj.name = obj.name + labirynth.getParams(x, z);
 					obj.transform.localScale = new Vector3(scaleFactorZ + compensatePillarInnerRadius,
 			                                               wallPrefab.transform.localScale.y,
 			                                               wallPrefab.transform.localScale.z);

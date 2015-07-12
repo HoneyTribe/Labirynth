@@ -178,7 +178,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 				}
 				if (cell[0].Equals (TileType.TRIGGERONEWALL))
 				{
-					createTriggerOneWall (i, j);
+					createTriggerOneWall (i, j, cell[1]);
 				}
 			}
 		}
@@ -282,12 +282,13 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 			DeviceController.instance.setMovement(decoyMazePos);
 			LevelFinishedController.instance.setDecoyFixed (true);
 		}
-		private void createTriggerOneWall(int x, int z)
+		private void createTriggerOneWall(int x, int z, string reference)
 		{
 			Vector3 triggerPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
 		                                      triggerOneWallPrefab.transform.position.y,
 			                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
-		Instantiate (triggerOneWallPrefab, triggerPos, Quaternion.Euler(0, 0, 0));
+			GameObject obj = (GameObject) Instantiate (triggerOneWallPrefab, triggerPos, Quaternion.Euler(0, 0, 0));
+			obj.GetComponent<TriggerOneWall> ().setReference (reference);
 		}
 
 	public void finish()

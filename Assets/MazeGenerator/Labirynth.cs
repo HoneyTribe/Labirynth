@@ -139,7 +139,7 @@ public class Labirynth
 	public string getParams(int x, int y)
 	{
 		string[] cell = maze [x, y].Split ('-');
-		return cell.Length > 0 ? cell[1] : null;
+		return cell.Length > 1 ? cell[1] : "";
 	}
 
 	public List<KeyPosition> getKeys()
