@@ -4,9 +4,17 @@ using System.Collections;
 public class DroneController : MonoBehaviour {
 
 	public static DroneController instance;
-	private const float stability = 1.2f;
+	private const float stability = 0.6f;
 	private const float speed = 2.0f;
-	private const float retractingSpeed = 40f;
+	private const float speed2 = 10.0f;
+	private const float velocity = 400.0f; 
+	private const float rotateSpeed = 40.0f;
+	private const float hoverVerticalSpeed = 0.05f;
+	private const float drag = 0.0f;
+	private const float deceloration = 40.0f;
+	private const float retractingSpeed = 45f;
+	private const float stunBombSpeed = 12.0f;
+	private const float teleportSpeed = 12.0f;
 
 	public GameObject portalPrefab;
 	public GameObject stunGunPrefab;
@@ -52,14 +60,14 @@ public class DroneController : MonoBehaviour {
 		                                               0,
 		                                               rigidbody.transform.eulerAngles.z);
 		rigidbody.transform.position = new Vector3(transform.position.x,
-		                                           originalPosition.y + (Mathf.Sin(11 * Time.time) + Mathf.Cos(15 * Time.time)) * 0.07f,
+		                                           originalPosition.y + (Mathf.Sin(11 * Time.time) + Mathf.Cos(15 * Time.time)) * hoverVerticalSpeed,
 		                                           transform.position.z);
 
 		float s = speed;
 		if ((ClampAngle(transform.eulerAngles.x, -20, 20) != transform.eulerAngles.x) ||
 		    (ClampAngle(transform.eulerAngles.z, -20, 20) != transform.eulerAngles.z))
 		{
-			s = 10;
+			s = speed2;
 			//Debug.Log (transform.eulerAngles.x);
 			//Debug.Log (transform.eulerAngles.z);
 		}
@@ -108,20 +116,20 @@ public class DroneController : MonoBehaviour {
 	{
 		if (move == Vector3.zero)
 		{
-			rigidbody.drag = 20.0f;
+			rigidbody.drag = deceloration;
 		}
 		else
 		{
-			rigidbody.drag = 0.5f;
-			rigidbody.AddForce (move * Time.deltaTime * 450);
+			rigidbody.drag = drag;
+			rigidbody.AddForce (move * Time.deltaTime * velocity);
 			if (move.x != 0)
 			{
-				transform.Rotate(0,0,-move.x * Time.deltaTime * 25);
+				transform.Rotate(0,0,-move.x * Time.deltaTime * rotateSpeed);
 			}
 
 			if (move.z != 0)
 			{
-				transform.Rotate(move.z * Time.deltaTime * 25,0,0);
+				transform.Rotate(move.z * Time.deltaTime * rotateSpeed,0,0);
 			}
 		}
 	}
@@ -142,7 +150,7 @@ public class DroneController : MonoBehaviour {
 						                           transform.position.z);
 						GameObject portal = (GameObject) Instantiate (portalPrefab, pos, Quaternion.Euler(0, 0, 0));
 						PortalController portalController = portal.GetComponent<PortalController>();
-						portal.rigidbody.velocity = -transform.up * 10;
+						portal.rigidbody.velocity = -transform.up * teleportSpeed;
 						AudioController.instance.Play("029_DroneTele");
 
 						// check groundController
@@ -203,7 +211,7 @@ public class DroneController : MonoBehaviour {
 				                           transform.position.y - 1,
 				                           transform.position.z);
 				GameObject stunGun = (GameObject) Instantiate (stunGunPrefab, pos, Quaternion.Euler(0, 0, 0));
-				stunGun.rigidbody.velocity = -transform.up * 10; 
+				stunGun.rigidbody.velocity = -transform.up * stunBombSpeed; 
 
 				DronePowerController.instance.usingStunGun();
 				AudioController.instance.Play("019_DroneBomb");
