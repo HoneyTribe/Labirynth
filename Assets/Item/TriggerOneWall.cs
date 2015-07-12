@@ -10,6 +10,15 @@ public class TriggerOneWall : MonoBehaviour
 	private float time;
 	private GameObject wall;
 	private float earthquakeTimer;
+	private GameObject smokeExplode;
+	private bool hasSpawned = false;
+	private Vector3 smokeTempPos;
+	private float smokeYOffset = 1.0f;
+
+	void Start()
+	{
+		smokeExplode = (GameObject) Resources.Load("SmokeExplode");
+	}
 
 	public void setReference(string reference)
 	{
@@ -42,6 +51,11 @@ public class TriggerOneWall : MonoBehaviour
 			time += Time.deltaTime;
 
 			earthquakeTimer += Time.deltaTime;
+
+			if (hasSpawned == false)
+			{
+				spawn();
+			}
 			
 			if (earthquakeTimer > 0.7f)
 			{
@@ -57,5 +71,18 @@ public class TriggerOneWall : MonoBehaviour
 				Destroy(wall);
 			}
 		}
+	}
+
+	private void spawn()
+	{
+		hasSpawned = true;
+		smokeExplode = (GameObject) Instantiate(smokeExplode, wall.transform.position, wall.transform.rotation);
+		//smokeExplode.transform.parent = gameObject.transform;
+		//smokeExplode.transform.position = wall.transform.position;
+		smokeTempPos = wall.transform.position;
+		smokeTempPos.y += smokeYOffset;
+		smokeExplode.transform.position = smokeTempPos;
+		smokeExplode.transform.rotation = wall.transform.rotation;
+
 	}
 }
