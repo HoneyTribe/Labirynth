@@ -31,23 +31,23 @@ namespace AssemblyCSharp
 			levels2.Add(new Level(new MachineCreator(false, false, false, false, false, false),
 			    2, new List<MonsterTemplate>{},0,0,6,6, null, null));
 
-			//2 block tutorial
-			levels2.Add(new Level(new MachineCreator(false, false, false, false, false, false),
-			    47,new List<MonsterTemplate>{},0,0,9,9, null, "BlockTut"));
+			//2 switch tut
+			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
+			    10,new List<MonsterTemplate>{},0,0,7,7, null, "TriggerTut"));
 			
 			//3 zap tutorial
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			     35,new List<MonsterTemplate>{},0,0,9,9, null, "ZapWithBlock"));
+			     35,new List<MonsterTemplate>{},0,0,9,9, null, "ZapWithSwitch"));
 
-			//4 decoy tut + can die
+			//4 decoy tut with switches
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			     45,new List<MonsterTemplate>{},0,0,9,9, null, "DecoyAndZap"));
+			     8,new List<MonsterTemplate>{},0,0,9,9, null, "FourSwitches"));
 
 			//5 decoy + can die
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			     3,new List<MonsterTemplate>{},0,0,8,8, null, "DecoyPuzzle"));
 			
-			//6 mummy + block
+			//6 mummy + switch
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
 			    6,new List<MonsterTemplate>{},0,0,8,8, null, "FirstMummyChase"));
 			
@@ -85,9 +85,9 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Standard", 4.5f)
 			},3,5,8,8, "EnableTrapEnding", "NoWalls"));
 
-			//12 switch tut
-			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			    10,new List<MonsterTemplate>{},0,0,7,7, null, "TriggerTut"));
+			//12 block tutorial
+			levels2.Add(new Level(new MachineCreator(false, false, false, false, false, false),
+			  47,new List<MonsterTemplate>{},0,0,9,9, null, "BlockTut"));
 
 			//13 switch 2
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -135,7 +135,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 3.0f)
 			},5,8,8,8, "EnableNewMazeEnding", null));
 
-			// 20 jump box, hard puzzle
+			// 20 jump box, hard puzzle + blocks
 			levels2.Add(new Level(new MachineCreator(true, true, false, false, false, false),
 			    17,new List<MonsterTemplate>{
 				new MonsterTemplate("Flying", 4.0f),
@@ -255,18 +255,18 @@ namespace AssemblyCSharp
 			//1 light
 			levels3.Add(new Level(new MachineCreator(false, false, false, false, false, false),
 			    3, new List<MonsterTemplate>{},0,0,6,6, null, null));
-
-			//2 block tutorial
-			levels3.Add(new Level(new MachineCreator(false, false, false, false, false, false),
-				47,new List<MonsterTemplate>{},0,0,9,9, null, "BlockTut"));
 			
+			//2 switch tut
+			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
+			    10,new List<MonsterTemplate>{},0,0,7,7, null, "TriggerTut"));
+
 			//3 zap tutorial
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			    35,new List<MonsterTemplate>{},0,0,9,9, null, "ZapWithBlock"));
+			    35,new List<MonsterTemplate>{},0,0,9,9, null, "ZapWithSwitch"));
 			
-			//4 decoy tut + can die
+			//4 decoy tut with switches
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			   45,new List<MonsterTemplate>{},0,0,9,9, null, "DecoyAndZap"));
+			    8,new List<MonsterTemplate>{},0,0,9,9, null, "FourSwitches"));
 			
 			//5 decoy + can die
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -313,9 +313,9 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 3.0f)
 			},2,4,8,8, "EnableTrapEnding", "NoWalls"));
 
-			//12 switch tut
-			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			    10,new List<MonsterTemplate>{},0,0,7,7, null, "TriggerTut"));
+			//2 block tutorial
+			levels3.Add(new Level(new MachineCreator(false, false, false, false, false, false),
+			  	47,new List<MonsterTemplate>{},0,0,9,9, null, "BlockTut"));
 			
 			//13 switch 2
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -500,17 +500,17 @@ namespace AssemblyCSharp
 			levels4.Add(new Level(new MachineCreator(false, false, false, false, false, false),
 				4, new List<MonsterTemplate>{},0,0,6,6, null, null));
 
-			//2 block tutorial
-			levels4.Add(new Level(new MachineCreator(false, false, false, false, false, false),
-				47,new List<MonsterTemplate>{},0,0,9,9, null, "BlockTut"));
-			
+			//2 switch tut
+			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
+			    10,new List<MonsterTemplate>{},0,0,7,7, null, "TriggerTut"));
+
 			//3 zap tutorial
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-				35,new List<MonsterTemplate>{},0,0,9,9, null, "ZapWithBlock"));
+				35,new List<MonsterTemplate>{},0,0,9,9, null, "ZapWithSwitch"));
 			
-			//4 decoy tut + can die
+			//4 decoy tut with switches
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			    45,new List<MonsterTemplate>{},0,0,9,9, null, "DecoyAndZap"));
+			     8,new List<MonsterTemplate>{},0,0,9,9, null, "FourSwitches"));
 			
 			//5 decoy + can die
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -560,9 +560,9 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 3.0f)
 			},2,4,8,8, "EnableTrapEnding", "NoWalls"));
 
-			//12 switch tut
-			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-				10,new List<MonsterTemplate>{},0,0,7,7, null, "TriggerTut"));
+			//12 block tutorial
+			levels4.Add(new Level(new MachineCreator(false, false, false, false, false, false),
+			   47,new List<MonsterTemplate>{},0,0,9,9, null, "BlockTut"));
 			
 			//13 switch 2
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),

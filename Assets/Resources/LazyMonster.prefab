@@ -1211,11 +1211,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canBeZapped: 0
   savedCanBeZapped: 0
-  normalShader: {fileID: 0}
-  toonShader: {fileID: 0}
-  ghostShader: {fileID: 0}
-  rend: {fileID: 0}
-  myName: 
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1

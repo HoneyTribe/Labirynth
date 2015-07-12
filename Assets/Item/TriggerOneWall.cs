@@ -9,6 +9,7 @@ public class TriggerOneWall : MonoBehaviour
 	private bool endingEnabled = false;
 	private float time;
 	private GameObject wall;
+	private float earthquakeTimer;
 
 	public void setReference(string reference)
 	{
@@ -39,6 +40,16 @@ public class TriggerOneWall : MonoBehaviour
 			
 			float step = -Time.deltaTime * 2.5f / interval;
 			time += Time.deltaTime;
+
+			earthquakeTimer += Time.deltaTime;
+			
+			if (earthquakeTimer > 0.7f)
+			{
+				GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
+				AudioController.instance.Play("033_Earthquake");
+				earthquakeTimer = 0;
+			}
+
 			wall.transform.Translate (0, step, 0);
 
 			if (time > interval)			
