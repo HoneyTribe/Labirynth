@@ -1,18 +1,18 @@
 using System;
 
-public enum TileType
+public static class TileType
 {
-	WALL = 0,
-	MAZE = 1,
-	GRID = 2,
-	BLOCK = 3,
-	MONSTER = 4,
-	KEY = 5,
-	LAZYMONSTER = 6,
-	TRIGGER = 7,
-	TRIGGERHORIZONTAL = 8,
-	TRIGGERNEWMAZE = 9,
-	DECOY = 10,
-	TRIGGERONEWALL = 11
+	public static string WALL = "0";
+	public static string MAZE = "1";
+	public static string GRID = "2";
+	public static string BLOCK = "3";
+	public static string MONSTER = "4";
+	public static string KEY = "5";
+	public static string LAZYMONSTER = "6";
+	public static string TRIGGER = "7";
+	public static string TRIGGERHORIZONTAL = "8";
+	public static string TRIGGERNEWMAZE = "9";
+	public static string DECOY = "10";
+	public static string TRIGGERONEWALL = "11";
 }
 

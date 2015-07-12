@@ -66,19 +66,19 @@ public class First : ScriptableObject, Puzzle
 		redButtonPrefab = (GameObject) Resources.Load("ControlPad_alert/Red button");
 	}
 
-	public int[,] getGrid()
+	public string[,] getGrid()
 	{
-		int [,] grid = new int[mazeSizeX * 2 + 1, mazeSizeZ * 2 + 1];
+		string [,] grid = new string[mazeSizeX * 2 + 1, mazeSizeZ * 2 + 1];
 		for (int i=(int)position.x; i < position.x + position.width; i++)
 		{
 			for (int j=(int)position.y; j < position.y + position.height; j++)
 			{
-				grid[i,j] = (int) TileType.GRID;
+				grid[i,j] = TileType.GRID;
 			}
 		}
-		grid [(int) entrance.getWallEntrance().x, (int) entrance.getWallEntrance().y] = (int) TileType.MAZE; // OR GRID
-		grid [(int) entrance.getBlockingWall().x, (int) entrance.getBlockingWall().y] = (int) TileType.WALL;
-		grid [(int) entrance.getBlockingPillar().x, (int) entrance.getBlockingPillar().y] = (int) TileType.WALL;
+		grid [(int) entrance.getWallEntrance().x, (int) entrance.getWallEntrance().y] = TileType.MAZE; // OR GRID
+		grid [(int) entrance.getBlockingWall().x, (int) entrance.getBlockingWall().y] = TileType.WALL;
+		grid [(int) entrance.getBlockingPillar().x, (int) entrance.getBlockingPillar().y] = TileType.WALL;
 
 		return grid;
 	}

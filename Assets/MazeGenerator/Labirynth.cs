@@ -3,18 +3,26 @@ using System.Collections.Generic;
 
 public class Labirynth
 {
-	int[,] maze;
+	string[,] maze;
 	Vector2 start;
 	int sizeX;
 	int sizeY;
 
 	List<KeyPosition> keys = new List<KeyPosition> ();
 
-	public Labirynth (int sizeX, int sizeY, int[,] grid)
+	public Labirynth (int sizeX, int sizeY, string[,] grid)
 	{
 		this.sizeX = sizeX;
 		this.sizeY = sizeY;
-		this.maze = new int[sizeX * 2 + 1, sizeY * 2 + 1];
+		this.maze = new string[sizeX * 2 + 1, sizeY * 2 + 1];
+		// initialise
+		for (int y = 0; y < sizeY * 2 + 1; y++)
+		{
+			for (int x = 0; x < sizeX * 2 + 1; x++)
+			{
+				maze[x,y] = TileType.WALL;
+			}
+		}
 		if (grid != null)
 		{
 			this.maze = grid;
@@ -38,7 +46,7 @@ public class Labirynth
 
 	public void makeVisited(Vector2 pos)
 	{
-		this.maze[(int) pos.x, (int) pos.y] = (int) TileType.MAZE;
+		this.maze[(int) pos.x, (int) pos.y] = TileType.MAZE;
 	}
 
 	public Move convertToMove(int input)
@@ -69,25 +77,7 @@ public class Labirynth
 			Move move = convertToMove(i);
 			if  ((pos.x + move.getNewPos().x > 0) && (pos.x + move.getNewPos().x < sizeX * 2) &&
 			     (pos.y + move.getNewPos().y > 0) && (pos.y + move.getNewPos().y < sizeY * 2) &&
-			     (maze[(int) (pos.x + move.getNewPos().x), (int) (pos.y + move.getNewPos().y)] == (int) TileType.WALL))
-			{
-				options.Add(move);
-			}
-		}
-		
-		return options;
-	}
-
-	public List<Move> findOptionsToMove(int[,] m, Vector2 pos)
-	{
-		List<Move> options = new List<Move>();
-		
-		for (int i = 0; i < 4; i++)
-		{
-			Move move = convertToMove(i);
-			if  ((pos.x + move.getNewPos().x > 0) && (pos.x + move.getNewPos().x < sizeX * 2) &&
-			     (pos.y + move.getNewPos().y > 0) && (pos.y + move.getNewPos().y < sizeY * 2) &&
-	    		 (m[(int) (pos.x + move.getWall().x), (int) (pos.y + move.getWall().y)] == (int) TileType.MAZE))
+			     (getWalls((int) (pos.x + move.getNewPos().x), (int) (pos.y + move.getNewPos().y)).Equals(TileType.WALL)))
 			{
 				options.Add(move);
 			}
@@ -102,7 +92,7 @@ public class Labirynth
 		{
 			for (int x = 1; x < sizeX * 2 + 1; x += 2)
 			{
-				if (maze[x, y] == (int) TileType.MAZE)
+				if (getWalls (x, y).Equals (TileType.MAZE))
 				{
 					Vector2 temp = new Vector2(x, y);
 					if (findOptions(temp).Count != 0)
@@ -140,9 +130,16 @@ public class Labirynth
 		keys.Add(new KeyPosition(curr, (int) Vector2.Distance(curr, start)));
 	}
 
-	public int getWalls(int x, int y)
+	public string getWalls(int x, int y)
 	{
-		return maze[x, y];
+		string[] cell = maze [x, y].Split ('-');
+		return cell[0];
+	}
+
+	public string getParams(int x, int y)
+	{
+		string[] cell = maze [x, y].Split ('-');
+		return cell.Length > 0 ? cell[1] : null;
 	}
 
 	public List<KeyPosition> getKeys()
@@ -172,7 +169,7 @@ public class Labirynth
 		return start;
 	}
 
-	public void print(int[,] m)
+	public void print(string[,] m)
 	{
 		string line = "";
 		for (int y = 0; y < sizeY * 2 + 1; y++)					{

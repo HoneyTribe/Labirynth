@@ -30,9 +30,9 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 
 	protected int templateSizeX;
 	protected int templateSizeZ;
-	protected int[,] template;
+	protected string[,] template;
 
-	protected int[,] extededTemplate; 
+	protected string[,] extededTemplate; 
 
 	public PuzzleTemplate()
 	{
@@ -60,9 +60,18 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		createExtendedTemplate ();
 	}
 
-	public int[,] getGrid()
+	public string[,] getGrid()
 	{
-		int [,] grid = new int[mazeSizeX * 2 + 1, mazeSizeZ * 2 + 1];
+		string [,] grid = new string[mazeSizeX * 2 + 1, mazeSizeZ * 2 + 1];
+		// initialise
+		for (int y = 0; y < mazeSizeZ * 2 + 1; y++)
+		{
+			for (int x = 0; x < mazeSizeX * 2 + 1; x++)
+			{
+				grid[x,y] = TileType.WALL;
+			}
+		}
+
 		for (int i=(int)position.x; i < position.x + position.width; i++)
 		{
 			for (int j=(int)position.y; j < position.y + position.height; j++)
@@ -120,7 +129,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 
 	public void create()
 	{
-		int[,] grid = getGrid ();
+		string[,] grid = getGrid ();
 		int monsterNum = 0;
 		int keyNum = LevelFinishedController.instance.getNumberOfKeys ();
 
@@ -128,21 +137,22 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		{
 			for (int i=0; i < mazeSizeZ * 2; i++)
 			{
-				if (grid[i,j] == (int) TileType.BLOCK)
+				string[] cell = grid [i, j].Split ('-');
+				if (cell[0].Equals (TileType.BLOCK))
 				{
 					createBlock (i, j);
 				}
-				if (grid[i,j] == (int) TileType.MONSTER)
+				if (cell[0].Equals (TileType.MONSTER))
 				{
 					createMonster (i, j, monsterNum);
 					monsterNum ++;
 				}
-				if (grid[i,j] == (int) TileType.LAZYMONSTER)
+				if (cell[0].Equals (TileType.LAZYMONSTER))
 				{
 					createLazyMonster (i, j, monsterNum);
 					monsterNum ++;
 				}
-				if (grid[i,j] == (int) TileType.KEY)
+				if (cell[0].Equals (TileType.KEY))
 				{
 					if (keyNum != 0)
 					{
@@ -150,23 +160,23 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 						keyNum --;
 					}
 				}
-				if (grid[i,j] == (int) TileType.TRIGGER)
+				if (cell[0].Equals (TileType.TRIGGER))
 				{
 					createTrigger (i, j);
 				}
-				if (grid[i,j] == (int) TileType.TRIGGERHORIZONTAL)
+				if (cell[0].Equals (TileType.TRIGGERHORIZONTAL))
 				{
 					createTriggerHorizontal (i, j);
 				}
-				if (grid[i,j] == (int) TileType.TRIGGERNEWMAZE)
+				if (cell[0].Equals (TileType.TRIGGERNEWMAZE))
 				{
 					createTriggerNewMaze (i, j);
 				}
-				if (grid[i,j] == (int) TileType.DECOY)
+				if (cell[0].Equals (TileType.DECOY))
 				{
 					createDecoy (i, j);
 				}
-				if (grid[i,j] == (int) TileType.TRIGGERONEWALL)
+				if (cell[0].Equals (TileType.TRIGGERONEWALL))
 				{
 					createTriggerOneWall (i, j);
 				}

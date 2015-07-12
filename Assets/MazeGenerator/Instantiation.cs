@@ -38,7 +38,7 @@ public class Instantiation : MonoBehaviour {
 		spaceX = planeSizeX / (sizeX * 2f);
 		spaceZ = planeSizeZ / (sizeZ * 2f);
 
-		int[,] grid = null;
+		string[,] grid = null;
 		Puzzle puzzle = null;
 		if (LevelFinishedController.instance.getPuzzleName() != null)
 		{
@@ -206,7 +206,7 @@ public class Instantiation : MonoBehaviour {
 		{
 			for (int x=2; x<=sizeX * 2 - 2; x+=2)  // don't draw edges
 			{
-				if (labirynth.getWalls(x, z) == (int) TileType.WALL)
+				if (labirynth.getWalls(x, z).Equals(TileType.WALL))
 				{
 					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 					                           smallWallPrefab.transform.position.y + yOffset,
@@ -234,7 +234,7 @@ public class Instantiation : MonoBehaviour {
 		{
 			for (int x=1; x<=sizeX * 2 - 1; x+=2)
 			{
-				if (labirynth.getWalls(x, z) == (int) TileType.WALL)
+				if (labirynth.getWalls(x, z).Equals(TileType.WALL))
 				{
 					float zPosition = offsetZ + planeSizeZ/2f - spaceZ * z;
 					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
@@ -263,7 +263,7 @@ public class Instantiation : MonoBehaviour {
 		{
 			for (int x=2; x<=sizeX * 2 -2 ; x+=2)  // don't draw edges
 			{
-				if (labirynth.getWalls(x, z) == (int) TileType.WALL)		
+				if (labirynth.getWalls(x, z).Equals (TileType.WALL))		
 				{
 					Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 					                           wallPrefab.transform.position.y + yOffset,
@@ -372,7 +372,7 @@ public class Instantiation : MonoBehaviour {
 		int z = sizeZ * 2;
 		for (int x=1; x<=sizeX * 2 - 1; x+=2)
 		{
-			if (labirynth.getWalls(x, z) == (int) TileType.MAZE)
+			if (labirynth.getWalls(x, z).Equals (TileType.MAZE))
 			{
 				float zPosition = offsetZ + planeSizeZ/2f - spaceZ * z;
 				Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
@@ -389,7 +389,7 @@ public class Instantiation : MonoBehaviour {
 
 		for (int x=2; x<=sizeX * 2 - 2; x+=2)  // don't draw edges
 		{
-			if (labirynth.getWalls(x, z) == (int) TileType.MAZE)
+			if (labirynth.getWalls(x, z).Equals (TileType.MAZE))
 			{
 				Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 				                           smallWallPrefab.transform.position.y - 2.5f,

@@ -15,15 +15,15 @@ public class DecoyPuzzle : PuzzleTemplate
 		
 		templateSizeX = 5;
 		templateSizeZ = 7;
-		template = new int[7, 5] {{5,0,5,0,5},
-								  {2,0,2,0,2},
-								  {6,0,6,0,6},
-								  {2,0,2,0,2},
-								  {2,0,2,0,2},
-								  {2,0,2,0,2},
-								  {2,2,2,2,0}};
+		template = new string[7, 5] {{"5","0","5","0","5"},
+								  {"2","0","2","0","2"},
+								  {"6","0","6","0","6"},
+								  {"2","0","2","0","2"},
+								  {"2","0","2","0","2"},
+								  {"2","0","2","0","2"},
+								  {"2","2","2","2","0"}};
 
-		extededTemplate = new int[sizeZ * 2 -1, sizeX * 2 -1]; 
+		extededTemplate = new string[sizeZ * 2 -1, sizeX * 2 -1]; 
 		init ();
 	}
 }
