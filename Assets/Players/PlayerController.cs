@@ -307,6 +307,9 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	{
 		if (paralysed)
 		{
+			idle = true;
+			Idle();
+
 			bool monsterAround = false;
 			GameObject[] monsters = GameObject.FindGameObjectsWithTag ("Monster");
 			foreach (GameObject monster in monsters)

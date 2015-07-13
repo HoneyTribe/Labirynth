@@ -32187,14 +32187,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deadPlayersInstructions: 0
   firstLightLevel: 0
-  firstBlockLevel: 1
+  firstBlockLevel: 11
   firstZapLevel: 2
   firstDecoyLevel: 3
   secondDecoyLevel: 4
   firstDoorLevel: 6
   firstGhostLevel: 7
   firstCraneLevel: 8
-  firstTriggerLevel: 11
+  firstTriggerLevel: 1
   firstDroneLevel: 14
   firstJumpBoxLevel: 17
   firstDroneBombLevel: 23
