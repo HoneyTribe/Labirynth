@@ -9503,6 +9503,14 @@ Prefab:
       propertyPath: m_Layer
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 182baccaa18c9114883bd896754b5498, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 182baccaa18c9114883bd896754b5498, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 182baccaa18c9114883bd896754b5498, type: 3}
   m_RootGameObject: {fileID: 2051413937}
@@ -9843,7 +9851,7 @@ Renderer:
     type: 3}
   m_PrefabInternal: {fileID: 715899300}
   m_GameObject: {fileID: 434459854}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -12227,7 +12235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9604083ffd93874883871d57531dadb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0300000004000000
+  level: 04000000
 --- !u!23 &623227145
 Renderer:
   m_ObjectHideFlags: 0
@@ -13991,7 +13999,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: eedd5f08831c2884582e220c65720e65, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: eedd5f08831c2884582e220c65720e65, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -37860,7 +37868,7 @@ Renderer:
     type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1970224936}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -37890,7 +37898,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1970224936}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: bf6858e4f978c2646afae416b31835ba, type: 2}
   m_CullingMode: 0
@@ -38151,7 +38159,7 @@ GameObject:
   - 33: {fileID: 1985592566}
   - 23: {fileID: 1985592565}
   - 114: {fileID: 1985592564}
-  m_Layer: 19
+  m_Layer: 28
   m_Name: DecoyLinePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38205,7 +38213,7 @@ Transform:
   m_GameObject: {fileID: 1985592563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .75, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3514930}
 --- !u!1 &1995111290
@@ -38643,7 +38651,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043507661}
-  m_LocalRotation: {x: -.565562844, y: .510542572, z: .332734883, w: .555673122}
+  m_LocalRotation: {x: -.565562785, y: .510542512, z: .332734853, w: .555673063}
   m_LocalPosition: {x: -1.44359303, y: -17.7804337, z: -18.2103996}
   m_LocalScale: {x: 8.13866043, y: .100000009, z: 10}
   m_Children: []
@@ -38859,13 +38867,14 @@ GameObject:
   m_Component:
   - 4: {fileID: 2051413938}
   - 95: {fileID: 2051413939}
+  - 23: {fileID: 2051413940}
   m_Layer: 19
   m_Name: Decoy_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2051413938
 Transform:
   m_ObjectHideFlags: 0
@@ -38886,13 +38895,34 @@ Animator:
     type: 3}
   m_PrefabInternal: {fileID: 416287928}
   m_GameObject: {fileID: 2051413937}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: 182baccaa18c9114883bd896754b5498, type: 3}
   m_Controller: {fileID: 9100000, guid: 5dbe3dc7ee0db224592ad8b4152ec414, type: 2}
   m_CullingMode: 0
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!23 &2051413940
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2051413937}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!1 &2052604651
 GameObject:
   m_ObjectHideFlags: 0

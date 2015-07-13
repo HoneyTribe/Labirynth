@@ -59,7 +59,7 @@ Material:
       data:
         first:
           name: _Strength
-        second: 1.07142842
+        second: 1.5
     m_Colors:
       data:
         first:
@@ -67,9 +67,9 @@ Material:
         second: {r: .786764741, g: .786764741, b: .786764741, a: 1}
       data:
         first:
-          name: _Emission
-        second: {r: 0, g: 0, b: 0, a: 0}
-      data:
-        first:
           name: _SpecColor
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
