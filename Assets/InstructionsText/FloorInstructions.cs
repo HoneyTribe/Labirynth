@@ -445,7 +445,7 @@ public class FloorInstructions : MonoBehaviour
 		{
 			instructions.text = "Walk into          the light";
 			arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
-			controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -6f);
+			controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, 2f);
 		}
 		// 2nd decoy
 		if (LevelFinishedController.instance.getLevel() == secondDecoyLevel)
