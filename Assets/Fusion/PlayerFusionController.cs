@@ -4,11 +4,22 @@ using System.Collections.Generic;
 
 public class PlayerFusionController : MonoBehaviour {
 
+	private static float speed = 10;
+
 	private GameObject puzzlePiece;
+	private GameObject[] players;
+	private bool moveTocenter;
+	private Vector3 center;
+	private Vector3 initialPosition;
+	private Transform parentTransform;
+	private float distance;
+	private float time;
 
 	void Start()
 	{
 		GameObject puzzlePrefab = null;
+		initialPosition = transform.localPosition;
+		parentTransform = transform.parent;
 		int id = int.Parse(gameObject.transform.parent.name.Substring (6));
 		int numberOfPlayers = LevelFinishedController.instance.getControllers().Count;
 		if (numberOfPlayers == 2) 
@@ -53,8 +64,57 @@ public class PlayerFusionController : MonoBehaviour {
 		}
 	}
 
-	void ShowPuzzle()
+	void Update()
+	{
+		if (moveTocenter)
+		{
+			if (Vector3.Distance(transform.position, center) > 0.002)
+			{
+				transform.position = Vector3.Lerp (
+					transform.position, center, (Time.time - time) * speed / distance);
+			}
+			else
+			{
+				moveTocenter = false;
+				transform.parent = parentTransform;
+				transform.localPosition = initialPosition;
+			}
+		}
+	}
+
+
+	void Activate()
+	{
+		players = GameObject.FindGameObjectsWithTag ("Player");
+		float minX = 20;
+		float minZ = 20;
+		float maxX = -20;
+		float maxZ = -20;
+		foreach (GameObject player in players)
+		{
+			if (player.transform.position.x < minX)
+				minX = player.transform.position.x;
+			if (player.transform.position.x > maxX)
+				maxX = player.transform.position.x;
+			if (player.transform.position.z < minZ)
+				minZ = player.transform.position.z;
+			if (player.transform.position.z > maxZ)
+				maxZ = player.transform.position.z;
+		}
+		center = new Vector3 ((maxX + minX)/2, initialPosition.y, (maxZ + minZ)/2);
+		distance = Vector3.Distance(transform.position, center);
+		time = Time.time;
+		transform.parent = null;
+		moveTocenter = true;
+	}
+
+	IEnumerator ShowPuzzle()
 	{
 		puzzlePiece.SetActive(true);
+		while (true)
+		{
+			Activate ();
+			yield return new WaitForSeconds(5);
+		}
 	}
 }
