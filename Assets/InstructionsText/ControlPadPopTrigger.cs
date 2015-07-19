@@ -11,9 +11,7 @@ public class ControlPadPopTrigger : MonoBehaviour
 	private static int fadeOutHash = Animator.StringToHash ("FadeOut");
 	private Animator anim;
 	private Animator anim2;
-	//private Vector3 startPos;
-	//private Vector3 endPos;
-	//private bool goUp;
+	private bool startTrigger = false;
 	
 	void Start()
 	{
@@ -46,27 +44,21 @@ public class ControlPadPopTrigger : MonoBehaviour
 			anim2.SetTrigger(fadeInHash);
 		}
 	}
-	/*
-	void Update()
+
+	private void FadeInTrigger()
 	{
-		if(transform.position.y <= startPos.y)
+		if(startTrigger == false)
 		{
-			goUp = true;
-		}
-
-		if(transform.position.y >= endPos.y)
-		{
-			goUp = false;
-		}
-
-		if(goUp == true)
-		{
-			transform.position = Vector3.Lerp(transform.position, endPos, Time.deltaTime);
-		}
-		else
-		{
-			transform.position = Vector3.Lerp(transform.position, startPos , Time.deltaTime);
+			startTrigger = true;
+			anim2.SetTrigger(fadeInHash);
 		}
 	}
-	*/
+
+	void Update()
+	{
+		if(IntroductionController.instance.isPlayingIntroduction()== false && startTrigger == false)
+		{
+			FadeInTrigger();
+		}
+	}
 }
