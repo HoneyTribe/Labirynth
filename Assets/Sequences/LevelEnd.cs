@@ -23,7 +23,6 @@ public class LevelEnd : MonoBehaviour
 	private GameObject piece2;
 	private GameObject piece3;
 	private GameObject piece4;
-	private int numberOfPlayers;
 	private float closeDistance = 1.0f;
 	private GameObject[] players;
 
@@ -37,7 +36,6 @@ public class LevelEnd : MonoBehaviour
 
 		player1 = GameObject.Find ("Player1");
 		camera = GameObject.Find ("MainCamera_Front");
-		numberOfPlayers = LevelFinishedController.instance.getControllers().Count;
 		anim = this.GetComponent<Animator>();
 
 		controlTutContainer = GameObject.Find ("ControlTutContainer");
@@ -59,92 +57,7 @@ public class LevelEnd : MonoBehaviour
 		else if(players[0].transform.name == "Player4")
 		{
 			player1 = GameObject.Find ("Player4");
-		}
-
-
-		print (players[0]);
-		print (players[1]);
-
-		if (numberOfPlayers == 2)
-		{
-			for(int i =0; i < players[0].transform.childCount; i++)
-			{
-				if(players[0].transform.GetChild(i).name=="PuzzleContainer")
-				{
-					piece1 = players[0].transform.GetChild(i).gameObject;
-				}
-			}
-
-			for(int i =0; i < players[1].transform.childCount; i++)
-			{
-				if(players[1].transform.GetChild(i).name=="PuzzleContainer")
-				{
-					piece2 = players[1].transform.GetChild(i).gameObject;
-				}
-			}
-		}
-		else if (numberOfPlayers == 3)
-		{
-			for(int i =0; i < players[0].transform.childCount; i++)
-			{
-				if(players[0].transform.GetChild(i).name=="PuzzleContainer")
-				{
-					piece1 = players[0].transform.GetChild(i).gameObject;
-				}
-			}
-
-			for(int i =0; i < players[1].transform.childCount; i++)
-			{
-				if(players[1].transform.GetChild(i).name=="PuzzleContainer")
-				{
-					piece2 = players[1].transform.GetChild(i).gameObject;
-				}
-			}
-
-			for(int i =0; i < players[2].transform.childCount; i++)
-			{
-				if(players[2].transform.GetChild(i).name=="PuzzleContainer")
-				{
-					piece3 = players[2].transform.GetChild(i).gameObject;
-				}
-			}
-		}
-		else
-		{
-			for(int i =0; i < players[0].transform.childCount; i++)
-			{
-				if(players[0].transform.GetChild(i).name=="PuzzleContainer")
-				{
-					piece1 = players[0].transform.GetChild(i).gameObject;
-				}
-			}
-
-			for(int i =0; i < players[1].transform.childCount; i++)
-			{
-				if(players[1].transform.GetChild(i).name=="PuzzleContainer")
-				{
-					piece2 = players[1].transform.GetChild(i).gameObject;
-				}
-			}
-
-			for(int i =0; i < players[2].transform.childCount; i++)
-			{
-				if(players[2].transform.GetChild(i).name=="PuzzleContainer")
-				{
-					piece3 = players[2].transform.GetChild(i).gameObject;
-				}
-			}
-
-			for(int i =0; i < players[3].transform.childCount; i++)
-			{
-				if(players[3].transform.GetChild(i).name=="PuzzleContainer")
-				{
-					piece4 = players[3].transform.GetChild(i).gameObject;
-				}
-			}
-			//piece4 = players[3].Find("PuzzleContainer");
-		}
-	
+		}	
 	}
 
 	void Update()
@@ -182,25 +95,6 @@ public class LevelEnd : MonoBehaviour
 
 		Destroy (controlTutContainer);
 		Destroy (controlTutContainer2);
-
-		if (numberOfPlayers == 2)
-		{
-			Destroy(piece1);
-			Destroy(piece2);
-		}
-		else if (numberOfPlayers == 3)
-		{
-			Destroy(piece1);
-			Destroy(piece2);
-			Destroy(piece3);
-		}
-		else
-		{
-			Destroy(piece1);
-			Destroy(piece2);
-			Destroy(piece3);
-			Destroy(piece4);
-		}
 
 		startSequence = true;
 		this.anim.enabled = true;

@@ -8,7 +8,6 @@ public class InControlManager : MonoBehaviour {
 	public static InControlManager instance;
 	private PlayerSelectionMenuController playerSelectionMenuController;
 	private int currentPlayer;
-	private GameObject text_enter;
 	private bool portalStarted;
 
 	void Start ()
@@ -51,7 +50,6 @@ public class InControlManager : MonoBehaviour {
 //		}
 
 		instance = this;
-		text_enter = GameObject.Find ("Text_Enter");
 
 		if (Application.loadedLevel == 0)
 		{
@@ -67,7 +65,7 @@ public class InControlManager : MonoBehaviour {
 		else
 		{
 			// disable not active players
-			List<int> playerIds = new List<int>(){1,2,3,4};
+			List<int> playerIds = new List<int>(){1,2,3,4,5};
 			foreach(InputController inputController in LevelFinishedController.instance.getControllers())
 			{
 				playerIds.Remove(inputController.getPlayerId());
@@ -219,19 +217,32 @@ public class InControlManager : MonoBehaviour {
 			if (portalBounds.Intersects(player.renderer.bounds))
 			{
 				usedControllers.Add(inputController);
-
-				if (usedControllers.Count < 2)
-				{
-					text_enter.GetComponentInChildren<TextMesh>().text = "At least 2 characters must enter";
-				}
 			}
 		}
-		if (usedControllers.Count > 1) // at least 2 players
-		{
-			portalStarted = true;
-			LevelFinishedController.instance.setControllers(usedControllers);
-			LevelFinishedController.instance.LevelCounter();
-			StartCoroutine(TimePortalController.instance.startTimePortal());
+		if (usedControllers.Count == 1) 
+		{	
+			return;
+			InputController playerController = usedControllers[0];
+			int deviceId = playerController.getDevice();
+			if (playerController.isKeyboard())
+			{
+				string profileName = InputManager.Devices[playerController.getDevice()].Meta.Contains ("1 player") ? "2 player" : "1 player";
+				for(int i=0 ; i < InputManager.Devices.Count; i++)
+				{
+					if (InputManager.Devices[i].Meta.Contains (profileName))
+					{
+						deviceId = i;
+						break;
+					}
+				}
+			}
+			usedControllers.Add (new InputController (deviceId, 
+			                                          playerController.isKeyboard(), 
+			                                          !playerController.isLeft(), playerSelectionMenuController, 5));
 		}
+		portalStarted = true;
+		LevelFinishedController.instance.setControllers(usedControllers);
+		LevelFinishedController.instance.LevelCounter();
+		StartCoroutine(TimePortalController.instance.startTimePortal());
 	}
 }

@@ -37,6 +37,10 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 	void Start()
 	{
+		if (gameObject.name.Equals("Player5"))
+		{
+			return;
+		}
 		speed *= LevelFinishedController.instance.gameSpeed;
 		gameController = GameObject.Find ("GameController");
 		originalColor = transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color;
