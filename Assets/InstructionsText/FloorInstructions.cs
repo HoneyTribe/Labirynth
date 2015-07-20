@@ -18,7 +18,7 @@ public class FloorInstructions : MonoBehaviour
 	private TextMesh instructions;
 
 
-	//These are attached to the object TextInstructionsFloor
+	//These are in the interface attached to the object TextInstructionsFloor
 	public int firstLightLevel = 0;
 	public int firstBlockLevel = 11;
 	public int firstZapLevel = 2;
