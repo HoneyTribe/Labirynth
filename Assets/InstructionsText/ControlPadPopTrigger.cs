@@ -17,15 +17,6 @@ public class ControlPadPopTrigger : MonoBehaviour
 	{
 		anim = GameObject.Find ("ControlPadPop").GetComponent<Animator> ();
 		anim2 = GameObject.Find ("ControlPadPopTrigger").GetComponent<Animator> ();
-
-		// lev 4, first decoy
-		//if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel)
-		//{
-			//startPos = new Vector3(-10,1,-7);
-			//endPos = new Vector3(-10,5,-7);
-			//transform.position = startPos;
-
-		//}
 	}
 	
 	public void OnTriggerEnter(Collider currentCollider)

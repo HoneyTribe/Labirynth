@@ -55,30 +55,6 @@ Material:
         second: .231413126
       data:
         first:
-          name: _RimPower
-        second: 1.58571434
-      data:
-        first:
-          name: _Inside
-        second: .714285672
-      data:
-        first:
-          name: _Rim
-        second: .75
-      data:
-        first:
-          name: _Speed
-        second: .5
-      data:
-        first:
-          name: _Tile
-        second: 5
-      data:
-        first:
-          name: _Strength
-        second: 5
-      data:
-        first:
           name: _MaxRadius
         second: .678571403
       data:
@@ -89,6 +65,30 @@ Material:
         first:
           name: _RangeWidth
         second: 1
+      data:
+        first:
+          name: _RimPower
+        second: 1.58571434
+      data:
+        first:
+          name: _Inside
+        second: .821428597
+      data:
+        first:
+          name: _Rim
+        second: .482142836
+      data:
+        first:
+          name: _Speed
+        second: 2.34821439
+      data:
+        first:
+          name: _Tile
+        second: 5
+      data:
+        first:
+          name: _Strength
+        second: 5
       data:
         first:
           name: _BumpAmt
@@ -104,17 +104,17 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _RimColor
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _MyColor
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
           name: _Cold
         second: {r: 0, g: 0, b: .899999976, a: 0}
       data:
         first:
           name: _Warm
         second: {r: .899999976, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _RimColor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _MyColor
+        second: {r: 1, g: 1, b: 1, a: 1}

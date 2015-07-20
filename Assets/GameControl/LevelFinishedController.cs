@@ -170,8 +170,6 @@ public class LevelFinishedController : MonoBehaviour {
 
 	void Update()
 	{
-
-		print(Screen.width);
 		if(unlock == 1)
 		{
 			if (Input.GetKeyDown("l"))
