@@ -45,6 +45,11 @@ public class TopLightController : MonoBehaviour {
 	private float zapOffset = 1.0f;
 	private GameObject zap;
 
+	private Animator machineLight;
+	private static int onHash = Animator.StringToHash ("On");
+	private static int offHash = Animator.StringToHash ("Off");
+	private static int blinkHash = Animator.StringToHash ("Blink");
+
 	void Start()
 	{
 		instance = this;
@@ -63,6 +68,8 @@ public class TopLightController : MonoBehaviour {
 		newColor = projectorMaterial.color;
 		newColor.a = 0.0f;
 		projectorMaterial.color = newColor;
+
+		machineLight = ball.GetComponent<Animator> ();
 	}
 
 	public bool isEntered()
@@ -173,6 +180,7 @@ public class TopLightController : MonoBehaviour {
 		param = maxIntensity / openningInterval;
 		energyParam = 1 / openningInterval;
 		timeLeft = openningInterval;
+		machineLight.SetTrigger(onHash);
 
 		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstBlockLevel
@@ -194,6 +202,7 @@ public class TopLightController : MonoBehaviour {
 		param = - maxIntensity / closingInterval;
 		energyParam = - 1 / closingInterval;
 		timeLeft = closingInterval;
+		machineLight.SetTrigger(offHash);
 
 		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstBlockLevel

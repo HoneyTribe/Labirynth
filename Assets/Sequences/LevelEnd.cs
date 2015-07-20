@@ -27,6 +27,9 @@ public class LevelEnd : MonoBehaviour
 	private float closeDistance = 1.0f;
 	private GameObject[] players;
 
+	private GameObject controlTutContainer;
+	private GameObject controlTutContainer2;
+
 	
 	void Start ()
 	{
@@ -36,6 +39,9 @@ public class LevelEnd : MonoBehaviour
 		camera = GameObject.Find ("MainCamera_Front");
 		numberOfPlayers = LevelFinishedController.instance.getControllers().Count;
 		anim = this.GetComponent<Animator>();
+
+		controlTutContainer = GameObject.Find ("ControlTutContainer");
+		controlTutContainer2 = GameObject.Find ("ControlTutContainer2");
 
 		players= GameObject.FindGameObjectsWithTag ("Player");
 		if(players[0].transform.name == "Player1")
@@ -173,6 +179,9 @@ public class LevelEnd : MonoBehaviour
 		newCameraPosition = camTempPos;
 
 		newCameraRotation = Quaternion.Euler(55, 20, 20);
+
+		Destroy (controlTutContainer);
+		Destroy (controlTutContainer2);
 
 		if (numberOfPlayers == 2)
 		{
