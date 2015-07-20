@@ -81,6 +81,8 @@ public class ScoreController : MonoBehaviour {
 			{
 				GameObject.Find ("EndingController").SendMessage(endingName);
 			}
+
+			PopTriggerContainer2.instance.movePopOnScreen();
 		}
 	}
 

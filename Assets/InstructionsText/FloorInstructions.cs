@@ -64,7 +64,7 @@ public class FloorInstructions : MonoBehaviour
 				else
 				{
 					instructions.text = "Hold action-1 to exit the machine and then high-five.";
-					controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -6f);
+					//controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -6f);
 				}
 			}
 
@@ -76,7 +76,7 @@ public class FloorInstructions : MonoBehaviour
 				}
 				else
 				{
-					instructions.text = "High-five with all players to time-shift.";
+					instructions.text = "Everybody High-Five together to time-shift.";
 					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
 				}
 		}
@@ -94,7 +94,7 @@ public class FloorInstructions : MonoBehaviour
 				else
 				{
 					instructions.text = "Hold action-1 to exit the machine and then high-five.";
-					controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -4.5f);
+					//controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -4.5f);
 				}
 			}
 			
@@ -106,7 +106,7 @@ public class FloorInstructions : MonoBehaviour
 			}
 			else
 			{
-				instructions.text = "High-five with all players to time-shift.";
+				instructions.text = "Everybody High-Five together to time-shift.";
 				arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
 			}
 		}
@@ -151,7 +151,7 @@ public class FloorInstructions : MonoBehaviour
 				else if (ScoreController.instance.getScore() == 0
 				         && TopLightController.instance.isEntered() == false)
 				{
-					instructions.text = "High-five with all players to time shift.";
+					instructions.text = "Everybody High-Five together to time-shift.";
 					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
 				}
 				else
@@ -213,7 +213,7 @@ public class FloorInstructions : MonoBehaviour
 				else if (ScoreController.instance.getScore() == 0
 				         && TopLightController.instance.isEntered() == false)
 				{
-					instructions.text = "High-five with all players to time shift.";
+					instructions.text = "Everybody High-Five together to time-shift.";
 					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
 				}
 				else
@@ -281,7 +281,7 @@ public class FloorInstructions : MonoBehaviour
 				else if (ScoreController.instance.getScore() == 0
 				         && TopLightController.instance.isEntered() == false)
 				{
-					instructions.text = "High-five with all players to time shift.";
+					instructions.text = "Everybody High-Five together to time-shift.";
 					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
 				}
 				else
@@ -333,7 +333,7 @@ public class FloorInstructions : MonoBehaviour
 				
 				if (ScoreController.instance.getScore() > 0)
 				{
-					instructions.text = "What does that button over there do?";
+					instructions.text = "";
 				}
 				else
 				{
@@ -349,7 +349,7 @@ public class FloorInstructions : MonoBehaviour
 			}
 			else
 			{
-				instructions.text = "High-five with all players to time-shift.";
+				instructions.text = "Everybody High-Five together to time-shift.";
 				arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
 			}
 		}
@@ -432,7 +432,7 @@ public class FloorInstructions : MonoBehaviour
 		{
 			instructions.text = "Walk into          the light";
 			arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
-			controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -6f);
+			//controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -6f);
 		}
 		//trigger
 		if (LevelFinishedController.instance.getLevel() == firstTriggerLevel)
@@ -445,7 +445,7 @@ public class FloorInstructions : MonoBehaviour
 		{
 			instructions.text = "Walk into          the light";
 			arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
-			controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, 2f);
+			//controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, 2f);
 		}
 		// 2nd decoy
 		if (LevelFinishedController.instance.getLevel() == secondDecoyLevel)
@@ -501,8 +501,8 @@ public class FloorInstructions : MonoBehaviour
 		LevelFinishedController.instance.setDeadCount();
 		if (LevelFinishedController.instance.getDeadCount() <= deadCountMax)
 		{
-			controlImagePad1Move.transform.position = new Vector3(-0.3f, -1f, -6f);
-			controlImagePad1Move.transform.position = new Vector3(-0.3f, -1f, -6f);
+			//controlImagePad1Move.transform.position = new Vector3(-0.3f, -1f, -6f);
+			//controlImagePad1Move.transform.position = new Vector3(-0.3f, -1f, -6f);
 			co_reviveAlert.transform.position = new Vector3(0f, 1f, -6f);
 		}
 
