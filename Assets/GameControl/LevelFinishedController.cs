@@ -46,6 +46,18 @@ public class LevelFinishedController : MonoBehaviour {
 	
 	private bool decoyFixed;
 
+	private GameObject hudText;
+	private GameObject text1;
+	private GameObject text2;
+	private GameObject text3;
+	private TextMesh myText1;
+	private TextMesh myText2;
+	private TextMesh myText3;
+	private bool showText;
+	private bool showTextSaved = true;
+	private Vector3 textTempPos;
+	private int indent = 50; //indent for help text
+
 	void Awake()
 	{
 		if (instance == null)
@@ -158,6 +170,8 @@ public class LevelFinishedController : MonoBehaviour {
 
 	void Update()
 	{
+
+		print(Screen.width);
 		if(unlock == 1)
 		{
 			if (Input.GetKeyDown("l"))
@@ -177,8 +191,67 @@ public class LevelFinishedController : MonoBehaviour {
 				}
 			}
 		}
+
+		/*
+		// help text
+		if (Application.loadedLevel != 0 )
+		{
+			if (!stopped && IntroductionController.instance.isPlayingIntroduction()== false &&
+			    ScoreController.instance.getScore() > 0 && ScoreController.instance.getNumberOfPlayers() > 0)
+			{
+				showText = true;
+				DisplayText();
+			}
+			else
+			{
+				showText = false;
+				DisplayText();
+			}
+		}
+		*/
 	}
 
+	/*
+	 private void DisplayText()
+	{
+		if(showText == true && showTextSaved == false)
+		{
+			showTextSaved = true;
+
+			hudText = GameObject.Find("HudText");
+			text1 = GameObject.Find("LevelNumber");
+			myText1 = text1.GetComponent<TextMesh>();
+			text2 = GameObject.Find("HelpText");
+			myText2 = text2.GetComponent<TextMesh>();
+			text3 = GameObject.Find("QuitText");
+			myText3 = text3.GetComponent<TextMesh>();
+
+			textTempPos = hudText.transform.position;
+			textTempPos.x = 0-(Screen.width/2) + indent;
+			hudText.transform.position = textTempPos;
+
+			myText1.text = "Zone " + (level + 1);
+			myText2.text = "Help: 'Start' or 'Enter'";
+			myText3.text = "Quit: 'Back' or 'Escape'";
+		}
+		else if(showText == false && showTextSaved == true)
+		{
+			showTextSaved = false;
+
+			hudText = GameObject.Find("HudText");
+			text1 = GameObject.Find("LevelNumber");
+			myText1 = text1.GetComponent<TextMesh>();
+			text2 = GameObject.Find("HelpText");
+			myText2 = text2.GetComponent<TextMesh>();
+			text3 = GameObject.Find("QuitText");
+			myText3 = text3.GetComponent<TextMesh>();
+
+			myText1.text = "";
+			myText2.text = "";
+			myText3.text = "";
+		}
+	}
+	*/
 	
 	private void LoadNewLevel()
 	{
@@ -255,10 +328,11 @@ public class LevelFinishedController : MonoBehaviour {
 		PlayerPrefs.SetInt("savedLevelsCounter"+level, levelsCounter[level]);
 		PlayerPrefs.Save();
 	}
-	
+
 	void OnGUI()
 	{
-		if (Application.loadedLevel != 0 )
+
+		 if (Application.loadedLevel != 0 )
 		{
 			if (!stopped && IntroductionController.instance.isPlayingIntroduction()== false &&
 			    ScoreController.instance.getScore() > 0 && ScoreController.instance.getNumberOfPlayers() > 0)
@@ -269,6 +343,7 @@ public class LevelFinishedController : MonoBehaviour {
 				GUI.Label (new Rect (Screen.width * 0.05f, 110, 300, 300), "Quit: 'Back' or 'Escape'", help_GUISkin.label);
 			}
 		}
+
 		if (finished && level < totalLevels-1)
 		{
 			GUI.depth = 2;
