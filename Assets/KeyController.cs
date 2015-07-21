@@ -11,15 +11,14 @@ public class KeyController : MonoBehaviour {
 	private float distCovered;
 	private float fracJourney;
 	private float startTime;
-	private float speed = 25.0f;
+	private float speed = 35.0f;
 	private GameObject machine;
 	private Transform myTransform;
 	private Vector3 myTempPos;
 	private bool destroyed = false;
 	private bool collected = false;
-	private float closeDistance = 0.65f;
-	private float arcHeight = 15f;
-	private float totalDelta = 0;
+	private float closeDistance = 0.8f;
+	private float arcHeight = 9.5f;
 
 	void Start()
 	{
@@ -32,9 +31,7 @@ public class KeyController : MonoBehaviour {
 	{
 		if(move == true)
 		{
-			totalDelta += Time.deltaTime;
-			//distCovered = (Time.time - startTime) * speed;
-			distCovered = totalDelta * speed;
+			distCovered = (Time.time - startTime) * speed;
 			fracJourney = distCovered / distanceToTarget;
 
 			myTempPos = myTransform.position;
@@ -47,7 +44,7 @@ public class KeyController : MonoBehaviour {
 			myTempPos.z = Mathf.Lerp(myTransform.position.z, machine.transform.position.z, fracJourney) ;
 			myTransform.position = myTempPos;
 
-			myTransform.position = Vector3.Lerp(myTransform.position, machine.transform.position, fracJourney) ;
+			myTransform.position = Vector3.Lerp(myTransform.position, machine.transform.position, Time.deltaTime);
 
 			if(fracJourney >= closeDistance && destroyed == false)
 			{
