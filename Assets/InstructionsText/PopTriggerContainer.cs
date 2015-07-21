@@ -8,11 +8,12 @@ public class PopTriggerContainer : MonoBehaviour
 	private Vector3 triggerLev = new Vector3(11.5f, 2, -3);
 	private Vector3 zapLev = new Vector3(9, 2, -7);
 	private Vector3 decoyLev = new Vector3(-8.8f, 2, -7.5f);
+	private Vector3 chaseLev = new Vector3(12, 2, -18);
 	private Vector3 craneLev = new Vector3(12, 2, -18);
 	private Vector3 droneLev = new Vector3(12, 2, -18f);
 	private Vector3 jumpLev = new Vector3(10, 2, -1.5f);
 	private Vector3 stunLev = new Vector3(12, 2, -18);
-	private Vector3 lazerLev = new Vector3(12, 2, -18f);
+	private Vector3 lazerLev = new Vector3(12, 2, -18);
 
 	private Renderer popRend;
 
@@ -43,6 +44,12 @@ public class PopTriggerContainer : MonoBehaviour
 		{
 			transform.position = decoyLev;
 			popRend.material.mainTexture = Resources.Load("PopTextures/ControlePadDecoy") as Texture;
+		}
+		//lev 6
+		else if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstChaseLevel)
+		{
+			transform.position = chaseLev;
+			popRend.material.mainTexture = Resources.Load("PopTextures/HypnoPop") as Texture;
 		}
 		//lev 9
 		else if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel)

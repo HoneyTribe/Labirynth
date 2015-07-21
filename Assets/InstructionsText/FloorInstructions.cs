@@ -24,6 +24,7 @@ public class FloorInstructions : MonoBehaviour
 	public int firstZapLevel = 2;
 	public int firstDecoyLevel = 3;
 	public int secondDecoyLevel = 4;
+	public int firstChaseLevel = 5;
 	public int firstDoorLevel = 6;
 	public int firstGhostLevel = 7;
 	public int firstCraneLevel = 8;

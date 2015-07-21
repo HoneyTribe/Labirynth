@@ -13251,6 +13251,7 @@ MonoBehaviour:
   firstZapLevel: 2
   firstDecoyLevel: 3
   secondDecoyLevel: 4
+  firstChaseLevel: 5
   firstDoorLevel: 6
   firstGhostLevel: 7
   firstCraneLevel: 8
