@@ -20,9 +20,9 @@ namespace AssemblyCSharp
 			// 1 player levels
 			
 			//1
-			levels1.Add(new Level(new MachineCreator(false, false, false, false, false, false),
+			levels1.Add(new Level(new MachineCreator(false, false, true, false, true, false),
 			    15,new List<MonsterTemplate>{
-				new MonsterTemplate("Standard", 20f)
+				new MonsterTemplate("Standard", 2.0f)
 			},1,15,7,7, null, null));
 			
 			// *********2 player levels **********

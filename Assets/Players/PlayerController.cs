@@ -39,6 +39,10 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	{
 		if (gameObject.name.Equals("Player5"))
 		{
+			if (Application.loadedLevel != 0)
+			{
+				StartCoroutine(WaitAndEnterLighthouse());
+			}
 			return;
 		}
 		speed *= LevelFinishedController.instance.gameSpeed;
@@ -72,6 +76,12 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		}
 	}
 
+	IEnumerator  WaitAndEnterLighthouse()
+	{
+		yield return new WaitForSeconds(2);
+		EnterLighthouse();
+	}
+
 	public void handleLogic(float x, float z, float action, float action2)
 	{
 		if ((inputBlocked) || (paralysed) || (LevelFinishedController.instance.isStopped()))
@@ -83,11 +93,32 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		{
 			if ((action > InputController.BUTTON_DURATION) || (action2 > InputController.BUTTON_DURATION))
 			{
-				lighthouseEntered = false;
-				AudioController.instance.Play("012_LightOffB");
-				TopLightController.instance.TurnOff();
-				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-				rigidbody.transform.Translate(new Vector3(0,0,2.0f));
+				Vector3 movement = Vector3.zero;
+				if (!gameObject.name.Equals("Player5"))
+				{
+					movement = new Vector3(0,0,2.0f);
+					rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+				}
+				else
+				{
+					if ((LevelFinishedController.instance.isPickingUpEnabled() || LevelFinishedController.instance.isSmashingEnabled()) && (!CraneController.instance.isEntered()))
+					{
+						movement = new Vector3(3.0f,0,0);
+						EnterCrane();
+					}
+					else if ((LevelFinishedController.instance.isTeleportEnabled() || LevelFinishedController.instance.isStunGunEnabled()) && (!DroneController.instance.isEntered()))
+					{
+						movement = new Vector3(-3.0f,0,0);
+						EnterPortalGun();
+					}
+				}
+				if (!movement.Equals(Vector3.zero))
+				{
+					lighthouseEntered = false;
+					AudioController.instance.Play("012_LightOffB");
+					TopLightController.instance.TurnOff();
+					gameObject.transform.Translate(movement);
+				}
 			}
 
 			if ((action > 0) && (action <= InputController.BUTTON_DURATION))
@@ -129,11 +160,32 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		{
 			if ((action > InputController.BUTTON_DURATION) || (action2 > InputController.BUTTON_DURATION))
 			{
-				craneEntered = false;
-				CraneController.instance.TurnOff();
-				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-				rigidbody.transform.Translate(new Vector3(0,0,2.0f));
-				AudioController.instance.Play("012_LightOffB");
+				Vector3 movement = Vector3.zero;
+				if (!gameObject.name.Equals("Player5"))
+				{
+					movement = new Vector3(0,0,2.0f);
+					rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+				}
+				else
+				{
+					if ((LevelFinishedController.instance.isTeleportEnabled() || LevelFinishedController.instance.isStunGunEnabled()) && (!DroneController.instance.isEntered()))
+					{
+						movement = new Vector3(-6.0f,0,0);
+						EnterPortalGun();
+					} 
+					else if (!TopLightController.instance.isEntered())
+					{
+						movement = new Vector3(-3.0f,0,0);
+						EnterLighthouse();
+					}
+				}
+				if (!movement.Equals(Vector3.zero))
+				{
+					craneEntered = false;
+					CraneController.instance.TurnOff();
+					gameObject.transform.Translate(movement);
+					AudioController.instance.Play("012_LightOffB");
+				}
 			}
 
 			if ((action > 0) && (action <= InputController.BUTTON_DURATION))
@@ -169,11 +221,32 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		{
 			if ((action > InputController.BUTTON_DURATION) || (action2 > InputController.BUTTON_DURATION))
 			{
-				portalGunEntered = false;
-				DroneController.instance.TurnOff();
-				rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-				rigidbody.transform.Translate(new Vector3(0,0,2.0f));
-				AudioController.instance.Play("012_LightOffB");
+				Vector3 movement = Vector3.zero;
+				if (!gameObject.name.Equals("Player5"))
+				{
+					movement = new Vector3(0,0,2.0f);
+					rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+				}
+				else
+				{
+					if (!TopLightController.instance.isEntered())
+					{
+						movement = new Vector3(3.0f,0,0);
+						EnterLighthouse();
+					}
+					else if ((LevelFinishedController.instance.isPickingUpEnabled() || LevelFinishedController.instance.isSmashingEnabled()) && (!CraneController.instance.isEntered()))
+					{
+						movement = new Vector3(6.0f,0,0);
+						EnterCrane();
+					} 
+				}
+				if (!movement.Equals(Vector3.zero))
+				{
+					portalGunEntered = false;
+					DroneController.instance.TurnOff();
+					gameObject.transform.Translate(movement);
+					AudioController.instance.Play("012_LightOffB");
+				}
 			}
 			
 			DroneController.instance.Move(new Vector3(x,action,z));
@@ -427,42 +500,57 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		this.inputBlocked = inputBlocked;
 	}
 
+	void EnterLighthouse()
+	{
+		lighthouseEntered = true;
+		TopLightController.instance.TurnOn();
+		AudioController.instance.Play("011_LightOn");
+		MachineDoorsController.instance.CloseLightDoor();
+	}
+
+	void EnterCrane()
+	{
+		craneEntered = true;
+		CraneController.instance.TurnOn();
+		AudioController.instance.Play("011_LightOn");
+		MachineDoorsController.instance.CloseCraneDoor();
+	}
+
+	void EnterPortalGun()
+	{
+		portalGunEntered = true;
+		DroneController.instance.TurnOn();
+		AudioController.instance.Play("011_LightOn");
+		MachineDoorsController.instance.CloseDroneDoor();
+	}
+
 	void OnCollisionEnter (Collision collision)
 	{
 		if(collision.collider.name == "Lighthouse")
 		{
 			if (!TopLightController.instance.isEntered())
 			{
-				lighthouseEntered = true;
 				freeze();
 				rigidbody.transform.rotation = (Quaternion.Euler(0,0,0));
-				TopLightController.instance.TurnOn();
-				AudioController.instance.Play("011_LightOn");
-				MachineDoorsController.instance.CloseLightDoor();
+				EnterLighthouse();
 			}
 		}
 		if(collision.collider.name == "Crane")
 		{
 			if (!CraneController.instance.isEntered())
 			{
-				craneEntered = true;
 				freeze();
 				rigidbody.transform.rotation = (Quaternion.Euler(0,0,0));
-				CraneController.instance.TurnOn();
-				AudioController.instance.Play("011_LightOn");
-				MachineDoorsController.instance.CloseCraneDoor();
+				EnterCrane();
 			}
 		}
 		if(collision.collider.name == "PortalGun")
 		{
 			if (!DroneController.instance.isEntered())
 			{
-				portalGunEntered = true;
 				freeze();
 				rigidbody.transform.rotation = (Quaternion.Euler(0,0,0));
-				DroneController.instance.TurnOn();
-				AudioController.instance.Play("011_LightOn");
-				MachineDoorsController.instance.CloseDroneDoor();
+				EnterPortalGun();
 			}
 		}
 		if(collision.collider.tag == "Monster")

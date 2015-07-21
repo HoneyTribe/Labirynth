@@ -346,7 +346,7 @@ public class LevelFinishedController : MonoBehaviour {
 		{
 			GUI.depth = 2;
 			GUI.Label (new Rect (Screen.width/2 - 250, Screen.height/2 - 150, 500, 300), "Time shift initiated!" +
-			           " Travelling " + levelDefinition.getLevels(controllers.Count)[level].getNumberOfKeys() + " earth years forward...", LevEnd_GUISkin.label);
+			           " Travelling " + levelDefinition.getLevels(getControllers().Count)[level].getNumberOfKeys() + " earth years forward...", LevEnd_GUISkin.label);
 		}
 		if (finished && level == totalLevels-1 && !congratulation)
 		{
@@ -461,74 +461,74 @@ public class LevelFinishedController : MonoBehaviour {
 	
 	public int getNumberOfKeys()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getNumberOfKeys();
+		return levelDefinition.getLevels(getControllers().Count)[level].getNumberOfKeys();
 	}
 	
 	public List<AssemblyCSharp.MonsterTemplate> getMonsters()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getMonsters ();
+		return levelDefinition.getLevels(getControllers().Count)[level].getMonsters ();
 	}
 	
 	public int getTimeToFirstMonster()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getTimeToFirstMonster ()
+		return levelDefinition.getLevels(getControllers().Count)[level].getTimeToFirstMonster ()
 			+ (dynamicDifficulty * (int)(Mathf.Min(attempt[level] / attemptsForChange, delayMax) * delay));
 	}
 	
 	public int getTimeBetweenMonsters()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getTimeBetweenMonsters ()
+		return levelDefinition.getLevels(getControllers().Count)[level].getTimeBetweenMonsters ()
 			+ (dynamicDifficulty * (int)(Mathf.Min(attempt[level] / attemptsForChange, delayMax) * delay));
 	}
 	
 	public int getMazeSizeX()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getMazeSizeX ();
+		return levelDefinition.getLevels(getControllers().Count)[level].getMazeSizeX ();
 	}
 	
 	public int getMazeSizeZ()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getMazeSizeZ ();
+		return levelDefinition.getLevels(getControllers().Count)[level].getMazeSizeZ ();
 	}
 	
 	public string getEnding()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getEnding ();
+		return levelDefinition.getLevels(getControllers().Count)[level].getEnding ();
 	}
 	
 	public string getPuzzleName()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getPuzzleName ();
+		return levelDefinition.getLevels(getControllers().Count)[level].getPuzzleName ();
 	}
 	
 	public bool isDistractionEnabled()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isDistractionEnabled();
+		return levelDefinition.getLevels(getControllers().Count)[level].getMachineCreator().isDistractionEnabled();
 	}
 	
 	public bool isItemActivationEnabled()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isItemActivationEnabled();
+		return levelDefinition.getLevels(getControllers().Count)[level].getMachineCreator().isItemActivationEnabled();
 	}
 	
 	public bool isPickingUpEnabled()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isPickingUpEnabled();
+		return levelDefinition.getLevels(getControllers().Count)[level].getMachineCreator().isPickingUpEnabled();
 	}
 	
 	public bool isSmashingEnabled()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isSmashingEnabled();
+		return levelDefinition.getLevels(getControllers().Count)[level].getMachineCreator().isSmashingEnabled();
 	}
 	
 	public bool isTeleportEnabled()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isTeleportEnabled();
+		return levelDefinition.getLevels(getControllers().Count)[level].getMachineCreator().isTeleportEnabled();
 	}
 	
 	public bool isStunGunEnabled()
 	{
-		return levelDefinition.getLevels(controllers.Count)[level].getMachineCreator().isStunGunEnabled();
+		return levelDefinition.getLevels(getControllers().Count)[level].getMachineCreator().isStunGunEnabled();
 	}
 	
 	public int getFirstLevelWithLight ()
@@ -573,7 +573,7 @@ public class LevelFinishedController : MonoBehaviour {
 	
 	public int getNumberOfLevels()
 	{
-		return  levelDefinition.getLevels (controllers.Count).Count - 1;
+		return  levelDefinition.getLevels (getControllers().Count).Count - 1;
 	}
 	
 	public int getTotalLevels()
@@ -588,9 +588,21 @@ public class LevelFinishedController : MonoBehaviour {
 	
 	public List<InputController> getControllers()
 	{
+		if (controllers.Count > 0 && controllers[controllers.Count - 1].getPlayerId() == 5)
+		{
+			return controllers.GetRange(0, controllers.Count - 1);
+		}
+		else
+		{
+			return controllers;
+		}
+	}
+
+	public List<InputController> getAllControllers()
+	{
 		return controllers;
 	}
-	
+
 	public void setControllers(List<InputController> controllers)
 	{
 		this.controllers = controllers;

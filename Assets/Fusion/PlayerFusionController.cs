@@ -112,11 +112,14 @@ public class PlayerFusionController : MonoBehaviour {
 
 	IEnumerator ShowPuzzle()
 	{
-		puzzlePiece.SetActive(true);
-		while (true)
+		if (puzzlePiece != null)
 		{
-			Activate ();
-			yield return new WaitForSeconds(5);
+			puzzlePiece.SetActive(true);
+			while (true)
+			{
+				Activate ();
+				yield return new WaitForSeconds(5);
+			}
 		}
 	}
 }

@@ -66,7 +66,7 @@ public class InControlManager : MonoBehaviour {
 		{
 			// disable not active players
 			List<int> playerIds = new List<int>(){1,2,3,4,5};
-			foreach(InputController inputController in LevelFinishedController.instance.getControllers())
+			foreach(InputController inputController in LevelFinishedController.instance.getAllControllers())
 			{
 				playerIds.Remove(inputController.getPlayerId());
 			}
@@ -76,7 +76,7 @@ public class InControlManager : MonoBehaviour {
 			}
 		}
 
-		foreach(InputController inputController in LevelFinishedController.instance.getControllers())
+		foreach(InputController inputController in LevelFinishedController.instance.getAllControllers())
 		{
 			inputController.updatePlayer();
 		}
@@ -177,7 +177,7 @@ public class InControlManager : MonoBehaviour {
 			}
 		}
 
-		foreach(InputController input in LevelFinishedController.instance.getControllers())
+		foreach(InputController input in LevelFinishedController.instance.getAllControllers())
 		{
 			input.React();
 		}
@@ -219,9 +219,12 @@ public class InControlManager : MonoBehaviour {
 				usedControllers.Add(inputController);
 			}
 		}
+		if (usedControllers.Count == 0) 
+		{
+			return;
+		}
 		if (usedControllers.Count == 1) 
 		{	
-			return;
 			InputController playerController = usedControllers[0];
 			int deviceId = playerController.getDevice();
 			if (playerController.isKeyboard())
