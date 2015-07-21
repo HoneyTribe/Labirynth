@@ -224,7 +224,7 @@ public class FloorInstructions : MonoBehaviour
 			}
 			else //someone dead
 			{
-				instructions.text = "Revive your friends by touching them but first move the mummy!";
+				instructions.text = "Touch friends to revive them. First move the mummy!";
 				arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
 			}
 		}
@@ -292,7 +292,7 @@ public class FloorInstructions : MonoBehaviour
 			}
 			else //someone dead
 			{
-				instructions.text = "Revive your friends by touching them but first move the mummy!";
+				instructions.text = "Touch friends to revive them. First move the mummy!";
 				arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
 			}
 		}
@@ -363,7 +363,7 @@ public class FloorInstructions : MonoBehaviour
 			}
 			else if(JumpController.instance.GetBoxCollideCount() <= 0 && ScoreController.instance.getScore() > 0 && TopLightController.instance.isEntered() == true)
 			{
-				instructions.text = "Aim the light at your BFF and tap action-2 while they're on the Box.";
+				instructions.text = "Aim at your BFF and tap action-2 while they're on the Box.";
 			}
 			else if( ScoreController.instance.getScore() == 0)
 			{
@@ -469,21 +469,21 @@ public class FloorInstructions : MonoBehaviour
 		else if (LevelFinishedController.instance.getLevel() == firstJumpBoxLevel)
 		{
 			instructions.text = "Go and pick up the Anti-Grav Box";
-			controlImagePad2Move.transform.position = new Vector3(-0.3f, 1f, 1f);
+			//controlImagePad2Move.transform.position = new Vector3(-0.3f, 1f, 1f);
 		}
 		//drone bomb
 		else if (LevelFinishedController.instance.getLevel() == firstDroneBombLevel)
 		{
 			instructions.text = "Walk into             the Drone entrance";
 			arrowLeft.transform.position = new Vector3(-4, textOnScreen, -13);
-			controlImagePad2Move.transform.position = new Vector3(-2.3f, 1f, 0f);
+			//controlImagePad2Move.transform.position = new Vector3(-2.3f, 1f, 0f);
 		}
 		//crane lazer
 		else if (LevelFinishedController.instance.getLevel() == firstCraneLazerLevel)
 		{
 			instructions.text = "Walk into the Wall-Lazer           entrance";
 			arrowRight.transform.position = new Vector3(4, textOnScreen, -13);
-			controlImagePad2Move.transform.position = new Vector3(-0.3f, 1f, -3.5f);
+			//controlImagePad2Move.transform.position = new Vector3(-0.3f, 1f, -3.5f);
 		}
 
 	}

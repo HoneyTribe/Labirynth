@@ -51,7 +51,6 @@ public class ScoreController : MonoBehaviour {
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstBlockLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDecoyLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstJumpBoxLevel
