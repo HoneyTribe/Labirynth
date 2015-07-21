@@ -11,7 +11,7 @@ public class KeyController : MonoBehaviour {
 	private float distCovered;
 	private float fracJourney;
 	private float startTime;
-	private float speed = 35.0f;
+	private float speed = 25.0f;
 	private GameObject machine;
 	private Transform myTransform;
 	private Vector3 myTempPos;
@@ -19,6 +19,7 @@ public class KeyController : MonoBehaviour {
 	private bool collected = false;
 	private float closeDistance = 0.65f;
 	private float arcHeight = 15f;
+	private float totalDelta = 0;
 
 	void Start()
 	{
@@ -31,7 +32,9 @@ public class KeyController : MonoBehaviour {
 	{
 		if(move == true)
 		{
-			distCovered = (Time.time - startTime) * speed;
+			totalDelta += Time.deltaTime;
+			//distCovered = (Time.time - startTime) * speed;
+			distCovered = totalDelta * speed;
 			fracJourney = distCovered / distanceToTarget;
 
 			myTempPos = myTransform.position;

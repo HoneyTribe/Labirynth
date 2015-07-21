@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 public class DecoyTrail : MonoBehaviour 
 {
-	private float speed = 10.0f;
+	private float speed = 13.0f;
 	private float mummyOffset = 3.0f;
 	private float decoyOffset = 3.0f;
 	private float arcHeight = 8f;
 	private float closeDistance = 0.1f;
-	private float trailDuration = 0.7f;
-	private float endDuration = 0.3f;
+	private float trailDuration = 0.5f;
+	private float endDuration = 0.2f;
 	//private float lensFadeSpeed = 0.0f;
 	//
 	private bool resetTime = false;
@@ -26,6 +26,7 @@ public class DecoyTrail : MonoBehaviour
 	private float distanceToTarget;
 	private GameObject device;
 	private ParticleSystem effect;
+	private float totalDelta = 0;
 	
 	void Start()
 	{
@@ -41,6 +42,8 @@ public class DecoyTrail : MonoBehaviour
 	{
 		if(transform.parent.GetComponent<AbstractMonsterController>().getTimeLeft() > 0 && LevelFinishedController.instance.isStopped()==false)
 		{
+			totalDelta += Time.deltaTime;
+
 			trail.enabled = true;
 			//lens.enabled = true;
 
@@ -56,7 +59,8 @@ public class DecoyTrail : MonoBehaviour
 
 			if(distanceToTarget > closeDistance)
 			{
-				distCovered = (Time.time - startTime) * speed;
+				//distCovered = (Time.time - startTime) * speed;
+				distCovered = totalDelta * speed;
 				fracJourney = distCovered / distanceToTarget;
 				//transform.position = Vector3.Lerp(transform.parent.position, device.transform.position, fracJourney) ;
 
@@ -97,6 +101,7 @@ public class DecoyTrail : MonoBehaviour
 		if(transform.parent.GetComponent<AbstractMonsterController>().getTimeLeft() <= 0 )
 		{
 			trail.enabled = false;
+			totalDelta = 0;
 			//lens.enabled = false;
 		}
 	}
@@ -106,6 +111,7 @@ public class DecoyTrail : MonoBehaviour
 		resetTime = true;
 		startTime = Time.time;
 		trail.time = trailDuration;
+		totalDelta = 0;
 		//lens.fadeSpeed = lensFadeSpeed;
 	}
 

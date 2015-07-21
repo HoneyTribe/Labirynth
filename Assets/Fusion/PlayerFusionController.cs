@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerFusionController : MonoBehaviour {
 
-	private static float speed = 0.2f;
+	private static float speed = 0.3f;
 
 	private GameObject puzzlePiece;
 	private GameObject[] players;
@@ -13,6 +13,7 @@ public class PlayerFusionController : MonoBehaviour {
 	private Vector3 initialPosition;
 	private Transform parentTransform;
 	private float time;
+	private float totalDelta = 0;
 
 	void Start()
 	{
@@ -67,15 +68,19 @@ public class PlayerFusionController : MonoBehaviour {
 	{
 		if (moveTocenter)
 		{
+			totalDelta += Time.deltaTime;
+
 			if (Vector3.Distance(transform.position, center) > 0.002)
 			{
-				transform.position = Vector3.Lerp (transform.position, center, (Time.time - time) * speed);
+				//transform.position = Vector3.Lerp (transform.position, center, (Time.time - time) * speed);
+				transform.position = Vector3.Lerp (transform.position, center, totalDelta * speed);
 			}
 			else
 			{
 				moveTocenter = false;
 				transform.parent = parentTransform;
 				transform.localPosition = initialPosition;
+				totalDelta = 0;
 			}
 		}
 	}
