@@ -40,13 +40,11 @@ public class NewMazeEnding : MonoBehaviour {
 				time = 0;
 				AstarPath.active.Scan();
 				LevelFinishedController.instance.setStopped(false);
-
-				//foreach (GameObject player in allPlayers)
-				//{
-				//	Vector3 temp = transform.position;
-				//	temp.y = 1.48f;
-				//	transform.position = temp;
-				//}
+				GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster");
+				foreach (GameObject monster in monsters)
+				{
+					monster.SendMessage("setStopped", false);
+				}
 
 				return;
 			}
