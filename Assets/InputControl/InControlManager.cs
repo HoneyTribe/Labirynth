@@ -62,19 +62,6 @@ public class InControlManager : MonoBehaviour {
 				GameObject.Find ("StickContainer").SetActive(false);
 			}
 		}
-		else
-		{
-			// disable not active players
-			List<int> playerIds = new List<int>(){1,2,3,4,5};
-			foreach(InputController inputController in LevelFinishedController.instance.getAllControllers())
-			{
-				playerIds.Remove(inputController.getPlayerId());
-			}
-			foreach(int playerId in playerIds)
-			{
-				GameObject.Find ("Player" + playerId).SetActive(false);
-			}
-		}
 
 		foreach(InputController inputController in LevelFinishedController.instance.getAllControllers())
 		{

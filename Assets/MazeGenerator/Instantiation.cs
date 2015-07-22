@@ -60,6 +60,7 @@ public class Instantiation : MonoBehaviour {
 		drawSmallWalls (labirynth, 0);
 		drawHorisontalWalls (labirynth, 0);
 		drawVerticalWalls (labirynth, 0);
+		hidePlayers (); // must be called before A*
 		createNodes ();
 
 		if (LevelFinishedController.instance.getPuzzleName() != null)
@@ -68,6 +69,19 @@ public class Instantiation : MonoBehaviour {
 		}
 	}	
 
+	void hidePlayers()
+	{
+		List<int> playerIds = new List<int>(){1,2,3,4,5};
+		foreach(InputController inputController in LevelFinishedController.instance.getAllControllers())
+		{
+			playerIds.Remove(inputController.getPlayerId());
+		}
+		foreach(int playerId in playerIds)
+		{
+			GameObject.Find ("Player" + playerId).SetActive(false);
+		}
+	}
+		
 	void createNodes()
 	{
 		((Pathfinding.PointGraph) AstarPath.active.graphs [0]).limits = new Vector3(2 * spaceX + MARGIN, 0, 3 * spaceZ + MARGIN);
