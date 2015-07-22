@@ -55,9 +55,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: 0, y: 7, z: 0}
-  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: -4.37113883e-08}
+  m_LocalPosition: {x: 0, y: 2.99986267, z: 1.7498064}
+  m_LocalScale: {x: .422626317, y: .422626317, z: .422626317}
   m_Children: []
   m_Father: {fileID: 400000}
 --- !u!12 &1200000
@@ -72,13 +72,13 @@ ParticleAnimator:
     rgba: 14211288
   colorAnimation[1]:
     serializedVersion: 2
-    rgba: 2745744076
+    rgba: 2740227785
   colorAnimation[2]:
     serializedVersion: 2
-    rgba: 2060768209
+    rgba: 2047520223
   colorAnimation[3]:
     serializedVersion: 2
-    rgba: 1422317268
+    rgba: 1412600771
   colorAnimation[4]:
     serializedVersion: 2
     rgba: 2960685
@@ -99,13 +99,13 @@ EllipsoidParticleEmitter:
   serializedVersion: 2
   m_Enabled: 1
   m_Emit: 1
-  minSize: 5
-  maxSize: 9
+  minSize: 4.92000008
+  maxSize: 9.14000034
   minEnergy: 1
   maxEnergy: 3
-  minEmission: 2
-  maxEmission: 15
-  worldVelocity: {x: 0, y: 0, z: 0}
+  minEmission: 5
+  maxEmission: 5
+  worldVelocity: {x: 0, y: .5, z: 0}
   localVelocity: {x: 0, y: 0, z: 0}
   rndVelocity: {x: 0, y: 0, z: 0}
   emitterVelocityScale: 0
