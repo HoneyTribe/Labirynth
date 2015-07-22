@@ -17,10 +17,12 @@ public class PlayerFusionController : MonoBehaviour {
 	private float time;
 	private float totalDelta = 0;
 	private bool levelFinish = false;
+	//private ParticleSystem myStream;
 
 	void Start()
 	{
 		speed = speed1;
+
 		GameObject puzzlePrefab = null;
 		initialPosition = transform.localPosition;
 		parentTransform = transform.parent;
@@ -76,8 +78,10 @@ public class PlayerFusionController : MonoBehaviour {
 			if(levelFinish == false && LevelEnd.instance.IsStartSequence() == true)
 			{
 				levelFinish = true;
+				//myStream = GetComponentInChildren<ParticleSystem>();
 				Activate();
 				speed = speed2;
+				//myStream.Play();
 			}
 		}
 
