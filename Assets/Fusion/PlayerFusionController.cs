@@ -5,6 +5,8 @@ using System.Collections.Generic;
 public class PlayerFusionController : MonoBehaviour {
 
 	private static float speed = 0.3f;
+	private static float speed1 = 0.3f;
+	private static float speed2 = 2.0f;
 
 	private GameObject puzzlePiece;
 	private GameObject[] players;
@@ -14,9 +16,11 @@ public class PlayerFusionController : MonoBehaviour {
 	private Transform parentTransform;
 	private float time;
 	private float totalDelta = 0;
+	private bool levelFinish = false;
 
 	void Start()
 	{
+		speed = speed1;
 		GameObject puzzlePrefab = null;
 		initialPosition = transform.localPosition;
 		parentTransform = transform.parent;
@@ -66,6 +70,14 @@ public class PlayerFusionController : MonoBehaviour {
 
 	void Update()
 	{
+
+		if(levelFinish == false && LevelEnd.instance.IsStartSequence() == true)
+		{
+			levelFinish = true;
+			Activate();
+			speed = speed2;
+		}
+
 		if (moveTocenter)
 		{
 			totalDelta += Time.deltaTime;
@@ -77,10 +89,13 @@ public class PlayerFusionController : MonoBehaviour {
 			}
 			else
 			{
-				moveTocenter = false;
-				transform.parent = parentTransform;
-				transform.localPosition = initialPosition;
-				totalDelta = 0;
+				if(LevelEnd.instance.IsStartSequence() == false)
+				{
+					moveTocenter = false;
+					transform.parent = parentTransform;
+					transform.localPosition = initialPosition;
+					totalDelta = 0;
+				}
 			}
 		}
 	}

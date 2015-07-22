@@ -99,4 +99,9 @@ public class LevelEnd : MonoBehaviour
 		startSequence = true;
 		this.anim.enabled = true;
 	}
+
+	public bool IsStartSequence()
+	{
+		return startSequence;
+	}
 }
