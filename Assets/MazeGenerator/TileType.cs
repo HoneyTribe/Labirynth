@@ -14,5 +14,6 @@ public static class TileType
 	public static string TRIGGERNEWMAZE = "9";
 	public static string DECOY = "10";
 	public static string TRIGGERONEWALL = "11";
+	public static string PLAYER = "12";
 }
 

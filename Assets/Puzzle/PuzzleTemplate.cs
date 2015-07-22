@@ -180,6 +180,10 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 				{
 					createTriggerOneWall (i, j, cell[1]);
 				}
+				if (cell[0].Equals (TileType.PLAYER))
+				{
+					movePlayerToPosition(i, j, cell[1]);
+				}
 			}
 		}
 	}
@@ -289,6 +293,15 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 			                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
 			GameObject obj = (GameObject) Instantiate (triggerOneWallPrefab, triggerPos, Quaternion.Euler(0, 0, 0));
 			obj.GetComponent<TriggerOneWall> ().setReference (reference);
+		}
+		private void movePlayerToPosition(int x, int z, string reference)
+		{
+			int playerId = LevelFinishedController.instance.getControllers()[int.Parse (reference)].getPlayerId();
+			GameObject player = GameObject.Find ("Player" + playerId);
+			Vector3 playerPos = new Vector3 (-Instantiation.planeSizeX/2f + Instantiation.instance.getSpaceX() * x,
+		                                     player.transform.position.y,
+			                                 Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
+			player.transform.position = playerPos;
 		}
 
 	public void finish()
