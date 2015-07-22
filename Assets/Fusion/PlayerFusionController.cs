@@ -71,11 +71,14 @@ public class PlayerFusionController : MonoBehaviour {
 	void Update()
 	{
 
-		if(levelFinish == false && LevelEnd.instance.IsStartSequence() == true)
+		if(Application.loadedLevel != 0)
 		{
-			levelFinish = true;
-			Activate();
-			speed = speed2;
+			if(levelFinish == false && LevelEnd.instance.IsStartSequence() == true)
+			{
+				levelFinish = true;
+				Activate();
+				speed = speed2;
+			}
 		}
 
 		if (moveTocenter)
