@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class DecoyTrail : MonoBehaviour 
 {
-	private float speed = 13.0f;
+	private float speed = 250.0f;
 	private float mummyOffset = 3.0f;
 	private float decoyOffset = 3.0f;
 	private float arcHeight = 8f;
@@ -65,12 +65,12 @@ public class DecoyTrail : MonoBehaviour
 				//transform.position = Vector3.Lerp(transform.parent.position, device.transform.position, fracJourney) ;
 
 				myTempPos = myTransform.position;
-				myTempPos.x = Mathf.Lerp(transform.parent.position.x, device.transform.position.x, fracJourney) ;
+				myTempPos.x = Mathf.Lerp(transform.parent.position.x, device.transform.position.x, fracJourney * Time.deltaTime) ;
 				//straight line Y
-				myTempPos.y = Mathf.Lerp(transform.parent.position.y + mummyOffset, device.transform.position.y + decoyOffset, fracJourney) ;
+				myTempPos.y = Mathf.Lerp(transform.parent.position.y + mummyOffset, device.transform.position.y + decoyOffset, fracJourney * Time.deltaTime) ;
 				//arc Y
 				//myTempPos.y = (Mathf.Sin(fracJourney * Mathf.PI) +1) /2 * arcHeight ;
-				myTempPos.z = Mathf.Lerp(transform.parent.position.z, device.transform.position.z, fracJourney) ;
+				myTempPos.z = Mathf.Lerp(transform.parent.position.z, device.transform.position.z, fracJourney * Time.deltaTime) ;
 				myTransform.position = myTempPos;
 			}
 			else
