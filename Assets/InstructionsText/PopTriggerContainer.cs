@@ -24,8 +24,16 @@ public class PopTriggerContainer : MonoBehaviour
 		//lev 1
 		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel)
 		{
-			transform.position = lightLev;
-			popRend.material.mainTexture = Resources.Load("PopTextures/ControlePadExit") as Texture;
+			if(LevelFinishedController.instance.getControllers().Count > 1)
+			{
+				transform.position = lightLev;
+				popRend.material.mainTexture = Resources.Load("PopTextures/ControlePadExit") as Texture;
+			}
+			else
+			{
+				transform.position = lightLev;
+				popRend.material.mainTexture = Resources.Load("PopTextures/DuelControlPop") as Texture;
+			}
 		}
 		//lev 2
 		else if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstTriggerLevel)
@@ -54,8 +62,16 @@ public class PopTriggerContainer : MonoBehaviour
 		//lev 9
 		else if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel)
 		{
-			transform.position = craneLev;
-			popRend.material.mainTexture = Resources.Load("PopTextures/CranePop") as Texture;
+			if(LevelFinishedController.instance.getControllers().Count > 1)
+			{
+				transform.position = craneLev;
+				popRend.material.mainTexture = Resources.Load("PopTextures/CranePop") as Texture;
+			}
+			else
+			{
+				transform.position = craneLev;
+				popRend.material.mainTexture = Resources.Load("PopTextures/SwitchMachinesPop") as Texture;
+			}
 		}
 		//lev 15
 		else if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel)

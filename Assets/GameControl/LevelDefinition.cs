@@ -18,6 +18,8 @@ namespace AssemblyCSharp
 			// maze rows, maze columns, ending, puzzle
 			// "EnableNoVerticalWallsEnding"
 			// 1 player levels
+
+			// *********1 player levels **********
 			
 			//1 light
 			levels1.Add(new Level(new MachineCreator(false, false, false, false, false, false),
