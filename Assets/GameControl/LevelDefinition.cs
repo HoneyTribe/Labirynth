@@ -442,7 +442,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 5.0f),
 				new MonsterTemplate("Flying", 5.5f),
 				new MonsterTemplate("Flying", 6.0f)
-			},6,8,9,9, "EnableNewMazeEnding", "Boo"));
+			},6,8,9,9, "EnableNewMazeEnding", "Boo_2P"));
 
 			//34 everything, push blocks
 			levels2.Add(new Level(new MachineCreator(true, true, true, true, true, true),
@@ -682,7 +682,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 5.5f),
 				new MonsterTemplate("Flying", 6.0f),
 				new MonsterTemplate("Flying", 4.5f)
-			},6,6,9,9, "EnableNewMazeEnding", "Boo"));
+			},6,6,9,9, "EnableNewMazeEnding", "Boo_3P"));
 			
 			//34 everything, push blocks
 			levels3.Add(new Level(new MachineCreator(true, true, true, true, true, true),
@@ -929,7 +929,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 6.0f),
 				new MonsterTemplate("Flying", 4.5f),
 				new MonsterTemplate("Flying", 4.0f)
-			},6,6,9,9, "EnableNewMazeEnding", "Boo"));
+			},6,6,9,9, "EnableNewMazeEnding", "Boo_4P"));
 			
 			//34 everything, push blocks
 			levels4.Add(new Level(new MachineCreator(true, true, true, true, true, true),
