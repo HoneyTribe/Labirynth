@@ -306,8 +306,8 @@ namespace AssemblyCSharp
 
 			//13 blocks 2
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			    7,new List<MonsterTemplate>{
-			},0,0,9,9, null, "Blocks2"));
+			    15,new List<MonsterTemplate>{
+			},0,0,9,9, null, "Trapped_2P"));
 
 			//14 blocks 3
 			levels2.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -532,8 +532,8 @@ namespace AssemblyCSharp
 			
 			//13 blocks 2
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			    7,new List<MonsterTemplate>{
-			},0,0,9,9, null, "Blocks2"));
+			    15,new List<MonsterTemplate>{
+			},0,0,9,9, null, "Trapped_3P"));
 			
 			//14 blocks 3
 			levels3.Add(new Level(new MachineCreator(true, false, false, false, false, false),
@@ -775,8 +775,8 @@ namespace AssemblyCSharp
 			
 			//13 blocks 2
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
-			    7,new List<MonsterTemplate>{
-			},0,0,9,9, null, "Blocks2"));
+			    15,new List<MonsterTemplate>{
+			},0,0,9,9, null, "Trapped_4P"));
 			
 			//14 blocks 3
 			levels4.Add(new Level(new MachineCreator(true, false, false, false, false, false),
