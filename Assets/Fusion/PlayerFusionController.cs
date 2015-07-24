@@ -9,7 +9,6 @@ public class PlayerFusionController : MonoBehaviour {
 	private static float speed2 = 2.0f;
 
 	private GameObject puzzlePiece;
-	private GameObject[] players;
 	private bool moveTocenter;
 	private Vector3 center;
 	private Vector3 initialPosition;
@@ -27,7 +26,7 @@ public class PlayerFusionController : MonoBehaviour {
 		initialPosition = transform.localPosition;
 		parentTransform = transform.parent;
 		int id = int.Parse(gameObject.transform.parent.name.Substring (6));
-		int numberOfPlayers = LevelFinishedController.instance.getControllers().Count;
+		int numberOfPlayers = LevelFinishedController.instance.getAllControllers().Count;
 		if (numberOfPlayers == 2) 
 		{
 			if (id == 1)
@@ -57,7 +56,7 @@ public class PlayerFusionController : MonoBehaviour {
 			puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab" + id);
 		}
 
-		if (numberOfPlayers > 1) 
+		if (Application.loadedLevel != 0)
 		{
 			puzzlePiece = (GameObject) Instantiate(puzzlePrefab, Vector3.zero, 
 			                                       Quaternion.Euler(90, 0, puzzlePrefab.transform.eulerAngles.z));
@@ -110,13 +109,13 @@ public class PlayerFusionController : MonoBehaviour {
 
 	void Activate()
 	{
-		players = GameObject.FindGameObjectsWithTag ("Player");
 		float minX = 20;
 		float minZ = 20;
 		float maxX = -20;
 		float maxZ = -20;
-		foreach (GameObject player in players)
+		foreach (InputController controller in LevelFinishedController.instance.getAllControllers())
 		{
+			GameObject player = GameObject.Find ("Player" + controller.getPlayerId());
 			if (player.transform.position.x < minX)
 				minX = player.transform.position.x;
 			if (player.transform.position.x > maxX)

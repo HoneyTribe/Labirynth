@@ -14,12 +14,12 @@ public class FusionController : MonoBehaviour {
 	void Start () 
 	{
 		levelController = GameObject.Find ("LevelController");
-		foreach(InputController inputController in LevelFinishedController.instance.getControllers())
+		foreach(InputController inputController in LevelFinishedController.instance.getAllControllers())
 		{
 			players.Add(GameObject.Find ("Player" + inputController.getPlayerId()));
 		}
 
-		closeDistance = closeDistanceConstant + LevelFinishedController.instance.getControllers().Count;
+		closeDistance = closeDistanceConstant + LevelFinishedController.instance.getAllControllers().Count;
 	}
 	
 	void Update () 
@@ -56,6 +56,10 @@ public class FusionController : MonoBehaviour {
 				AudioController.instance.Play ("026_FusionC");
 				foreach(GameObject player in players)
 				{
+					if (player.name.Equals("Player5"))
+					{
+						continue;
+					}
 					player.rigidbody.velocity = Vector3.zero;
 					player.GetComponent<PlayerController>().TriggerPlayerIdle();
 				}
