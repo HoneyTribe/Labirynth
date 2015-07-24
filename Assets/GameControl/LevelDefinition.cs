@@ -210,7 +210,7 @@ namespace AssemblyCSharp
 			
 			//32 everything, bff, 2 triggers
 			levels1.Add(new Level(new MachineCreator(true, true, true, true, true, true),
-			                      28,new List<MonsterTemplate>{
+			                     41,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 6.0f),
 				new MonsterTemplate("Flying", 5.0f)
 			},8,8,9,9, null, "BFF"));
@@ -431,9 +431,9 @@ namespace AssemblyCSharp
 
 			//32 everything, bff, 2 triggers
 			levels2.Add(new Level(new MachineCreator(true, true, true, true, true, true),
-			    28,new List<MonsterTemplate>{
+			    41,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 6.0f),
-				new MonsterTemplate("Flying", 5.0f)
+				new MonsterTemplate("Flying", 3.0f)
 			},8,8,9,9, null, "BFF"));
 
 			//33 everything, all ghosts
@@ -669,10 +669,10 @@ namespace AssemblyCSharp
 
 			//32 everything, bff, 2 triggers
 			levels3.Add(new Level(new MachineCreator(true, true, true, true, true, true),
-			    28,new List<MonsterTemplate>{
+			    41,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 6.0f),
-				new MonsterTemplate("Flying", 5.0f),
-				new MonsterTemplate("Flying", 6.0f)
+				new MonsterTemplate("Flying", 3.0f),
+				new MonsterTemplate("Flying", 4.0f)
 			},8,7,9,9, null, "BFF"));
 
 			//33 everything, all ghosts
@@ -914,10 +914,10 @@ namespace AssemblyCSharp
 
 			//32 everything, bff, 2 triggers
 			levels4.Add(new Level(new MachineCreator(true, true, true, true, true, true),
-			    28,new List<MonsterTemplate>{
+			    41,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 6.0f),
-				new MonsterTemplate("Flying", 5.0f),
-				new MonsterTemplate("Flying", 6.0f),
+				new MonsterTemplate("Flying", 3.0f),
+				new MonsterTemplate("Flying", 4.0f),
 				new MonsterTemplate("Standard", 8.0f)
 				},8,6,9,9, null, "BFF"));
 
