@@ -7,10 +7,10 @@ public class DroneController : MonoBehaviour {
 	private const float stability = 0.6f;
 	private const float speed = 2.0f;
 	private const float speed2 = 10.0f;
-	private const float velocity = 350.0f; 
+	private const float velocity = 300.0f; 
 	private const float rotateSpeed = 40.0f;
 	private const float hoverVerticalSpeed = 0.05f;
-	private const float drag = 0.0f;
+	private const float drag = 0.05f;
 	private const float deceloration = 40.0f;
 	private const float retractingSpeed = 45f;
 	private const float stunBombSpeed = 12.0f;

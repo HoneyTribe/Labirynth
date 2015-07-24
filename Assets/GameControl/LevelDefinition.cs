@@ -376,7 +376,7 @@ namespace AssemblyCSharp
 			levels2.Add(new Level(new MachineCreator(true, true, true, false, true, false),
 			    35,new List<MonsterTemplate>{
 				new MonsterTemplate("Flying", 4.0f)
-			},8,8,9,9, null, "Boxes"));
+			},8,8,9,9, null, "Boxes_2P"));
 			
 			//24 drone bomb, easy puzzle
 			levels2.Add(new Level(new MachineCreator(false, false, false, false, false, true),
@@ -610,7 +610,7 @@ namespace AssemblyCSharp
 			    35,new List<MonsterTemplate>{
 				new MonsterTemplate("Flying", 4.0f),
 				new MonsterTemplate("Flying", 4.5f)
-			},8,8,9,9, null, "Boxes"));
+			},8,8,9,9, null, "Boxes_3P"));
 			
 			//24 drone bomb
 			levels3.Add(new Level(new MachineCreator(false, false, false, false, false, true),
@@ -855,7 +855,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 4.0f),
 				new MonsterTemplate("Flying", 4.5f),
 				new MonsterTemplate("Flying", 5.0f)
-			},8,6,9,9, null, "Boxes"));
+			},8,6,9,9, null, "Boxes_4P"));
 			
 			//24 drone bomb, easy puzzle
 			levels4.Add(new Level(new MachineCreator(false, false, false, false, false, true),
