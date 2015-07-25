@@ -50,6 +50,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _FalloffTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _BumpTex
         second:
           m_Texture: {fileID: 2800000, guid: 95b68c4d5edd0b045b69d2c1273d8485, type: 3}
@@ -65,13 +72,6 @@ Material:
       data:
         first:
           name: _Texture
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _FalloffTex
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -154,14 +154,6 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _ColorH
-        second: {r: 0, g: 1, b: .213793039, a: 1}
-      data:
-        first:
-          name: _ColorV
-        second: {r: 1, g: .0441176295, b: .0441176295, a: 1}
-      data:
-        first:
           name: _RimColor
         second: {r: 0, g: .296551704, b: 1, a: 1}
       data:
@@ -172,6 +164,14 @@ Material:
         first:
           name: _InnerColor
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _ColorH
+        second: {r: 0, g: 1, b: .213793039, a: 1}
+      data:
+        first:
+          name: _ColorV
+        second: {r: 1, g: .0441176295, b: .0441176295, a: 1}
       data:
         first:
           name: _Cold
