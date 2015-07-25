@@ -29,7 +29,7 @@ public class PlayerFusionController : MonoBehaviour {
 		int numberOfPlayers = LevelFinishedController.instance.getAllControllers().Count;
 		if (numberOfPlayers == 2) 
 		{
-			if (id == 1)
+			if (id < 5)
 			{
 				puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab_1and4");
 			}
