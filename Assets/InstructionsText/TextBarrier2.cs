@@ -21,9 +21,9 @@ public class TextBarrier2 : MonoBehaviour
 		if ((currentCollider.tag  == "Player"))
 		{
 			playersInPortal++;
-			if(playersInPortal >=2)
+			if(playersInPortal >=1)
 			{
-			text_enter.GetComponentInChildren<TextMesh>().text = "press 'start'/'enter' when everybody is ready";
+			text_enter.GetComponentInChildren<TextMesh>().text = "press 'start'/'enter' when everybody has entered";
 			}
 		}
 	}
@@ -33,6 +33,11 @@ public class TextBarrier2 : MonoBehaviour
 		if ((currentCollider.tag  == "Player"))
 		{
 			playersInPortal--;
+		}
+
+		if(playersInPortal <1)
+		{
+			text_enter.GetComponentInChildren<TextMesh>().text = "Enter the portal";
 		}
 	}
 

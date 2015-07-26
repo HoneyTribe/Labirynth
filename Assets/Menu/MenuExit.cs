@@ -63,7 +63,7 @@ public class MenuExit : MonoBehaviour
 			if (playersInside == 0)
 			{
 				animOn = false;
-				text_enter.GetComponentInChildren<TextMesh>().text = "2-4 characters must enter the portal";
+				text_enter.GetComponentInChildren<TextMesh>().text = "Enter the portal";
 				TriggerAnimClose();
 			}
 		}

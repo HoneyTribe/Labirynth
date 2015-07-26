@@ -297,6 +297,15 @@ public class LevelFinishedController : MonoBehaviour {
 			Application.LoadLevel (1); 
 		}
 	}
+
+	//called from TimePortalController.cs
+	public void PlayerMode()
+	{
+		if(analytics ==1)
+		{
+			GA.API.Design.NewEvent(getAllControllers().Count + "_PlayerMode",1);
+		}
+	}
 	
 	public void Reset()
 	{

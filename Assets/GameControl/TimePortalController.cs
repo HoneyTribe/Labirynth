@@ -55,7 +55,9 @@ public class TimePortalController : MonoBehaviour {
 		{
 			player.rigidbody.velocity = Vector3.zero;
 		}
-		
+
+		LevelFinishedController.instance.PlayerMode();
+
 		this.anim.SetTrigger(activatedHash);
 		AudioController.instance.Play("026_FusionC");
 		streamLeftP.Play();

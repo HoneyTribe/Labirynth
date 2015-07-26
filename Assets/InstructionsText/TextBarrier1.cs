@@ -38,7 +38,7 @@ public class TextBarrier1 : MonoBehaviour
 	{
 		if ((currentCollider.tag  == "Player"))
 		{
-			text_enter.GetComponentInChildren<TextMesh>().text = "2-4 characters must enter the portal";
+			text_enter.GetComponentInChildren<TextMesh>().text = "Enter the portal";
 			anim1.SetTrigger(activatedHash);
 			anim2.SetTrigger(activatedHash);
 			anim3.SetTrigger(activatedHash);
