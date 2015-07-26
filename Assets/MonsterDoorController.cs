@@ -41,11 +41,9 @@ public class MonsterDoorController : MonoBehaviour {
 			{
 				float doorStep = sign * Time.deltaTime * maxY / interval;
 				float lightStep = sign * Time.deltaTime * maxIntensity / interval;
-				
-				//if(transform.position.y <= maxY)
-				//{
-					transform.Translate (0, doorStep, 0);
-				//}
+
+				transform.Translate (0, doorStep, 0);
+
 				doorLight.light.intensity += lightStep;
 			}
 

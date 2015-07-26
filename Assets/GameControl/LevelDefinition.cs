@@ -123,8 +123,7 @@ namespace AssemblyCSharp
 			                      6,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 4.5f),
 				new MonsterTemplate("Flying", 4.0f),
-				new MonsterTemplate("Standard", 3.5f),
-				new MonsterTemplate("Flying", 3.0f)
+				new MonsterTemplate("Standard", 3.5f)
 			},5,8,8,8, "EnableNewMazeEnding", null));
 			
 			// 20 jump box, hard puzzle + blocks
@@ -344,8 +343,7 @@ namespace AssemblyCSharp
 			    6,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 4.5f),
 				new MonsterTemplate("Flying", 4.0f),
-				new MonsterTemplate("Standard", 3.5f),
-				new MonsterTemplate("Flying", 3.0f)
+				new MonsterTemplate("Standard", 3.5f)
 			},5,8,8,8, "EnableNewMazeEnding", null));
 
 			// 20 jump box, hard puzzle + blocks
@@ -572,10 +570,9 @@ namespace AssemblyCSharp
 			levels3.Add(new Level(new MachineCreator(true, true, false, false, false, false),
 			    7,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 4.5f),
-				new MonsterTemplate("Flying", 4.0f),
-				new MonsterTemplate("Standard", 3.5f),
-				new MonsterTemplate("Flying", 3.0f),
-				new MonsterTemplate("Standard", 2.8f)
+				new MonsterTemplate("Flying", 3.5f),
+				new MonsterTemplate("Standard", 3.75f),
+				new MonsterTemplate("Flying", 3.0f)
 			},4,7,8,8, "EnableNewMazeEnding", null));
 
 			//20 jump box, hard puzzle
@@ -815,10 +812,10 @@ namespace AssemblyCSharp
 			levels4.Add(new Level(new MachineCreator(true, true, false, false, false, false),
 			    8,new List<MonsterTemplate>{
 				new MonsterTemplate("Standard", 4.5f),
-				new MonsterTemplate("Flying", 4.0f),
-				new MonsterTemplate("Standard", 3.5f),
+				new MonsterTemplate("Flying", 3.5f),
+				new MonsterTemplate("Standard", 3.75f),
 				new MonsterTemplate("Flying", 3.0f),
-				new MonsterTemplate("Standard", 2.8f)
+				new MonsterTemplate("Standard", 4.0)
 			},4,5,8,8, "EnableNewMazeEnding", null));
 
 			//20 jump box hard puzzle
