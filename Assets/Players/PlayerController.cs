@@ -37,12 +37,13 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 	void Start()
 	{
+		speed *= LevelFinishedController.instance.gameSpeed;
+		gameController = GameObject.Find ("GameController");
 		if (gameObject.name.Equals("Player5"))
 		{
 			return;
 		}
-		speed *= LevelFinishedController.instance.gameSpeed;
-		gameController = GameObject.Find ("GameController");
+
 		originalColor = transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color;
 
 		//get revive animator
@@ -554,8 +555,11 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				collider.isTrigger = true;
 				collision.collider.rigidbody.velocity = Vector3.zero;
 				collision.collider.rigidbody.angularVelocity = Vector3.zero;
-				rigidbody.velocity = Vector3.zero;
-				rigidbody.angularVelocity = Vector3.zero;
+				if (rigidbody != null)
+				{
+					rigidbody.velocity = Vector3.zero;
+					rigidbody.angularVelocity = Vector3.zero;
+				}
 				FloorInstructions.instance.ShowReviveInstructions();
 				//collision.gameObject.SendMessage("Recalculate");
 			}
