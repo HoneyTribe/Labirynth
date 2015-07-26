@@ -304,6 +304,12 @@ public class LevelFinishedController : MonoBehaviour {
 		gameOver = false;
 		congratulation = false;
 		stopped = false;
+		GameObject player = GameObject.Find ("Player5");
+		if (player != null)
+		{
+			PlayerController playerController = player.GetComponent<PlayerController>();
+			playerController.EnterLighthouse();
+		}
 	}
 	
 	//triggered from this script and PlayerSelectionMenuController

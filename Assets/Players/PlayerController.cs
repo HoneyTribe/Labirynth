@@ -39,10 +39,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	{
 		if (gameObject.name.Equals("Player5"))
 		{
-			if (Application.loadedLevel != 0)
-			{
-				StartCoroutine(WaitAndEnterLighthouse());
-			}
 			return;
 		}
 		speed *= LevelFinishedController.instance.gameSpeed;
@@ -74,12 +70,6 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				runAnim = transform.GetChild(i).GetComponent<Animator> ();
 			}
 		}
-	}
-
-	IEnumerator  WaitAndEnterLighthouse()
-	{
-		yield return new WaitForSeconds(2);
-		EnterLighthouse();
 	}
 
 	public void handleLogic(float x, float z, float action, float action2)
@@ -500,7 +490,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		this.inputBlocked = inputBlocked;
 	}
 
-	void EnterLighthouse()
+	public void EnterLighthouse()
 	{
 		lighthouseEntered = true;
 		TopLightController.instance.TurnOn();

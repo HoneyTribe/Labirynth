@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class PlayerFusionController : MonoBehaviour {
 
+	private static int puzzleCounter = 1;
 	private static float speed = 0.3f;
 	private static float speed1 = 0.3f;
 	private static float speed2 = 2.0f;
@@ -25,11 +26,10 @@ public class PlayerFusionController : MonoBehaviour {
 		GameObject puzzlePrefab = null;
 		initialPosition = transform.localPosition;
 		parentTransform = transform.parent;
-		int id = int.Parse(gameObject.transform.parent.name.Substring (6));
 		int numberOfPlayers = LevelFinishedController.instance.getAllControllers().Count;
-		if (numberOfPlayers == 2) 
-		{
-			if (id < 5)
+		if (numberOfPlayers == 2) 		{
+
+			if (puzzleCounter == 1)
 			{
 				puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab_1and4");
 			}
@@ -41,9 +41,9 @@ public class PlayerFusionController : MonoBehaviour {
 
 		if (numberOfPlayers == 3) 
 		{
-			if ((id == 2) || (id == 3))
+			if ((puzzleCounter == 2) || (puzzleCounter == 3))
 			{
-				puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab" + id);
+				puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab" + puzzleCounter);
 			}
 			else
 			{
@@ -53,7 +53,7 @@ public class PlayerFusionController : MonoBehaviour {
 
 		if (numberOfPlayers == 4) 
 		{
-			puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab" + id);
+			puzzlePrefab = (GameObject) Resources.Load("PuzzlePieces/Puzzle_Prefab" + puzzleCounter);
 		}
 
 		if (Application.loadedLevel != 0)
@@ -66,6 +66,11 @@ public class PlayerFusionController : MonoBehaviour {
 			                                               puzzlePiece.transform.localScale.y / 3f,
 			                                               puzzlePiece.transform.localScale.z / 3f);
 			puzzlePiece.SetActive(false);
+			puzzleCounter ++;
+			if (puzzleCounter > numberOfPlayers)
+			{
+				puzzleCounter = 1;
+			}
 		}
 	}
 
