@@ -815,7 +815,7 @@ namespace AssemblyCSharp
 				new MonsterTemplate("Flying", 3.5f),
 				new MonsterTemplate("Standard", 3.75f),
 				new MonsterTemplate("Flying", 3.0f),
-				new MonsterTemplate("Standard", 4.0)
+				new MonsterTemplate("Standard", 4.0f)
 			},4,5,8,8, "EnableNewMazeEnding", null));
 
 			//20 jump box hard puzzle
