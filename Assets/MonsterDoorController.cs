@@ -3,8 +3,8 @@ using System.Collections;
 
 public class MonsterDoorController : MonoBehaviour {
 
-	private static float interval = 4.0f;
-	private static int delay = 5;
+	private static float interval = 3.0f;
+	private static int delay = 2;
 	private static float maxY = 10.0f;
 	private static float maxIntensity = 5.0f;
 
@@ -25,12 +25,27 @@ public class MonsterDoorController : MonoBehaviour {
 	{
 		if (timeLeft > 0)
 		{
-			if ((sign == 1) || (sign == -1))
+			if (sign == 1)
 			{
 				float doorStep = sign * Time.deltaTime * maxY / interval;
 				float lightStep = sign * Time.deltaTime * maxIntensity / interval;
 
-				transform.Translate (0, doorStep, 0);
+				if(transform.position.y <= maxY)
+				{
+					transform.Translate (0, doorStep, 0);
+				}
+				doorLight.light.intensity += lightStep;
+			}
+
+			if (sign == -1)
+			{
+				float doorStep = sign * Time.deltaTime * maxY / interval;
+				float lightStep = sign * Time.deltaTime * maxIntensity / interval;
+				
+				//if(transform.position.y <= maxY)
+				//{
+					transform.Translate (0, doorStep, 0);
+				//}
 				doorLight.light.intensity += lightStep;
 			}
 
