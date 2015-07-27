@@ -13,12 +13,12 @@ public class TimePortalController : MonoBehaviour {
 	private GameObject text;
 	private GameObject textEnter;
 
-	private GameObject streamLeft;
-	private GameObject streamRight;
-	private GameObject streamCentre;
-	private ParticleSystem streamLeftP;
-	private ParticleSystem streamRightP;
-	private ParticleSystem streamCentreP;
+	//private GameObject streamLeft;
+	//private GameObject streamRight;
+	//private GameObject streamCentre;
+	//private ParticleSystem streamLeftP;
+	//private ParticleSystem streamRightP;
+	//private ParticleSystem streamCentreP;
 
 
 	void Start()
@@ -30,12 +30,12 @@ public class TimePortalController : MonoBehaviour {
 
 		transition = GameObject.Find ("TransitionTemp").GetComponent<Animator>();
 
-		streamLeftP = GameObject.Find ("StreamLeft").GetComponent<ParticleSystem>();
-		streamRightP = GameObject.Find ("StreamRight").GetComponent<ParticleSystem>();
-		streamCentreP = GameObject.Find ("StreamCentre").GetComponent<ParticleSystem>();
-		streamLeft = GameObject.Find ("StreamLeft");
-		streamRight = GameObject.Find ("StreamRight");
-		streamCentre = GameObject.Find ("StreamCentre");
+		//streamLeftP = GameObject.Find ("StreamLeft").GetComponent<ParticleSystem>();
+		//streamRightP = GameObject.Find ("StreamRight").GetComponent<ParticleSystem>();
+		//streamCentreP = GameObject.Find ("StreamCentre").GetComponent<ParticleSystem>();
+		//streamLeft = GameObject.Find ("StreamLeft");
+		//streamRight = GameObject.Find ("StreamRight");
+		//streamCentre = GameObject.Find ("StreamCentre");
 	}
 
 	public IEnumerator startTimePortal()
@@ -60,22 +60,22 @@ public class TimePortalController : MonoBehaviour {
 
 		this.anim.SetTrigger(activatedHash);
 		AudioController.instance.Play("026_FusionC");
-		streamLeftP.Play();
-		streamRightP.Play();
-		streamCentreP.Play();
+		//streamLeftP.Play();
+		//streamRightP.Play();
+		//streamCentreP.Play();
 		LevelFinishedController.instance.setStopped (true);
 		yield return new WaitForSeconds(0.5f);
 		this.transition.enabled = true;
 		yield return new WaitForSeconds(3);
-		streamLeftP.Stop();
-		streamRightP.Stop();
-		streamCentreP.Stop();
-		streamLeftP.Clear();
-		streamRightP.Clear();
-		streamCentreP.Clear();
-		Destroy (streamLeft);
-		Destroy (streamRight);
-		Destroy (streamCentre);
+		//streamLeftP.Stop();
+		//streamRightP.Stop();
+		//streamCentreP.Stop();
+		//streamLeftP.Clear();
+		//streamRightP.Clear();
+		//streamCentreP.Clear();
+		//Destroy (streamLeft);
+		//Destroy (streamRight);
+		//Destroy (streamCentre);
 		Application.LoadLevel (1);
 	}
 }
