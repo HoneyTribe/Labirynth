@@ -64,6 +64,7 @@ public class LevelEnd : MonoBehaviour
 	{
 		if(startSequence == true)
 		{
+			camera.SendMessage ("StopEarthquake");
 			camera.transform.position = Vector3.Lerp (camera.transform.position, newCameraPosition, Time.deltaTime * camSpeed);
 			camera.transform.rotation = Quaternion.Lerp (camera.transform.rotation, newCameraRotation, Time.deltaTime * camSpeed);
 

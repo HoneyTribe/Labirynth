@@ -26,6 +26,13 @@ public class CameraEarthquakeController : MonoBehaviour {
 		shake = numberOfShakes;
 	}
 
+	//called from LevelEnd.cs
+	public void StopEarthquake()
+	{
+		shake = -1;
+	}
+
+
 	IEnumerator StartEarthquakeTimer() 
 	{
 		while (true)
