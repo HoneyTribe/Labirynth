@@ -13,9 +13,13 @@ public class TrapEnding : MonoBehaviour {
 	private List<GameObject> walls = new List<GameObject>();
 
 	private List<GameObject> risingWalls;
+
+	private GameObject cam;
 	
 	void Start()
 	{
+		cam = GameObject.Find ("MainCamera_Front");
+
 		foreach (GameObject pillar in GameObject.FindGameObjectsWithTag ("Pillar"))
 		{
 			if (Mathf.Abs(pillar.transform.position.z + Instantiation.planeSizeZ/2f - Instantiation.offsetZ) > 0.1)
@@ -50,7 +54,7 @@ public class TrapEnding : MonoBehaviour {
 
 			if (earthquakeTimer > 0.7f && LevelEnd.instance.IsStartSequence()==false)
 			{
-				GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
+				cam.SendMessage ("StartEarthquake");
 				AudioController.instance.Play("033_Earthquake");
 				earthquakeTimer = 0;
 			}

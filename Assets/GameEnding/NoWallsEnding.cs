@@ -12,10 +12,13 @@ public class NoWallsEnding : MonoBehaviour {
 	private GameObject[] pillars;
 	private GameObject[] walls;
 
+	private GameObject cam;
+
 	void Start()
 	{
 		pillars = GameObject.FindGameObjectsWithTag ("Pillar");
 		walls = GameObject.FindGameObjectsWithTag ("Wall");
+		cam = GameObject.Find ("MainCamera_Front");
 	}
 
 	void Update()
@@ -34,7 +37,7 @@ public class NoWallsEnding : MonoBehaviour {
 
 			if (earthquakeTimer > 0.7f && LevelEnd.instance.IsStartSequence()==false)
 			{
-				GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
+				cam.SendMessage ("StartEarthquake");
 				AudioController.instance.Play("033_Earthquake");
 				earthquakeTimer = 0;
 			}

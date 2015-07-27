@@ -17,11 +17,14 @@ public class NewMazeEnding : MonoBehaviour {
 	private List<GameObject> risingWalls;
 
 	private GameObject[] allPlayers;
+
+	private GameObject cam;
 	
 	void Start()
 	{
 		instance = this;
 		allPlayers= GameObject.FindGameObjectsWithTag ("Player");
+		cam = GameObject.Find ("MainCamera_Front");
 	}
 
 	void Update()
@@ -55,7 +58,7 @@ public class NewMazeEnding : MonoBehaviour {
 
 			if (earthquakeTimer > 0.7f && LevelEnd.instance.IsStartSequence()==false)
 			{
-				GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
+				cam.SendMessage ("StartEarthquake");
 				AudioController.instance.Play("033_Earthquake");
 				earthquakeTimer = 0;
 			}

@@ -11,12 +11,16 @@ public class NoHorizontalWallsEnding : MonoBehaviour {
 	private bool endingEnabled;
 	private float time;
 	private float earthquakeTimer;
+
+	private GameObject cam;
 	
 	private List<GameObject> walls = new List<GameObject>();
 	
 	void Start()
 	{
 		instance = this;
+
+		cam = GameObject.Find ("MainCamera_Front");
 		
 		GameObject[] w = GameObject.FindGameObjectsWithTag ("Wall");
 		foreach (GameObject wall in w)
@@ -46,7 +50,7 @@ public class NoHorizontalWallsEnding : MonoBehaviour {
 			
 			if (earthquakeTimer > 0.7f && LevelEnd.instance.IsStartSequence()==false)
 			{
-				GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
+				cam.SendMessage ("StartEarthquake");
 				AudioController.instance.Play("033_Earthquake");
 				earthquakeTimer = 0;
 			}

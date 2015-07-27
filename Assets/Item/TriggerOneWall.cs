@@ -15,9 +15,12 @@ public class TriggerOneWall : MonoBehaviour
 	private Vector3 smokeTempPos;
 	private float smokeYOffset = 1.0f;
 
+	private GameObject cam;
+
 	void Start()
 	{
 		smokeExplode = (GameObject) Resources.Load("SmokeExplode");
+		cam = GameObject.Find ("MainCamera_Front");
 	}
 
 	public void setReference(string reference)
@@ -59,7 +62,7 @@ public class TriggerOneWall : MonoBehaviour
 			
 			if (earthquakeTimer > 0.7f)
 			{
-				GameObject.Find ("MainCamera_Front").SendMessage ("StartEarthquake");
+				cam.SendMessage ("StartEarthquake");
 				AudioController.instance.Play("033_Earthquake");
 				earthquakeTimer = 0;
 			}
