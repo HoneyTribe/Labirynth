@@ -11,6 +11,8 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 	private static int stopHash = Animator.StringToHash ("Stop");
 	private static int IdleHash = Animator.StringToHash ("Idle");
 	private static int NotIdleHash = Animator.StringToHash ("NotIdle");
+	private static int AwakeHash = Animator.StringToHash ("Awake");
+
 	private bool idleSaved = true;
 	private bool idle = true;
 
@@ -46,12 +48,15 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	private Animator anim;
 
+	private Rigidbody body;
+
 	public abstract void go ();
 
 	void Start () {
 
 		textMesh = gameObject.GetComponentInChildren<TextMesh> ();
 		anim = gameObject.GetComponentInChildren<Animator> ();
+		body = this.rigidbody;
 
 		GameObject gameController = GameObject.Find ("GameController");
 		device = GameObject.Find ("DeviceContainer");
@@ -133,10 +138,10 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 		recalculateTrigger = false;
 
-		// check if standard monster stopped moving. Trigger idle anim.
-		if(this.name == "Monster(Clone)")
+		// check if monster stopped moving. Trigger idle anim.
+		if(this.name == "Monster(Clone)" || this.name == "LazyMonster(Clone)")
 		{
-			if (this.rigidbody.IsSleeping() == true)
+			if (body.IsSleeping() == true)
 			{
 				idle = true;
 				Idle();
@@ -147,7 +152,6 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 				NotIdle();
 			}
 		}
-
 	}
 
 	IEnumerator ChangeShader()
@@ -161,6 +165,12 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		if(idle == true && idleSaved == false)
 		{
 			idleSaved = true;
+
+			if(this.name == "LazyMonster(Clone)" )
+			{
+				anim.SetBool(AwakeHash, false);
+			}
+
 			anim.SetTrigger(IdleHash);
 		}
 
@@ -171,9 +181,14 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		if(idle == false && idleSaved == true)
 		{
 			idleSaved = false;
+
+			if(this.name == "LazyMonster(Clone)" )
+			{
+				anim.SetBool(AwakeHash, true);
+			}
+
 			anim.SetTrigger(NotIdleHash);
 		}
-
 	}
 
 	public void setStopped(bool monsterStopped)
