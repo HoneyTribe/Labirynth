@@ -12,7 +12,7 @@ public class TimePortalController : MonoBehaviour {
 	private Animator transition;
 	private GameObject text;
 	private GameObject textEnter;
-	private float gravity = 0.6f;
+	private float gravity = 1.0f;
 
 	private ParticleSystem galaxy1;
 	private ParticleSystem galaxy1_1;
@@ -93,7 +93,8 @@ public class TimePortalController : MonoBehaviour {
 
 		this.anim.SetTrigger(activatedHash);
 		AudioController.instance.Play("026_FusionC");
-		galaxy1.gravityModifier = gravity;
+		/*
+		 * galaxy1.gravityModifier = gravity;
 		galaxy1_1.gravityModifier = gravity;
 		galaxy1_1_1.gravityModifier = gravity;
 		galaxy1_2.gravityModifier = gravity;
@@ -110,6 +111,7 @@ public class TimePortalController : MonoBehaviour {
 		galaxy3_1_1.gravityModifier = gravity;
 		galaxy3_2.gravityModifier = gravity;
 		galaxy3_3.gravityModifier = gravity;
+		*/
 		//streamRightP.Play();
 		//streamCentreP.Play();
 		LevelFinishedController.instance.setStopped (true);
