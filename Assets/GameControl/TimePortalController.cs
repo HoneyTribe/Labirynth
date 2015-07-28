@@ -12,13 +12,25 @@ public class TimePortalController : MonoBehaviour {
 	private Animator transition;
 	private GameObject text;
 	private GameObject textEnter;
-	private float gravity = 0.4f;
+	private float gravity = 0.6f;
 
 	private ParticleSystem galaxy1;
 	private ParticleSystem galaxy1_1;
 	private ParticleSystem galaxy1_1_1;
 	private ParticleSystem galaxy1_2;
 	private ParticleSystem galaxy1_3;
+
+	private ParticleSystem galaxy2;
+	private ParticleSystem galaxy2_1;
+	private ParticleSystem galaxy2_1_1;
+	private ParticleSystem galaxy2_2;
+	private ParticleSystem galaxy2_3;
+
+	private ParticleSystem galaxy3;
+	private ParticleSystem galaxy3_1;
+	private ParticleSystem galaxy3_1_1;
+	private ParticleSystem galaxy3_2;
+	private ParticleSystem galaxy3_3;
 	//private GameObject streamRight;
 	//private GameObject streamCentre;
 	//private ParticleSystem streamLeftP;
@@ -40,6 +52,18 @@ public class TimePortalController : MonoBehaviour {
 		galaxy1_1_1 = GameObject.Find ("Galaxy1_1_1").GetComponent<ParticleSystem>();
 		galaxy1_2 = GameObject.Find ("Galaxy1_2").GetComponent<ParticleSystem>();
 		galaxy1_3 = GameObject.Find ("Galaxy1_3").GetComponent<ParticleSystem>();
+
+		galaxy2 = GameObject.Find ("Galaxy2").GetComponent<ParticleSystem>();
+		galaxy2_1 = GameObject.Find ("Galaxy2_1").GetComponent<ParticleSystem>();
+		galaxy2_1_1 = GameObject.Find ("Galaxy2_1_1").GetComponent<ParticleSystem>();
+		galaxy2_2 = GameObject.Find ("Galaxy2_2").GetComponent<ParticleSystem>();
+		galaxy2_3 = GameObject.Find ("Galaxy2_3").GetComponent<ParticleSystem>();
+
+		galaxy3 = GameObject.Find ("Galaxy3").GetComponent<ParticleSystem>();
+		galaxy3_1 = GameObject.Find ("Galaxy3_1").GetComponent<ParticleSystem>();
+		galaxy3_1_1 = GameObject.Find ("Galaxy3_1_1").GetComponent<ParticleSystem>();
+		galaxy3_2 = GameObject.Find ("Galaxy3_2").GetComponent<ParticleSystem>();
+		galaxy3_3 = GameObject.Find ("Galaxy3_3").GetComponent<ParticleSystem>();
 		//streamRightP = GameObject.Find ("StreamRight").GetComponent<ParticleSystem>();
 		//streamCentreP = GameObject.Find ("StreamCentre").GetComponent<ParticleSystem>();
 		//streamLeft = GameObject.Find ("StreamLeft");
@@ -74,6 +98,18 @@ public class TimePortalController : MonoBehaviour {
 		galaxy1_1_1.gravityModifier = gravity;
 		galaxy1_2.gravityModifier = gravity;
 		galaxy1_3.gravityModifier = gravity;
+
+		galaxy2.gravityModifier = gravity;
+		galaxy2_1.gravityModifier = gravity;
+		galaxy2_1_1.gravityModifier = gravity;
+		galaxy2_2.gravityModifier = gravity;
+		galaxy2_3.gravityModifier = gravity;
+
+		galaxy3.gravityModifier = gravity;
+		galaxy3_1.gravityModifier = gravity;
+		galaxy3_1_1.gravityModifier = gravity;
+		galaxy3_2.gravityModifier = gravity;
+		galaxy3_3.gravityModifier = gravity;
 		//streamRightP.Play();
 		//streamCentreP.Play();
 		LevelFinishedController.instance.setStopped (true);
