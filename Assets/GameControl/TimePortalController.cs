@@ -12,8 +12,13 @@ public class TimePortalController : MonoBehaviour {
 	private Animator transition;
 	private GameObject text;
 	private GameObject textEnter;
+	private float gravity = 0.4f;
 
-	//private GameObject streamLeft;
+	private ParticleSystem galaxy1;
+	private ParticleSystem galaxy1_1;
+	private ParticleSystem galaxy1_1_1;
+	private ParticleSystem galaxy1_2;
+	private ParticleSystem galaxy1_3;
 	//private GameObject streamRight;
 	//private GameObject streamCentre;
 	//private ParticleSystem streamLeftP;
@@ -30,7 +35,11 @@ public class TimePortalController : MonoBehaviour {
 
 		transition = GameObject.Find ("TransitionTemp").GetComponent<Animator>();
 
-		//streamLeftP = GameObject.Find ("StreamLeft").GetComponent<ParticleSystem>();
+		galaxy1 = GameObject.Find ("Galaxy1").GetComponent<ParticleSystem>();
+		galaxy1_1 = GameObject.Find ("Galaxy1_1").GetComponent<ParticleSystem>();
+		galaxy1_1_1 = GameObject.Find ("Galaxy1_1_1").GetComponent<ParticleSystem>();
+		galaxy1_2 = GameObject.Find ("Galaxy1_2").GetComponent<ParticleSystem>();
+		galaxy1_3 = GameObject.Find ("Galaxy1_3").GetComponent<ParticleSystem>();
 		//streamRightP = GameObject.Find ("StreamRight").GetComponent<ParticleSystem>();
 		//streamCentreP = GameObject.Find ("StreamCentre").GetComponent<ParticleSystem>();
 		//streamLeft = GameObject.Find ("StreamLeft");
@@ -60,7 +69,11 @@ public class TimePortalController : MonoBehaviour {
 
 		this.anim.SetTrigger(activatedHash);
 		AudioController.instance.Play("026_FusionC");
-		//streamLeftP.Play();
+		galaxy1.gravityModifier = gravity;
+		galaxy1_1.gravityModifier = gravity;
+		galaxy1_1_1.gravityModifier = gravity;
+		galaxy1_2.gravityModifier = gravity;
+		galaxy1_3.gravityModifier = gravity;
 		//streamRightP.Play();
 		//streamCentreP.Play();
 		LevelFinishedController.instance.setStopped (true);
