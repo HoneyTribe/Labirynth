@@ -2753,6 +2753,64 @@ ParticleSystem:
     subEmitterCollision1: {fileID: 0}
     subEmitterDeath: {fileID: 0}
     subEmitterDeath1: {fileID: 0}
+--- !u!1 &142630726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 142630727}
+  - 33: {fileID: 142630729}
+  - 23: {fileID: 142630728}
+  m_Layer: 9
+  m_Name: Joypad_StickR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &142630727
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 142630726}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 8.09845543, y: -.0640293211, z: -1.19817662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1628416226}
+--- !u!23 &142630728
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: 1837ba26f9af82444b13561ee82eed0d,
+    type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 142630726}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: 61be65fea3b1b1d49896686c9981c5ac, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!33 &142630729
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300000, guid: 1837ba26f9af82444b13561ee82eed0d,
+    type: 3}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 142630726}
+  m_Mesh: {fileID: 4300000, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
 --- !u!1 &154413360
 GameObject:
   m_ObjectHideFlags: 0
@@ -8767,7 +8825,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4d505f5c7770790498d603e52024849b, type: 3}
   m_PrefabInternal: {fileID: 270543577}
   m_GameObject: {fileID: 501457235}
-  m_LocalRotation: {x: 0, y: 0, z: .70710659, w: -.707106948}
+  m_LocalRotation: {x: 0, y: 0, z: .70710665, w: -.707107008}
   m_LocalPosition: {x: 61.7617874, y: 7.99726582, z: -.0296993256}
   m_LocalScale: {x: -187, y: 212.500015, z: 212.5}
   m_Children: []
@@ -9191,7 +9249,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f8a1916f6f5091a4980602a114194ed1, type: 3}
   m_PrefabInternal: {fileID: 1666312131}
   m_GameObject: {fileID: 540935972}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
+  m_LocalRotation: {x: 0, y: 0, z: .707106888, w: .707106769}
   m_LocalPosition: {x: -3.28216553, y: 35.2000008, z: -22.8196774}
   m_LocalScale: {x: -187, y: 212.500015, z: 212.5}
   m_Children: []
@@ -15157,23 +15215,35 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -.0640295595
+      value: -.0640324205
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.19817615
+      value: -1.19817662
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.09845543
+      value: -8.03286171
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
       propertyPath: m_Name
-      value: Joypad_StickR
+      value: Joypad_StickL
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
@@ -25991,7 +26061,7 @@ Transform:
   m_GameObject: {fileID: 1596525308}
   m_LocalRotation: {x: .706433952, y: -.0308435522, z: -.0308435354, w: .706433594}
   m_LocalPosition: {x: 1.88378608, y: .458543301, z: -.00800085068}
-  m_LocalScale: {x: .990913153, y: .990913153, z: .678391576}
+  m_LocalScale: {x: .990913093, y: .990913153, z: .678391576}
   m_Children: []
   m_Father: {fileID: 903329844}
 --- !u!23 &1596525310
@@ -26386,7 +26456,7 @@ Transform:
   m_Children:
   - {fileID: 1851771012}
   - {fileID: 1810763851}
-  - {fileID: 2068634409}
+  - {fileID: 142630727}
   m_Father: {fileID: 1469177898}
 --- !u!1 &1628543714
 GameObject:
@@ -28513,7 +28583,7 @@ Transform:
   m_PrefabInternal: {fileID: 1002821752}
   m_GameObject: {fileID: 1810763850}
   m_LocalRotation: {x: 0, y: 0, z: -.707106829, w: .707106829}
-  m_LocalPosition: {x: 3.99609828, y: -.0105545996, z: -1.14503372}
+  m_LocalPosition: {x: 3.99609828, y: -.0105548138, z: -1.14503372}
   m_LocalScale: {x: 1, y: 1, z: .728527188}
   m_Children: []
   m_Father: {fileID: 1628416226}
@@ -30886,7 +30956,7 @@ GameObject:
   - 33: {fileID: 1851771014}
   - 23: {fileID: 1851771013}
   m_Layer: 9
-  m_Name: Joypad_StickR
+  m_Name: Joypad_StickL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30898,9 +30968,9 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
   m_PrefabInternal: {fileID: 1002821752}
   m_GameObject: {fileID: 1851771011}
-  m_LocalRotation: {x: -2.30404623e-07, y: -2.30404666e-07, z: .707106829, w: .707106709}
-  m_LocalPosition: {x: 8.09845543, y: -.0640295595, z: -1.19817615}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: .70710665, y: 6.18172322e-08, z: 6.18172606e-08, w: .707107008}
+  m_LocalPosition: {x: -8.03286171, y: -.0640324205, z: -1.19817662}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1628416226}
 --- !u!23 &1851771013
@@ -37729,64 +37799,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 504520877}
---- !u!1 &2068634408
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 2068634409}
-  - 33: {fileID: 2068634411}
-  - 23: {fileID: 2068634410}
-  m_Layer: 9
-  m_Name: Joypad_StickL
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2068634409
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2068634408}
-  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
-  m_LocalPosition: {x: -8.00065994, y: -.0507486872, z: -1.19817626}
-  m_LocalScale: {x: 1, y: -1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1628416226}
---- !u!23 &2068634410
-Renderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2300000, guid: 1837ba26f9af82444b13561ee82eed0d,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2068634408}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 2100000, guid: 61be65fea3b1b1d49896686c9981c5ac, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
---- !u!33 &2068634411
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3300000, guid: 1837ba26f9af82444b13561ee82eed0d,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2068634408}
-  m_Mesh: {fileID: 4300000, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
 --- !u!1 &2080106793
 GameObject:
   m_ObjectHideFlags: 0
