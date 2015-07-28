@@ -9,7 +9,8 @@ public class LevelChangeController : MonoBehaviour {
 	public int change;
 
 	private TextMesh levelScreen;
-	private GameObject stick;
+	private GameObject stickL;
+	private GameObject stickR;
 	private float time = interval;
 	private float deflectionTime;
 	private int audioCount = 0;
@@ -17,7 +18,8 @@ public class LevelChangeController : MonoBehaviour {
 	void Start ()
 	{
 		levelScreen = GameObject.Find ("Level").GetComponent<TextMesh> ();
-		stick = GameObject.Find ("Joypad");
+		stickL = GameObject.Find ("Joypad_StickL");
+		stickR = GameObject.Find ("Joypad_StickR");
 		deflectionTime = Time.time;
 	}
 
@@ -26,12 +28,12 @@ public class LevelChangeController : MonoBehaviour {
 		if(change > 0) //left side touched
 		{
 			time -= Time.deltaTime;
-			if ((stick.transform.rotation.z == 0) && 
+			if ((stickR.transform.rotation.z == 0) && 
 			    (LevelFinishedController.instance.getLevel() >= 0 &&
 			 	LevelFinishedController.instance.getLevel() < LevelFinishedController.instance.getMaxLevel()) )
 			{
 				deflectionTime = Time.time;
-				stick.transform.rotation =  Quaternion.Euler(0, 0, -change * deflection);
+				stickR.transform.rotation =  Quaternion.Euler(0, 0, -change * deflection);
 				if (time < 0)
 				{
 					AudioController.instance.Play("035_Select");
@@ -41,12 +43,12 @@ public class LevelChangeController : MonoBehaviour {
 		else //right side touched
 		{
 			time -= Time.deltaTime;
-			if ((stick.transform.rotation.z == 0) && 
+			if ((stickL.transform.rotation.z == 0) && 
 			    (LevelFinishedController.instance.getLevel() > 0 &&
 			 	LevelFinishedController.instance.getLevel() <= LevelFinishedController.instance.getMaxLevel()))
 			{
 				deflectionTime = Time.time;
-				stick.transform.rotation =  Quaternion.Euler(0, 0, -change * deflection);
+				stickL.transform.rotation =  Quaternion.Euler(0, 0, -change * deflection);
 				if (time < 0)
 				{
 					AudioController.instance.Play("035_Select");
@@ -64,9 +66,14 @@ public class LevelChangeController : MonoBehaviour {
 
 	void Update()
 	{
-		if ((Time.time - deflectionTime > 2 * interval) && (stick.transform.rotation.z != 0))
+		if ((Time.time - deflectionTime > 2 * interval) && (stickL.transform.rotation.z != 0))
 		{
-			stick.transform.rotation =  Quaternion.Euler(0, 0, 0);
+			stickL.transform.rotation =  Quaternion.Euler(0, 0, 0);
+		}
+
+		if ((Time.time - deflectionTime > 2 * interval) && (stickR.transform.rotation.z != 0))
+		{
+			stickR.transform.rotation =  Quaternion.Euler(0, 0, 0);
 		}
 	}
 

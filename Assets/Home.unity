@@ -8767,7 +8767,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 4d505f5c7770790498d603e52024849b, type: 3}
   m_PrefabInternal: {fileID: 270543577}
   m_GameObject: {fileID: 501457235}
-  m_LocalRotation: {x: 0, y: 0, z: .70710665, w: -.707107008}
+  m_LocalRotation: {x: 0, y: 0, z: .70710659, w: -.707106948}
   m_LocalPosition: {x: 61.7617874, y: 7.99726582, z: -.0296993256}
   m_LocalScale: {x: -187, y: 212.500015, z: 212.5}
   m_Children: []
@@ -9191,7 +9191,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: f8a1916f6f5091a4980602a114194ed1, type: 3}
   m_PrefabInternal: {fileID: 1666312131}
   m_GameObject: {fileID: 540935972}
-  m_LocalRotation: {x: 0, y: 0, z: .707106888, w: .707106769}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106709}
   m_LocalPosition: {x: -3.28216553, y: 35.2000008, z: -22.8196774}
   m_LocalScale: {x: -187, y: 212.500015, z: 212.5}
   m_Children: []
@@ -11511,7 +11511,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 744751313}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.0007172, y: 0, z: -2.09211063}
+  m_LocalPosition: {x: 19.224556, y: 0, z: -.678277016}
   m_LocalScale: {x: 5, y: 1, z: 5}
   m_Children:
   - {fileID: 903329844}
@@ -13156,7 +13156,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 844130818}
-  m_LocalRotation: {x: .336468607, y: .644655704, z: -.572352111, w: .378973722}
+  m_LocalRotation: {x: .336468607, y: .644655704, z: -.572352111, w: .378973693}
   m_LocalPosition: {x: 21.6499996, y: -21.3999996, z: 1.95000005}
   m_LocalScale: {x: 34.1069794, y: 34.106987, z: 34.106987}
   m_Children:
@@ -14633,7 +14633,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 5daf3503ca8d50744bf5fc724165f2ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15.7002878
+      value: -19.5683498
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5daf3503ca8d50744bf5fc724165f2ee, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14641,7 +14641,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5daf3503ca8d50744bf5fc724165f2ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.12631321
+      value: -5.77036381
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5daf3503ca8d50744bf5fc724165f2ee, type: 3}
       propertyPath: m_LocalRotation.x
@@ -15021,7 +15021,7 @@ GameObject:
   - 4: {fileID: 977871569}
   - 23: {fileID: 977871568}
   - 102: {fileID: 977871567}
-  m_Layer: 9
+  m_Layer: 28
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15035,9 +15035,9 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 977871566}
-  m_Text: 
+  m_Text: Zone
   m_OffsetZ: 0
-  m_CharacterSize: .0250000004
+  m_CharacterSize: .550000012
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
@@ -15048,7 +15048,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 3195aa4b6c18ea14286069d721ae166d, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4293388263
 --- !u!23 &977871568
 Renderer:
   m_ObjectHideFlags: 0
@@ -15061,7 +15061,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 3195aa4b6c18ea14286069d721ae166d, type: 3}
+  - {fileID: 2100000, guid: c62da0bae35224bf58a00fe3c63b80d4, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -15077,8 +15077,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 977871566}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: -.169876277, y: 3.46098614, z: -.706570148}
-  m_LocalScale: {x: 17.0680199, y: 17.0680199, z: -.300397128}
+  m_LocalPosition: {x: 0, y: 1, z: -2.22816467}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &994733974
@@ -15166,6 +15166,14 @@ Prefab:
     - target: {fileID: 400002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.09845543
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
+      propertyPath: m_Name
+      value: Joypad_StickR
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
@@ -25983,7 +25991,7 @@ Transform:
   m_GameObject: {fileID: 1596525308}
   m_LocalRotation: {x: .706433952, y: -.0308435522, z: -.0308435354, w: .706433594}
   m_LocalPosition: {x: 1.88378608, y: .458543301, z: -.00800085068}
-  m_LocalScale: {x: .990913093, y: .990913153, z: .678391576}
+  m_LocalScale: {x: .990913153, y: .990913153, z: .678391576}
   m_Children: []
   m_Father: {fileID: 903329844}
 --- !u!23 &1596525310
@@ -26452,7 +26460,7 @@ Transform:
   m_PrefabInternal: {fileID: 901002307}
   m_GameObject: {fileID: 1628543714}
   m_LocalRotation: {x: -.707106829, y: -1.96703933e-08, z: -1.96703933e-08, w: .707106829}
-  m_LocalPosition: {x: -15.7002878, y: -4.60649431e-07, z: -7.12631321}
+  m_LocalPosition: {x: -19.5683498, y: -4.60649431e-07, z: -5.77036381}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -30878,7 +30886,7 @@ GameObject:
   - 33: {fileID: 1851771014}
   - 23: {fileID: 1851771013}
   m_Layer: 9
-  m_Name: Joypad_Stick001
+  m_Name: Joypad_StickR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30890,7 +30898,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 1837ba26f9af82444b13561ee82eed0d, type: 3}
   m_PrefabInternal: {fileID: 1002821752}
   m_GameObject: {fileID: 1851771011}
-  m_LocalRotation: {x: -2.30404638e-07, y: -2.3040468e-07, z: .707106888, w: .707106769}
+  m_LocalRotation: {x: -2.30404623e-07, y: -2.30404666e-07, z: .707106829, w: .707106709}
   m_LocalPosition: {x: 8.09845543, y: -.0640295595, z: -1.19817615}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -37732,7 +37740,7 @@ GameObject:
   - 33: {fileID: 2068634411}
   - 23: {fileID: 2068634410}
   m_Layer: 9
-  m_Name: Joypad_Stick001
+  m_Name: Joypad_StickL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
