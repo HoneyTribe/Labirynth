@@ -1,0 +1,163 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ReviveMat1
+  m_Shader: {fileID: 4800000, guid: e2daee1bd07dd704f932969eacf4f016, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 9aff2510e192eb84f9f4813b97154e03, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ShadowTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Bump
+        second:
+          m_Texture: {fileID: 2800000, guid: 85cc0fb1f79a19b458663518f1ca1c31, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Texture
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Cutoff
+        second: .5
+      data:
+        first:
+          name: PixelSnap
+        second: 0
+      data:
+        first:
+          name: _Shininess
+        second: 1.21379089
+      data:
+        first:
+          name: _Inside
+        second: 0
+      data:
+        first:
+          name: _Rim
+        second: 1
+      data:
+        first:
+          name: _Speed
+        second: .5
+      data:
+        first:
+          name: _Tile
+        second: 5
+      data:
+        first:
+          name: _Strength
+        second: 1.14285707
+      data:
+        first:
+          name: _Parallax
+        second: .0199999996
+      data:
+        first:
+          name: _InvFade
+        second: 1.53392851
+      data:
+        first:
+          name: _MaxRadius
+        second: 1
+      data:
+        first:
+          name: _RangeMin
+        second: 0
+      data:
+        first:
+          name: _RangeWidth
+        second: 1
+      data:
+        first:
+          name: _RangeZero
+        second: 0
+      data:
+        first:
+          name: _BumpAmt
+        second: 10
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: .522058845, g: 1, b: .703346848, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .5, g: .5, b: .5, a: 1}
+      data:
+        first:
+          name: _ColorH
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _ColorV
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _MyColor
+        second: {r: .375006109, g: .99999994, b: .456901938, a: 1}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .257352948, g: .938539505, b: 1, a: 1}
+      data:
+        first:
+          name: _EmisColor
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 0}
+      data:
+        first:
+          name: _Cold
+        second: {r: 0, g: 0, b: .899999976, a: 0}
+      data:
+        first:
+          name: _Warm
+        second: {r: .899999976, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _ColZero
+        second: {r: 1, g: 1, b: 1, a: 0}
+      data:
+        first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
