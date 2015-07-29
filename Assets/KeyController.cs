@@ -18,7 +18,7 @@ public class KeyController : MonoBehaviour {
 	private bool destroyed = false;
 	private bool collected = false;
 	private float closeDistance = 0.8f;
-	private float arcHeight = 8.5f;
+	private float arcHeight = 7.5f;
 
 	void Start()
 	{
