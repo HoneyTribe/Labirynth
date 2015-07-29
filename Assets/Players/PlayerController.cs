@@ -549,6 +549,8 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if (!paralysed)
 			{
 				paralysed = true;
+				idle = true;
+				Idle();
 				gameController.SendMessage("PlayerParalysed");
 				AudioController.instance.Play("008_dead");
 				transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color=Color.grey;
