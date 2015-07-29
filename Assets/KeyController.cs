@@ -18,7 +18,7 @@ public class KeyController : MonoBehaviour {
 	private bool destroyed = false;
 	private bool collected = false;
 	private float closeDistance = 0.8f;
-	private float arcHeight = 7.5f;
+	private float arcHeight = 6.5f;
 
 	void Start()
 	{
@@ -44,7 +44,7 @@ public class KeyController : MonoBehaviour {
 			myTempPos.z = Mathf.Lerp(myTransform.position.z, machine.transform.position.z, fracJourney) ;
 			myTransform.position = myTempPos;
 
-			myTransform.position = Vector3.Lerp(myTransform.position, machine.transform.position, Time.deltaTime);
+			//myTransform.position = Vector3.Lerp(myTransform.position, machine.transform.position, Time.deltaTime);
 
 			if(fracJourney >= closeDistance && destroyed == false)
 			{
