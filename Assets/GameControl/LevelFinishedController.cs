@@ -317,7 +317,8 @@ public class LevelFinishedController : MonoBehaviour {
 		if (player != null)
 		{
 			PlayerController playerController = player.GetComponent<PlayerController>();
-			playerController.EnterLighthouse();
+			//playerController.EnterLighthouse();
+			playerController.StartingMachine();
 		}
 	}
 	

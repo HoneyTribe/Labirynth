@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	private bool idle;
 	private bool idleSaved = true;
 
+	private Vector3 lightPosition = new Vector3(0,1.8f,-15.5f);
+	private Vector3 cranePosition = new Vector3(3,1.8f,-16);
+	private Vector3 dronePosition = new Vector3(-3,1.8f,-16);
+
 	void Start()
 	{
 		speed *= LevelFinishedController.instance.gameSpeed;
@@ -94,12 +98,14 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				{
 					if ((LevelFinishedController.instance.isPickingUpEnabled() || LevelFinishedController.instance.isSmashingEnabled()) && (!CraneController.instance.isEntered()))
 					{
-						movement = new Vector3(3.0f,0,0);
+						movement = new Vector3(3.0f,0,-0.5f);
+						//transform.position = cranePosition;
 						EnterCrane();
 					}
 					else if ((LevelFinishedController.instance.isTeleportEnabled() || LevelFinishedController.instance.isStunGunEnabled()) && (!DroneController.instance.isEntered()))
 					{
-						movement = new Vector3(-3.0f,0,0);
+						movement = new Vector3(-3.0f,0,-0.5f);
+						//transform.position = dronePosition;
 						EnterPortalGun();
 					}
 				}
@@ -162,11 +168,13 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 					if ((LevelFinishedController.instance.isTeleportEnabled() || LevelFinishedController.instance.isStunGunEnabled()) && (!DroneController.instance.isEntered()))
 					{
 						movement = new Vector3(-6.0f,0,0);
+						//transform.position = dronePosition;
 						EnterPortalGun();
 					} 
 					else if (!TopLightController.instance.isEntered())
 					{
-						movement = new Vector3(-3.0f,0,0);
+						movement = new Vector3(-3.0f,0,0.5f);
+						//transform.position = lightPosition;
 						EnterLighthouse();
 					}
 				}
@@ -222,12 +230,14 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				{
 					if (!TopLightController.instance.isEntered())
 					{
-						movement = new Vector3(3.0f,0,0);
+						movement = new Vector3(3.0f,0,0.5f);
+						//transform.position = lightPosition;
 						EnterLighthouse();
 					}
 					else if ((LevelFinishedController.instance.isPickingUpEnabled() || LevelFinishedController.instance.isSmashingEnabled()) && (!CraneController.instance.isEntered()))
 					{
 						movement = new Vector3(6.0f,0,0);
+						//transform.position = cranePosition;
 						EnterCrane();
 					} 
 				}
@@ -607,6 +617,30 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		rigidbody.velocity = Vector3.zero;
 		rigidbody.angularVelocity = Vector3.zero;
 		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+	}
+
+	public void StartingMachine()
+	{
+		if (gameObject.name.Equals("Player5"))
+		{
+			if (LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel
+			    || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLazerLevel )
+			{
+				transform.position = cranePosition;
+				EnterCrane();
+			}
+			else if (LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel
+			         || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneBombLevel )
+			{
+				transform.position = dronePosition;
+				EnterPortalGun();
+			}
+			else
+			{
+				transform.position = lightPosition;
+				EnterLighthouse();
+			}
+		}
 	}
 
 
