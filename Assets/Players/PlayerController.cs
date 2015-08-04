@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	private bool idle;
 	private bool idleSaved = true;
 
+	private static int HighFiveHash = Animator.StringToHash ("HighFive");
+
 	private Vector3 lightPosition = new Vector3(0,1.8f,-15.5f);
 	private Vector3 cranePosition = new Vector3(3,1.8f,-16);
 	private Vector3 dronePosition = new Vector3(-3,1.8f,-16);
@@ -479,10 +481,17 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 	}
 
+	//called from FusionController.cs
 	public void TriggerPlayerIdle()
 	{
 		idle = true;
 		Idle();
+	}
+
+	//called from FusionController.cs
+	public void TriggerPlayerHighFive()
+	{
+		runAnim.SetTrigger(HighFiveHash);
 	}
 
 	public bool hasEnteredAnyMachine()

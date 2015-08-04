@@ -61,7 +61,8 @@ public class FusionController : MonoBehaviour {
 						continue;
 					}
 					player.rigidbody.velocity = Vector3.zero;
-					player.GetComponent<PlayerController>().TriggerPlayerIdle();
+					//player.GetComponent<PlayerController>().TriggerPlayerIdle();
+					player.GetComponent<PlayerController>().TriggerPlayerHighFive();
 				}
 				levelController.gameObject.SendMessage("PlayerFinished");
 			}
