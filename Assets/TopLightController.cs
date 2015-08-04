@@ -190,7 +190,9 @@ public class TopLightController : MonoBehaviour {
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstJumpBoxLevel)
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstJumpBoxLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneBombLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLazerLevel)
 		{
 			FloorInstructions.instance.ChangeInstructions();
 		}
@@ -212,7 +214,9 @@ public class TopLightController : MonoBehaviour {
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.secondDecoyLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel
 		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel
-		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstJumpBoxLevel)
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstJumpBoxLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneBombLevel
+		   || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLazerLevel)
 		{
 			FloorInstructions.instance.ChangeInstructions();
 		}
