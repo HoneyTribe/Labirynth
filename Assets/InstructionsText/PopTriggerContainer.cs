@@ -73,6 +73,15 @@ public class PopTriggerContainer : MonoBehaviour
 				popRend.material.mainTexture = Resources.Load("PopTextures/SwitchMachinesPop") as Texture;
 			}
 		}
+		//lev 10 single player
+		else if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel + 1)
+		{
+			if(LevelFinishedController.instance.getControllers().Count == 1)
+			{
+				transform.position = craneLev;
+				popRend.material.mainTexture = Resources.Load("PopTextures/SwitchMachinesPop") as Texture;
+			}
+		}
 		//lev 15
 		else if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel)
 		{

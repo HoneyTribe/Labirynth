@@ -41,12 +41,22 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	private Vector3 cranePosition = new Vector3(3,1.8f,-16);
 	private Vector3 dronePosition = new Vector3(-3,1.8f,-16);
 
+	private GameObject reviveInstructions;
+
 	void Start()
 	{
 		speed *= LevelFinishedController.instance.gameSpeed;
 		gameController = GameObject.Find ("GameController");
+		reviveInstructions = GameObject.Find ("Co_ReviveAlert");
+
 		if (gameObject.name.Equals("Player5"))
 		{
+			//move robot to correct machine
+			if(Application.loadedLevel != 0)
+			{
+				MoveToMachine();
+			}
+
 			return;
 		}
 
@@ -424,6 +434,11 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 							transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color = originalColor;
 							reviveAnim.SetTrigger(startReviveHash);
 
+							if(FloorInstructions.instance.GetReviveInstructions() > 0)
+							{
+								Destroy (reviveInstructions);
+							}
+
 							// deactivate help alert
 							for(int i =0; i<transform.childCount; i++)
 							{
@@ -635,19 +650,40 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if (LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel
 			    || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLazerLevel )
 			{
-				transform.position = cranePosition;
+				//transform.position = cranePosition;
 				EnterCrane();
 			}
 			else if (LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel
 			         || LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneBombLevel )
 			{
-				transform.position = dronePosition;
+				//transform.position = dronePosition;
 				EnterPortalGun();
 			}
 			else
 			{
-				transform.position = lightPosition;
+				//transform.position = lightPosition;
 				EnterLighthouse();
+			}
+		}
+	}
+
+	private void MoveToMachine()
+	{
+		if(Application.loadedLevel != 0)
+		{
+			if (LevelFinishedController.instance.getLevel() == 8
+			    || LevelFinishedController.instance.getLevel() == 26 )
+			{
+				transform.position = cranePosition;
+			}
+			else if (LevelFinishedController.instance.getLevel() == 14
+			         || LevelFinishedController.instance.getLevel() == 23 )
+			{
+				transform.position = dronePosition;
+			}
+			else
+			{
+				transform.position = lightPosition;
 			}
 		}
 	}

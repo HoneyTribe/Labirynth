@@ -17,10 +17,11 @@ public class FloorInstructions : MonoBehaviour
 	private float textOffScreen = -1f;
 	private TextMesh instructions;
 	private GameObject robot;
-	//private int numberOfPlayers;
+	private int showedReviveInstructions = 0;
 
 
-	//These are in the interface attached to the object TextInstructionsFloor
+	//These need to be changed in the interface attached to the object TextInstructionsFloor in Main Scene
+	// If changed you also need to change MoveToMachine() values in PlayerController
 	public int firstLightLevel = 0;
 	public int firstBlockLevel = 11;
 	public int firstZapLevel = 2;
@@ -49,7 +50,6 @@ public class FloorInstructions : MonoBehaviour
 		co_reviveAlert = GameObject.Find ("Co_ReviveAlert");
 		instructions = GetComponentInChildren<TextMesh>();
 		robot = GameObject.Find ("Player5");
-		//numberOfPlayers = LevelFinishedController.instance.getAllControllers().Count;
 	}
 
 	//Called from ScoreController, TopLightController, DeviceController, DroneController, JumpController
@@ -625,16 +625,25 @@ public class FloorInstructions : MonoBehaviour
 		arrowRight.transform.position = new Vector3(4, textOffScreen, -13);
 		arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
 	}
+
 	// Called from PlayerController
 	public void ShowReviveInstructions() 
 	{
 		LevelFinishedController.instance.setDeadCount();
-		if (LevelFinishedController.instance.getDeadCount() <= deadCountMax)
+		if (LevelFinishedController.instance.getDeadCount() <= deadCountMax
+		    && showedReviveInstructions == 0
+		    && robot == null)
 		{
 			//controlImagePad1Move.transform.position = new Vector3(-0.3f, -1f, -6f);
 			//controlImagePad1Move.transform.position = new Vector3(-0.3f, -1f, -6f);
 			co_reviveAlert.transform.position = new Vector3(0f, 1f, -6f);
+			showedReviveInstructions ++;
 		}
 
+	}
+
+	public int GetReviveInstructions()
+	{
+		return showedReviveInstructions;
 	}
 }
