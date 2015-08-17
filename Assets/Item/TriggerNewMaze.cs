@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class TriggerNewMaze : MonoBehaviour
 {
 	private GameObject drone;
+	private bool pushed = false;
 
 	void Start()
 	{
@@ -17,8 +18,9 @@ public class TriggerNewMaze : MonoBehaviour
 
 	public void OnTriggerEnter(Collider currentCollider)
 	{
-		if ((currentCollider.tag == "Monster") || (currentCollider.tag  == "Player"))
+		if (((currentCollider.tag == "Monster") || (currentCollider.tag  == "Player")) && (!pushed))
 		{
+			pushed = true;
 			GameObject[] players= GameObject.FindGameObjectsWithTag ("Player");
 			foreach (GameObject player in players)
 			{
@@ -32,7 +34,7 @@ public class TriggerNewMaze : MonoBehaviour
 
 			NewMazeEnding.instance.EnableNewMazeEnding();
 			AudioController.instance.Play("021_BlockMovesB");
-			gameObject.transform.Translate (0, -1.1f, 0);
+			gameObject.transform.Translate (0, 0, -0.5f);
 		}
 	}
 }

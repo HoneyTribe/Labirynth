@@ -292,7 +292,7 @@ public abstract class PuzzleTemplate : ScriptableObject, Puzzle
 		                                      triggerOneWallPrefab.transform.position.y,
 			                                  Instantiation.offsetZ + Instantiation.planeSizeZ/2f - Instantiation.instance.getSpaceZ() * z);			
 			GameObject obj = (GameObject) Instantiate (triggerOneWallPrefab, triggerPos, Quaternion.Euler(0, 0, 0));
-			obj.GetComponent<TriggerOneWall> ().setReference (reference);
+			obj.GetComponentInChildren<TriggerOneWall> ().setReference (reference);
 		}
 		private void movePlayerToPosition(int x, int z, string reference)
 		{

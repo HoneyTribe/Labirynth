@@ -14,6 +14,7 @@ public class TriggerOneWall : MonoBehaviour
 	private bool hasSpawned = false;
 	private Vector3 smokeTempPos;
 	private float smokeYOffset = 1.0f;
+		private bool pushed = false;
 
 	private GameObject cam;
 
@@ -30,10 +31,11 @@ public class TriggerOneWall : MonoBehaviour
 
 	public void OnTriggerEnter(Collider currentCollider)
 	{
-		if ((currentCollider.tag == "Monster") || (currentCollider.tag  == "Player"))
+		if (((currentCollider.tag == "Monster") || (currentCollider.tag  == "Player")) && (!pushed))
 		{
+			pushed = true;
 			AudioController.instance.Play("021_BlockMovesB");
-			gameObject.transform.Translate (0, -1.1f, 0);
+			gameObject.transform.Translate (0, 0, -0.5f);
 			wall = GameObject.Find("Textured Wall(Clone)" + reference);
 			endingEnabled = true;
 		}
