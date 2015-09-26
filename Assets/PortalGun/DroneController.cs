@@ -48,7 +48,7 @@ public class DroneController : MonoBehaviour {
 			}
 			else
 			{
-				rigidbody.velocity = Vector3.zero;
+				GetComponent<Rigidbody>().velocity = Vector3.zero;
 				retracting = false;
 			}
 		}
@@ -56,10 +56,10 @@ public class DroneController : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		rigidbody.transform.eulerAngles = new Vector3 (rigidbody.transform.eulerAngles.x,
+		GetComponent<Rigidbody>().transform.eulerAngles = new Vector3 (GetComponent<Rigidbody>().transform.eulerAngles.x,
 		                                               0,
-		                                               rigidbody.transform.eulerAngles.z);
-		rigidbody.transform.position = new Vector3(transform.position.x,
+		                                               GetComponent<Rigidbody>().transform.eulerAngles.z);
+		GetComponent<Rigidbody>().transform.position = new Vector3(transform.position.x,
 		                                           originalPosition.y + (Mathf.Sin(11 * Time.time) + Mathf.Cos(15 * Time.time)) * hoverVerticalSpeed,
 		                                           transform.position.z);
 
@@ -72,12 +72,12 @@ public class DroneController : MonoBehaviour {
 			//Debug.Log (transform.eulerAngles.z);
 		}
 		Vector3 predictedUp = Quaternion.AngleAxis(
-								rigidbody.angularVelocity.magnitude * Mathf.Rad2Deg * stability / s,
-								rigidbody.angularVelocity
+								GetComponent<Rigidbody>().angularVelocity.magnitude * Mathf.Rad2Deg * stability / s,
+								GetComponent<Rigidbody>().angularVelocity
 								) * transform.up;
 		
 		Vector3 torqueVector = Vector3.Cross(predictedUp, Vector3.up);
-		rigidbody.AddTorque(torqueVector * s * s);
+		GetComponent<Rigidbody>().AddTorque(torqueVector * s * s);
 	}
 
 	public bool isEntered()
@@ -102,7 +102,7 @@ public class DroneController : MonoBehaviour {
 	{
 		entered = false;
 		droneLight.SendMessage ("TurnOff");
-		rigidbody.drag = 0;
+		GetComponent<Rigidbody>().drag = 0;
 		retracting = true;
 
 		if( LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstDroneLevel
@@ -116,12 +116,12 @@ public class DroneController : MonoBehaviour {
 	{
 		if (move == Vector3.zero)
 		{
-			rigidbody.drag = deceloration;
+			GetComponent<Rigidbody>().drag = deceloration;
 		}
 		else
 		{
-			rigidbody.drag = drag;
-			rigidbody.AddForce (move * Time.deltaTime * velocity);
+			GetComponent<Rigidbody>().drag = drag;
+			GetComponent<Rigidbody>().AddForce (move * Time.deltaTime * velocity);
 			if (move.x != 0)
 			{
 				transform.Rotate(0,0,-move.x * Time.deltaTime * rotateSpeed);
@@ -150,7 +150,7 @@ public class DroneController : MonoBehaviour {
 						                           transform.position.z);
 						GameObject portal = (GameObject) Instantiate (portalPrefab, pos, Quaternion.Euler(0, 0, 0));
 						PortalController portalController = portal.GetComponent<PortalController>();
-						portal.rigidbody.velocity = -transform.up * teleportSpeed;
+						portal.GetComponent<Rigidbody>().velocity = -transform.up * teleportSpeed;
 						AudioController.instance.Play("029_DroneTele");
 
 						// check groundController
@@ -211,7 +211,7 @@ public class DroneController : MonoBehaviour {
 				                           transform.position.y - 1,
 				                           transform.position.z);
 				GameObject stunGun = (GameObject) Instantiate (stunGunPrefab, pos, Quaternion.Euler(0, 0, 0));
-				stunGun.rigidbody.velocity = -transform.up * stunBombSpeed; 
+				stunGun.GetComponent<Rigidbody>().velocity = -transform.up * stunBombSpeed; 
 
 				DronePowerController.instance.usingStunGun();
 				AudioController.instance.Play("019_DroneBomb");

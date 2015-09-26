@@ -9,7 +9,7 @@ public class Help : MonoBehaviour
 	void Start()
 	{
 		myCamera = GameObject.Find ("MainCamera_Front");
-		transform.renderer.enabled = false;
+		transform.GetComponent<Renderer>().enabled = false;
 
 	}
 
@@ -19,12 +19,12 @@ public class Help : MonoBehaviour
 		myTempRotation = transform.rotation;
 		myTempRotation.y = 180;
 		transform.rotation = myTempRotation;
-		transform.renderer.enabled = true;
+		transform.GetComponent<Renderer>().enabled = true;
 	}
 
 	public void deactivateHelp()
 	{
-		transform.renderer.enabled = false;
+		transform.GetComponent<Renderer>().enabled = false;
 	}
 
 }

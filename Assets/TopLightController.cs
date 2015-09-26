@@ -6,7 +6,7 @@ public class TopLightController : MonoBehaviour {
 	public static TopLightController instance;
 	private static int STEPS = 21;
 
-	private static float maxIntensity = 0.8f;
+	private static float maxIntensity = 1.2f;
 
 	private static float attractionCost = 0.3f;
 	private static float restoreVelocity = 0.03f; // It needs 1/restoreVelocity seconds to regenerate (30 seconds).
@@ -84,7 +84,7 @@ public class TopLightController : MonoBehaviour {
 		if (timeLeft > 0)
 		{
 			float lightStep = param * Time.deltaTime;
-			light.intensity += lightStep;
+			GetComponent<Light>().intensity += lightStep;
 
 			float energyStep = energyParam * Time.deltaTime;
 			newColor.a += energyStep;
@@ -96,7 +96,7 @@ public class TopLightController : MonoBehaviour {
 		{
 			if (param < 0)
 			{
-				light.intensity = 0;
+				GetComponent<Light>().intensity = 0;
 			}
 			if (energyParam < 0)
 			{
@@ -334,7 +334,7 @@ public class TopLightController : MonoBehaviour {
 		                                       0,
 		                                       obj.transform.localPosition.z - transform.position.z).normalized;
 		float angle = Vector3.Angle(lightDirection, monsterDirection);
-		if ((light.intensity > 0) && (angle < light.spotAngle/2f))
+		if ((GetComponent<Light>().intensity > 0) && (angle < GetComponent<Light>().spotAngle/2f))
 		{
 			return true;
 		}

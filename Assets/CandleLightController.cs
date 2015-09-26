@@ -10,21 +10,21 @@ public class CandleLightController : MonoBehaviour {
 
 	void Start()
 	{
-		maxIntensity = light.intensity;
+		maxIntensity = GetComponent<Light>().intensity;
 	}
 
 	void Update()
 	{
 		if (timeLeft > 0)
 		{
-			light.intensity -= Time.deltaTime * maxIntensity / interval;
+			GetComponent<Light>().intensity -= Time.deltaTime * maxIntensity / interval;
 			timeLeft -= Time.deltaTime;
 		}
 		else
 		{
-			if (light.intensity < maxIntensity)
+			if (GetComponent<Light>().intensity < maxIntensity)
 			{
-				light.intensity = 0;
+				GetComponent<Light>().intensity = 0;
 			}
 		}
 	}

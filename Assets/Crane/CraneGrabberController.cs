@@ -65,13 +65,13 @@ public class CraneGrabberController : MonoBehaviour {
 				}
 				else
 				{
-					heldObject.rigidbody.useGravity = true;
+					heldObject.GetComponent<Rigidbody>().useGravity = true;
 					heldObject.transform.parent = null;
-					heldObject.rigidbody.velocity = new Vector3(0, -10, 0);
+					heldObject.GetComponent<Rigidbody>().velocity = new Vector3(0, -10, 0);
 					if (heldObject.tag == "Item")
 					{
 						// check groundController
-						heldObject.collider.isTrigger = false;
+						heldObject.GetComponent<Collider>().isTrigger = false;
 						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("players"), LayerMask.NameToLayer("item"), true);
 						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("monsters"), LayerMask.NameToLayer("item"), true);
 						Physics.IgnoreLayerCollision(LayerMask.NameToLayer("flyingMonsters"), LayerMask.NameToLayer("item"), true);
@@ -148,8 +148,8 @@ public class CraneGrabberController : MonoBehaviour {
 				{
 					obj = obj.transform.parent.gameObject;
 				}
-				obj.rigidbody.useGravity = false;
-				obj.rigidbody.velocity = Vector3.zero;
+				obj.GetComponent<Rigidbody>().useGravity = false;
+				obj.GetComponent<Rigidbody>().velocity = Vector3.zero;
 				obj.transform.parent = transform;
 				if ((obj.tag == "Player") || (obj.tag == "Monster") )
 				{

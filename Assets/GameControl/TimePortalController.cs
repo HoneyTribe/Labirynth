@@ -86,7 +86,7 @@ public class TimePortalController : MonoBehaviour {
 		GameObject[] allPlayers= GameObject.FindGameObjectsWithTag ("Player");
 		foreach (GameObject player in allPlayers)
 		{
-			player.rigidbody.velocity = Vector3.zero;
+			player.GetComponent<Rigidbody>().velocity = Vector3.zero;
 		}
 
 		LevelFinishedController.instance.PlayerMode();

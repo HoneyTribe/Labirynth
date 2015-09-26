@@ -15,8 +15,8 @@ public class ExitLightController : MonoBehaviour {
 		{
 			float intensityStep = Time.deltaTime * maxInstensity / interval;
 			float spotStep = Time.deltaTime * maxSpot / interval;
-			light.spotAngle += spotStep;
-			light.intensity += intensityStep;
+			GetComponent<Light>().spotAngle += spotStep;
+			GetComponent<Light>().intensity += intensityStep;
 			timeLeft -= Time.deltaTime;
 		}
 	}

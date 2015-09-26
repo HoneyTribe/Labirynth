@@ -95,7 +95,7 @@ public class DeviceController : MonoBehaviour {
 
 			foreach (Transform child in gameObject.transform)
 			{
-				child.gameObject.renderer.material.color = newColor;
+				child.gameObject.GetComponent<Renderer>().material.color = newColor;
 			}
 		}
 	}

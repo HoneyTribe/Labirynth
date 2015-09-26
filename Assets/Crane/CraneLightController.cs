@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CraneLightController : MonoBehaviour {
 
-	private static float maxIntensity = 5f;
+	private static float maxIntensity = 2.3f;
 
 	public float openningInterval = 1.0f;
 	public float closingInterval = 0.5f;
@@ -27,7 +27,7 @@ public class CraneLightController : MonoBehaviour {
 		if (timeLeft > 0)
 		{
 			float lightStep = param * Time.deltaTime;
-			light.intensity += lightStep;
+			GetComponent<Light>().intensity += lightStep;
 
 			float energyStep = energyParam * Time.deltaTime;
 			newColor.a += energyStep;
@@ -39,7 +39,7 @@ public class CraneLightController : MonoBehaviour {
 		{
 			if (param < 0)
 			{
-				light.intensity = 0;
+				GetComponent<Light>().intensity = 0;
 			}
 			if (energyParam < 0)
 			{

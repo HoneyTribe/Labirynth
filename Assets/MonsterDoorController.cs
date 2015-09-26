@@ -6,7 +6,7 @@ public class MonsterDoorController : MonoBehaviour {
 	private static float interval = 3.0f;
 	private static int delay = 2;
 	private static float maxY = 10.0f;
-	private static float maxIntensity = 5.0f;
+	private static float maxIntensity = 2.0f;
 
 	private float sign = 0;
 	private float timeLeft = 0.0f;
@@ -34,7 +34,7 @@ public class MonsterDoorController : MonoBehaviour {
 				{
 					transform.Translate (0, doorStep, 0);
 				}
-				doorLight.light.intensity += lightStep;
+				doorLight.GetComponent<Light>().intensity += lightStep;
 			}
 
 			if (sign == -1)
@@ -44,7 +44,7 @@ public class MonsterDoorController : MonoBehaviour {
 
 				transform.Translate (0, doorStep, 0);
 
-				doorLight.light.intensity += lightStep;
+				doorLight.GetComponent<Light>().intensity += lightStep;
 			}
 
 			timeLeft -= Time.deltaTime;
@@ -68,7 +68,7 @@ public class MonsterDoorController : MonoBehaviour {
 			if (sign == -1)
 			{
 				transform.localPosition = doorInitialPosition;
-				doorLight.light.intensity = 0;
+				doorLight.GetComponent<Light>().intensity = 0;
 				return;
 			}
 		}

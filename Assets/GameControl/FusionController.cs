@@ -60,7 +60,7 @@ public class FusionController : MonoBehaviour {
 					{
 						continue;
 					}
-					player.rigidbody.velocity = Vector3.zero;
+					player.GetComponent<Rigidbody>().velocity = Vector3.zero;
 					//player.GetComponent<PlayerController>().TriggerPlayerIdle();
 					player.GetComponent<PlayerController>().TriggerPlayerHighFive();
 				}

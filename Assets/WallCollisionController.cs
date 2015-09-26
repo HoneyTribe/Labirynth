@@ -12,18 +12,18 @@ public class WallCollisionController : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider collider)
 	{
-		if (collider.gameObject.rigidbody == null)
+		if (collider.gameObject.GetComponent<Rigidbody>() == null)
 		{
 			return;
 		}
 		// let him slide with current velocity
-		if (collider.rigidbody.velocity.magnitude > 0.001f)
+		if (collider.GetComponent<Rigidbody>().velocity.magnitude > 0.001f)
 		{
 			return;
 		}
 
 
-		if (collider.rigidbody.useGravity == true)
+		if (collider.GetComponent<Rigidbody>().useGravity == true)
 		{
 			if (gameObject.tag == "Wall")
 			{
@@ -47,9 +47,9 @@ public class WallCollisionController : MonoBehaviour {
 						stepZ = slideStep;
 					}
 				}
-				collider.rigidbody.velocity = new Vector3(collider.rigidbody.velocity.x + stepX,
-				                                          collider.rigidbody.velocity.y, 
-				                                          collider.rigidbody.velocity.z + stepZ);
+				collider.GetComponent<Rigidbody>().velocity = new Vector3(collider.GetComponent<Rigidbody>().velocity.x + stepX,
+				                                          collider.GetComponent<Rigidbody>().velocity.y, 
+				                                          collider.GetComponent<Rigidbody>().velocity.z + stepZ);
 			}
 
 			if (gameObject.tag == "Pillar")
@@ -70,9 +70,9 @@ public class WallCollisionController : MonoBehaviour {
 					stepZ = slideStep;
 				}
 				
-				collider.rigidbody.velocity = new Vector3(collider.rigidbody.velocity.x + stepX,
-				                                          collider.rigidbody.velocity.y,
-				                                          collider.rigidbody.velocity.z + stepZ);
+				collider.GetComponent<Rigidbody>().velocity = new Vector3(collider.GetComponent<Rigidbody>().velocity.x + stepX,
+				                                          collider.GetComponent<Rigidbody>().velocity.y,
+				                                          collider.GetComponent<Rigidbody>().velocity.z + stepZ);
 			}
 		}
 	}

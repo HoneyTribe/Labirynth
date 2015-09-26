@@ -170,10 +170,10 @@ public class CraneController : MonoBehaviour {
 	private void RestorePosition(Vector3 neckPosition, Quaternion neckRotation, Vector3 neckScale, Vector3 grabberPos)
 	{
 		Vector3[] boundingBox = new Vector3[4];
-		boundingBox[0] = renderer.bounds.max;
-		boundingBox[1] = new Vector3(renderer.bounds.min.x, renderer.bounds.max.y, renderer.bounds.min.z);
-		boundingBox[2] = new Vector3(renderer.bounds.min.x, renderer.bounds.max.y, renderer.bounds.max.z);
-		boundingBox[3] = new Vector3(renderer.bounds.max.x, renderer.bounds.max.y, renderer.bounds.min.z);
+		boundingBox[0] = GetComponent<Renderer>().bounds.max;
+		boundingBox[1] = new Vector3(GetComponent<Renderer>().bounds.min.x, GetComponent<Renderer>().bounds.max.y, GetComponent<Renderer>().bounds.min.z);
+		boundingBox[2] = new Vector3(GetComponent<Renderer>().bounds.min.x, GetComponent<Renderer>().bounds.max.y, GetComponent<Renderer>().bounds.max.z);
+		boundingBox[3] = new Vector3(GetComponent<Renderer>().bounds.max.x, GetComponent<Renderer>().bounds.max.y, GetComponent<Renderer>().bounds.min.z);
 		
 		bool collisionDetected = false;
 		foreach (Vector3 v in boundingBox)

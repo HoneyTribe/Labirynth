@@ -20,7 +20,7 @@ public class LaserController : MonoBehaviour {
 			currentPos = Vector3.Lerp(currentPos, endPos, Time.deltaTime * speed / dist);
 			if(currentPos != endPos)
 			{
-				((LineRenderer) renderer).SetPosition(1, 2 * (currentPos - startPos));
+				((LineRenderer) GetComponent<Renderer>()).SetPosition(1, 2 * (currentPos - startPos));
 			}
 			else
 			{
@@ -30,7 +30,7 @@ public class LaserController : MonoBehaviour {
 
 		if (drawing)
 		{
-			((LineRenderer) renderer).SetPosition(1, 2 * (endPos - startPos));
+			((LineRenderer) GetComponent<Renderer>()).SetPosition(1, 2 * (endPos - startPos));
 			drawing = false;
 		}
 	}

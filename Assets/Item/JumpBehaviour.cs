@@ -25,7 +25,7 @@ public class JumpBehaviour : MonoBehaviour {
 				time = 0;
 
 				Vector3 forward = transform.forward.normalized;
-				rigidbody.velocity = new Vector3 (forward.x, 0, forward.z) * speed;
+				GetComponent<Rigidbody>().velocity = new Vector3 (forward.x, 0, forward.z) * speed;
 				timeAir = new Vector3(2 * Instantiation.instance.getSpaceX() * forward.x,
 					                  0,
 					                  2 * Instantiation.instance.getSpaceZ() * forward.z).magnitude / speed;
@@ -36,8 +36,8 @@ public class JumpBehaviour : MonoBehaviour {
 			{
 				state++;
 				time = 0;
-				rigidbody.useGravity = true;
-				rigidbody.velocity = new Vector3 (0, -speed, 0);
+				GetComponent<Rigidbody>().useGravity = true;
+				GetComponent<Rigidbody>().velocity = new Vector3 (0, -speed, 0);
 			}
 		}
 	}
@@ -48,7 +48,7 @@ public class JumpBehaviour : MonoBehaviour {
 		time = 0f;
 		AudioController.instance.Play("007_Jump");
 		gameObject.SendMessage("setStopped", true);
-		rigidbody.useGravity = false;
-		rigidbody.velocity = new Vector3 (0, speed, 0);
+		GetComponent<Rigidbody>().useGravity = false;
+		GetComponent<Rigidbody>().velocity = new Vector3 (0, speed, 0);
 	}
 }

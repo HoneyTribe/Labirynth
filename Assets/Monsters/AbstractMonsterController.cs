@@ -56,7 +56,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 		textMesh = gameObject.GetComponentInChildren<TextMesh> ();
 		anim = gameObject.GetComponentInChildren<Animator> ();
-		body = this.rigidbody;
+		body = this.GetComponent<Rigidbody>();
 
 		GameObject gameController = GameObject.Find ("GameController");
 		device = GameObject.Find ("DeviceContainer");
@@ -93,8 +93,8 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 		if (LevelFinishedController.instance.isStopped())
 		{
-			rigidbody.velocity = Vector3.zero;
-			rigidbody.angularVelocity = Vector3.zero;
+			GetComponent<Rigidbody>().velocity = Vector3.zero;
+			GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 			return;
 		}
 
@@ -114,7 +114,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 			textMesh.text = ((int) (timeLeft + 1)).ToString();
 			if (timeLeft <= 0)
 			{
-				rigidbody.velocity = Vector3.zero;
+				GetComponent<Rigidbody>().velocity = Vector3.zero;
 				recalculateTrigger = true;
 				if (anim!=null) anim.SetTrigger(stopHash);
 				rend.material.shader = normalShader;

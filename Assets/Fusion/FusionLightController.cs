@@ -15,21 +15,21 @@ public class FusionLightController : MonoBehaviour {
 	void Start()
 	{
 		newPosition = gameObject.transform.localPosition;
-		newRange = light.range;
+		newRange = GetComponent<Light>().range;
 	}
 
 	void Update()
 	{
-		float rangeDiff = newRange - light.range;
+		float rangeDiff = newRange - GetComponent<Light>().range;
 		if (rangeDiff != 0)
 		{
-			light.range = Mathf.Lerp(light.range, newRange, Time.deltaTime * rangeSpeed / rangeDiff);
+			GetComponent<Light>().range = Mathf.Lerp(GetComponent<Light>().range, newRange, Time.deltaTime * rangeSpeed / rangeDiff);
 		}
 
-		float intensityDiff = newIntensity - light.intensity;
+		float intensityDiff = newIntensity - GetComponent<Light>().intensity;
 		if (intensityDiff != 0)
 		{
-			light.intensity = Mathf.Lerp(light.intensity, newIntensity, Time.deltaTime * intensitySpeed / intensityDiff);
+			GetComponent<Light>().intensity = Mathf.Lerp(GetComponent<Light>().intensity, newIntensity, Time.deltaTime * intensitySpeed / intensityDiff);
 		}
 
 		float distance = Vector3.Distance(gameObject.transform.localPosition, newPosition);
@@ -42,7 +42,7 @@ public class FusionLightController : MonoBehaviour {
 	
 	public IEnumerator TurnLightOn ()
 	{
-		light.cullingMask = (1 << LayerMask.NameToLayer ("mazeWalls")) |
+		GetComponent<Light>().cullingMask = (1 << LayerMask.NameToLayer ("mazeWalls")) |
 							(1 << LayerMask.NameToLayer ("1stRowMazeWalls")) |
 							(1 << LayerMask.NameToLayer ("outsideWalls")) |
 							(1 << LayerMask.NameToLayer ("ground")) |
@@ -63,7 +63,7 @@ public class FusionLightController : MonoBehaviour {
 		positionSpeed = (-5.0f - gameObject.transform.localPosition.y) / 1.5f;
 
 		newRange = 50.0f;
-		rangeSpeed = (50.0f - light.range) / 1.5f;
+		rangeSpeed = (50.0f - GetComponent<Light>().range) / 1.5f;
 
 		yield return new WaitForSeconds(1);
 
@@ -73,9 +73,9 @@ public class FusionLightController : MonoBehaviour {
 		positionSpeed = (10 - gameObject.transform.localPosition.y) * 2.0f;
 
 		newRange = 40;
-		rangeSpeed = (40 - light.range) / 2.0f;
+		rangeSpeed = (40 - GetComponent<Light>().range) / 2.0f;
 
 		newIntensity = 0.4f;
-		intensitySpeed = (1 - light.intensity) * 5.0f;
+		intensitySpeed = (1 - GetComponent<Light>().intensity) * 5.0f;
 	}
 }

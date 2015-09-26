@@ -197,11 +197,11 @@ public class InControlManager : MonoBehaviour {
 	private void collectPlayersAndStart() 
 	{
 		List<InputController> usedControllers = new List<InputController> ();
-		Bounds portalBounds = GameObject.Find ("Portal").renderer.bounds;
+		Bounds portalBounds = GameObject.Find ("Portal").GetComponent<Renderer>().bounds;
 		foreach(InputController inputController in LevelFinishedController.instance.getControllers())
 		{
 			GameObject player = GameObject.Find ("Player" + inputController.getPlayerId());
-			if (portalBounds.Intersects(player.renderer.bounds))
+			if (portalBounds.Intersects(player.GetComponent<Renderer>().bounds))
 			{
 				usedControllers.Add(inputController);
 			}

@@ -5,7 +5,7 @@ public class ColourTest : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		gameObject.renderer.material.SetColor("_Color",Color.red);
+		gameObject.GetComponent<Renderer>().material.SetColor("_Color",Color.red);
 	}
 	
 

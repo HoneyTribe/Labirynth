@@ -14,7 +14,7 @@ public class DistractLine : MonoBehaviour
 	{
 		//instance = this;
 		device = GameObject.Find ("Device");
-		effect = transform.particleSystem;
+		effect = transform.GetComponent<ParticleSystem>();
 	}
 	
 	void Update()

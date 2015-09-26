@@ -154,7 +154,7 @@ public class Instantiation : MonoBehaviour {
 			Component[] components = GameObject.Find ("DeviceContainer").GetComponentsInChildren<MeshRenderer>();
 			foreach (Component component in components)
 			{
-				component.renderer.enabled = false;
+				component.GetComponent<Renderer>().enabled = false;
 			}
 		}
 	}

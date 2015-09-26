@@ -10,8 +10,8 @@ public class GroundController : MonoBehaviour {
 
 	public void OnTriggerEnter(Collider collider)
 	{
-		collider.rigidbody.useGravity = false;
-		collider.rigidbody.velocity = Vector3.zero;
+		collider.GetComponent<Rigidbody>().useGravity = false;
+		collider.GetComponent<Rigidbody>().velocity = Vector3.zero;
 		if ((collider.tag == "Player") || (collider.tag == "Monster"))
 		{
 			collider.gameObject.SendMessage("setStopped", false);

@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			return;
 		}
 
-		originalColor = transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color;
+		originalColor = transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Renderer>().materials[0].color;
 
 		//get revive animator
 		for(int i =0; i < transform.childCount; i++)
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				if (!gameObject.name.Equals("Player5"))
 				{
 					movement = new Vector3(0,0,2.0f);
-					rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+					GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 				}
 				else
 				{
@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				if (!gameObject.name.Equals("Player5"))
 				{
 					movement = new Vector3(0,0,2.0f);
-					rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+					GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 				}
 				else
 				{
@@ -236,7 +236,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				if (!gameObject.name.Equals("Player5"))
 				{
 					movement = new Vector3(0,0,2.0f);
-					rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+					GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 				}
 				else
 				{
@@ -346,7 +346,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 							                                               transform.localPosition.y + 4,
 							                                               transform.localPosition.z);
 							jumpItem.transform.parent = gameObject.transform;
-							jumpItem.rigidbody.isKinematic = true;
+							jumpItem.GetComponent<Rigidbody>().isKinematic = true;
 							jumpItem.SendMessage("Take");
 							inventory.putItemIntoInventory();
 							AudioController.instance.Play("005_PickUp");
@@ -360,7 +360,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 						                                               					   transform.localPosition.z);
 						inventory.getInventoryItem().transform.rotation = Quaternion.Euler(0,0,0);
 						inventory.getInventoryItem().transform.parent = null;
-						inventory.getInventoryItem().rigidbody.isKinematic = false;
+						inventory.getInventoryItem().GetComponent<Rigidbody>().isKinematic = false;
 						inventory.getInventoryItem().SendMessage("Leave");
 						inventory.setAvailableItem(inventory.getInventoryItem());
 						inventory.clearInventory();
@@ -371,7 +371,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if ((x != 0) || (z != 0))
 			{
 				playerActive = true;
-				rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
+				GetComponent<Rigidbody>().velocity = new Vector3(x, 0, z).normalized * speed;
 				transform.rotation = Quaternion.LookRotation(new Vector3(x, 0, z));
 
 					// run animation
@@ -383,7 +383,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				if (playerActive)
 				{
 					playerActive = false;
-					rigidbody.velocity = new Vector3(x, 0, z).normalized * speed;
+					GetComponent<Rigidbody>().velocity = new Vector3(x, 0, z).normalized * speed;
 
 						//idle animation
 						idle = true;
@@ -431,7 +431,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 						if (Time.time - timeFromLastRevive > timeBetweenRevivals)
 						{
 							gameController.SendMessage("PlayerReviwed");
-							transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color = originalColor;
+							transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Renderer>().materials[0].color = originalColor;
 							reviveAnim.SetTrigger(startReviveHash);
 
 							if(FloorInstructions.instance.GetReviveInstructions() > 0)
@@ -448,7 +448,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 								}
 							}
 
-							collider.isTrigger = false;
+							GetComponent<Collider>().isTrigger = false;
 							paralysed = false;
 							AudioController.instance.Play("032_ReviveB");
 							timeFromLastRevive = Time.time;
@@ -556,7 +556,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if (!TopLightController.instance.isEntered())
 			{
 				freeze();
-				rigidbody.transform.rotation = (Quaternion.Euler(0,0,0));
+				GetComponent<Rigidbody>().transform.rotation = (Quaternion.Euler(0,0,0));
 				EnterLighthouse();
 			}
 		}
@@ -565,7 +565,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if (!CraneController.instance.isEntered())
 			{
 				freeze();
-				rigidbody.transform.rotation = (Quaternion.Euler(0,0,0));
+				GetComponent<Rigidbody>().transform.rotation = (Quaternion.Euler(0,0,0));
 				EnterCrane();
 			}
 		}
@@ -574,7 +574,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			if (!DroneController.instance.isEntered())
 			{
 				freeze();
-				rigidbody.transform.rotation = (Quaternion.Euler(0,0,0));
+				GetComponent<Rigidbody>().transform.rotation = (Quaternion.Euler(0,0,0));
 				EnterPortalGun();
 			}
 		}
@@ -587,14 +587,14 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				Idle();
 				gameController.SendMessage("PlayerParalysed");
 				AudioController.instance.Play("008_dead");
-				transform.GetChild(0).transform.GetChild(0).gameObject.renderer.materials[0].color=Color.grey;
-				collider.isTrigger = true;
-				collision.collider.rigidbody.velocity = Vector3.zero;
-				collision.collider.rigidbody.angularVelocity = Vector3.zero;
-				if (rigidbody != null)
+				transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Renderer>().materials[0].color=Color.grey;
+				GetComponent<Collider>().isTrigger = true;
+				collision.collider.GetComponent<Rigidbody>().velocity = Vector3.zero;
+				collision.collider.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+				if (GetComponent<Rigidbody>() != null)
 				{
-					rigidbody.velocity = Vector3.zero;
-					rigidbody.angularVelocity = Vector3.zero;
+					GetComponent<Rigidbody>().velocity = Vector3.zero;
+					GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 				}
 				FloorInstructions.instance.ShowReviveInstructions();
 				//collision.gameObject.SendMessage("Recalculate");
@@ -603,18 +603,18 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 		if(collision.collider.name == "Platform")
 		{
 			levelChangeEntered = collision.collider.gameObject.GetComponent<LevelChangeController>();
-			rigidbody.velocity = Vector3.zero;
-			rigidbody.angularVelocity = Vector3.zero;
+			GetComponent<Rigidbody>().velocity = Vector3.zero;
+			GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 		}
 	}
 
 	void OnCollisionStay (Collision collision)
 	{
 		// if player jumps on the block its velocity shouldn't be zeroed, because he should slide
-		if ((collision.collider.name == "Block") && (gameObject.rigidbody.useGravity == false))
+		if ((collision.collider.name == "Block") && (gameObject.GetComponent<Rigidbody>().useGravity == false))
 		{
-			rigidbody.velocity = Vector3.zero;
-			rigidbody.angularVelocity = Vector3.zero;
+			GetComponent<Rigidbody>().velocity = Vector3.zero;
+			GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
 			collision.gameObject.SendMessage("Move", -collision.contacts[0].normal);
 		}
 	}
@@ -638,9 +638,9 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 
 	private void freeze()
 	{
-		rigidbody.velocity = Vector3.zero;
-		rigidbody.angularVelocity = Vector3.zero;
-		rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+		GetComponent<Rigidbody>().velocity = Vector3.zero;
+		GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+		GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 	}
 
 	public void StartingMachine()

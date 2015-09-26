@@ -24,12 +24,12 @@ public class TriggerNewMaze : MonoBehaviour
 			GameObject[] players= GameObject.FindGameObjectsWithTag ("Player");
 			foreach (GameObject player in players)
 			{
-				player.rigidbody.velocity = Vector3.zero;
+				player.GetComponent<Rigidbody>().velocity = Vector3.zero;
 			}
 
 			if(LevelFinishedController.instance.isTeleportEnabled() == true || LevelFinishedController.instance.isStunGunEnabled() == true )
 			{
-				drone.rigidbody.velocity = Vector3.zero;
+				drone.GetComponent<Rigidbody>().velocity = Vector3.zero;
 			}
 
 			NewMazeEnding.instance.EnableNewMazeEnding();

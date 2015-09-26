@@ -46,7 +46,7 @@ public class DecoyLinePlayer: MonoBehaviour
 		{
 			//effect.enableEmission = true;
 
-			if(renderer.material.color == green)
+			if(GetComponent<Renderer>().material.color == green)
 			{
 				float dist = Vector3.Distance(transform.parent.position, player1.transform.position);
 				Vector3 pos = player1.transform.position + (transform.parent.position - player1.transform.position) / 2;
@@ -56,7 +56,7 @@ public class DecoyLinePlayer: MonoBehaviour
 				transform.position = new Vector3(pos.x, pos.y, pos.z);
 				transform.LookAt(transform.parent);
 			}
-			else if(renderer.material.color == blue)
+			else if(GetComponent<Renderer>().material.color == blue)
 			{
 				float dist = Vector3.Distance(transform.parent.position, player2.transform.position);
 				Vector3 pos = player2.transform.position + (transform.parent.position - player2.transform.position) / 2;
@@ -66,7 +66,7 @@ public class DecoyLinePlayer: MonoBehaviour
 				transform.position = new Vector3(pos.x, pos.y, pos.z);
 				transform.LookAt(transform.parent);
 			}
-			else if(renderer.material.color == pink)
+			else if(GetComponent<Renderer>().material.color == pink)
 			{
 				float dist = Vector3.Distance(transform.parent.position, player3.transform.position);
 				Vector3 pos = player3.transform.position + (transform.parent.position - player3.transform.position) / 2;
@@ -76,7 +76,7 @@ public class DecoyLinePlayer: MonoBehaviour
 				transform.position = new Vector3(pos.x, pos.y, pos.z);
 				transform.LookAt(transform.parent);
 			}
-			else if(renderer.material.color == yellow)
+			else if(GetComponent<Renderer>().material.color == yellow)
 			{
 				float dist = Vector3.Distance(transform.parent.position, player4.transform.position);
 				Vector3 pos = player4.transform.position + (transform.parent.position - player4.transform.position) / 2;

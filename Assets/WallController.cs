@@ -144,7 +144,7 @@ public class WallController : MonoBehaviour {
 		mesh.RecalculateBounds();
 		mesh.Optimize();
 
-		gameObject.renderer.material.mainTexture = textureAtlas;
+		gameObject.GetComponent<Renderer>().material.mainTexture = textureAtlas;
 
 	}
 }

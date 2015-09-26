@@ -59,7 +59,7 @@ public class TexturedWallController : MonoBehaviour {
 		materials[3] = topLeftRight;
 		materials[4] = topLeftRight;
 
-		gameObject.renderer.materials = materials;
+		gameObject.GetComponent<Renderer>().materials = materials;
 
 		mesh.subMeshCount = 5;
 		mesh.SetTriangles (new int[]{0,1,2,3,4,5}, 0);

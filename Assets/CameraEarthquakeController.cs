@@ -15,7 +15,7 @@ public class CameraEarthquakeController : MonoBehaviour {
 
 	void Start()
 	{
-		originalPosition = camera.transform.position;
+		originalPosition = GetComponent<Camera>().transform.position;
 		//StartCoroutine(StartEarthquakeTimer());
 	}
 
@@ -50,7 +50,7 @@ public class CameraEarthquakeController : MonoBehaviour {
 		if (shake > 0)
 		{
 			float timer = (Time.time - hitTime) * shakeSpeed;
-			camera.transform.position = new Vector3(originalPosition.x + Mathf.Sin(timer) * shakeDistance,
+			GetComponent<Camera>().transform.position = new Vector3(originalPosition.x + Mathf.Sin(timer) * shakeDistance,
 			                                        originalPosition.y,
 			                                        originalPosition.z);
 
@@ -64,7 +64,7 @@ public class CameraEarthquakeController : MonoBehaviour {
 
 		if (shake == 0)
 		{
-			camera.transform.position = originalPosition;
+			GetComponent<Camera>().transform.position = originalPosition;
 			shake--;
 		}
 	}
