@@ -64,7 +64,7 @@ QualitySettings:
     shadowDistance: 150
     shadowNearPlaneOffset: 2
     shadowCascade2Split: .333333343
-    shadowCascade4Split: {x: .0666666701, y: .199999988, z: .466666639}
+    shadowCascade4Split: {x: .0785998404, y: .200000003, z: .466666639}
     blendWeights: 4
     textureQuality: 0
     anisotropicTextures: 2
@@ -81,10 +81,10 @@ QualitySettings:
   m_PerPlatformDefaultQuality:
     Android: 0
     Samsung TV: 0
-    Standalone: 0
+    Standalone: 2
     Tizen: 0
     WP8: 0
-    Web: 0
+    Web: 1
     WebGL: 0
     Windows Store Apps: 0
     iPhone: 0

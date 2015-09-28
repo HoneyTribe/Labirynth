@@ -24,13 +24,6 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Illum
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _ShadowTex
         second:
           m_Texture: {fileID: 2800000, guid: 2cabd9c393c5e6846a93ce447847f4e1, type: 3}
@@ -43,12 +36,23 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Illum
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats: {}
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: .518309951, g: .518309951, b: .518309951, a: 1.00965929}
+        second: {r: .518321157, g: .518321157, b: .518321157, a: 1.00612319}
+      data:
+        first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _TintColor
@@ -101,10 +105,6 @@ Material:
         first:
           name: _Projector_2
         second: {r: -.107604526, g: -.180290937, b: 1.00790524, a: 1.94646192}
-      data:
-        first:
-          name: _Emission
-        second: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6
