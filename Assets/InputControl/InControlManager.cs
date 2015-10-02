@@ -97,7 +97,11 @@ public class InControlManager : MonoBehaviour {
 				}
 			}
 
-			if (input.GetControl(InputControlType.Select).WasPressed)
+			if ((input.GetControl(InputControlType.Select).WasPressed) ||
+				(input.GetControl(InputControlType.Back).WasPressed) ||
+				(input.GetControl(InputControlType.Home).WasPressed) ||
+				(input.GetControl(InputControlType.Menu).WasPressed) ||
+			    (input.GetControl(InputControlType.Options).WasPressed))
 			{
 				LevelFinishedController.instance.setLevel(0);
 				Application.LoadLevel(0);
