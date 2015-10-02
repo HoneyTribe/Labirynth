@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ImageAction : Action  {
+public class ImageAction : IntroAction  {
 
 	IntroductionController introductionController;
 	float time = 0;

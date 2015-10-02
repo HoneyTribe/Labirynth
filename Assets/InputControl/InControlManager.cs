@@ -9,10 +9,14 @@ public class InControlManager : MonoBehaviour {
 	private PlayerSelectionMenuController playerSelectionMenuController;
 	private int currentPlayer;
 	private bool portalStarted;
+	//private InControl.InControlManager manager;
 
 	void Start ()
 	{
-		InputManager.Setup ();
+//		manager = new InControl.InControlManager ();
+//		manager.customProfiles.Add("KeyboardProfile1");
+//		manager.customProfiles.Add("KeyboardProfile2");
+//		manager.customProfiles.Add("CustomProfile");
 
 //		List<InputDevice> devicesToDetach = new List<InputDevice> ();
 //		if (SystemInfo.operatingSystem.ToUpper().Contains("WINDOWS"))
@@ -34,9 +38,9 @@ public class InControlManager : MonoBehaviour {
 //			}
 //		}
 
-		InputManager.AttachDevice( new UnityInputDevice( new KeyboardProfile1() ) );
-		InputManager.AttachDevice( new UnityInputDevice( new KeyboardProfile2() ) );
-		InputManager.AttachDevice( new UnityInputDevice( new CustomProfile() ) );
+//		InputManager.AttachDevice( new UnityInputDevice( new KeyboardProfile1() ) );
+//		InputManager.AttachDevice( new UnityInputDevice( new KeyboardProfile2() ) );
+//		InputManager.AttachDevice( new UnityInputDevice( new CustomProfile() ) );
 
 //		foreach(InputDevice device in InputManager.Devices)
 //		{
@@ -71,7 +75,7 @@ public class InControlManager : MonoBehaviour {
 
 	void Update () 
 	{
-		InputManager.Update ();
+		//InputManager.Update ();
 
 		if ((Application.loadedLevel == 0) && (!portalStarted))
 		{
@@ -101,17 +105,17 @@ public class InControlManager : MonoBehaviour {
 				
 			bool left = false;
 			bool right = false;
-			if ((input.GetControl(InputControlType.LeftTrigger).WasPressed) || 
-			    (input.GetControl(InputControlType.LeftBumper).WasPressed) ||
-			    (input.GetControl(InputControlType.LeftStickX).WasPressed) ||
-			    (input.GetControl(InputControlType.LeftStickY).WasPressed))
+			if ((input.LeftTrigger.WasPressed) || 
+			    (input.LeftBumper.WasPressed) ||
+			    (input.LeftStickX.WasPressed) ||
+			    (input.LeftStickY.WasPressed))
 			{
 				left = true;
 			}
-			if ((input.GetControl(InputControlType.RightTrigger).WasPressed) || 
-			    (input.GetControl(InputControlType.RightBumper).WasPressed) ||
-			    (input.GetControl(InputControlType.RightStickX).WasPressed) ||
-			    (input.GetControl(InputControlType.RightStickY).WasPressed))
+			if ((input.RightTrigger.WasPressed) || 
+			    (input.RightBumper.WasPressed) ||
+			    (input.RightStickX.WasPressed) ||
+			    (input.RightStickY.WasPressed))
 			{
 				right = true;
 			}

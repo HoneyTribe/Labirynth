@@ -179,15 +179,15 @@ public class InputController {
 			InputControl action2control;
 			if (left)
 			{
-				x = inputDevice.LeftStickVector.x;
-				z = inputDevice.LeftStickVector.y;
+				x = inputDevice.LeftStickX.Value;
+				z = inputDevice.LeftStickY.Value;
 				actionAxis = inputDevice.LeftTrigger.Value;
 				action2control = inputDevice.LeftBumper;
 			}
 			else
 			{
-				x = inputDevice.RightStickVector.x;
-				z = inputDevice.RightStickVector.y;
+				x = inputDevice.RightStickX.Value;
+				z = inputDevice.RightStickY.Value;
 				actionAxis = inputDevice.RightTrigger.Value;
 				action2control = inputDevice.RightBumper;
 			}

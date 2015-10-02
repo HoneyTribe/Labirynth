@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class MoveCameraAction : Action  {
+public class MoveCameraAction : IntroAction  {
 
 	private const float cameraSpeed = 15f;
 	private const float cameraRotationSpeed = 4f;

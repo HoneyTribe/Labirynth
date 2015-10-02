@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 public class Level11 : LevelSetup {
 	
-	public List<Action> Setup()
+	public List<IntroAction> Setup()
 	{
-		List<Action> actions = new List<Action>();
+		List<IntroAction> actions = new List<IntroAction>();
 
 		actions.Add (new ChangeCamAction());
 		actions.Add(new MoveCameraAction("Player1"));

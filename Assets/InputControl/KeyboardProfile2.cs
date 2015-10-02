@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace InControl
 {
-	public class KeyboardProfile2 : UnityInputDeviceProfile
+	public class KeyboardProfile2 : CustomInputDeviceProfile
 	{
 		public KeyboardProfile2()
 		{
@@ -55,15 +55,27 @@ namespace InControl
 			{
 				new InputControlMapping
 				{
-					Handle = "Arrow Keys X",
-					Target = InputControlType.LeftStickX,
-					Source = KeyCodeAxis( KeyCode.A, KeyCode.D )
+					Handle = "Go Left",
+					Target = InputControlType.RightStickLeft,
+					Source = KeyCodeButton( KeyCode.A )
 				},
 				new InputControlMapping
 				{
-					Handle = "Arrow Keys Y",
-					Target = InputControlType.LeftStickY,
-					Source = KeyCodeAxis( KeyCode.S, KeyCode.W )
+					Handle = "Go Right",
+					Target = InputControlType.RightStickRight,
+					Source = KeyCodeButton( KeyCode.D )
+				},
+				new InputControlMapping
+				{
+					Handle = "Go Down",
+					Target = InputControlType.RightStickDown,
+					Source = KeyCodeButton( KeyCode.S )
+				},
+				new InputControlMapping
+				{
+					Handle = "Go Up",
+					Target = InputControlType.RightStickUp,
+					Source = KeyCodeButton( KeyCode.W )
 				}
 			};
 		}

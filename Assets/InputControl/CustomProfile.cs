@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace InControl
 {
-	public class CustomProfile : UnityInputDeviceProfile
+	public class CustomProfile : CustomInputDeviceProfile
 	{
 		public CustomProfile()
 		{

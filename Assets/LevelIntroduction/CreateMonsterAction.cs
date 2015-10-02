@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CreateMonsterAction : Action  {
+public class CreateMonsterAction : IntroAction  {
 
 	string monsterType;
 	GameObject gameController;

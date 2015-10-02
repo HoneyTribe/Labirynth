@@ -13,9 +13,9 @@ public class IntroductionController : MonoBehaviour {
 	public Texture2D playersTexture;
 	public Texture2D teacherTexture;
 
-	private List<Action> actions;
-	private Action currentAction;
-	private Action movingBackAction;
+	private List<IntroAction> actions;
+	private IntroAction currentAction;
+	private IntroAction movingBackAction;
 	
 	private bool playingIntroduction = true;
 	private bool stoppingIntroduction = false;

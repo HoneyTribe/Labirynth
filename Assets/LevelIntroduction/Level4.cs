@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class Level4 : LevelSetup
 {
-	public List<Action> Setup()
+	public List<IntroAction> Setup()
 	{
-		List<Action> actions = new List<Action>();
+		List<IntroAction> actions = new List<IntroAction>();
 
 		actions.Add(new ImageAction("tut_03"));
 		actions.Add(new MoveCameraAction("Lighthouse"));

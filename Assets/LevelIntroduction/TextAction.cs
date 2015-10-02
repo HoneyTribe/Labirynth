@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TextAction : Action  {
+public class TextAction : IntroAction  {
 
 	IntroductionController introductionController;
 	GameObject camera;

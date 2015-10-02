@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WaitAction : Action  {
+public class WaitAction : IntroAction  {
 	
 	float time;
 	

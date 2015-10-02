@@ -6,11 +6,11 @@ public class Level5 : LevelSetup
 {
 	private GameObject robot;
 	
-	public List<Action> Setup()
+	public List<IntroAction> Setup()
 	{
 		robot = GameObject.Find("Player5");
 
-		List<Action> actions = new List<Action>();
+		List<IntroAction> actions = new List<IntroAction>();
 
 		if(robot == null)
 		{

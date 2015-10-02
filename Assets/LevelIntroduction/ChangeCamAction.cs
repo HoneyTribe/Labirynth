@@ -1,7 +1,7 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
-public class ChangeCamAction : Action
+public class ChangeCamAction : IntroAction
 {
 	
 	GameObject camera;
