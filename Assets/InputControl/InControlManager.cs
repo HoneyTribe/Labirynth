@@ -110,6 +110,7 @@ public class InControlManager : MonoBehaviour {
 			    (input.LeftStickX.WasPressed) ||
 			    (input.LeftStickY.WasPressed))
 			{
+				Debug.Log("Left");
 				left = true;
 			}
 			if ((input.RightTrigger.WasPressed) || 
@@ -117,6 +118,7 @@ public class InControlManager : MonoBehaviour {
 			    (input.RightStickX.WasPressed) ||
 			    (input.RightStickY.WasPressed))
 			{
+				Debug.Log("Right");
 				right = true;
 			}
 			if (input.GetControl(InputControlType.Start).WasPressed)
@@ -189,6 +191,7 @@ public class InControlManager : MonoBehaviour {
 	{
 		for (int i = 0; i < InputManager.Devices.Count; i++)
 		{
+			Debug.Log(InputManager.Devices[i].Meta);
 			if (InputManager.Devices[i].Meta == inputDevice.Meta)
 			{
 				return i;
