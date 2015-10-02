@@ -21,7 +21,7 @@ public class InputController {
 	public KeyCode actionTrigger;
 	public KeyCode actionTrigger2;
 
-	private int device;
+	private InputDevice device;
 	private bool keyboard;
 	private bool left;
 
@@ -37,7 +37,7 @@ public class InputController {
 
 	private bool actionAxisBlocked;
 
-	public InputController(int device, bool keyboard, bool left, PlayerSelectionMenuController playerSelectionMenuController,
+	public InputController(InputDevice device, bool keyboard, bool left, PlayerSelectionMenuController playerSelectionMenuController,
 	                       int playerId)
 	{
 		this.device = device;
@@ -171,9 +171,9 @@ public class InputController {
 
 	private void handleAxis(ref float x, ref float z, ref float action, ref float action2)
 	{
-		if (InputManager.Devices.Count > device)
+		//if (InputManager.Devices.Count > device)
 		{
-			InputDevice inputDevice = InputManager.Devices [device];
+			InputDevice inputDevice = device;
 
 			float actionAxis;
 			InputControl action2control;
@@ -235,14 +235,14 @@ public class InputController {
 		{
 			if (!LevelFinishedController.instance.IsInstruction())
 			{
-				if (InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed)
+				if (device.GetControl(InputControlType.Start).WasPressed)
 				{
 					LevelFinishedController.instance.ShowInstruction();
 				}
 			}
 			else
 			{
-				if (InputManager.Devices [device].GetControl(InputControlType.Start).WasPressed)
+				if (device.GetControl(InputControlType.Start).WasPressed)
 				{
 					LevelFinishedController.instance.HideInstruction();
 				}
@@ -255,7 +255,7 @@ public class InputController {
 		this.menuController = menuController;
 	}
 
-	public int getDevice()
+	public InputDevice getDevice()
 	{
 		return device;
 	}

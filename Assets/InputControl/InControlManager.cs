@@ -110,7 +110,6 @@ public class InControlManager : MonoBehaviour {
 			    (input.LeftStickX.WasPressed) ||
 			    (input.LeftStickY.WasPressed))
 			{
-				Debug.Log("Left");
 				left = true;
 			}
 			if ((input.RightTrigger.WasPressed) || 
@@ -118,7 +117,6 @@ public class InControlManager : MonoBehaviour {
 			    (input.RightStickX.WasPressed) ||
 			    (input.RightStickY.WasPressed))
 			{
-				Debug.Log("Right");
 				right = true;
 			}
 			if (input.GetControl(InputControlType.Start).WasPressed)
@@ -146,7 +144,7 @@ public class InControlManager : MonoBehaviour {
 			{
 				foreach(InputController inputController in LevelFinishedController.instance.getControllers())
 				{
-					if ((inputController.getDevice() == getDeviceId(input)) && (inputController.isLeft() == left))
+					if ((inputController.getDevice() == input) && (inputController.isLeft() == left))
 					{
 						found = true;
 					}
@@ -156,7 +154,7 @@ public class InControlManager : MonoBehaviour {
 					if (LevelFinishedController.instance.getControllers().Count != 4)
 					{
 						LevelFinishedController.instance.getControllers().Add(
-							new InputController(getDeviceId(input), keyboard, left, playerSelectionMenuController, currentPlayer++));
+							new InputController(input, keyboard, left, playerSelectionMenuController, currentPlayer++));
 					}
 				}
 			}
@@ -191,7 +189,6 @@ public class InControlManager : MonoBehaviour {
 	{
 		for (int i = 0; i < InputManager.Devices.Count; i++)
 		{
-			Debug.Log(InputManager.Devices[i].Meta);
 			if (InputManager.Devices[i].Meta == inputDevice.Meta)
 			{
 				return i;
@@ -220,15 +217,15 @@ public class InControlManager : MonoBehaviour {
 		if (usedControllers.Count == 1) 
 		{	
 			InputController playerController = usedControllers[0];
-			int deviceId = playerController.getDevice();
+			InputDevice deviceId = playerController.getDevice();
 			if (playerController.isKeyboard())
 			{
-				string profileName = InputManager.Devices[playerController.getDevice()].Meta.Contains ("1 player") ? "2 player" : "1 player";
+				string profileName = playerController.getDevice().Meta.Contains ("1 player") ? "2 player" : "1 player";
 				for(int i=0 ; i < InputManager.Devices.Count; i++)
 				{
 					if (InputManager.Devices[i].Meta.Contains (profileName))
 					{
-						deviceId = i;
+						deviceId = InputManager.Devices[i];
 						break;
 					}
 				}
