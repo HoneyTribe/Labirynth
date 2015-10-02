@@ -56,25 +56,25 @@ namespace InControl
 				new InputControlMapping
 				{
 					Handle = "Go Left",
-					Target = InputControlType.RightStickLeft,
+					Target = InputControlType.LeftStickLeft,
 					Source = KeyCodeButton( KeyCode.A )
 				},
 				new InputControlMapping
 				{
 					Handle = "Go Right",
-					Target = InputControlType.RightStickRight,
+					Target = InputControlType.LeftStickRight,
 					Source = KeyCodeButton( KeyCode.D )
 				},
 				new InputControlMapping
 				{
 					Handle = "Go Down",
-					Target = InputControlType.RightStickDown,
+					Target = InputControlType.LeftStickDown,
 					Source = KeyCodeButton( KeyCode.S )
 				},
 				new InputControlMapping
 				{
 					Handle = "Go Up",
-					Target = InputControlType.RightStickUp,
+					Target = InputControlType.LeftStickUp,
 					Source = KeyCodeButton( KeyCode.W )
 				}
 			};
