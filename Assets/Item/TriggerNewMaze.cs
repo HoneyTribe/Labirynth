@@ -34,7 +34,7 @@ public class TriggerNewMaze : MonoBehaviour
 
 			NewMazeEnding.instance.EnableNewMazeEnding();
 			AudioController.instance.Play("021_BlockMovesB");
-			gameObject.transform.Translate (0, 0, -0.5f);
+			gameObject.transform.parent.transform.Translate (0, -0.5f, 0);
 		}
 	}
 }
