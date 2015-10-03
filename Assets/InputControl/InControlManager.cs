@@ -97,11 +97,7 @@ public class InControlManager : MonoBehaviour {
 				}
 			}
 
-			if ((input.GetControl(InputControlType.Select).WasPressed) ||
-				(input.GetControl(InputControlType.Back).WasPressed) ||
-				(input.GetControl(InputControlType.Home).WasPressed) ||
-				(input.GetControl(InputControlType.Menu).WasPressed) ||
-			    (input.GetControl(InputControlType.Options).WasPressed))
+			if (input.GetControl(InputControlType.Back).WasPressed)
 			{
 				LevelFinishedController.instance.setLevel(0);
 				Application.LoadLevel(0);
@@ -165,7 +161,7 @@ public class InControlManager : MonoBehaviour {
 		}
 		else
 		{
-			if (InputManager.ActiveDevice.GetControl(InputControlType.Select).WasPressed)
+			if (InputManager.ActiveDevice.GetControl(InputControlType.Back).WasPressed)
 			{
 				LevelFinishedController.instance.Reset();
 				Application.LoadLevel(0);
@@ -187,19 +183,6 @@ public class InControlManager : MonoBehaviour {
 	public void RemovePlayerSelectionMenu()
 	{
 		this.playerSelectionMenuController = null;
-	}
-
-	private int getDeviceId(InputDevice inputDevice)
-	{
-		for (int i = 0; i < InputManager.Devices.Count; i++)
-		{
-			if (InputManager.Devices[i].Meta == inputDevice.Meta)
-			{
-				return i;
-			}
-		}
-
-		throw new UnityException("Can't find device = " + inputDevice.Meta);
 	}
 
 	private void collectPlayersAndStart() 
