@@ -108,6 +108,7 @@ public class Instantiation : MonoBehaviour {
 				Vector3 pos = new Vector3 (-planeSizeX/2f + spaceX * x,
 				                           0,
 				                           zPosition);
+				if (z == sizeZ * 2 + 2 && pos.x > -7 && pos.x < 7) continue;// remove nodes inside machine!!
 
 				// make sure node is not too close to any object
 				RaycastHit hit;
