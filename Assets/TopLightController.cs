@@ -34,7 +34,6 @@ public class TopLightController : MonoBehaviour {
 	private int energyIndex = STEPS-1;
 	private Texture[] projectorTexturesBlue = new Texture[STEPS];
 	private Texture[] projectorTexturesRed  = new Texture[STEPS];
-	private Color newColor;
 
 	private GameObject[] monsterList;
 
@@ -65,9 +64,7 @@ public class TopLightController : MonoBehaviour {
 			projectorTexturesRed[i] = (Texture2D) Resources.Load("EnergyBar/Light_EnergyBar/Red/EnergyBar_light_Red_" + i*step, typeof(Texture2D));
 		}
 		projectorMaterial.SetTexture("_ShadowTex", projectorTexturesBlue [energyIndex]);
-		newColor = projectorMaterial.color;
-		newColor.a = 0.0f;
-		projectorMaterial.color = newColor;
+		projectorMaterial.SetFloat ("_Opacity", 0);
 
 		machineLight = ball.GetComponent<Animator> ();
 	}
@@ -87,8 +84,10 @@ public class TopLightController : MonoBehaviour {
 			GetComponent<Light>().intensity += lightStep;
 
 			float energyStep = energyParam * Time.deltaTime;
-			newColor.a += energyStep;
-			projectorMaterial.color = newColor;
+
+			float opacity = projectorMaterial.GetFloat ("_Opacity" );
+			opacity += energyStep;
+			projectorMaterial.SetFloat ("_Opacity", opacity );
 
 			timeLeft -= Time.deltaTime;
 		}
@@ -100,8 +99,7 @@ public class TopLightController : MonoBehaviour {
 			}
 			if (energyParam < 0)
 			{
-				newColor.a = 0;
-				projectorMaterial.color = newColor;
+				projectorMaterial.SetFloat ("_Opacity", 0);
 			}
 		}
 

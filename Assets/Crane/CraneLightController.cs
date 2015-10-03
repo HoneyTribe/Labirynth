@@ -13,13 +13,9 @@ public class CraneLightController : MonoBehaviour {
 	private float param;
 	private float energyParam;
 
-	private Color newColor;
-
 	void Start()
 	{
-		newColor = projectorMaterial.color;
-		newColor.a = 0.0f;
-		projectorMaterial.color = newColor;
+		projectorMaterial.SetFloat ("_Opacity", 0);
 	}
 
 	void Update()
@@ -30,8 +26,10 @@ public class CraneLightController : MonoBehaviour {
 			GetComponent<Light>().intensity += lightStep;
 
 			float energyStep = energyParam * Time.deltaTime;
-			newColor.a += energyStep;
-			projectorMaterial.color = newColor;
+
+			float opacity = projectorMaterial.GetFloat ("_Opacity" );
+			opacity += energyStep;
+			projectorMaterial.SetFloat ("_Opacity", opacity );
 
 			timeLeft -= Time.deltaTime;
 		}
@@ -43,8 +41,7 @@ public class CraneLightController : MonoBehaviour {
 			}
 			if (energyParam < 0)
 			{
-				newColor.a = 0;
-				projectorMaterial.color = newColor;
+				projectorMaterial.SetFloat ("_Opacity", 0);
 			}
 		}
 	}
