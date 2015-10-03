@@ -97,7 +97,8 @@ public class InControlManager : MonoBehaviour {
 				}
 			}
 
-			if (input.GetControl(InputControlType.Back).WasPressed)
+			if ((input.GetControl(InputControlType.Select).WasPressed) ||
+				(input.GetControl(InputControlType.Back).WasPressed))
 			{
 				LevelFinishedController.instance.setLevel(0);
 				Application.LoadLevel(0);
@@ -161,7 +162,8 @@ public class InControlManager : MonoBehaviour {
 		}
 		else
 		{
-			if (InputManager.ActiveDevice.GetControl(InputControlType.Back).WasPressed)
+			if ((InputManager.ActiveDevice.GetControl(InputControlType.Select).WasPressed) ||
+				(InputManager.ActiveDevice.GetControl(InputControlType.Back).WasPressed))
 			{
 				LevelFinishedController.instance.Reset();
 				Application.LoadLevel(0);
