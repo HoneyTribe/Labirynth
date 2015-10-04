@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 	private bool inputBlocked;
 	private bool paralysed;
 	private Color originalColor;
+	private Color originalEmissionColor;
 	private float timeFromLastRevive = 0;
 	private Animator reviveAnim;
 	private static int startReviveHash = Animator.StringToHash ("StartRevive");
@@ -60,7 +61,8 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 			return;
 		}
 
-		originalColor = transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Renderer>().materials[0].color;
+		originalColor = transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Renderer>().materials[0].GetColor("_Color");
+		originalEmissionColor = transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Renderer>().materials[0].GetColor("_EmissionColor");
 
 		//get revive animator
 		for(int i =0; i < transform.childCount; i++)
@@ -431,7 +433,8 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 						if (Time.time - timeFromLastRevive > timeBetweenRevivals)
 						{
 							gameController.SendMessage("PlayerReviwed");
-							transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Renderer>().materials[0].color = originalColor;
+							transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Renderer>().materials[0].SetColor("_Color", originalColor);
+							transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Renderer>().materials[0].SetColor("_EmissionColor", originalEmissionColor);
 							reviveAnim.SetTrigger(startReviveHash);
 
 							if(FloorInstructions.instance.GetReviveInstructions() > 0)
@@ -587,7 +590,8 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				Idle();
 				gameController.SendMessage("PlayerParalysed");
 				AudioController.instance.Play("008_dead");
-				transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Renderer>().materials[0].color=Color.grey;
+				transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Renderer>().materials[0].SetColor("_Color", Color.grey);
+				transform.GetChild(0).transform.GetChild(0).gameObject.GetComponent<Renderer>().materials[0].SetColor("_EmissionColor", Color.grey);
 				GetComponent<Collider>().isTrigger = true;
 				collision.collider.GetComponent<Rigidbody>().velocity = Vector3.zero;
 				collision.collider.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
