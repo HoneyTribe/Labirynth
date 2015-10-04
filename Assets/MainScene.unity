@@ -9119,7 +9119,7 @@ GameObject:
   - 33: {fileID: 649388377}
   - 95: {fileID: 649388381}
   - 23: {fileID: 649388375}
-  m_Layer: 9
+  m_Layer: 28
   m_Name: ControlPadPopTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13077,7 +13077,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 969576867}
   - 119: {fileID: 969576866}
-  m_Layer: 15
+  m_Layer: 28
   m_Name: Player_Shadow Projector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13835,7 +13835,7 @@ GameObject:
   - 33: {fileID: 1027970787}
   - 95: {fileID: 1027970785}
   - 23: {fileID: 1027970784}
-  m_Layer: 9
+  m_Layer: 28
   m_Name: ControlPadPopTrigger2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15908,7 +15908,7 @@ GameObject:
   - 4: {fileID: 1136064458}
   - 64: {fileID: 1136064460}
   - 114: {fileID: 1136064459}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: PopMeshCollider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16388,7 +16388,7 @@ GameObject:
   - 4: {fileID: 1173823303}
   - 64: {fileID: 1173823304}
   - 114: {fileID: 1173823305}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: PopMeshCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22656,7 +22656,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1718059831}
   - 119: {fileID: 1718059830}
-  m_Layer: 15
+  m_Layer: 28
   m_Name: Player_Shadow Projector2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25632,7 +25632,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043507661}
-  m_LocalRotation: {x: -.565562785, y: .510542512, z: .332734853, w: .555673063}
+  m_LocalRotation: {x: -.565562844, y: .510542572, z: .332734883, w: .555673122}
   m_LocalPosition: {x: -1.44359303, y: -17.7804337, z: -18.2103996}
   m_LocalScale: {x: 8.13866043, y: .100000009, z: 10}
   m_Children: []
