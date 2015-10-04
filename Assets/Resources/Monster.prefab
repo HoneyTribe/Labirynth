@@ -46,14 +46,14 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400006}
-  - 119: {fileID: 11900000}
+  - 119: {fileID: 11909348}
   m_Layer: 17
   m_Name: Player_Shadow Projector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &100012
 GameObject:
   m_ObjectHideFlags: 1
@@ -1323,20 +1323,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b215264824e014f309ca7d1011dbc348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!119 &11900000
+--- !u!119 &11909348
 Projector:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_NearClipPlane: .100000001
-  m_FarClipPlane: 12.7600002
-  m_FieldOfView: 31.9699993
+  m_FarClipPlane: 100
+  m_FieldOfView: 60
   m_AspectRatio: 1
   m_Orthographic: 0
-  m_OrthographicSize: 2
+  m_OrthographicSize: 10
   m_Material: {fileID: 2100000, guid: 78c0a732ad112a541100162a44295342, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
