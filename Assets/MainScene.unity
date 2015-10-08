@@ -6055,7 +6055,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 180054, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
       propertyPath: m_Name
-      value: Light_From_Up (1)
+      value: Sunbeam_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
@@ -7916,6 +7916,7 @@ GameObject:
   - 81: {fileID: 525393512}
   - 114: {fileID: 525393511}
   - 114: {fileID: 525393517}
+  - 114: {fileID: 525393518}
   m_Layer: 0
   m_Name: MainCamera_Front
   m_TagString: MainCamera
@@ -8020,6 +8021,17 @@ MonoBehaviour:
   shader: {fileID: 4800000, guid: b61f0d8d8244b4b28aa66b0c8cb46a8d, type: 3}
   converted3DLut: {fileID: 763140633}
   basedOnTempTex: Assets/Alexis_/ColorCorrection/ColorCorrection_02.png
+--- !u!114 &525393518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 525393510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e2a3dc0131bc4375bc709951da1cf2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &527238164
 Prefab:
   m_ObjectHideFlags: 0
@@ -12263,7 +12275,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 180054, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
       propertyPath: m_Name
-      value: Light_From_Up (3)
+      value: Sunbeam_3
       objectReference: {fileID: 0}
     - target: {fileID: 496974, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
       propertyPath: m_LocalScale.x
@@ -25694,7 +25706,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043507661}
-  m_LocalRotation: {x: -.565562844, y: .510542572, z: .332734883, w: .555673122}
+  m_LocalRotation: {x: -.565562785, y: .510542512, z: .332734853, w: .555673063}
   m_LocalPosition: {x: -1.44359303, y: -17.7804337, z: -18.2103996}
   m_LocalScale: {x: 8.13866043, y: .100000009, z: 10}
   m_Children: []
@@ -26156,7 +26168,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 180054, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
       propertyPath: m_Name
-      value: Light_From_Up (2)
+      value: Sunbeam_2
       objectReference: {fileID: 0}
     - target: {fileID: 496974, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
       propertyPath: m_LocalScale.x
