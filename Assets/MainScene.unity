@@ -19463,7 +19463,6 @@ GameObject:
   - 20: {fileID: 1425123040}
   - 92: {fileID: 1425123039}
   - 124: {fileID: 1425123038}
-  - 81: {fileID: 1425123037}
   - 114: {fileID: 1425123042}
   m_Layer: 0
   m_Name: MainCamera_Front_FX
@@ -19472,13 +19471,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1425123037
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1425123034}
-  m_Enabled: 1
 --- !u!124 &1425123038
 Behaviour:
   m_ObjectHideFlags: 0
