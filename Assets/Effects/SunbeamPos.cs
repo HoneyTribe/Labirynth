@@ -25,7 +25,7 @@ public class SunbeamPos : MonoBehaviour
 	{
 		sunbeam_1Pos = sunbeam_1.transform.position;
 		sunbeam_1Pos.x = Random.Range(21.5F, 24.5F);
-		sunbeam_1Pos.y = Random.Range(55.0F, 63.0F);
+		//sunbeam_1Pos.y = Random.Range(55.0F, 63.0F);
 		sunbeam_1Pos.z = Random.Range(-12.0F, 20.0F);
 		sunbeam_1.transform.position = sunbeam_1Pos;
 
@@ -35,7 +35,7 @@ public class SunbeamPos : MonoBehaviour
 
 		sunbeam_3Pos = sunbeam_3.transform.position;
 		sunbeam_3Pos.x = Random.Range(-20.0F, -16.0F);
-		sunbeam_3Pos.y = Random.Range(36.0F, 67.0F);
+		//sunbeam_3Pos.y = Random.Range(36.0F, 67.0F);
 		sunbeam_3Pos.z = Random.Range(-8.0F, 18.0F);
 		sunbeam_3.transform.position = sunbeam_3Pos;
 	}
