@@ -7651,6 +7651,76 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 45
+--- !u!1001 &468959512
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1986035396}
+    m_Modifications:
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -13.3100004
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.194703996
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -15.5500002
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .804115176
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .59171927
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.0510097668
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .0257900134
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_RootOrder
+      value: 43
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198464, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_Name
+      value: Egypte_Floor_break_04 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 122680, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 198464, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &468959513 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+  m_PrefabInternal: {fileID: 468959512}
 --- !u!1001 &475380332
 Prefab:
   m_ObjectHideFlags: 0
@@ -8378,6 +8448,64 @@ BoxCollider:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_PrefabInternal: {fileID: 1217700204}
+--- !u!1001 &532760053
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1986035396}
+    m_Modifications:
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 18.4200001
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.200439453
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -18.6800003
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.70569092
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .0447255634
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.0447255783
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .70569092
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_RootOrder
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 132608, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_Name
+      value: Egypte_Floor_break_06 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 115322, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 132608, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &532760054 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+  m_PrefabInternal: {fileID: 532760053}
 --- !u!4 &538415893 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
@@ -9539,6 +9667,64 @@ Transform:
   - {fileID: 1291615011}
   m_Father: {fileID: 1831974199}
   m_RootOrder: 1
+--- !u!1001 &660168446
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1986035396}
+    m_Modifications:
+    - target: {fileID: 484232, guid: e43d4ea1534b5fc4f81a754e0e0abd6b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -11.3500004
+      objectReference: {fileID: 0}
+    - target: {fileID: 484232, guid: e43d4ea1534b5fc4f81a754e0e0abd6b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.189157173
+      objectReference: {fileID: 0}
+    - target: {fileID: 484232, guid: e43d4ea1534b5fc4f81a754e0e0abd6b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -15.5600004
+      objectReference: {fileID: 0}
+    - target: {fileID: 484232, guid: e43d4ea1534b5fc4f81a754e0e0abd6b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.0492241457
+      objectReference: {fileID: 0}
+    - target: {fileID: 484232, guid: e43d4ea1534b5fc4f81a754e0e0abd6b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.0491623208
+      objectReference: {fileID: 0}
+    - target: {fileID: 484232, guid: e43d4ea1534b5fc4f81a754e0e0abd6b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.705399573
+      objectReference: {fileID: 0}
+    - target: {fileID: 484232, guid: e43d4ea1534b5fc4f81a754e0e0abd6b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .705387533
+      objectReference: {fileID: 0}
+    - target: {fileID: 484232, guid: e43d4ea1534b5fc4f81a754e0e0abd6b, type: 2}
+      propertyPath: m_RootOrder
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 143330, guid: e43d4ea1534b5fc4f81a754e0e0abd6b, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 139184, guid: e43d4ea1534b5fc4f81a754e0e0abd6b, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 139184, guid: e43d4ea1534b5fc4f81a754e0e0abd6b, type: 2}
+      propertyPath: m_Name
+      value: Egypte_Floor_break_01 (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: e43d4ea1534b5fc4f81a754e0e0abd6b, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &660168447 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 484232, guid: e43d4ea1534b5fc4f81a754e0e0abd6b, type: 2}
+  m_PrefabInternal: {fileID: 660168446}
 --- !u!1001 &662618612
 Prefab:
   m_ObjectHideFlags: 0
@@ -12550,6 +12736,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 21
+--- !u!1001 &841111821
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1986035396}
+    m_Modifications:
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -11.3800001
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.200439453
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -17.1900005
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.70569092
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .0447255634
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.0447255783
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .70569092
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_RootOrder
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 132608, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_Name
+      value: Egypte_Floor_break_06 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 115322, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 132608, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &841111822 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+  m_PrefabInternal: {fileID: 841111821}
 --- !u!1 &841461278
 GameObject:
   m_ObjectHideFlags: 0
@@ -15849,6 +16093,68 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_IsPrefabParent: 0
+--- !u!1001 &1105411707
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1986035396}
+    m_Modifications:
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 16.7199993
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.194703996
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -17.1499996
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.541886926
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.442828953
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .596290946
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .393316954
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_RootOrder
+      value: 49
+      objectReference: {fileID: 0}
+    - target: {fileID: 122680, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 198464, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198464, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_Name
+      value: Egypte_Floor_break_04 (9)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1105411708 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+  m_PrefabInternal: {fileID: 1105411707}
 --- !u!1001 &1107240287
 Prefab:
   m_ObjectHideFlags: 0
@@ -17440,6 +17746,68 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_IsPrefabParent: 0
+--- !u!1001 &1192087207
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1986035396}
+    m_Modifications:
+    - target: {fileID: 404654, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 13.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 404654, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.107490003
+      objectReference: {fileID: 0}
+    - target: {fileID: 404654, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -18.7399998
+      objectReference: {fileID: 0}
+    - target: {fileID: 404654, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .07480634
+      objectReference: {fileID: 0}
+    - target: {fileID: 404654, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .734157503
+      objectReference: {fileID: 0}
+    - target: {fileID: 404654, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .106938764
+      objectReference: {fileID: 0}
+    - target: {fileID: 404654, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -.666318893
+      objectReference: {fileID: 0}
+    - target: {fileID: 404654, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+      propertyPath: m_RootOrder
+      value: 47
+      objectReference: {fileID: 0}
+    - target: {fileID: 192770, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+      propertyPath: m_Name
+      value: Egypte_Floor_break_03 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 404654, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 104248, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 192770, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1192087208 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 404654, guid: 73cc79d06ea67ba42bf779e2f9b803c5, type: 2}
+  m_PrefabInternal: {fileID: 1192087207}
 --- !u!1001 &1192511958
 Prefab:
   m_ObjectHideFlags: 0
@@ -19559,6 +19927,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 652018943}
   m_RootOrder: 0
+--- !u!1001 &1366375590
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1986035396}
+    m_Modifications:
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.819999993
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.200439453
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -12.7200003
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.70569092
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .0447255634
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.0447255783
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .70569092
+      objectReference: {fileID: 0}
+    - target: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_RootOrder
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 132608, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_Name
+      value: Egypte_Floor_break_06 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 115322, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 132608, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1366375591 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 476718, guid: 6fa9c4cf14c4a9b4092c7aba11e43b24, type: 2}
+  m_PrefabInternal: {fileID: 1366375590}
 --- !u!1 &1370328759 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 70594d230cb90814088bf6b338d7a729, type: 3}
@@ -21039,6 +21465,68 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300002, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
+--- !u!1001 &1510757650
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1986035396}
+    m_Modifications:
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.51999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.194703996
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -11.1899996
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.541886926
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.442828953
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: .596290946
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .393316954
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_RootOrder
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 122680, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 198464, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198464, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+      propertyPath: m_Name
+      value: Egypte_Floor_break_04 (10)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1510757651 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 492806, guid: c693a8d1fc099d94abfce12fdb78de3a, type: 2}
+  m_PrefabInternal: {fileID: 1510757650}
 --- !u!1001 &1513468392
 Prefab:
   m_ObjectHideFlags: 0
@@ -26119,6 +26607,15 @@ Transform:
   - {fileID: 2141025714}
   - {fileID: 1617531375}
   - {fileID: 1192511959}
+  - {fileID: 468959513}
+  - {fileID: 841111822}
+  - {fileID: 660168447}
+  - {fileID: 2140256146}
+  - {fileID: 1192087208}
+  - {fileID: 532760054}
+  - {fileID: 1105411708}
+  - {fileID: 1510757651}
+  - {fileID: 1366375591}
   m_Father: {fileID: 0}
   m_RootOrder: 14
 --- !u!4 &2002180116 stripped
@@ -26700,7 +27197,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2043507661}
-  m_LocalRotation: {x: -.565562844, y: .510542572, z: .332734883, w: .555673122}
+  m_LocalRotation: {x: -.565562785, y: .510542512, z: .332734853, w: .555673063}
   m_LocalPosition: {x: -1.44359303, y: -17.7804337, z: -18.2103996}
   m_LocalScale: {x: 8.13866043, y: .100000009, z: 10}
   m_Children: []
@@ -27500,6 +27997,72 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2139729605}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &2140256145
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1986035396}
+    m_Modifications:
+    - target: {fileID: 404096, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 11.4899998
+      objectReference: {fileID: 0}
+    - target: {fileID: 404096, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.0799999982
+      objectReference: {fileID: 0}
+    - target: {fileID: 404096, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -20.0200005
+      objectReference: {fileID: 0}
+    - target: {fileID: 404096, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .44276461
+      objectReference: {fileID: 0}
+    - target: {fileID: 404096, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .466825783
+      objectReference: {fileID: 0}
+    - target: {fileID: 404096, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.504835606
+      objectReference: {fileID: 0}
+    - target: {fileID: 404096, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .575477481
+      objectReference: {fileID: 0}
+    - target: {fileID: 404096, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+      propertyPath: m_RootOrder
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 404096, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 119528, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+      propertyPath: m_Name
+      value: Egypte_Floor_break_05 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 404096, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 146020, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 119528, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &2140256146 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 404096, guid: a1a2ccc0f65390d4191fc373ac1adb65, type: 2}
+  m_PrefabInternal: {fileID: 2140256145}
 --- !u!1001 &2140502198
 Prefab:
   m_ObjectHideFlags: 0
