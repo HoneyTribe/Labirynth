@@ -6651,7 +6651,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0
   m_Range: 500
-  m_SpotAngle: 15
+  m_SpotAngle: 17
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
