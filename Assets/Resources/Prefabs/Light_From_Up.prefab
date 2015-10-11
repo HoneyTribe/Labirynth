@@ -25,9 +25,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180054}
-  m_LocalRotation: {x: .386453122, y: .362626821, z: -.168777913, w: .831065476}
-  m_LocalPosition: {x: -23.6000004, y: 34.9000015, z: 7.4000001}
-  m_LocalScale: {x: 60, y: 60, z: 659.280029}
+  m_LocalRotation: {x: .471496493, y: .48781836, z: -.59978497, w: .424243242}
+  m_LocalPosition: {x: -16.1000004, y: 55.5999985, z: 6.5999999}
+  m_LocalScale: {x: 934.847595, y: 934.847412, z: 10272.1035}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,7 +44,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: 6bd15ebeec5b21547bed2c554086c203, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
+  m_UseLightProbes: 0
   m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
@@ -91,7 +91,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.80999994
   m_Range: 75.7862854
-  m_SpotAngle: 5.49018383
+  m_SpotAngle: 11.8965187
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0

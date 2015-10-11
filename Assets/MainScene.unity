@@ -12617,22 +12617,6 @@ Prefab:
       propertyPath: m_Name
       value: Sunbeam_3
       objectReference: {fileID: 0}
-    - target: {fileID: 496974, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 934.847595
-      objectReference: {fileID: 0}
-    - target: {fileID: 496974, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 934.847412
-      objectReference: {fileID: 0}
-    - target: {fileID: 496974, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 10272.1035
-      objectReference: {fileID: 0}
-    - target: {fileID: 10869292, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
-      propertyPath: m_SpotAngle
-      value: 11.8965187
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
   m_IsPrefabParent: 0
@@ -13537,7 +13521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!119 &969576866
 Projector:
   m_ObjectHideFlags: 0
@@ -13549,7 +13533,7 @@ Projector:
   serializedVersion: 2
   m_NearClipPlane: .100000001
   m_FarClipPlane: 6.73999977
-  m_FieldOfView: 25.5
+  m_FieldOfView: 46.2000008
   m_AspectRatio: 2.1099999
   m_Orthographic: 0
   m_OrthographicSize: 1
@@ -23567,7 +23551,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!119 &1718059830
 Projector:
   m_ObjectHideFlags: 0
@@ -23579,7 +23563,7 @@ Projector:
   serializedVersion: 2
   m_NearClipPlane: .100000001
   m_FarClipPlane: 6.73999977
-  m_FieldOfView: 25.5
+  m_FieldOfView: 46.0900002
   m_AspectRatio: 2.1099999
   m_Orthographic: 0
   m_OrthographicSize: 1
@@ -27139,7 +27123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 496974, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 180054, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
       propertyPath: m_Name
