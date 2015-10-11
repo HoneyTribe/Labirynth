@@ -7,6 +7,7 @@ public class TopLightController : MonoBehaviour {
 	private static int STEPS = 21;
 
 	private static float maxIntensity = 0.2f;
+	private static float smallLightMaxIntensity = 1.3f;
 
 	private static float attractionCost = 0.3f;
 	private static float restoreVelocity = 0.03f; // It needs 1/restoreVelocity seconds to regenerate (30 seconds).
@@ -18,6 +19,7 @@ public class TopLightController : MonoBehaviour {
 	private float timeLeft = 0.0f;
 
 	private float param;
+	private float smallLightParam;
 	private float energyParam;
 	private float energy = 1.0f;
 
@@ -27,6 +29,7 @@ public class TopLightController : MonoBehaviour {
 	public GameObject zapPrefab;
 
 	private GameObject ball;
+	private GameObject smallLight;
 
 	private bool entered;
 	private ScoreController scoreController;
@@ -53,6 +56,7 @@ public class TopLightController : MonoBehaviour {
 	{
 		instance = this;
 		ball = GameObject.Find ("SpaceMachine_Light");
+		smallLight = GameObject.Find ("TopLightSmall");
 		monsterList = GameObject.FindGameObjectsWithTag ("Monster");
 
 		int step = 100/(STEPS-1);
@@ -80,8 +84,8 @@ public class TopLightController : MonoBehaviour {
 
 		if (timeLeft > 0)
 		{
-			float lightStep = param * Time.deltaTime;
-			GetComponent<Light>().intensity += lightStep;
+			GetComponent<Light>().intensity += param * Time.deltaTime;
+			smallLight.GetComponent<Light>().intensity += smallLightParam * Time.deltaTime;
 
 			float energyStep = energyParam * Time.deltaTime;
 
@@ -96,6 +100,10 @@ public class TopLightController : MonoBehaviour {
 			if (param < 0)
 			{
 				GetComponent<Light>().intensity = 0;
+			}
+			if (smallLightParam < 0) 
+			{
+				smallLight.GetComponent<Light>().intensity = 0;
 			}
 			if (energyParam < 0)
 			{
@@ -176,6 +184,7 @@ public class TopLightController : MonoBehaviour {
 	{
 		entered = true;
 		param = maxIntensity / openningInterval;
+		smallLightParam = smallLightMaxIntensity / openningInterval;
 		energyParam = 1 / openningInterval;
 		timeLeft = openningInterval;
 		machineLight.SetTrigger(onHash);
@@ -200,6 +209,7 @@ public class TopLightController : MonoBehaviour {
 	{
 		entered = false;
 		param = - maxIntensity / closingInterval;
+		smallLightParam = - smallLightMaxIntensity / closingInterval;
 		energyParam = - 1 / closingInterval;
 		timeLeft = closingInterval;
 		machineLight.SetTrigger(offHash);

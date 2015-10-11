@@ -6620,7 +6620,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 360578434}
   - 108: {fileID: 360578436}
-  - 114: {fileID: 360578435}
   m_Layer: 8
   m_Name: TopLightSmall
   m_TagString: Untagged
@@ -6640,22 +6639,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1315711813}
   m_RootOrder: 1
---- !u!114 &360578435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 360578433}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 968ba4b49040b514da4a325479e648ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openningInterval: 1
-  closingInterval: .5
-  projectorMaterial: {fileID: 2100000, guid: 542755a637815434ebee3e91f0e44ac9, type: 2}
-  laserPrefab: {fileID: 100000, guid: ae600a4ab3eed27449e949abb4ce518e, type: 2}
-  zapPrefab: {fileID: 100000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
 --- !u!108 &360578436
 Light:
   m_ObjectHideFlags: 0
@@ -6666,7 +6649,7 @@ Light:
   serializedVersion: 6
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.29999995
+  m_Intensity: 0
   m_Range: 500
   m_SpotAngle: 15
   m_CookieSize: 10
