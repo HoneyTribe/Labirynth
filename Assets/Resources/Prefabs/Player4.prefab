@@ -589,6 +589,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &150522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 435458}
+  - 215: {fileID: 21501748}
+  m_Layer: 0
+  m_Name: Reflexion_Cartoon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -1056,6 +1072,7 @@ Transform:
   - {fileID: 400068}
   - {fileID: 400074}
   - {fileID: 427932}
+  - {fileID: 435458}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &400074
@@ -1082,6 +1099,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 400072}
   m_RootOrder: 5
+--- !u!4 &435458
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.0469999313, y: 1.60500002, z: .0200004578}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400072}
+  m_RootOrder: 6
 --- !u!23 &2300000
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -1426,6 +1455,39 @@ SkinnedMeshRenderer:
     m_Center: {x: -1.27327907, y: 3.75509262e-06, z: -1.07385254}
     m_Extent: {x: 1.94140828, y: 1.57710719, z: 1.81676054}
   m_DirtyAABB: 0
+--- !u!215 &21501748
+ReflectionProbe:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150522}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 2
+  m_RefreshMode: 1
+  m_TimeSlicingMode: 0
+  m_Resolution: 16
+  m_UpdateFrequency: 0
+  m_Importance: 1
+  m_BoxSize: {x: .5, y: .5, z: .5}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: .300000012
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: .730000019
+  m_BlendDistance: 1
+  m_HDR: 0
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_CustomBakedTexture: {fileID: 8900000, guid: 7905e609e7a092f45bb3219c639397cb,
+    type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
