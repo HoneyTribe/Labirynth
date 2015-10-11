@@ -6666,14 +6666,14 @@ Light:
   serializedVersion: 6
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.48000002
+  m_Intensity: 1.29999995
   m_Range: 500
   m_SpotAngle: 15
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
     m_Resolution: 3
-    m_Strength: .5
+    m_Strength: .649999976
     m_Bias: .776000023
     m_NormalBias: 1.11000001
   m_Cookie: {fileID: 0}
