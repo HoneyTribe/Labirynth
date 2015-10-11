@@ -12,7 +12,7 @@ public class TriggerHorizontalWalls : MonoBehaviour
 			pushed = true;
 			NoHorizontalWallsEnding.instance.EnableNoHorizontalWallsEnding();
 			AudioController.instance.Play("021_BlockMovesB");
-			gameObject.transform.Translate (0, 0, -0.8f);
+			gameObject.transform.Translate (0, 0, -0.6f);
 		}
 	}
 }

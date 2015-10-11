@@ -35,7 +35,7 @@ public class TriggerOneWall : MonoBehaviour
 		{
 			pushed = true;
 			AudioController.instance.Play("021_BlockMovesB");
-			gameObject.transform.Translate (0, 0, -0.8f);
+			gameObject.transform.Translate (0, 0, -0.6f);
 			wall = GameObject.Find("Textured Wall(Clone)" + reference);
 			endingEnabled = true;
 		}
