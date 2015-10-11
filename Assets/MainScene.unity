@@ -6745,7 +6745,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 372523224}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: ArrowRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7378,10 +7378,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 13700000, guid: fb870c25432bb604086fab2e870117d8, type: 2}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: f859a69c8e9dff4409a1e04701a31492, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb870c25432bb604086fab2e870117d8, type: 2}
   m_IsPrefabParent: 0
@@ -9367,7 +9363,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 657301158}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: ArrowLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11601,7 +11597,7 @@ GameObject:
   - 23: {fileID: 763187053}
   - 114: {fileID: 763187052}
   - 95: {fileID: 763187055}
-  m_Layer: 28
+  m_Layer: 15
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13704,7 +13700,7 @@ GameObject:
   - 23: {fileID: 993856615}
   - 114: {fileID: 993856614}
   - 95: {fileID: 993856618}
-  m_Layer: 28
+  m_Layer: 15
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18381,7 +18377,7 @@ GameObject:
   - 23: {fileID: 1291615013}
   - 114: {fileID: 1291615012}
   - 95: {fileID: 1291615015}
-  m_Layer: 28
+  m_Layer: 15
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23481,7 +23477,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1808971600}
-  m_Layer: 0
+  m_Layer: 28
   m_Name: ArrowCentre
   m_TagString: Untagged
   m_Icon: {fileID: 0}

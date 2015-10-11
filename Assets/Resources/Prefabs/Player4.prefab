@@ -1400,7 +1400,7 @@ SkinnedMeshRenderer:
   m_ReceiveShadows: 1
   m_Materials:
   - {fileID: 2100000, guid: 6f13c1fc8def4c147b5afbb0358457b4, type: 2}
-  - {fileID: 2100000, guid: afaa0c8e187fd5e49b2bd45799340abf, type: 2}
+  - {fileID: 2100000, guid: f859a69c8e9dff4409a1e04701a31492, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1470,7 +1470,7 @@ ReflectionProbe:
   m_Resolution: 16
   m_UpdateFrequency: 0
   m_Importance: 1
-  m_BoxSize: {x: .5, y: .5, z: .5}
+  m_BoxSize: {x: .100000001, y: .100000001, z: .100000001}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: .300000012
   m_FarClip: 1000

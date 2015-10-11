@@ -727,7 +727,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100016}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.39348912, y: 1.29999995, z: -19.3647957}
+  m_LocalPosition: {x: -8.5, y: 1.29999995, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400022}
@@ -1517,7 +1517,7 @@ ReflectionProbe:
   m_Resolution: 16
   m_UpdateFrequency: 0
   m_Importance: 1
-  m_BoxSize: {x: .5, y: .5, z: .5}
+  m_BoxSize: {x: .100000001, y: .100000001, z: .100000001}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: .300000012
   m_FarClip: 1000
