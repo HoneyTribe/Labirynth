@@ -18,10 +18,18 @@ public class TriggerOneWall : MonoBehaviour
 
 	private GameObject cam;
 
+	private Texture greyTexture;
+	private Material myMaterial;
+	private Renderer rend;
+
 	void Start()
 	{
 		smokeExplode = (GameObject) Resources.Load("SmokeExplode");
 		cam = GameObject.Find ("MainCamera_Front");
+
+		greyTexture = Resources.Load("/Alexis_Trigger/Materials/Trigger_Grey") as Texture;
+		rend = GetComponent<Renderer>();
+		myMaterial = rend.material;
 	}
 
 	public void setReference(string reference)
@@ -36,6 +44,7 @@ public class TriggerOneWall : MonoBehaviour
 			pushed = true;
 			AudioController.instance.Play("021_BlockMovesB");
 			gameObject.transform.Translate (0, 0, -0.6f);
+			myMaterial.SetTexture("_EmissionMap", greyTexture);
 			wall = GameObject.Find("Textured Wall(Clone)" + reference);
 			endingEnabled = true;
 		}
