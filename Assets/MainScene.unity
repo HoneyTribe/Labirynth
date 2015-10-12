@@ -6025,6 +6025,10 @@ Prefab:
       propertyPath: m_Name
       value: Sunbeam_1
       objectReference: {fileID: 0}
+    - target: {fileID: 180054, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
   m_IsPrefabParent: 0
@@ -8115,7 +8119,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 525393510}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e2a3dc0131bc4375bc709951da1cf2b, type: 3}
   m_Name: 
@@ -12576,6 +12580,10 @@ Prefab:
     - target: {fileID: 180054, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
       propertyPath: m_Name
       value: Sunbeam_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 180054, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
@@ -26455,6 +26463,10 @@ Prefab:
     - target: {fileID: 10869292, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
       propertyPath: m_SpotAngle
       value: 20.4607334
+      objectReference: {fileID: 0}
+    - target: {fileID: 180054, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d8230d67b0f6054790710bfcc878ac6, type: 2}
