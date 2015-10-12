@@ -41,11 +41,17 @@ public class TopLightController : MonoBehaviour {
 	private GameObject[] monsterList;
 
 	// Variables for spawning zap prefab
-	private float sizeOfZap = 5.0f;
+	public float sizeOfZap = 3.0f;
 	private float disToMonster;
 	private Vector3 lineToMonster;
-	private float zapOffset = 1.0f;
+	public float zapOffset = 1.0f;
 	private GameObject zap;
+	private Vector3 zapTempPos;
+	public float leftMax;
+	public float rightMax;
+	public float upMax;
+	public float downMax;
+	public float multi;
 
 	private Animator machineLight;
 	private static int onHash = Animator.StringToHash ("On");
@@ -370,11 +376,12 @@ public class TopLightController : MonoBehaviour {
 		for( float dist = sizeOfZap ; dist < (disToMonster - zapOffset) ; dist += sizeOfZap )
 		{
 			zap = (GameObject) Instantiate( zapPrefab ) ;
-			zap.transform.position = ball.transform.position + lineToMonster.normalized * dist;
+			zapTempPos = ball.transform.position + lineToMonster.normalized * dist;
+			//zapTempPos.x += Random.Range(leftMax, rightMax);
+			//zapTempPos.y += Random.Range(upMax, downMax);
+			zapTempPos.x += (Mathf.Sin(disToMonster - dist) * multi);
+			zap.transform.position = zapTempPos;
 			zap.transform.LookAt(monsterPosition);
-			//StartCoroutine(DestroyZap());
-			// Or
-			// GameObject newGameObject = GameObject.Instantiate( prefab, objectA.transform.position + vector.normalized * dist, Quaternion.identity ) ;
 		}
 
 		yield return new WaitForSeconds(0.15f);

@@ -160,7 +160,7 @@ public class FloorInstructions : MonoBehaviour
 					
 					else
 					{
-						instructions.text = "Life-forms try to walk to the decoy when they are hypnotized.";
+						instructions.text = "Life-forms try to walk to the decoy when hypnotized.";
 						arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
 					}
 				}
