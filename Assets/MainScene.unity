@@ -7196,6 +7196,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cf82a37bfef3f464c88c52a5a9e716b6, type: 3}
   m_IsPrefabParent: 0
+--- !u!1001 &425891342
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -29.1800003
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.93400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -21.2900009
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
+      propertyPath: m_RootOrder
+      value: 58
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &425963667
 Prefab:
   m_ObjectHideFlags: 0
@@ -18804,11 +18846,11 @@ MonoBehaviour:
   zapPrefab: {fileID: 100000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
   sizeOfZap: 1
   zapOffset: 1
-  leftMax: -.5
-  rightMax: .5
-  upMax: .5
-  downMax: -.5
-  multi: .5
+  leftMax: 0
+  rightMax: 0
+  upMax: 0
+  downMax: 0
+  multi: 0
 --- !u!1001 &1318208423
 Prefab:
   m_ObjectHideFlags: 0
