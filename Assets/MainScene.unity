@@ -19920,9 +19920,9 @@ MonoBehaviour:
   bloomBlurIterations: 2
   hollywoodFlareBlurIterations: 2
   flareRotation: 0
-  lensflareMode: 1
+  lensflareMode: 0
   hollyStretchWidth: 1.20000005
-  lensflareIntensity: .25
+  lensflareIntensity: 0
   lensflareThreshold: .300000012
   lensFlareSaturation: 1
   flareColorA: {r: 1, g: 1, b: 1, a: .75}
