@@ -111,10 +111,6 @@ Material:
         second: 1
       data:
         first:
-          name: _EmissionLM
-        second: 0
-      data:
-        first:
           name: _Parallax
         second: .0199999996
       data:
@@ -149,11 +145,15 @@ Material:
         first:
           name: _Metallic
         second: .5
+      data:
+        first:
+          name: _EmissionLM
+        second: 0
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: .726999998, g: .676867664, b: 0, a: 1}
+        second: {r: .899999976, g: .837939858, b: 0, a: 1}
       data:
         first:
           name: _Color
