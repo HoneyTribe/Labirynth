@@ -84,6 +84,7 @@ public class Instantiation : MonoBehaviour {
 		
 	void createNodes()
 	{
+		AstarPath.active.logPathResults = PathLog.OnlyErrors;
 		((Pathfinding.PointGraph) AstarPath.active.graphs [0]).limits = new Vector3(2 * spaceX + MARGIN, 0, 3 * spaceZ + MARGIN);
 
 		GameObject nodes = GameObject.Find ("Nodes");
