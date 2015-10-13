@@ -288,7 +288,7 @@ public class TopLightController : MonoBehaviour {
 
 				if (monsterAttracted)
 				{
-					//changeEnergy(-attractionCost);
+					changeEnergy(-attractionCost);
 					DeviceController.instance.ShowHologram();
 					AudioController.instance.Play("013_LightZap");
 
