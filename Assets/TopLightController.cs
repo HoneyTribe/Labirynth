@@ -47,11 +47,7 @@ public class TopLightController : MonoBehaviour {
 	public float zapOffset = 1.0f;
 	private GameObject zap;
 	private Vector3 zapTempPos;
-	public float leftMax;
-	public float rightMax;
-	public float upMax;
-	public float downMax;
-	public float multi;
+	///public float multi;
 
 	private Animator machineLight;
 	private static int onHash = Animator.StringToHash ("On");
@@ -377,9 +373,7 @@ public class TopLightController : MonoBehaviour {
 		{
 			zap = (GameObject) Instantiate( zapPrefab ) ;
 			zapTempPos = ball.transform.position + lineToMonster.normalized * dist;
-			//zapTempPos.x += Random.Range(leftMax, rightMax);
-			//zapTempPos.y += Random.Range(upMax, downMax);
-			zapTempPos.x += (Mathf.Sin(disToMonster - dist) * multi);
+			//zapTempPos.x += (Mathf.Sin(disToMonster - dist) * multi);
 			zap.transform.position = zapTempPos;
 			zap.transform.LookAt(monsterPosition);
 		}
