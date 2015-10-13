@@ -18759,11 +18759,6 @@ MonoBehaviour:
   zapPrefab: {fileID: 100000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
   sizeOfZap: 2
   zapOffset: 1
-  leftMax: 0
-  rightMax: 0
-  upMax: 0
-  downMax: 0
-  multi: 0
 --- !u!1001 &1318208423
 Prefab:
   m_ObjectHideFlags: 0
@@ -25178,7 +25173,6 @@ MeshRenderer:
   m_ReceiveShadows: 0
   m_Materials:
   - {fileID: 2100000, guid: d4924e5bbc7f00e4c943f3631b628855, type: 2}
-  - {fileID: 2100000, guid: 61bf25ce68966774199132639dc2f0ce, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
