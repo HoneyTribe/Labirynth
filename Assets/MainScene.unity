@@ -18765,7 +18765,7 @@ MonoBehaviour:
   projectorMaterial: {fileID: 2100000, guid: 542755a637815434ebee3e91f0e44ac9, type: 2}
   laserPrefab: {fileID: 100000, guid: ae600a4ab3eed27449e949abb4ce518e, type: 2}
   zapPrefab: {fileID: 100000, guid: 8cb1f4da8369241f58b61506e7b7aa52, type: 2}
-  sizeOfZap: 2
+  sizeOfZap: 4
   zapOffset: 1
 --- !u!1001 &1318208423
 Prefab:
