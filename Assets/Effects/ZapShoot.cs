@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class ZapShoot : MonoBehaviour 
 {
 
-	private float destroyDuration = 0.25f;
+	private float destroyDuration = 0.4f;
 
 	void Start()
 	{

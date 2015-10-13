@@ -288,7 +288,7 @@ public class TopLightController : MonoBehaviour {
 
 				if (monsterAttracted)
 				{
-					changeEnergy(-attractionCost);
+					//changeEnergy(-attractionCost);
 					DeviceController.instance.ShowHologram();
 					AudioController.instance.Play("013_LightZap");
 
@@ -378,7 +378,7 @@ public class TopLightController : MonoBehaviour {
 			zap.transform.LookAt(monsterPosition);
 		}
 
-		yield return new WaitForSeconds(0.15f);
+		yield return new WaitForSeconds(0.2f);
 
 	}
 
