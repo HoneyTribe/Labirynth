@@ -66,7 +66,7 @@ QualitySettings:
     shadowCascade2Split: .333333343
     shadowCascade4Split: {x: .0785998404, y: .200000003, z: .466666639}
     blendWeights: 4
-    textureQuality: 1
+    textureQuality: 0
     anisotropicTextures: 2
     antiAliasing: 2
     softParticles: 0
@@ -100,7 +100,7 @@ QualitySettings:
     vSyncCount: 0
     lodBias: 0
     maximumLODLevel: 0
-    particleRaycastBudget: 1024
+    particleRaycastBudget: 256
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
     Android: 0
