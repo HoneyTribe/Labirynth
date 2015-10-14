@@ -19,7 +19,25 @@ public class FusionController : MonoBehaviour {
 			players.Add(GameObject.Find ("Player" + inputController.getPlayerId()));
 		}
 
-		closeDistance = closeDistanceConstant + (LevelFinishedController.instance.getAllControllers().Count/2);
+		//closeDistance = closeDistanceConstant + (LevelFinishedController.instance.getAllControllers().Count/2);
+
+		if(LevelFinishedController.instance.getAllControllers().Count == 1)
+		{
+			closeDistance = 3.5f;
+		}
+		else if(LevelFinishedController.instance.getAllControllers().Count == 2)
+		{
+			closeDistance = 3.5f;
+		}
+		else if(LevelFinishedController.instance.getAllControllers().Count == 3)
+		{
+			closeDistance = 4.5f;
+		}
+		else
+		{
+			closeDistance = 4.5f;
+		}
+		print ("controllers: " + LevelFinishedController.instance.getAllControllers().Count);
 	}
 	
 	void Update () 
