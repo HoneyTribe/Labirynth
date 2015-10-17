@@ -18723,7 +18723,7 @@ Light:
     m_Strength: .5
     m_Bias: .776000023
     m_NormalBias: 1.11000001
-  m_Cookie: {fileID: 0}
+  m_Cookie: {fileID: 2800000, guid: 7f3f8492b99cb364496afb91ad96929e, type: 3}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
