@@ -42,7 +42,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	private Shader normalShader;
 	private Shader toonShader;
-	private Shader ghostShader;
+	//private Shader ghostShader;
 	private Renderer rend;
 	private string myName;
 
@@ -67,9 +67,9 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		recalculateTrigger = true;
 		//distractParticlesPrefab = (GameObject) Resources.Load("Angry_ennemie/Angry_Ennemie_Prefab_3");
 
-		normalShader = Shader.Find("Diffuse");
-		toonShader = Shader.Find("Toon/Basic Outline");
-		ghostShader = Shader.Find("Transparent/Bumped Specular"); 
+		normalShader = Shader.Find("Standard");
+		toonShader = Shader.Find("Toon/Lighted Outline");
+		//ghostShader = Shader.Find("Standard"); 
 
 		if(this.name == "LazyMonster(Clone)" || this.name == "Monster(Clone)")
 		{
@@ -81,9 +81,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		else if(this.name == "FlyingMonster(Clone)")
 		{
 			rend = transform.Find("Ghost").GetComponent<Renderer>();
-			normalShader = ghostShader;
-			//rend.material.SetFloat("_Outline", 10.0f);
-			//rend.material.SetFloat("OutlineColor", );
+			//normalShader = ghostShader;
 		}
 	}
 
@@ -156,7 +154,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 
 	IEnumerator ChangeShader()
 	{
-		yield return new WaitForSeconds(0.3f);
+		yield return new WaitForSeconds(0.4f);
 		rend.material.shader = normalShader;
 	}
 
