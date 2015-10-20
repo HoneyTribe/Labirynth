@@ -83,6 +83,11 @@ public class TriggerOneWall : MonoBehaviour
 			if (time > interval)			
 			{	
 				Destroy(wall);
+				GameObject[] players= GameObject.FindGameObjectsWithTag ("Player");
+				foreach (GameObject player in players)
+				{
+					player.GetComponent<Rigidbody>().useGravity = true;
+				}
 			}
 		}
 	}
