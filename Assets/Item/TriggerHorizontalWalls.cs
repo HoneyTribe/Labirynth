@@ -23,7 +23,8 @@ public class TriggerHorizontalWalls : MonoBehaviour
 			NoHorizontalWallsEnding.instance.EnableNoHorizontalWallsEnding();
 			AudioController.instance.Play("021_BlockMovesB");
 			gameObject.transform.Translate (0, 0, -0.6f);
-			myMaterial.SetTexture("_EmissionMap", greyTexture); 
+			myMaterial.SetTexture("_EmissionMap", greyTexture);
+			myMaterial.SetColor ("_EmissionColor", Color.grey);
 		}
 	}
 }

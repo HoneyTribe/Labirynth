@@ -45,6 +45,7 @@ public class TriggerOneWall : MonoBehaviour
 			AudioController.instance.Play("021_BlockMovesB");
 			gameObject.transform.Translate (0, 0, -0.6f);
 			myMaterial.SetTexture("_EmissionMap", greyTexture);
+			myMaterial.SetColor ("_EmissionColor", Color.grey);
 			wall = GameObject.Find("Textured Wall(Clone)" + reference);
 			endingEnabled = true;
 		}
