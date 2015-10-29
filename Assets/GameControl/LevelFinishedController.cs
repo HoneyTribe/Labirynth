@@ -303,7 +303,15 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		if(analytics ==1)
 		{
-			GA.API.Design.NewEvent(getAllControllers().Count + "_PlayerMode",1);
+			GameObject robot = GameObject.Find ("Player5");
+			if (robot == null)
+			{
+				GA.API.Design.NewEvent(getAllControllers().Count + "_PlayerMode",1);
+			}
+			else
+			{
+				GA.API.Design.NewEvent("1_PlayerMode",1);
+			}
 		}
 	}
 	
