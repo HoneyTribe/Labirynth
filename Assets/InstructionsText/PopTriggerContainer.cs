@@ -15,11 +15,14 @@ public class PopTriggerContainer : MonoBehaviour
 	private Vector3 stunLev = new Vector3(7, 2, -8.5f);
 	private Vector3 lazerLev = new Vector3(4, 2, -8.5f);
 
+	private GameObject robot;
+
 	private Renderer popRend;
 
 	void Start()
 	{
 		popRend = GameObject.Find ("ControlPadPop").GetComponent<Renderer>();
+		robot = GameObject.Find ("Player5");
 
 		//lev 1
 		if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstLightLevel)
@@ -73,13 +76,19 @@ public class PopTriggerContainer : MonoBehaviour
 				popRend.material.mainTexture = Resources.Load("PopTextures/SwitchMachinesPop") as Texture;
 			}
 		}
-		//lev 10 single player
+		//lev 10
 		else if(LevelFinishedController.instance.getLevel() == FloorInstructions.instance.firstCraneLevel + 1)
 		{
-			if(LevelFinishedController.instance.getControllers().Count == 1)
+			//single player
+			if(robot != null)
 			{
 				transform.position = craneLev;
 				popRend.material.mainTexture = Resources.Load("PopTextures/SwitchMachinesPop") as Texture;
+			}
+			else
+			{
+				transform.position = craneLev;
+				popRend.material.mainTexture = Resources.Load("PopTextures/CranePop") as Texture;
 			}
 		}
 		//lev 15
