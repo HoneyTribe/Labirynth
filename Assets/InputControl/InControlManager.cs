@@ -108,16 +108,18 @@ public class InControlManager : MonoBehaviour {
 			bool right = false;
 			if ((input.LeftTrigger.WasPressed) || 
 			    (input.LeftBumper.WasPressed) ||
-			    (input.LeftStickX.WasPressed) ||
-			    (input.LeftStickY.WasPressed))
+			    (input.LeftStickX.Value != 0) ||
+			    (input.LeftStickY.Value != 0))
 			{
+				//Debug.Log(input.GetHashCode() + " Left");
 				left = true;
 			}
 			if ((input.RightTrigger.WasPressed) || 
 			    (input.RightBumper.WasPressed) ||
-			    (input.RightStickX.WasPressed) ||
-			    (input.RightStickY.WasPressed))
+			    (input.RightStickX.Value != 0) ||
+			    (input.RightStickY.Value != 0))
 			{
+				//Debug.Log(input.GetHashCode() + " Right");
 				right = true;
 			}
 			if (input.GetControl(InputControlType.Start).WasPressed)
@@ -142,12 +144,34 @@ public class InControlManager : MonoBehaviour {
 
 			// hasChanged to avoid key holding
 			if (left || right)
-			{
+			{	
+				//Debug.Log(Time.time + " " + input.GetHashCode() + " " + left + right );
 				foreach(InputController inputController in LevelFinishedController.instance.getControllers())
 				{
-					if ((inputController.getDevice() == input) && (inputController.isLeft() == left))
+					if (inputController.getDevice() == input)
 					{
-						found = true;
+						// handling the situation where both left and right are true
+						if (inputController.isLeft() == true && left)
+						{
+							if (!right) 
+								found = true;
+							else
+							{
+								left = false;
+								continue;
+							}
+						}
+
+						if (inputController.isLeft() == false && right)
+						{
+							if (!left) 
+								found = true;
+							else
+							{
+								right = false;
+								continue;
+							}
+						}
 					}
 				}
 				if (!found)

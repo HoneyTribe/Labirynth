@@ -19809,7 +19809,7 @@ MonoBehaviour:
   invertYAxis: 0
   useFixedUpdate: 0
   dontDestroyOnLoad: 1
-  enableXInput: 0
+  enableXInput: 1
   xInputUpdateRate: 0
   xInputBufferSize: 0
   enableICade: 0
