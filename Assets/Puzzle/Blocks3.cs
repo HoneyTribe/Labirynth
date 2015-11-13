@@ -4,8 +4,9 @@ using System.Collections.Generic;
 
 public class Blocks3 : PuzzleTemplate
 {
-	//0 = wall/post, 2 = space, 3 = block, 4 = mummy, 5 = key 6 = sleepingMonster, 7 = vertical trigger, 8 = horozontal wall trigger, 9 = new mazes trigger
-	//10 = fixed decoy, 11 = One Wall Trigger
+	//0 = wall/post , 0-x = wall to breal from switch,  2 = space"," 3 = block"," 4 = mummy"," 5 = key 6 = sleepingMonster"," 7 = vertical trigger","
+	//8 = horozontal wall trigger"," 9 = new mazes trigger, 10 = fixed decoy, 11-x = switch for one wall
+	// To make a gap at edge of screen place a 0 and a 2 behind it
 	
 	public Blocks3() :base()
 	{

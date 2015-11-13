@@ -60,6 +60,11 @@ public class NoHorizontalWallsEnding : MonoBehaviour {
 				if (wall != null)
 				{
 					wall.transform.Translate (0, step, 0);
+
+					if (wall.transform.GetComponent<WallSpawnSmoke>().getHasSpawned() == false)
+					{
+						wall.transform.GetComponent<WallSpawnSmoke>().spawn();
+					}
 				}
 			}
 			

@@ -66,6 +66,7 @@ public class NewMazeEnding : MonoBehaviour {
 			foreach (GameObject wall in walls)
 			{
 				wall.transform.Translate (0, step, 0);
+
 			}
 
 			foreach (GameObject pillar in pillars)

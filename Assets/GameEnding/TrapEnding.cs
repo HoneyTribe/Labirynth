@@ -72,6 +72,11 @@ public class TrapEnding : MonoBehaviour {
 			foreach (GameObject risingWall in risingWalls)
 			{
 				risingWall.transform.Translate (0, -step, 0);
+
+				if (risingWall.transform.GetComponent<WallSpawnSmoke>().getHasSpawned() == false)
+				{
+					risingWall.transform.GetComponent<WallSpawnSmoke>().spawn();
+				}
 			}
 
 			if (time > interval)			{
