@@ -45,7 +45,7 @@ public class ImageAction : IntroAction  {
 
 	public bool isFinished()
 	{
-		if (time > 4f) 
+		if (time > 5f) 
 		{
 			introductionController.setImage (null);
 			return true;

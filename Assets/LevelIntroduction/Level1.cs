@@ -13,6 +13,7 @@ public class Level1 : LevelSetup
 		actions.Add(new ImageAction("tut_01"));
 		//actions.Add (new WaitAction(0.4f));
 		*/
+			actions.Add(new ImageAction("tut_01"));
 			actions.Add (new ChangeCamAction());
 			actions.Add(new MoveCameraAction("Lighthouse"));
 			actions.Add(new TextAction(4, "Is everyone ok after the crash?!"));
