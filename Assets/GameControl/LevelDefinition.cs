@@ -503,7 +503,7 @@ namespace AssemblyCSharp
 			},4,4,7,7, null, null));
 			
 			//9 crane
-			levels3.Add(new Level(new MachineCreator(true, false, true, false, false, false),
+			levels3.Add(new Level(new MachineCreator(false, false, true, false, false, false),
 			    15,new List<MonsterTemplate>{
 			},0,0,7,7, null, "SimpleCranePuzzle"));
 			
@@ -743,7 +743,7 @@ namespace AssemblyCSharp
 			},4,4,7,7, null, null));
 			
 			//9 crane
-			levels4.Add(new Level(new MachineCreator(true, false, true, false, false, false),
+			levels4.Add(new Level(new MachineCreator(false, false, true, false, false, false),
 			    15,new List<MonsterTemplate>{
 			},0,0,7,7, null, "SimpleCranePuzzle"));
 			
