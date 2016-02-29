@@ -6,7 +6,7 @@ AnimatorController:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Portal_
-  serializedVersion: 2
+  serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Activate
     m_Type: 4
@@ -21,180 +21,227 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
-  - serializedVersion: 3
+  - serializedVersion: 5
     m_Name: Base Layer
     m_StateMachine: {fileID: 110700000}
     m_Mask: {fileID: 0}
+    m_Motions: []
+    m_Behaviours: []
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
-    m_StateMachineMotionSetIndex: 0
     m_DefaultWeight: 0
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
 --- !u!1101 &110100000
-Transition:
+AnimatorStateTransition:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110261583}
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 110200000}
-  m_TransitionDuration: .25
-  m_TransitionOffset: 0
-  m_Conditions:
-  - m_ConditionMode: 5
-    m_ConditionEvent: Activate
-    m_EventTreshold: 0
-    m_ExitTime: 1
-  m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: .25
+  m_TransitionOffset: 0
+  m_ExitTime: 1
+  m_HasExitTime: 1
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &110148034
-Transition:
+AnimatorStateTransition:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110250389}
-  m_DstState: {fileID: 110261583}
-  m_TransitionDuration: .25
-  m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: FadeIn
     m_EventTreshold: 0
-    m_ExitTime: .75
-  m_Atomic: 1
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 110261583}
   m_Solo: 0
   m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: .25
+  m_TransitionOffset: 0
+  m_ExitTime: .899999976
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &110199399
-Transition:
+AnimatorStateTransition:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110200000}
-  m_DstState: {fileID: 110208534}
-  m_TransitionDuration: 0
-  m_TransitionOffset: .0309164617
   m_Conditions:
   - m_ConditionMode: 1
     m_ConditionEvent: Activate
     m_EventTreshold: 0
-    m_ExitTime: .925000012
-  m_Atomic: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 110208534}
   m_Solo: 0
   m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: .0309164617
+  m_ExitTime: .899999976
+  m_HasExitTime: 0
+  m_HasFixedDuration: 0
+  m_InterruptionSource: 1
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &110200000
-State:
+AnimatorState:
+  serializedVersion: 5
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Take 001
   m_Speed: .200000003
   m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 7400000, guid: f5268d4e6834e7a4f8faacf831ebdd47, type: 3}
-  m_ParentStateMachine: {fileID: 110700000}
+  m_Transitions:
+  - {fileID: 110199399}
+  m_StateMachineBehaviours: []
   m_Position: {x: 60, y: 48, z: 0}
   m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
   m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: f5268d4e6834e7a4f8faacf831ebdd47, type: 3}
   m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
 --- !u!1102 &110208534
-State:
+AnimatorState:
+  serializedVersion: 5
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Portal_Animation_2
   m_Speed: 3
   m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 7400000, guid: 060bb9e5e929e6246ab193203ca70b96, type: 2}
-  m_ParentStateMachine: {fileID: 110700000}
+  m_Transitions: []
+  m_StateMachineBehaviours: []
   m_Position: {x: 60, y: 132, z: 0}
   m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
   m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 060bb9e5e929e6246ab193203ca70b96, type: 2}
   m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
 --- !u!1102 &110250389
-State:
+AnimatorState:
+  serializedVersion: 5
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: PortalOffStart
   m_Speed: 1
   m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 7400000, guid: adc1e4214ea754a2aaf22b3bb5464eb3, type: 2}
-  m_ParentStateMachine: {fileID: 110700000}
+  m_Transitions:
+  - {fileID: 110148034}
+  m_StateMachineBehaviours: []
   m_Position: {x: 60, y: -84, z: 0}
   m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
   m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: adc1e4214ea754a2aaf22b3bb5464eb3, type: 2}
   m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
 --- !u!1102 &110261583
-State:
+AnimatorState:
+  serializedVersion: 5
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: PortalFadeIn
   m_Speed: 1
   m_CycleOffset: 0
-  m_Motions:
-  - {fileID: 7400000, guid: 206ab6f6602bc4df99dfd089da7bee35, type: 2}
-  m_ParentStateMachine: {fileID: 110700000}
+  m_Transitions:
+  - {fileID: 110100000}
+  m_StateMachineBehaviours: []
   m_Position: {x: 60, y: -24, z: 0}
   m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
   m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 206ab6f6602bc4df99dfd089da7bee35, type: 2}
   m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
 --- !u!1107 &110700000
-StateMachine:
-  serializedVersion: 2
+AnimatorStateMachine:
+  serializedVersion: 5
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Base Layer
-  m_DefaultState: {fileID: 110250389}
-  m_States:
-  - {fileID: 110200000}
-  - {fileID: 110208534}
-  - {fileID: 110261583}
-  - {fileID: 110250389}
-  m_ChildStateMachine: []
-  m_ChildStateMachinePosition: []
-  m_OrderedTransitions:
-    data:
-      first: {fileID: 0}
-      second: []
-    data:
-      first: {fileID: 110250389}
-      second:
-      - {fileID: 110148034}
-    data:
-      first: {fileID: 110200000}
-      second:
-      - {fileID: 110199399}
-    data:
-      first: {fileID: 110208534}
-      second: []
-    data:
-      first: {fileID: 110261583}
-      second:
-      - {fileID: 110100000}
-  m_MotionSetCount: 1
+  m_ChildStates:
+  - serializedVersion: 1
+    m_State: {fileID: 110200000}
+    m_Position: {x: 60, y: 48, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 110208534}
+    m_Position: {x: 60, y: 180, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 110261583}
+    m_Position: {x: 60, y: -24, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 110250389}
+    m_Position: {x: 60, y: -84, z: 0}
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: -108, y: -12, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 110208534}
 --- !u!1107 &110718662
-StateMachine:
-  serializedVersion: 2
+AnimatorStateMachine:
+  serializedVersion: 5
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: New StateMachine
-  m_DefaultState: {fileID: 0}
-  m_States: []
-  m_ChildStateMachine: []
-  m_ChildStateMachinePosition: []
-  m_OrderedTransitions: {}
-  m_MotionSetCount: 2
+  m_ChildStates: []
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 0}
