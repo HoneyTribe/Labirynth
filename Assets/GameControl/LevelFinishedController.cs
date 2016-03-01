@@ -354,7 +354,7 @@ public class LevelFinishedController : MonoBehaviour {
 	void OnGUI()
 	{
 
-		 if (Application.loadedLevel != 0 )
+		/* if (Application.loadedLevel != 0 )
 		{
 			if (!stopped && IntroductionController.instance.isPlayingIntroduction()== false &&
 			    ScoreController.instance.getScore() > 0 && ScoreController.instance.getNumberOfPlayers() > 0)
@@ -364,8 +364,8 @@ public class LevelFinishedController : MonoBehaviour {
 				GUI.Label (new Rect (Screen.width * 0.05f, 90, 300, 300), "Help: 'Start' or 'Enter'", help_GUISkin.label);
 				GUI.Label (new Rect (Screen.width * 0.05f, 110, 300, 300), "Quit: 'Back' or 'Escape'", help_GUISkin.label);
 			}
-		}
-
+		} */
+	
 		if (finished && level < totalLevels-1)
 		{
 			GUI.depth = 2;
