@@ -98,8 +98,19 @@ public class Menu1 : MonoBehaviour
 
 		if(camStart == true)
 		{
-			camera.transform.position = Vector3.Lerp (camera.transform.position, newCameraPosition, Time.deltaTime/2);
-			camera.transform.rotation = Quaternion.Lerp(camera.transform.rotation, newCameraRotation, Time.deltaTime/3);
+			camera.transform.position = Vector3.Lerp (camera.transform.position, newCameraPosition, Time.deltaTime * 0.5f);
+			camera.transform.rotation = Quaternion.Lerp(camera.transform.rotation, newCameraRotation, Time.deltaTime * 0.33f);
+		}
+
+		if(playerStart == true)
+		{
+			myTransform.position = Vector3.Lerp(myTransform.position, waypoint1.transform.position, Time.deltaTime * playerSpeed);
+			p2Transform.position = Vector3.Lerp(p2Transform.position, waypoint2.transform.position, Time.deltaTime * playerSpeed);
+			p3Transform.position = Vector3.Lerp(p3Transform.position, waypoint3.transform.position, Time.deltaTime * playerSpeed);
+			p4Transform.position = Vector3.Lerp(p4Transform.position, waypoint4.transform.position, Time.deltaTime * playerSpeed);
+			mummy1Transform.position = Vector3.Lerp(mummy1Transform.position, waypoint5.transform.position, Time.deltaTime * mummySpeed);
+			mummy2Transform.position = Vector3.Lerp(mummy2Transform.position, waypoint6.transform.position, Time.deltaTime * mummySpeed);
+			
 		}
 
 		if(cam2Start == true)
@@ -114,16 +125,7 @@ public class Menu1 : MonoBehaviour
 			camera.transform.rotation = Quaternion.Lerp(camera.transform.rotation, newCameraRotation, Time.deltaTime * 2.5f);
 		}
 
-		if(playerStart == true)
-		{
-			myTransform.position = Vector3.Lerp(myTransform.position, waypoint1.transform.position, Time.deltaTime * playerSpeed);
-			p2Transform.position = Vector3.Lerp(p2Transform.position, waypoint2.transform.position, Time.deltaTime * playerSpeed);
-			p3Transform.position = Vector3.Lerp(p3Transform.position, waypoint3.transform.position, Time.deltaTime * playerSpeed);
-			p4Transform.position = Vector3.Lerp(p4Transform.position, waypoint4.transform.position, Time.deltaTime * playerSpeed);
-			mummy1Transform.position = Vector3.Lerp(mummy1Transform.position, waypoint5.transform.position, Time.deltaTime * mummySpeed);
-			mummy2Transform.position = Vector3.Lerp(mummy2Transform.position, waypoint6.transform.position, Time.deltaTime * mummySpeed);
 
-		}
 	}
 	
 }
