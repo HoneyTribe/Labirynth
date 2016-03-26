@@ -27686,7 +27686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9946681ce4e4b9e45806157fa2f11970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSplashTexture: {fileID: 2800000, guid: db399bed8cb514c7a836077578422209, type: 3}
+  mainSplashTexture: {fileID: 2800000, guid: 14f289d14822846e7bb081e3d7ab6b85, type: 3}
 --- !u!4 &1942785544
 Transform:
   m_ObjectHideFlags: 0
@@ -27698,7 +27698,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 10
 --- !u!114 &1942785545
 MonoBehaviour:
   m_ObjectHideFlags: 0

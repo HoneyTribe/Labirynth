@@ -87,7 +87,11 @@ public class TriggerOneWall : MonoBehaviour
 				GameObject[] players= GameObject.FindGameObjectsWithTag ("Player");
 				foreach (GameObject player in players)
 				{
-					player.GetComponent<Rigidbody>().useGravity = true;
+					if (player.GetComponent<Collider>().isTrigger == false) // if not killed
+					{
+						player.GetComponent<Rigidbody>().useGravity = true;
+					}
+
 				}
 			}
 		}

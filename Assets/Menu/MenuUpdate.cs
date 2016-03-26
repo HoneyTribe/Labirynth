@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class MenuUpdate : MonoBehaviour
 {
 	public static MenuUpdate instance;
-	private string version = "0.22.2";
+	private string version = "0.22.4";
 	private string url = "http://www.honeytribestudios.com/games1/BFF/bffVersion.txt";
 	private string versionRead;
 	private float x;
