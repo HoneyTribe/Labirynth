@@ -630,6 +630,7 @@ public class FloorInstructions : MonoBehaviour
 	public void ShowReviveInstructions() 
 	{
 		LevelFinishedController.instance.setDeadCount();
+		/*
 		if (LevelFinishedController.instance.getDeadCount() <= deadCountMax
 		    && showedReviveInstructions == 0
 		    && robot == null)
@@ -639,6 +640,7 @@ public class FloorInstructions : MonoBehaviour
 			co_reviveAlert.transform.position = new Vector3(0f, 1f, -6f);
 			showedReviveInstructions ++;
 		}
+		*/
 
 	}
 
