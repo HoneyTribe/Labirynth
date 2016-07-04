@@ -90,6 +90,8 @@ public class TriggerOneWall : MonoBehaviour
 					if (player.GetComponent<Collider>().isTrigger == false) // if not killed
 					{
 						player.GetComponent<Rigidbody>().useGravity = true;
+						// stupid hack to wake up rigidbody :-((((
+						player.GetComponent<Rigidbody>().AddForce(0, 1, 0, ForceMode.VelocityChange);
 					}
 
 				}
