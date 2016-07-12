@@ -164,12 +164,50 @@ public class LevelFinishedController : MonoBehaviour {
 
 		//unlock levels if needed
 		updateMaxLevel();
-
+		list1.Add("anchovy: Hi\n");
+		list1.Add("anchovy: yes!\n");
+		list1.Add("anchovy: ");
+		list1.Add("anchovy: ");
+		list2.Add("barracuda: Hi. Ar you guys ready?\n");
+		list2.Add("barracuda: hey, viperfish go and operate the machine\n");
+		list2.Add("barracuda: ");
+		list2.Add("barracuda: ");
+		list3.Add("bass: yes!");
+		list3.Add("bass: ");
+		list3.Add("bass: ");
+		list3.Add("bass: ");
+		list4.Add("viperfish: ok\n");
+		list4.Add("viperfish: ");
+		list4.Add("viperfish: ");
+		list4.Add("viperfish: ");
 	}
-
+	private List<string> list1 = new List<string>();
+	private List<string> list2 = new List<string>();
+	private List<string> list3 = new List<string>();
+	private List<string> list4 = new List<string>();
 
 	void Update()
 	{
+		if (Input.GetKeyDown("1"))
+		{   
+			InControlManager.instance.add (list1 [0]);
+			list1.RemoveAt (0);
+		}
+		if (Input.GetKeyDown("2"))
+		{   
+			InControlManager.instance.add (list2 [0]);
+			list2.RemoveAt (0);
+		}
+		if (Input.GetKeyDown("3"))
+		{   
+			InControlManager.instance.add (list3 [0]);
+			list3.RemoveAt (0);
+		}
+		if (Input.GetKeyDown("4"))
+		{   
+			InControlManager.instance.add (list4 [0]);
+			list4.RemoveAt (0);
+		}
 		if(unlock == 1)
 		{
 			if (Input.GetKeyDown("l"))

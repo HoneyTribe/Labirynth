@@ -375,7 +375,7 @@ public class PlayerController : MonoBehaviour, StoppableObject {
 				playerActive = true;
 				GetComponent<Rigidbody>().velocity = new Vector3(x, 0, z).normalized * speed;
 				transform.rotation = Quaternion.LookRotation(new Vector3(x, 0, z));
-
+				GameObject.Find ("GameObject" + gameObject.name[6]).transform.position = new Vector3(transform.position.x, 3, transform.position.z);
 					// run animation
 					idle = false;
 					NotIdle();

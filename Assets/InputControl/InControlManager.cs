@@ -11,8 +11,15 @@ public class InControlManager : MonoBehaviour {
 	private bool portalStarted;
 	//private InControl.InControlManager manager;
 
+	private string text;
+	private List<string> list = new List<string>();
+
 	void Start ()
 	{
+		list.Add("anchovy");
+		list.Add("barracuda");
+		list.Add("bass");
+		list.Add("viperfish");
 //		manager = new InControl.InControlManager ();
 //		manager.customProfiles.Add("KeyboardProfile1");
 //		manager.customProfiles.Add("KeyboardProfile2");
@@ -71,6 +78,22 @@ public class InControlManager : MonoBehaviour {
 		{
 			inputController.updatePlayer();
 		}
+	}
+
+	public void join()
+	{
+		text = text + list [0] + " joined the room.\n";
+		list.RemoveAt (0);
+	}
+
+	public void add(string t)
+	{
+		text = text + t;
+	}
+
+	void OnGUI() 
+	{
+		GUI.Label(new Rect(10, 10, 200, 200), text);		
 	}
 
 	void Update () 

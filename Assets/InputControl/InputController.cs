@@ -49,6 +49,9 @@ public class InputController {
 		this.playerId = playerId;
 		keys = new List<KeyCode> ();
 		updatePlayer ();
+		InControlManager.instance.join ();
+		GameObject o = GameObject.Find ("GameObject" + playerId);
+		o.GetComponent<MeshRenderer>().enabled = true;
 		//keys.Add (moveRight);
 		//keys.Add (moveLeft);
 	}
