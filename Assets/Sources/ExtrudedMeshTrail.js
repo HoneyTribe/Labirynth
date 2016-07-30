@@ -1,6 +1,6 @@
 // Generates an extrusion trail from the attached mesh
 // Uses the MeshExtrusion algorithm in MeshExtrusion.cs to generate and preprocess the mesh.
-var time = 2.0;
+/*var time = 2.0;
 var autoCalculateOrientation = true;
 var minDistance = 0.1;
 var invertFaces = false;
@@ -96,5 +96,6 @@ function LateUpdate () {
 	// Rebuild the extrusion mesh	
 	MeshExtrusion.ExtrudeMesh (srcMesh, GetComponent(MeshFilter).mesh, finalSections, precomputedEdges, invertFaces);
 }
-
+*/
 @script RequireComponent (MeshFilter)
+

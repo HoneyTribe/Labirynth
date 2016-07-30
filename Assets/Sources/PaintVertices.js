@@ -1,3 +1,4 @@
+/*
 var radius = 1.0;
 var pull = 10.0;
 private var unappliedMesh : MeshFilter;
@@ -110,3 +111,4 @@ function ApplyMeshCollider () {
 	}
 	unappliedMesh = null;
 }
+*/

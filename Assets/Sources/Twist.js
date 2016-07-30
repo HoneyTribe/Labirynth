@@ -1,6 +1,7 @@
 // This script is placed in public domain. The author takes no responsibility for any possible harm.
 
 // twist a mesh by this amount
+/*
 var twist = 1.0;
 
 var inputSensitivity = 1.5;
@@ -47,3 +48,4 @@ function DoTwist( pos : Vector3, t : float )
 
 	return new_pos;
 }
+*/

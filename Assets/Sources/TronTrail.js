@@ -6,6 +6,7 @@
  2. attach this script and a MeshRenderer
  3. Then assign a particle material to the mesh renderer
 */
+/*
 var height = 2.0;
 var time = 2.0;
 var alwaysUp = false;
@@ -108,5 +109,5 @@ function LateUpdate () {
 	mesh.uv = uv;
 	mesh.triangles = triangles;
 }
-
+*/
 @script RequireComponent (MeshFilter)

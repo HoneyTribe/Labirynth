@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class MenuUpdate : MonoBehaviour
 {
 	public static MenuUpdate instance;
-	private string version = "0.22.4";
+	private string version = "0.22.5";
 	private string url = "http://www.honeytribestudios.com/games1/BFF/bffVersion.txt";
 	private string versionRead;
 	private float x;
@@ -60,7 +60,9 @@ public class MenuUpdate : MonoBehaviour
 			}
 			else // local version is current
 			{
-				transform.parent.position = new Vector3(x, -10, z);
+				//transform.parent.position = new Vector3(x, -10, z); // this moves it off screen
+
+				transform.parent.position = new Vector3(x, y, z); // now always on screen just for ks version
 			}
 		}
 		else // no internet or not home version
@@ -78,7 +80,8 @@ public class MenuUpdate : MonoBehaviour
 			if (playersInside == 1)
 			{
 				animOn = true;
-				text_enter.GetComponentInChildren<TextMesh>().text = "Press 'start'/'enter' to view the update";
+				//text_enter.GetComponentInChildren<TextMesh>().text = "Press 'start'/'enter' to view the update"; // text for normal update button
+				text_enter.GetComponentInChildren<TextMesh>().text = "Press 'start'/'enter' & join us on kickstarter!"; // text for ks button
 				TriggerAnimOpen();
 			}
 		}

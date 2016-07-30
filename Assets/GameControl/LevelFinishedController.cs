@@ -15,9 +15,9 @@ public class LevelFinishedController : MonoBehaviour {
 	private int attemptsForChange = 3; // number of deaths on one level before dynamic difficulty is activated.
 	private int delay = 1; //time added to each monster spawn if dynamic difficulty is active.
 	private int delayMax = 3;
-	private int analytics = 0; // tuns on/off. send data to analytics server
-	private int unlock = 1; // turns on/off. press "l" to toggle unlocked and locked levels
-	private int homeVersion = 0; // turns on /off. loads max saved level from disk and saved deadCount
+	private int analytics = 1; // tuns on/off. send data to analytics server
+	private int unlock = 0; // turns on/off. press "l" to toggle unlocked and locked levels
+	private int homeVersion = 1; // turns on /off. loads max saved level from disk and saved deadCount
 	private int deadCount = 0; // number of times a character is paralysed
 	private int menuCount = 0; //number of times menu visited in current session
 	
@@ -212,7 +212,7 @@ public class LevelFinishedController : MonoBehaviour {
 
 	 private void DisplayText()
 	{
-		/*
+
 		if(showText == true && showTextSaved == false)
 		{
 			showTextSaved = true;
@@ -249,7 +249,7 @@ public class LevelFinishedController : MonoBehaviour {
 			myText2.text = "";
 			myText3.text = "";
 		}
-		*/
+
 	}
 
 	
@@ -362,9 +362,9 @@ public class LevelFinishedController : MonoBehaviour {
 			    ScoreController.instance.getScore() > 0 && ScoreController.instance.getNumberOfPlayers() > 0)
 			{
 				GUI.depth = 2;
-				//GUI.Label (new Rect (Screen.width * 0.05f, 70, 300, 300), "Zone " + (level + 1), help_GUISkin.label); 
-				//GUI.Label (new Rect (Screen.width * 0.05f, 90, 300, 300), "Help: 'Start' or 'Enter'", help_GUISkin.label);
-				//GUI.Label (new Rect (Screen.width * 0.05f, 110, 300, 300), "Quit: 'Back' or 'Escape'", help_GUISkin.label);
+				GUI.Label (new Rect (Screen.width * 0.05f, 70, 300, 300), "Zone " + (level + 1), help_GUISkin.label); 
+				GUI.Label (new Rect (Screen.width * 0.05f, 90, 300, 300), "Help: 'Start' or 'Enter'", help_GUISkin.label);
+				GUI.Label (new Rect (Screen.width * 0.05f, 110, 300, 300), "Quit: 'Back' or 'Escape'", help_GUISkin.label);
 			}
 		} 
 	
