@@ -101,7 +101,7 @@ namespace Pathfinding {
 			{
 				output.Append (pair.Key);
 				output.Append ("	used	");
-				output.Append (AstarMath.FormatBytes ((int)pair.Value.totalSize));
+				//output.Append (AstarMath.FormatBytes ((int)pair.Value.totalSize));
 				output.Append ("\n");
 			}
 			Debug.Log (output.ToString ());
