@@ -27686,7 +27686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9946681ce4e4b9e45806157fa2f11970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSplashTexture: {fileID: 2800000, guid: 87aca9c6b36ee4dd192fe55d7f75d619, type: 3}
+  mainSplashTexture: {fileID: 2800000, guid: 9ae5a7986062243b4979c061fd77e6ff, type: 3}
 --- !u!4 &1942785544
 Transform:
   m_ObjectHideFlags: 0
