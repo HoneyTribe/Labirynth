@@ -33,8 +33,8 @@ public class MenuUpdate : MonoBehaviour
 
 		if(LevelFinishedController.instance.getHomeVersion() == 1 && Application.loadedLevel == 0)//get version from server
 		{
-			WWW www = new WWW(url);			
-			StartCoroutine(WaitForRequest(www));
+			//WWW www = new WWW(url);			
+			//StartCoroutine(WaitForRequest(www));
 		}
 		else
 		{
@@ -42,14 +42,14 @@ public class MenuUpdate : MonoBehaviour
 			useAnalytics.SetActive(false);
 		}
 	}
-
+	/*
 	IEnumerator WaitForRequest(WWW www)
 	{
 		yield return www;
 		versionRead = www.text;
 		getUpdate();
 	}
-
+	*/
 	private void getUpdate()
 	{
 		if(versionRead != "" && LevelFinishedController.instance.getHomeVersion() == 1 ) //has internet connection and is home version

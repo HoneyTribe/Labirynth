@@ -76,22 +76,12 @@ public class LevelFinishedController : MonoBehaviour {
 				bootups = PlayerPrefs.GetInt("Savedbootups") + 1;
 				PlayerPrefs.SetInt("Savedbootups", bootups);
 				PlayerPrefs.Save();
-				//send to analytics
-				if(analytics ==1)
-				{
-				GA.API.Design.NewEvent("Bootups", 1);
-				}
 			}
 			else
 			{
 				bootups++;
 				PlayerPrefs.SetInt("Savedbootups", bootups);
 				PlayerPrefs.Save();
-				//send to analytics
-				if(analytics ==1)
-				{
-				GA.API.Design.NewEvent("Bootups",1);
-				}
 			}
 		}
 		
@@ -267,21 +257,13 @@ public class LevelFinishedController : MonoBehaviour {
 			{
 				PlayerPrefs.SetInt("savedMaxLevel", maxLevel);
 				PlayerPrefs.Save();
-				//send to analytics
-				if(analytics ==1)
-				{
-				GA.API.Design.NewEvent("maxLevel"+maxLevel,1);
-				}
+
 			}
 			else if (PlayerPrefs.HasKey("savedMaxLevel") == false)
 			{
 				PlayerPrefs.SetInt("savedMaxLevel", maxLevel);
 				PlayerPrefs.Save();
-				//send to analytics
-				if(analytics ==1)
-				{
-				GA.API.Design.NewEvent("maxLevel"+maxLevel,1);
-				}
+
 			}
 		}
 		
@@ -303,18 +285,7 @@ public class LevelFinishedController : MonoBehaviour {
 	//called from TimePortalController.cs
 	public void PlayerMode()
 	{
-		if(analytics ==1)
-		{
-			GameObject robot = GameObject.Find ("Player5");
-			if (robot == null)
-			{
-				GA.API.Design.NewEvent(getAllControllers().Count + "_PlayerMode",1);
-			}
-			else
-			{
-				GA.API.Design.NewEvent("1_PlayerMode",1);
-			}
-		}
+
 	}
 	
 	public void Reset()
@@ -337,17 +308,10 @@ public class LevelFinishedController : MonoBehaviour {
 	{
 		levCount++;
 		PlayerPrefs.SetInt("savedLevCount", levCount);
-		if(analytics ==1)
-		{
-		GA.API.Design.NewEvent("totalLevelsPlayed", 1);
-		}
 		
 		//send levelCounter to analytics
 		levelsCounter[level]++;
-		if(analytics ==1)
-		{
-		GA.API.Design.NewEvent("levelsCounter" + level, 1);
-		}
+
 		//save levelCouner to disk
 		PlayerPrefs.SetInt("savedLevelsCounter"+level, levelsCounter[level]);
 		PlayerPrefs.Save();
