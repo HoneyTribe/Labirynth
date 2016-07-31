@@ -42,9 +42,10 @@ public class FloorInstructions : MonoBehaviour
 	void Start()
 	{
 		instance = this;
-		arrowCentre = GameObject.Find ("ArrowCentre");
-		arrowRight = GameObject.Find ("ArrowRight");
-		arrowLeft = GameObject.Find ("ArrowLeft");
+		GameObject arrows = GameObject.Find ("TutorialArrows");
+		arrowCentre = arrows.transform.GetChild (0).gameObject;
+		arrowLeft = arrows.transform.GetChild (1).gameObject;
+		arrowRight = arrows.transform.GetChild (2).gameObject;
 		controlImagePad1Move = GameObject.Find ("ControlImagePad1Move");
 		controlImagePad2Move = GameObject.Find ("ControlImagePad2Move");
 		co_reviveAlert = GameObject.Find ("Co_ReviveAlert");
@@ -62,7 +63,7 @@ public class FloorInstructions : MonoBehaviour
 			{
 				if (TopLightController.instance.isEntered() == true)
 				{
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 
 					if (ScoreController.instance.getScore() > 0)
 					{
@@ -79,12 +80,12 @@ public class FloorInstructions : MonoBehaviour
 					if (ScoreController.instance.getScore() > 0)
 					{
 						instructions.text = "Walk into          the light.";
-						arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
+						arrowCentre.SetActive(true);
 					}
 					else
 					{
 						instructions.text = "Everybody High-five together to time-shift.";
-						arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+						arrowCentre.SetActive(false);
 					}
 				}
 			}
@@ -92,7 +93,7 @@ public class FloorInstructions : MonoBehaviour
 			{
 				if (TopLightController.instance.isEntered() == true)
 				{
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 					
 					if (ScoreController.instance.getScore() > 0)
 					{
@@ -112,7 +113,7 @@ public class FloorInstructions : MonoBehaviour
 		{
 			if (TopLightController.instance.isEntered() == true)
 			{
-				arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+				arrowCentre.SetActive(false);
 				
 				if (ScoreController.instance.getScore() > 0)
 				{
@@ -134,14 +135,14 @@ public class FloorInstructions : MonoBehaviour
 			else
 			{
 				instructions.text = "Everybody High-Five together to time-shift.";
-				arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+				arrowCentre.SetActive(false);
 			}
 		}
 		*/
 		// zap tut
 		else if(LevelFinishedController.instance.getLevel() == firstZapLevel)
 		{
-			arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+			arrowCentre.SetActive(false);
 
 				if(TopLightController.instance.isEntered() == true
 				   && ScoreController.instance.getScore() > 0)
@@ -149,58 +150,58 @@ public class FloorInstructions : MonoBehaviour
 					if(TopLightController.instance.getZapCount() == 0)
 					{
 						instructions.text = "Hypnotize the mummy. Aim at the mummy and tap action-1.";
-						arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+						arrowCentre.SetActive(false);
 					}
 					
 					else if(TopLightController.instance.getZapCount() == 1)
 					{
 						instructions.text = "Zap! He's walking towards the decoy...";
-						arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+						arrowCentre.SetActive(false);
 					}
 					
 					else
 					{
 						instructions.text = "Life-forms try to walk to the decoy when hypnotized.";
-						arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+						arrowCentre.SetActive(false);
 					}
 				}
 				else if(ScoreController.instance.getScore() > 0
 				        && TopLightController.instance.isEntered() == false)
 				{
 					instructions.text = "Walk into          the light.";
-					arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
+					arrowCentre.SetActive(true);
 				}
 				else if (TopLightController.instance.isEntered() == true // multiplayer
 			         && ScoreController.instance.getScore() == 0
 			         && robot == null)
 				{
 					instructions.text = "Hold action-1 to exit the machine and then high-five.";
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 				}
 				else if (TopLightController.instance.isEntered() == true // 1-player
 				         && ScoreController.instance.getScore() == 0
 				         && robot != null)
 				{
 					instructions.text = "High-five together to time-shift.";
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 				}
 				else if (ScoreController.instance.getScore() == 0
 				         && TopLightController.instance.isEntered() == false)
 				{
 					instructions.text = "Everybody High-Five together to time-shift.";
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 				}
 				else
 				{
 					instructions.text = "";
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 				}
 		}
 
 		// first decoy level
 		else if(LevelFinishedController.instance.getLevel() == firstDecoyLevel)
 		{
-			arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+			arrowCentre.SetActive(false);
 
 			if (deadPlayersInstructions == 0) //nobody dead
 			{	
@@ -211,72 +212,72 @@ public class FloorInstructions : MonoBehaviour
 					   && DeviceController.instance.getDecoyCount() % 2 == 0)
 					{
 					instructions.text = "Walk in the maze and tap action-1 to move the Decoy.";
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 					}
 
 					else if(TopLightController.instance.getZapCount() % 2 == 1
 					   && DeviceController.instance.getDecoyCount() % 2 == 1)
 					{
 						instructions.text = "You can reposition the Decoy. Tap action-1 when in the maze.";
-						arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+						arrowCentre.SetActive(false);
 					}
 
 					else if(TopLightController.instance.getZapCount() % 2 == 1
 					        && DeviceController.instance.getDecoyCount() % 2 == 0)
 					{
 						instructions.text = "Hypnotize the mummies. Aim at them and tap action-1.";
-						arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+						arrowCentre.SetActive(false);
 					}
 
 					else
 					{
 						instructions.text = "Hypnotize the mummies. Aim at them and tap action-1.";
-						arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+						arrowCentre.SetActive(false);
 					}
 				}
 				else if(ScoreController.instance.getScore() > 0
 				        && TopLightController.instance.isEntered() == false)
 				{
 					instructions.text = "Walk into          the light.";
-					arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
+					arrowCentre.SetActive(true);
 				}
 				else if (TopLightController.instance.isEntered() == true
 				         && ScoreController.instance.getScore() == 0
 				         && robot == null) //multiplayer
 				{
 					instructions.text = "Hold action-1 to exit the machine and then high-five.";
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 				}
 				else if (TopLightController.instance.isEntered() == true
 				         && ScoreController.instance.getScore() == 0
 				         && robot != null) // 1-player
 				{
 					instructions.text = "High-five together to time-shift.";
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 				}
 				else if (ScoreController.instance.getScore() == 0
 				         && TopLightController.instance.isEntered() == false)
 				{
 					instructions.text = "Everybody High-Five together to time-shift.";
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 				}
 				else
 				{
 					instructions.text = "";
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 				}
 			}
 			else //someone dead
 			{
 				instructions.text = "Touch friends to revive them. First move the mummy!";
-				arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+				arrowCentre.SetActive(false);
 			}
 		}
 
 		// second decoy level
 		else if(LevelFinishedController.instance.getLevel() == secondDecoyLevel)
 		{
-			arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+			arrowCentre.SetActive(false);
 			
 			if (deadPlayersInstructions == 0) //nobody dead
 			{	
@@ -287,46 +288,46 @@ public class FloorInstructions : MonoBehaviour
 					   && DeviceController.instance.getDecoyCount() % 2 == 0)
 					{
 						instructions.text = "Don't leave the Decoy behind the space machine!";
-						arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+						arrowCentre.SetActive(false);
 					}
 					
 					else if(TopLightController.instance.getZapCount() % 2 == 1
 					        && DeviceController.instance.getDecoyCount() % 2 == 1)
 					{
 						instructions.text = "Put the Decoy in strategic places.";
-						arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+						arrowCentre.SetActive(false);
 					}
 					
 					else if(TopLightController.instance.getZapCount() % 2 == 1
 					        && DeviceController.instance.getDecoyCount() % 2 == 0)
 					{
 						instructions.text = "Hazards are temporaily hypnotized when zapped.";
-						arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+						arrowCentre.SetActive(false);
 					}
 					
 					else
 					{
 						instructions.text = "Each time you zap the power is depleted temporarily.";
-						arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+						arrowCentre.SetActive(false);
 					}
 				}
 				else if(ScoreController.instance.getScore() > 0
 				        && TopLightController.instance.isEntered() == false)
 				{
 					instructions.text = "Walk into          the light.";
-					arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
+					arrowCentre.SetActive(true);
 				}
 				else if (TopLightController.instance.isEntered() == true
 				         && ScoreController.instance.getScore() == 0
 				         && robot == null) // multiplayer
 				{
 					instructions.text = "Hold action-1 to exit the machine and then high-five.";
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 				}
 				else
 				{
 					instructions.text = "";
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 				}
 			}
 			else //someone dead
@@ -334,7 +335,7 @@ public class FloorInstructions : MonoBehaviour
 				if(robot == null) // multiplayer
 				{
 					instructions.text = "Touch friends to revive them. First move the mummy!";
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 
 				}
 			}
@@ -347,12 +348,12 @@ public class FloorInstructions : MonoBehaviour
 				if(CraneController.instance.isEntered() == true)
 				{
 					instructions.text = "Push up to extend. Tap action-1 to pick up/drop things.";
-					arrowRight.transform.position = new Vector3(4, textOffScreen, -13);
+					arrowRight.SetActive(false);
 				}
 				else
 				{
 					instructions.text = "Walk into the Grabber         entrance";
-					arrowRight.transform.position = new Vector3(4, textOnScreen, -13);
+					arrowRight.SetActive(true);
 				}
 			}
 			else // 1-player
@@ -360,13 +361,13 @@ public class FloorInstructions : MonoBehaviour
 				if(CraneController.instance.isEntered() == true)
 				{
 					instructions.text = "Push up to extend. Tap action-1 to pick up/drop things.";
-					arrowRight.transform.position = new Vector3(4, textOffScreen, -13);
+					arrowRight.SetActive(false);
 				}
 
 				if (TopLightController.instance.isEntered() == true)
 				{
 					instructions.text = "Hold down action-1 to exit/switch machines.";
-					arrowRight.transform.position = new Vector3(4, textOffScreen, -13);
+					arrowRight.SetActive(false);
 				}
 			}
 		}
@@ -378,12 +379,12 @@ public class FloorInstructions : MonoBehaviour
 				if(DroneController.instance.isEntered() == true)
 				{
 					instructions.text = "Fly the teleport Drone. Tap Action-1 to drop teleports.";
-					arrowLeft.transform.position = new Vector3(-4, textOffScreen, -13);
+					arrowLeft.SetActive(false);
 				}
 				else
 				{
 					instructions.text = "Walk into             the Drone entrance";
-					arrowLeft.transform.position = new Vector3(-4, textOnScreen, -13);
+					arrowLeft.SetActive(true);
 				}
 			}
 			else // 1-player
@@ -391,12 +392,12 @@ public class FloorInstructions : MonoBehaviour
 				if(DroneController.instance.isEntered() == true)
 				{
 					instructions.text = "Fly the teleport Drone. Tap Action-1 to drop teleports.";
-					arrowLeft.transform.position = new Vector3(-4, textOffScreen, -13);
+					arrowLeft.SetActive(false);
 				}
 				if (TopLightController.instance.isEntered() == true)
 				{
 					instructions.text = "Hold down action-1 to exit/switch machines.";
-					arrowLeft.transform.position = new Vector3(4, textOffScreen, -13);
+					arrowLeft.SetActive(false);
 				}
 			}
 		}
@@ -405,7 +406,7 @@ public class FloorInstructions : MonoBehaviour
 		{
 			if (TopLightController.instance.isEntered() == true)
 			{
-				arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+				arrowCentre.SetActive(false);
 				
 				if (ScoreController.instance.getScore() > 0)
 				{
@@ -428,12 +429,12 @@ public class FloorInstructions : MonoBehaviour
 				if (ScoreController.instance.getScore() > 0)
 				{
 					instructions.text = "Walk into          the light.";
-					arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
+					arrowCentre.SetActive(true);
 				}
 				else
 				{
 					instructions.text = "Everybody High-Five together to time-shift.";
-					arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+					arrowCentre.SetActive(false);
 				}
 			}
 		}
@@ -462,17 +463,17 @@ public class FloorInstructions : MonoBehaviour
 				if(DroneController.instance.isEntered() == true && ScoreController.instance.getScore() > 0)
 				{
 					instructions.text = "Fly the teleport Drone. Tap Action-2 and drop stun bombs.";
-					arrowLeft.transform.position = new Vector3(-4, textOffScreen, -13);
+					arrowLeft.SetActive(false);
 				}
 				else if (DroneController.instance.isEntered() == false && ScoreController.instance.getScore() > 0)
 				{
 					instructions.text = "Walk into             the Drone entrance";
-					arrowLeft.transform.position = new Vector3(-4, textOnScreen, -13);
+					arrowLeft.SetActive(true);
 				}
 				else
 				{
 					instructions.text = "";
-					arrowLeft.transform.position = new Vector3(-4, textOffScreen, -13);
+					arrowLeft.SetActive(false);
 				}
 			}
 			else // 1-player
@@ -480,12 +481,12 @@ public class FloorInstructions : MonoBehaviour
 				if(DroneController.instance.isEntered() == true && ScoreController.instance.getScore() > 0)
 				{
 					instructions.text = "Fly the teleport Drone. Tap Action-2 and drop stun bombs.";
-					arrowLeft.transform.position = new Vector3(-4, textOffScreen, -13);
+					arrowLeft.SetActive(false);
 				}
 				if (TopLightController.instance.isEntered() == true)
 				{
 					instructions.text = "Hold down action-1 to exit/switch machines.";
-					arrowLeft.transform.position = new Vector3(-4, textOffScreen, -13);
+					arrowLeft.SetActive(false);
 				}
 			}
 		}
@@ -497,17 +498,17 @@ public class FloorInstructions : MonoBehaviour
 				if(CraneController.instance.isEntered() == true && ScoreController.instance.getScore() > 0)
 				{
 					instructions.text = "If at 100% power tap action-2 when above walls.";
-					arrowRight.transform.position = new Vector3(4, textOffScreen, -13);
+					arrowRight.SetActive(false);
 				}
 				else if (CraneController.instance.isEntered() == false && ScoreController.instance.getScore() > 0)
 				{
 					instructions.text = "Walk into the Wall-Lazer           entrance";
-					arrowRight.transform.position = new Vector3(4, textOnScreen, -13);
+					arrowRight.SetActive(true);
 				}
 				else
 				{
 					instructions.text = "";
-					arrowRight.transform.position = new Vector3(4, textOffScreen, -13);
+					arrowRight.SetActive(false);
 				}
 			}
 			else //1-player
@@ -515,12 +516,12 @@ public class FloorInstructions : MonoBehaviour
 				if(CraneController.instance.isEntered() == true && ScoreController.instance.getScore() > 0)
 				{
 					instructions.text = "If at 100% power tap action-2 when above walls.";
-					arrowRight.transform.position = new Vector3(4, textOffScreen, -13);
+					arrowRight.SetActive(false);
 				}
 				if (TopLightController.instance.isEntered() == true)
 				{
 					instructions.text = "Hold down action-1 to exit/switch machines.";
-					arrowRight.transform.position = new Vector3(-4, textOffScreen, -13);
+					arrowRight.SetActive(false);
 				}
 			}
 
@@ -538,53 +539,53 @@ public class FloorInstructions : MonoBehaviour
 			if (LevelFinishedController.instance.getLevel() == firstLightLevel)
 			{
 				instructions.text = "Walk into          the light";
-				arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
+				arrowCentre.SetActive(true);
 			}
 			//1st block
 			/*
 			if (LevelFinishedController.instance.getLevel() == firstBlockLevel)
 			{
 				instructions.text = "Walk into          the light";
-				arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
+				arrowCentre.SetActive(true);
 			}
 			*/
 			//1st zap
 			if (LevelFinishedController.instance.getLevel() == firstZapLevel)
 			{
 				instructions.text = "Walk into          the light";
-				arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
+				arrowCentre.SetActive(true);
 				//controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, -6f);
 			}
 			//trigger
 			if (LevelFinishedController.instance.getLevel() == firstTriggerLevel)
 			{
 				instructions.text = "Walk into          the light";
-				arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
+				arrowCentre.SetActive(true);
 			}
 			//decoy
 			if (LevelFinishedController.instance.getLevel() == firstDecoyLevel)
 			{
 				instructions.text = "Walk into          the light";
-				arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
+				arrowCentre.SetActive(true);
 				//controlImagePad1Move.transform.position = new Vector3(-0.3f, 1f, 2f);
 			}
 			// 2nd decoy
 			if (LevelFinishedController.instance.getLevel() == secondDecoyLevel)
 			{
 				instructions.text = "Walk into          the light";
-				arrowCentre.transform.position = new Vector3(0, textOnScreen, -13);
+				arrowCentre.SetActive(true);
 			}
 			//crane
 			else if (LevelFinishedController.instance.getLevel() == firstCraneLevel)
 			{
 				instructions.text = "Walk into the Grabber         entrance";
-				arrowRight.transform.position = new Vector3(4, textOnScreen, -13);
+				arrowRight.SetActive(true);
 			}
 			//drone
 			else if (LevelFinishedController.instance.getLevel() == firstDroneLevel)
 			{
 				instructions.text = "Walk into             the Drone entrance";
-				arrowLeft.transform.position = new Vector3(-4, textOnScreen, -13);
+				arrowLeft.SetActive(true);
 			}
 			//jump box
 			else if (LevelFinishedController.instance.getLevel() == firstJumpBoxLevel)
@@ -596,14 +597,14 @@ public class FloorInstructions : MonoBehaviour
 			else if (LevelFinishedController.instance.getLevel() == firstDroneBombLevel)
 			{
 				instructions.text = "Walk into             the Drone entrance";
-				arrowLeft.transform.position = new Vector3(-4, textOnScreen, -13);
+				arrowLeft.SetActive(true);
 				//controlImagePad2Move.transform.position = new Vector3(-2.3f, 1f, 0f);
 			}
 			//crane lazer
 			else if (LevelFinishedController.instance.getLevel() == firstCraneLazerLevel)
 			{
 				instructions.text = "Walk into the Wall-Lazer           entrance";
-				arrowRight.transform.position = new Vector3(4, textOnScreen, -13);
+				arrowRight.SetActive(true);
 				//controlImagePad2Move.transform.position = new Vector3(-0.3f, 1f, -3.5f);
 			}
 		}
@@ -621,9 +622,9 @@ public class FloorInstructions : MonoBehaviour
 	public void Remove () //off screen
 	{
 		instructions.text = "";
-		arrowLeft.transform.position = new Vector3(-4, textOffScreen, -13);
-		arrowRight.transform.position = new Vector3(4, textOffScreen, -13);
-		arrowCentre.transform.position = new Vector3(0, textOffScreen, -13);
+		arrowLeft.SetActive(false);
+		arrowRight.SetActive(false);
+		arrowCentre.SetActive(false);
 	}
 
 	// Called from PlayerController

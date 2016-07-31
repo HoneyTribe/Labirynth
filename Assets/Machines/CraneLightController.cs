@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CraneLightController : MonoBehaviour {
 
-	private static float maxIntensity = 2.3f;
+	private static float maxIntensity = 0.23f;
 
 	public float openningInterval = 1.0f;
 	public float closingInterval = 0.5f;

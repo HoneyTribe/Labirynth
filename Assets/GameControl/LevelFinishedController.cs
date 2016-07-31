@@ -8,7 +8,7 @@ public class LevelFinishedController : MonoBehaviour {
 	public static float SHOW_INSTRUCTION_MIN_TIME = 0.3f;
 	public static int savedMaxLevel;
 	private int bootups = 0;
-	private int totalLevels = 35;
+	private int totalLevels = 11;
 	private int levCount = 0;
 	private int[] attempt; //amount of times died on same level
 	private int dynamicDifficulty = 1; //turns on/off dynamic difficulty
