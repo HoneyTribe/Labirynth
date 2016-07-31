@@ -5582,6 +5582,14 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
   m_IsPrefabParent: 0
@@ -7346,6 +7354,10 @@ Prefab:
     - target: {fileID: 400072, guid: fb870c25432bb604086fab2e870117d8, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800002, guid: fb870c25432bb604086fab2e870117d8, type: 2}
+      propertyPath: m_Intensity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fb870c25432bb604086fab2e870117d8, type: 2}
@@ -12475,19 +12487,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   astarData:
-    hasBeenReverted: 0
-    data: 504b030414000008080005658246e5ff2c30f00000008e0100000b0024006772617068302e6a736f6e0a00200000000000010018009c5277c6396dd0019c5277c6396dd001885277c6396dd0017d904d6bc3300c86ff8bcede48d2acb8390f7a295be9761b3b68b6d388f8a3f8a34b5bf2dfe774a4f4b2211048e87d5e4917d82792d05ce0883a296840d682f35a88455db6e20b170f5cf2951075d56259f055b5849181772e426393d60c82422fba77dc67f18b930a18181c9e2944b422130b069a0cc530b90cd7fa74cde79c27169e04868c8b3e2906b123d1effeeeed5052caacf2b1ca5a25920f7454f324a6e83664fb699130370d86feee44be7caa2aceb335598a847aab2ceaf8bb943b283beb2c9ae9235b4736ae3d1eba7c9af4f8bda6b371373ad9d6bd09af947dbdd31a8c9e869b6b9efe28d8bff1398e3f504b0304140000080800056582469d71dcc77700000086000000090024006d6574612e6a736f6e0a0020000000000001001800347e77c6396dd001347e77c6396dd0012a7e77c6396dd0011d8cb10e83201400ffe5cd9680bc1874edd0cdb8370ef401cad087516c624cffbdd2ed86bb3be1e3d72d26860eb440214503154cab5de60d3a75e11edd454f7048c620914615e865f5cd38d312611dac92a6ad1b182bc8c7e27bfbf6ff62b0790e915de4490c29727e946dd138397f4f3be7e2c9f1fb03504b01022d0014000008080005658246e5ff2c30f00000008e0100000b00240000000000000000000000000000006772617068302e6a736f6e0a00200000000000010018009c5277c6396dd0019c5277c6396dd001885277c6396dd001504b01022d00140000080800056582469d71dcc7770000008600000009002400000000000000000000003d0100006d6574612e6a736f6e0a0020000000000001001800347e77c6396dd001347e77c6396dd0012a7e77c6396dd001504b05060000000002000200b8000000ff0100000000
-    dataChecksum: 0
+    dataString: 
+    upgradeData: 504b030414000008080005658246e5ff2c30f00000008e0100000b0024006772617068302e6a736f6e0a00200000000000010018009c5277c6396dd0019c5277c6396dd001885277c6396dd0017d904d6bc3300c86ff8bcede48d2acb8390f7a295be9761b3b68b6d388f8a3f8a34b5bf2dfe774a4f4b2211048e87d5e4917d82792d05ce0883a296840d682f35a88455db6e20b170f5cf2951075d56259f055b5849181772e426393d60c82422fba77dc67f18b930a18181c9e2944b422130b069a0cc530b90cd7fa74cde79c27169e04868c8b3e2906b123d1effeeeed5052caacf2b1ca5a25920f7454f324a6e83664fb699130370d86feee44be7caa2aceb335598a847aab2ceaf8bb943b283beb2c9ae9235b4736ae3d1eba7c9af4f8bda6b371373ad9d6bd09af947dbdd31a8c9e869b6b9efe28d8bff1398e3f504b0304140000080800056582469d71dcc77700000086000000090024006d6574612e6a736f6e0a0020000000000001001800347e77c6396dd001347e77c6396dd0012a7e77c6396dd0011d8cb10e83201400ffe5cd9680bc1874edd0cdb8370ef401cad087516c624cffbdd2ed86bb3be1e3d72d26860eb440214503154cab5de60d3a75e11edd454f7048c620914615e865f5cd38d312611dac92a6ad1b182bc8c7e27bfbf6ff62b0790e915de4490c29727e946dd138397f4f3be7e2c9f1fb03504b01022d0014000008080005658246e5ff2c30f00000008e0100000b00240000000000000000000000000000006772617068302e6a736f6e0a00200000000000010018009c5277c6396dd0019c5277c6396dd001885277c6396dd001504b01022d00140000080800056582469d71dcc7770000008600000009002400000000000000000000003d0100006d6574612e6a736f6e0a0020000000000001001800347e77c6396dd001347e77c6396dd0012a7e77c6396dd001504b05060000000002000200b8000000ff0100000000
     data_backup: 
+    file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
-    revertData: 
     cacheStartup: 0
-    compress: 0
   showNavGraphs: 1
   showUnwalkableNodes: 1
   debugMode: 0
   debugFloor: 0
-  debugRoof: 20000
+  debugRoof: 1
+  manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: .300000012
   logPathResults: 1
@@ -12543,11 +12554,13 @@ MonoBehaviour:
   threadCount: 0
   maxFrameTime: 1
   minAreaSize: 10
-  limitGraphUpdates: 1
-  maxGraphUpdateFreq: .200000003
-  lastScanTime: 0
-  inGameDebugPath: 
-  isScanning: 0
+  batchGraphUpdates: 0
+  graphUpdateBatchingInterval: .200000003
+  euclideanEmbedding:
+    mode: 0
+    seed: 0
+    pivotPointRoot: {fileID: 0}
+    spreadOutCount: 1
   showGraphs: 1
   lastUniqueAreaIndex: 0
 --- !u!4 &838944479
@@ -13358,6 +13371,10 @@ Prefab:
     - target: {fileID: 400066, guid: 38d5eabda9b150545b6facb3350cf7af, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 38d5eabda9b150545b6facb3350cf7af, type: 2}
+      propertyPath: m_Intensity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38d5eabda9b150545b6facb3350cf7af, type: 2}
@@ -18294,6 +18311,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 4843e48d3f2e17943a609fd3e239b1b6, type: 2}
+      propertyPath: m_Intensity
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4843e48d3f2e17943a609fd3e239b1b6, type: 2}
   m_IsPrefabParent: 0
@@ -19351,7 +19372,7 @@ LensFlare:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1370328759}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Flare: {fileID: 12100000, guid: f5b5241a51c3658429f3cae3a57dae58, type: 2}
   m_Color: {r: .316176474, g: .275259525, b: .0464965478, a: 0}
   m_Brightness: 1.66999996
@@ -21670,6 +21691,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2acf9c8e812eff6459715d2b3dce2c96, type: 2}
   m_IsPrefabParent: 0
@@ -22257,6 +22286,10 @@ Prefab:
     - target: {fileID: 400066, guid: bbbb03a4982df454ba1584e579839b0a, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800002, guid: bbbb03a4982df454ba1584e579839b0a, type: 2}
+      propertyPath: m_Intensity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bbbb03a4982df454ba1584e579839b0a, type: 2}

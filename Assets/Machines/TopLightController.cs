@@ -6,8 +6,8 @@ public class TopLightController : MonoBehaviour {
 	public static TopLightController instance;
 	private static int STEPS = 21;
 
-	private static float maxIntensity = 0.2f;
-	private static float smallLightMaxIntensity = 1.3f;
+	private static float maxIntensity = 0.01f;
+	private static float smallLightMaxIntensity = 0.07f;
 
 	private static float attractionCost = 0.3f;
 	private static float restoreVelocity = 0.03f; // It needs 1/restoreVelocity seconds to regenerate (30 seconds).

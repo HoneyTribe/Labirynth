@@ -75,7 +75,7 @@ public class FusionLightController : MonoBehaviour {
 		newRange = 40;
 		rangeSpeed = (40 - GetComponent<Light>().range) / 2.0f;
 
-		newIntensity = 0.4f;
+		newIntensity = 0.04f;
 		intensitySpeed = (1 - GetComponent<Light>().intensity) * 5.0f;
 	}
 }

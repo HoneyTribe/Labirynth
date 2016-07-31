@@ -67,7 +67,7 @@ public abstract class AbstractMonsterController : MonoBehaviour, StoppableObject
 		recalculateTrigger = true;
 		//distractParticlesPrefab = (GameObject) Resources.Load("Angry_ennemie/Angry_Ennemie_Prefab_3");
 
-		normalShader = Shader.Find("Standard");
+		normalShader = Shader.Find("Custom/MyShader");
 		toonShader = Shader.Find("Toon/Lighted Outline");
 		//ghostShader = Shader.Find("Standard"); 
 

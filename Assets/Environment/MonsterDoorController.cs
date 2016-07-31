@@ -6,7 +6,7 @@ public class MonsterDoorController : MonoBehaviour {
 	private static float interval = 3.0f;
 	private static int delay = 2;
 	private static float maxY = 10.0f;
-	private static float maxIntensity = 2.0f;
+	private static float maxIntensity = 0.2f;
 
 	private float sign = 0;
 	private float timeLeft = 0.0f;
